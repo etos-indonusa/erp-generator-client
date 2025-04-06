@@ -1,0 +1,58 @@
+<div class="">
+   
+    <div class="mb-3">
+        <div class="text-secondary small">Nama Kantor</div>
+        <div class="fw-semibold text-dark">{{ data.namaKantor || '-' }}</div>
+    </div>
+
+    <div class="mb-3">
+        <div class="text-secondary small">Kode Kantor</div>
+        <div class="fw-semibold text-dark">{{ data.kodeKantor || '-' }}</div>
+    </div>
+
+    <div class="mb-3">
+        <div class="text-secondary small">Alamat</div>
+        <div class="fw-semibold text-dark">{{ data.alamat || '-' }}</div>
+    </div>
+
+    <div class="mb-3">
+        <div class="text-secondary small">Kota</div>
+        <div class="fw-semibold text-dark">{{ data.kota || '-' }}</div>
+    </div>
+
+    <div class="mb-3">
+        <div class="text-secondary small">Provinsi</div>
+        <div class="fw-semibold text-dark">{{ data.provinsi || '-' }}</div>
+    </div>
+
+    <div class="mb-3">
+        <div class="text-secondary small">Pusat</div>
+        <div class="fw-semibold">
+            <nz-tag *ngIf="data.isPusat" nzColor="blue">Ya</nz-tag>
+            <span *ngIf="!data.isPusat">-</span>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <div class="text-secondary small">Status</div>
+        <div class="fw-semibold">
+            <nz-tag *ngIf="data.isAktif" nzColor="green">Aktif</nz-tag>
+            <nz-tag *ngIf="data.isAktif === false" nzColor="red">Nonaktif</nz-tag>
+            <span *ngIf="data.isAktif === null || data.isAktif === undefined">-</span>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <div class="text-secondary small">Dibuat</div>
+        <div class="fw-semibold text-dark">
+            {{ data.createdAt ? (data.createdAt | date: 'short') : '-' }}
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <div class="text-secondary small">Diperbarui</div>
+        <div class="fw-semibold text-dark">
+            {{ data.updatedAt ? (data.updatedAt | date: 'short') : '-' }}
+        </div>
+    </div>
+</div>

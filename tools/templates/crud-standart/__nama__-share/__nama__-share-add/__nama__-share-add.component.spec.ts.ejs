@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { <%= Nama %>ShareAddComponent } from './<%= nama %>-share-add.component';
+
+describe('<%= Nama %>ShareAddComponent', () => {
+  let component: <%= Nama %>ShareAddComponent;
+  let fixture: ComponentFixture<<%= Nama %>ShareAddComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [<%= Nama %>ShareAddComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(<%= Nama %>ShareAddComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

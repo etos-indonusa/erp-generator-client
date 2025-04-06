@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { <%= Nama %>ListComponent } from './<%= nama %>-list.component.ts.ejs';
+
+describe('<%= Nama %>ListComponent', () => {
+  let component: <%= Nama %>ListComponent;
+  let fixture: ComponentFixture<<%= Nama %>ListComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [<%= Nama %>ListComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(<%= Nama %>ListComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

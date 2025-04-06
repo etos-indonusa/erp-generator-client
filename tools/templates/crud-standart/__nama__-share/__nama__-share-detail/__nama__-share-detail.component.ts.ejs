@@ -1,0 +1,11 @@
+import { Component, Input } from '@angular/core';
+import type { <%= Nama %>Dto } from 'src/sdk/core/models';
+
+@Component({
+    selector: 'app-<%= nama %>-share-detail',
+    templateUrl: './<%= nama %>-share-detail.component.html',
+    styleUrl: './<%= nama %>-share-detail.component.scss'
+})
+export class <%= Nama %>ShareDetailComponent {
+    @Input('<%= nama %>') data: <%= Nama %>Dto = <%- dtoDefaultObject %>;
+}

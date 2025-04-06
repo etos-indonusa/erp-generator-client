@@ -1,0 +1,9 @@
+{
+  "email": "Email",
+  "idUsers": "Id Users",
+  "password": "Password",
+  "lastLogin": "Last Login",
+  "nama": "Nama",
+  "status": "Status",
+  "wajibResetPassword": "Wajib Reset Password"
+}

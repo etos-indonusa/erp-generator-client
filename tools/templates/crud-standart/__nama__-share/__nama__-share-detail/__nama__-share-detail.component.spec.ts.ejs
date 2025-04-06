@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { <%= Nama %>ShareDetailComponent } from './<%= nama %>-share-detail.component.ts.ejs';
+
+describe('<%= Nama %>ShareDetailComponent', () => {
+  let component: <%= Nama %>ShareDetailComponent;
+  let fixture: ComponentFixture<<%= Nama %>ShareDetailComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [<%= Nama %>ShareDetailComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(<%= Nama %>ShareDetailComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

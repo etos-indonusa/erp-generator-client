@@ -1,0 +1,21 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { <%= Nama %>ListComponent } from './<%= nama %>-list/<%= nama %>-list.component';
+
+const routes: Routes = [
+    {
+        path: '',
+        redirectTo: 'list',
+        pathMatch: 'full'
+    },
+    {
+        path: 'list',
+        component: <%= Nama %>ListComponent
+    }
+];
+
+@NgModule({
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
+})
+export class <%= Nama %>RoutingModule { }
