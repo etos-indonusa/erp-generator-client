@@ -1,0 +1,23 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { <%= Nama %>ShareAddComponent } from './<%= nama %>-share-add/<%= nama %>-share-add.component'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
+import { AntSimpleModule } from 'src/app/shared/ant-simple.module'; 
+import { TampilanModule } from '../../../../shared/tampilan.module';
+import { <%= Nama %>ShareDetailComponent } from './<%= nama %>-share-detail/<%= nama %>-share-detail.component';
+ 
+ 
+@NgModule({
+    declarations: [
+        <%= Nama %>ShareAddComponent, 
+        <%= Nama %>ShareDetailComponent
+    ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        AntSimpleModule,
+        TampilanModule
+    ]
+}) 
+export class <%= Nama %>ShareModule { }

@@ -27,3 +27,4 @@ export { WorkScheduleTeknisiService } from './services/work-schedule-teknisi.ser
 export { ModuleService } from './services/module.service';
 export { UserGroupAccessService } from './services/user-group-access.service';
 export { UserGroupService } from './services/user-group.service';
+export { ClientContactService } from './services/client-contact.service';

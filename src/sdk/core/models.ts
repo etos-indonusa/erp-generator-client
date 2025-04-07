@@ -4,6 +4,7 @@
 
 export type { BaseQueryDtoSmart } from './models/base-query-dto-smart';
 export type { BaseWidgetQueryDto } from './models/base-widget-query-dto';
+export type { ClientContactDto } from './models/client-contact-dto';
 export type { ClientDto } from './models/client-dto';
 export type { ClientSiteDto } from './models/client-site-dto';
 export type { CompanyConfigDto } from './models/company-config-dto';

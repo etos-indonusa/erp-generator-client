@@ -31,6 +31,7 @@ import { WorkScheduleTeknisiService } from './services/work-schedule-teknisi.ser
 import { ModuleService } from './services/module.service';
 import { UserGroupAccessService } from './services/user-group-access.service';
 import { UserGroupService } from './services/user-group.service';
+import { ClientContactService } from './services/client-contact.service';
 
 /**
  * Module that provides all services and configuration.
@@ -65,6 +66,7 @@ import { UserGroupService } from './services/user-group.service';
     ModuleService,
     UserGroupAccessService,
     UserGroupService,
+    ClientContactService,
     ApiConfiguration
   ],
 })

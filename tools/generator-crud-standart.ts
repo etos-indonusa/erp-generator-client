@@ -9,9 +9,16 @@ if (!nama) {
     console.error('❌ Nama modul wajib diisi. Contoh: npm run generate:crud users');
     process.exit(1);
 }
+const Nama = nama
+    .replace(/[-_](.)/g, (_, c) => c.toUpperCase()) // kebab/snake to camel
+    .replace(/^\w/, c => c.toUpperCase()); // kapital di awal
 
-const Nama = nama.charAt(0).toUpperCase() + nama.slice(1);
+const nama_object = nama
+    .replace(/[-_](.)/g, (_, c) => c.toUpperCase()) // kebab/snake to camel
+    .replace(/^\w/, c => c.toLowerCase()); // kapital di awal
+
 const NAMA = nama.toUpperCase();
+
 
 const templateDir = path.resolve('tools/templates/crud-standart');
 const outputDir = path.resolve('src/app/views/modules', nama);
@@ -87,9 +94,7 @@ function getDisplayFieldsFromDto(dtoPath: string): string[] {
 
     const blacklistPatterns = [
         /^id_/,        // snake_case
-        /^id[A-Z]/,    // camelCase seperti idUsers
-        /^created/i,
-        /^updated/i
+        /^id[A-Z]/,    // camelCase seperti idUsers 
     ];
 
     const fields: string[] = [];
@@ -133,30 +138,39 @@ function processDirectory(templatePath: string, destPath: string, data: any) {
         }
     }
 }
+function getRelationServiceName(field: string) {
+    const raw = field.replace(/^id_/, '').replace(/^id/, '');
+    const proper = raw.charAt(0).toUpperCase() + raw.slice(1);
+    const camel = raw.charAt(0).toLowerCase() + raw.slice(1);
+    return {
+        listVar: `list${proper}`,
+        serviceName: `${camel}Service`,
+        serviceClass: `${proper}Service`,
+        methodCall: `this.getAll${proper}();`,
+        functionCode: `getAll${proper}() {
+    this.${camel}Service.${camel}ControllerFindAll().subscribe(
+      data => this.list${proper} = data.data ?? []
+    );
+  }`
+    };
+}
 
-function generateFormHtmlFromDto(dtoPath: string, dtoName: string): { html: string, relationVars: string[] } {
+function generateFormHtmlFromDto(dtoPath: string, dtoName: string) {
     const dtoContent = fs.readFileSync(dtoPath, 'utf-8');
     const regex = /^\s*(\w+)\??:\s*([^;=]+)/gm;
 
-    const blacklistPatterns = [
-        /^created/i, /^updated/i
-    ];
+    const blacklist = [/^created/i, /^updated/i];
+    const base = dtoName.replace(/dto$/i, '').replace(/^\w/, c => c.toLowerCase());
+    const pk = [`id_${base}`, `id${base.charAt(0).toUpperCase()}${base.slice(1)}`];
 
-    const modelBaseName = dtoName.replace(/dto$/i, '').replace(/^\w/, c => c.toLowerCase()); // misal: users
-    const pkPatterns = [`id_${modelBaseName}`, `id${modelBaseName.charAt(0).toUpperCase()}${modelBaseName.slice(1)}`];
-
-    const rows: string[] = [];
-    const relationVars: string[] = [];
+    const rows: string[] = [], vars: string[] = [], injects: string[] = [], inits: string[] = [], funcs: string[] = [];
 
     let match;
     while ((match = regex.exec(dtoContent)) !== null) {
         const name = match[1];
         const type = match[2]?.trim();
-
-        const isBlacklisted =
-            blacklistPatterns.some(rx => rx.test(name)) ||
-            pkPatterns.includes(name);
-        if (isBlacklisted) continue;
+        const skip = blacklist.some(rx => rx.test(name)) || pk.includes(name);
+        if (skip) continue;
 
         const isCheckbox = name.startsWith('is_') || /^is[A-Z]/.test(name);
         const isTextarea = ['catatan', 'alamat', 'keterangan', 'note'].some(k => name.toLowerCase().includes(k));
@@ -183,15 +197,22 @@ function generateFormHtmlFromDto(dtoPath: string, dtoName: string): { html: stri
         } else if (isRelation) {
             const base = name.replace(/^id_/, '').replace(/^id/, '');
             const listName = 'list' + base.charAt(0).toUpperCase() + base.slice(1);
+            const r = getRelationServiceName(name);
             rows.push(`
         <nz-form-item>
             <nz-form-label nzFor="${name}">{{ '${name}' | translate }}</nz-form-label>
             <nz-form-control>
-                <nz-select formControlName="${name}" [nzOptions]="${listName}" nzPlaceHolder="Pilih {{ '${name}' | translate }}"></nz-select>
+                <nz-select formControlName="${name}" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ '${name}' | translate }}"> 
+                    <nz-option *ngFor="let item of ${listName}" nzLabel="{{ item.${name} }}" nzValue="{{ item.${name} }}"></nz-option>
+                </nz-select>
             </nz-form-control>
         </nz-form-item>
             `);
             relationVars.push(`${listName}: any[] = [];`);
+            vars.push(`${r.listVar}: any[] = [];`);
+            injects.push(`private ${r.serviceName}: ${r.serviceClass}`);
+            inits.push(r.methodCall);
+            funcs.push(r.functionCode);
         } else {
             const inputType = type === 'number' ? 'type="number"' : '';
             const element = isTextarea
@@ -207,12 +228,10 @@ function generateFormHtmlFromDto(dtoPath: string, dtoName: string): { html: stri
         </nz-form-item>
             `);
         }
+
     }
 
-    return {
-        html: rows.join('\n'),
-        relationVars
-    };
+    return { html: rows.join('\n'), relationVars: vars, relationInjects: injects, relationInitCalls: inits, relationFunctions: funcs };
 }
 
 
@@ -329,18 +348,85 @@ if (dtoPath) {
 
 // generate form 
 let formHtml = '';
+let relationInjects: string[] = [], relationInitCalls: string[] = [], relationFunctions: string[] = [];
+
 let relationVars: string[] = [];
 if (dtoPath) {
     const result = generateFormHtmlFromDto(dtoPath, Nama);
     formHtml = result.html;
     relationVars = result.relationVars;
+    relationInjects = result.relationInjects;
+    relationInitCalls = result.relationInitCalls;
+    relationFunctions = result.relationFunctions;
 }
+
+function getSmartDisplayFieldsFromDto(dtoPath: string): {
+    namaField: string;
+    label: string;
+    uiType: string;
+    relasiField?: string;
+}[] {
+    const dtoContent = fs.readFileSync(dtoPath, 'utf-8');
+    const regex = /^\s*(\w+)\??:\s*([^;=]+)/gm;
+
+    const blacklistPatterns = [
+        /^id_/,        // id relasi, kecuali kamu mau tampilkan juga
+        /^id[A-Z]/ 
+    ];
+
+    const result: {
+        namaField: string;
+        label: string;
+        uiType: string;
+        relasiField?: string;
+    }[] = [];
+
+    let match;
+    while ((match = regex.exec(dtoContent)) !== null) {
+        const namaField = match[1];
+        const typeRaw = match[2]?.trim().toLowerCase();
+        const isBlacklisted = blacklistPatterns.some(rx => rx.test(namaField));
+        if (isBlacklisted) continue;
+
+        let uiType = 'text';
+        if (typeRaw === 'boolean' || namaField.startsWith('is')) {
+            uiType = 'boolean';
+        } else if (typeRaw === 'date' || namaField.toLowerCase().includes('tanggal') || namaField.toLowerCase().includes('creat')) {
+            uiType = 'date';
+        } else if (namaField.toLowerCase().includes('status')) {
+            uiType = 'status';
+        } else if (namaField.startsWith('id_') || namaField.startsWith('id')) {
+            uiType = 'relation';
+        }
+
+        const label = namaField
+            .replace(/^is_/, '')
+            .replace(/_/g, ' ')
+            .replace(/([a-z])([A-Z])/g, '$1 $2')
+            .replace(/\b\w/g, l => l.toUpperCase());
+
+        result.push({
+            namaField,
+            label,
+            uiType,
+            relasiField: uiType === 'relation' ? namaField.replace(/^id_/, '').replace(/^id/, '') : undefined,
+        });
+    }
+
+    return result;
+}
+
+let smartDisplayFields: { namaField: string; label: string; uiType: string; relasiField?: string | undefined; }[] = [];
+if (fs.existsSync(dtoPath)) {
+    smartDisplayFields = getSmartDisplayFieldsFromDto(dtoPath);
+}
+
 
 console.log("📋 Display Fields:", displayFields);
 // ⬇️ Eksekusi
 fse.ensureDirSync(outputDir);
 processDirectory(templateDir, outputDir, {
-    nama, Nama, NAMA, searchFields, displayFields, dtoDefaultObject, formHtml, relationVars
+    nama, Nama, NAMA, searchFields, displayFields, dtoDefaultObject, formHtml, relationVars, relationInjects, relationInitCalls, relationFunctions, nama_object, smartDisplayFields
 });
 injectToModulesRouting(nama);
 injectToSidebarMenu(nama);

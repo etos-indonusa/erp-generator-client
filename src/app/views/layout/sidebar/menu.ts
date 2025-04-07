@@ -15,6 +15,31 @@ export const MENU: MenuItem[] = [
         isTitle: true
     }
     ,{
+        label: 'ContractSite',
+        icon: 'message-square',
+        link: '/app/contract-site',
+    }
+    ,{
+        label: 'Contract',
+        icon: 'message-square',
+        link: '/app/contract',
+    }
+    ,{
+        label: 'CompanyConfig',
+        icon: 'message-square',
+        link: '/app/company-config',
+    }
+    ,{
+        label: 'Client',
+        icon: 'message-square',
+        link: '/app/client',
+    }
+    ,{
+        label: 'Client-contact',
+        icon: 'message-square',
+        link: '/app/client-contact',
+    }
+    ,{
         label: 'Users',
         icon: 'message-square',
         link: '/app/users',

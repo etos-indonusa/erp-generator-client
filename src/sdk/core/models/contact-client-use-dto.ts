@@ -7,8 +7,8 @@ export interface ContactClientUseDto {
   createdAt?: string;
   fromModule: string;
   fromModuleId: string;
-  idContact: string;
-  idContactUse: string;
+  idClientContact: string;
+  idContactClientUse: string;
   isPrimary?: boolean;
   peran?: string;
   updatedAt?: string;

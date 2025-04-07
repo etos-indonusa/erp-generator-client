@@ -6,7 +6,7 @@ export interface CompanyConfigDto {
   alamat?: string;
   catatan?: string;
   createdAt?: string;
-  idConfig: string;
+  idCompanyConfig: string;
   kontak?: string;
   logoUrl?: string;
   namaPerusahaan?: string;

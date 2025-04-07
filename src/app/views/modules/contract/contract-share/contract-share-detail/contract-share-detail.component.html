@@ -1,0 +1,173 @@
+
+  <div class="mb-3">
+    <div class="text-secondary small">Catatan Kontrak</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.catatanKontrak || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Created At</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt ? (data.createdAt | date:'short') : '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Dokumen Url</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.dokumenUrl || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Durasi Bulan</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.durasiBulan || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Fee Sales</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.feeSales || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Is Auto Invoice</div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isAutoInvoice" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isAutoInvoice">-</span>
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Nama Sales</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.namaSales || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Nilai Akhir</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.nilaiAkhir || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Nilai Bulanan</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.nilaiBulanan || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Nilai Diawal</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.nilaiDiawal || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Nilai Kontrak</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.nilaiKontrak || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Nomor Kontrak</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.nomorKontrak || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Presentase Fee</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.presentaseFee || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Ref Kontrak Sebelumnya</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.refKontrakSebelumnya || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Status Kontrak</div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag  nzColor="green">statusKontrak </nz-tag> 
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Tanggal Akhir</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.tanggalAkhir ? (data.tanggalAkhir | date:'short') : '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Tanggal Kontrak</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.tanggalKontrak ? (data.tanggalKontrak | date:'short') : '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Tanggal Mulai</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.tanggalMulai ? (data.tanggalMulai | date:'short') : '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Updated At</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt || '-' }}
+      
+    </div>
+  </div>
+

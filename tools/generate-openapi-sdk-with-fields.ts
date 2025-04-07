@@ -48,11 +48,18 @@ const typeToPrimitive = (t: string): 'string' | 'boolean' | 'number' => {
 project.getSourceFiles().forEach(file => {
     file.getInterfaces().forEach(intf => {
         const name = intf.getName();
-        if (!name.endsWith('Dto')) return;
+        if (!name.endsWith('Dto')) return; 
 
         const dtoName = name.replace(/Dto$/, '');
         const fieldMap: Record<string, string> = {};
         const schemaMap: Record<string, any> = {};
+ 
+        const nama_file = dtoName
+            .replace(/Dto$/, '')
+            .replace(/([a-z])([A-Z])/g, '$1-$2')
+            .replace(/([A-Z])([A-Z][a-z])/g, '$1-$2')
+            .toLowerCase();
+
 
         intf.getProperties().forEach(p => {
             const key = p.getName();
@@ -77,11 +84,11 @@ project.getSourceFiles().forEach(file => {
 
         // Write dto-fields
         const fieldContent = `export const ${dtoName}DtoFields: Record<string, 'string' | 'boolean' | 'number'> = ${JSON.stringify(fieldMap, null, 2)};\n`;
-        fs.writeFileSync(path.join(FIELDS_DIR, `${dtoName.toLowerCase()}-dto.fields.ts`), fieldContent);
+        fs.writeFileSync(path.join(FIELDS_DIR, `${nama_file.toLowerCase()}-dto.fields.ts`), fieldContent);
 
         // Write form-schema
         const schemaContent = `export const ${dtoName}FormSchema = ${JSON.stringify(schemaMap, null, 2)};\n`;
-        fs.writeFileSync(path.join(SCHEMA_DIR, `${dtoName.toLowerCase()}.form-schema.ts`), schemaContent);
+        fs.writeFileSync(path.join(SCHEMA_DIR, `${nama_file.toLowerCase()}.form-schema.ts`), schemaContent);
 
         console.log(`✅ Generated fields and schema for ${dtoName}`);
     });
