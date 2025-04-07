@@ -7,6 +7,8 @@ export const ContractReportDtoFields: Record<string, 'string' | 'boolean' | 'num
   "feeSales": "number",
   "idClient": "string",
   "idContract": "string",
+  "idContractJenis": "string",
+  "idKantor": "string",
   "isAutoInvoice": "boolean",
   "namaSales": "string",
   "nilaiAkhir": "number",

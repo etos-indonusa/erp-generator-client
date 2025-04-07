@@ -12,46 +12,6 @@ import { BaseQueryDtoSmart } from '../../models/base-query-dto-smart';
 import { ContractReportDto } from '../../models/contract-report-dto';
 
 export interface ContractReportControllerFindAll$Params {
-
-/**
- * JSON.stringify({})
- */
-  filter?: string;
-
-/**
- * Filter untuk relasi/join (JSON string)
- */
-  joinWhere?: string;
-
-/**
- * Fields to search with search_keyword
- */
-  search_field?: Array<string>;
-
-/**
- * Search keyword
- */
-  search_keyword?: string;
-
-/**
- * Sort by field
- */
-  sortKey?: string;
-
-/**
- * Sort direction (asc or desc)
- */
-  sortValue?: string;
-
-/**
- * Pagination page index
- */
-  pageIndex?: number;
-
-/**
- * Pagination limit per page
- */
-  pageSize?: number;
       body: BaseQueryDtoSmart
 }
 
@@ -61,16 +21,8 @@ export function contractReportControllerFindAll(http: HttpClient, rootUrl: strin
 'data'?: Array<ContractReportDto>;
 'total'?: number;
 }>> {
-  const rb = new RequestBuilder(rootUrl, contractReportControllerFindAll.PATH, 'get');
+  const rb = new RequestBuilder(rootUrl, contractReportControllerFindAll.PATH, 'post');
   if (params) {
-    rb.query('filter', params.filter, {});
-    rb.query('joinWhere', params.joinWhere, {});
-    rb.query('search_field', params.search_field, {});
-    rb.query('search_keyword', params.search_keyword, {});
-    rb.query('sortKey', params.sortKey, {});
-    rb.query('sortValue', params.sortValue, {});
-    rb.query('pageIndex', params.pageIndex, {});
-    rb.query('pageSize', params.pageSize, {});
     rb.body(params.body, 'application/json');
   }
 
@@ -89,4 +41,4 @@ export function contractReportControllerFindAll(http: HttpClient, rootUrl: strin
   );
 }
 
-contractReportControllerFindAll.PATH = '/nonauth/contract/contract_report';
+contractReportControllerFindAll.PATH = '/nonauth/contract/contract_report/list';

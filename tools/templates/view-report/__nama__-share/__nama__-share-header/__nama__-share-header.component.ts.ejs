@@ -1,0 +1,14 @@
+import { Component, Input } from '@angular/core';
+
+@Component({
+    selector: 'app-<%= nama %>-share-header',
+    templateUrl: './<%= nama %>-share-header.component.html',
+    styleUrl: './<%= nama %>-share-header.component.scss'
+})
+export class <%= Nama %>ShareHeaderComponent {
+    @Input('data') data: any = {}
+    constructor() { }
+
+    ngOnInit(): void {
+    }
+}

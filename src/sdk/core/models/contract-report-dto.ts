@@ -12,6 +12,8 @@ export interface ContractReportDto {
   feeSales?: number;
   idClient: string;
   idContract: string;
+  idContractJenis?: string;
+  idKantor?: string;
   isAutoInvoice?: boolean;
   namaSales?: string;
   nilaiAkhir?: number;

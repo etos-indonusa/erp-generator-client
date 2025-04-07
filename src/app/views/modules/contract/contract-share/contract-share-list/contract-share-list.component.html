@@ -1,0 +1,167 @@
+<nz-card nzTitle="{{filter.status|titlecase}} ({{ total }})" [nzExtra]="extraTemplate" [nzBodyStyle]="{padding:0}">
+    <div class="filter" [hidden]="!filter_extra">
+        <form nz-form [nzLayout]="'vertical'" role="form">
+            <div nz-row [nzGutter]="8">
+                <div nz-col [nzXl]="{ span: 6}" [nzLg]="{ span: 8}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
+                    <nz-form-item>
+                        <nz-form-label>&nbsp;</nz-form-label>
+                        <nz-form-control>
+                            <nz-input-group nzSearch [nzAddOnBefore]="addOnBeforeTemplate"
+                                [nzAddOnAfter]="suffixIconButton" style="width: 100%;">
+                                <input type="text" nz-input placeholder="{{'search'|translate|titlecase}}"
+                                    [(ngModel)]="search" name="search" (keyup.enter)="searchData()" />
+                            </nz-input-group>
+                            <ng-template #suffixIconButton>
+                                <button nz-button nzType="default" nzSearch (click)="searchData()"><span nz-icon
+                                        nzType="search"></span></button>
+                            </ng-template>
+                            <ng-template #addOnBeforeTemplate>
+                                <span nz-icon nzTheme="twotone" nzType="question-circle" nz-popover
+                                    nzPopoverTitle="Pencarian berdasarkan" [nzPopoverContent]="tipsPencarian"
+                                    nzPopoverPlacement="top"></span>
+                                <ng-template #tipsPencarian>
+                                    <div>
+                                        <ul>
+                                            <li>Nomor</li>
+                                            <li>Dibebankan Ke</li>
+                                            <li>Dibayarkan Ke</li>
+                                            <li>Uraian</li>
+                                            <li>Penjelasan</li>
+                                        </ul>
+                                    </div>
+                                </ng-template>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 4}" [nzLg]="{ span: 6}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
+                    
+                </div>
+                <div nz-col [nzXl]="{ span: 4}" [nzLg]="{ span: 6}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
+                    
+                </div>
+                 
+                <!-- <div nz-col [nzXl]="{ span: 4}" [nzLg]="{ span: 6}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
+
+                </div> -->
+                <div nz-col nzSpan="24">
+
+                    <nz-form-item>
+                        <nz-form-control>
+                            <button nz-button nzType="primary" (click)="print()" style="margin-right: 5px;">
+                                <span nz-icon nzType="printer"></span>
+                                Print
+                            </button>
+                            <button nz-button nzType="primary" (click)="searchData()" [nzLoading]="loading"
+                                style="margin-right: 10px;"><span nz-icon nzType="filter"></span>Filter</button>
+                            <button nz-button nzType="default" (click)="resetData()" [nzLoading]="loading"
+                                style="margin-right: 10px;"><span nz-icon nzType="reload"></span>Reset</button>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div style="overflow: auto; background-color: white;">
+        <nz-table nzShowSizeChanger [nzData]="listOfData" [nzFrontPagination]="false" [nzLoading]="loading"
+            [nzTotal]="total" [nzPageSize]="pageSize" [nzPageIndex]="pageIndex"
+            (nzQueryParams)="onQueryParamsChange($event)" nzSize="small">
+            <thead>
+                <tr>
+                    <th nzWidth="10%" [nzSortFn]="true" nzColumnKey="status">Status</th>
+                    <th nzAlign="center" [nzSortFn]="true" nzColumnKey="nomor">Nomor</th>
+                    <th [nzSortFn]="true" nzColumnKey="id_voucher_jenis">Jenis</th>
+                    <!-- <th [nzSortFn]="true" nzColumnKey="bagian">Beban Bagian</th> -->
+                    <th [nzSortFn]="true" nzColumnKey="tujuan">Uraian</th>
+                    <th nzAlign="right" [nzSortFn]="true" nzColumnKey="jumlah">Jumlah</th>
+                    <th nzWidth="13%" nzAlign="right" [nzSortFn]="true" nzColumnKey="tanggal_transaksi">Tanggal</th>
+                    <th nzWidth="7%" [nzAlign]="'right'">Action</th>
+                </tr> 
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let data of listOfData" style="vertical-align: top;">
+                    <tr>
+                        <td [nzExpand]="expandSet.has(data.id_voucher)"
+                            (nzExpandChange)="onExpandChange(data.id_voucher, $event)">
+                            <nz-badge *ngIf="data.status!=null" nzColor="{{ data.status?.toLowerCase() | status }}"
+                                nzText="{{data.status?.toLowerCase() }}"></nz-badge>
+                        </td>
+                        <td nzAlign="center"><b>{{data.nomor}}</b></td>
+                        <td>{{data.voucher_jenis?.jenis}}</td>
+                        <!-- <td>{{data.bagian}}</td> -->
+                        <td>{{data.uraian}}</td>
+                        <td nzAlign="right">{{data.jumlah|currency:'Rp.'}}</td>
+                        <td nzAlign="right">{{data.tanggal_transaksi|date}}</td>
+                        <td [nzAlign]="'right'">
+                            <button nz-button nz-dropdown [nzDropdownMenu]="menu">
+                                Actions
+                                <span nz-icon nzType="down"></span>
+                            </button>
+                            <nz-dropdown-menu #menu="nzDropdownMenu">
+                                <ul nz-menu>
+                                    <li nz-menu-item (click)="detail(data)">
+                                        <span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Detail
+                                    </li>
+                                    <!--  -->
+                                    <li nz-menu-item (click)="update(data)" *ngIf="data.status=='draft'">
+                                        <span nz-icon nzType="edit" nzTheme="outline"></span>&nbsp;&nbsp;Update
+                                    </li>
+                                    <li nz-menu-divider *ngIf="data.status=='draft'"></li>
+                                    <li nz-menu-item nz-menu-item nz-popconfirm class="text-danger"
+                                        *ngIf="data.status=='draft'"
+                                        nzPopconfirmTitle="Apakah Anda yakin akan menghapus data ini?"
+                                        nzPopconfirmPlacement="bottom" (nzOnConfirm)="delete(data.id_voucher)"><span
+                                            nz-icon nzType="delete" nzTheme="outline"></span>
+                                        <a class="m-1 text-danger">&nbsp;&nbsp;Delete</a>
+                                    </li>
+                                </ul>
+                            </nz-dropdown-menu>
+                        </td>
+                    </tr>
+                    <tr [nzExpand]="expandSet.has(data.id_voucher)">
+                        <app-contract-share-header [data]="data"></app-contract-share-header> 
+                    </tr>
+                </ng-container>
+                 
+            </tbody>
+        </nz-table>
+    </div>
+</nz-card>
+<ng-template #extraTemplate>
+    <ng-container *ngIf="!filter_extra">
+        <nz-input-group nzSearch [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="suffixIconButton"
+            style="max-width: 180px;">
+            <input type="text" nz-input placeholder="{{'search'|translate|titlecase}}" [(ngModel)]="search"
+                name="search" (keyup.enter)="searchData()" />
+        </nz-input-group>
+        <ng-template #suffixIconButton>
+            <button nz-button nzType="default" nzSearch (click)="searchData()"><span nz-icon
+                    nzType="search"></span></button>
+        </ng-template>
+        <ng-template #addOnBeforeTemplate>
+            <span nz-icon nzTheme="twotone" nzType="question-circle" nz-popover nzPopoverTitle="Pencarian berdasarkan"
+                [nzPopoverContent]="tipsPencarian" nzPopoverPlacement="top"></span>
+            <ng-template #tipsPencarian>
+                <div>
+                    <ul>
+                        <li>Nomor</li>
+                        <li>Dibebankan Ke</li>
+                        <li>Dibayarkan Ke</li>
+                        <li>Uraian</li>
+                        <li>Penjelasan</li>
+                    </ul>
+                </div>
+            </ng-template>
+        </ng-template>
+    </ng-container>
+    <button nz-button [nzType]="filter_extra ? 'primary' :'default'" style="margin-bottom: 8px;margin-left: 10px;"
+        (click)="filter_extra=!filter_extra">
+        <span nz-icon nzType="filter" nzTheme="outline"></span> Filter
+    </button>
+    <button nz-button style="margin-bottom: 8px;" (click)="filter_extra=!filter_extra">
+        <span nz-icon nzType="setting" nzTheme="outline"></span>
+    </button>
+    <button nz-button style="margin-bottom: 8px;margin-left: 10px;" nzType="primary" (click)="add()">
+        <span nz-icon nzType="plus" nzTheme="outline"></span> Add New
+    </button>
+</ng-template>

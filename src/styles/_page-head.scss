@@ -65,3 +65,35 @@ $grid-row-columns: 6;
 .page-sub-title {
     color: var(--#{$prefix}page-title-sub-color);
 }
+
+.border-bottom td {
+    border-bottom: 2px solid #1871b8 !important;
+}
+
+.tab-status {
+
+    nz-tabs-nav.ant-tabs-nav {
+        margin: 0 !important;
+    }
+
+    nz-tabs-nav.ant-tabs-nav.ng-star-inserted {
+        margin: 0px !important;
+    }
+
+    .ant-tabs-card>.ant-tabs-nav .ant-tabs-tab-active,
+    .ant-tabs-card>div>.ant-tabs-nav .ant-tabs-tab-active {
+        background: #fff !important;
+    }
+
+    .ant-tabs-card>.ant-tabs-nav .ant-tabs-tab {
+        background: #dddcdc;
+    }
+
+    .ant-tabs-bottom>.ant-tabs-nav::before,
+    .ant-tabs-bottom>div>.ant-tabs-nav::before,
+    .ant-tabs-top>.ant-tabs-nav::before,
+    .ant-tabs-top>div>.ant-tabs-nav::before {
+        border-bottom: 0px !important;
+    }
+
+}

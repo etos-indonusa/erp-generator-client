@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { <%= Nama %>ShareListComponent } from './<%= nama %>-share-list.component.ts.ejs';
+
+describe('<%= Nama %>ShareListComponent', () => {
+  let component: <%= Nama %>ShareListComponent;
+  let fixture: ComponentFixture<<%= Nama %>ShareListComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [<%= Nama %>ShareListComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(<%= Nama %>ShareListComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

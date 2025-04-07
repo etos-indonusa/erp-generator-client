@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ThemeModeService } from './core/services/theme-mode.service';
 import { TranslateService } from '@ngx-translate/core';
+import { TampilanModule } from './shared/tampilan.module';
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [RouterOutlet],
+    imports: [RouterOutlet,TampilanModule],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })

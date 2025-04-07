@@ -1,23 +1,38 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { <%= Nama %>ShareAddComponent } from './<%= nama %>-share-add/<%= nama %>-share-add.component'; 
+import { CommonModule } from '@angular/common'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import { AntSimpleModule } from 'src/app/shared/ant-simple.module'; 
 import { TampilanModule } from '../../../../shared/tampilan.module';
-import { <%= Nama %>ShareDetailComponent } from './<%= nama %>-share-detail/<%= nama %>-share-detail.component';
+import { RouterModule } from '@angular/router';
+import { <%= Nama %>ShareAddComponent } from './<%= nama %>-share-add/<%= nama %>-share-add.component';
+import { <%= Nama %>ShareDetailComponent } from './<%= nama %>-share-detail/<%= nama %>-share-detail.component'; 
+import { <%= Nama %>ShareWidgetComponent } from './<%= nama %>-share-widget/<%= nama %>-share-widget.component';
+import { <%= Nama %>ShareListComponent } from './<%= nama %>-share-list/<%= nama %>-share-list.component';
+import { <%= Nama %>ShareHeaderComponent } from './<%= nama %>-share-header/<%= nama %>-share-header.component';
+
  
- 
+const COM = [
+    <%= Nama %>ShareAddComponent,
+    <%= Nama %>ShareDetailComponent,
+    <%= Nama %>ShareListComponent,
+    <%= Nama %>ShareHeaderComponent,
+    <%= Nama %>ShareWidgetComponent
+]
+
 @NgModule({
     declarations: [
-        <%= Nama %>ShareAddComponent, 
-        <%= Nama %>ShareDetailComponent
+        ...COM,
     ],
+    exports: [
+        ...COM
+    ], 
     imports: [
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
         AntSimpleModule,
-        TampilanModule
+        TampilanModule,
+        RouterModule
     ]
 }) 
 export class <%= Nama %>ShareModule { }

@@ -1,4 +1,4 @@
-import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, APP_INITIALIZER, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter, withInMemoryScrolling } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -12,12 +12,19 @@ import id from '@angular/common/locales/id';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http'; 
  
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
+ 
 registerLocaleData(id);
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+export function appInitializerFactory(translate: TranslateService) {
+    return () => {
+        translate.setDefaultLang('id');
+        translate.use('id');
+        return Promise.resolve(); // atau bisa return load bahasa async
+    };
 }
 
 const highlightOptions = {
@@ -33,15 +40,15 @@ export const appConfig: ApplicationConfig = {
      
     providers: [ 
         importProvidersFrom(
-            HttpClientModule,
             TranslateModule.forRoot({
                 loader: {
                     provide: TranslateLoader,
                     useFactory: HttpLoaderFactory,
                     deps: [HttpClient],
                 },
-            })
+            }),
         ),
+        
         { provide: NZ_I18N, useValue: en_US },
         provideZoneChangeDetection({ eventCoalescing: true }),
         provideRouter(routes, withInMemoryScrolling({ scrollPositionRestoration: 'top' })),

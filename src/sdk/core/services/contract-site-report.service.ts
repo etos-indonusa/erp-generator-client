@@ -24,7 +24,7 @@ export class ContractSiteReportService extends BaseService {
   }
 
   /** Path part for operation `contractSiteReportControllerFindAll()` */
-  static readonly ContractSiteReportControllerFindAllPath = '/nonauth/contract_site/contract_site_report';
+  static readonly ContractSiteReportControllerFindAllPath = '/nonauth/contract_site/contract_site_report/list';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

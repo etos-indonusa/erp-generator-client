@@ -1,0 +1,58 @@
+import { Component, Input, SimpleChanges } from '@angular/core';
+import { <%= Nama %>WidgetService } from 'src/sdk/core/services/<%= nama %>-widget.service';
+
+@Component({
+    selector: 'app-<%= nama %>-share-widget',
+    templateUrl: './<%= nama %>-share-widget.component.html',
+    styleUrl: './<%= nama %>-share-widget.component.scss'
+})
+export class <%= Nama %>ShareWidgetComponent {
+    @Input('filter') filter: any = {};
+    @Input('reload') reload: number = 0;
+    constructor(
+        private <%= nama_object %>WidgetService: <%= Nama %>WidgetService,
+    ) { }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        if (changes.reload) {
+            if (changes.reload.currentValue != changes.reload.previousValue && changes.reload.currentValue > 1) {
+                this.getDataWidget()
+            }
+        }
+    }
+ 
+    ngOnInit(): void {
+    }
+
+    breadCrumbItems = [
+        { label: 'List', active: false }
+    ]
+    is_loading: boolean = false
+    total: number = 0;
+    status_urutan: any[] = []
+    //[{"type":"count","field":"status_<%= nama %>_site","alias":"total"}, {"type":"max","field":"status_<%= nama %>_site","alias":"status_<%= nama %>_site"}]
+    getDataWidget() {
+        this.is_loading = true;
+        this.<%= nama_object %>WidgetService
+            .<%= nama_object %>WidgetControllerFindAll({
+                body: {
+                    filter: JSON.stringify(this.filter),
+                    select: JSON.stringify([
+                        {
+                            type: "count",
+                            field:"status_<%= id_primary %>" ,
+                            alias: "total" 
+                        }
+                    ]),
+                    groupBy: JSON.stringify(['status_<%= id_primary %>']),
+                    sortKey: "status_<%= id_primary %>",
+                    sortValue: "ASC"
+                }
+            })
+            .subscribe((data) => {
+                this.total = data.total ?? 0;
+                this.status_urutan = data.data ?? [] ; 
+                this.is_loading = false;
+            });
+    }
+}

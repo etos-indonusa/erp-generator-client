@@ -13,7 +13,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment.prod';
 import { ApiModule } from 'src/sdk/core/api.module';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
+import { PesanService } from './services/pesan.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -50,7 +51,11 @@ const MODULES = [
         ...MODULES
     ],
     providers: [
-        AclService
+        AclService,
+        TranslateService,
+        PesanService
     ]
 })
-export class TampilanModule { }
+export class TampilanModule { 
+    
+}

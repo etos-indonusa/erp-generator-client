@@ -7,5 +7,6 @@ export const commonEnv = {
     version: 'V2',
      
     core: 'https://erp.bogor.vm.devetek.com',
+    srv_document: 'https://erp.bogor.vm.devetek.com',
  
 };

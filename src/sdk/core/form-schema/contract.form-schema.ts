@@ -25,6 +25,12 @@ export const ContractFormSchema = {
   "idContract": {
     "required": true
   },
+  "idContractJenis": {
+    "required": false
+  },
+  "idKantor": {
+    "required": false
+  },
   "isAutoInvoice": {
     "default": false,
     "required": false

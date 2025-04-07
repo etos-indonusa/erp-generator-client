@@ -16,9 +16,10 @@ import { CompanyConfigService } from './services/company-config.service';
 import { ContactClientUseService } from './services/contact-client-use.service';
 import { ContractService } from './services/contract.service';
 import { ContractReportService } from './services/contract-report.service';
+import { ContractWidgetService } from './services/contract-widget.service';
 import { ContractSiteService } from './services/contract-site.service';
-import { ContractSiteWidgetService } from './services/contract-site-widget.service';
 import { ContractSiteReportService } from './services/contract-site-report.service';
+import { ContractSiteWidgetService } from './services/contract-site-widget.service';
 import { ContractSiteServiceService } from './services/contract-site-service.service';
 import { CustomFieldService } from './services/custom-field.service';
 import { CustomFieldValueService } from './services/custom-field-value.service';
@@ -32,6 +33,7 @@ import { ModuleService } from './services/module.service';
 import { UserGroupAccessService } from './services/user-group-access.service';
 import { UserGroupService } from './services/user-group.service';
 import { ClientContactService } from './services/client-contact.service';
+import { ContractJenisService } from './services/contract-jenis.service';
 
 /**
  * Module that provides all services and configuration.
@@ -51,9 +53,10 @@ import { ClientContactService } from './services/client-contact.service';
     ContactClientUseService,
     ContractService,
     ContractReportService,
+    ContractWidgetService,
     ContractSiteService,
-    ContractSiteWidgetService,
     ContractSiteReportService,
+    ContractSiteWidgetService,
     ContractSiteServiceService,
     CustomFieldService,
     CustomFieldValueService,
@@ -67,6 +70,7 @@ import { ClientContactService } from './services/client-contact.service';
     UserGroupAccessService,
     UserGroupService,
     ClientContactService,
+    ContractJenisService,
     ApiConfiguration
   ],
 })

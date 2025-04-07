@@ -12,9 +12,16 @@ export interface BaseQueryDtoSmart {
 };
 
   /**
-   * Filter untuk relasi/join (JSON string)
+   * Nama tabel beserta tipenya single atau array
    */
-  joinWhere?: string;
+  include?: Array<any>;
+
+  /**
+   * Filter untuk relasi/join
+   */
+  joinWhere?: {
+[key: string]: any;
+};
 
   /**
    * Pagination page index

@@ -32,14 +32,22 @@ function renderName(input: string): string {
 function getSearchableFieldsFromDto(dtoPath: string): string[] {
     const dtoContent = fs.readFileSync(dtoPath, 'utf-8');
     const regex = /(\w+):\s+(string|String);/g;
+ 
 
-    const blacklist = ['id_', 'created', 'updated', 'date', 'tanggal'];
+    const blacklistPatterns = [
+        /^id_/,        // snake_case
+        /^id[A-Z]/,    // camelCase seperti idUsers 
+        /^created[A-Z]/,    // camelCase seperti idUsers 
+        /^updated[A-Z]/,    // camelCase seperti idUsers 
+        /^date[A-Z]/,    // camelCase seperti idUsers 
+        /^tanggal[A-Z]/,    // camelCase seperti idUsers 
+    ];
 
     const fields: string[] = [];
     let match;
     while ((match = regex.exec(dtoContent)) !== null) {
         const name = match[1];
-        const isBlacklisted = blacklist.some(b => name.toLowerCase().includes(b));
+        const isBlacklisted = blacklistPatterns.some(rx => rx.test(name));
         if (!isBlacklisted) {
             fields.push(name);
         }

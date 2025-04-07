@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { <%= Nama %>ShareWidgetComponent } from './<%= nama %>-share-widget.component.ts.ejs';
+
+describe('<%= Nama %>ShareWidgetComponent', () => {
+  let component: <%= Nama %>ShareWidgetComponent;
+  let fixture: ComponentFixture<<%= Nama %>ShareWidgetComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [<%= Nama %>ShareWidgetComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(<%= Nama %>ShareWidgetComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

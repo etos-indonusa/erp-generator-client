@@ -1,0 +1,49 @@
+<% function renderField(field, path = 'data', keyPrefix = '') { %>
+  <div class="col-md-3" *ngIf="<%= path %>?.<%= field.namaField %> !== undefined && <%= path %>?.<%= field.namaField %> !== null">
+    <div class="text-secondary small">
+      {{ '<%= keyPrefix ? keyPrefix + "." + field.namaField : field.namaField %>' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      <% if (field.uiType === 'boolean') { %>
+        <nz-tag *ngIf="<%= path %>.<%= field.namaField %>" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!<%= path %>.<%= field.namaField %>">-</span>
+      <% } else if (field.uiType === 'status') { %>
+        <nz-tag nzColor="green">{{ <%= path %>.<%= field.namaField %> }}</nz-tag>
+      <% } else if (field.uiType === 'date') { %>
+        {{ <%= path %>.<%= field.namaField %> | date:'short' }}
+      <% } else if (field.uiType === 'currency') { %>
+        {{ <%= path %>.<%= field.namaField %> | number:'1.0-0' }}
+      <% } else { %>
+        {{ <%= path %>.<%= field.namaField %> || '-' }}
+      <% } %>
+    </div>
+  </div>
+<% } %>
+
+<% function renderSection(field, path = 'data', keyPrefix = '') { %>
+  <% if (field.uiType === 'nested') { %>
+    <div class="col-12 mt-4" *ngIf="<%= path %>?.<%= field.namaField %>">
+      <div class="fw-bold border-bottom mb-2">
+        {{ '<%= keyPrefix ? keyPrefix + "." + field.namaField : field.namaField %>' | translate }}
+      </div>
+      <div class="row">
+        <% 
+          const nextPath = path + '.' + field.namaField;
+          const nextPrefix = keyPrefix ? keyPrefix + '.' + field.namaField : field.namaField;
+        %>
+        <% field.children.forEach(child => { %>
+          <% renderSection(child, nextPath, nextPrefix) %>
+        <% }) %>
+      </div>
+    </div>
+  <% } else { %>
+    <% renderField(field, path, keyPrefix) %>
+  <% } %>
+<% } %>
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  <% smartDisplayFields.forEach(field => { %>
+    <% renderSection(field) %>
+  <% }) %>
+</div>

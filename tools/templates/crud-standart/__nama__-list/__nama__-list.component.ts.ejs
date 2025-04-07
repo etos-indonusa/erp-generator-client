@@ -26,7 +26,7 @@ export class <%= Nama %>ListComponent {
         this.resetParam();
     }
 
-    mitra: any = {}
+    filter: any = {}
 
     pageIndex = 1
     pageSize = 30
@@ -67,7 +67,7 @@ export class <%= Nama %>ListComponent {
         this.loading = true
         this.<%= nama_object %>Service.<%= nama_object %>ControllerFindAll(
             {
-                filter: JSON.stringify(this.mitra),
+                filter: JSON.stringify(this.filter),
                 search_field: this.search_field,
                 search_keyword: this.search ?? undefined,
                 pageIndex: this.pageIndex,

@@ -14,3 +14,4 @@ npm run generate:crud contract-site
 
 GENERATOR REPORT
 npm run generate:report contract
+npm run generate:report contract-site
