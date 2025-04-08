@@ -15,6 +15,7 @@ import { environment } from 'src/environments/environment.prod';
 import { ApiModule } from 'src/sdk/core/api.module';
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { PesanService } from './services/pesan.service';
+import { DocumentModule } from '../views/lib/document/document.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -39,6 +40,7 @@ const MODULES = [
             }
         }),
         CommonModule,
+        DocumentModule,
         ...MODULES
     ],
     exports: [
@@ -48,6 +50,7 @@ const MODULES = [
         TimeAgoPipe,
         BreadcrumbsComponent,
         TranslateModule,
+        DocumentModule,
         ...MODULES
     ],
     providers: [
@@ -56,6 +59,6 @@ const MODULES = [
         PesanService
     ]
 })
-export class TampilanModule { 
-    
+export class TampilanModule {
+
 }

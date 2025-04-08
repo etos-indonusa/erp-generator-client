@@ -22,11 +22,7 @@
                                 <ng-template #tipsPencarian>
                                     <div>
                                         <ul>
-                                            <li>Nomor</li>
-                                            <li>Dibebankan Ke</li>
-                                            <li>Dibayarkan Ke</li>
-                                            <li>Uraian</li>
-                                            <li>Penjelasan</li>
+                                            <li *ngFor="let item of search_field">{{ item | translate }}</li>
                                         </ul>
                                     </div>
                                 </ng-template>
@@ -34,16 +30,193 @@
                         </nz-form-control>
                     </nz-form-item>
                 </div>
-                <div nz-col [nzXl]="{ span: 4}" [nzLg]="{ span: 6}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
-                    
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'durasiBulan' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.durasiBulanMin" name="durasiBulanMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.durasiBulanMax" name="durasiBulanMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
                 </div>
-                <div nz-col [nzXl]="{ span: 4}" [nzLg]="{ span: 6}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
-                    
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'feeSales' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.feeSalesMin" name="feeSalesMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.feeSalesMax" name="feeSalesMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
                 </div>
-                 
-                <!-- <div nz-col [nzXl]="{ span: 4}" [nzLg]="{ span: 6}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
-
-                </div> -->
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'idClient' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <nz-select [(ngModel)]="filter.idClient" name="idClient" nzAllowClear>
+                            <nz-option *ngFor="let item of listClient" [nzValue]="item.idClient" [nzLabel]="item.namaClient"></nz-option>
+                        </nz-select>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'idContractJenis' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <nz-select [(ngModel)]="filter.idContractJenis" name="idContractJenis" nzAllowClear>
+                            <nz-option *ngFor="let item of listContractJenis" [nzValue]="item.idContractJenis" [nzLabel]="item.namaContractJenis"></nz-option>
+                        </nz-select>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'idKantor' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <nz-select [(ngModel)]="filter.idKantor" name="idKantor" nzAllowClear>
+                            <nz-option *ngFor="let item of listKantor" [nzValue]="item.idKantor" [nzLabel]="item.namaKantor"></nz-option>
+                        </nz-select>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'isAutoInvoice' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                    <label nz-checkbox [(ngModel)]="filter.isAutoInvoice" name="isAutoInvoice">Yes</label> 
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'nilaiAkhir' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.nilaiAkhirMin" name="nilaiAkhirMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.nilaiAkhirMax" name="nilaiAkhirMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'nilaiBulanan' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.nilaiBulananMin" name="nilaiBulananMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.nilaiBulananMax" name="nilaiBulananMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'nilaiDiawal' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.nilaiDiawalMin" name="nilaiDiawalMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.nilaiDiawalMax" name="nilaiDiawalMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'nilaiKontrak' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.nilaiKontrakMin" name="nilaiKontrakMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.nilaiKontrakMax" name="nilaiKontrakMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'presentaseFee' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.presentaseFeeMin" name="presentaseFeeMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.presentaseFeeMax" name="presentaseFeeMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'tanggalAkhir' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <nz-range-picker
+                            [(ngModel)]="filter.tanggalAkhirRange"
+                            name="tanggalAkhirRange"
+                            nzFormat="YYYY-MM-DD"
+                            nzPlaceHolder="['Dari', 'Sampai']"
+                            style="width: 100%;">
+                        </nz-range-picker>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'tanggalKontrak' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <nz-range-picker
+                            [(ngModel)]="filter.tanggalKontrakRange"
+                            name="tanggalKontrakRange"
+                            nzFormat="YYYY-MM-DD"
+                            nzPlaceHolder="['Dari', 'Sampai']"
+                            style="width: 100%;">
+                        </nz-range-picker>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'tanggalMulai' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <nz-range-picker
+                            [(ngModel)]="filter.tanggalMulaiRange"
+                            name="tanggalMulaiRange"
+                            nzFormat="YYYY-MM-DD"
+                            nzPlaceHolder="['Dari', 'Sampai']"
+                            style="width: 100%;">
+                        </nz-range-picker>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                
+ 
                 <div nz-col nzSpan="24">
 
                     <nz-form-item>
@@ -68,30 +241,231 @@
             (nzQueryParams)="onQueryParamsChange($event)" nzSize="small">
             <thead>
                 <tr>
-                    <th nzWidth="10%" [nzSortFn]="true" nzColumnKey="status">Status</th>
-                    <th nzAlign="center" [nzSortFn]="true" nzColumnKey="nomor">Nomor</th>
-                    <th [nzSortFn]="true" nzColumnKey="id_voucher_jenis">Jenis</th>
-                    <!-- <th [nzSortFn]="true" nzColumnKey="bagian">Beban Bagian</th> -->
-                    <th [nzSortFn]="true" nzColumnKey="tujuan">Uraian</th>
-                    <th nzAlign="right" [nzSortFn]="true" nzColumnKey="jumlah">Jumlah</th>
-                    <th nzWidth="13%" nzAlign="right" [nzSortFn]="true" nzColumnKey="tanggal_transaksi">Tanggal</th>
+                    <th   [nzAlign]="'right'">#ID</th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="catatanKontrak">
+                        {{ 'catatanKontrak' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="createdAt">
+                        {{ 'createdAt' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="dokumenUrl">
+                        {{ 'dokumenUrl' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="durasiBulan">
+                        {{ 'durasiBulan' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="feeSales">
+                        {{ 'feeSales' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="isAutoInvoice">
+                        {{ 'isAutoInvoice' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="namaSales">
+                        {{ 'namaSales' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="nilaiAkhir">
+                        {{ 'nilaiAkhir' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="nilaiBulanan">
+                        {{ 'nilaiBulanan' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="nilaiDiawal">
+                        {{ 'nilaiDiawal' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="nilaiKontrak">
+                        {{ 'nilaiKontrak' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="nomorKontrak">
+                        {{ 'nomorKontrak' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="presentaseFee">
+                        {{ 'presentaseFee' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="refKontrakSebelumnya">
+                        {{ 'refKontrakSebelumnya' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="statusContract">
+                        {{ 'statusContract' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="tanggalAkhir">
+                        {{ 'tanggalAkhir' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="tanggalKontrak">
+                        {{ 'tanggalKontrak' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="tanggalMulai">
+                        {{ 'tanggalMulai' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="updatedAt">
+                        {{ 'updatedAt' | translate }}
+                     </th>
+                    
                     <th nzWidth="7%" [nzAlign]="'right'">Action</th>
                 </tr> 
             </thead>
             <tbody>
                 <ng-container *ngFor="let data of listOfData" style="vertical-align: top;">
                     <tr>
-                        <td [nzExpand]="expandSet.has(data.id_voucher)"
-                            (nzExpandChange)="onExpandChange(data.id_voucher, $event)">
-                            <nz-badge *ngIf="data.status!=null" nzColor="{{ data.status?.toLowerCase() | status }}"
-                                nzText="{{data.status?.toLowerCase() }}"></nz-badge>
+                        <td [nzExpand]="expandSet.has(data.idContract)"
+                            (nzExpandChange)="onExpandChange(data.idContract, $event)">
+                            <nz-badge *ngIf="data.idContract!=null" nzColor="{{ data.idContract?.toLowerCase() | status }}"
+                                nzText="{{data.idContract?.toLowerCase() }}"></nz-badge> {{ data.idContract }}
                         </td>
-                        <td nzAlign="center"><b>{{data.nomor}}</b></td>
-                        <td>{{data.voucher_jenis?.jenis}}</td>
-                        <!-- <td>{{data.bagian}}</td> -->
-                        <td>{{data.uraian}}</td>
-                        <td nzAlign="right">{{data.jumlah|currency:'Rp.'}}</td>
-                        <td nzAlign="right">{{data.tanggal_transaksi|date}}</td>
+                        
+                        
+                            <td>
+                                
+                                                        {{ data.catatanKontrak || '-' }}
+                                                            
+                            </td>
+                            
+                            <td>
+                                
+                                        {{ data.createdAt | date: 'short' }}
+                                            
+                            </td>
+                            
+                            <td>
+                                
+                                                        {{ data.dokumenUrl || '-' }}
+                                                            
+                            </td>
+                            
+                            <td>
+                                
+                                                        {{ data.durasiBulan || '-' }}
+                                                            
+                            </td>
+                            
+                            <td>
+                                
+                                                        {{ data.feeSales || '-' }}
+                                                            
+                            </td>
+                            
+                            <td>
+                                
+                                    <nz-tag *ngIf="data.isAutoInvoice" nzColor="blue">Ya</nz-tag>
+                                    <span *ngIf="!data.isAutoInvoice">-</span>
+                                    
+                            </td>
+                            
+                            <td>
+                                
+                                                        {{ data.namaSales || '-' }}
+                                                            
+                            </td>
+                            
+                            <td>
+                                
+                                                        {{ data.nilaiAkhir || '-' }}
+                                                            
+                            </td>
+                            
+                            <td>
+                                
+                                                        {{ data.nilaiBulanan || '-' }}
+                                                            
+                            </td>
+                            
+                            <td>
+                                
+                                                        {{ data.nilaiDiawal || '-' }}
+                                                            
+                            </td>
+                            
+                            <td>
+                                
+                                                        {{ data.nilaiKontrak || '-' }}
+                                                            
+                            </td>
+                            
+                            <td>
+                                
+                                                        {{ data.nomorKontrak || '-' }}
+                                                            
+                            </td>
+                            
+                            <td>
+                                
+                                                        {{ data.presentaseFee || '-' }}
+                                                            
+                            </td>
+                            
+                            <td>
+                                
+                                                        {{ data.refKontrakSebelumnya || '-' }}
+                                                            
+                            </td>
+                            
+                            <td>
+                                
+                                                        {{ data.statusContract || '-' }}
+                                                            
+                            </td>
+                            
+                            <td>
+                                
+                                        {{ data.tanggalAkhir | date: 'short' }}
+                                            
+                            </td>
+                            
+                            <td>
+                                
+                                        {{ data.tanggalKontrak | date: 'short' }}
+                                            
+                            </td>
+                            
+                            <td>
+                                
+                                        {{ data.tanggalMulai | date: 'short' }}
+                                            
+                            </td>
+                            
+                            <td>
+                                
+                                        {{ data.updatedAt | date: 'short' }}
+                                            
+                            </td>
+                            
+                            <td>
+                                
+                                                        {{ data.client || '-' }}
+                                                            
+                            </td>
+                            
+                            <td>
+                                
+                                                        {{ data.contractJenis || '-' }}
+                                                            
+                            </td>
+                            
+                            <td>
+                                
+                                                        {{ data.kantor || '-' }}
+                                                            
+                            </td>
+                            
+
                         <td [nzAlign]="'right'">
                             <button nz-button nz-dropdown [nzDropdownMenu]="menu">
                                 Actions
@@ -110,7 +484,7 @@
                                     <li nz-menu-item nz-menu-item nz-popconfirm class="text-danger"
                                         *ngIf="data.status=='draft'"
                                         nzPopconfirmTitle="Apakah Anda yakin akan menghapus data ini?"
-                                        nzPopconfirmPlacement="bottom" (nzOnConfirm)="delete(data.id_voucher)"><span
+                                        nzPopconfirmPlacement="bottom" (nzOnConfirm)="delete(data.idContract)"><span
                                             nz-icon nzType="delete" nzTheme="outline"></span>
                                         <a class="m-1 text-danger">&nbsp;&nbsp;Delete</a>
                                     </li>
@@ -118,7 +492,7 @@
                             </nz-dropdown-menu>
                         </td>
                     </tr>
-                    <tr [nzExpand]="expandSet.has(data.id_voucher)">
+                    <tr [nzExpand]="expandSet.has(data.idContract)">
                         <app-contract-share-header [data]="data"></app-contract-share-header> 
                     </tr>
                 </ng-container>
@@ -144,11 +518,7 @@
             <ng-template #tipsPencarian>
                 <div>
                     <ul>
-                        <li>Nomor</li>
-                        <li>Dibebankan Ke</li>
-                        <li>Dibayarkan Ke</li>
-                        <li>Uraian</li>
-                        <li>Penjelasan</li>
+                        <li *ngFor="let item of search_field">{{ item | translate }}</li>
                     </ul>
                 </div>
             </ng-template>

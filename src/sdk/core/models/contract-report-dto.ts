@@ -23,7 +23,7 @@ export interface ContractReportDto {
   nomorKontrak?: string;
   presentaseFee?: number;
   refKontrakSebelumnya?: string;
-  statusKontrak?: string;
+  statusContract?: string;
   tanggalAkhir?: string;
   tanggalKontrak?: string;
   tanggalMulai?: string;

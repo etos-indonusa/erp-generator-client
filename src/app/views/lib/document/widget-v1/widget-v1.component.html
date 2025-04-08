@@ -1,0 +1,23 @@
+<div class="card document-card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h6 class="fw-bold mt-1">DOCUMENTS</h6>
+        <a href="#" class="upload-link" (click)="add()">UPLOAD NEW</a>
+    </div>
+
+    <div class="card-body">
+        <div *ngFor="let doc of listOfData; let i = index" class="document-item" (click)="download(doc)">
+            <span class="doc-date">{{ doc.tanggal | date: 'dd/MM/yyyy' }}</span>
+            <span class="doc-name">{{ doc.fileName }}</span>
+            <button nz-button nzType="text" nzShape="circle" (click)="delete(doc)">
+                <i nz-icon nzType="delete" nzTheme="outline"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="card-footer d-flex justify-content-between align-items-center">
+        <nz-pagination [(nzPageIndex)]="pageIndex" [nzTotal]="total" [nzPageSize]="pageSize" [nzSize]="'small'"
+            (nzPageIndexChange)="onPageChange($event)">
+        </nz-pagination>
+        <a href="#" class="download-link" >DOWNLOAD ALL</a>
+    </div>
+</div>

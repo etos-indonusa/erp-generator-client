@@ -71,7 +71,7 @@ export const ContractReportFormSchema = {
     "default": "",
     "required": false
   },
-  "statusKontrak": {
+  "statusContract": {
     "default": "",
     "required": false
   },

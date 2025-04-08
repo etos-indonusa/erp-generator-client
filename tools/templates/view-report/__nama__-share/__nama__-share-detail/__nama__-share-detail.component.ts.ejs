@@ -1,11 +1,59 @@
 import { Component, Input } from '@angular/core';
-import type { <%= Nama %>Dto } from 'src/sdk/core/models';
+import { NzDrawerService } from 'ng-zorro-antd/drawer';
+import { AclService } from 'src/app/services/acl.service';
+import { TokenService } from 'src/app/services/token.service';
+import { environment } from 'src/environments/environment.prod';
+import {   <%= Nama %>ReportDto } from 'src/sdk/core/models';
+import { <%= Nama %>ReportService } from 'src/sdk/core/services';
 
 @Component({
     selector: 'app-<%= nama %>-share-detail',
     templateUrl: './<%= nama %>-share-detail.component.html',
     styleUrl: './<%= nama %>-share-detail.component.scss'
 })
-export class <%= Nama %>ShareDetailComponent {
-    @Input('<%= nama_object %>') data: <%= Nama %>Dto = <%- dtoDefaultObject %>;
+export class <%= Nama %>ShareDetailComponent { 
+    @Input('id<%= Nama %>') id<%= Nama %>: string // replace dengan id+Nama
+    constructor(
+        private <%= nama_object %>ReportService: <%= Nama %>ReportService,
+
+        private acl: AclService,
+        private drawerService: NzDrawerService,
+        private tokenService: TokenService,
+
+        /* tambahkan disnini untuk sub lainnya */
+        /* tambahkan disnini untuk sub lainnya */
+    ) { }
+
+    ngOnInit() {
+        this.getData();
+    }
+    reload = 0;
+    is_loading: boolean = false;
+    <%= nama_object %>: <%= Nama %>ReportDto | null = null; //nanti dinamis dari reportDto
+
+    getData() {
+        this.is_loading = true;
+        this.<%= nama_object %>ReportService.<%= nama_object %>ReportControllerFindOne({ id: this.id<%= Nama %> }).subscribe(
+            data => {
+                this.<%= nama_object %> = data.data || null;
+                this.is_loading = false;
+                this.reload++
+            },
+            err => {
+                this.is_loading = false;
+            }
+        )
+    }
+
+    // artinya one to many 
+    getListData()
+    {
+
+    }
+
+    print() {
+    let url = environment.srv_document + '/pdf/<%= nama_object %>/' + this.id<%= Nama %> + '?token=' + this.tokenService.getToken();
+        window.open(url, "_blank");
+    }
+
 }

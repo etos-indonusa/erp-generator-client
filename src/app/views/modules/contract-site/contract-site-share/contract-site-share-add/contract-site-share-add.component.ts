@@ -4,8 +4,8 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { ContractSiteFormSchema } from 'src/sdk/core/form-schema/contract-site.form-schema'; 
-import type  { ContractSiteDto } from 'src/sdk/core/models';
+import { ContractSiteFormSchema } from 'src/sdk/core/form-schema/contract-site.form-schema';
+import type { ContractSiteDto } from 'src/sdk/core/models';
 import { ContractSiteService } from 'src/sdk/core/services';
 
 import { ClientSiteService } from 'src/sdk/core/services';
@@ -17,16 +17,16 @@ import { ContractService } from 'src/sdk/core/services';
     styleUrl: './contract-site-share-add.component.scss'
 })
 export class ContractSiteShareAddComponent {
-    @Input('contractSite') contractSite: ContractSiteDto = {
-  idClientSite: '',
-  idContract: '',
-  idContractSite: ''
-};
+    @Input('contractSite' ) contractSite: ContractSiteDto = {
+        idClientSite: '',
+        idContract: '',
+        idContractSite: ''
+    };
     form!: FormGroup;
 
     ngOnChanges(changes: SimpleChanges): void {
-        if(changes.contractSite && this.contractSite.idContractSite) {
-        this.form?.patchValue(this.contractSite);
+        if (changes.contractSite && this.contractSite.idContractSite) {
+            this.form?.patchValue(this.contractSite);
         }
     }
     constructor(
@@ -34,9 +34,9 @@ export class ContractSiteShareAddComponent {
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
         private contractSiteService: ContractSiteService,
-                        private clientSiteService: ClientSiteService,
-                private contractService: ContractService,
-                    ) { }
+        private clientSiteService: ClientSiteService,
+        private contractService: ContractService,
+    ) { }
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, ContractSiteFormSchema, {
@@ -44,27 +44,27 @@ export class ContractSiteShareAddComponent {
             catatan: [Validators.maxLength(200)],
         });
 
-                            this.getAllClientSite();
-                    this.getAllContract();
-                    }
-    
+        this.getAllClientSite();
+        this.getAllContract();
+    }
+
     listClientSite: any[] = [];
-    
+
     listContract: any[] = [];
-    
+
 
     // untuk fungsi get ALL relation
-            getAllClientSite() {
-    this.clientSiteService.clientSiteControllerFindAll().subscribe(
-      data => this.listClientSite = data.data ?? []
-    );
-  }
-        getAllContract() {
-    this.contractService.contractControllerFindAll().subscribe(
-      data => this.listContract = data.data ?? []
-    );
-  }
-        
+    getAllClientSite() {
+        this.clientSiteService.clientSiteControllerFindAll().subscribe(
+            data => this.listClientSite = data.data ?? []
+        );
+    }
+    getAllContract() {
+        this.contractService.contractControllerFindAll().subscribe(
+            data => this.listContract = data.data ?? []
+        );
+    }
+
     submit(): void {
         const labelMap = extractLabels(ContractSiteFormSchema);
 

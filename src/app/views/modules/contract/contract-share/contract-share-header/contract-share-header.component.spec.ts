@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContractShareHeaderComponent } from './contract-share-header.component';
+import { ContractShareHeaderComponent } from './contract-share-header.component.ts.ejs';
 
 describe('ContractShareHeaderComponent', () => {
   let component: ContractShareHeaderComponent;

@@ -41,7 +41,7 @@ function renderName(input: string): string {
 // ⬇️ Fungsi ambil field string dari DTO
 function getSearchableFieldsFromDto(dtoPath: string): string[] {
     const dtoContent = fs.readFileSync(dtoPath, 'utf-8');
-    const regex = /(\w+):\s+(string|String);/g;
+    const regex = /^\s*(\w+)\??\s*:\s*(string|String)\s*[;|,]?\s*(\/\/.*)?$/gm;
 
 
     const blacklistPatterns = [
@@ -50,13 +50,15 @@ function getSearchableFieldsFromDto(dtoPath: string): string[] {
         /^created[A-Z]/,    // camelCase seperti idUsers 
         /^updated[A-Z]/,    // camelCase seperti idUsers 
         /^date[A-Z]/,    // camelCase seperti idUsers 
+        /^ref[A-Z]/,    // camelCase seperti idUsers 
+        /^status[A-Z]/,    // camelCase seperti idUsers 
         /^tanggal[A-Z]/,    // camelCase seperti idUsers 
     ];
 
     const fields: string[] = [];
     let match;
     while ((match = regex.exec(dtoContent)) !== null) {
-        const name = match[1];
+        const name = match[1];  
         const isBlacklisted = blacklistPatterns.some(rx => rx.test(name));
         if (!isBlacklisted) {
             fields.push(name);
@@ -351,7 +353,7 @@ function getJoinAndIncludeFromDto(dtoPath: string): {
         joinWhere: {},
         include: []
     };
-    
+
     let match;
     while ((match = regex.exec(content)) !== null) {
         const field = match[1];
@@ -371,7 +373,66 @@ function toSnakeCase(str: string) {
         .toLowerCase();
 }
 
+export function getFilterFieldsFromDto(dtoPath: string, idPrimary: string = ''): {
+    filterLines: string;
+    smartFilterFields: { key: string; type: string }[];
+    dtoFields: { name: string; type: string }[];
+} {
+    const content = fs.readFileSync(dtoPath, 'utf-8');
+    const fieldRegex = /(\w+)\??:\s*(string|number|boolean|Date|string\[\])/g;
+    const dtoFields: { name: string; type: string }[] = [];
+
+    let match;
+    while ((match = fieldRegex.exec(content)) !== null) {
+        const name = match[1];
+        const typeRaw = match[2].toLowerCase();
+
+        // ⛔ Skip if primary or unwanted
+        if (name === `id${Nama}` || name === 'createdAt' || name === 'updatedAt') continue;
+         
+        // ✅ Include rules
+        const type =
+            name.startsWith('id')   ? 'relation' :
+                name.startsWith('is') ? 'boolean' :
+                    typeRaw === 'number' ? 'number' :
+                        name.toLowerCase().includes('tanggal') || name.toLowerCase().includes('date') ? 'date' :
+                            '';
+
+        if (type) {
+            dtoFields.push({ name, type });
+        }
+    }
+
+    const filterFields: string[] = [];
+    const smartFilterFields: { key: string; type: string }[] = [];
+
+    for (const field of dtoFields) {
+        smartFilterFields.push({ key: field.name, type: field.type });
+
+        if (field.type === 'relation') {
+            filterFields.push(`${field.name}: null`);
+        } else if (field.type === 'boolean') {
+            filterFields.push(`${field.name}: null`);
+        } else if (field.type === 'number') {
+            filterFields.push(`${field.name}Min: null`);
+            filterFields.push(`${field.name}Max: null`);
+        } else if (field.type === 'date') {
+            filterFields.push(`${field.name}Range: null`);
+        }
+    }
+
+    return {
+        filterLines: filterFields.join(',\n  '),
+        smartFilterFields,
+        dtoFields
+    };
+}
+
+
+
+
 const id_primary = toSnakeCase(nama_object)
+const idPrimary = toSnakeCase(nama_object)
 
 
 // ⬇️ Ambil field dari DTO jika ada
@@ -380,14 +441,18 @@ const dtoPath_report = path.resolve('src/sdk/core/models', `${nama}-report-dto.t
 let searchFields: string[] = [];
 let searchFields_report: string[] = [];
 
-if (fs.existsSync(dtoPath_report)) {
-    searchFields = getSearchableFieldsFromDto(dtoPath_report);
-    console.log(`🔍 Found DTO: ${dtoPath_report
-        }`);
-    console.log(`🔎 Searchable fields:`, dtoPath_report);
-} else {
-    console.warn(`⚠️ DTO tidak ditemukan di: ${dtoPath_report
-        }`);
+ 
+
+// UNTUK FILTER DINAMIS 
+let filterLines = '';
+let smartFilterFields: { key: string; type: string }[] = [];
+let dtoFields: { name: string; type: string }[] = [];
+
+if (fs.existsSync(dtoPath)) {
+    const filterAuto = getFilterFieldsFromDto(dtoPath); 
+    filterLines = filterAuto.filterLines;
+    smartFilterFields = filterAuto.smartFilterFields;
+    dtoFields = filterAuto.dtoFields; 
 }
 
 let autoJoinWhere = {};
@@ -454,10 +519,9 @@ function getSmartDisplayFieldsFromDtoV2(dtoPath: string, visited: Set<string> = 
         if (/^id[A-Z]/.test(namaField) || /^id_/.test(namaField)) {
             const baseName = namaField.replace(/^id_/, '').replace(/^id/, '');
             const objectField = baseName.charAt(0).toLowerCase() + baseName.slice(1);
-            if (namaField != `id${Nama}`)
-            {
+            if (namaField != `id${Nama}`) {
                 idFields.add(objectField);
-                
+
             }
             continue;
         }
@@ -514,7 +578,7 @@ function toKebabCase(str: string) {
 
 let smartDisplayFields: any[] = [];
 if (fs.existsSync(dtoPath)) {
-    smartDisplayFields = getSmartDisplayFieldsFromDtoV2(dtoPath); 
+    smartDisplayFields = getSmartDisplayFieldsFromDtoV2(dtoPath);
 }
 
 
@@ -528,7 +592,10 @@ processDirectory(templateDir, outputDir, {
     smartDisplayFields, nama_object_report,
     autoJoinWhere,
     autoInclude,
-    id_primary
+    id_primary,
+    filterLines,
+    smartFilterFields,
+    dtoFields
 });
 injectToModulesRouting(nama);
 injectToSidebarMenu(nama);

@@ -44,6 +44,26 @@
             
 
         <nz-form-item>
+            <nz-form-label nzFor="idContractJenis">{{ 'idContractJenis' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idContractJenis" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idContractJenis' | translate }}"> 
+                    <nz-option *ngFor="let item of listContractJenis" nzLabel="{{ item.idContractJenis }}" nzValue="{{ item.idContractJenis }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idKantor">{{ 'idKantor' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idKantor" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idKantor' | translate }}"> 
+                    <nz-option *ngFor="let item of listKantor" nzLabel="{{ item.idKantor }}" nzValue="{{ item.idKantor }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
             <nz-form-control>
                 <label nz-checkbox formControlName="isAutoInvoice">{{ 'isAutoInvoice' | translate }}</label>
             </nz-form-control>
@@ -115,9 +135,9 @@
             
 
         <nz-form-item>
-            <nz-form-label nzFor="statusKontrak">{{ 'statusKontrak' | translate }}</nz-form-label>
+            <nz-form-label nzFor="statusContract">{{ 'statusContract' | translate }}</nz-form-label>
             <nz-form-control>
-                <input nz-input  id="statusKontrak" formControlName="statusKontrak" placeholder="Masukkan {{ 'statusKontrak' | translate }}" />
+                <input nz-input  id="statusContract" formControlName="statusContract" placeholder="Masukkan {{ 'statusContract' | translate }}" />
             </nz-form-control>
         </nz-form-item>
             

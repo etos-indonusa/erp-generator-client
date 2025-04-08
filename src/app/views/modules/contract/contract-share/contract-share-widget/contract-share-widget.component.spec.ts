@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContractShareWidgetComponent } from './contract-share-widget.component';
+import { ContractShareWidgetComponent } from './contract-share-widget.component.ts.ejs';
 
 describe('ContractShareWidgetComponent', () => {
   let component: ContractShareWidgetComponent;

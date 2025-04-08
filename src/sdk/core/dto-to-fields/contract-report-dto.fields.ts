@@ -18,7 +18,7 @@ export const ContractReportDtoFields: Record<string, 'string' | 'boolean' | 'num
   "nomorKontrak": "string",
   "presentaseFee": "number",
   "refKontrakSebelumnya": "string",
-  "statusKontrak": "string",
+  "statusContract": "string",
   "tanggalAkhir": "string",
   "tanggalKontrak": "string",
   "tanggalMulai": "string",

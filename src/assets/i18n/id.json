@@ -52,5 +52,6 @@
   "biayaBulanan": "Biaya Bulanan",
   "biayaDiawal": "Biaya Diawal",
   "jumlahJadwalPerBulan": "Jumlah Jadwal Per Bulan",
-  "statusContractSite": "Status Contract Site"
+  "statusContractSite": "Status Contract Site",
+  "statusContract": "Status Contract"
 }

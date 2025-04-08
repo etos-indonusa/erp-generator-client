@@ -12,6 +12,8 @@ import { ContractSiteReportService, ContractSiteService } from 'src/sdk/core/ser
 import { ContractSiteShareAddComponent } from '../contract-site-share-add/contract-site-share-add.component';
 import { ClientSiteService } from 'src/sdk/core/services';
 import { ContractService } from 'src/sdk/core/services';
+import { ContractSiteShareDetailComponent } from '../contract-site-share-detail/contract-site-share-detail.component';
+import { ContractSiteDto } from 'src/sdk/core/models';
 
 
 @Component({
@@ -33,9 +35,9 @@ export class ContractSiteShareListComponent {
         private contractSiteService: ContractSiteService,
         private tokenService: TokenService,
 
-                        private clientSiteService: ClientSiteService,
-                private contractService: ContractService,
-                    ) {}
+        private clientSiteService: ClientSiteService,
+        private contractService: ContractService,
+    ) { }
 
     ngOnChanges(changes: SimpleChanges): void {
         this.filter.status = this.status == 'semua' ? null : this.status;
@@ -46,28 +48,28 @@ export class ContractSiteShareListComponent {
         this.currentUser = this.userInfoService.getUser;
         this.resetParam();
 
-                            this.getAllClientSite();
-                    this.getAllContract();
-                    }
+        this.getAllClientSite();
+        this.getAllContract();
+    }
 
-    
+
     listClientSite: any[] = [];
-    
+
     listContract: any[] = [];
-    
+
 
     // untuk fungsi get ALL relation
-            getAllClientSite() {
-    this.clientSiteService.clientSiteControllerFindAll().subscribe(
-      data => this.listClientSite = data.data ?? []
-    );
-  }
-        getAllContract() {
-    this.contractService.contractControllerFindAll().subscribe(
-      data => this.listContract = data.data ?? []
-    );
-  }
-        
+    getAllClientSite() {
+        this.clientSiteService.clientSiteControllerFindAll().subscribe(
+            data => this.listClientSite = data.data ?? []
+        );
+    }
+    getAllContract() {
+        this.contractService.contractControllerFindAll().subscribe(
+            data => this.listContract = data.data ?? []
+        );
+    }
+
     currentUser: any = {};
     filter: any = {
         periode: 'month'
@@ -122,26 +124,26 @@ export class ContractSiteShareListComponent {
             body: {
                 filter: { id_contract_site: { isNotNull: 'aktif' } },
                 joinWhere: {
-  "client_site": {},
-  "contract": {},
-  "contract_site": {}
-},
+                    "client_site": {},
+                    "contract": {},
+                    "contract_site": {}
+                },
                 search_field: this.search_field,
                 search_keyword: this.search || undefined,
-                include:  [
-  {
-    "name": "client_site",
-    "type": "single"
-  },
-  {
-    "name": "contract",
-    "type": "single"
-  },
-  {
-    "name": "contract_site",
-    "type": "single"
-  }
-],
+                include: [
+                    {
+                        "name": "client_site",
+                        "type": "single"
+                    },
+                    {
+                        "name": "contract",
+                        "type": "single"
+                    },
+                    {
+                        "name": "contract_site",
+                        "type": "single"
+                    }
+                ],
                 sortKey: this.sortKey ?? undefined,
                 sortValue: this.validSortValue,
                 pageIndex: this.pageIndex,
@@ -165,14 +167,13 @@ export class ContractSiteShareListComponent {
         this.sortValue = (this.currentSort && this.currentSort.value) || 'asc';
         this.searchData();
     }
-
     add() {
         if (!this.acl.can('contract-site', 'can_add')) return;
 
         const drawerRef = this.drawerService.create<ContractSiteShareAddComponent, {}, string>({
             nzTitle: 'Add',
             nzContent: ContractSiteShareAddComponent,
-            nzWidth: (window.innerWidth * 0.9) + 'px',
+            nzWidth: (500) + 'px',
         });
 
         drawerRef.afterClose.subscribe(() => {
@@ -180,9 +181,25 @@ export class ContractSiteShareListComponent {
         });
     }
 
-    update(data: any) {}
-    delete(id: string) {}
-    detail(filter: any) {}
+    detail(data:ContractSiteDto) {
+        if (!this.acl.can('contract-site', 'can_list')) return;
+
+        const drawerRef = this.drawerService.create<ContractSiteShareDetailComponent, {}, string>({
+            nzTitle: 'Detail',
+            nzContent: ContractSiteShareDetailComponent,
+            nzWidth: (window.innerWidth * 0.8) + 'px',
+            nzContentParams:{
+                idContractSite:data.idContractSite
+            }
+        });
+
+        drawerRef.afterClose.subscribe(() => {
+            this.searchData();
+        });
+    }
+
+    update(data: any) { }
+    delete(id: string) { }
 
     print() {
         let url = environment.srv_document + '/pdfAkutansi/vouchers?filter=' + JSON.stringify(this.filter) + '&token=' + this.tokenService.getToken();

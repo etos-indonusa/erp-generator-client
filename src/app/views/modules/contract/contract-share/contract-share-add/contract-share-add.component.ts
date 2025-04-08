@@ -9,6 +9,8 @@ import type  { ContractDto } from 'src/sdk/core/models';
 import { ContractService } from 'src/sdk/core/services';
 
 import { ClientService } from 'src/sdk/core/services';
+import { ContractJenisService } from 'src/sdk/core/services';
+import { KantorService } from 'src/sdk/core/services';
 
 @Component({
     selector: 'app-contract-share-add',
@@ -33,6 +35,8 @@ export class ContractShareAddComponent {
         private nzDrawerRef: NzDrawerRef<string>,
         private contractService: ContractService,
                         private clientService: ClientService,
+                private contractJenisService: ContractJenisService,
+                private kantorService: KantorService,
                     ) { }
 
     ngOnInit(): void {
@@ -42,15 +46,31 @@ export class ContractShareAddComponent {
         });
 
                             this.getAllClient();
+                    this.getAllContractJenis();
+                    this.getAllKantor();
                     }
     
     listClient: any[] = [];
+    
+    listContractJenis: any[] = [];
+    
+    listKantor: any[] = [];
     
 
     // untuk fungsi get ALL relation
             getAllClient() {
     this.clientService.clientControllerFindAll().subscribe(
       data => this.listClient = data.data ?? []
+    );
+  }
+        getAllContractJenis() {
+    this.contractJenisService.contractJenisControllerFindAll().subscribe(
+      data => this.listContractJenis = data.data ?? []
+    );
+  }
+        getAllKantor() {
+    this.kantorService.kantorControllerFindAll().subscribe(
+      data => this.listKantor = data.data ?? []
     );
   }
         

@@ -20,7 +20,7 @@ export class ContractShareWidgetComponent {
             }
         }
     }
-
+ 
     ngOnInit(): void {
     }
 
@@ -40,12 +40,12 @@ export class ContractShareWidgetComponent {
                     select: JSON.stringify([
                         {
                             type: "count",
-                            field:"status_kontrak" ,
+                            field:"status_contract" ,
                             alias: "total" 
                         }
                     ]),
-                    groupBy: JSON.stringify(['status_kontrak']),
-                    sortKey: "status_kontrak",
+                    groupBy: JSON.stringify(['status_contract']),
+                    sortKey: "status_contract",
                     sortValue: "ASC"
                 }
             })

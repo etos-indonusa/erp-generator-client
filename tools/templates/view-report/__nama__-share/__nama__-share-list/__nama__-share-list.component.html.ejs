@@ -22,7 +22,7 @@
                                 <ng-template #tipsPencarian>
                                     <div>
                                         <ul>
-                                            <li *ngFor="let item of search_field">{{ item }}</li>
+                                            <li *ngFor="let item of search_field">{{ item | translate }}</li>
                                         </ul>
                                     </div>
                                 </ng-template>
@@ -30,16 +30,41 @@
                         </nz-form-control>
                     </nz-form-item>
                 </div>
-                <div nz-col [nzXl]="{ span: 4}" [nzLg]="{ span: 6}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
-                    
+                <% dtoFields.forEach(field => { -%>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ '<%= field.name %>' | translate }}</nz-form-label>
+                    <nz-form-control>
+                        <% if (field.type === 'relation') { -%>
+                        <nz-select [(ngModel)]="filter.<%= field.name %>" name="<%= field.name %>" nzAllowClear>
+                            <nz-option *ngFor="let item of list<%= field.name.replace(/^id/, '').replace(/^\w/, c => c.toUpperCase()) %>" [nzValue]="item.<%= field.name %>" [nzLabel]="item.nama<%= field.name.replace(/^id/, '').replace(/^\w/, c => c.toUpperCase()) %>"></nz-option>
+                        </nz-select>
+                        <% } else if (field.type === 'number') { -%>
+                        <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.<%= field.name %>Min" name="<%= field.name %>Min" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.<%= field.name %>Max" name="<%= field.name %>Max" placeholder="Max" />
+                            </div>
+                        </div>
+                        <% } else if (field.name.startsWith('is')) { -%>
+                            <label nz-checkbox [(ngModel)]="filter.<%= field.name %>" name="<%= field.name %>">Yes</label> 
+                        <% } else if (field.type === 'date') { -%>
+                        <nz-range-picker
+                            [(ngModel)]="filter.<%= field.name %>Range"
+                            name="<%= field.name %>Range"
+                            nzFormat="YYYY-MM-DD"
+                            nzPlaceHolder="['Dari', 'Sampai']"
+                            style="width: 100%;">
+                        </nz-range-picker>
+                        <% } -%>
+                    </nz-form-control>
+                    </nz-form-item>
                 </div>
-                <div nz-col [nzXl]="{ span: 4}" [nzLg]="{ span: 6}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
-                    
-                </div>
-                 
-                <!-- <div nz-col [nzXl]="{ span: 4}" [nzLg]="{ span: 6}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
+                <% }); -%>
 
-                </div> -->
+ 
                 <div nz-col nzSpan="24">
 
                     <nz-form-item>
@@ -149,7 +174,7 @@
             <ng-template #tipsPencarian>
                 <div>
                     <ul>
-                        <li *ngFor="let item of search_field">{{ item }}</li>
+                        <li *ngFor="let item of search_field">{{ item | translate }}</li>
                     </ul>
                 </div>
             </ng-template>

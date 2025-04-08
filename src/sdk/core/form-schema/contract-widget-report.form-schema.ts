@@ -67,7 +67,7 @@ export const ContractWidgetReportFormSchema = {
     "default": "",
     "required": false
   },
-  "statusKontrak": {
+  "statusContract": {
     "default": "",
     "required": false
   },

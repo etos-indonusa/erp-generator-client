@@ -1,173 +1,83 @@
+<nz-spin nzTip="Loading..." [nzSpinning]="is_loading">
 
-  <div class="mb-3">
-    <div class="text-secondary small">Catatan Kontrak</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.catatanKontrak || '-' }}
-      
-    </div>
-  </div>
+    <div class="card border-0 mb-1 border-left-5 border-theme card   bg-white">
+        <div class="card-body p-2">
+            <div class="row">
+                <div class="col-lg-2">
+                    <p class="text-secondary  mb-1">Status</p>
+                    <h3 class="fw-bold text-capitalize" style.color="{{ contract?.statusContract| status }}">   {{ contract?.statusContract}}</h3>
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-secondary  mb-1">Nomor</p>
+                    <!-- <h3 class="fw-bold  ">{{contract?.nomorContract}}</h3> -->
+                </div>
+                <div class="col" style="text-align: right;">
+                    <p class="text-secondary mb-1">&nbsp;</p>
 
-  <div class="mb-3">
-    <div class="text-secondary small">Created At</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.createdAt ? (data.createdAt | date:'short') : '-' }}
-      
-    </div>
-  </div>
+                    <button nz-button nzType="primary" style="margin-right: 5px;" nz-dropdown [nzDropdownMenu]="menu4">
+                        <span nz-icon nzType="printer"></span>
+                        Print
+                        <span nz-icon nzType="down"></span>
+                    </button>
+                    <nz-dropdown-menu #menu4="nzDropdownMenu">
+                        <ul nz-menu>
+                            <li nz-menu-item (click)="print()">Print contract</li>
+                        </ul>
+                    </nz-dropdown-menu>
 
-  <div class="mb-3">
-    <div class="text-secondary small">Dokumen Url</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.dokumenUrl || '-' }}
-      
-    </div>
-  </div>
+                    <!-- <button *ngIf="contract.status=='close' || contract.status=='cicil'" nz-button
+                        nzType="primary" (click)="up()" style="margin-right: 5px;">
+                        <span nz-icon nzType="calculator" nzTheme="outline"></span>
+                        Bayar
+                    </button> -->
+                     
 
-  <div class="mb-3">
-    <div class="text-secondary small">Durasi Bulan</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.durasiBulan || '-' }}
-      
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+    <!-- <approval-flow-log-widget [module-id]="contract.id_contractSite" [module]="'contract'"
+        [data_flow]="contract.id_data_flow"
+        [flow-detail]="contract.id_data_flow_detail"></approval-flow-log-widget> -->
+        <br>
+    <div class="card bg-white p-3" style="box-shadow: none;">
+        <div class="row">
+            <div class="col-md-8">
+                <app-contract-share-header [data]="contract"></app-contract-share-header>
+            </div>
+            <div class="col-md-4">
+                <document-widget-v1 [for-module-id]="contract?.idContract" [for-module]="'contract_site'"  [enable-crud]="true"></document-widget-v1>
+                    
+                <!-- <approval-mode-widget *ngIf="contract.status??'-'.toLowerCase() !='close'"
+                    style="margin-right: 5px;" [module-id]="contract.id_contractSite" [module]="'contract'"
+                    [flow-id]="contract.id_data_flow" [flow-detail]="contract.id_data_flow_detail"
+                    (reload)="approve($event)">
+                </approval-mode-widget> -->
 
-  <div class="mb-3">
-    <div class="text-secondary small">Fee Sales</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.feeSales || '-' }}
-      
-    </div>
-  </div>
+            </div>
+        </div>
 
-  <div class="mb-3">
-    <div class="text-secondary small">Is Auto Invoice</div>
-    <div class="fw-semibold text-dark">
-      
-        <nz-tag *ngIf="data.isAutoInvoice" nzColor="blue">Ya</nz-tag>
-        <span *ngIf="!data.isAutoInvoice">-</span>
-      
-    </div>
-  </div>
 
-  <div class="mb-3">
-    <div class="text-secondary small">Nama Sales</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.namaSales || '-' }}
-      
-    </div>
-  </div>
+        <br>
 
-  <div class="mb-3">
-    <div class="text-secondary small">Nilai Akhir</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.nilaiAkhir || '-' }}
-      
-    </div>
-  </div>
 
-  <div class="mb-3">
-    <div class="text-secondary small">Nilai Bulanan</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.nilaiBulanan || '-' }}
-      
-    </div>
-  </div>
+        <div class="site-page-header-ghost-wrapper">
+            <nz-page-header [nzGhost]="false">
+                <nz-page-header-title>Item</nz-page-header-title>
+            </nz-page-header>
+        </div>
 
-  <div class="mb-3">
-    <div class="text-secondary small">Nilai Diawal</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.nilaiDiawal || '-' }}
-      
-    </div>
-  </div>
+        <div class="card">
+            <div class="card-body p-2">
+                 
+            </div>
+        </div>
 
-  <div class="mb-3">
-    <div class="text-secondary small">Nilai Kontrak</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.nilaiKontrak || '-' }}
-      
+        
     </div>
-  </div>
 
-  <div class="mb-3">
-    <div class="text-secondary small">Nomor Kontrak</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.nomorKontrak || '-' }}
-      
-    </div>
-  </div>
 
-  <div class="mb-3">
-    <div class="text-secondary small">Presentase Fee</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.presentaseFee || '-' }}
-      
-    </div>
-  </div>
 
-  <div class="mb-3">
-    <div class="text-secondary small">Ref Kontrak Sebelumnya</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.refKontrakSebelumnya || '-' }}
-      
-    </div>
-  </div>
-
-  <div class="mb-3">
-    <div class="text-secondary small">Status Kontrak</div>
-    <div class="fw-semibold text-dark">
-      
-        <nz-tag  nzColor="green">statusKontrak </nz-tag> 
-      
-    </div>
-  </div>
-
-  <div class="mb-3">
-    <div class="text-secondary small">Tanggal Akhir</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.tanggalAkhir ? (data.tanggalAkhir | date:'short') : '-' }}
-      
-    </div>
-  </div>
-
-  <div class="mb-3">
-    <div class="text-secondary small">Tanggal Kontrak</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.tanggalKontrak ? (data.tanggalKontrak | date:'short') : '-' }}
-      
-    </div>
-  </div>
-
-  <div class="mb-3">
-    <div class="text-secondary small">Tanggal Mulai</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.tanggalMulai ? (data.tanggalMulai | date:'short') : '-' }}
-      
-    </div>
-  </div>
-
-  <div class="mb-3">
-    <div class="text-secondary small">Updated At</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.updatedAt || '-' }}
-      
-    </div>
-  </div>
+</nz-spin>
+<br>
 

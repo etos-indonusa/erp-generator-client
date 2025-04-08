@@ -1,0 +1,59 @@
+.document-card {
+    width: 100%;
+    border-radius: 8px;
+    min-height: 485px;
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    padding: 12px 16px;
+}
+
+.card-body {
+    padding: 2px;
+}
+
+.upload-link {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.upload-link:hover {
+    text-decoration: underline;
+}
+
+.document-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.doc-date {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.doc-name {
+    font-size: 14px;
+    font-weight: 500;
+    flex: 1;
+    margin-left: 10px;
+}
+
+.card-footer {
+    padding: 12px 16px;
+}
+
+.download-link {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.download-link:hover {
+    text-decoration: underline;
+}

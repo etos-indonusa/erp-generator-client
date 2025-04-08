@@ -49,3 +49,26 @@ svg {
 }
 
 
+.site-page-header-ghost-wrapper {
+    // background: #f9f9f9;
+    border: 2px solid #f0f0f0;
+}
+.ant-page-header {
+    box-sizing: border-box;
+    margin: 0;
+    color: #000000d9;
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: "tnum";
+    padding: 16px 24px;
+    background-color: #fff;
+} 
+.ant-page-header {
+    padding: 8px 10px;
+    background-color: #fff;
+    border-left: 4px solid #025ec2;
+    text-transform: capitalize;
+    padding: 8px 10px !important;
+}

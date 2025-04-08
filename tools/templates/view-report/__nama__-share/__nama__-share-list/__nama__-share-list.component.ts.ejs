@@ -9,12 +9,15 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { environment } from 'src/environments/environment.prod';
 import { <%= Nama_report %>Service, <%= Nama %>Service } from 'src/sdk/core/services';
+import { <%= Nama %>Dto } from 'src/sdk/core/models';
 import { <%= Nama %>ShareAddComponent } from '../<%= nama %>-share-add/<%= nama %>-share-add.component';
+import { <%= Nama %>ShareDetailComponent } from '../<%= nama %>-share-detail/<%= nama %>-share-detail.component';
 <% if (relationInjects && relationInjects.length) { -%>
 <% relationInjects.forEach(inj => { -%>
 import { <%- inj.split(':')[1].trim() %> } from 'src/sdk/core/services';
 <% }) -%>
 <% } -%>
+ 
 
 
 @Component({
@@ -44,7 +47,7 @@ export class <%= Nama %>ShareListComponent {
     ) {}
 
     ngOnChanges(changes: SimpleChanges): void {
-        this.filter.status = this.status == 'semua' ? null : this.status;
+        this.filter.status<%= nama_object %> = this.status == 'semua' ? null : this.status;
         this.searchData();
     }
 
@@ -72,9 +75,9 @@ export class <%= Nama %>ShareListComponent {
 
     currentUser: any = {};
     filter: any = {
-        periode: 'month'
+    <%- filterLines %>
     };
-
+ 
     expandSet = new Set<string>();
     onExpandChange(id: string, checked: boolean): void {
         if (checked) {
@@ -103,6 +106,10 @@ export class <%= Nama %>ShareListComponent {
         this.sortValue = 'asc';
         this.sortKey = 'created_at';
         this.search = null;
+        this.filter = {
+            <%- filterLines %>
+        };
+        this.filter.status<%= nama_object %> = this.status == 'semua' ? null : this.status;
     }
 
     resetData() {
@@ -120,9 +127,12 @@ export class <%= Nama %>ShareListComponent {
         if (reset) this.pageIndex = 1;
         this.loading = true;
 
+        const finalFilter: any = this.buildFilterForBackend(this.filter);
+        finalFilter[`id_<%= id_primary %>`] = { isNotNull: 'aktif' };
+
         this.<%= nama_object_report %>Service.<%= nama_object_report %>ControllerFindAll({
             body: {
-                filter: { id_<%= id_primary %>: { isNotNull: 'aktif' } },
+                filter: finalFilter,
                 joinWhere: <%- JSON.stringify(autoJoinWhere, null, 2) %>,
                 search_field: this.search_field,
                 search_keyword: this.search || undefined,
@@ -151,13 +161,58 @@ export class <%= Nama %>ShareListComponent {
         this.searchData();
     }
 
+    buildFilterForBackend(filter: any): any {
+        const backendFilter: any = {};
+        for (const key of Object.keys(filter)) {
+            const val = filter[key];
+            if (val == null || val === '') continue;
+
+            if (key.endsWith('Min')) {
+                const field = key.replace(/Min$/, '');
+                backendFilter[field] = backendFilter[field] || {};
+                backendFilter[field].gte = val;
+            } else if (key.endsWith('Max')) {
+                const field = key.replace(/Max$/, '');
+                backendFilter[field] = backendFilter[field] || {};
+                backendFilter[field].lte = val;
+            } else if (key.endsWith('Range') && Array.isArray(val)) {
+                const field = key.replace(/Range$/, '');
+                backendFilter[field] = {
+                    between: val
+                };
+            } else {
+                backendFilter[key] = val;
+            }
+        }
+
+        return backendFilter;
+    }
     add() {
         if (!this.acl.can('<%= nama %>', 'can_add')) return;
 
         const drawerRef = this.drawerService.create<<%= Nama %>ShareAddComponent, {}, string>({
             nzTitle: 'Add',
             nzContent: <%= Nama %>ShareAddComponent,
-            nzWidth: (window.innerWidth * 0.9) + 'px',
+        nzWidth: (500) + 'px',
+        });
+ 
+        drawerRef.afterClose.subscribe(() => {
+            this.searchData();
+        });
+    }
+
+     
+
+    detail(data:<%= Nama %>Dto) {
+        if (!this.acl.can('contract-site', 'can_list')) return;
+
+        const drawerRef = this.drawerService.create<<%= Nama %>ShareDetailComponent, {}, string>({
+            nzTitle: 'Detail',
+            nzContent: <%= Nama %>ShareDetailComponent,
+            nzWidth: (window.innerWidth * 0.8) + 'px',
+            nzContentParams:{
+                id<%= Nama %>:data.id<%= Nama %>
+            }
         });
 
         drawerRef.afterClose.subscribe(() => {
@@ -166,8 +221,7 @@ export class <%= Nama %>ShareListComponent {
     }
 
     update(data: any) {}
-    delete(id: string) {}
-    detail(filter: any) {}
+    delete(id: string) {} 
 
     print() {
         let url = environment.srv_document + '/pdfAkutansi/vouchers?filter=' + JSON.stringify(this.filter) + '&token=' + this.tokenService.getToken();
