@@ -5,9 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { TampilanModule } from './shared/tampilan.module';
 
 @Component({
-    selector: 'app-root',
-    standalone: true,
-    imports: [RouterOutlet,TampilanModule],
+    selector: 'app-root',  
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })
@@ -18,5 +16,6 @@ export class AppComponent {
         translate.setDefaultLang('id');
         translate.use('id');
     }
+     
 
 }

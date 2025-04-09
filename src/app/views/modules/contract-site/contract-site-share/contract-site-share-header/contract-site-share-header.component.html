@@ -1135,13 +1135,13 @@
           
   
     
-  <div class="col-md-3" *ngIf="data.contract?.statusKontrak !== undefined && data.contract?.statusKontrak !== null">
+  <div class="col-md-3" *ngIf="data.contract?.statusContract !== undefined && data.contract?.statusContract !== null">
     <div class="text-secondary small">
-      {{ 'contract.statusKontrak' | translate }}
+      {{ 'contract.statusContract' | translate }}
     </div>
     <div class="fw-semibold text-dark">
       
-        <nz-tag nzColor="green">{{ data.contract.statusKontrak }}</nz-tag>
+        <nz-tag nzColor="green">{{ data.contract.statusContract }}</nz-tag>
       
     </div>
   </div>

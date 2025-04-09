@@ -72,3 +72,9 @@ svg {
     text-transform: capitalize;
     padding: 8px 10px !important;
 }
+
+.ant-upload.ant-upload-drag {
+    position: relative;
+    width: 100%;
+    height: 300px !important; 
+} 

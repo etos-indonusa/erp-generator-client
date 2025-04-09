@@ -28,6 +28,12 @@ import { <%- inj.split(':')[1].trim() %> } from 'src/sdk/core/services';
 export class <%= Nama %>ShareListComponent {
     @Input('status') status: string | null = null;
     @Output('out_filter') out_filter = new EventEmitter<any>();
+    @Input('filter-extra') filter_extra = true;
+    @Input('enable-crud') enable_crud = true;
+    //untuak filter dari prent
+    <% relationNamas.forEach(rv => { %> 
+    @Input('id<%= rv %>') id<%= rv %>: string | null  = null;
+    <% }) %>
 
     constructor(
         private pesanService: PesanService,
@@ -48,6 +54,16 @@ export class <%= Nama %>ShareListComponent {
 
     ngOnChanges(changes: SimpleChanges): void {
         this.filter.status<%= nama_object %> = this.status == 'semua' ? null : this.status;
+
+            <% relationNamas.forEach(rv => { %>
+           
+            if (changes.id<%= rv %>)
+            {
+                this.filter<%= rv %>.id<%= rv %> = this.id<%= rv %>
+            }
+            <% }) %>
+        
+
         this.searchData();
     }
 
@@ -63,7 +79,11 @@ export class <%= Nama %>ShareListComponent {
     }
 
     <% relationVars.forEach(rv => { %>
-    <%= rv %>
+    <%= rv %> 
+    <% }) %>
+    //untuak filter dari prent
+    <% relationNamas.forEach(rv => { %>
+    filter<%= rv %>:any = {} 
     <% }) %>
 
     // untuk fungsi get ALL relation
@@ -96,8 +116,7 @@ export class <%= Nama %>ShareListComponent {
     sortKey: string | null = 'created_at';
     search: string | null = null;
     search_field: string[] = <%- JSON.stringify(searchFields) %>;
-
-    filter_extra = true;
+ 
     breadCrumbItems = [{ label: 'List', active: false }];
 
     resetParam() {
@@ -133,7 +152,11 @@ export class <%= Nama %>ShareListComponent {
         this.<%= nama_object_report %>Service.<%= nama_object_report %>ControllerFindAll({
             body: {
                 filter: finalFilter,
-                joinWhere: <%- JSON.stringify(autoJoinWhere, null, 2) %>,
+                joinWhere: {
+                <% joinWhereKeys.forEach((key, index) => { -%>
+                    <%- `"${key}": this.filter${pascalCase(key)}` %><%= index < joinWhereKeys.length - 1 ? ',' : '' %>
+                <% }) -%>
+                },
                 search_field: this.search_field,
                 search_keyword: this.search || undefined,
                 include:  <%- JSON.stringify(autoInclude, null, 2) %>,
@@ -188,7 +211,7 @@ export class <%= Nama %>ShareListComponent {
         return backendFilter;
     }
     add() {
-        if (!this.acl.can('<%= nama %>', 'can_add')) return;
+    if (!this.acl.can('<%= nama %>', 'can_add') || !this.enable_crud) return;
 
         const drawerRef = this.drawerService.create<<%= Nama %>ShareAddComponent, {}, string>({
             nzTitle: 'Add',

@@ -4,8 +4,8 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { ContractFormSchema } from 'src/sdk/core/form-schema/contract.form-schema'; 
-import type  { ContractDto } from 'src/sdk/core/models';
+import { ContractFormSchema } from 'src/sdk/core/form-schema/contract.form-schema';
+import type { ContractDto } from 'src/sdk/core/models';
 import { ContractService } from 'src/sdk/core/services';
 
 import { ClientService } from 'src/sdk/core/services';
@@ -19,14 +19,14 @@ import { KantorService } from 'src/sdk/core/services';
 })
 export class ContractShareAddComponent {
     @Input('contract') contract: ContractDto = {
-  idClient: '',
-  idContract: ''
-};
+        idClient: '',
+        idContract: ''
+    };
     form!: FormGroup;
 
     ngOnChanges(changes: SimpleChanges): void {
-        if(changes.contract && this.contract.idContract) {
-        this.form?.patchValue(this.contract);
+        if (changes.contract && this.contract.idContract) {
+            this.form?.patchValue(this.contract);
         }
     }
     constructor(
@@ -34,10 +34,10 @@ export class ContractShareAddComponent {
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
         private contractService: ContractService,
-                        private clientService: ClientService,
-                private contractJenisService: ContractJenisService,
-                private kantorService: KantorService,
-                    ) { }
+        private clientService: ClientService,
+        private contractJenisService: ContractJenisService,
+        private kantorService: KantorService,
+    ) { }
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, ContractFormSchema, {
@@ -45,35 +45,35 @@ export class ContractShareAddComponent {
             catatan: [Validators.maxLength(200)],
         });
 
-                            this.getAllClient();
-                    this.getAllContractJenis();
-                    this.getAllKantor();
-                    }
-    
+        this.getAllClient();
+        this.getAllContractJenis();
+        this.getAllKantor();
+    }
+
     listClient: any[] = [];
-    
+
     listContractJenis: any[] = [];
-    
+
     listKantor: any[] = [];
-    
+
 
     // untuk fungsi get ALL relation
-            getAllClient() {
-    this.clientService.clientControllerFindAll().subscribe(
-      data => this.listClient = data.data ?? []
-    );
-  }
-        getAllContractJenis() {
-    this.contractJenisService.contractJenisControllerFindAll().subscribe(
-      data => this.listContractJenis = data.data ?? []
-    );
-  }
-        getAllKantor() {
-    this.kantorService.kantorControllerFindAll().subscribe(
-      data => this.listKantor = data.data ?? []
-    );
-  }
-        
+    getAllClient() {
+        this.clientService.clientControllerFindAll().subscribe(
+            data => this.listClient = data.data ?? []
+        );
+    }
+    getAllContractJenis() {
+        this.contractJenisService.contractJenisControllerFindAll().subscribe(
+            data => this.listContractJenis = data.data ?? []
+        );
+    }
+    getAllKantor() {
+        this.kantorService.kantorControllerFindAll().subscribe(
+            data => this.listKantor = data.data ?? []
+        );
+    }
+
     submit(): void {
         const labelMap = extractLabels(ContractFormSchema);
 

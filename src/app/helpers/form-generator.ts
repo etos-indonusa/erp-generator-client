@@ -1,14 +1,16 @@
-import { ValidatorFn, Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, ValidatorFn, FormGroup, Validators } from "@angular/forms";
 
 type FormSchemaField = {
     default?: any;
-    required: boolean;
+    required?: boolean;
+    primary?: boolean;
 };
 
 export function generateFormFromSchema<T>(
     fb: FormBuilder,
     schema: Record<string, FormSchemaField>,
-    customValidatorMap: Record<string, ValidatorFn[]> = {} // ← tambahkan ini
+    customValidatorMap: Record<string, ValidatorFn[]> = {},
+    modelName?: string // optional untuk deteksi otomatis id-nya
 ): FormGroup {
     const group: any = {};
 
@@ -16,8 +18,19 @@ export function generateFormFromSchema<T>(
         const defaultValue = config.default ?? null;
 
         const validators: ValidatorFn[] = [];
-        if (config.required) validators.push(Validators.required);
-        if (customValidatorMap[key]) validators.push(...customValidatorMap[key]);
+
+        const isPrimary = config.primary === true;
+        const isAutoIdField = modelName && key === `id${modelName}`;
+
+        const skipRequired = isPrimary || isAutoIdField;
+
+        if (config.required && !skipRequired) {
+            validators.push(Validators.required);
+        }
+
+        if (customValidatorMap[key]) {
+            validators.push(...customValidatorMap[key]);
+        }
 
         group[key] = fb.control(defaultValue, validators);
     });

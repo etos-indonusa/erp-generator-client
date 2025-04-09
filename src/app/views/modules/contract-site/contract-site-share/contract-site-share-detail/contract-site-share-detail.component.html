@@ -5,12 +5,11 @@
             <div class="row">
                 <div class="col-lg-2">
                     <p class="text-secondary  mb-1">Status</p>
-                    <h3 class="fw-bold text-capitalize" style.color="{{ contractSite?.statusContractSite| status }}"> 
-                        {{contractSite?.statusContractSite}}</h3>  
+                    <h3 class="fw-bold text-capitalize" style.color="{{ contractSite?.statusContractSite| status }}">   {{ contractSite?.statusContractSite}}</h3>
                 </div>
                 <div class="col-lg-6">
                     <p class="text-secondary  mb-1">Nomor</p>
-                    <!-- <h3 class="fw-bold  ">{{contractSite?.nu}}</h3> -->
+                    <!-- <h3 class="fw-bold  ">{{contractSite?.nomorContractSite}}</h3> -->
                 </div>
                 <div class="col" style="text-align: right;">
                     <p class="text-secondary mb-1">&nbsp;</p>
@@ -31,8 +30,7 @@
                         <span nz-icon nzType="calculator" nzTheme="outline"></span>
                         Bayar
                     </button> -->
-                    <!-- <lib-de-tiket-help [from_module_id]="contractSite.id_contractSite" [from_module]="'contractSite'"
-                        [from_module_number]="contractSite.nomor" [nomor_document]="contractSite.nomor"></lib-de-tiket-help> -->
+                     
 
                 </div>
             </div>
@@ -41,14 +39,14 @@
     <!-- <approval-flow-log-widget [module-id]="contractSite.id_contractSite" [module]="'contractSite'"
         [data_flow]="contractSite.id_data_flow"
         [flow-detail]="contractSite.id_data_flow_detail"></approval-flow-log-widget> -->
+        <br>
     <div class="card bg-white p-3" style="box-shadow: none;">
         <div class="row">
             <div class="col-md-8">
                 <app-contract-site-share-header [data]="contractSite"></app-contract-site-share-header>
             </div>
             <div class="col-md-4">
-                <document-widget-v1 [for-module-id]="contractSite?.idContractSite" [for-module]="'contract_site'"
-                    [enable-crud]="true"></document-widget-v1>
+                <document-widget-v1 [for-module-id]="contractSite?.idContractSite" [for-module]="'contract_site'"  [enable-crud]="true"></document-widget-v1>
                     
                 <!-- <approval-mode-widget *ngIf="contractSite.status??'-'.toLowerCase() !='close'"
                     style="margin-right: 5px;" [module-id]="contractSite.id_contractSite" [module]="'contractSite'"
@@ -62,23 +60,20 @@
 
         <br>
 
-
-        <div class="site-page-header-ghost-wrapper">
-            <nz-page-header [nzGhost]="false">
-                <nz-page-header-title>Item</nz-page-header-title>
-            </nz-page-header>
-        </div>
-
-        <div class="card">
-            <div class="card-body p-2">
-                 
-            </div>
-        </div>
-
-        
+ 
     </div>
 
+    <div class="site-page-header-ghost-wrapper">
+        <nz-page-header [nzGhost]="false">
+        <nz-page-header-title>Item</nz-page-header-title>
+    </nz-page-header>
+    </div >
 
+    <div class="card">
+        <div class="card-body p-2">
+                <!-- <app-contract-site-share-list [filter-extra]="false" [idContractSite]="idContractSite"></app-contract-site-share-list> -->
+    </div>
+    </div >
 
 </nz-spin>
 <br>

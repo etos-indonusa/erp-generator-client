@@ -1,1 +1,51 @@
-<p>upload-drawer works!</p>
+<nz-upload nzType="drag" [nzMultiple]="false" [nzShowUploadList]="true" [nzFileList]="fileList" style="height: 300px;"
+    [nzBeforeUpload]="beforeUpload" (nzChange)="handleChange($event)" [nzAccept]="acceptedTypes">
+    <p class="ant-upload-drag-icon">
+        <span nz-icon nzType="inbox"></span>
+    </p>
+    <p class="ant-upload-text">Klik atau drag file ke sini untuk mengupload</p>
+    <p class="ant-upload-hint">PDF, Gambar, Word, Excel (maks 1 file)</p>
+</nz-upload>
+
+
+<form nz-form [formGroup]="form" (ngSubmit)="submit()" nzLayout="vertical">
+
+    <nz-form-item>
+        <nz-form-label>Nama Dokumen</nz-form-label>
+        <nz-form-control>
+            <input nz-input formControlName="name" />
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label>Nomor</nz-form-label>
+        <nz-form-control>
+            <input nz-input formControlName="nomor" />
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label>Tanggal</nz-form-label>
+        <nz-form-control>
+            <nz-date-picker formControlName="tanggal" style="width: 100%" />
+        </nz-form-control>
+    </nz-form-item>
+
+
+    <nz-form-item>
+        <nz-form-label>Enable Download</nz-form-label>
+        <nz-form-control>
+            <nz-select formControlName="enableDownload">
+                <nz-option [nzValue]="'Ya'" [nzLabel]="'Ya'"></nz-option>
+                <nz-option [nzValue]="'Tidak'" [nzLabel]="'Tidak'"></nz-option>
+            </nz-select>
+        </nz-form-control>
+    </nz-form-item>
+
+    <!-- Tambah field lain jika perlu seperti fileName, fileExt, fileLocation -->
+
+    <div class="mt-4 text-right">
+        <button nz-button nzType="default" (click)="goToBack()">Batal</button>
+        <button nz-button nzType="primary" htmlType="submit" [nzLoading]="is_loading" class="ml-2">Simpan</button>
+    </div>
+</form>

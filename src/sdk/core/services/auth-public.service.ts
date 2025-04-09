@@ -11,19 +11,22 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { authControllerForgotPassword } from '../fn/auth/auth-controller-forgot-password';
-import { AuthControllerForgotPassword$Params } from '../fn/auth/auth-controller-forgot-password';
-import { authControllerLogin } from '../fn/auth/auth-controller-login';
-import { AuthControllerLogin$Params } from '../fn/auth/auth-controller-login';
-import { authControllerLogout } from '../fn/auth/auth-controller-logout';
-import { AuthControllerLogout$Params } from '../fn/auth/auth-controller-logout';
-import { authControllerRefresh } from '../fn/auth/auth-controller-refresh';
-import { AuthControllerRefresh$Params } from '../fn/auth/auth-controller-refresh';
-import { authControllerResetPassword } from '../fn/auth/auth-controller-reset-password';
-import { AuthControllerResetPassword$Params } from '../fn/auth/auth-controller-reset-password';
+import { authControllerForgotPassword } from '../fn/auth-public/auth-controller-forgot-password';
+import { AuthControllerForgotPassword$Params } from '../fn/auth-public/auth-controller-forgot-password';
+import { authControllerLogin } from '../fn/auth-public/auth-controller-login';
+import { AuthControllerLogin$Params } from '../fn/auth-public/auth-controller-login';
+import { authControllerLogout } from '../fn/auth-public/auth-controller-logout';
+import { AuthControllerLogout$Params } from '../fn/auth-public/auth-controller-logout';
+import { authControllerRefresh } from '../fn/auth-public/auth-controller-refresh';
+import { AuthControllerRefresh$Params } from '../fn/auth-public/auth-controller-refresh';
+import { authControllerResetPassword } from '../fn/auth-public/auth-controller-reset-password';
+import { AuthControllerResetPassword$Params } from '../fn/auth-public/auth-controller-reset-password';
+import { AuthResponseDto } from '../models/auth-response-dto';
+import { SimpleMessageDto } from '../models/simple-message-dto';
+import { TokenOnlyResponseDto } from '../models/token-only-response-dto';
 
 @Injectable({ providedIn: 'root' })
-export class AuthService extends BaseService {
+export class AuthPublicService extends BaseService {
   constructor(config: ApiConfiguration, http: HttpClient) {
     super(config, http);
   }
@@ -41,7 +44,7 @@ export class AuthService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  authControllerLogin$Response(params: AuthControllerLogin$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
+  authControllerLogin$Response(params: AuthControllerLogin$Params, context?: HttpContext): Observable<StrictHttpResponse<AuthResponseDto>> {
     return authControllerLogin(this.http, this.rootUrl, params, context);
   }
 
@@ -55,9 +58,9 @@ export class AuthService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  authControllerLogin(params: AuthControllerLogin$Params, context?: HttpContext): Observable<void> {
+  authControllerLogin(params: AuthControllerLogin$Params, context?: HttpContext): Observable<AuthResponseDto> {
     return this.authControllerLogin$Response(params, context).pipe(
-      map((r: StrictHttpResponse<void>): void => r.body)
+      map((r: StrictHttpResponse<AuthResponseDto>): AuthResponseDto => r.body)
     );
   }
 
@@ -65,7 +68,7 @@ export class AuthService extends BaseService {
   static readonly AuthControllerRefreshPath = '/nonauth/auth/auth/refresh-token';
 
   /**
-   * Refresh access token.
+   * Refresh token.
    *
    *
    *
@@ -74,12 +77,12 @@ export class AuthService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  authControllerRefresh$Response(params: AuthControllerRefresh$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
+  authControllerRefresh$Response(params: AuthControllerRefresh$Params, context?: HttpContext): Observable<StrictHttpResponse<TokenOnlyResponseDto>> {
     return authControllerRefresh(this.http, this.rootUrl, params, context);
   }
 
   /**
-   * Refresh access token.
+   * Refresh token.
    *
    *
    *
@@ -88,9 +91,9 @@ export class AuthService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  authControllerRefresh(params: AuthControllerRefresh$Params, context?: HttpContext): Observable<void> {
+  authControllerRefresh(params: AuthControllerRefresh$Params, context?: HttpContext): Observable<TokenOnlyResponseDto> {
     return this.authControllerRefresh$Response(params, context).pipe(
-      map((r: StrictHttpResponse<void>): void => r.body)
+      map((r: StrictHttpResponse<TokenOnlyResponseDto>): TokenOnlyResponseDto => r.body)
     );
   }
 
@@ -98,7 +101,7 @@ export class AuthService extends BaseService {
   static readonly AuthControllerForgotPasswordPath = '/nonauth/auth/auth/forgot-password';
 
   /**
-   * Kirim email reset password.
+   * Lupa password.
    *
    *
    *
@@ -107,12 +110,12 @@ export class AuthService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  authControllerForgotPassword$Response(params?: AuthControllerForgotPassword$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
+  authControllerForgotPassword$Response(params?: AuthControllerForgotPassword$Params, context?: HttpContext): Observable<StrictHttpResponse<SimpleMessageDto>> {
     return authControllerForgotPassword(this.http, this.rootUrl, params, context);
   }
 
   /**
-   * Kirim email reset password.
+   * Lupa password.
    *
    *
    *
@@ -121,9 +124,9 @@ export class AuthService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  authControllerForgotPassword(params?: AuthControllerForgotPassword$Params, context?: HttpContext): Observable<void> {
+  authControllerForgotPassword(params?: AuthControllerForgotPassword$Params, context?: HttpContext): Observable<SimpleMessageDto> {
     return this.authControllerForgotPassword$Response(params, context).pipe(
-      map((r: StrictHttpResponse<void>): void => r.body)
+      map((r: StrictHttpResponse<SimpleMessageDto>): SimpleMessageDto => r.body)
     );
   }
 
@@ -131,7 +134,7 @@ export class AuthService extends BaseService {
   static readonly AuthControllerResetPasswordPath = '/nonauth/auth/auth/reset-password';
 
   /**
-   * Reset password user.
+   * Reset password.
    *
    *
    *
@@ -140,12 +143,12 @@ export class AuthService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  authControllerResetPassword$Response(params: AuthControllerResetPassword$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
+  authControllerResetPassword$Response(params: AuthControllerResetPassword$Params, context?: HttpContext): Observable<StrictHttpResponse<SimpleMessageDto>> {
     return authControllerResetPassword(this.http, this.rootUrl, params, context);
   }
 
   /**
-   * Reset password user.
+   * Reset password.
    *
    *
    *
@@ -154,9 +157,9 @@ export class AuthService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  authControllerResetPassword(params: AuthControllerResetPassword$Params, context?: HttpContext): Observable<void> {
+  authControllerResetPassword(params: AuthControllerResetPassword$Params, context?: HttpContext): Observable<SimpleMessageDto> {
     return this.authControllerResetPassword$Response(params, context).pipe(
-      map((r: StrictHttpResponse<void>): void => r.body)
+      map((r: StrictHttpResponse<SimpleMessageDto>): SimpleMessageDto => r.body)
     );
   }
 
@@ -173,7 +176,7 @@ export class AuthService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  authControllerLogout$Response(params?: AuthControllerLogout$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
+  authControllerLogout$Response(params?: AuthControllerLogout$Params, context?: HttpContext): Observable<StrictHttpResponse<SimpleMessageDto>> {
     return authControllerLogout(this.http, this.rootUrl, params, context);
   }
 
@@ -187,9 +190,9 @@ export class AuthService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  authControllerLogout(params?: AuthControllerLogout$Params, context?: HttpContext): Observable<void> {
+  authControllerLogout(params?: AuthControllerLogout$Params, context?: HttpContext): Observable<SimpleMessageDto> {
     return this.authControllerLogout$Response(params, context).pipe(
-      map((r: StrictHttpResponse<void>): void => r.body)
+      map((r: StrictHttpResponse<SimpleMessageDto>): SimpleMessageDto => r.body)
     );
   }
 

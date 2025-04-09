@@ -7,9 +7,10 @@ import { HttpClient } from '@angular/common/http';
 import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 
 import { AppService } from './services/app.service';
-import { AuthService } from './services/auth.service';
+import { AuthPublicService } from './services/auth-public.service';
 import { UsersService } from './services/users.service';
 import { UserTokensService } from './services/user-tokens.service';
+import { AuthProtectService } from './services/auth-protect.service';
 import { ClientService } from './services/client.service';
 import { ClientSiteService } from './services/client-site.service';
 import { CompanyConfigService } from './services/company-config.service';
@@ -44,9 +45,10 @@ import { ContractJenisService } from './services/contract-jenis.service';
   declarations: [],
   providers: [
     AppService,
-    AuthService,
+    AuthPublicService,
     UsersService,
     UserTokensService,
+    AuthProtectService,
     ClientService,
     ClientSiteService,
     CompanyConfigService,

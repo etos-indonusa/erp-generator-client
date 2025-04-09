@@ -217,6 +217,7 @@ function generateFormHtmlFromDto(dtoPath: string, dtoName: string) {
         } else if (isRelation) {
             const base = name.replace(/^id_/, '').replace(/^id/, '');
             const listName = 'list' + base.charAt(0).toUpperCase() + base.slice(1);
+            const relationNama = base.charAt(0).toUpperCase() + base.slice(1);
             const r = getRelationServiceName(name);
             rows.push(`
         <nz-form-item>
@@ -228,6 +229,7 @@ function generateFormHtmlFromDto(dtoPath: string, dtoName: string) {
             </nz-form-control>
         </nz-form-item>
             `);
+            relationNamas.push(`${relationNama}`);
             relationVars.push(`${listName}: any[] = [];`);
             vars.push(`${r.listVar}: any[] = [];`);
             injects.push(`private ${r.serviceName}: ${r.serviceClass}`);
@@ -341,31 +343,36 @@ function injectToSidebarMenu(moduleName: string) {
 }
 
 function getJoinAndIncludeFromDto(dtoPath: string): {
-    joinWhere: Record<string, {}>;
+    joinWhereKeys: string[];
     include: { name: string; type: 'single' }[];
 } {
     const content = fs.readFileSync(dtoPath, 'utf-8');
     const regex = /^\s*(id[_A-Z][a-zA-Z0-9_]*)/gm;
-    const result: {
-        joinWhere: Record<string, any>,
-        include: { name: string; type: 'single' }[]
-    } = {
-        joinWhere: {},
-        include: []
-    };
+
+    const joinWhereKeys: string[] = [];
+    const include: { name: string; type: 'single' }[] = [];
 
     let match;
     while ((match = regex.exec(content)) !== null) {
+        
         const field = match[1];
-        const snake = toSnakeCase(field).replace(/^id_/, ''); // misal: idClientSite → id_client_site
-
-        result.joinWhere[snake] = {};
-        result.include.push({ name: snake, type: 'single' });
+        if (field != `id${Nama}`) {
+            const snake = toSnakeCase(field).replace(/^id_/, '');
+            joinWhereKeys.push(snake);
+            include.push({ name: snake, type: 'single' });
+        }
+        
     }
 
-    return result;
+    return { joinWhereKeys, include };
 }
 
+function pascalCase(str: string): string {
+    return str
+        .split('_')
+        .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+        .join('');
+}
 function toSnakeCase(str: string) {
     return str
         .replace(/^id([A-Z])/, (_, c) => 'id_' + c.toLowerCase())
@@ -455,12 +462,12 @@ if (fs.existsSync(dtoPath)) {
     dtoFields = filterAuto.dtoFields; 
 }
 
-let autoJoinWhere = {};
+let joinWhereKeys = {};
 let autoInclude: { name: string; type: 'single' }[] = [];
 if (fs.existsSync(dtoPath)) {
     const auto = getJoinAndIncludeFromDto(dtoPath);
     console.log(`🔍 Found Join: ${JSON.stringify(auto)}`)
-    autoJoinWhere = auto.joinWhere;
+    joinWhereKeys = auto.joinWhereKeys;
     autoInclude = auto.include;
 }
 
@@ -488,6 +495,7 @@ let formHtml = '';
 let relationInjects: string[] = [], relationInitCalls: string[] = [], relationFunctions: string[] = [];
 
 let relationVars: string[] = [];
+let relationNamas: string[] = [];
 if (dtoPath) {
     const result = generateFormHtmlFromDto(dtoPath, Nama);
     formHtml = result.html;
@@ -588,9 +596,10 @@ fse.ensureDirSync(outputDir);
 processDirectory(templateDir, outputDir, {
     nama_report, Nama_report, NAMA_REPORT, nama, Nama, NAMA, searchFields,
     displayFields, dtoDefaultObject, formHtml,
-    relationVars, relationInjects, relationInitCalls, relationFunctions, nama_object,
+    relationVars, relationNamas, relationInjects, relationInitCalls, relationFunctions, nama_object,
     smartDisplayFields, nama_object_report,
-    autoJoinWhere,
+    joinWhereKeys,
+    pascalCase,
     autoInclude,
     id_primary,
     filterLines,

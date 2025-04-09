@@ -17,6 +17,7 @@
         "declaration": false,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
+        "useDefineForClassFields": false,
         "moduleResolution": "node",
         "importHelpers": true,
         "target": "ES2022",

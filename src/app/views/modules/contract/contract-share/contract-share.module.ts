@@ -9,6 +9,7 @@ import { ContractShareDetailComponent } from './contract-share-detail/contract-s
 import { ContractShareWidgetComponent } from './contract-share-widget/contract-share-widget.component';
 import { ContractShareListComponent } from './contract-share-list/contract-share-list.component';
 import { ContractShareHeaderComponent } from './contract-share-header/contract-share-header.component';
+import { ContractSiteShareModule } from '../../contract-site/contract-site-share/contract-site-share.module';
 
  
 const COM = [
@@ -32,7 +33,8 @@ const COM = [
         ReactiveFormsModule,
         AntSimpleModule,
         TampilanModule,
-        RouterModule
+        RouterModule,
+        ContractSiteShareModule
     ]
 }) 
 export class ContractShareModule { }

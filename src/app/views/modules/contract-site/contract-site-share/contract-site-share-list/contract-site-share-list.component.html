@@ -22,7 +22,7 @@
                                 <ng-template #tipsPencarian>
                                     <div>
                                         <ul>
-                                            <li *ngFor="let item of search_field">{{ item }}</li>
+                                            <li *ngFor="let item of search_field">{{ item | translate }}</li>
                                         </ul>
                                     </div>
                                 </ng-template>
@@ -30,16 +30,88 @@
                         </nz-form-control>
                     </nz-form-item>
                 </div>
-                <div nz-col [nzXl]="{ span: 4}" [nzLg]="{ span: 6}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
-                    
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'biayaAkhir' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.biayaAkhirMin" name="biayaAkhirMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.biayaAkhirMax" name="biayaAkhirMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
                 </div>
-                <div nz-col [nzXl]="{ span: 4}" [nzLg]="{ span: 6}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
-                    
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'biayaBulanan' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.biayaBulananMin" name="biayaBulananMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.biayaBulananMax" name="biayaBulananMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
                 </div>
-                 
-                <!-- <div nz-col [nzXl]="{ span: 4}" [nzLg]="{ span: 6}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
-
-                </div> -->
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'biayaDiawal' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.biayaDiawalMin" name="biayaDiawalMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.biayaDiawalMax" name="biayaDiawalMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'idClientSite' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <nz-select [(ngModel)]="filter.idClientSite" name="idClientSite" nzAllowClear>
+                            <nz-option *ngFor="let item of listClientSite" [nzValue]="item.idClientSite" [nzLabel]="item.namaClientSite"></nz-option>
+                        </nz-select>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'idContract' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <nz-select [(ngModel)]="filter.idContract" name="idContract" nzAllowClear>
+                            <nz-option *ngFor="let item of listContract" [nzValue]="item.idContract" [nzLabel]="item.namaContract"></nz-option>
+                        </nz-select>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'jumlahJadwalPerBulan' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.jumlahJadwalPerBulanMin" name="jumlahJadwalPerBulanMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.jumlahJadwalPerBulanMax" name="jumlahJadwalPerBulanMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                
+ 
                 <div nz-col nzSpan="24">
 
                     <nz-form-item>
@@ -224,7 +296,7 @@
             <ng-template #tipsPencarian>
                 <div>
                     <ul>
-                        <li *ngFor="let item of search_field">{{ item }}</li>
+                        <li *ngFor="let item of search_field">{{ item | translate }}</li>
                     </ul>
                 </div>
             </ng-template>

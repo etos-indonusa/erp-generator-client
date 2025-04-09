@@ -1,17 +1,18 @@
-import { Routes } from '@angular/router';
-import { BaseComponent } from './views/layout/base/base.component';
-import { authGuard } from './core/guards/auth.guard';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router'; 
+import { AuthGuard } from 'src/libs/auth/guards/auth.guard';
+import { BaseComponent } from './views/layout/base/base.component'; 
 
 export const routes: Routes = [
-    { path: 'auth', loadChildren: () => import('./views/pages/auth/auth.routes') },
+    { path: 'auth', loadChildren: () => import('./views/auth/auth.module').then(m=>m.AuthModule) },
     {
         path: 'app',
         loadChildren: () => import('./views/modules/modules.module').then(m => m.ModulesModule)
     },
     {
         path: '',
-        component: BaseComponent,
-        canActivateChild: [authGuard],
+        component: BaseComponent, 
+        canActivate:[AuthGuard],
         children: [
             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
             {
@@ -62,3 +63,9 @@ export const routes: Routes = [
     },
     { path: '**', redirectTo: 'error/404', pathMatch: 'full' }
 ];
+
+@NgModule({
+    imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'top' })],
+    exports: [RouterModule]
+})
+export class AppRoutingModule { }

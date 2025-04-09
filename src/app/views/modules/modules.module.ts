@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ModulesRoutingModule } from './modules-routing.module';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { environment } from 'src/environments/environment.prod';
-import { ApiModule } from 'src/sdk/core/api.module';
+ 
 
 import { TranslateService } from '@ngx-translate/core';
 
@@ -15,8 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
     declarations: [],
     imports: [ 
         CommonModule,
-        ModulesRoutingModule,
-        ApiModule.forRoot({ rootUrl: environment.core })
+        ModulesRoutingModule 
     ]
 })
 export class ModulesModule { 

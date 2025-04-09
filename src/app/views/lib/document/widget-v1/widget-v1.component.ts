@@ -38,6 +38,8 @@ export class WidgetV1Component {
         if (changes.forModuleId) {
             this.filter.for_module = this.forModule;
             this.filter.for_module_id = this.forModuleId;
+
+            this.searchData()
         }
     }
 
@@ -97,7 +99,7 @@ export class WidgetV1Component {
             .subscribe((data: any) => {
                 this.loading = false
                 this.total = data.total
-                this.listOfData = data.data
+                this.listOfData = data.data 
                 this.totalData.next(this.total)
             },
                 err => {
@@ -121,7 +123,7 @@ export class WidgetV1Component {
     }
 
     add() {
-        if (!this.acl.can("client", 'can_add')) {
+        if (!this.enableCrud) {
             return
         }
         const drawerRef = this.drawerService.create<UploadDrawerComponent, {

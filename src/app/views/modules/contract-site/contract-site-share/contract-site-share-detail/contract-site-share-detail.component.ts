@@ -3,7 +3,7 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import { ClientSiteDto, ContractDto, ContractSiteDto, ContractSiteReportDto } from 'src/sdk/core/models';
+import {   ContractSiteReportDto } from 'src/sdk/core/models';
 import { ContractSiteReportService } from 'src/sdk/core/services';
 
 @Component({
@@ -11,11 +11,11 @@ import { ContractSiteReportService } from 'src/sdk/core/services';
     templateUrl: './contract-site-share-detail.component.html',
     styleUrl: './contract-site-share-detail.component.scss'
 })
-export class ContractSiteShareDetailComponent {
+export class ContractSiteShareDetailComponent { 
     @Input('idContractSite') idContractSite: string // replace dengan id+Nama
     constructor(
         private contractSiteReportService: ContractSiteReportService,
-         
+
         private acl: AclService,
         private drawerService: NzDrawerService,
         private tokenService: TokenService,
@@ -30,7 +30,7 @@ export class ContractSiteShareDetailComponent {
     reload = 0;
     is_loading: boolean = false;
     contractSite: ContractSiteReportDto | null = null; //nanti dinamis dari reportDto
- 
+
     getData() {
         this.is_loading = true;
         this.contractSiteReportService.contractSiteReportControllerFindOne({ id: this.idContractSite }).subscribe(
@@ -52,10 +52,8 @@ export class ContractSiteShareDetailComponent {
     }
 
     print() {
-        let url = environment.srv_document + '/pdfAkutansi/vouchers/' + this.idContractSite + '?token=' + this.tokenService.getToken();
+    let url = environment.srv_document + '/pdf/contractSite/' + this.idContractSite + '?token=' + this.tokenService.getToken();
         window.open(url, "_blank");
     }
-
-
 
 }

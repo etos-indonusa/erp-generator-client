@@ -12,7 +12,8 @@ import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { AntSimpleModule } from 'src/app/shared/ant-simple.module'; 
 import { environment } from 'src/environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ApiModule } from 'src/sdk/lib/api.module';
+import { NzFormPatchModule } from 'ng-zorro-antd/core/form';
+import { NZ_I18N, id_ID } from 'ng-zorro-antd/i18n';
  
 @NgModule({
     exports: [
@@ -33,13 +34,15 @@ import { ApiModule } from 'src/sdk/lib/api.module';
         ListV3Component,
         ListV2Component
     ],
-    imports: [
-        ApiModule.forRoot({ rootUrl: environment.lib }),
+    imports: [ 
         CommonModule, 
         NzUploadModule,
         AntSimpleModule,
         FormsModule,
-        ReactiveFormsModule
-    ]
+        ReactiveFormsModule,
+        NzFormPatchModule,
+        NzUploadModule
+    ],
+    providers: [{ provide: NZ_I18N, useValue: id_ID }],
 })
 export class DocumentModule { }

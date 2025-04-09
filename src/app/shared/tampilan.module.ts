@@ -10,9 +10,7 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { AclService } from '../services/acl.service';
 
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { environment } from 'src/environments/environment.prod';
-import { ApiModule } from 'src/sdk/core/api.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http'; 
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { PesanService } from './services/pesan.service';
 import { DocumentModule } from '../views/lib/document/document.module';

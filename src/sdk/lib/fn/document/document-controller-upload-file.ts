@@ -10,7 +10,24 @@ import { RequestBuilder } from '../../request-builder';
 
 
 export interface DocumentControllerUploadFile$Params {
-      body: string
+  
+    /**
+     * Upload dokumen dengan metadata
+     */
+    body: {
+'file': Blob;
+'idDocument'?: string;
+'name'?: string;
+'nomor'?: string;
+'tanggal'?: string;
+'forModule'?: string;
+'forModuleId'?: string;
+'fileExt'?: string;
+'fileName'?: string;
+'fileLocation'?: string;
+'enableDownload'?: string;
+'idUser'?: number;
+}
 }
 
 export function documentControllerUploadFile(http: HttpClient, rootUrl: string, params: DocumentControllerUploadFile$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {

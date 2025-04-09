@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="row w-100 mx-0 auth-page">
+        <div class="col-md-8 col-xl-6 mx-auto">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-4 pe-md-0">
+                        <div class="auth-side-wrapper"
+                            [ngStyle]="{ 'background-image': 'url(https://placehold.co/250x650)' }"></div>
+                    </div>
+                    <div class="col-md-8 ps-md-0">
+                        <div class="auth-form-wrapper px-4 py-5">
+                            <a routerLink="." class="DERP-logo d-block mb-2">
+                                Noble<span>UI</span>
+                            </a>
+                            <h5 class="text-secondary fw-normal mb-4">
+                                Welcome back! Log in to your account.
+                            </h5>
+
+                            <form [formGroup]="loginForm" (ngSubmit)="onLoggedin($event)">
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email address</label>
+                                    <input type="email" formControlName="email" class="form-control" id="email"
+                                        placeholder="Email" />
+                                    <div *ngIf="emailControl?.touched && emailControl?.invalid" class="text-danger">
+                                        <div *ngIf="emailControl?.errors?.['required']">Email is required.</div>
+                                        <div *ngIf="emailControl?.errors?.['email']">Invalid email address.</div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" formControlName="password" class="form-control" id="password"
+                                        placeholder="Password" autocomplete="current-password" />
+                                    <div *ngIf="passwordControl?.touched && passwordControl?.invalid"
+                                        class="text-danger">
+                                        <div *ngIf="passwordControl?.errors?.['required']">Password is required.</div>
+                                        <div *ngIf="passwordControl?.errors?.['minlength']">
+                                            Password must be at least {{
+                                            passwordControl?.errors?.['minlength'].requiredLength }} characters.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-check mb-3">
+                                    <input type="checkbox" formControlName="rememberMe" class="form-check-input"
+                                        id="authCheck" />
+                                    <label class="form-check-label" for="authCheck">
+                                        Remember me
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <button type="submit" class="btn btn-primary me-2 mb-2 mb-md-0">
+                                        Login
+                                    </button>
+                                    <button type="button" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
+                                        <i class="feather icon-twitter btn-icon-prepend"></i>
+                                        Forget Password
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

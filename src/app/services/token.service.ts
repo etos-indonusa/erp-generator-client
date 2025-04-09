@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 const TOKEN_KEY = 'token';
+const TOKEN_KEY_REFRES = 'token';
 const USER_KEY = 'currentUser';
 const CREDENTIAL_KEY = 'credential';
 const PEMBUKUAN_TAHUN = 'tahun_pembukuan';
@@ -95,5 +96,27 @@ export class TokenService {
             return JSON.parse(credential);
         }
         return {};
+    }
+
+    get(): string | null {
+        return localStorage.getItem(TOKEN_KEY);
+    }
+
+    getRefresh(): string | null {
+        return localStorage.getItem(TOKEN_KEY_REFRES);
+    }
+
+    set(token: string): void {
+        localStorage.setItem(TOKEN_KEY, token);
+    }
+
+    setRefresh(token: string): void {
+        localStorage.setItem(TOKEN_KEY_REFRES, token);
+    }
+
+     
+    clear(): void {
+        localStorage.removeItem(TOKEN_KEY);
+        localStorage.removeItem(TOKEN_KEY_REFRES);
     }
 }
