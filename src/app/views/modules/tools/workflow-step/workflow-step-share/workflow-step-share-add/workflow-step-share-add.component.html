@@ -1,6 +1,6 @@
 <nz-spin [nzSpinning]="is_loading">
     <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
-        
+
         <nz-row [nzGutter]="16">
             <nz-col [nzSpan]="8">
                 <nz-form-item>
@@ -8,6 +8,13 @@
                     <nz-form-control>
                         <input nz-input id="allowRoles" formControlName="allowRoles"
                             placeholder="Masukkan {{ 'allowRoles' | translate }}" />
+
+                        <nz-select [(ngModel)]="listOfTagUserGroup" [ngModelOptions]="{standalone: true}" name="allowRoles"
+                            nzMode="tags" nzPlaceHolder="Pilih user Group" nzAllowClear>
+                            <nz-option *ngFor="let item of listUserGroup" [nzLabel]="item.namaUserGroup!!"
+                                [nzValue]="item.idUserGroup"></nz-option>
+                        </nz-select>
+
                     </nz-form-control>
                 </nz-form-item>
             </nz-col>
@@ -17,21 +24,36 @@
                     <nz-form-control>
                         <!-- <input nz-input id="allowUserIds" formControlName="allowUserIds"
                             placeholder="Masukkan {{ 'allowUserIds' | translate }}" /> -->
-                            
-                            <nz-select [(ngModel)]="listOfTagUser"  [ngModelOptions]="{standalone: true}" name="allowUserIds" nzMode="tags"  nzPlaceHolder="Pilih user ID" nzAllowClear>
-                                <nz-option *ngFor="let item of listUser" [nzLabel]="item.nama!!" [nzValue]="item.idUsers"></nz-option> 
-                                
-                            </nz-select>
+
+                        <nz-select [(ngModel)]="listOfTagUser" [ngModelOptions]="{standalone: true}" name="allowUserIds"
+                            nzMode="tags" nzPlaceHolder="Pilih user ID" nzAllowClear>
+                            <nz-option *ngFor="let item of listUser" [nzLabel]="item.nama!!"
+                                [nzValue]="item.idUsers"></nz-option>
+
+                        </nz-select>
                     </nz-form-control>
                 </nz-form-item>
             </nz-col>
-        
             <nz-col [nzSpan]="8">
+                <nz-form-item>
+                    <nz-form-label nzFor="urutan">{{ 'urutan' | translate }}</nz-form-label>
+                    <nz-form-control>
+                        <input nz-input type="number" id="urutan" formControlName="urutan"
+                            placeholder="Masukkan {{ 'urutan' | translate }}" />
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+
+            <nz-col [nzSpan]="24">
                 <nz-form-item>
                     <nz-form-label nzFor="customCheckSql">{{ 'customCheckSql' | translate }}</nz-form-label>
                     <nz-form-control>
-                        <input nz-input id="customCheckSql" formControlName="customCheckSql"
-                            placeholder="Masukkan {{ 'customCheckSql' | translate }}" />
+                        <textarea nz-input id="customCheckSql" formControlName="customCheckSql"
+                            placeholder="Masukkan {{ 'customCheckSql' | translate }}"></textarea>
+                        <i>contoh: SELECT IF(COUNT(*) >= 1, 1, 0) as is_valid
+                            FROM document
+                            WHERE for_module = 'contract' AND for_module_id = $id</i>
+                        <i>Wajib return is_valid </i>
                     </nz-form-control>
                 </nz-form-item>
             </nz-col>
@@ -47,7 +69,7 @@
                     </nz-form-control>
                 </nz-form-item>
             </nz-col>
-        
+
             <nz-col [nzSpan]="8">
                 <nz-form-item>
                     <nz-form-label nzFor="messageBefore">{{ 'messageBefore' | translate }}</nz-form-label>
@@ -57,16 +79,17 @@
                     </nz-form-control>
                 </nz-form-item>
             </nz-col>
-            <nz-col [nzSpan]="8">
+            <nz-col [nzSpan]="24">
                 <nz-form-item>
-                    <nz-form-label nzFor="ruleJson">{{ 'ruleJson' | translate }}</nz-form-label>
+                    <nz-form-label>Visual Rule Builder</nz-form-label>
                     <nz-form-control>
-                        <input nz-input id="ruleJson" formControlName="ruleJson"
-                            placeholder="Masukkan {{ 'ruleJson' | translate }}" />
+                        <app-workflow-step-add-json-builder
+                            (ruleJsonChanged)="onRuleJsonChanged($event)"></app-workflow-step-add-json-builder>
                     </nz-form-control>
                 </nz-form-item>
             </nz-col>
-        
+
+
             <nz-col [nzSpan]="8">
                 <nz-form-item>
                     <nz-form-label nzFor="statusFrom">{{ 'statusFrom' | translate }}</nz-form-label>
@@ -85,7 +108,7 @@
                     </nz-form-control>
                 </nz-form-item>
             </nz-col>
-        
+
             <nz-col [nzSpan]="8">
                 <nz-form-item>
                     <nz-form-label nzFor="statusRejectTo">{{ 'statusRejectTo' | translate }}</nz-form-label>
@@ -95,7 +118,17 @@
                     </nz-form-control>
                 </nz-form-item>
             </nz-col>
-            <nz-col [nzSpan]="8">
+            <nz-col [nzSpan]="24">
+                <nz-form-item>
+                    <nz-form-label>Visual Trigger Builder</nz-form-label>
+                    <nz-form-control>
+                        <app-workflow-step-add-triger-builder
+                            (triggerJsonChanged)="onTriggerJsonChanged($event)"></app-workflow-step-add-triger-builder>
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+
+            <!-- <nz-col [nzSpan]="8">
                 <nz-form-item>
                     <nz-form-label nzFor="triggerJson">{{ 'triggerJson' | translate }}</nz-form-label>
                     <nz-form-control>
@@ -103,17 +136,9 @@
                             placeholder="Masukkan {{ 'triggerJson' | translate }}" />
                     </nz-form-control>
                 </nz-form-item>
-            </nz-col>
-        
-            <nz-col [nzSpan]="8">
-                <nz-form-item>
-                    <nz-form-label nzFor="urutan">{{ 'urutan' | translate }}</nz-form-label>
-                    <nz-form-control>
-                        <input nz-input type="number" id="urutan" formControlName="urutan"
-                            placeholder="Masukkan {{ 'urutan' | translate }}" />
-                    </nz-form-control>
-                </nz-form-item>
-            </nz-col>
+            </nz-col> -->
+
+
         </nz-row>
 
 

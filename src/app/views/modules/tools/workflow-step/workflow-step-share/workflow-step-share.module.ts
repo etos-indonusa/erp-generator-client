@@ -9,6 +9,8 @@ import { WorkflowStepShareDetailComponent } from './workflow-step-share-detail/w
 import { WorkflowStepShareWidgetComponent } from './workflow-step-share-widget/workflow-step-share-widget.component';
 import { WorkflowStepShareListComponent } from './workflow-step-share-list/workflow-step-share-list.component';
 import { WorkflowStepShareHeaderComponent } from './workflow-step-share-header/workflow-step-share-header.component';
+import { WorkflowStepAddJsonBuilderComponent } from './workflow-step-add-json-builder/workflow-step-add-json-builder.component';
+import { WorkflowStepAddTrigerBuilderComponent } from './workflow-step-add-triger-builder/workflow-step-add-triger-builder.component';
 
  
 const COM = [
@@ -16,6 +18,8 @@ const COM = [
     WorkflowStepShareDetailComponent,
     WorkflowStepShareListComponent,
     WorkflowStepShareHeaderComponent,
+    WorkflowStepAddJsonBuilderComponent,
+    WorkflowStepAddTrigerBuilderComponent,
     WorkflowStepShareWidgetComponent
 ]
 

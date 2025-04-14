@@ -1,0 +1,67 @@
+
+
+<nz-form-item *ngFor="let trigger of triggers; let i = index">
+    <nz-form-label [nzSpan]="4">Trigger {{ i + 1 }}</nz-form-label>
+    <nz-form-control [nzSpan]="20">
+        <nz-select [(ngModel)]="trigger.type" [nzOptions]="triggerTypes" (ngModelChange)="onTypeChange(trigger)"
+            nzAllowClear>
+        </nz-select>
+
+        <ng-container *ngIf="trigger.type === 'sql'">
+            <nz-alert nzType="info" nzMessage="Contoh Trigger" nzDescription='Untuk jalankan query:
+            [
+              {
+                "type": "sql",
+                "query": "UPDATE contract SET status = `aktif` WHERE id = $id"
+              },
+              {
+                "type": "http",
+                "url": "https://api.example.com/push-status",
+                "method": "POST",
+                "payload": { "id": "$id" }
+              }
+            ]' nzShowIcon>
+            </nz-alert>
+            
+            <label class="text-sm fw-semibold">SQL Query</label>
+            <textarea nz-input rows="3" [(ngModel)]="trigger.query"
+                placeholder="contoh: UPDATE contract SET status = 'aktif' WHERE id = $id"></textarea>
+            <i>contoh: UPDATE contract SET status = 'aktif' WHERE id = $id</i>
+        </ng-container>
+
+        <ng-container *ngIf="trigger.type === 'http'">
+            <label class="text-sm fw-semibold">URL</label>
+            <input nz-input [(ngModel)]="trigger.url" placeholder="contoh: https://api.example.com/push-status" />
+
+            <label class="text-sm fw-semibold mt-2">Method</label>
+            <nz-select [(ngModel)]="trigger.method">
+                <nz-option nzValue="GET" nzLabel="GET"></nz-option>
+                <nz-option nzValue="POST" nzLabel="POST"></nz-option>
+                <nz-option nzValue="PUT" nzLabel="PUT"></nz-option>
+                <nz-option nzValue="DELETE" nzLabel="DELETE"></nz-option>
+            </nz-select>
+
+            <label class="text-sm fw-semibold mt-2">
+                Payload JSON
+                <i nz-tooltip nzTooltipTitle="Gunakan $id untuk referensi ID data utama."></i>
+            </label>
+            <textarea nz-input rows="3" [(ngModel)]="trigger.payload" placeholder='contoh: { "id": "$id" }'></textarea>
+            <i>Gunakan $id untuk referensi ID data utama. contoh:   "id": "$id"  </i>
+        </ng-container>
+        <br>
+        <button nz-button (click)="removeTrigger(i)">Hapus</button>
+    </nz-form-control>
+</nz-form-item>
+
+<nz-form-item>
+    <nz-form-control>
+        <button nz-button nzType="dashed" (click)="addTrigger()">Tambah Trigger</button>
+    </nz-form-control>
+</nz-form-item>
+
+<nz-form-item>
+    <nz-form-label>Preview Output</nz-form-label>
+    <nz-form-control>
+        <textarea nz-input [value]="getJson()" rows="6" readonly></textarea>
+    </nz-form-control>
+</nz-form-item>

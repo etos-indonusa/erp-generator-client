@@ -1,0 +1,58 @@
+<nz-form-item *ngFor="let rule of rules; let i = index">
+    <nz-form-label [nzSpan]="4">Rule {{ i + 1 }}</nz-form-label>
+    <nz-form-control [nzSpan]="20">
+        <nz-select [(ngModel)]="rule.type" [nzOptions]="ruleTypes" (ngModelChange)="onTypeChange(rule)" nzAllowClear>
+        </nz-select>
+
+        <ng-container *ngIf="rule.type === 'count_check'">
+            <label class="text-sm fw-semibold">Nama Tabel Tujuan</label>
+            <input nz-input placeholder="contoh: contract_site" [(ngModel)]="rule.table" />
+
+            <label class="text-sm fw-semibold mt-2">Minimum Jumlah Baris</label>
+            <input nz-input placeholder="contoh: 1" type="number" [(ngModel)]="rule.min" />
+
+            <label class="text-sm fw-semibold mt-2">
+                Filter JSON
+                <i nz-tooltip nzTooltipTitle="Gunakan $id untuk referensi ID dari data utama"></i>
+            </label>
+            <textarea nz-input rows="2" [(ngModel)]="rule.filterJson"
+                placeholder='contoh: { "id_contract": "$id" }'></textarea>
+            <i>Gunakan $id untuk referensi ID dari data utama</i>
+            <nz-alert nzType="info" nzMessage="Contoh Rule" nzDescription='
+              Untuk validasi minimal 1 contract_site:
+              {
+                "type": "count_check",
+                "table": "contract_site",
+                "filter": { "id_contract": "$id" },
+                "min": 1
+              }
+            ' nzShowIcon></nz-alert>
+        </ng-container>
+
+        <ng-container *ngIf="rule.type === 'custom_sql'">
+            <label class="text-sm fw-semibold">SQL Query</label>
+            <textarea nz-input rows="3" [(ngModel)]="rule.query"
+                placeholder="contoh: SELECT COUNT(*) FROM erp_pelanggan.contract_site WHERE id_contract = '$id'">
+                <i>contoh: SELECT COUNT(*) FROM erp_pelanggan.contract_site WHERE id_contract = '$id'</i>
+      </textarea>
+
+            <label class="text-sm fw-semibold mt-2">Minimum Jumlah</label>
+            <input nz-input type="number" [(ngModel)]="rule.min" placeholder="contoh: 1" />
+        </ng-container>
+        <br>
+        <button nz-button (click)="removeRule(i)">Hapus</button>
+    </nz-form-control>
+</nz-form-item>
+
+<nz-form-item>
+    <nz-form-control>
+        <button nz-button nzType="dashed" (click)="addRule()">Tambah Rule</button>
+    </nz-form-control>
+</nz-form-item>
+
+<nz-form-item>
+    <nz-form-label>Preview Output</nz-form-label>
+    <nz-form-control>
+        <textarea nz-input [value]="getRuleJson()" rows="6" readonly></textarea>
+    </nz-form-control>
+</nz-form-item>

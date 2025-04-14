@@ -29,3 +29,4 @@ export { WorkflowStepService } from './services/workflow-step.service';
 export { WorkflowStepReportService } from './services/workflow-step-report.service';
 export { WorkflowStepWidgetService } from './services/workflow-step-widget.service';
 export { ClientContactService } from './services/client-contact.service';
+export { UserGroupService } from './services/user-group.service';

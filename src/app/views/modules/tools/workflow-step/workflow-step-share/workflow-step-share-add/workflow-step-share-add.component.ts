@@ -1,15 +1,16 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { Component, Input, SimpleChanges, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
 import { ToolsWorkflowStepFormSchema } from 'src/sdk/core/form-schema/tools-workflow-step.form-schema';
-import type { ToolsWorkflowStepDto } from 'src/sdk/core/models';
-import { UsersService, WorkflowStepService } from 'src/sdk/core/services';
+import type { AclUserGroupDto, AclUsersDto, ToolsWorkflowStepDto } from 'src/sdk/core/models';
+import { UserGroupService, UsersService, WorkflowStepService } from 'src/sdk/core/services';
 
 import { WorkflowService } from 'src/sdk/core/services';
 import { UsersDto } from 'src/sdk/lib/models';
+import { WorkflowStepAddTrigerBuilderComponent } from '../workflow-step-add-triger-builder/workflow-step-add-triger-builder.component';
 
 @Component({
     selector: 'app-workflow-step-share-add',
@@ -17,6 +18,7 @@ import { UsersDto } from 'src/sdk/lib/models';
     styleUrl: './workflow-step-share-add.component.scss'
 })
 export class WorkflowStepShareAddComponent {
+    @ViewChild(WorkflowStepAddTrigerBuilderComponent) triggerBuilder?: WorkflowStepAddTrigerBuilderComponent;
     @Input('workflowStep') workflowStep: ToolsWorkflowStepDto = {
         idWorkflow: '',
         idWorkflowStep: '',
@@ -30,6 +32,28 @@ export class WorkflowStepShareAddComponent {
         if (changes.workflowStep && this.workflowStep.idWorkflowStep) {
             this.form?.patchValue(this.workflowStep);
         }
+
+        if (changes.workflowStep && this.workflowStep.idWorkflowStep) {
+            this.form?.patchValue(this.workflowStep);
+
+            // Load triggerJson ke visual builder
+            try {
+                const parsed = JSON.parse(this.workflowStep.triggerJson || '[]');
+                this.triggerBuilder?.loadFromJson(parsed);
+            } catch { }
+
+            // Load allowRoles
+            try {
+                const roles = JSON.parse(this.workflowStep.allowRoles || '[]');
+                this.form.get('allowRoles')?.setValue(roles);
+            } catch { }
+
+            // Load allowUserIds
+            try {
+                const users = JSON.parse(this.workflowStep.allowUserIds || '[]');
+                this.form.get('allowUserIds')?.setValue(users);
+            } catch { }
+        }
     }
     constructor(
         private fb: FormBuilder,
@@ -37,8 +61,11 @@ export class WorkflowStepShareAddComponent {
         private nzDrawerRef: NzDrawerRef<string>,
         private workflowStepService: WorkflowStepService,
         private usersService: UsersService,
+        private userGroupService: UserGroupService,
         private workflowService: WorkflowService,
     ) { }
+
+
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, ToolsWorkflowStepFormSchema, {
@@ -48,11 +75,14 @@ export class WorkflowStepShareAddComponent {
 
         this.getAllWorkflow();
         this.getAllUser();
+        this.getAllUserGroup();
     }
 
     listWorkflow: any[] = [];
-    listUser: UsersDto[] = [];
+    listUser: AclUsersDto[] = [];
+    listUserGroup: AclUserGroupDto[] = [];
     listOfTagUser = []
+    listOfTagUserGroup = []
 
     // untuk fungsi get ALL relation
     getAllWorkflow() {
@@ -64,6 +94,19 @@ export class WorkflowStepShareAddComponent {
         this.usersService.usersControllerFindAll().subscribe(
             data => this.listUser = data.data ?? []
         );
+    }
+    getAllUserGroup() {
+        this.userGroupService.userGroupControllerFindAll().subscribe(
+            data => this.listUserGroup = data.data ?? []
+        );
+    }
+
+    onRuleJsonChanged(json: string) {
+        this.form?.get('ruleJson')?.setValue(json);
+    }
+
+    onTriggerJsonChanged(json: string) {
+        this.form.get('triggerJson')?.setValue(json);
     }
 
     submit(): void {
@@ -78,6 +121,14 @@ export class WorkflowStepShareAddComponent {
     }
     is_loading = false
     simpan() {
+        const val = { ...this.form.value };
+        ['allowRoles', 'allowUserIds'].forEach(field => {
+            const raw = val[field];
+            if (Array.isArray(raw)) {
+                val[field] = JSON.stringify(raw);
+            }
+        });
+
         this.is_loading = true;
         this.workflowStepService.workflowStepControllerCreate({ body: this.form.value }).subscribe({
             next: (data) => {
@@ -92,6 +143,15 @@ export class WorkflowStepShareAddComponent {
     }
 
     update() {
+        const val = { ...this.form.value };
+        ['allowRoles', 'allowUserIds'].forEach(field => {
+            const raw = val[field];
+            if (Array.isArray(raw)) {
+                val[field] = JSON.stringify(raw);
+            }
+        });
+        
+
         this.is_loading = true;
         this.workflowStepService.workflowStepControllerUpdate({ id: this.workflowStep.idWorkflowStep, body: this.form.value }).subscribe({
             next: (data) => {

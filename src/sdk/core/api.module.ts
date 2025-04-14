@@ -33,6 +33,7 @@ import { WorkflowStepService } from './services/workflow-step.service';
 import { WorkflowStepReportService } from './services/workflow-step-report.service';
 import { WorkflowStepWidgetService } from './services/workflow-step-widget.service';
 import { ClientContactService } from './services/client-contact.service';
+import { UserGroupService } from './services/user-group.service';
 
 /**
  * Module that provides all services and configuration.
@@ -69,6 +70,7 @@ import { ClientContactService } from './services/client-contact.service';
     WorkflowStepReportService,
     WorkflowStepWidgetService,
     ClientContactService,
+    UserGroupService,
     ApiConfiguration
   ],
 })
