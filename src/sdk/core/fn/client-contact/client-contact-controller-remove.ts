@@ -8,7 +8,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ClientContactDto } from '../../models/client-contact-dto';
+import { PelangganClientContactDto } from '../../models/pelanggan-client-contact-dto';
 
 export interface ClientContactControllerRemove$Params {
   id: string;
@@ -17,7 +17,7 @@ export interface ClientContactControllerRemove$Params {
 export function clientContactControllerRemove(http: HttpClient, rootUrl: string, params: ClientContactControllerRemove$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientContactDto;
+'data'?: PelangganClientContactDto;
 }>> {
   const rb = new RequestBuilder(rootUrl, clientContactControllerRemove.PATH, 'delete');
   if (params) {
@@ -32,10 +32,10 @@ export function clientContactControllerRemove(http: HttpClient, rootUrl: string,
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: ClientContactDto;
+      'data'?: PelangganClientContactDto;
       }>;
     })
   );
 }
 
-clientContactControllerRemove.PATH = '/nonauth/client_contact/client_contact/{id}';
+clientContactControllerRemove.PATH = '/auth/client_contact/client_contact/{id}';

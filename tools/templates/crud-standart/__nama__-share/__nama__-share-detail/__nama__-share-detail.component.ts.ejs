@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { <%= Nama %>Dto } from 'src/sdk/core/models';
+import type { <%= Prefix %><%= Nama %>Dto } from 'src/sdk/core/models';
 
 @Component({
     selector: 'app-<%= nama %>-share-detail',
@@ -7,5 +7,5 @@ import type { <%= Nama %>Dto } from 'src/sdk/core/models';
     styleUrl: './<%= nama %>-share-detail.component.scss'
 })
 export class <%= Nama %>ShareDetailComponent {
-    @Input('<%= nama_object %>') data: <%= Nama %>Dto = <%- dtoDefaultObject %>;
+    @Input('<%= nama_object %>') data: <%= Prefix %><%= Nama %>Dto = <%- dtoDefaultObject %>;
 }

@@ -8,7 +8,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { KantorDto } from '../../models/kantor-dto';
+import { PelangganKantorDto } from '../../models/pelanggan-kantor-dto';
 
 export interface KantorControllerFindOne$Params {
   id: string;
@@ -17,7 +17,7 @@ export interface KantorControllerFindOne$Params {
 export function kantorControllerFindOne(http: HttpClient, rootUrl: string, params: KantorControllerFindOne$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: KantorDto;
+'data'?: PelangganKantorDto;
 }>> {
   const rb = new RequestBuilder(rootUrl, kantorControllerFindOne.PATH, 'get');
   if (params) {
@@ -32,10 +32,10 @@ export function kantorControllerFindOne(http: HttpClient, rootUrl: string, param
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: KantorDto;
+      'data'?: PelangganKantorDto;
       }>;
     })
   );
 }
 
-kantorControllerFindOne.PATH = '/nonauth/kantor/kantor/{id}';
+kantorControllerFindOne.PATH = '/auth/kantor/kantor/{id}';

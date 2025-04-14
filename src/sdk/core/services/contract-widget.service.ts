@@ -13,7 +13,7 @@ import { StrictHttpResponse } from '../strict-http-response';
 
 import { contractWidgetControllerFindAll } from '../fn/contract-widget/contract-widget-controller-find-all';
 import { ContractWidgetControllerFindAll$Params } from '../fn/contract-widget/contract-widget-controller-find-all';
-import { ContractWidgetReportDto } from '../models/contract-widget-report-dto';
+import { PelangganContractWidgetDto } from '../models/pelanggan-contract-widget-dto';
 
 @Injectable({ providedIn: 'root' })
 export class ContractWidgetService extends BaseService {
@@ -22,7 +22,7 @@ export class ContractWidgetService extends BaseService {
   }
 
   /** Path part for operation `contractWidgetControllerFindAll()` */
-  static readonly ContractWidgetControllerFindAllPath = '/nonauth/contract/contract_widget';
+  static readonly ContractWidgetControllerFindAllPath = '/auth/contract/contract_widget';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -33,7 +33,7 @@ export class ContractWidgetService extends BaseService {
   contractWidgetControllerFindAll$Response(params: ContractWidgetControllerFindAll$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractWidgetReportDto>;
+'data'?: Array<PelangganContractWidgetDto>;
 'total'?: number;
 }>> {
     return contractWidgetControllerFindAll(this.http, this.rootUrl, params, context);
@@ -48,19 +48,19 @@ export class ContractWidgetService extends BaseService {
   contractWidgetControllerFindAll(params: ContractWidgetControllerFindAll$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractWidgetReportDto>;
+'data'?: Array<PelangganContractWidgetDto>;
 'total'?: number;
 }> {
     return this.contractWidgetControllerFindAll$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractWidgetReportDto>;
+'data'?: Array<PelangganContractWidgetDto>;
 'total'?: number;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractWidgetReportDto>;
+'data'?: Array<PelangganContractWidgetDto>;
 'total'?: number;
 } => r.body)
     );

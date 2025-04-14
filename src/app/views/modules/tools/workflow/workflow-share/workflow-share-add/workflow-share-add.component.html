@@ -1,0 +1,75 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="forModule">{{ 'forModule' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="forModule" formControlName="forModule" placeholder="Masukkan {{ 'forModule' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idKantor">{{ 'idKantor' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idKantor" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idKantor' | translate }}"> 
+                    <nz-option *ngFor="let item of listKantor" nzLabel="{{ item.idKantor }}" nzValue="{{ item.idKantor }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <label nz-checkbox formControlName="isDefault">{{ 'isDefault' | translate }}</label>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="keterangan">{{ 'keterangan' | translate }}</nz-form-label>
+            <nz-form-control>
+                <textarea nz-input id="keterangan" formControlName="keterangan" placeholder="Masukkan {{ 'keterangan' | translate }}"></textarea>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="namaWorkflow">{{ 'namaWorkflow' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="namaWorkflow" formControlName="namaWorkflow" placeholder="Masukkan {{ 'namaWorkflow' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="statusWorkflow">{{ 'statusWorkflow' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="statusWorkflow" formControlName="statusWorkflow" placeholder="Masukkan {{ 'statusWorkflow' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="targetDb">{{ 'targetDb' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="targetDb" formControlName="targetDb" placeholder="Masukkan {{ 'targetDb' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="targetTable">{{ 'targetTable' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="targetTable" formControlName="targetTable" placeholder="Masukkan {{ 'targetTable' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

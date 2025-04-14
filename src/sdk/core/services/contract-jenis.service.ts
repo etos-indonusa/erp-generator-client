@@ -21,7 +21,7 @@ import { contractJenisControllerRemove } from '../fn/contract-jenis/contract-jen
 import { ContractJenisControllerRemove$Params } from '../fn/contract-jenis/contract-jenis-controller-remove';
 import { contractJenisControllerUpdate } from '../fn/contract-jenis/contract-jenis-controller-update';
 import { ContractJenisControllerUpdate$Params } from '../fn/contract-jenis/contract-jenis-controller-update';
-import { ContractJenisDto } from '../models/contract-jenis-dto';
+import { PelangganContractJenisDto } from '../models/pelanggan-contract-jenis-dto';
 
 @Injectable({ providedIn: 'root' })
 export class ContractJenisService extends BaseService {
@@ -30,7 +30,7 @@ export class ContractJenisService extends BaseService {
   }
 
   /** Path part for operation `contractJenisControllerFindAll()` */
-  static readonly ContractJenisControllerFindAllPath = '/nonauth/contract_jenis/contract_jenis';
+  static readonly ContractJenisControllerFindAllPath = '/auth/contract_jenis/contract_jenis';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -41,7 +41,7 @@ export class ContractJenisService extends BaseService {
   contractJenisControllerFindAll$Response(params?: ContractJenisControllerFindAll$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractJenisDto>;
+'data'?: Array<PelangganContractJenisDto>;
 'total'?: number;
 }>> {
     return contractJenisControllerFindAll(this.http, this.rootUrl, params, context);
@@ -56,26 +56,26 @@ export class ContractJenisService extends BaseService {
   contractJenisControllerFindAll(params?: ContractJenisControllerFindAll$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractJenisDto>;
+'data'?: Array<PelangganContractJenisDto>;
 'total'?: number;
 }> {
     return this.contractJenisControllerFindAll$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractJenisDto>;
+'data'?: Array<PelangganContractJenisDto>;
 'total'?: number;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractJenisDto>;
+'data'?: Array<PelangganContractJenisDto>;
 'total'?: number;
 } => r.body)
     );
   }
 
   /** Path part for operation `contractJenisControllerCreate()` */
-  static readonly ContractJenisControllerCreatePath = '/nonauth/contract_jenis/contract_jenis';
+  static readonly ContractJenisControllerCreatePath = '/auth/contract_jenis/contract_jenis';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -86,7 +86,7 @@ export class ContractJenisService extends BaseService {
   contractJenisControllerCreate$Response(params: ContractJenisControllerCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractJenisDto;
+'data'?: PelangganContractJenisDto;
 }>> {
     return contractJenisControllerCreate(this.http, this.rootUrl, params, context);
   }
@@ -100,23 +100,23 @@ export class ContractJenisService extends BaseService {
   contractJenisControllerCreate(params: ContractJenisControllerCreate$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractJenisDto;
+'data'?: PelangganContractJenisDto;
 }> {
     return this.contractJenisControllerCreate$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractJenisDto;
+'data'?: PelangganContractJenisDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractJenisDto;
+'data'?: PelangganContractJenisDto;
 } => r.body)
     );
   }
 
   /** Path part for operation `contractJenisControllerFindOne()` */
-  static readonly ContractJenisControllerFindOnePath = '/nonauth/contract_jenis/contract_jenis/{id}';
+  static readonly ContractJenisControllerFindOnePath = '/auth/contract_jenis/contract_jenis/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -127,7 +127,7 @@ export class ContractJenisService extends BaseService {
   contractJenisControllerFindOne$Response(params: ContractJenisControllerFindOne$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractJenisDto;
+'data'?: PelangganContractJenisDto;
 }>> {
     return contractJenisControllerFindOne(this.http, this.rootUrl, params, context);
   }
@@ -141,23 +141,23 @@ export class ContractJenisService extends BaseService {
   contractJenisControllerFindOne(params: ContractJenisControllerFindOne$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractJenisDto;
+'data'?: PelangganContractJenisDto;
 }> {
     return this.contractJenisControllerFindOne$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractJenisDto;
+'data'?: PelangganContractJenisDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractJenisDto;
+'data'?: PelangganContractJenisDto;
 } => r.body)
     );
   }
 
   /** Path part for operation `contractJenisControllerUpdate()` */
-  static readonly ContractJenisControllerUpdatePath = '/nonauth/contract_jenis/contract_jenis/{id}';
+  static readonly ContractJenisControllerUpdatePath = '/auth/contract_jenis/contract_jenis/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -168,7 +168,7 @@ export class ContractJenisService extends BaseService {
   contractJenisControllerUpdate$Response(params: ContractJenisControllerUpdate$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractJenisDto;
+'data'?: PelangganContractJenisDto;
 }>> {
     return contractJenisControllerUpdate(this.http, this.rootUrl, params, context);
   }
@@ -182,23 +182,23 @@ export class ContractJenisService extends BaseService {
   contractJenisControllerUpdate(params: ContractJenisControllerUpdate$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractJenisDto;
+'data'?: PelangganContractJenisDto;
 }> {
     return this.contractJenisControllerUpdate$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractJenisDto;
+'data'?: PelangganContractJenisDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractJenisDto;
+'data'?: PelangganContractJenisDto;
 } => r.body)
     );
   }
 
   /** Path part for operation `contractJenisControllerRemove()` */
-  static readonly ContractJenisControllerRemovePath = '/nonauth/contract_jenis/contract_jenis/{id}';
+  static readonly ContractJenisControllerRemovePath = '/auth/contract_jenis/contract_jenis/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -209,7 +209,7 @@ export class ContractJenisService extends BaseService {
   contractJenisControllerRemove$Response(params: ContractJenisControllerRemove$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractJenisDto;
+'data'?: PelangganContractJenisDto;
 }>> {
     return contractJenisControllerRemove(this.http, this.rootUrl, params, context);
   }
@@ -223,17 +223,17 @@ export class ContractJenisService extends BaseService {
   contractJenisControllerRemove(params: ContractJenisControllerRemove$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractJenisDto;
+'data'?: PelangganContractJenisDto;
 }> {
     return this.contractJenisControllerRemove$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractJenisDto;
+'data'?: PelangganContractJenisDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractJenisDto;
+'data'?: PelangganContractJenisDto;
 } => r.body)
     );
   }

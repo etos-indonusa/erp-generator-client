@@ -8,7 +8,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { UsersDto } from '../../models/users-dto';
+import { AclUsersDto } from '../../models/acl-users-dto';
 
 export interface UsersControllerFindAll$Params {
   pageIndex?: number;
@@ -31,7 +31,7 @@ export interface UsersControllerFindAll$Params {
 export function usersControllerFindAll(http: HttpClient, rootUrl: string, params?: UsersControllerFindAll$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<UsersDto>;
+'data'?: Array<AclUsersDto>;
 'total'?: number;
 }>> {
   const rb = new RequestBuilder(rootUrl, usersControllerFindAll.PATH, 'get');
@@ -53,11 +53,11 @@ export function usersControllerFindAll(http: HttpClient, rootUrl: string, params
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: Array<UsersDto>;
+      'data'?: Array<AclUsersDto>;
       'total'?: number;
       }>;
     })
   );
 }
 
-usersControllerFindAll.PATH = '/nonauth/users/users';
+usersControllerFindAll.PATH = '/auth/users/users';

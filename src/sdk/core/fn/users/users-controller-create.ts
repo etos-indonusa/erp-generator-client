@@ -8,16 +8,16 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { UsersDto } from '../../models/users-dto';
+import { AclUsersDto } from '../../models/acl-users-dto';
 
 export interface UsersControllerCreate$Params {
-      body: UsersDto
+      body: AclUsersDto
 }
 
 export function usersControllerCreate(http: HttpClient, rootUrl: string, params: UsersControllerCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: UsersDto;
+'data'?: AclUsersDto;
 }>> {
   const rb = new RequestBuilder(rootUrl, usersControllerCreate.PATH, 'post');
   if (params) {
@@ -32,10 +32,10 @@ export function usersControllerCreate(http: HttpClient, rootUrl: string, params:
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: UsersDto;
+      'data'?: AclUsersDto;
       }>;
     })
   );
 }
 
-usersControllerCreate.PATH = '/nonauth/users/users';
+usersControllerCreate.PATH = '/auth/users/users';

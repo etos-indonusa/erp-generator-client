@@ -8,7 +8,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ContractSiteReportDto } from '../../models/contract-site-report-dto';
+import { PelangganContractSiteReportDto } from '../../models/pelanggan-contract-site-report-dto';
 
 export interface ContractSiteReportControllerFindOne$Params {
   id: string;
@@ -17,7 +17,7 @@ export interface ContractSiteReportControllerFindOne$Params {
 export function contractSiteReportControllerFindOne(http: HttpClient, rootUrl: string, params: ContractSiteReportControllerFindOne$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteReportDto;
+'data'?: PelangganContractSiteReportDto;
 }>> {
   const rb = new RequestBuilder(rootUrl, contractSiteReportControllerFindOne.PATH, 'get');
   if (params) {
@@ -32,10 +32,10 @@ export function contractSiteReportControllerFindOne(http: HttpClient, rootUrl: s
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: ContractSiteReportDto;
+      'data'?: PelangganContractSiteReportDto;
       }>;
     })
   );
 }
 
-contractSiteReportControllerFindOne.PATH = '/nonauth/contract_site/contract_site_report/{id}';
+contractSiteReportControllerFindOne.PATH = '/auth/contract_site/contract_site_report/{id}';

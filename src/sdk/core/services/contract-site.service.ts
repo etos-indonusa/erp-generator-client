@@ -21,7 +21,7 @@ import { contractSiteControllerRemove } from '../fn/contract-site/contract-site-
 import { ContractSiteControllerRemove$Params } from '../fn/contract-site/contract-site-controller-remove';
 import { contractSiteControllerUpdate } from '../fn/contract-site/contract-site-controller-update';
 import { ContractSiteControllerUpdate$Params } from '../fn/contract-site/contract-site-controller-update';
-import { ContractSiteDto } from '../models/contract-site-dto';
+import { PelangganContractSiteDto } from '../models/pelanggan-contract-site-dto';
 
 @Injectable({ providedIn: 'root' })
 export class ContractSiteService extends BaseService {
@@ -30,7 +30,7 @@ export class ContractSiteService extends BaseService {
   }
 
   /** Path part for operation `contractSiteControllerFindAll()` */
-  static readonly ContractSiteControllerFindAllPath = '/nonauth/contract_site/contract_site';
+  static readonly ContractSiteControllerFindAllPath = '/auth/contract_site/contract_site';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -41,7 +41,7 @@ export class ContractSiteService extends BaseService {
   contractSiteControllerFindAll$Response(params?: ContractSiteControllerFindAll$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractSiteDto>;
+'data'?: Array<PelangganContractSiteDto>;
 'total'?: number;
 }>> {
     return contractSiteControllerFindAll(this.http, this.rootUrl, params, context);
@@ -56,26 +56,26 @@ export class ContractSiteService extends BaseService {
   contractSiteControllerFindAll(params?: ContractSiteControllerFindAll$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractSiteDto>;
+'data'?: Array<PelangganContractSiteDto>;
 'total'?: number;
 }> {
     return this.contractSiteControllerFindAll$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractSiteDto>;
+'data'?: Array<PelangganContractSiteDto>;
 'total'?: number;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractSiteDto>;
+'data'?: Array<PelangganContractSiteDto>;
 'total'?: number;
 } => r.body)
     );
   }
 
   /** Path part for operation `contractSiteControllerCreate()` */
-  static readonly ContractSiteControllerCreatePath = '/nonauth/contract_site/contract_site';
+  static readonly ContractSiteControllerCreatePath = '/auth/contract_site/contract_site';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -86,7 +86,7 @@ export class ContractSiteService extends BaseService {
   contractSiteControllerCreate$Response(params: ContractSiteControllerCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteDto;
+'data'?: PelangganContractSiteDto;
 }>> {
     return contractSiteControllerCreate(this.http, this.rootUrl, params, context);
   }
@@ -100,23 +100,23 @@ export class ContractSiteService extends BaseService {
   contractSiteControllerCreate(params: ContractSiteControllerCreate$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteDto;
+'data'?: PelangganContractSiteDto;
 }> {
     return this.contractSiteControllerCreate$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteDto;
+'data'?: PelangganContractSiteDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteDto;
+'data'?: PelangganContractSiteDto;
 } => r.body)
     );
   }
 
   /** Path part for operation `contractSiteControllerFindOne()` */
-  static readonly ContractSiteControllerFindOnePath = '/nonauth/contract_site/contract_site/{id}';
+  static readonly ContractSiteControllerFindOnePath = '/auth/contract_site/contract_site/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -127,7 +127,7 @@ export class ContractSiteService extends BaseService {
   contractSiteControllerFindOne$Response(params: ContractSiteControllerFindOne$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteDto;
+'data'?: PelangganContractSiteDto;
 }>> {
     return contractSiteControllerFindOne(this.http, this.rootUrl, params, context);
   }
@@ -141,23 +141,23 @@ export class ContractSiteService extends BaseService {
   contractSiteControllerFindOne(params: ContractSiteControllerFindOne$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteDto;
+'data'?: PelangganContractSiteDto;
 }> {
     return this.contractSiteControllerFindOne$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteDto;
+'data'?: PelangganContractSiteDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteDto;
+'data'?: PelangganContractSiteDto;
 } => r.body)
     );
   }
 
   /** Path part for operation `contractSiteControllerUpdate()` */
-  static readonly ContractSiteControllerUpdatePath = '/nonauth/contract_site/contract_site/{id}';
+  static readonly ContractSiteControllerUpdatePath = '/auth/contract_site/contract_site/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -168,7 +168,7 @@ export class ContractSiteService extends BaseService {
   contractSiteControllerUpdate$Response(params: ContractSiteControllerUpdate$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteDto;
+'data'?: PelangganContractSiteDto;
 }>> {
     return contractSiteControllerUpdate(this.http, this.rootUrl, params, context);
   }
@@ -182,23 +182,23 @@ export class ContractSiteService extends BaseService {
   contractSiteControllerUpdate(params: ContractSiteControllerUpdate$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteDto;
+'data'?: PelangganContractSiteDto;
 }> {
     return this.contractSiteControllerUpdate$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteDto;
+'data'?: PelangganContractSiteDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteDto;
+'data'?: PelangganContractSiteDto;
 } => r.body)
     );
   }
 
   /** Path part for operation `contractSiteControllerRemove()` */
-  static readonly ContractSiteControllerRemovePath = '/nonauth/contract_site/contract_site/{id}';
+  static readonly ContractSiteControllerRemovePath = '/auth/contract_site/contract_site/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -209,7 +209,7 @@ export class ContractSiteService extends BaseService {
   contractSiteControllerRemove$Response(params: ContractSiteControllerRemove$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteDto;
+'data'?: PelangganContractSiteDto;
 }>> {
     return contractSiteControllerRemove(this.http, this.rootUrl, params, context);
   }
@@ -223,17 +223,17 @@ export class ContractSiteService extends BaseService {
   contractSiteControllerRemove(params: ContractSiteControllerRemove$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteDto;
+'data'?: PelangganContractSiteDto;
 }> {
     return this.contractSiteControllerRemove$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteDto;
+'data'?: PelangganContractSiteDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteDto;
+'data'?: PelangganContractSiteDto;
 } => r.body)
     );
   }

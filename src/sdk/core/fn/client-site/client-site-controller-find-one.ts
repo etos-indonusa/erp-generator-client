@@ -8,7 +8,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ClientSiteDto } from '../../models/client-site-dto';
+import { PelangganClientSiteDto } from '../../models/pelanggan-client-site-dto';
 
 export interface ClientSiteControllerFindOne$Params {
   id: string;
@@ -17,7 +17,7 @@ export interface ClientSiteControllerFindOne$Params {
 export function clientSiteControllerFindOne(http: HttpClient, rootUrl: string, params: ClientSiteControllerFindOne$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientSiteDto;
+'data'?: PelangganClientSiteDto;
 }>> {
   const rb = new RequestBuilder(rootUrl, clientSiteControllerFindOne.PATH, 'get');
   if (params) {
@@ -32,10 +32,10 @@ export function clientSiteControllerFindOne(http: HttpClient, rootUrl: string, p
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: ClientSiteDto;
+      'data'?: PelangganClientSiteDto;
       }>;
     })
   );
 }
 
-clientSiteControllerFindOne.PATH = '/nonauth/client_site/client_site/{id}';
+clientSiteControllerFindOne.PATH = '/auth/client_site/client_site/{id}';

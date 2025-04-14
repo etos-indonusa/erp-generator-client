@@ -9,29 +9,31 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { BaseWidgetQueryDto } from '../../models/base-widget-query-dto';
-import { ContractSiteWidgetReportDto } from '../../models/contract-site-widget-report-dto';
+import { Object } from '../../models/object';
+import { PelangganContractSiteWidgetDto } from '../../models/pelanggan-contract-site-widget-dto';
+import { SelectFieldDto } from '../../models/select-field-dto';
 
 export interface ContractSiteWidgetControllerFindAll$Params {
 
 /**
- * Filter JSON
+ * Filter object
  */
-  filter?: string;
+  filter?: Object;
 
 /**
- * JoinWhere JSON
+ * JoinWhere object
  */
-  joinWhere?: string;
+  joinWhere?: Object;
 
 /**
- * Group by fields (JSON Array)
+ * Select fields with aggregation, e.g. [{ type: "sum", field: "nilai", alias: "totalNilai" }]
  */
-  groupBy?: string;
+  select?: Array<SelectFieldDto>;
 
 /**
- * Select fields (JSON Array)
+ * Fields to group by
  */
-  select?: string;
+  groupBy?: Array<string>;
   sortKey?: string;
   sortValue?: 'ASC' | 'DESC';
       body: BaseWidgetQueryDto
@@ -40,15 +42,15 @@ export interface ContractSiteWidgetControllerFindAll$Params {
 export function contractSiteWidgetControllerFindAll(http: HttpClient, rootUrl: string, params: ContractSiteWidgetControllerFindAll$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractSiteWidgetReportDto>;
+'data'?: Array<PelangganContractSiteWidgetDto>;
 'total'?: number;
 }>> {
-  const rb = new RequestBuilder(rootUrl, contractSiteWidgetControllerFindAll.PATH, 'get');
+  const rb = new RequestBuilder(rootUrl, contractSiteWidgetControllerFindAll.PATH, 'post');
   if (params) {
     rb.query('filter', params.filter, {});
     rb.query('joinWhere', params.joinWhere, {});
-    rb.query('groupBy', params.groupBy, {});
     rb.query('select', params.select, {});
+    rb.query('groupBy', params.groupBy, {});
     rb.query('sortKey', params.sortKey, {});
     rb.query('sortValue', params.sortValue, {});
     rb.body(params.body, 'application/json');
@@ -62,11 +64,11 @@ export function contractSiteWidgetControllerFindAll(http: HttpClient, rootUrl: s
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: Array<ContractSiteWidgetReportDto>;
+      'data'?: Array<PelangganContractSiteWidgetDto>;
       'total'?: number;
       }>;
     })
   );
 }
 
-contractSiteWidgetControllerFindAll.PATH = '/nonauth/contract_site/contract_site_widget';
+contractSiteWidgetControllerFindAll.PATH = '/auth/contract_site/contract_site_widget';

@@ -8,7 +8,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ClientContactDto } from '../../models/client-contact-dto';
+import { PelangganClientContactDto } from '../../models/pelanggan-client-contact-dto';
 
 export interface ClientContactControllerFindAll$Params {
   pageIndex?: number;
@@ -31,7 +31,7 @@ export interface ClientContactControllerFindAll$Params {
 export function clientContactControllerFindAll(http: HttpClient, rootUrl: string, params?: ClientContactControllerFindAll$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ClientContactDto>;
+'data'?: Array<PelangganClientContactDto>;
 'total'?: number;
 }>> {
   const rb = new RequestBuilder(rootUrl, clientContactControllerFindAll.PATH, 'get');
@@ -53,11 +53,11 @@ export function clientContactControllerFindAll(http: HttpClient, rootUrl: string
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: Array<ClientContactDto>;
+      'data'?: Array<PelangganClientContactDto>;
       'total'?: number;
       }>;
     })
   );
 }
 
-clientContactControllerFindAll.PATH = '/nonauth/client_contact/client_contact';
+clientContactControllerFindAll.PATH = '/auth/client_contact/client_contact';

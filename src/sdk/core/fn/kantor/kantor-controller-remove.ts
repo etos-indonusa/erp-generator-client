@@ -8,7 +8,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { KantorDto } from '../../models/kantor-dto';
+import { PelangganKantorDto } from '../../models/pelanggan-kantor-dto';
 
 export interface KantorControllerRemove$Params {
   id: string;
@@ -17,7 +17,7 @@ export interface KantorControllerRemove$Params {
 export function kantorControllerRemove(http: HttpClient, rootUrl: string, params: KantorControllerRemove$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: KantorDto;
+'data'?: PelangganKantorDto;
 }>> {
   const rb = new RequestBuilder(rootUrl, kantorControllerRemove.PATH, 'delete');
   if (params) {
@@ -32,10 +32,10 @@ export function kantorControllerRemove(http: HttpClient, rootUrl: string, params
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: KantorDto;
+      'data'?: PelangganKantorDto;
       }>;
     })
   );
 }
 
-kantorControllerRemove.PATH = '/nonauth/kantor/kantor/{id}';
+kantorControllerRemove.PATH = '/auth/kantor/kantor/{id}';

@@ -6,13 +6,18 @@ GENERATOR STANDAR
 npx ts-node tools/template/generator-crud-standart.ts --nama users
 
 GENERATOR STANDAR
-npm run generate:crud users
-npm run generate:crud client-contact
-npm run generate:crud client
-npm run generate:crud company-config
-npm run generate:crud contract
-npm run generate:crud contract-site 
+npm run generate:crud -- users --prefix=pelanggan
+npm run generate:crud -- client-contact --prefix=pelanggan
+npm run generate:crud -- client --prefix=pelanggan
+npm run generate:crud -- company-config --prefix=pelanggan
+npm run generate:crud -- contract --prefix=pelanggan
+npm run generate:crud -- contract-site --prefix=pelanggan
+npm run generate:crud -- contract-jenis  --prefix=pelanggan
 
 GENERATOR REPORT
-npm run generate:report contract
-npm run generate:report contract-site
+npm run generate:report -- contract --prefix=pelanggan
+npm run generate:report -- contract-site --prefix=pelanggan
+
+npm run generate:report -- workflow --prefix=tools
+npm run generate:crud -- workflow-step --prefix=tools
+npm run generate:crud -- workflow-log --prefix=tools

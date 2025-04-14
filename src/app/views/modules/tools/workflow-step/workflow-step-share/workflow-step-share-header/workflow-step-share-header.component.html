@@ -1,0 +1,430 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.allowRoles !== undefined && data?.allowRoles !== null">
+    <div class="text-secondary small">
+      {{ 'allowRoles' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.allowRoles || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.allowUserIds !== undefined && data?.allowUserIds !== null">
+    <div class="text-secondary small">
+      {{ 'allowUserIds' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.allowUserIds || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.createdAt !== undefined && data?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.customCheckSql !== undefined && data?.customCheckSql !== null">
+    <div class="text-secondary small">
+      {{ 'customCheckSql' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.customCheckSql || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.messageBefore !== undefined && data?.messageBefore !== null">
+    <div class="text-secondary small">
+      {{ 'messageBefore' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.messageBefore || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.ruleJson !== undefined && data?.ruleJson !== null">
+    <div class="text-secondary small">
+      {{ 'ruleJson' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.ruleJson || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.statusFrom !== undefined && data?.statusFrom !== null">
+    <div class="text-secondary small">
+      {{ 'statusFrom' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.statusFrom }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.statusRejectTo !== undefined && data?.statusRejectTo !== null">
+    <div class="text-secondary small">
+      {{ 'statusRejectTo' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.statusRejectTo }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.statusTo !== undefined && data?.statusTo !== null">
+    <div class="text-secondary small">
+      {{ 'statusTo' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.statusTo }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.triggerJson !== undefined && data?.triggerJson !== null">
+    <div class="text-secondary small">
+      {{ 'triggerJson' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.triggerJson || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.updatedAt !== undefined && data?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.urutan !== undefined && data?.urutan !== null">
+    <div class="text-secondary small">
+      {{ 'urutan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.urutan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.workflow">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'workflow' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.workflow?.allowRoles !== undefined && data.workflow?.allowRoles !== null">
+    <div class="text-secondary small">
+      {{ 'workflow.allowRoles' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.workflow.allowRoles || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.workflow?.allowUserIds !== undefined && data.workflow?.allowUserIds !== null">
+    <div class="text-secondary small">
+      {{ 'workflow.allowUserIds' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.workflow.allowUserIds || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.workflow?.createdAt !== undefined && data.workflow?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'workflow.createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.workflow.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.workflow?.customCheckSql !== undefined && data.workflow?.customCheckSql !== null">
+    <div class="text-secondary small">
+      {{ 'workflow.customCheckSql' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.workflow.customCheckSql || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.workflow?.messageBefore !== undefined && data.workflow?.messageBefore !== null">
+    <div class="text-secondary small">
+      {{ 'workflow.messageBefore' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.workflow.messageBefore || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.workflow?.ruleJson !== undefined && data.workflow?.ruleJson !== null">
+    <div class="text-secondary small">
+      {{ 'workflow.ruleJson' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.workflow.ruleJson || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.workflow?.statusFrom !== undefined && data.workflow?.statusFrom !== null">
+    <div class="text-secondary small">
+      {{ 'workflow.statusFrom' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.workflow.statusFrom }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.workflow?.statusRejectTo !== undefined && data.workflow?.statusRejectTo !== null">
+    <div class="text-secondary small">
+      {{ 'workflow.statusRejectTo' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.workflow.statusRejectTo }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.workflow?.statusTo !== undefined && data.workflow?.statusTo !== null">
+    <div class="text-secondary small">
+      {{ 'workflow.statusTo' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.workflow.statusTo }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.workflow?.triggerJson !== undefined && data.workflow?.triggerJson !== null">
+    <div class="text-secondary small">
+      {{ 'workflow.triggerJson' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.workflow.triggerJson || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.workflow?.updatedAt !== undefined && data.workflow?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'workflow.updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.workflow.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.workflow?.urutan !== undefined && data.workflow?.urutan !== null">
+    <div class="text-secondary small">
+      {{ 'workflow.urutan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.workflow.urutan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+  
+</div>

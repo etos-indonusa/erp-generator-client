@@ -9,48 +9,20 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { BaseWidgetQueryDto } from '../../models/base-widget-query-dto';
-import { ContractWidgetReportDto } from '../../models/contract-widget-report-dto';
+import { PelangganContractWidgetDto } from '../../models/pelanggan-contract-widget-dto';
 
 export interface ContractWidgetControllerFindAll$Params {
-
-/**
- * Filter JSON
- */
-  filter?: string;
-
-/**
- * JoinWhere JSON
- */
-  joinWhere?: string;
-
-/**
- * Group by fields (JSON Array)
- */
-  groupBy?: string;
-
-/**
- * Select fields (JSON Array)
- */
-  select?: string;
-  sortKey?: string;
-  sortValue?: 'ASC' | 'DESC';
       body: BaseWidgetQueryDto
 }
 
 export function contractWidgetControllerFindAll(http: HttpClient, rootUrl: string, params: ContractWidgetControllerFindAll$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractWidgetReportDto>;
+'data'?: Array<PelangganContractWidgetDto>;
 'total'?: number;
 }>> {
-  const rb = new RequestBuilder(rootUrl, contractWidgetControllerFindAll.PATH, 'get');
+  const rb = new RequestBuilder(rootUrl, contractWidgetControllerFindAll.PATH, 'post');
   if (params) {
-    rb.query('filter', params.filter, {});
-    rb.query('joinWhere', params.joinWhere, {});
-    rb.query('groupBy', params.groupBy, {});
-    rb.query('select', params.select, {});
-    rb.query('sortKey', params.sortKey, {});
-    rb.query('sortValue', params.sortValue, {});
     rb.body(params.body, 'application/json');
   }
 
@@ -62,11 +34,11 @@ export function contractWidgetControllerFindAll(http: HttpClient, rootUrl: strin
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: Array<ContractWidgetReportDto>;
+      'data'?: Array<PelangganContractWidgetDto>;
       'total'?: number;
       }>;
     })
   );
 }
 
-contractWidgetControllerFindAll.PATH = '/nonauth/contract/contract_widget';
+contractWidgetControllerFindAll.PATH = '/auth/contract/contract_widget';

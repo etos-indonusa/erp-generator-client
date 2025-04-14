@@ -8,7 +8,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ContractSiteDto } from '../../models/contract-site-dto';
+import { PelangganContractSiteDto } from '../../models/pelanggan-contract-site-dto';
 
 export interface ContractSiteControllerRemove$Params {
   id: string;
@@ -17,7 +17,7 @@ export interface ContractSiteControllerRemove$Params {
 export function contractSiteControllerRemove(http: HttpClient, rootUrl: string, params: ContractSiteControllerRemove$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteDto;
+'data'?: PelangganContractSiteDto;
 }>> {
   const rb = new RequestBuilder(rootUrl, contractSiteControllerRemove.PATH, 'delete');
   if (params) {
@@ -32,10 +32,10 @@ export function contractSiteControllerRemove(http: HttpClient, rootUrl: string, 
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: ContractSiteDto;
+      'data'?: PelangganContractSiteDto;
       }>;
     })
   );
 }
 
-contractSiteControllerRemove.PATH = '/nonauth/contract_site/contract_site/{id}';
+contractSiteControllerRemove.PATH = '/auth/contract_site/contract_site/{id}';

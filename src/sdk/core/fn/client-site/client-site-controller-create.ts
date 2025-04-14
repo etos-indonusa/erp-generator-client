@@ -8,16 +8,16 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ClientSiteDto } from '../../models/client-site-dto';
+import { PelangganClientSiteDto } from '../../models/pelanggan-client-site-dto';
 
 export interface ClientSiteControllerCreate$Params {
-      body: ClientSiteDto
+      body: PelangganClientSiteDto
 }
 
 export function clientSiteControllerCreate(http: HttpClient, rootUrl: string, params: ClientSiteControllerCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientSiteDto;
+'data'?: PelangganClientSiteDto;
 }>> {
   const rb = new RequestBuilder(rootUrl, clientSiteControllerCreate.PATH, 'post');
   if (params) {
@@ -32,10 +32,10 @@ export function clientSiteControllerCreate(http: HttpClient, rootUrl: string, pa
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: ClientSiteDto;
+      'data'?: PelangganClientSiteDto;
       }>;
     })
   );
 }
 
-clientSiteControllerCreate.PATH = '/nonauth/client_site/client_site';
+clientSiteControllerCreate.PATH = '/auth/client_site/client_site';

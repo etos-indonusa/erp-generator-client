@@ -8,7 +8,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ContractDto } from '../../models/contract-dto';
+import { PelangganContractDto } from '../../models/pelanggan-contract-dto';
 
 export interface ContractControllerRemove$Params {
   id: string;
@@ -17,7 +17,7 @@ export interface ContractControllerRemove$Params {
 export function contractControllerRemove(http: HttpClient, rootUrl: string, params: ContractControllerRemove$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractDto;
+'data'?: PelangganContractDto;
 }>> {
   const rb = new RequestBuilder(rootUrl, contractControllerRemove.PATH, 'delete');
   if (params) {
@@ -32,10 +32,10 @@ export function contractControllerRemove(http: HttpClient, rootUrl: string, para
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: ContractDto;
+      'data'?: PelangganContractDto;
       }>;
     })
   );
 }
 
-contractControllerRemove.PATH = '/nonauth/contract/contract/{id}';
+contractControllerRemove.PATH = '/auth/contract/contract/{id}';

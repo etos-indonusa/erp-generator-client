@@ -8,7 +8,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ContractJenisDto } from '../../models/contract-jenis-dto';
+import { PelangganContractJenisDto } from '../../models/pelanggan-contract-jenis-dto';
 
 export interface ContractJenisControllerFindAll$Params {
   pageIndex?: number;
@@ -31,7 +31,7 @@ export interface ContractJenisControllerFindAll$Params {
 export function contractJenisControllerFindAll(http: HttpClient, rootUrl: string, params?: ContractJenisControllerFindAll$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractJenisDto>;
+'data'?: Array<PelangganContractJenisDto>;
 'total'?: number;
 }>> {
   const rb = new RequestBuilder(rootUrl, contractJenisControllerFindAll.PATH, 'get');
@@ -53,11 +53,11 @@ export function contractJenisControllerFindAll(http: HttpClient, rootUrl: string
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: Array<ContractJenisDto>;
+      'data'?: Array<PelangganContractJenisDto>;
       'total'?: number;
       }>;
     })
   );
 }
 
-contractJenisControllerFindAll.PATH = '/nonauth/contract_jenis/contract_jenis';
+contractJenisControllerFindAll.PATH = '/auth/contract_jenis/contract_jenis';

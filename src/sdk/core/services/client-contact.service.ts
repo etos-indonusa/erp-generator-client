@@ -21,7 +21,7 @@ import { clientContactControllerRemove } from '../fn/client-contact/client-conta
 import { ClientContactControllerRemove$Params } from '../fn/client-contact/client-contact-controller-remove';
 import { clientContactControllerUpdate } from '../fn/client-contact/client-contact-controller-update';
 import { ClientContactControllerUpdate$Params } from '../fn/client-contact/client-contact-controller-update';
-import { ClientContactDto } from '../models/client-contact-dto';
+import { PelangganClientContactDto } from '../models/pelanggan-client-contact-dto';
 
 @Injectable({ providedIn: 'root' })
 export class ClientContactService extends BaseService {
@@ -30,7 +30,7 @@ export class ClientContactService extends BaseService {
   }
 
   /** Path part for operation `clientContactControllerFindAll()` */
-  static readonly ClientContactControllerFindAllPath = '/nonauth/client_contact/client_contact';
+  static readonly ClientContactControllerFindAllPath = '/auth/client_contact/client_contact';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -41,7 +41,7 @@ export class ClientContactService extends BaseService {
   clientContactControllerFindAll$Response(params?: ClientContactControllerFindAll$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ClientContactDto>;
+'data'?: Array<PelangganClientContactDto>;
 'total'?: number;
 }>> {
     return clientContactControllerFindAll(this.http, this.rootUrl, params, context);
@@ -56,26 +56,26 @@ export class ClientContactService extends BaseService {
   clientContactControllerFindAll(params?: ClientContactControllerFindAll$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ClientContactDto>;
+'data'?: Array<PelangganClientContactDto>;
 'total'?: number;
 }> {
     return this.clientContactControllerFindAll$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ClientContactDto>;
+'data'?: Array<PelangganClientContactDto>;
 'total'?: number;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ClientContactDto>;
+'data'?: Array<PelangganClientContactDto>;
 'total'?: number;
 } => r.body)
     );
   }
 
   /** Path part for operation `clientContactControllerCreate()` */
-  static readonly ClientContactControllerCreatePath = '/nonauth/client_contact/client_contact';
+  static readonly ClientContactControllerCreatePath = '/auth/client_contact/client_contact';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -86,7 +86,7 @@ export class ClientContactService extends BaseService {
   clientContactControllerCreate$Response(params: ClientContactControllerCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientContactDto;
+'data'?: PelangganClientContactDto;
 }>> {
     return clientContactControllerCreate(this.http, this.rootUrl, params, context);
   }
@@ -100,23 +100,23 @@ export class ClientContactService extends BaseService {
   clientContactControllerCreate(params: ClientContactControllerCreate$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientContactDto;
+'data'?: PelangganClientContactDto;
 }> {
     return this.clientContactControllerCreate$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientContactDto;
+'data'?: PelangganClientContactDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientContactDto;
+'data'?: PelangganClientContactDto;
 } => r.body)
     );
   }
 
   /** Path part for operation `clientContactControllerFindOne()` */
-  static readonly ClientContactControllerFindOnePath = '/nonauth/client_contact/client_contact/{id}';
+  static readonly ClientContactControllerFindOnePath = '/auth/client_contact/client_contact/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -127,7 +127,7 @@ export class ClientContactService extends BaseService {
   clientContactControllerFindOne$Response(params: ClientContactControllerFindOne$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientContactDto;
+'data'?: PelangganClientContactDto;
 }>> {
     return clientContactControllerFindOne(this.http, this.rootUrl, params, context);
   }
@@ -141,23 +141,23 @@ export class ClientContactService extends BaseService {
   clientContactControllerFindOne(params: ClientContactControllerFindOne$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientContactDto;
+'data'?: PelangganClientContactDto;
 }> {
     return this.clientContactControllerFindOne$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientContactDto;
+'data'?: PelangganClientContactDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientContactDto;
+'data'?: PelangganClientContactDto;
 } => r.body)
     );
   }
 
   /** Path part for operation `clientContactControllerUpdate()` */
-  static readonly ClientContactControllerUpdatePath = '/nonauth/client_contact/client_contact/{id}';
+  static readonly ClientContactControllerUpdatePath = '/auth/client_contact/client_contact/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -168,7 +168,7 @@ export class ClientContactService extends BaseService {
   clientContactControllerUpdate$Response(params: ClientContactControllerUpdate$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientContactDto;
+'data'?: PelangganClientContactDto;
 }>> {
     return clientContactControllerUpdate(this.http, this.rootUrl, params, context);
   }
@@ -182,23 +182,23 @@ export class ClientContactService extends BaseService {
   clientContactControllerUpdate(params: ClientContactControllerUpdate$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientContactDto;
+'data'?: PelangganClientContactDto;
 }> {
     return this.clientContactControllerUpdate$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientContactDto;
+'data'?: PelangganClientContactDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientContactDto;
+'data'?: PelangganClientContactDto;
 } => r.body)
     );
   }
 
   /** Path part for operation `clientContactControllerRemove()` */
-  static readonly ClientContactControllerRemovePath = '/nonauth/client_contact/client_contact/{id}';
+  static readonly ClientContactControllerRemovePath = '/auth/client_contact/client_contact/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -209,7 +209,7 @@ export class ClientContactService extends BaseService {
   clientContactControllerRemove$Response(params: ClientContactControllerRemove$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientContactDto;
+'data'?: PelangganClientContactDto;
 }>> {
     return clientContactControllerRemove(this.http, this.rootUrl, params, context);
   }
@@ -223,17 +223,17 @@ export class ClientContactService extends BaseService {
   clientContactControllerRemove(params: ClientContactControllerRemove$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientContactDto;
+'data'?: PelangganClientContactDto;
 }> {
     return this.clientContactControllerRemove$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientContactDto;
+'data'?: PelangganClientContactDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientContactDto;
+'data'?: PelangganClientContactDto;
 } => r.body)
     );
   }

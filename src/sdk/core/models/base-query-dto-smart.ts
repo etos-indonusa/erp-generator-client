@@ -17,11 +17,9 @@ export interface BaseQueryDtoSmart {
   include?: Array<any>;
 
   /**
-   * Filter untuk relasi/join
+   * Filter + jenis JOIN (inner/left/right)
    */
-  joinWhere?: {
-[key: string]: any;
-};
+  joinWhere?: Array<any>;
 
   /**
    * Pagination page index

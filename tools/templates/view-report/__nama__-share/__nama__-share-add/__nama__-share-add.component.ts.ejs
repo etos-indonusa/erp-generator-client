@@ -4,8 +4,8 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { <%= Nama %>FormSchema } from 'src/sdk/core/form-schema/<%= nama %>.form-schema'; 
-import type  { <%= Nama %>Dto } from 'src/sdk/core/models';
+import { <%= Prefix %><%= Nama %>FormSchema } from 'src/sdk/core/form-schema/<%= prefix %>-<%= nama %>.form-schema'; 
+import type  { <%= Prefix %><%= Nama %>Dto } from 'src/sdk/core/models';
 import { <%= Nama %>Service } from 'src/sdk/core/services';
 
 <% if (relationInjects && relationInjects.length) { -%>
@@ -20,7 +20,7 @@ import { <%- inj.split(':')[1].trim() %> } from 'src/sdk/core/services';
     styleUrl: './<%= nama %>-share-add.component.scss'
 })
 export class <%= Nama %>ShareAddComponent {
-    @Input('<%= nama_object %>') <%= nama_object %>: <%= Nama %>Dto = <%- dtoDefaultObject %>;
+    @Input('<%= nama_object %>') <%= nama_object %>: <%= Prefix %><%= Nama %>Dto = <%- dtoDefaultObject %>;
     form!: FormGroup;
 
     ngOnChanges(changes: SimpleChanges): void {
@@ -41,7 +41,7 @@ export class <%= Nama %>ShareAddComponent {
     ) { }
 
     ngOnInit(): void {
-        this.form = generateFormFromSchema(this.fb, <%= Nama %>FormSchema, {
+        this.form = generateFormFromSchema(this.fb, <%= Prefix %><%= Nama %>FormSchema, {
             kode<%= Nama %>: [Validators.minLength(3), Validators.maxLength(3)],
             catatan: [Validators.maxLength(200)],
         },'<%= Nama %>');
@@ -64,7 +64,7 @@ export class <%= Nama %>ShareAddComponent {
     <% } -%>
 
     submit(): void {
-        const labelMap = extractLabels(<%= Nama %>FormSchema);
+        const labelMap = extractLabels(<%= Prefix %><%= Nama %>FormSchema);
 
         if (showFormValidationWarnings(this.form, this.notify, labelMap)) {
             return;

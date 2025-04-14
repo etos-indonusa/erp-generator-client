@@ -8,7 +8,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { UsersDto } from '../../models/users-dto';
+import { AclUsersDto } from '../../models/acl-users-dto';
 
 export interface UsersControllerRemove$Params {
   id: string;
@@ -17,7 +17,7 @@ export interface UsersControllerRemove$Params {
 export function usersControllerRemove(http: HttpClient, rootUrl: string, params: UsersControllerRemove$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: UsersDto;
+'data'?: AclUsersDto;
 }>> {
   const rb = new RequestBuilder(rootUrl, usersControllerRemove.PATH, 'delete');
   if (params) {
@@ -32,10 +32,10 @@ export function usersControllerRemove(http: HttpClient, rootUrl: string, params:
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: UsersDto;
+      'data'?: AclUsersDto;
       }>;
     })
   );
 }
 
-usersControllerRemove.PATH = '/nonauth/users/users/{id}';
+usersControllerRemove.PATH = '/auth/users/users/{id}';

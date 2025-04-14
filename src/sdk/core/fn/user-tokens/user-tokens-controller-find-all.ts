@@ -8,7 +8,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { UserTokensDto } from '../../models/user-tokens-dto';
+import { AclUserTokensDto } from '../../models/acl-user-tokens-dto';
 
 export interface UserTokensControllerFindAll$Params {
   pageIndex?: number;
@@ -31,7 +31,7 @@ export interface UserTokensControllerFindAll$Params {
 export function userTokensControllerFindAll(http: HttpClient, rootUrl: string, params?: UserTokensControllerFindAll$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<UserTokensDto>;
+'data'?: Array<AclUserTokensDto>;
 'total'?: number;
 }>> {
   const rb = new RequestBuilder(rootUrl, userTokensControllerFindAll.PATH, 'get');
@@ -53,11 +53,11 @@ export function userTokensControllerFindAll(http: HttpClient, rootUrl: string, p
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: Array<UserTokensDto>;
+      'data'?: Array<AclUserTokensDto>;
       'total'?: number;
       }>;
     })
   );
 }
 
-userTokensControllerFindAll.PATH = '/nonauth/user_tokens/user_tokens';
+userTokensControllerFindAll.PATH = '/auth/user_tokens/user_tokens';

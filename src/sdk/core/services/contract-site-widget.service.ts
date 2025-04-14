@@ -13,7 +13,7 @@ import { StrictHttpResponse } from '../strict-http-response';
 
 import { contractSiteWidgetControllerFindAll } from '../fn/contract-site-widget/contract-site-widget-controller-find-all';
 import { ContractSiteWidgetControllerFindAll$Params } from '../fn/contract-site-widget/contract-site-widget-controller-find-all';
-import { ContractSiteWidgetReportDto } from '../models/contract-site-widget-report-dto';
+import { PelangganContractSiteWidgetDto } from '../models/pelanggan-contract-site-widget-dto';
 
 @Injectable({ providedIn: 'root' })
 export class ContractSiteWidgetService extends BaseService {
@@ -22,7 +22,7 @@ export class ContractSiteWidgetService extends BaseService {
   }
 
   /** Path part for operation `contractSiteWidgetControllerFindAll()` */
-  static readonly ContractSiteWidgetControllerFindAllPath = '/nonauth/contract_site/contract_site_widget';
+  static readonly ContractSiteWidgetControllerFindAllPath = '/auth/contract_site/contract_site_widget';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -33,7 +33,7 @@ export class ContractSiteWidgetService extends BaseService {
   contractSiteWidgetControllerFindAll$Response(params: ContractSiteWidgetControllerFindAll$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractSiteWidgetReportDto>;
+'data'?: Array<PelangganContractSiteWidgetDto>;
 'total'?: number;
 }>> {
     return contractSiteWidgetControllerFindAll(this.http, this.rootUrl, params, context);
@@ -48,19 +48,19 @@ export class ContractSiteWidgetService extends BaseService {
   contractSiteWidgetControllerFindAll(params: ContractSiteWidgetControllerFindAll$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractSiteWidgetReportDto>;
+'data'?: Array<PelangganContractSiteWidgetDto>;
 'total'?: number;
 }> {
     return this.contractSiteWidgetControllerFindAll$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractSiteWidgetReportDto>;
+'data'?: Array<PelangganContractSiteWidgetDto>;
 'total'?: number;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractSiteWidgetReportDto>;
+'data'?: Array<PelangganContractSiteWidgetDto>;
 'total'?: number;
 } => r.body)
     );

@@ -8,17 +8,17 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { KantorDto } from '../../models/kantor-dto';
+import { PelangganKantorDto } from '../../models/pelanggan-kantor-dto';
 
 export interface KantorControllerUpdate$Params {
   id: string;
-      body: KantorDto
+      body: PelangganKantorDto
 }
 
 export function kantorControllerUpdate(http: HttpClient, rootUrl: string, params: KantorControllerUpdate$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: KantorDto;
+'data'?: PelangganKantorDto;
 }>> {
   const rb = new RequestBuilder(rootUrl, kantorControllerUpdate.PATH, 'put');
   if (params) {
@@ -34,10 +34,10 @@ export function kantorControllerUpdate(http: HttpClient, rootUrl: string, params
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: KantorDto;
+      'data'?: PelangganKantorDto;
       }>;
     })
   );
 }
 
-kantorControllerUpdate.PATH = '/nonauth/kantor/kantor/{id}';
+kantorControllerUpdate.PATH = '/auth/kantor/kantor/{id}';

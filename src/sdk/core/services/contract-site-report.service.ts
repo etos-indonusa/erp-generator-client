@@ -15,7 +15,7 @@ import { contractSiteReportControllerFindAll } from '../fn/contract-site-report/
 import { ContractSiteReportControllerFindAll$Params } from '../fn/contract-site-report/contract-site-report-controller-find-all';
 import { contractSiteReportControllerFindOne } from '../fn/contract-site-report/contract-site-report-controller-find-one';
 import { ContractSiteReportControllerFindOne$Params } from '../fn/contract-site-report/contract-site-report-controller-find-one';
-import { ContractSiteReportDto } from '../models/contract-site-report-dto';
+import { PelangganContractSiteReportDto } from '../models/pelanggan-contract-site-report-dto';
 
 @Injectable({ providedIn: 'root' })
 export class ContractSiteReportService extends BaseService {
@@ -24,7 +24,7 @@ export class ContractSiteReportService extends BaseService {
   }
 
   /** Path part for operation `contractSiteReportControllerFindAll()` */
-  static readonly ContractSiteReportControllerFindAllPath = '/nonauth/contract_site/contract_site_report/list';
+  static readonly ContractSiteReportControllerFindAllPath = '/auth/contract_site/contract_site_report/list';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -35,7 +35,7 @@ export class ContractSiteReportService extends BaseService {
   contractSiteReportControllerFindAll$Response(params: ContractSiteReportControllerFindAll$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractSiteReportDto>;
+'data'?: Array<PelangganContractSiteReportDto>;
 'total'?: number;
 }>> {
     return contractSiteReportControllerFindAll(this.http, this.rootUrl, params, context);
@@ -50,26 +50,26 @@ export class ContractSiteReportService extends BaseService {
   contractSiteReportControllerFindAll(params: ContractSiteReportControllerFindAll$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractSiteReportDto>;
+'data'?: Array<PelangganContractSiteReportDto>;
 'total'?: number;
 }> {
     return this.contractSiteReportControllerFindAll$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractSiteReportDto>;
+'data'?: Array<PelangganContractSiteReportDto>;
 'total'?: number;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractSiteReportDto>;
+'data'?: Array<PelangganContractSiteReportDto>;
 'total'?: number;
 } => r.body)
     );
   }
 
   /** Path part for operation `contractSiteReportControllerFindOne()` */
-  static readonly ContractSiteReportControllerFindOnePath = '/nonauth/contract_site/contract_site_report/{id}';
+  static readonly ContractSiteReportControllerFindOnePath = '/auth/contract_site/contract_site_report/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -80,7 +80,7 @@ export class ContractSiteReportService extends BaseService {
   contractSiteReportControllerFindOne$Response(params: ContractSiteReportControllerFindOne$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteReportDto;
+'data'?: PelangganContractSiteReportDto;
 }>> {
     return contractSiteReportControllerFindOne(this.http, this.rootUrl, params, context);
   }
@@ -94,17 +94,17 @@ export class ContractSiteReportService extends BaseService {
   contractSiteReportControllerFindOne(params: ContractSiteReportControllerFindOne$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteReportDto;
+'data'?: PelangganContractSiteReportDto;
 }> {
     return this.contractSiteReportControllerFindOne$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteReportDto;
+'data'?: PelangganContractSiteReportDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteReportDto;
+'data'?: PelangganContractSiteReportDto;
 } => r.body)
     );
   }

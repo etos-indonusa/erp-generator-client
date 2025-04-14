@@ -8,17 +8,17 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { UserTokensDto } from '../../models/user-tokens-dto';
+import { AclUserTokensDto } from '../../models/acl-user-tokens-dto';
 
 export interface UserTokensControllerUpdate$Params {
   id: string;
-      body: UserTokensDto
+      body: AclUserTokensDto
 }
 
 export function userTokensControllerUpdate(http: HttpClient, rootUrl: string, params: UserTokensControllerUpdate$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: UserTokensDto;
+'data'?: AclUserTokensDto;
 }>> {
   const rb = new RequestBuilder(rootUrl, userTokensControllerUpdate.PATH, 'put');
   if (params) {
@@ -34,10 +34,10 @@ export function userTokensControllerUpdate(http: HttpClient, rootUrl: string, pa
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: UserTokensDto;
+      'data'?: AclUserTokensDto;
       }>;
     })
   );
 }
 
-userTokensControllerUpdate.PATH = '/nonauth/user_tokens/user_tokens/{id}';
+userTokensControllerUpdate.PATH = '/auth/user_tokens/user_tokens/{id}';

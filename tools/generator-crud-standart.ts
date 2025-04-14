@@ -3,7 +3,16 @@ import * as path from 'path';
 import * as ejs from 'ejs';
 import * as fse from 'fs-extra';
 
-const nama = process.argv[2];
+const args = process.argv.slice(2);
+const nama = args[0];
+const prefixArg = args.find(arg => arg.startsWith('--prefix='));
+const prefix = prefixArg ? prefixArg.split('=')[1] : null;
+
+const Prefix = prefix
+    ? prefix
+        .replace(/[-_](.)/g, (_, c) => c.toUpperCase()) // kebab/snake to camel
+        .replace(/^\w/, c => c.toUpperCase()) // kapital di awal
+    : '';
 
 if (!nama) {
     console.error('❌ Nama modul wajib diisi. Contoh: npm run generate:crud users');
@@ -21,7 +30,8 @@ const NAMA = nama.toUpperCase();
 
 
 const templateDir = path.resolve('tools/templates/crud-standart');
-const outputDir = path.resolve('src/app/views/modules', nama);
+const outputDir = path.resolve('src/app/views/modules', prefix ? `${prefix}/${nama}` : nama);
+
 
 // ⬇️ Fungsi ganti nama file/folder
 function renderName(input: string): string {
@@ -255,7 +265,7 @@ function injectToModulesRouting(moduleName: string) {
 
     const newRoute = `{
                 path: '${moduleName}',
-                loadChildren: () => import('./${moduleName}/${moduleName}.module').then(m => m.${Nama}Module)
+                loadChildren: () => import('./${prefix ? `${prefix}/` : ''}${moduleName}/${moduleName}.module').then(m => m.${Nama}Module)
             },`;
 
     if (routingContent.includes(`path: '${moduleName}'`)) {
@@ -332,7 +342,8 @@ function injectToSidebarMenu(moduleName: string) {
 
 
 // ⬇️ Ambil field dari DTO jika ada
-const dtoPath = path.resolve('src/sdk/core/models', `${nama}-dto.ts`);
+const dtoFile = `${prefix ? `${prefix}-` : ''}${nama}-dto.ts`;
+const dtoPath = path.resolve('src/sdk/core/models', dtoFile);
 let searchFields: string[] = [];
 
 if (fs.existsSync(dtoPath)) {
@@ -434,7 +445,7 @@ console.log("📋 Display Fields:", displayFields);
 // ⬇️ Eksekusi
 fse.ensureDirSync(outputDir);
 processDirectory(templateDir, outputDir, {
-    nama, Nama, NAMA, searchFields, displayFields, dtoDefaultObject, formHtml, relationVars, relationInjects, relationInitCalls, relationFunctions, nama_object, smartDisplayFields
+    nama, Nama, NAMA, searchFields, displayFields, dtoDefaultObject, formHtml, relationVars, relationInjects, relationInitCalls, relationFunctions, nama_object, smartDisplayFields, prefix, Prefix
 });
 injectToModulesRouting(nama);
 injectToSidebarMenu(nama);

@@ -9,7 +9,7 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { environment } from 'src/environments/environment.prod';
 import { <%= Nama_report %>Service, <%= Nama %>Service } from 'src/sdk/core/services';
-import { <%= Nama %>Dto } from 'src/sdk/core/models';
+import { <%= Prefix %><%= Nama %>Dto } from 'src/sdk/core/models';
 import { <%= Nama %>ShareAddComponent } from '../<%= nama %>-share-add/<%= nama %>-share-add.component';
 import { <%= Nama %>ShareDetailComponent } from '../<%= nama %>-share-detail/<%= nama %>-share-detail.component';
 <% if (relationInjects && relationInjects.length) { -%>
@@ -152,11 +152,13 @@ export class <%= Nama %>ShareListComponent {
         this.<%= nama_object_report %>Service.<%= nama_object_report %>ControllerFindAll({
             body: {
                 filter: finalFilter,
-                joinWhere: {
-                <% joinWhereKeys.forEach((key, index) => { -%>
-                    <%- `"${key}": this.filter${pascalCase(key)}` %><%= index < joinWhereKeys.length - 1 ? ',' : '' %>
-                <% }) -%>
-                },
+                joinWhere: [
+                    <% joinWhereKeys.forEach((key, index) => { -%>
+                    {
+                        <%- `"${key}": this.filter${pascalCase(key)}, type: 'inner'` %>
+                    }<%= index < joinWhereKeys.length - 1 ? ',' : '' %>
+                    <% }) -%>
+                    ],
                 search_field: this.search_field,
                 search_keyword: this.search || undefined,
                 include:  <%- JSON.stringify(autoInclude, null, 2) %>,
@@ -226,7 +228,7 @@ export class <%= Nama %>ShareListComponent {
 
      
 
-    detail(data:<%= Nama %>Dto) {
+    detail(data:<%= Prefix %><%= Nama %>Dto) {
         if (!this.acl.can('contract-site', 'can_list')) return;
 
         const drawerRef = this.drawerService.create<<%= Nama %>ShareDetailComponent, {}, string>({

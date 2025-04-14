@@ -21,7 +21,7 @@ import { kantorControllerRemove } from '../fn/kantor/kantor-controller-remove';
 import { KantorControllerRemove$Params } from '../fn/kantor/kantor-controller-remove';
 import { kantorControllerUpdate } from '../fn/kantor/kantor-controller-update';
 import { KantorControllerUpdate$Params } from '../fn/kantor/kantor-controller-update';
-import { KantorDto } from '../models/kantor-dto';
+import { PelangganKantorDto } from '../models/pelanggan-kantor-dto';
 
 @Injectable({ providedIn: 'root' })
 export class KantorService extends BaseService {
@@ -30,7 +30,7 @@ export class KantorService extends BaseService {
   }
 
   /** Path part for operation `kantorControllerFindAll()` */
-  static readonly KantorControllerFindAllPath = '/nonauth/kantor/kantor';
+  static readonly KantorControllerFindAllPath = '/auth/kantor/kantor';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -41,7 +41,7 @@ export class KantorService extends BaseService {
   kantorControllerFindAll$Response(params?: KantorControllerFindAll$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<KantorDto>;
+'data'?: Array<PelangganKantorDto>;
 'total'?: number;
 }>> {
     return kantorControllerFindAll(this.http, this.rootUrl, params, context);
@@ -56,26 +56,26 @@ export class KantorService extends BaseService {
   kantorControllerFindAll(params?: KantorControllerFindAll$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<KantorDto>;
+'data'?: Array<PelangganKantorDto>;
 'total'?: number;
 }> {
     return this.kantorControllerFindAll$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<KantorDto>;
+'data'?: Array<PelangganKantorDto>;
 'total'?: number;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<KantorDto>;
+'data'?: Array<PelangganKantorDto>;
 'total'?: number;
 } => r.body)
     );
   }
 
   /** Path part for operation `kantorControllerCreate()` */
-  static readonly KantorControllerCreatePath = '/nonauth/kantor/kantor';
+  static readonly KantorControllerCreatePath = '/auth/kantor/kantor';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -86,7 +86,7 @@ export class KantorService extends BaseService {
   kantorControllerCreate$Response(params: KantorControllerCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: KantorDto;
+'data'?: PelangganKantorDto;
 }>> {
     return kantorControllerCreate(this.http, this.rootUrl, params, context);
   }
@@ -100,23 +100,23 @@ export class KantorService extends BaseService {
   kantorControllerCreate(params: KantorControllerCreate$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: KantorDto;
+'data'?: PelangganKantorDto;
 }> {
     return this.kantorControllerCreate$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: KantorDto;
+'data'?: PelangganKantorDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: KantorDto;
+'data'?: PelangganKantorDto;
 } => r.body)
     );
   }
 
   /** Path part for operation `kantorControllerFindOne()` */
-  static readonly KantorControllerFindOnePath = '/nonauth/kantor/kantor/{id}';
+  static readonly KantorControllerFindOnePath = '/auth/kantor/kantor/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -127,7 +127,7 @@ export class KantorService extends BaseService {
   kantorControllerFindOne$Response(params: KantorControllerFindOne$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: KantorDto;
+'data'?: PelangganKantorDto;
 }>> {
     return kantorControllerFindOne(this.http, this.rootUrl, params, context);
   }
@@ -141,23 +141,23 @@ export class KantorService extends BaseService {
   kantorControllerFindOne(params: KantorControllerFindOne$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: KantorDto;
+'data'?: PelangganKantorDto;
 }> {
     return this.kantorControllerFindOne$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: KantorDto;
+'data'?: PelangganKantorDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: KantorDto;
+'data'?: PelangganKantorDto;
 } => r.body)
     );
   }
 
   /** Path part for operation `kantorControllerUpdate()` */
-  static readonly KantorControllerUpdatePath = '/nonauth/kantor/kantor/{id}';
+  static readonly KantorControllerUpdatePath = '/auth/kantor/kantor/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -168,7 +168,7 @@ export class KantorService extends BaseService {
   kantorControllerUpdate$Response(params: KantorControllerUpdate$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: KantorDto;
+'data'?: PelangganKantorDto;
 }>> {
     return kantorControllerUpdate(this.http, this.rootUrl, params, context);
   }
@@ -182,23 +182,23 @@ export class KantorService extends BaseService {
   kantorControllerUpdate(params: KantorControllerUpdate$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: KantorDto;
+'data'?: PelangganKantorDto;
 }> {
     return this.kantorControllerUpdate$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: KantorDto;
+'data'?: PelangganKantorDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: KantorDto;
+'data'?: PelangganKantorDto;
 } => r.body)
     );
   }
 
   /** Path part for operation `kantorControllerRemove()` */
-  static readonly KantorControllerRemovePath = '/nonauth/kantor/kantor/{id}';
+  static readonly KantorControllerRemovePath = '/auth/kantor/kantor/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -209,7 +209,7 @@ export class KantorService extends BaseService {
   kantorControllerRemove$Response(params: KantorControllerRemove$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: KantorDto;
+'data'?: PelangganKantorDto;
 }>> {
     return kantorControllerRemove(this.http, this.rootUrl, params, context);
   }
@@ -223,17 +223,17 @@ export class KantorService extends BaseService {
   kantorControllerRemove(params: KantorControllerRemove$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: KantorDto;
+'data'?: PelangganKantorDto;
 }> {
     return this.kantorControllerRemove$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: KantorDto;
+'data'?: PelangganKantorDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: KantorDto;
+'data'?: PelangganKantorDto;
 } => r.body)
     );
   }

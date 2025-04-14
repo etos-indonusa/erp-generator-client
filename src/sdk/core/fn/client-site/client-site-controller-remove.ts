@@ -8,7 +8,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ClientSiteDto } from '../../models/client-site-dto';
+import { PelangganClientSiteDto } from '../../models/pelanggan-client-site-dto';
 
 export interface ClientSiteControllerRemove$Params {
   id: string;
@@ -17,7 +17,7 @@ export interface ClientSiteControllerRemove$Params {
 export function clientSiteControllerRemove(http: HttpClient, rootUrl: string, params: ClientSiteControllerRemove$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientSiteDto;
+'data'?: PelangganClientSiteDto;
 }>> {
   const rb = new RequestBuilder(rootUrl, clientSiteControllerRemove.PATH, 'delete');
   if (params) {
@@ -32,10 +32,10 @@ export function clientSiteControllerRemove(http: HttpClient, rootUrl: string, pa
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: ClientSiteDto;
+      'data'?: PelangganClientSiteDto;
       }>;
     })
   );
 }
 
-clientSiteControllerRemove.PATH = '/nonauth/client_site/client_site/{id}';
+clientSiteControllerRemove.PATH = '/auth/client_site/client_site/{id}';

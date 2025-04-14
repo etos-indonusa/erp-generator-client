@@ -17,17 +17,18 @@ const routes: Routes = [
                 loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
             },
             {
-                path: 'contract',
-                loadChildren: () => import('./contract/contract.module').then(m => m.ContractModule)
+                path: 'workflow-log',
+                loadChildren: () => import('./tools/workflow-log/workflow-log.module').then(m => m.WorkflowLogModule)
             },
             {
-                path: 'client',
-                loadChildren: () => import('./client/client.module').then(m => m.ClientModule)
+                path: 'workflow-step',
+                loadChildren: () => import('./tools/workflow-step/workflow-step.module').then(m => m.WorkflowStepModule)
             },
             {
-                path: 'contract-site',
-                loadChildren: () => import('./contract-site/contract-site.module').then(m => m.ContractSiteModule)
+                path: 'workflow',
+                loadChildren: () => import('./tools/workflow/workflow.module').then(m => m.WorkflowModule)
             }, 
+ 
         ]
     }
 ];

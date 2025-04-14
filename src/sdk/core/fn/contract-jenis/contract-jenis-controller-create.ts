@@ -8,16 +8,16 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ContractJenisDto } from '../../models/contract-jenis-dto';
+import { PelangganContractJenisDto } from '../../models/pelanggan-contract-jenis-dto';
 
 export interface ContractJenisControllerCreate$Params {
-      body: ContractJenisDto
+      body: PelangganContractJenisDto
 }
 
 export function contractJenisControllerCreate(http: HttpClient, rootUrl: string, params: ContractJenisControllerCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractJenisDto;
+'data'?: PelangganContractJenisDto;
 }>> {
   const rb = new RequestBuilder(rootUrl, contractJenisControllerCreate.PATH, 'post');
   if (params) {
@@ -32,10 +32,10 @@ export function contractJenisControllerCreate(http: HttpClient, rootUrl: string,
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: ContractJenisDto;
+      'data'?: PelangganContractJenisDto;
       }>;
     })
   );
 }
 
-contractJenisControllerCreate.PATH = '/nonauth/contract_jenis/contract_jenis';
+contractJenisControllerCreate.PATH = '/auth/contract_jenis/contract_jenis';

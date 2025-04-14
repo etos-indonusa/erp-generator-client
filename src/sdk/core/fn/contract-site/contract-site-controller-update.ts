@@ -8,17 +8,17 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ContractSiteDto } from '../../models/contract-site-dto';
+import { PelangganContractSiteDto } from '../../models/pelanggan-contract-site-dto';
 
 export interface ContractSiteControllerUpdate$Params {
   id: string;
-      body: ContractSiteDto
+      body: PelangganContractSiteDto
 }
 
 export function contractSiteControllerUpdate(http: HttpClient, rootUrl: string, params: ContractSiteControllerUpdate$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractSiteDto;
+'data'?: PelangganContractSiteDto;
 }>> {
   const rb = new RequestBuilder(rootUrl, contractSiteControllerUpdate.PATH, 'put');
   if (params) {
@@ -34,10 +34,10 @@ export function contractSiteControllerUpdate(http: HttpClient, rootUrl: string, 
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: ContractSiteDto;
+      'data'?: PelangganContractSiteDto;
       }>;
     })
   );
 }
 
-contractSiteControllerUpdate.PATH = '/nonauth/contract_site/contract_site/{id}';
+contractSiteControllerUpdate.PATH = '/auth/contract_site/contract_site/{id}';

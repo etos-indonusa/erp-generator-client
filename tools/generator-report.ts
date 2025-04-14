@@ -3,8 +3,19 @@ import * as path from 'path';
 import * as ejs from 'ejs';
 import * as fse from 'fs-extra';
 
-const nama = process.argv[2];
-const nama_report = process.argv[2] + '_report';
+
+const args = process.argv.slice(2);
+const nama = args[0];
+const prefixArg = args.find(arg => arg.startsWith('--prefix='));
+const prefix = prefixArg ? prefixArg.split('=')[1] : null;
+
+const Prefix = prefix
+    ? prefix
+        .replace(/[-_](.)/g, (_, c) => c.toUpperCase()) // kebab/snake to camel
+        .replace(/^\w/, c => c.toUpperCase()) // kapital di awal
+    : '';
+ 
+const nama_report = args[0] + '_report';
 
 if (!nama) {
     console.error('❌ Nama modul wajib diisi. Contoh: npm run generate:crud users');
@@ -31,7 +42,8 @@ const NAMA_REPORT = nama_report.toUpperCase();
 
 
 const templateDir = path.resolve('tools/templates/view-report');
-const outputDir = path.resolve('src/app/views/modules', nama);
+// const outputDir = path.resolve('src/app/views/modules', nama);
+const outputDir = path.resolve('src/app/views/modules', prefix ? `${prefix}/${nama}` : nama);
 
 // ⬇️ Fungsi ganti nama file/folder
 function renderName(input: string): string {
@@ -268,7 +280,7 @@ function injectToModulesRouting(moduleName: string) {
 
     const newRoute = `{
                 path: '${moduleName}',
-                loadChildren: () => import('./${moduleName}/${moduleName}.module').then(m => m.${Nama}Module)
+                loadChildren: () => import('./${prefix ? `${prefix}/` : ''}${moduleName}/${moduleName}.module').then(m => m.${Nama}Module)
             },`;
 
     if (routingContent.includes(`path: '${moduleName}'`)) {
@@ -443,8 +455,9 @@ const idPrimary = toSnakeCase(nama_object)
 
 
 // ⬇️ Ambil field dari DTO jika ada
-const dtoPath = path.resolve('src/sdk/core/models', `${nama}-dto.ts`);
-const dtoPath_report = path.resolve('src/sdk/core/models', `${nama}-report-dto.ts`);
+const dtoFile = `${prefix ? `${prefix}-` : ''}${nama}-dto.ts`;
+const dtoPath = path.resolve('src/sdk/core/models', dtoFile);
+ 
 let searchFields: string[] = [];
 let searchFields_report: string[] = [];
 
@@ -561,8 +574,8 @@ function getSmartDisplayFieldsFromDtoV2(dtoPath: string, visited: Set<string> = 
         if (visited.has(rel)) continue;
         visited.add(rel);
 
-        const dtoFileName = toKebabCase(rel) + '-dto.ts';
-        const nestedPath = path.resolve(path.dirname(dtoPath), dtoFileName);
+        const dtoFile = `${prefix ? `${prefix}-` : ''}${nama}-dto.ts`;
+        const nestedPath = path.resolve('src/sdk/core/models', dtoFile); 
 
         if (fs.existsSync(nestedPath)) {
             const children = getSmartDisplayFieldsFromDtoV2(nestedPath, visited);
@@ -604,7 +617,8 @@ processDirectory(templateDir, outputDir, {
     id_primary,
     filterLines,
     smartFilterFields,
-    dtoFields
+    dtoFields,
+    prefix, Prefix
 });
 injectToModulesRouting(nama);
 injectToSidebarMenu(nama);

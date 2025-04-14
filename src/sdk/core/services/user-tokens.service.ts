@@ -11,6 +11,7 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
+import { AclUserTokensDto } from '../models/acl-user-tokens-dto';
 import { userTokensControllerCreate } from '../fn/user-tokens/user-tokens-controller-create';
 import { UserTokensControllerCreate$Params } from '../fn/user-tokens/user-tokens-controller-create';
 import { userTokensControllerFindAll } from '../fn/user-tokens/user-tokens-controller-find-all';
@@ -21,7 +22,6 @@ import { userTokensControllerRemove } from '../fn/user-tokens/user-tokens-contro
 import { UserTokensControllerRemove$Params } from '../fn/user-tokens/user-tokens-controller-remove';
 import { userTokensControllerUpdate } from '../fn/user-tokens/user-tokens-controller-update';
 import { UserTokensControllerUpdate$Params } from '../fn/user-tokens/user-tokens-controller-update';
-import { UserTokensDto } from '../models/user-tokens-dto';
 
 @Injectable({ providedIn: 'root' })
 export class UserTokensService extends BaseService {
@@ -30,7 +30,7 @@ export class UserTokensService extends BaseService {
   }
 
   /** Path part for operation `userTokensControllerFindAll()` */
-  static readonly UserTokensControllerFindAllPath = '/nonauth/user_tokens/user_tokens';
+  static readonly UserTokensControllerFindAllPath = '/auth/user_tokens/user_tokens';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -41,7 +41,7 @@ export class UserTokensService extends BaseService {
   userTokensControllerFindAll$Response(params?: UserTokensControllerFindAll$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<UserTokensDto>;
+'data'?: Array<AclUserTokensDto>;
 'total'?: number;
 }>> {
     return userTokensControllerFindAll(this.http, this.rootUrl, params, context);
@@ -56,26 +56,26 @@ export class UserTokensService extends BaseService {
   userTokensControllerFindAll(params?: UserTokensControllerFindAll$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<UserTokensDto>;
+'data'?: Array<AclUserTokensDto>;
 'total'?: number;
 }> {
     return this.userTokensControllerFindAll$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<UserTokensDto>;
+'data'?: Array<AclUserTokensDto>;
 'total'?: number;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<UserTokensDto>;
+'data'?: Array<AclUserTokensDto>;
 'total'?: number;
 } => r.body)
     );
   }
 
   /** Path part for operation `userTokensControllerCreate()` */
-  static readonly UserTokensControllerCreatePath = '/nonauth/user_tokens/user_tokens';
+  static readonly UserTokensControllerCreatePath = '/auth/user_tokens/user_tokens';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -86,7 +86,7 @@ export class UserTokensService extends BaseService {
   userTokensControllerCreate$Response(params: UserTokensControllerCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: UserTokensDto;
+'data'?: AclUserTokensDto;
 }>> {
     return userTokensControllerCreate(this.http, this.rootUrl, params, context);
   }
@@ -100,23 +100,23 @@ export class UserTokensService extends BaseService {
   userTokensControllerCreate(params: UserTokensControllerCreate$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: UserTokensDto;
+'data'?: AclUserTokensDto;
 }> {
     return this.userTokensControllerCreate$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: UserTokensDto;
+'data'?: AclUserTokensDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: UserTokensDto;
+'data'?: AclUserTokensDto;
 } => r.body)
     );
   }
 
   /** Path part for operation `userTokensControllerFindOne()` */
-  static readonly UserTokensControllerFindOnePath = '/nonauth/user_tokens/user_tokens/{id}';
+  static readonly UserTokensControllerFindOnePath = '/auth/user_tokens/user_tokens/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -127,7 +127,7 @@ export class UserTokensService extends BaseService {
   userTokensControllerFindOne$Response(params: UserTokensControllerFindOne$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: UserTokensDto;
+'data'?: AclUserTokensDto;
 }>> {
     return userTokensControllerFindOne(this.http, this.rootUrl, params, context);
   }
@@ -141,23 +141,23 @@ export class UserTokensService extends BaseService {
   userTokensControllerFindOne(params: UserTokensControllerFindOne$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: UserTokensDto;
+'data'?: AclUserTokensDto;
 }> {
     return this.userTokensControllerFindOne$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: UserTokensDto;
+'data'?: AclUserTokensDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: UserTokensDto;
+'data'?: AclUserTokensDto;
 } => r.body)
     );
   }
 
   /** Path part for operation `userTokensControllerUpdate()` */
-  static readonly UserTokensControllerUpdatePath = '/nonauth/user_tokens/user_tokens/{id}';
+  static readonly UserTokensControllerUpdatePath = '/auth/user_tokens/user_tokens/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -168,7 +168,7 @@ export class UserTokensService extends BaseService {
   userTokensControllerUpdate$Response(params: UserTokensControllerUpdate$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: UserTokensDto;
+'data'?: AclUserTokensDto;
 }>> {
     return userTokensControllerUpdate(this.http, this.rootUrl, params, context);
   }
@@ -182,23 +182,23 @@ export class UserTokensService extends BaseService {
   userTokensControllerUpdate(params: UserTokensControllerUpdate$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: UserTokensDto;
+'data'?: AclUserTokensDto;
 }> {
     return this.userTokensControllerUpdate$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: UserTokensDto;
+'data'?: AclUserTokensDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: UserTokensDto;
+'data'?: AclUserTokensDto;
 } => r.body)
     );
   }
 
   /** Path part for operation `userTokensControllerRemove()` */
-  static readonly UserTokensControllerRemovePath = '/nonauth/user_tokens/user_tokens/{id}';
+  static readonly UserTokensControllerRemovePath = '/auth/user_tokens/user_tokens/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -209,7 +209,7 @@ export class UserTokensService extends BaseService {
   userTokensControllerRemove$Response(params: UserTokensControllerRemove$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: UserTokensDto;
+'data'?: AclUserTokensDto;
 }>> {
     return userTokensControllerRemove(this.http, this.rootUrl, params, context);
   }
@@ -223,17 +223,17 @@ export class UserTokensService extends BaseService {
   userTokensControllerRemove(params: UserTokensControllerRemove$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: UserTokensDto;
+'data'?: AclUserTokensDto;
 }> {
     return this.userTokensControllerRemove$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: UserTokensDto;
+'data'?: AclUserTokensDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: UserTokensDto;
+'data'?: AclUserTokensDto;
 } => r.body)
     );
   }

@@ -3,7 +3,7 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { NzTableQueryParams } from 'ng-zorro-antd/table';
 import { AclService } from 'src/app/services/acl.service';
-import { <%= Nama %>Dto } from 'src/sdk/core/models';
+import { <%= Prefix %><%= Nama %>Dto } from 'src/sdk/core/models';
 import { <%= Nama %>Service } from 'src/sdk/core/services';
 import { <%= Nama %>ShareAddComponent } from '../<%= nama %>-share/<%= nama %>-share-add/<%= nama %>-share-add.component';
 import { <%= Nama %>ShareDetailComponent } from '../<%= nama %>-share/<%= nama %>-share-detail/<%= nama %>-share-detail.component';
@@ -113,13 +113,13 @@ export class <%= Nama %>ListComponent {
             this.searchData()
         });
     }
-    edit(data: <%= Nama %>Dto) {
+edit(data:  <%= Prefix %><%= Nama %>Dto) {
         if (!this.acl.can("mitra", 'can_edit')) {
             return
         }
         const drawerRef = this.drawerService.create<<%= Nama %>ShareAddComponent, {
         }, {
-            <%= nama_object %>: <%= Nama %>Dto
+            <%= nama_object %>: <%= Prefix %><%= Nama %>Dto
         }>({
             nzTitle: 'Edit',
             nzContent: <%= Nama %>ShareAddComponent,
@@ -137,7 +137,7 @@ export class <%= Nama %>ListComponent {
     }
 
 
-    delete(data: <%= Nama %>Dto) {
+delete (data: <%= Prefix %><%= Nama %>Dto) {
         this.loading = true
         this.<%= nama_object %>Service.<%= nama_object %>ControllerRemove({ id: data.id<%= Nama %> }).subscribe(
             data => {
@@ -153,7 +153,7 @@ export class <%= Nama %>ListComponent {
         }
         const drawerRef = this.drawerService.create<<%= Nama %>ShareDetailComponent, {
         }, {
-            data: <%= Nama %>Dto
+            data: <%= Prefix %><%= Nama %>Dto
         }>({
             nzTitle: 'Detail <%= Nama %>',
             nzContent: <%= Nama %>ShareDetailComponent,

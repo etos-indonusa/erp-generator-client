@@ -8,7 +8,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ContractJenisDto } from '../../models/contract-jenis-dto';
+import { PelangganContractJenisDto } from '../../models/pelanggan-contract-jenis-dto';
 
 export interface ContractJenisControllerRemove$Params {
   id: string;
@@ -17,7 +17,7 @@ export interface ContractJenisControllerRemove$Params {
 export function contractJenisControllerRemove(http: HttpClient, rootUrl: string, params: ContractJenisControllerRemove$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractJenisDto;
+'data'?: PelangganContractJenisDto;
 }>> {
   const rb = new RequestBuilder(rootUrl, contractJenisControllerRemove.PATH, 'delete');
   if (params) {
@@ -32,10 +32,10 @@ export function contractJenisControllerRemove(http: HttpClient, rootUrl: string,
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: ContractJenisDto;
+      'data'?: PelangganContractJenisDto;
       }>;
     })
   );
 }
 
-contractJenisControllerRemove.PATH = '/nonauth/contract_jenis/contract_jenis/{id}';
+contractJenisControllerRemove.PATH = '/auth/contract_jenis/contract_jenis/{id}';

@@ -8,17 +8,17 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ClientDto } from '../../models/client-dto';
+import { PelangganClientDto } from '../../models/pelanggan-client-dto';
 
 export interface ClientControllerUpdate$Params {
   id: string;
-      body: ClientDto
+      body: PelangganClientDto
 }
 
 export function clientControllerUpdate(http: HttpClient, rootUrl: string, params: ClientControllerUpdate$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ClientDto;
+'data'?: PelangganClientDto;
 }>> {
   const rb = new RequestBuilder(rootUrl, clientControllerUpdate.PATH, 'put');
   if (params) {
@@ -34,10 +34,10 @@ export function clientControllerUpdate(http: HttpClient, rootUrl: string, params
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: ClientDto;
+      'data'?: PelangganClientDto;
       }>;
     })
   );
 }
 
-clientControllerUpdate.PATH = '/nonauth/client/client/{id}';
+clientControllerUpdate.PATH = '/auth/client/client/{id}';

@@ -37,14 +37,14 @@ export class <%= Nama %>ShareWidgetComponent {
             .<%= nama_object %>WidgetControllerFindAll({
                 body: {
                     filter: JSON.stringify(this.filter),
-                    select: JSON.stringify([
+                    select: [
                         {
                             type: "count",
                             field:"status_<%= id_primary %>" ,
-                            alias: "total" 
+                            alias: "jumlah" 
                         }
-                    ]),
-                    groupBy: JSON.stringify(['status_<%= id_primary %>']),
+                    ],
+                    groupBy:  ['status_<%= id_primary %>'],
                     sortKey: "status_<%= id_primary %>",
                     sortValue: "ASC"
                 }
@@ -52,6 +52,9 @@ export class <%= Nama %>ShareWidgetComponent {
             .subscribe((data) => {
                 this.total = data.total ?? 0;
                 this.status_urutan = data.data ?? [] ; 
+                this.status_urutan.forEach(x => {
+                    this.total = this.total + x.jumlah * 1
+                })
                 this.is_loading = false;
             });
     }

@@ -8,16 +8,16 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ContractDto } from '../../models/contract-dto';
+import { PelangganContractDto } from '../../models/pelanggan-contract-dto';
 
 export interface ContractControllerCreate$Params {
-      body: ContractDto
+      body: PelangganContractDto
 }
 
 export function contractControllerCreate(http: HttpClient, rootUrl: string, params: ContractControllerCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractDto;
+'data'?: PelangganContractDto;
 }>> {
   const rb = new RequestBuilder(rootUrl, contractControllerCreate.PATH, 'post');
   if (params) {
@@ -32,10 +32,10 @@ export function contractControllerCreate(http: HttpClient, rootUrl: string, para
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: ContractDto;
+      'data'?: PelangganContractDto;
       }>;
     })
   );
 }
 
-contractControllerCreate.PATH = '/nonauth/contract/contract';
+contractControllerCreate.PATH = '/auth/contract/contract';

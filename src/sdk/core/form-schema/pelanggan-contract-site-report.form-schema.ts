@@ -1,0 +1,47 @@
+export const PelangganContractSiteReportFormSchema = {
+  "biayaAkhir": {
+    "default": 0,
+    "required": false
+  },
+  "biayaBulanan": {
+    "default": 0,
+    "required": false
+  },
+  "biayaDiawal": {
+    "default": 0,
+    "required": false
+  },
+  "catatan": {
+    "default": "",
+    "required": false
+  },
+  "contract": {
+    "default": "",
+    "required": true
+  },
+  "createdAt": {
+    "default": "",
+    "required": false
+  },
+  "idClientSite": {
+    "required": true
+  },
+  "idContract": {
+    "required": true
+  },
+  "idContractSite": {
+    "required": true
+  },
+  "jumlahJadwalPerBulan": {
+    "default": 0,
+    "required": false
+  },
+  "statusContractSite": {
+    "default": "",
+    "required": false
+  },
+  "updatedAt": {
+    "default": "",
+    "required": false
+  }
+};

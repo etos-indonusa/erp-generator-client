@@ -54,7 +54,7 @@ export class AuthEffects {
             this.actions$.pipe(
                 ofType(loadCurrentUserSuccess),
                 tap(() => {
-                    this.router.navigate(['/dashboard']); // atau path default-mu
+                    // this.router.navigate(['/dashboard']); // atau path default-mu
                 })
             ),
         { dispatch: false }

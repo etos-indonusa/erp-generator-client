@@ -11,30 +11,28 @@ import { AuthPublicService } from './services/auth-public.service';
 import { UsersService } from './services/users.service';
 import { UserTokensService } from './services/user-tokens.service';
 import { AuthProtectService } from './services/auth-protect.service';
-import { ClientService } from './services/client.service';
-import { ClientSiteService } from './services/client-site.service';
-import { CompanyConfigService } from './services/company-config.service';
-import { ContactClientUseService } from './services/contact-client-use.service';
 import { ContractService } from './services/contract.service';
 import { ContractReportService } from './services/contract-report.service';
 import { ContractWidgetService } from './services/contract-widget.service';
+import { ContractJenisService } from './services/contract-jenis.service';
+import { KantorService } from './services/kantor.service';
 import { ContractSiteService } from './services/contract-site.service';
 import { ContractSiteReportService } from './services/contract-site-report.service';
 import { ContractSiteWidgetService } from './services/contract-site-widget.service';
-import { ContractSiteServiceService } from './services/contract-site-service.service';
-import { CustomFieldService } from './services/custom-field.service';
-import { CustomFieldValueService } from './services/custom-field-value.service';
-import { FakturService } from './services/faktur.service';
-import { InvoiceService } from './services/invoice.service';
-import { KantorService } from './services/kantor.service';
-import { ServiceService } from './services/service.service';
-import { WorkScheduleService } from './services/work-schedule.service';
-import { WorkScheduleTeknisiService } from './services/work-schedule-teknisi.service';
-import { ModuleService } from './services/module.service';
-import { UserGroupAccessService } from './services/user-group-access.service';
-import { UserGroupService } from './services/user-group.service';
+import { ClientService } from './services/client.service';
+import { ClientReportService } from './services/client-report.service';
+import { ClientSiteService } from './services/client-site.service';
+import { WorkflowService } from './services/workflow.service';
+import { WorkflowApplyService } from './services/workflow-apply.service';
+import { WorkflowReportService } from './services/workflow-report.service';
+import { WorkflowWidgetService } from './services/workflow-widget.service';
+import { WorkflowLogService } from './services/workflow-log.service';
+import { WorkflowLogReportService } from './services/workflow-log-report.service';
+import { WorkflowLogWidgetService } from './services/workflow-log-widget.service';
+import { WorkflowStepService } from './services/workflow-step.service';
+import { WorkflowStepReportService } from './services/workflow-step-report.service';
+import { WorkflowStepWidgetService } from './services/workflow-step-widget.service';
 import { ClientContactService } from './services/client-contact.service';
-import { ContractJenisService } from './services/contract-jenis.service';
 
 /**
  * Module that provides all services and configuration.
@@ -49,30 +47,28 @@ import { ContractJenisService } from './services/contract-jenis.service';
     UsersService,
     UserTokensService,
     AuthProtectService,
-    ClientService,
-    ClientSiteService,
-    CompanyConfigService,
-    ContactClientUseService,
     ContractService,
     ContractReportService,
     ContractWidgetService,
+    ContractJenisService,
+    KantorService,
     ContractSiteService,
     ContractSiteReportService,
     ContractSiteWidgetService,
-    ContractSiteServiceService,
-    CustomFieldService,
-    CustomFieldValueService,
-    FakturService,
-    InvoiceService,
-    KantorService,
-    ServiceService,
-    WorkScheduleService,
-    WorkScheduleTeknisiService,
-    ModuleService,
-    UserGroupAccessService,
-    UserGroupService,
+    ClientService,
+    ClientReportService,
+    ClientSiteService,
+    WorkflowService,
+    WorkflowApplyService,
+    WorkflowReportService,
+    WorkflowWidgetService,
+    WorkflowLogService,
+    WorkflowLogReportService,
+    WorkflowLogWidgetService,
+    WorkflowStepService,
+    WorkflowStepReportService,
+    WorkflowStepWidgetService,
     ClientContactService,
-    ContractJenisService,
     ApiConfiguration
   ],
 })

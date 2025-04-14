@@ -1,0 +1,330 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.createdAt !== undefined && data?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.forModule !== undefined && data?.forModule !== null">
+    <div class="text-secondary small">
+      {{ 'forModule' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.forModule || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.isDefault !== undefined && data?.isDefault !== null">
+    <div class="text-secondary small">
+      {{ 'isDefault' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isDefault" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isDefault">-</span>
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.keterangan !== undefined && data?.keterangan !== null">
+    <div class="text-secondary small">
+      {{ 'keterangan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.keterangan || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.namaWorkflow !== undefined && data?.namaWorkflow !== null">
+    <div class="text-secondary small">
+      {{ 'namaWorkflow' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.namaWorkflow || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.statusWorkflow !== undefined && data?.statusWorkflow !== null">
+    <div class="text-secondary small">
+      {{ 'statusWorkflow' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.statusWorkflow }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.targetDb !== undefined && data?.targetDb !== null">
+    <div class="text-secondary small">
+      {{ 'targetDb' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.targetDb || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.targetTable !== undefined && data?.targetTable !== null">
+    <div class="text-secondary small">
+      {{ 'targetTable' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.targetTable || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.updatedAt !== undefined && data?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.kantor">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'kantor' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.kantor?.createdAt !== undefined && data.kantor?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'kantor.createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.kantor.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.kantor?.forModule !== undefined && data.kantor?.forModule !== null">
+    <div class="text-secondary small">
+      {{ 'kantor.forModule' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.kantor.forModule || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.kantor?.isDefault !== undefined && data.kantor?.isDefault !== null">
+    <div class="text-secondary small">
+      {{ 'kantor.isDefault' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.kantor.isDefault" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.kantor.isDefault">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.kantor?.keterangan !== undefined && data.kantor?.keterangan !== null">
+    <div class="text-secondary small">
+      {{ 'kantor.keterangan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.kantor.keterangan || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.kantor?.namaWorkflow !== undefined && data.kantor?.namaWorkflow !== null">
+    <div class="text-secondary small">
+      {{ 'kantor.namaWorkflow' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.kantor.namaWorkflow || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.kantor?.statusWorkflow !== undefined && data.kantor?.statusWorkflow !== null">
+    <div class="text-secondary small">
+      {{ 'kantor.statusWorkflow' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.kantor.statusWorkflow }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.kantor?.targetDb !== undefined && data.kantor?.targetDb !== null">
+    <div class="text-secondary small">
+      {{ 'kantor.targetDb' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.kantor.targetDb || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.kantor?.targetTable !== undefined && data.kantor?.targetTable !== null">
+    <div class="text-secondary small">
+      {{ 'kantor.targetTable' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.kantor.targetTable || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.kantor?.updatedAt !== undefined && data.kantor?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'kantor.updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.kantor.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+  
+</div>

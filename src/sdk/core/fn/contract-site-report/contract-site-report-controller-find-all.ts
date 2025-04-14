@@ -9,7 +9,7 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { BaseQueryDtoSmart } from '../../models/base-query-dto-smart';
-import { ContractSiteReportDto } from '../../models/contract-site-report-dto';
+import { PelangganContractSiteReportDto } from '../../models/pelanggan-contract-site-report-dto';
 
 export interface ContractSiteReportControllerFindAll$Params {
       body: BaseQueryDtoSmart
@@ -18,7 +18,7 @@ export interface ContractSiteReportControllerFindAll$Params {
 export function contractSiteReportControllerFindAll(http: HttpClient, rootUrl: string, params: ContractSiteReportControllerFindAll$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractSiteReportDto>;
+'data'?: Array<PelangganContractSiteReportDto>;
 'total'?: number;
 }>> {
   const rb = new RequestBuilder(rootUrl, contractSiteReportControllerFindAll.PATH, 'post');
@@ -34,11 +34,11 @@ export function contractSiteReportControllerFindAll(http: HttpClient, rootUrl: s
       return r as StrictHttpResponse<{
       'code'?: number;
       'pesan'?: string;
-      'data'?: Array<ContractSiteReportDto>;
+      'data'?: Array<PelangganContractSiteReportDto>;
       'total'?: number;
       }>;
     })
   );
 }
 
-contractSiteReportControllerFindAll.PATH = '/nonauth/contract_site/contract_site_report/list';
+contractSiteReportControllerFindAll.PATH = '/auth/contract_site/contract_site_report/list';

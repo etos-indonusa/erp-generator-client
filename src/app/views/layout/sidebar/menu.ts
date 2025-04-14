@@ -15,6 +15,26 @@ export const MENU: MenuItem[] = [
         isTitle: true
     }
     ,{
+        label: 'WorkflowLog',
+        icon: 'message-square',
+        link: '/app/workflow-log',
+    }
+    ,{
+        label: 'WorkflowStep',
+        icon: 'message-square',
+        link: '/app/workflow-step',
+    }
+    ,{
+        label: 'Workflow',
+        icon: 'message-square',
+        link: '/app/workflow',
+    }
+    ,{
+        label: 'ContractJenis',
+        icon: 'message-square',
+        link: '/app/contract-jenis',
+    }
+    ,{
         label: 'ContractSite',
         icon: 'message-square',
         link: '/app/contract-site',

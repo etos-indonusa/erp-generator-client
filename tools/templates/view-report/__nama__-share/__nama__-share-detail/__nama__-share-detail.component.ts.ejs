@@ -3,7 +3,7 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   <%= Nama %>ReportDto } from 'src/sdk/core/models';
+import {   <%= Prefix %><%= Nama %>ReportDto } from 'src/sdk/core/models';
 import { <%= Nama %>ReportService } from 'src/sdk/core/services';
 
 @Component({
@@ -29,7 +29,7 @@ export class <%= Nama %>ShareDetailComponent {
     }
     reload = 0;
     is_loading: boolean = false;
-    <%= nama_object %>: <%= Nama %>ReportDto | null = null; //nanti dinamis dari reportDto
+    <%= nama_object %>: <%= Prefix %><%= Nama %>ReportDto | null = null; //nanti dinamis dari reportDto
 
     getData() {
         this.is_loading = true;

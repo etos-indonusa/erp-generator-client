@@ -1,0 +1,94 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="approvedAt">{{ 'approvedAt' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="approvedAt" formControlName="approvedAt" placeholder="Masukkan {{ 'approvedAt' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="approvedBy">{{ 'approvedBy' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="approvedBy" formControlName="approvedBy" placeholder="Masukkan {{ 'approvedBy' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="catatan">{{ 'catatan' | translate }}</nz-form-label>
+            <nz-form-control>
+                <textarea nz-input id="catatan" formControlName="catatan" placeholder="Masukkan {{ 'catatan' | translate }}"></textarea>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="forModule">{{ 'forModule' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="forModule" formControlName="forModule" placeholder="Masukkan {{ 'forModule' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="fromModuleId">{{ 'fromModuleId' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="fromModuleId" formControlName="fromModuleId" placeholder="Masukkan {{ 'fromModuleId' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idUsers">{{ 'idUsers' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idUsers" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idUsers' | translate }}"> 
+                    <nz-option *ngFor="let item of listUsers" nzLabel="{{ item.idUsers }}" nzValue="{{ item.idUsers }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idWorkflowStep">{{ 'idWorkflowStep' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idWorkflowStep" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idWorkflowStep' | translate }}"> 
+                    <nz-option *ngFor="let item of listWorkflowStep" nzLabel="{{ item.idWorkflowStep }}" nzValue="{{ item.idWorkflowStep }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="namaUser">{{ 'namaUser' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="namaUser" formControlName="namaUser" placeholder="Masukkan {{ 'namaUser' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="statusAfter">{{ 'statusAfter' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="statusAfter" formControlName="statusAfter" placeholder="Masukkan {{ 'statusAfter' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="statusBefore">{{ 'statusBefore' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="statusBefore" formControlName="statusBefore" placeholder="Masukkan {{ 'statusBefore' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

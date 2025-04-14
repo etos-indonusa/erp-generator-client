@@ -15,7 +15,7 @@ import { contractReportControllerFindAll } from '../fn/contract-report/contract-
 import { ContractReportControllerFindAll$Params } from '../fn/contract-report/contract-report-controller-find-all';
 import { contractReportControllerFindOne } from '../fn/contract-report/contract-report-controller-find-one';
 import { ContractReportControllerFindOne$Params } from '../fn/contract-report/contract-report-controller-find-one';
-import { ContractReportDto } from '../models/contract-report-dto';
+import { PelangganContractReportDto } from '../models/pelanggan-contract-report-dto';
 
 @Injectable({ providedIn: 'root' })
 export class ContractReportService extends BaseService {
@@ -24,7 +24,7 @@ export class ContractReportService extends BaseService {
   }
 
   /** Path part for operation `contractReportControllerFindAll()` */
-  static readonly ContractReportControllerFindAllPath = '/nonauth/contract/contract_report/list';
+  static readonly ContractReportControllerFindAllPath = '/auth/contract/contract_report/list';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -35,7 +35,7 @@ export class ContractReportService extends BaseService {
   contractReportControllerFindAll$Response(params: ContractReportControllerFindAll$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractReportDto>;
+'data'?: Array<PelangganContractReportDto>;
 'total'?: number;
 }>> {
     return contractReportControllerFindAll(this.http, this.rootUrl, params, context);
@@ -50,26 +50,26 @@ export class ContractReportService extends BaseService {
   contractReportControllerFindAll(params: ContractReportControllerFindAll$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractReportDto>;
+'data'?: Array<PelangganContractReportDto>;
 'total'?: number;
 }> {
     return this.contractReportControllerFindAll$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractReportDto>;
+'data'?: Array<PelangganContractReportDto>;
 'total'?: number;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: Array<ContractReportDto>;
+'data'?: Array<PelangganContractReportDto>;
 'total'?: number;
 } => r.body)
     );
   }
 
   /** Path part for operation `contractReportControllerFindOne()` */
-  static readonly ContractReportControllerFindOnePath = '/nonauth/contract/contract_report/{id}';
+  static readonly ContractReportControllerFindOnePath = '/auth/contract/contract_report/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -80,7 +80,7 @@ export class ContractReportService extends BaseService {
   contractReportControllerFindOne$Response(params: ContractReportControllerFindOne$Params, context?: HttpContext): Observable<StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractReportDto;
+'data'?: PelangganContractReportDto;
 }>> {
     return contractReportControllerFindOne(this.http, this.rootUrl, params, context);
   }
@@ -94,17 +94,17 @@ export class ContractReportService extends BaseService {
   contractReportControllerFindOne(params: ContractReportControllerFindOne$Params, context?: HttpContext): Observable<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractReportDto;
+'data'?: PelangganContractReportDto;
 }> {
     return this.contractReportControllerFindOne$Response(params, context).pipe(
       map((r: StrictHttpResponse<{
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractReportDto;
+'data'?: PelangganContractReportDto;
 }>): {
 'code'?: number;
 'pesan'?: string;
-'data'?: ContractReportDto;
+'data'?: PelangganContractReportDto;
 } => r.body)
     );
   }
