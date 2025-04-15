@@ -1,0 +1,13 @@
+// ✅ approval-action-form.component.scss
+::ng-deep .ant-alert-description {
+    white-space: pre-line;
+}
+
+textarea[nz-input] {
+    resize: vertical;
+    min-height: 80px;
+}
+
+button+button {
+    margin-left: 8px;
+}

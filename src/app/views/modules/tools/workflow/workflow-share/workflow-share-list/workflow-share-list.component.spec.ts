@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WorkflowShareListComponent } from './workflow-share-list.component.ts.ejs';
+import { WorkflowShareListComponent } from './workflow-share-list.component';
 
 describe('WorkflowShareListComponent', () => {
   let component: WorkflowShareListComponent;

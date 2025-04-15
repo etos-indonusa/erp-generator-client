@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WorkflowStepListComponent } from './workflow-step-list.component.ts.ejs';
+import { WorkflowStepListComponent } from './workflow-step-list.component';
 
 describe('WorkflowStepListComponent', () => {
   let component: WorkflowStepListComponent;

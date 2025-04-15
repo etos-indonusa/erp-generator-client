@@ -60,4 +60,4 @@ export function clientControllerFindAll(http: HttpClient, rootUrl: string, param
   );
 }
 
-clientControllerFindAll.PATH = '/auth/client/client';
+clientControllerFindAll.PATH = '/client';

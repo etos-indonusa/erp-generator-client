@@ -30,7 +30,7 @@ export class ClientService extends BaseService {
   }
 
   /** Path part for operation `clientControllerFindAll()` */
-  static readonly ClientControllerFindAllPath = '/auth/client/client';
+  static readonly ClientControllerFindAllPath = '/client';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -75,7 +75,7 @@ export class ClientService extends BaseService {
   }
 
   /** Path part for operation `clientControllerCreate()` */
-  static readonly ClientControllerCreatePath = '/auth/client/client';
+  static readonly ClientControllerCreatePath = '/client';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -116,7 +116,7 @@ export class ClientService extends BaseService {
   }
 
   /** Path part for operation `clientControllerFindOne()` */
-  static readonly ClientControllerFindOnePath = '/auth/client/client/{id}';
+  static readonly ClientControllerFindOnePath = '/client/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -157,7 +157,7 @@ export class ClientService extends BaseService {
   }
 
   /** Path part for operation `clientControllerUpdate()` */
-  static readonly ClientControllerUpdatePath = '/auth/client/client/{id}';
+  static readonly ClientControllerUpdatePath = '/client/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -198,7 +198,7 @@ export class ClientService extends BaseService {
   }
 
   /** Path part for operation `clientControllerRemove()` */
-  static readonly ClientControllerRemovePath = '/auth/client/client/{id}';
+  static readonly ClientControllerRemovePath = '/client/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

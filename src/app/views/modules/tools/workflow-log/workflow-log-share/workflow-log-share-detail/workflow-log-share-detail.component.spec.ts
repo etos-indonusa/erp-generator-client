@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WorkflowLogShareDetailComponent } from './workflow-log-share-detail.component.ts.ejs';
+import { WorkflowLogShareDetailComponent } from './workflow-log-share-detail.component';
 
 describe('WorkflowLogShareDetailComponent', () => {
   let component: WorkflowLogShareDetailComponent;

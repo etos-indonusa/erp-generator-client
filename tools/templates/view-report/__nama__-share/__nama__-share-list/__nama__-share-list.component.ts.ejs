@@ -7,6 +7,7 @@ import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
+import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
 import { <%= Nama_report %>Service, <%= Nama %>Service } from 'src/sdk/core/services';
 import { <%= Prefix %><%= Nama %>Dto } from 'src/sdk/core/models';
@@ -50,10 +51,14 @@ export class <%= Nama %>ShareListComponent {
         <%- inj %>,
         <% }) -%>
         <% } -%>
-    ) {}
+        private translate: TranslateService
+    ) {
+        translate.setDefaultLang('id');
+        translate.use('id');
+    }
 
     ngOnChanges(changes: SimpleChanges): void {
-        this.filter.status<%= nama_object %> = this.status == 'semua' ? null : this.status;
+        this.filter.status_<%= nama_object %> = this.status == 'semua' ? null : this.status;
 
             <% relationNamas.forEach(rv => { %>
            
@@ -70,6 +75,7 @@ export class <%= Nama %>ShareListComponent {
     ngOnInit(): void {
         this.currentUser = this.userInfoService.getUser;
         this.resetParam();
+        this.loadColumnSettings();
 
         <% if (relationInitCalls && relationInitCalls.length) { -%>
         <% relationInitCalls.forEach(line => { -%>
@@ -128,7 +134,7 @@ export class <%= Nama %>ShareListComponent {
         this.filter = {
             <%- filterLines %>
         };
-        this.filter.status<%= nama_object %> = this.status == 'semua' ? null : this.status;
+        this.filter.status_<%= nama_object %> = this.status == 'semua' ? null : this.status;
     }
 
     resetData() {
@@ -212,6 +218,44 @@ export class <%= Nama %>ShareListComponent {
 
         return backendFilter;
     }
+
+     // TABLE DINAMIS 
+    columns = [ 
+        <% displayFields.forEach(field => { %> { key: '<%= field %>',  show: true },
+             <% }) %>
+    ];
+
+    isColVisible(key: string): boolean {
+        return this.columns.find(col => col.key === key)?.show ?? true;
+    }
+    onColumnToggle(): void {
+        localStorage.setItem('<%= nama_object %>_columns', JSON.stringify(this.columns));
+    }
+
+    resetColumns(): void {
+        this.columns.forEach(col => col.show = true);
+        this.onColumnToggle();
+    }
+    loadColumnSettings(): void {
+        const saved = localStorage.getItem('<%= nama_object %>_columns');
+        if (saved) {
+            try {
+            const parsed = JSON.parse(saved);
+            if (Array.isArray(parsed)) {
+                // Sinkronkan dengan default jika ada key yang hilang
+                this.columns.forEach((col, index) => {
+                const found = parsed.find((p: any) => p.key === col.key);
+                if (found) this.columns[index].show = found.show;
+                });
+            }
+            } catch (e) {
+                console.warn('Gagal parse <%= nama_object %> dari localStorage', e);
+            }
+        }
+        }
+    // TABLE DINAMIS 
+
+
     add() {
     if (!this.acl.can('<%= nama %>', 'can_add') || !this.enable_crud) return;
 

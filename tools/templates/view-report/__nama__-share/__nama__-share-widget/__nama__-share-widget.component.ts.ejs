@@ -22,6 +22,7 @@ export class <%= Nama %>ShareWidgetComponent {
     }
  
     ngOnInit(): void {
+        this.getDataWidget()
     }
 
     breadCrumbItems = [
@@ -36,7 +37,7 @@ export class <%= Nama %>ShareWidgetComponent {
         this.<%= nama_object %>WidgetService
             .<%= nama_object %>WidgetControllerFindAll({
                 body: {
-                    filter: JSON.stringify(this.filter),
+                    filter: this.filter,
                     select: [
                         {
                             type: "count",

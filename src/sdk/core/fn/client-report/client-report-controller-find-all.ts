@@ -41,4 +41,4 @@ export function clientReportControllerFindAll(http: HttpClient, rootUrl: string,
   );
 }
 
-clientReportControllerFindAll.PATH = '/auth/client/client_report/list';
+clientReportControllerFindAll.PATH = '/client_report/list';

@@ -16,6 +16,7 @@ export type { PelangganClientContactDto } from './models/pelanggan-client-contac
 export type { PelangganClientDto } from './models/pelanggan-client-dto';
 export type { PelangganClientReportDto } from './models/pelanggan-client-report-dto';
 export type { PelangganClientSiteDto } from './models/pelanggan-client-site-dto';
+export type { PelangganClientWidgetDto } from './models/pelanggan-client-widget-dto';
 export type { PelangganContractDto } from './models/pelanggan-contract-dto';
 export type { PelangganContractJenisDto } from './models/pelanggan-contract-jenis-dto';
 export type { PelangganContractReportDto } from './models/pelanggan-contract-report-dto';
@@ -23,6 +24,9 @@ export type { PelangganContractSiteDto } from './models/pelanggan-contract-site-
 export type { PelangganContractSiteReportDto } from './models/pelanggan-contract-site-report-dto';
 export type { PelangganContractSiteWidgetDto } from './models/pelanggan-contract-site-widget-dto';
 export type { PelangganContractWidgetDto } from './models/pelanggan-contract-widget-dto';
+export type { PelangganInvoiceDto } from './models/pelanggan-invoice-dto';
+export type { PelangganInvoiceReportDto } from './models/pelanggan-invoice-report-dto';
+export type { PelangganInvoiceWidgetDto } from './models/pelanggan-invoice-widget-dto';
 export type { PelangganKantorDto } from './models/pelanggan-kantor-dto';
 export type { RefreshTokenDto } from './models/refresh-token-dto';
 export type { ResetPasswordDto } from './models/reset-password-dto';

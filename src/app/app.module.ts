@@ -1,9 +1,9 @@
-import { importProvidersFrom, NgModule, provideZoneChangeDetection } from '@angular/core';
+import { APP_INITIALIZER, importProvidersFrom, NgModule, provideZoneChangeDetection } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { authReducer } from 'src/libs/auth/store/auth.reducer';
 import { AuthEffects } from 'src/libs/auth/store/auth.effects';
-import { HttpClientModule, HTTP_INTERCEPTORS, provideHttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS, provideHttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'; 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { NZ_I18N, en_US, provideNzI18n, id_ID } from 'ng-zorro-antd/i18n';
@@ -11,14 +11,16 @@ import { HighlightModule, HIGHLIGHT_OPTIONS, provideHighlightOptions } from 'ngx
 import { AuthInterceptor } from 'src/libs/auth/interceptors/auth.interceptor';
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routes } from './app.routes';
-import { TampilanModule } from './shared/tampilan.module';
+import { HttpLoaderFactory, TampilanModule } from './shared/tampilan.module';
 import { ApiModule } from 'src/sdk/core/api.module';
 import { environment } from 'src/environments/environment.prod';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ApiModule as ApiModuleLib } from 'src/sdk/lib/api.module';
-
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { registerLocaleData } from '@angular/common'; 
+import id from '@angular/common/locales/id';
 const highlightOptions = {
     coreLibraryLoader: () => import('highlight.js/lib/core'),
     languages: {
@@ -27,6 +29,13 @@ const highlightOptions = {
         xml: () => import('highlight.js/lib/languages/xml')
     },
 };
+registerLocaleData(id);
+export function appTranslateInitializer(translate: TranslateService) {
+    return () => { 
+        translate.setDefaultLang('id');
+        return translate.use('id').toPromise();
+    };
+}
 
 @NgModule({
     declarations: [AppComponent],
@@ -43,11 +52,24 @@ const highlightOptions = {
         EffectsModule.forRoot([AuthEffects]),
  
         SweetAlert2Module.forRoot(),
-        HighlightModule
+        HighlightModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        })
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
         { provide: NZ_I18N, useValue: id_ID },
+        {
+            provide: APP_INITIALIZER,
+            useFactory: appTranslateInitializer,
+            deps: [TranslateService],
+            multi: true
+        },
         {
             provide: HIGHLIGHT_OPTIONS,
             useValue: {

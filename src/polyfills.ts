@@ -1,0 +1,1 @@
+import 'zone.js'; // ← PENTING: Tambahkan ini di baris paling atas!

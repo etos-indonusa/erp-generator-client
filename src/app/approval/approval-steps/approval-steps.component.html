@@ -1,0 +1,5 @@
+<nz-steps nzType="navigation" nzSize="small" [nzCurrent]="index" (nzIndexChange)="onIndexChange($event)">
+    <nz-step *ngFor="let step of steps" [nzTitle]="step.nama_step" [nzSubtitle]="step.subtitle"
+        [nzDescription]="step.deskripsi" [nzStatus]="getNzStatus(step.status)" 
+        [nzDisabled]="getNzStatus(step.status) === 'wait'"></nz-step>
+</nz-steps>

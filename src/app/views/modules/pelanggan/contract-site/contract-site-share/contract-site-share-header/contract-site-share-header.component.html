@@ -1,0 +1,444 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.biayaAkhir !== undefined && data?.biayaAkhir !== null">
+    <div class="text-secondary small">
+      {{ 'biayaAkhir' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.biayaAkhir | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.biayaBulanan !== undefined && data?.biayaBulanan !== null">
+    <div class="text-secondary small">
+      {{ 'biayaBulanan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.biayaBulanan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.biayaDiawal !== undefined && data?.biayaDiawal !== null">
+    <div class="text-secondary small">
+      {{ 'biayaDiawal' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.biayaDiawal | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.catatan !== undefined && data?.catatan !== null">
+    <div class="text-secondary small">
+      {{ 'catatan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.catatan || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.createdAt !== undefined && data?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.jumlahJadwalPerBulan !== undefined && data?.jumlahJadwalPerBulan !== null">
+    <div class="text-secondary small">
+      {{ 'jumlahJadwalPerBulan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.jumlahJadwalPerBulan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.statusContractSite !== undefined && data?.statusContractSite !== null">
+    <div class="text-secondary small">
+      {{ 'statusContractSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.statusContractSite }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.updatedAt !== undefined && data?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.clientSite">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'clientSite' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.clientSite?.biayaAkhir !== undefined && data.clientSite?.biayaAkhir !== null">
+    <div class="text-secondary small">
+      {{ 'clientSite.biayaAkhir' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.clientSite.biayaAkhir | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.clientSite?.biayaBulanan !== undefined && data.clientSite?.biayaBulanan !== null">
+    <div class="text-secondary small">
+      {{ 'clientSite.biayaBulanan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.clientSite.biayaBulanan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.clientSite?.biayaDiawal !== undefined && data.clientSite?.biayaDiawal !== null">
+    <div class="text-secondary small">
+      {{ 'clientSite.biayaDiawal' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.clientSite.biayaDiawal | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.clientSite?.catatan !== undefined && data.clientSite?.catatan !== null">
+    <div class="text-secondary small">
+      {{ 'clientSite.catatan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.clientSite.catatan || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.clientSite?.createdAt !== undefined && data.clientSite?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'clientSite.createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.clientSite.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.clientSite?.jumlahJadwalPerBulan !== undefined && data.clientSite?.jumlahJadwalPerBulan !== null">
+    <div class="text-secondary small">
+      {{ 'clientSite.jumlahJadwalPerBulan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.clientSite.jumlahJadwalPerBulan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.clientSite?.statusContractSite !== undefined && data.clientSite?.statusContractSite !== null">
+    <div class="text-secondary small">
+      {{ 'clientSite.statusContractSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.clientSite.statusContractSite }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.clientSite?.updatedAt !== undefined && data.clientSite?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'clientSite.updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.clientSite.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.clientSite?.contract">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'clientSite.contract' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.clientSite.contract?.biayaAkhir !== undefined && data.clientSite.contract?.biayaAkhir !== null">
+    <div class="text-secondary small">
+      {{ 'clientSite.contract.biayaAkhir' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.clientSite.contract.biayaAkhir | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.clientSite.contract?.biayaBulanan !== undefined && data.clientSite.contract?.biayaBulanan !== null">
+    <div class="text-secondary small">
+      {{ 'clientSite.contract.biayaBulanan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.clientSite.contract.biayaBulanan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.clientSite.contract?.biayaDiawal !== undefined && data.clientSite.contract?.biayaDiawal !== null">
+    <div class="text-secondary small">
+      {{ 'clientSite.contract.biayaDiawal' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.clientSite.contract.biayaDiawal | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.clientSite.contract?.catatan !== undefined && data.clientSite.contract?.catatan !== null">
+    <div class="text-secondary small">
+      {{ 'clientSite.contract.catatan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.clientSite.contract.catatan || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.clientSite.contract?.createdAt !== undefined && data.clientSite.contract?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'clientSite.contract.createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.clientSite.contract.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.clientSite.contract?.jumlahJadwalPerBulan !== undefined && data.clientSite.contract?.jumlahJadwalPerBulan !== null">
+    <div class="text-secondary small">
+      {{ 'clientSite.contract.jumlahJadwalPerBulan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.clientSite.contract.jumlahJadwalPerBulan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.clientSite.contract?.statusContractSite !== undefined && data.clientSite.contract?.statusContractSite !== null">
+    <div class="text-secondary small">
+      {{ 'clientSite.contract.statusContractSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.clientSite.contract.statusContractSite }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.clientSite.contract?.updatedAt !== undefined && data.clientSite.contract?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'clientSite.contract.updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.clientSite.contract.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+  
+</div>

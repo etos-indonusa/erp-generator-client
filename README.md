@@ -15,6 +15,8 @@ npm run generate:crud -- contract-site --prefix=pelanggan
 npm run generate:crud -- contract-jenis  --prefix=pelanggan
 
 GENERATOR REPORT
+npm run generate:report -- client --prefix=pelanggan
+
 npm run generate:report -- contract --prefix=pelanggan
 npm run generate:report -- contract-site --prefix=pelanggan
 

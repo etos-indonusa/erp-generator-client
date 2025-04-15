@@ -38,4 +38,4 @@ export function clientControllerRemove(http: HttpClient, rootUrl: string, params
   );
 }
 
-clientControllerRemove.PATH = '/auth/client/client/{id}';
+clientControllerRemove.PATH = '/client/{id}';

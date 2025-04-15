@@ -1,0 +1,42 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="keterangan">{{ 'keterangan' | translate }}</nz-form-label>
+            <nz-form-control>
+                <textarea nz-input id="keterangan" formControlName="keterangan" placeholder="Masukkan {{ 'keterangan' | translate }}"></textarea>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="namaContractJenis">{{ 'namaContractJenis' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="namaContractJenis" formControlName="namaContractJenis" placeholder="Masukkan {{ 'namaContractJenis' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="role">{{ 'role' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="role" formControlName="role" placeholder="Masukkan {{ 'role' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="statusContractJenis">{{ 'statusContractJenis' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="statusContractJenis" formControlName="statusContractJenis" placeholder="Masukkan {{ 'statusContractJenis' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

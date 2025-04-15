@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WorkflowStepShareWidgetComponent } from './workflow-step-share-widget.component.ts.ejs';
+import { WorkflowStepShareWidgetComponent } from './workflow-step-share-widget.component';
 
 describe('WorkflowStepShareWidgetComponent', () => {
   let component: WorkflowStepShareWidgetComponent;

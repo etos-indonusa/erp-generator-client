@@ -15,6 +15,11 @@ export const MENU: MenuItem[] = [
         isTitle: true
     }
     ,{
+        label: 'Invoice',
+        icon: 'message-square',
+        link: '/app/invoice',
+    }
+    ,{
         label: 'WorkflowLog',
         icon: 'message-square',
         link: '/app/workflow-log',

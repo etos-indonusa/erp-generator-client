@@ -40,4 +40,4 @@ export function clientControllerUpdate(http: HttpClient, rootUrl: string, params
   );
 }
 
-clientControllerUpdate.PATH = '/auth/client/client/{id}';
+clientControllerUpdate.PATH = '/client/{id}';

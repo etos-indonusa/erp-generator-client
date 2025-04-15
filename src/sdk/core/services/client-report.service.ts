@@ -24,7 +24,7 @@ export class ClientReportService extends BaseService {
   }
 
   /** Path part for operation `clientReportControllerFindAll()` */
-  static readonly ClientReportControllerFindAllPath = '/auth/client/client_report/list';
+  static readonly ClientReportControllerFindAllPath = '/client_report/list';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -69,7 +69,7 @@ export class ClientReportService extends BaseService {
   }
 
   /** Path part for operation `clientReportControllerFindOne()` */
-  static readonly ClientReportControllerFindOnePath = '/auth/client/client_report/{id}';
+  static readonly ClientReportControllerFindOnePath = '/client_report/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

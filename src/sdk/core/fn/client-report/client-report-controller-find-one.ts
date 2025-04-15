@@ -38,4 +38,4 @@ export function clientReportControllerFindOne(http: HttpClient, rootUrl: string,
   );
 }
 
-clientReportControllerFindOne.PATH = '/auth/client/client_report/{id}';
+clientReportControllerFindOne.PATH = '/client_report/{id}';

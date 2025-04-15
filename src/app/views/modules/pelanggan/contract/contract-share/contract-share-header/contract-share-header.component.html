@@ -1,0 +1,1684 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.catatanKontrak !== undefined && data?.catatanKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'catatanKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.catatanKontrak || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.createdAt !== undefined && data?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.dokumenUrl !== undefined && data?.dokumenUrl !== null">
+    <div class="text-secondary small">
+      {{ 'dokumenUrl' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.dokumenUrl || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.durasiBulan !== undefined && data?.durasiBulan !== null">
+    <div class="text-secondary small">
+      {{ 'durasiBulan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.durasiBulan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.feeSales !== undefined && data?.feeSales !== null">
+    <div class="text-secondary small">
+      {{ 'feeSales' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.feeSales | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.isAutoInvoice !== undefined && data?.isAutoInvoice !== null">
+    <div class="text-secondary small">
+      {{ 'isAutoInvoice' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isAutoInvoice" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isAutoInvoice">-</span>
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.namaSales !== undefined && data?.namaSales !== null">
+    <div class="text-secondary small">
+      {{ 'namaSales' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.namaSales || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.nilaiAkhir !== undefined && data?.nilaiAkhir !== null">
+    <div class="text-secondary small">
+      {{ 'nilaiAkhir' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.nilaiAkhir | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.nilaiBulanan !== undefined && data?.nilaiBulanan !== null">
+    <div class="text-secondary small">
+      {{ 'nilaiBulanan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.nilaiBulanan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.nilaiDiawal !== undefined && data?.nilaiDiawal !== null">
+    <div class="text-secondary small">
+      {{ 'nilaiDiawal' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.nilaiDiawal | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.nilaiKontrak !== undefined && data?.nilaiKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'nilaiKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.nilaiKontrak | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.nomorKontrak !== undefined && data?.nomorKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'nomorKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.nomorKontrak || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.presentaseFee !== undefined && data?.presentaseFee !== null">
+    <div class="text-secondary small">
+      {{ 'presentaseFee' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.presentaseFee | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.refKontrakSebelumnya !== undefined && data?.refKontrakSebelumnya !== null">
+    <div class="text-secondary small">
+      {{ 'refKontrakSebelumnya' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.refKontrakSebelumnya || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.statusContract !== undefined && data?.statusContract !== null">
+    <div class="text-secondary small">
+      {{ 'statusContract' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.statusContract }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.tanggalAkhir !== undefined && data?.tanggalAkhir !== null">
+    <div class="text-secondary small">
+      {{ 'tanggalAkhir' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.tanggalAkhir | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.tanggalKontrak !== undefined && data?.tanggalKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'tanggalKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.tanggalKontrak | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.tanggalMulai !== undefined && data?.tanggalMulai !== null">
+    <div class="text-secondary small">
+      {{ 'tanggalMulai' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.tanggalMulai | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.updatedAt !== undefined && data?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.client">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'client' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client?.catatanKontrak !== undefined && data.client?.catatanKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'client.catatanKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.catatanKontrak || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client?.createdAt !== undefined && data.client?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'client.createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client?.dokumenUrl !== undefined && data.client?.dokumenUrl !== null">
+    <div class="text-secondary small">
+      {{ 'client.dokumenUrl' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.dokumenUrl || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client?.durasiBulan !== undefined && data.client?.durasiBulan !== null">
+    <div class="text-secondary small">
+      {{ 'client.durasiBulan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.durasiBulan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client?.feeSales !== undefined && data.client?.feeSales !== null">
+    <div class="text-secondary small">
+      {{ 'client.feeSales' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.feeSales | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client?.isAutoInvoice !== undefined && data.client?.isAutoInvoice !== null">
+    <div class="text-secondary small">
+      {{ 'client.isAutoInvoice' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.client.isAutoInvoice" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.client.isAutoInvoice">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client?.namaSales !== undefined && data.client?.namaSales !== null">
+    <div class="text-secondary small">
+      {{ 'client.namaSales' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.namaSales || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client?.nilaiAkhir !== undefined && data.client?.nilaiAkhir !== null">
+    <div class="text-secondary small">
+      {{ 'client.nilaiAkhir' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.nilaiAkhir | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client?.nilaiBulanan !== undefined && data.client?.nilaiBulanan !== null">
+    <div class="text-secondary small">
+      {{ 'client.nilaiBulanan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.nilaiBulanan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client?.nilaiDiawal !== undefined && data.client?.nilaiDiawal !== null">
+    <div class="text-secondary small">
+      {{ 'client.nilaiDiawal' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.nilaiDiawal | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client?.nilaiKontrak !== undefined && data.client?.nilaiKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'client.nilaiKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.nilaiKontrak | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client?.nomorKontrak !== undefined && data.client?.nomorKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'client.nomorKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.nomorKontrak || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client?.presentaseFee !== undefined && data.client?.presentaseFee !== null">
+    <div class="text-secondary small">
+      {{ 'client.presentaseFee' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.presentaseFee | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client?.refKontrakSebelumnya !== undefined && data.client?.refKontrakSebelumnya !== null">
+    <div class="text-secondary small">
+      {{ 'client.refKontrakSebelumnya' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.refKontrakSebelumnya || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client?.statusContract !== undefined && data.client?.statusContract !== null">
+    <div class="text-secondary small">
+      {{ 'client.statusContract' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.client.statusContract }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client?.tanggalAkhir !== undefined && data.client?.tanggalAkhir !== null">
+    <div class="text-secondary small">
+      {{ 'client.tanggalAkhir' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.tanggalAkhir | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client?.tanggalKontrak !== undefined && data.client?.tanggalKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'client.tanggalKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.tanggalKontrak | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client?.tanggalMulai !== undefined && data.client?.tanggalMulai !== null">
+    <div class="text-secondary small">
+      {{ 'client.tanggalMulai' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.tanggalMulai | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client?.updatedAt !== undefined && data.client?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'client.updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.client?.contractJenis">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'client.contractJenis' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis?.catatanKontrak !== undefined && data.client.contractJenis?.catatanKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.catatanKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.catatanKontrak || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis?.createdAt !== undefined && data.client.contractJenis?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis?.dokumenUrl !== undefined && data.client.contractJenis?.dokumenUrl !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.dokumenUrl' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.dokumenUrl || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis?.durasiBulan !== undefined && data.client.contractJenis?.durasiBulan !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.durasiBulan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.durasiBulan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis?.feeSales !== undefined && data.client.contractJenis?.feeSales !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.feeSales' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.feeSales | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis?.isAutoInvoice !== undefined && data.client.contractJenis?.isAutoInvoice !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.isAutoInvoice' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.client.contractJenis.isAutoInvoice" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.client.contractJenis.isAutoInvoice">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis?.namaSales !== undefined && data.client.contractJenis?.namaSales !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.namaSales' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.namaSales || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis?.nilaiAkhir !== undefined && data.client.contractJenis?.nilaiAkhir !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.nilaiAkhir' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.nilaiAkhir | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis?.nilaiBulanan !== undefined && data.client.contractJenis?.nilaiBulanan !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.nilaiBulanan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.nilaiBulanan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis?.nilaiDiawal !== undefined && data.client.contractJenis?.nilaiDiawal !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.nilaiDiawal' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.nilaiDiawal | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis?.nilaiKontrak !== undefined && data.client.contractJenis?.nilaiKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.nilaiKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.nilaiKontrak | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis?.nomorKontrak !== undefined && data.client.contractJenis?.nomorKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.nomorKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.nomorKontrak || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis?.presentaseFee !== undefined && data.client.contractJenis?.presentaseFee !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.presentaseFee' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.presentaseFee | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis?.refKontrakSebelumnya !== undefined && data.client.contractJenis?.refKontrakSebelumnya !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.refKontrakSebelumnya' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.refKontrakSebelumnya || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis?.statusContract !== undefined && data.client.contractJenis?.statusContract !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.statusContract' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.client.contractJenis.statusContract }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis?.tanggalAkhir !== undefined && data.client.contractJenis?.tanggalAkhir !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.tanggalAkhir' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.tanggalAkhir | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis?.tanggalKontrak !== undefined && data.client.contractJenis?.tanggalKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.tanggalKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.tanggalKontrak | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis?.tanggalMulai !== undefined && data.client.contractJenis?.tanggalMulai !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.tanggalMulai' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.tanggalMulai | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis?.updatedAt !== undefined && data.client.contractJenis?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.client.contractJenis?.document">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'client.contractJenis.document' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document?.catatanKontrak !== undefined && data.client.contractJenis.document?.catatanKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.catatanKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.catatanKontrak || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document?.createdAt !== undefined && data.client.contractJenis.document?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document?.dokumenUrl !== undefined && data.client.contractJenis.document?.dokumenUrl !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.dokumenUrl' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.dokumenUrl || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document?.durasiBulan !== undefined && data.client.contractJenis.document?.durasiBulan !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.durasiBulan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.durasiBulan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document?.feeSales !== undefined && data.client.contractJenis.document?.feeSales !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.feeSales' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.feeSales | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document?.isAutoInvoice !== undefined && data.client.contractJenis.document?.isAutoInvoice !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.isAutoInvoice' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.client.contractJenis.document.isAutoInvoice" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.client.contractJenis.document.isAutoInvoice">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document?.namaSales !== undefined && data.client.contractJenis.document?.namaSales !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.namaSales' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.namaSales || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document?.nilaiAkhir !== undefined && data.client.contractJenis.document?.nilaiAkhir !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.nilaiAkhir' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.nilaiAkhir | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document?.nilaiBulanan !== undefined && data.client.contractJenis.document?.nilaiBulanan !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.nilaiBulanan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.nilaiBulanan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document?.nilaiDiawal !== undefined && data.client.contractJenis.document?.nilaiDiawal !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.nilaiDiawal' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.nilaiDiawal | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document?.nilaiKontrak !== undefined && data.client.contractJenis.document?.nilaiKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.nilaiKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.nilaiKontrak | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document?.nomorKontrak !== undefined && data.client.contractJenis.document?.nomorKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.nomorKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.nomorKontrak || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document?.presentaseFee !== undefined && data.client.contractJenis.document?.presentaseFee !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.presentaseFee' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.presentaseFee | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document?.refKontrakSebelumnya !== undefined && data.client.contractJenis.document?.refKontrakSebelumnya !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.refKontrakSebelumnya' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.refKontrakSebelumnya || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document?.statusContract !== undefined && data.client.contractJenis.document?.statusContract !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.statusContract' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.client.contractJenis.document.statusContract }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document?.tanggalAkhir !== undefined && data.client.contractJenis.document?.tanggalAkhir !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.tanggalAkhir' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.tanggalAkhir | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document?.tanggalKontrak !== undefined && data.client.contractJenis.document?.tanggalKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.tanggalKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.tanggalKontrak | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document?.tanggalMulai !== undefined && data.client.contractJenis.document?.tanggalMulai !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.tanggalMulai' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.tanggalMulai | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document?.updatedAt !== undefined && data.client.contractJenis.document?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.client.contractJenis.document?.kantor">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'client.contractJenis.document.kantor' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document.kantor?.catatanKontrak !== undefined && data.client.contractJenis.document.kantor?.catatanKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.kantor.catatanKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.kantor.catatanKontrak || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document.kantor?.createdAt !== undefined && data.client.contractJenis.document.kantor?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.kantor.createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.kantor.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document.kantor?.dokumenUrl !== undefined && data.client.contractJenis.document.kantor?.dokumenUrl !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.kantor.dokumenUrl' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.kantor.dokumenUrl || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document.kantor?.durasiBulan !== undefined && data.client.contractJenis.document.kantor?.durasiBulan !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.kantor.durasiBulan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.kantor.durasiBulan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document.kantor?.feeSales !== undefined && data.client.contractJenis.document.kantor?.feeSales !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.kantor.feeSales' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.kantor.feeSales | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document.kantor?.isAutoInvoice !== undefined && data.client.contractJenis.document.kantor?.isAutoInvoice !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.kantor.isAutoInvoice' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.client.contractJenis.document.kantor.isAutoInvoice" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.client.contractJenis.document.kantor.isAutoInvoice">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document.kantor?.namaSales !== undefined && data.client.contractJenis.document.kantor?.namaSales !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.kantor.namaSales' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.kantor.namaSales || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document.kantor?.nilaiAkhir !== undefined && data.client.contractJenis.document.kantor?.nilaiAkhir !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.kantor.nilaiAkhir' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.kantor.nilaiAkhir | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document.kantor?.nilaiBulanan !== undefined && data.client.contractJenis.document.kantor?.nilaiBulanan !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.kantor.nilaiBulanan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.kantor.nilaiBulanan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document.kantor?.nilaiDiawal !== undefined && data.client.contractJenis.document.kantor?.nilaiDiawal !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.kantor.nilaiDiawal' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.kantor.nilaiDiawal | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document.kantor?.nilaiKontrak !== undefined && data.client.contractJenis.document.kantor?.nilaiKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.kantor.nilaiKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.kantor.nilaiKontrak | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document.kantor?.nomorKontrak !== undefined && data.client.contractJenis.document.kantor?.nomorKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.kantor.nomorKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.kantor.nomorKontrak || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document.kantor?.presentaseFee !== undefined && data.client.contractJenis.document.kantor?.presentaseFee !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.kantor.presentaseFee' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.kantor.presentaseFee | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document.kantor?.refKontrakSebelumnya !== undefined && data.client.contractJenis.document.kantor?.refKontrakSebelumnya !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.kantor.refKontrakSebelumnya' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.kantor.refKontrakSebelumnya || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document.kantor?.statusContract !== undefined && data.client.contractJenis.document.kantor?.statusContract !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.kantor.statusContract' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.client.contractJenis.document.kantor.statusContract }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document.kantor?.tanggalAkhir !== undefined && data.client.contractJenis.document.kantor?.tanggalAkhir !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.kantor.tanggalAkhir' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.kantor.tanggalAkhir | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document.kantor?.tanggalKontrak !== undefined && data.client.contractJenis.document.kantor?.tanggalKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.kantor.tanggalKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.kantor.tanggalKontrak | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document.kantor?.tanggalMulai !== undefined && data.client.contractJenis.document.kantor?.tanggalMulai !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.kantor.tanggalMulai' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.kantor.tanggalMulai | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.client.contractJenis.document.kantor?.updatedAt !== undefined && data.client.contractJenis.document.kantor?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'client.contractJenis.document.kantor.updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.client.contractJenis.document.kantor.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+  
+</div>

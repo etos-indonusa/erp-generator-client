@@ -38,4 +38,4 @@ export function clientControllerCreate(http: HttpClient, rootUrl: string, params
   );
 }
 
-clientControllerCreate.PATH = '/auth/client/client';
+clientControllerCreate.PATH = '/client';

@@ -91,7 +91,7 @@
                 <tr>
                     <th   [nzAlign]="'right'">#ID</th>
                     <% displayFields.forEach(field => { %>
-                    <th [nzSortFn]="true" nzColumnKey="<%= field %>">
+                    <th [nzSortFn]="true" nzColumnKey="<%= field %>" [hidden]="!isColVisible('<%= field %>')">
                         {{ '<%= field %>' | translate }}
                      </th>
                     <% }) %>
@@ -108,16 +108,16 @@
                         </td>
                         
                         <% smartDisplayFields.forEach(field=> { %>
-                            <td>
+                            <td [hidden]="!isColVisible('<%= field.namaField %>')">
                                 <% if (field.uiType==='boolean' ) { %>
                                     <nz-tag *ngIf="data.<%= field.namaField %>" nzColor="blue">Ya</nz-tag>
                                     <span *ngIf="!data.<%= field.namaField %>">-</span>
                                     <% } else if (field.uiType==='date' ) { %>
                                         {{ data.<%= field.namaField %> | date: 'short' }}
                                             <% } else if (field.uiType==='relation' ) { %>
-                                                {{ data.<%= field.relasiField %>?.nama || '-' }}
+                                                {{ data.<%= field.relasiField %>?.nama  }}
                                                     <% } else { %>
-                                                        {{ data.<%= field.namaField %> || '-' }}
+                                                        {{ data.<%= field.namaField %>  }}
                                                             <% } %>
                             </td>
                             <% }) %>
@@ -184,9 +184,18 @@
         (click)="filter_extra=!filter_extra">
         <span nz-icon nzType="filter" nzTheme="outline"></span> Filter
     </button>
-    <button nz-button style="margin-bottom: 8px;" (click)="filter_extra=!filter_extra">
-        <span nz-icon nzType="setting" nzTheme="outline"></span>
-    </button>
+    <button nz-button nz-dropdown [nzDropdownMenu]="menu" nzTy [nzPlacement]="'topRight'"><i nz-icon nzType="appstore"></i></button>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+            <li nz-menu-item *ngFor="let col of columns">
+                <label nz-checkbox [(ngModel)]="col.show" (ngModelChange)="onColumnToggle()">
+                    {{ col.key | translate }}
+                </label>
+            </li>
+        </ul>
+    </nz-dropdown-menu> 
+    <button nz-button nzType="link" (click)="resetColumns()" nz-tooltip nzTooltipTitle="{{ 'Reset Kolom' | translate }}"><i nz-icon nzType="undo"></i></button>
+
     <button nz-button style="margin-bottom: 8px;margin-left: 10px;" nzType="primary" (click)="add()">
         <span nz-icon nzType="plus" nzTheme="outline"></span> Add New
     </button>

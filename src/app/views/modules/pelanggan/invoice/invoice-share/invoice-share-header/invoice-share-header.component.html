@@ -1,0 +1,331 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.alamatPenagihan !== undefined && data?.alamatPenagihan !== null">
+    <div class="text-secondary small">
+      {{ 'alamatPenagihan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.alamatPenagihan || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.catatan !== undefined && data?.catatan !== null">
+    <div class="text-secondary small">
+      {{ 'catatan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.catatan || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.createdAt !== undefined && data?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.createdBy !== undefined && data?.createdBy !== null">
+    <div class="text-secondary small">
+      {{ 'createdBy' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdBy | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.dpp !== undefined && data?.dpp !== null">
+    <div class="text-secondary small">
+      {{ 'dpp' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.dpp | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.jenisInvoice !== undefined && data?.jenisInvoice !== null">
+    <div class="text-secondary small">
+      {{ 'jenisInvoice' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.jenisInvoice || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.metodePembayaran !== undefined && data?.metodePembayaran !== null">
+    <div class="text-secondary small">
+      {{ 'metodePembayaran' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.metodePembayaran || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.nilaiInvoice !== undefined && data?.nilaiInvoice !== null">
+    <div class="text-secondary small">
+      {{ 'nilaiInvoice' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.nilaiInvoice | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.nomorInvoice !== undefined && data?.nomorInvoice !== null">
+    <div class="text-secondary small">
+      {{ 'nomorInvoice' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.nomorInvoice || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.npwp !== undefined && data?.npwp !== null">
+    <div class="text-secondary small">
+      {{ 'npwp' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.npwp || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.periode !== undefined && data?.periode !== null">
+    <div class="text-secondary small">
+      {{ 'periode' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.periode || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.picPenagihan !== undefined && data?.picPenagihan !== null">
+    <div class="text-secondary small">
+      {{ 'picPenagihan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.picPenagihan || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.ppn !== undefined && data?.ppn !== null">
+    <div class="text-secondary small">
+      {{ 'ppn' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.ppn | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.statusInvoice !== undefined && data?.statusInvoice !== null">
+    <div class="text-secondary small">
+      {{ 'statusInvoice' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.statusInvoice }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.tanggalDibayar !== undefined && data?.tanggalDibayar !== null">
+    <div class="text-secondary small">
+      {{ 'tanggalDibayar' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.tanggalDibayar | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.tanggalJatuhTempo !== undefined && data?.tanggalJatuhTempo !== null">
+    <div class="text-secondary small">
+      {{ 'tanggalJatuhTempo' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.tanggalJatuhTempo | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.tanggalTerbit !== undefined && data?.tanggalTerbit !== null">
+    <div class="text-secondary small">
+      {{ 'tanggalTerbit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.tanggalTerbit | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.updatedAt !== undefined && data?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.updatedBy !== undefined && data?.updatedBy !== null">
+    <div class="text-secondary small">
+      {{ 'updatedBy' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedBy | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+</div>

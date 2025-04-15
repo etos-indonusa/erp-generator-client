@@ -8,5 +8,9 @@ if (environment.production) {
     enableProdMode();
 }
 
+window.addEventListener('unhandledrejection', function (event) {
+    console.error('🔥 Unhandled Promise Rejection:', event.reason);
+});
+
 platformBrowserDynamic().bootstrapModule(AppModule)
     .catch(err => console.error(err));

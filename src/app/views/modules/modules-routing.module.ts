@@ -27,6 +27,22 @@ const routes: Routes = [
             {
                 path: 'workflow',
                 loadChildren: () => import('./tools/workflow/workflow.module').then(m => m.WorkflowModule)
+            },
+            {
+                path: 'contract',
+                loadChildren: () => import('./pelanggan/contract/contract.module').then(m => m.ContractModule)
+            },
+            {
+                path: 'contract-site',
+                loadChildren: () => import('./pelanggan/contract-site/contract-site.module').then(m => m.ContractSiteModule)
+            },
+            {
+                path: 'contract-jenis',
+                loadChildren: () => import('./pelanggan/contract-jenis/contract-jenis.module').then(m => m.ContractJenisModule)
+            },
+            {
+                path: 'invoice',
+                loadChildren: () => import('./pelanggan/invoice/invoice.module').then(m => m.InvoiceModule)
             }, 
  
         ]

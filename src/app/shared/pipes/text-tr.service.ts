@@ -7,7 +7,7 @@ export class TextTrService {
 
     constructor() { }
 
-    error(key :string, standart :string=null) { 
+    error(key :string, standart :any=null) { 
         return standart;
     }
 }

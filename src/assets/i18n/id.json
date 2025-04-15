@@ -80,5 +80,20 @@
   "statusBefore": "Status Before",
   "namaUser": "Nama User",
   "fromModuleId": "From Module Id",
-  "statusWorkflow": "Status Workflow"
+  "statusWorkflow": "Status Workflow",
+  "alamatPenagihan": "Alamat Penagihan",
+  "createdBy": "Created By",
+  "dpp": "Dpp",
+  "jenisInvoice": "Jenis Invoice",
+  "metodePembayaran": "Metode Pembayaran",
+  "nilaiInvoice": "Nilai Invoice",
+  "nomorInvoice": "Nomor Invoice",
+  "periode": "Periode",
+  "picPenagihan": "Pic Penagihan",
+  "ppn": "Ppn",
+  "statusInvoice": "Status Invoice",
+  "tanggalDibayar": "Tanggal Dibayar",
+  "tanggalJatuhTempo": "Tanggal Jatuh Tempo",
+  "tanggalTerbit": "Tanggal Terbit",
+  "updatedBy": "Updated By"
 }

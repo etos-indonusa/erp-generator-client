@@ -20,7 +20,11 @@ export class <%= Nama %>ListComponent {
 
         private notify: NzNotificationService,
         private <%= nama_object %>Service: <%= Nama %>Service,
-    ) { }
+        private translate: TranslateService
+    ) {
+        translate.setDefaultLang('id');
+        translate.use('id');
+    }
 
     ngOnInit(): void {
         this.resetParam();

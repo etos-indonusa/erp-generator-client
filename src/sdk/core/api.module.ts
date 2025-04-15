@@ -20,6 +20,7 @@ import { ContractSiteService } from './services/contract-site.service';
 import { ContractSiteReportService } from './services/contract-site-report.service';
 import { ContractSiteWidgetService } from './services/contract-site-widget.service';
 import { ClientService } from './services/client.service';
+import { ClientWidgetService } from './services/client-widget.service';
 import { ClientReportService } from './services/client-report.service';
 import { ClientSiteService } from './services/client-site.service';
 import { WorkflowService } from './services/workflow.service';
@@ -34,6 +35,9 @@ import { WorkflowStepReportService } from './services/workflow-step-report.servi
 import { WorkflowStepWidgetService } from './services/workflow-step-widget.service';
 import { ClientContactService } from './services/client-contact.service';
 import { UserGroupService } from './services/user-group.service';
+import { InvoiceService } from './services/invoice.service';
+import { InvoiceWidgetService } from './services/invoice-widget.service';
+import { InvoiceReportService } from './services/invoice-report.service';
 
 /**
  * Module that provides all services and configuration.
@@ -57,6 +61,7 @@ import { UserGroupService } from './services/user-group.service';
     ContractSiteReportService,
     ContractSiteWidgetService,
     ClientService,
+    ClientWidgetService,
     ClientReportService,
     ClientSiteService,
     WorkflowService,
@@ -71,6 +76,9 @@ import { UserGroupService } from './services/user-group.service';
     WorkflowStepWidgetService,
     ClientContactService,
     UserGroupService,
+    InvoiceService,
+    InvoiceWidgetService,
+    InvoiceReportService,
     ApiConfiguration
   ],
 })

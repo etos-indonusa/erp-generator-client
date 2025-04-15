@@ -16,6 +16,7 @@ export { ContractSiteService } from './services/contract-site.service';
 export { ContractSiteReportService } from './services/contract-site-report.service';
 export { ContractSiteWidgetService } from './services/contract-site-widget.service';
 export { ClientService } from './services/client.service';
+export { ClientWidgetService } from './services/client-widget.service';
 export { ClientReportService } from './services/client-report.service';
 export { ClientSiteService } from './services/client-site.service';
 export { WorkflowService } from './services/workflow.service';
@@ -30,3 +31,6 @@ export { WorkflowStepReportService } from './services/workflow-step-report.servi
 export { WorkflowStepWidgetService } from './services/workflow-step-widget.service';
 export { ClientContactService } from './services/client-contact.service';
 export { UserGroupService } from './services/user-group.service';
+export { InvoiceService } from './services/invoice.service';
+export { InvoiceWidgetService } from './services/invoice-widget.service';
+export { InvoiceReportService } from './services/invoice-report.service';

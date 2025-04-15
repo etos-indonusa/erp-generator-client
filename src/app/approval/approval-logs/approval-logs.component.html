@@ -1,0 +1,5 @@
+<nz-steps [nzCurrent]="currentIndex" nzProgressDot nzDirection="vertical">
+    <nz-step *ngFor="let log of logs" [nzTitle]="log.nama_step"
+        [nzDescription]="log.catatan + ' — ' + (log.user || 'N/A') + (log.tanggal ? ' • ' + log.tanggal : '')"
+        [nzStatus]="log.status"></nz-step>
+</nz-steps>

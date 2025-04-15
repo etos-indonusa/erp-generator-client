@@ -131,7 +131,7 @@ function getDisplayFieldsFromDto(dtoPath: string): string[] {
 
     const fields: string[] = [];
     let match;
-    while ((match = regex.exec(dtoContent)) !== null) {
+    while ((match = regex.exec(dtoContent)) !== null) { 
         const name = match[1];
         const isBlacklisted = blacklistPatterns.some(rx => rx.test(name));
         if (!isBlacklisted) {
@@ -456,7 +456,7 @@ const idPrimary = toSnakeCase(nama_object)
 
 // ⬇️ Ambil field dari DTO jika ada
 const dtoFile = `${prefix ? `${prefix}-` : ''}${nama}-dto.ts`;
-const dtoPath = path.resolve('src/sdk/core/models', dtoFile);
+const dtoPath = path.resolve('src/sdk/core/models', dtoFile); 
  
 let searchFields: string[] = [];
 let searchFields_report: string[] = [];
@@ -541,7 +541,17 @@ function getSmartDisplayFieldsFromDtoV2(dtoPath: string, visited: Set<string> = 
             const baseName = namaField.replace(/^id_/, '').replace(/^id/, '');
             const objectField = baseName.charAt(0).toLowerCase() + baseName.slice(1);
             if (namaField != `id${Nama}`) {
-                idFields.add(objectField);
+                
+
+                const blacklistPatterns = [
+                    /^id_/,        // snake_case
+                    /^id[A-Z]/,    // camelCase seperti idUsers 
+                ];
+
+                const isBlacklisted = blacklistPatterns.some(rx => rx.test(namaField));
+                if (!isBlacklisted) {
+                    idFields.add(objectField);
+                } 
 
             }
             continue;

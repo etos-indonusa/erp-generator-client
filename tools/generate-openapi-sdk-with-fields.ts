@@ -107,3 +107,27 @@ if (fs.existsSync(modelsIndexPath)) {
 } else {
     console.warn('⚠️  models.ts tidak ditemukan, skip export fix.');
 }
+
+
+// ===================== STEP 5: Generate index.ts for models/ and services/ =====================
+console.log('✅ models.ts sudah diganti ke export type');
+
+// ===================== STEP 5: Generate index.ts for models/ and services/ =====================
+function generateBarrelFile(dirPath: string) {
+    const files = fs.readdirSync(dirPath)
+        .filter(file => file.endsWith('.ts') && file !== 'index.ts')
+        .map(file => {
+            const name = path.basename(file, '.ts');
+            return `export * from './${name}';`;
+        })
+        .join('\n');
+
+    fs.writeFileSync(path.join(dirPath, 'index.ts'), files);
+    console.log(`📦 index.ts generated for ${dirPath}`);
+}
+
+const servicesDir = path.join(OUTPUT_PATH, 'services');
+if (fs.existsSync(MODEL_DIR)) generateBarrelFile(MODEL_DIR);
+if (fs.existsSync(servicesDir)) generateBarrelFile(servicesDir);
+
+console.log('🎉 SDK, Fields, Schema, and index.ts generation complete!');
