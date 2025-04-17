@@ -42,8 +42,8 @@ export class <%= Nama %>ShareAddComponent {
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, <%= Prefix %><%= Nama %>FormSchema, {
-            kode<%= Nama %>: [Validators.minLength(3), Validators.maxLength(3)],
-            catatan: [Validators.maxLength(200)],
+            // kode<%= Nama %>: [Validators.minLength(3), Validators.maxLength(3)],
+            // catatan: [Validators.maxLength(200)],
         },'<%= Nama %>');
 
         <% if (relationInitCalls && relationInitCalls.length) { -%>

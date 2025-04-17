@@ -1,0 +1,39 @@
+<nz-card *ngFor="let group of groups" [nzTitle]="group.namaGroup" class="mb-4">
+    <p>{{ group.deskripsi }}</p>
+
+    <nz-table [nzData]="getFields(group.idCustomFieldGroup)" [nzSize]="'small'" [nzBordered]="true"
+        [nzShowPagination]="false" [nzScroll]="{ x: '600px' }">
+        <thead>
+            <tr>
+                <th>Order</th>
+                <th>Label</th>
+                <th>Field Name</th>
+                <th>Type</th>
+                <th>Required</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let field of getFields(group.idCustomFieldGroup)">
+                <td>{{ field.urutan }}</td>
+                <td>{{ field.labelField }}</td>
+                <td>{{ field.kodeField }}</td>
+                <td>{{ field.tipeField }}</td>
+                <td>
+                    <nz-tag *ngIf="field.isRequired" nzColor="red">Required</nz-tag>
+                    <nz-tag *ngIf="!field.isRequired" nzColor="green">Optional</nz-tag>
+                </td>
+                <td>
+                    <button nz-button nzSize="small" (click)="editField(field)">Edit</button>
+                    <button nz-button nzSize="small" nzDanger (click)="deleteField(field)">Hapus</button>
+                </td>
+            </tr>
+        </tbody>
+    </nz-table>
+
+    <button nz-button nzType="dashed" nzBlock (click)="addField(group)">+ Add Field</button>
+</nz-card>
+
+<div class="mt-3"> 
+    <button nz-button nzType="primary" (click)="addGroup()">+ Add Field Group</button>
+</div>

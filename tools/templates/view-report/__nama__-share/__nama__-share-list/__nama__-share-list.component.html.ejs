@@ -91,7 +91,7 @@
                 <tr>
                     <th   [nzAlign]="'right'">#ID</th>
                     <% displayFields.forEach(field => { %>
-                    <th [nzSortFn]="true" nzColumnKey="<%= field %>" [hidden]="!isColVisible('<%= field %>')">
+                    <th [nzSortFn]="true" nzColumnKey="<%= field %>" *ngIf="isColVisible('<%= field %>')">
                         {{ '<%= field %>' | translate }}
                      </th>
                     <% }) %>
@@ -108,7 +108,7 @@
                         </td>
                         
                         <% smartDisplayFields.forEach(field=> { %>
-                            <td [hidden]="!isColVisible('<%= field.namaField %>')">
+                            <td *ngIf="isColVisible('<%= field.namaField %>')">
                                 <% if (field.uiType==='boolean' ) { %>
                                     <nz-tag *ngIf="data.<%= field.namaField %>" nzColor="blue">Ya</nz-tag>
                                     <span *ngIf="!data.<%= field.namaField %>">-</span>

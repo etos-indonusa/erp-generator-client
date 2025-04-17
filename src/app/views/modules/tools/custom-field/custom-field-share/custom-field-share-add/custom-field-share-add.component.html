@@ -1,0 +1,191 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form"  nz-form [nzLayout]="'vertical'">
+
+        <nz-row [nzGutter]="16">
+            <nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label>Label Field</nz-form-label>
+                    <nz-form-control>
+                        <input nz-input formControlName="labelField" placeholder="Contoh: Jumlah Gedung" />
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+
+            <nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label>Field Name (kode)</nz-form-label>
+                    <nz-form-control>
+                        <input nz-input formControlName="kodeField" placeholder="Contoh: jumlah_gedung" />
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+        </nz-row>
+
+        <nz-row [nzGutter]="16">
+            <nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label>Prefix Field</nz-form-label>
+                    <nz-form-control>
+                        <input nz-input formControlName="prefixField" placeholder="Contoh: Rp., No., #" />
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+            <nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label>Tipe Field</nz-form-label>
+                    <nz-form-control>
+                        <nz-select formControlName="tipeField">
+                            <nz-option *ngFor="let tipe of tipeFieldList" [nzValue]="tipe" [nzLabel]="tipe"></nz-option>
+                        </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+        </nz-row>
+
+
+
+
+        <!-- <ng-container *ngIf="showOpsi">
+            <nz-form-item>
+                <nz-form-label>Opsi Pilihan (jika select)</nz-form-label>
+                <nz-form-control>
+                    <textarea nz-input formControlName="opsiSelect"
+                        placeholder='Contoh: ["bulanan", "tahunan"]'></textarea>
+                </nz-form-control>
+            </nz-form-item>
+        </ng-container> -->
+        <!-- SELCT  -->
+        <ng-container *ngIf="isSelectField">
+            <nz-form-item>
+                <nz-form-label>Opsi Pilihan</nz-form-label>
+                <nz-form-control>
+                    <div class="border p-2">
+                        <table class="w-100">
+                            <thead>
+                                <tr>
+                                    <th>Label</th>
+                                    <th style="width: 20%">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let opsi of opsiSelectList; let i = index">
+                                    <td><input nz-input [(ngModel)]="opsi.label" (ngModelChange)="syncOpsiToForm()"
+                                            name="opsi.label" [ngModelOptions]="{standalone: true}" />
+                                    </td>
+                                    <td>
+                                        <button nz-button nzType="text" nzDanger (click)="hapusOpsi(i)">
+                                            <i nz-icon nzType="delete"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <button nz-button nzType="dashed" class="mt-2" (click)="addOpsiBaru()">
+                            <i nz-icon nzType="plus"></i> Tambah Opsi
+                        </button>
+                    </div>
+                </nz-form-control>
+            </nz-form-item>
+        </ng-container>
+
+        <!-- SELCT  -->
+
+        <nz-row [nzGutter]="16">
+            <nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label>Default Value</nz-form-label>
+                    <nz-form-control>
+                        <input nz-input formControlName="defaultValue" placeholder="Nilai awal jika kosong" />
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+
+            <nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label>Urutan</nz-form-label>
+                    <nz-form-control>
+                        <input nz-input type="number" formControlName="urutan" />
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+        </nz-row>
+
+        <nz-row>
+            <nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-control>
+                        <label nz-checkbox formControlName="isRequired">Wajib diisi</label>
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+            <nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-control>
+                        <label nz-checkbox formControlName="isFilterable">Bisa difilter</label>
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+        </nz-row>
+
+        <!-- <nz-form-item>
+            <nz-form-label>Group Field</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idCustomFieldGroup" nzShowSearch nzPlaceHolder="Pilih group">
+                    <nz-option *ngFor="let group of listCustomFieldGroup" [nzValue]="group.idCustomFieldGroup"
+                        [nzLabel]="group.namaGroup || group.idCustomFieldGroup"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item> -->
+
+        <nz-form-item>
+            <nz-form-label>Catatan</nz-form-label>
+            <nz-form-control>
+                <textarea nz-input formControlName="catatan" placeholder="Deskripsi singkat / instruksi"
+                    rows="2"></textarea>
+            </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+            <nz-form-label>Validasi Regex / JSON Rule</nz-form-label>
+            <nz-form-control>
+                <input nz-input formControlName="validasi" placeholder="Contoh: /^[0-9]+$/" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- Validator  -->
+        <nz-form-item>
+            <nz-form-label>Validasi (Regex atau JSON Rule)</nz-form-label>
+            <nz-form-control>
+
+                <nz-select nzAllowClear [nzPlaceHolder]="'Pilih preset atau isi manual...'" name="validasi" [ngModelOptions]="{standalone: true}"
+                    (ngModelChange)="form.get('validasi')?.setValue($event)" [ngModel]="form.get('validasi')?.value"
+                    class="mb-2">
+                    <nz-option *ngFor="let preset of regexPresetList" [nzLabel]="preset.label"
+                        [nzValue]="preset.value"></nz-option>
+                </nz-select>
+
+                <input nz-input formControlName="validasi" placeholder="Tulis regex atau JSON rule" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+            <nz-form-label>Contoh Input (Live Check)</nz-form-label>
+            <nz-form-control>
+                <input nz-input [(ngModel)]="testValue" name="testValue" placeholder="Contoh nilai user input" [ngModelOptions]="{standalone: true}"/>
+                <div *ngIf="form.get('validasi')?.value && testValue" class="mt-1">
+                    <span *ngIf="isValidPreview === true" style="color:green;">✅ Cocok dengan rule</span>
+                    <span *ngIf="isValidPreview === false" style="color:red;">❌ Tidak cocok dengan rule</span>
+                    <span *ngIf="isValidPreview === null" style="color:orange;">⚠️ Regex tidak valid</span>
+                </div>
+            </nz-form-control>
+        </nz-form-item>
+        <!-- Validator  -->
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" (click)="submit()" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

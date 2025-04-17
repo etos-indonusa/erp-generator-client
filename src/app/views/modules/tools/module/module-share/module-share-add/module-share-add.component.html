@@ -1,0 +1,65 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="deskripsi">{{ 'deskripsi' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="deskripsi" formControlName="deskripsi" placeholder="Masukkan {{ 'deskripsi' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <label nz-checkbox formControlName="isAktif">{{ 'isAktif' | translate }}</label>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="kodeModule">{{ 'kodeModule' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="kodeModule" formControlName="kodeModule" placeholder="Masukkan {{ 'kodeModule' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="namaDb">{{ 'namaDb' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="namaDb" formControlName="namaDb" placeholder="Masukkan {{ 'namaDb' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="namaModule">{{ 'namaModule' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="namaModule" formControlName="namaModule" placeholder="Masukkan {{ 'namaModule' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="namaTabel">{{ 'namaTabel' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="namaTabel" formControlName="namaTabel" placeholder="Masukkan {{ 'namaTabel' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="urutan">{{ 'urutan' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="urutan" formControlName="urutan" placeholder="Masukkan {{ 'urutan' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

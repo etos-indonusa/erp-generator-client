@@ -43,6 +43,18 @@ const routes: Routes = [
             {
                 path: 'invoice',
                 loadChildren: () => import('./pelanggan/invoice/invoice.module').then(m => m.InvoiceModule)
+            },
+            {
+                path: 'custom-field',
+                loadChildren: () => import('./tools/custom-field/custom-field.module').then(m => m.CustomFieldModule)
+            },
+            {
+                path: 'custom-field-group',
+                loadChildren: () => import('./tools/custom-field-group/custom-field-group.module').then(m => m.CustomFieldGroupModule)
+            }, 
+            {
+                path: 'module',
+                loadChildren: () => import('./tools/module/module.module').then(m => m.ModuleModule)
             }, 
  
         ]

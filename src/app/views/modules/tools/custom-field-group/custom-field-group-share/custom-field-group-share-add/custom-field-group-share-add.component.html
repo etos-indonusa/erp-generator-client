@@ -1,0 +1,88 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+
+        <nz-form-item>
+            <nz-form-label required>Nama Group</nz-form-label>
+            <nz-form-control>
+                <input nz-input formControlName="namaGroup" placeholder="Contoh: Informasi Tambahan" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+            <nz-form-label>Deskripsi</nz-form-label>
+            <nz-form-control>
+                <textarea nz-input formControlName="deskripsi" placeholder="Deskripsi singkat fungsi group ini"
+                    rows="2"></textarea>
+            </nz-form-control>
+        </nz-form-item>
+
+
+        <nz-row [nzGutter]="16">
+            <nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label>Tipe Render</nz-form-label>
+                    <nz-form-control>
+                        <nz-select formControlName="tipeRender" nzAllowClear>
+                            <nz-option nzValue="table" nzLabel="Table"></nz-option>
+                            <nz-option nzValue="card" nzLabel="Card / Box"></nz-option>
+                            <nz-option nzValue="inline" nzLabel="Inline (Row)"></nz-option>
+                        </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+
+            <nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label>Urutan</nz-form-label>
+                    <nz-form-control>
+                        <input nz-input type="number" formControlName="urutan" placeholder="0, 1, 2, ..." />
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+        </nz-row>
+
+        <nz-form-item>
+            <nz-form-control>
+                <label nz-checkbox formControlName="isRepeatable">Group Bisa Diulang (Repeatable)</label>
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- <nz-row [nzGutter]="16">
+            <nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label>For Kantor</nz-form-label>
+                    <nz-form-control>
+                        <input nz-input formControlName="forKantor" placeholder="ID Kantor / Scope" />
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+
+            <nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label>For Role</nz-form-label>
+                    <nz-form-control>
+                        <input nz-input formControlName="forRole" placeholder="Role yang bisa akses" />
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+        </nz-row> -->
+
+        <nz-form-item>
+            <nz-form-label [nzFor]="'forRole_array'">Role yang Bisa Akses</nz-form-label>
+            <nz-form-control [nzErrorTip]="'Wajib diisi jika diperlukan'">
+                <nz-select  [ngModelOptions]="{standalone: true}" [(ngModel)]="forRole_array" nzMode="multiple" nzAllowClear nzPlaceHolder="Pilih Role"
+                    nzShowSearch id="forRole_array">
+                    <nz-option *ngFor="let group of userGroupList" [nzValue]="group.idUserGroup"
+                        [nzLabel]="group.namaUserGroup"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

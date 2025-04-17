@@ -5,6 +5,7 @@ export const ToolsWorkflowLogDtoFields: Record<string, 'string' | 'boolean' | 'n
   "forModule": "string",
   "fromModuleId": "string",
   "idUsers": "string",
+  "idWorkflow": "string",
   "idWorkflowLog": "string",
   "idWorkflowStep": "string",
   "namaUser": "string",

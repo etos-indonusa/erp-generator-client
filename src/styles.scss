@@ -25,3 +25,8 @@
 
 // DERP styles for RTL layout. Replace the above style with this CSS file to enable RTL styles
 // @import "./styles/rtl-css/styles.rtl.css";
+.main-wrapper .page-wrapper .page-content {
+    flex-grow: 1;
+    padding: 15px;
+    margin-top: 60px;
+}

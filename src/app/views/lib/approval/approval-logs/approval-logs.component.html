@@ -1,0 +1,9 @@
+ 
+
+<nz-spin [nzSpinning]="isLoading">
+<nz-steps [nzCurrent]="currentIndex" nzProgressDot nzDirection="vertical">
+    <nz-step *ngFor="let log of logs" [nzTitle]="log.statusAfter"
+        [nzDescription]="log.catatan + ' — ' + (log.namaUser || 'N/A') + (log.approvedAt ? ' • ' + log.approvedAt : '')"
+        [nzStatus]="log.statusAfter"></nz-step>
+</nz-steps>
+</nz-spin>

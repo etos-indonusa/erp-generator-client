@@ -36,10 +36,10 @@
             </div>
         </div>
     </div>
-    <!-- <approval-flow-log-widget [module-id]="<%= nama_object %>.id_contractSite" [module]="'<%= nama_object %>'"
-        [data_flow]="<%= nama_object %>.id_data_flow"
-        [flow-detail]="<%= nama_object %>.id_data_flow_detail"></approval-flow-log-widget> -->
-        <br>
+     <!--
+     <lib-approval-steps [for-module-name]="'<%= nama %>'" [for-module-id]="<%= nama %>?.id<%= Nama %>"></lib-approval-steps>
+         -->
+
     <div class="card bg-white p-3" style="box-shadow: none;">
         <div class="row">
             <div class="col-md-8">
@@ -74,6 +74,11 @@
                 <!-- <app-<%= nama %>-share-list [filter-extra]="false" [id<%= Nama %>]="id<%= Nama %>"></app-<%= nama %>-share-list> -->
     </div>
     </div >
+
+<!-- 
+    <lib-approval-form-widget [from-module]="'<%= nama %>'" [from-module-id]="<%= nama %>?.id<%= Nama %>"
+        (onSubmit)="handleApprovalSubmit($event)" (onAfterSubmit)="refreshApprovalSteps()"></lib-approval-form-widget> 
+            -->
 
 </nz-spin>
 <br>

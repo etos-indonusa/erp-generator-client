@@ -20,8 +20,7 @@ export function generateFormFromSchema<T>(
         const validators: ValidatorFn[] = [];
 
         const isPrimary = config.primary === true;
-        const isAutoIdField = modelName && key === `id${modelName}`;
-
+        const isAutoIdField = modelName && key === `id${modelName}`; 
         const skipRequired = isPrimary || isAutoIdField;
 
         if (config.required && !skipRequired) {

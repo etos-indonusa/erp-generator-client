@@ -38,6 +38,15 @@ import { UserGroupService } from './services/user-group.service';
 import { InvoiceService } from './services/invoice.service';
 import { InvoiceWidgetService } from './services/invoice-widget.service';
 import { InvoiceReportService } from './services/invoice-report.service';
+import { WorkflowAggregatorService } from './services/workflow-aggregator.service';
+import { ModuleService } from './services/module.service';
+import { CustomFieldGroupService } from './services/custom-field-group.service';
+import { CustomFieldGroupReportService } from './services/custom-field-group-report.service';
+import { CustomFieldGroupWidgetService } from './services/custom-field-group-widget.service';
+import { CustomFieldService } from './services/custom-field.service';
+import { CustomFieldValueService } from './services/custom-field-value.service';
+import { CustomFieldValueReportService } from './services/custom-field-value-report.service';
+import { CustomFieldValueWidgetService } from './services/custom-field-value-widget.service';
 
 /**
  * Module that provides all services and configuration.
@@ -79,6 +88,15 @@ import { InvoiceReportService } from './services/invoice-report.service';
     InvoiceService,
     InvoiceWidgetService,
     InvoiceReportService,
+    WorkflowAggregatorService,
+    ModuleService,
+    CustomFieldGroupService,
+    CustomFieldGroupReportService,
+    CustomFieldGroupWidgetService,
+    CustomFieldService,
+    CustomFieldValueService,
+    CustomFieldValueReportService,
+    CustomFieldValueWidgetService,
     ApiConfiguration
   ],
 })

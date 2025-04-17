@@ -1,0 +1,54 @@
+<nz-card nzTitle="Approval Form" [nzBordered]="false"  *ngIf="workflowAggregator?.lastApprovalStatus !== 'done'">
+    <ng-container *ngIf="!hasAggregator">
+        <nz-alert nzType="info" nzMessage="Approval belum aktif"
+            nzDescription="Klik tombol Konfirmasi untuk memulai proses approval" nzShowIcon class="mb-2"></nz-alert>
+
+        <button nz-button nzType="primary" [nzLoading]="is_loading" (click)="confirmWorkflow()">
+            Konfirmasi & Aktifkan Approval
+        </button>
+    </ng-container>
+
+    <ng-container *ngIf="hasAggregator">
+        <ng-container *ngIf="previousLog?.length">
+            <nz-alert nzType="info" nzShowIcon [nzMessage]="'Terakhir disetujui oleh ' + previousLog[0]?.nama_user"
+                [nzDescription]="previousLog[0]?.catatan + ' • ' + (previousLog[0]?.approved_at | date:'short')"
+                class="mb-3"></nz-alert>
+        </ng-container>
+
+        <nz-form-item>
+            <nz-form-label [nzSpan]="24">Catatan</nz-form-label>
+            <nz-form-control [nzSpan]="24">
+                <textarea nz-input [(ngModel)]="catatan" rows="3"
+                    placeholder="Tulis alasan atau komentar..."></textarea>
+            </nz-form-control>
+        </nz-form-item>
+
+        <div class="mt-3 text-end" *ngIf="!isFinalStep">
+            <button nz-button nzType="primary" class="me-2" [nzLoading]="is_loading" (click)="submit('approve')">
+                Setuju
+            </button>
+            <button nz-button nzDanger [nzLoading]="is_loading" (click)="submit('reject')">
+                Tolak
+            </button>
+        </div>
+    </ng-container>
+
+    <nz-spin [nzSpinning]="is_loading">
+        <ng-container *ngIf=" previousLog.length > 0">
+            <div *ngFor="let log of previousLog">
+                <p>
+                    ✅ <strong>{{ log.statusAfter | uppercase }}</strong>
+                    <span *ngIf="log.namaUser">
+                        oleh {{ log.namaUser }} pada {{ log.approvedAt | date: 'short' }}
+                    </span>
+                    <span *ngIf="!log.namaUser">
+                        {{ 'oleh User Pembuat Document' | translate }}
+                    </span>
+                    <br />
+                    <small><i>{{ log.catatan }}</i></small>
+                </p>
+            </div>
+        </ng-container>
+    </nz-spin>
+
+</nz-card>

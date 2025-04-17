@@ -6,7 +6,7 @@ import { ContractListComponent } from './contract-list/contract-list.component';
 import { ContractShareModule } from './contract-share/contract-share.module';
 import { AntSimpleModule } from 'src/app/shared/ant-simple.module';
 import { TampilanModule } from 'src/app/shared/tampilan.module';
-import { ApprovalModule } from 'src/app/approval/approval.module';
+import { ApprovalModule } from 'src/app/views/lib/approval/approval.module';
 
 
 @NgModule({

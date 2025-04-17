@@ -81,8 +81,7 @@
     </div>
 
     <lib-approval-form-widget [from-module]="'contract'" [from-module-id]="contract?.idContract"
-        (onSubmit)="handleApprovalSubmit($event)"  
-  (onAfterSubmit)="refreshApprovalSteps()"></lib-approval-form-widget>
+        (onSubmit)="handleApprovalSubmit($event)" (onAfterSubmit)="refreshApprovalSteps()"></lib-approval-form-widget>
 
 </nz-spin>
 <br>

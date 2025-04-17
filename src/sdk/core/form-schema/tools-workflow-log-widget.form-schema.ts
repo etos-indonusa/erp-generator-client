@@ -22,6 +22,9 @@ export const ToolsWorkflowLogWidgetFormSchema = {
   "idUsers": {
     "required": true
   },
+  "idWorkflow": {
+    "required": false
+  },
   "idWorkflowLog": {
     "required": true
   },

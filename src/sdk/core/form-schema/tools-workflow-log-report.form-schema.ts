@@ -22,6 +22,9 @@ export const ToolsWorkflowLogReportFormSchema = {
   "idUsers": {
     "required": true
   },
+  "idWorkflow": {
+    "required": false
+  },
   "idWorkflowLog": {
     "required": true
   },
@@ -39,5 +42,9 @@ export const ToolsWorkflowLogReportFormSchema = {
   "statusBefore": {
     "default": "",
     "required": false
+  },
+  "workflow": {
+    "default": "",
+    "required": true
   }
 };

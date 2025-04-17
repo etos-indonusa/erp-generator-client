@@ -9,7 +9,7 @@ import { <%= Nama %>ShareDetailComponent } from './<%= nama %>-share-detail/<%= 
 import { <%= Nama %>ShareWidgetComponent } from './<%= nama %>-share-widget/<%= nama %>-share-widget.component';
 import { <%= Nama %>ShareListComponent } from './<%= nama %>-share-list/<%= nama %>-share-list.component';
 import { <%= Nama %>ShareHeaderComponent } from './<%= nama %>-share-header/<%= nama %>-share-header.component';
-
+import { ApprovalModule } from 'src/app/views/lib/approval/approval.module';
  
 const COM = [
     <%= Nama %>ShareAddComponent,
@@ -32,7 +32,8 @@ const COM = [
         ReactiveFormsModule,
         AntSimpleModule,
         TampilanModule,
-        RouterModule
+        RouterModule,
+        // ApprovalModule,
     ]
 }) 
 export class <%= Nama %>ShareModule { }

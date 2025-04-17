@@ -300,7 +300,7 @@ export class ContractShareListComponent {
             this.loading = false;
             this.total = data.total || 0;
             this.listOfData = data.data || [];
-            // this.detail(this.listOfData[0])
+            this.detail(this.listOfData[0])
         }, err => {
             this.loading = false;
         });

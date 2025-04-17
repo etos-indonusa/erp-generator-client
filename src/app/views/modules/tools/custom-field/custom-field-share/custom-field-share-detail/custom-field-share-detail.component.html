@@ -1,0 +1,111 @@
+
+  <div class="mb-3">
+    <div class="text-secondary small">Catatan</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.catatan || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Created At</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt ? (data.createdAt | date:'short') : '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Default Value</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.defaultValue || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Is Filterable</div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isFilterable" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isFilterable">-</span>
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Is Required</div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isRequired" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isRequired">-</span>
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Kode Field</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.kodeField || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Label Field</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.labelField || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Opsi Select</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.opsiSelect || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Tipe Field</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.tipeField || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Updated At</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Urutan</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.urutan || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Validasi</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.validasi || '-' }}
+      
+    </div>
+  </div>
+

@@ -8,13 +8,10 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
+import { WorkflowApplyDto } from '../../models/workflow-apply-dto';
 
 export interface WorkflowApplyControllerApplyStep$Params {
-      body: {
-'for_module': string;
-'id_data': string;
-'target_status': string;
-}
+      body: WorkflowApplyDto
 }
 
 export function workflowApplyControllerApplyStep(http: HttpClient, rootUrl: string, params: WorkflowApplyControllerApplyStep$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {

@@ -15,6 +15,26 @@ export const MENU: MenuItem[] = [
         isTitle: true
     }
     ,{
+        label: 'Module',
+        icon: 'message-square',
+        link: '/app/module',
+    }
+    ,{
+        label: 'CustomFieldValue',
+        icon: 'message-square',
+        link: '/app/custom-field-value',
+    }
+    ,{
+        label: 'CustomFieldGroup',
+        icon: 'message-square',
+        link: '/app/custom-field-group',
+    }
+    ,{
+        label: 'CustomField',
+        icon: 'message-square',
+        link: '/app/custom-field',
+    }
+    ,{
         label: 'Invoice',
         icon: 'message-square',
         link: '/app/invoice',

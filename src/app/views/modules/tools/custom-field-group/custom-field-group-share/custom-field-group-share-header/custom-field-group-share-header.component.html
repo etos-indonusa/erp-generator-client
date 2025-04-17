@@ -1,0 +1,213 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.createdAt !== undefined && data?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.deskripsi !== undefined && data?.deskripsi !== null">
+    <div class="text-secondary small">
+      {{ 'deskripsi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.forKantor !== undefined && data?.forKantor !== null">
+    <div class="text-secondary small">
+      {{ 'forKantor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.forKantor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.forRole !== undefined && data?.forRole !== null">
+    <div class="text-secondary small">
+      {{ 'forRole' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.forRole || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.isRepeatable !== undefined && data?.isRepeatable !== null">
+    <div class="text-secondary small">
+      {{ 'isRepeatable' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isRepeatable" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isRepeatable">-</span>
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.modul !== undefined && data?.modul !== null">
+    <div class="text-secondary small">
+      {{ 'modul' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.modul || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.namaGroup !== undefined && data?.namaGroup !== null">
+    <div class="text-secondary small">
+      {{ 'namaGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.namaGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.tableName !== undefined && data?.tableName !== null">
+    <div class="text-secondary small">
+      {{ 'tableName' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.tableName || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.tipeRender !== undefined && data?.tipeRender !== null">
+    <div class="text-secondary small">
+      {{ 'tipeRender' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.tipeRender || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.updatedAt !== undefined && data?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.urutan !== undefined && data?.urutan !== null">
+    <div class="text-secondary small">
+      {{ 'urutan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.urutan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.visibilityRule !== undefined && data?.visibilityRule !== null">
+    <div class="text-secondary small">
+      {{ 'visibilityRule' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.visibilityRule || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+</div>

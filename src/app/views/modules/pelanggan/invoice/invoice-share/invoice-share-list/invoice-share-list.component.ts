@@ -25,7 +25,7 @@ import { ContractService } from 'src/sdk/core/services';
 export class InvoiceShareListComponent {
     @Input('status') status: string | null = null;
     @Output('out_filter') out_filter = new EventEmitter<any>();
-    @Input('filter-extra') filter_extra = true;
+    @Input('filter-extra') filter_extra = false;
     @Input('enable-crud') enable_crud = true;
     //untuak filter dari prent
      

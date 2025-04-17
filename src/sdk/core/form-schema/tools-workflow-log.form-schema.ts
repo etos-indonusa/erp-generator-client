@@ -22,6 +22,9 @@ export const ToolsWorkflowLogFormSchema = {
   "idUsers": {
     "required": true
   },
+  "idWorkflow": {
+    "required": false
+  },
   "idWorkflowLog": {
     "required": true
   },

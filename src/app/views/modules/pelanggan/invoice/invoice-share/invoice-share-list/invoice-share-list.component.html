@@ -169,79 +169,79 @@
                 <tr>
                     <th   [nzAlign]="'right'">#ID</th>
                     
-                    <th [nzSortFn]="true" nzColumnKey="alamatPenagihan" [hidden]="!isColVisible('alamatPenagihan')">
+                    <th [nzSortFn]="true" nzColumnKey="alamatPenagihan" *ngIf="isColVisible('alamatPenagihan')">
                         {{ 'alamatPenagihan' | translate }}
                      </th>
                     
-                    <th [nzSortFn]="true" nzColumnKey="catatan" [hidden]="!isColVisible('catatan')">
+                    <th [nzSortFn]="true" nzColumnKey="catatan" *ngIf="isColVisible('catatan')">
                         {{ 'catatan' | translate }}
                      </th>
                     
-                    <th [nzSortFn]="true" nzColumnKey="createdAt" [hidden]="!isColVisible('createdAt')">
+                    <th [nzSortFn]="true" nzColumnKey="createdAt" *ngIf="isColVisible('createdAt')">
                         {{ 'createdAt' | translate }}
                      </th>
                     
-                    <th [nzSortFn]="true" nzColumnKey="createdBy" [hidden]="!isColVisible('createdBy')">
+                    <th [nzSortFn]="true" nzColumnKey="createdBy" *ngIf="isColVisible('createdBy')">
                         {{ 'createdBy' | translate }}
                      </th>
                     
-                    <th [nzSortFn]="true" nzColumnKey="dpp" [hidden]="!isColVisible('dpp')">
+                    <th [nzSortFn]="true" nzColumnKey="dpp" *ngIf="isColVisible('dpp')">
                         {{ 'dpp' | translate }}
                      </th>
                     
-                    <th [nzSortFn]="true" nzColumnKey="jenisInvoice" [hidden]="!isColVisible('jenisInvoice')">
+                    <th [nzSortFn]="true" nzColumnKey="jenisInvoice" *ngIf="isColVisible('jenisInvoice')">
                         {{ 'jenisInvoice' | translate }}
                      </th>
                     
-                    <th [nzSortFn]="true" nzColumnKey="metodePembayaran" [hidden]="!isColVisible('metodePembayaran')">
+                    <th [nzSortFn]="true" nzColumnKey="metodePembayaran" *ngIf="isColVisible('metodePembayaran')">
                         {{ 'metodePembayaran' | translate }}
                      </th>
                     
-                    <th [nzSortFn]="true" nzColumnKey="nilaiInvoice" [hidden]="!isColVisible('nilaiInvoice')">
+                    <th [nzSortFn]="true" nzColumnKey="nilaiInvoice" *ngIf="isColVisible('nilaiInvoice')">
                         {{ 'nilaiInvoice' | translate }}
                      </th>
                     
-                    <th [nzSortFn]="true" nzColumnKey="nomorInvoice" [hidden]="!isColVisible('nomorInvoice')">
+                    <th [nzSortFn]="true" nzColumnKey="nomorInvoice" *ngIf="isColVisible('nomorInvoice')">
                         {{ 'nomorInvoice' | translate }}
                      </th>
                     
-                    <th [nzSortFn]="true" nzColumnKey="npwp" [hidden]="!isColVisible('npwp')">
+                    <th [nzSortFn]="true" nzColumnKey="npwp" *ngIf="isColVisible('npwp')">
                         {{ 'npwp' | translate }}
                      </th>
                     
-                    <th [nzSortFn]="true" nzColumnKey="periode" [hidden]="!isColVisible('periode')">
+                    <th [nzSortFn]="true" nzColumnKey="periode" *ngIf="isColVisible('periode')">
                         {{ 'periode' | translate }}
                      </th>
                     
-                    <th [nzSortFn]="true" nzColumnKey="picPenagihan" [hidden]="!isColVisible('picPenagihan')">
+                    <th [nzSortFn]="true" nzColumnKey="picPenagihan" *ngIf="isColVisible('picPenagihan')">
                         {{ 'picPenagihan' | translate }}
                      </th>
                     
-                    <th [nzSortFn]="true" nzColumnKey="ppn" [hidden]="!isColVisible('ppn')">
+                    <th [nzSortFn]="true" nzColumnKey="ppn" *ngIf="isColVisible('ppn')">
                         {{ 'ppn' | translate }}
                      </th>
                     
-                    <th [nzSortFn]="true" nzColumnKey="statusInvoice" [hidden]="!isColVisible('statusInvoice')">
+                    <th [nzSortFn]="true" nzColumnKey="statusInvoice" *ngIf="isColVisible('statusInvoice')">
                         {{ 'statusInvoice' | translate }}
                      </th>
                     
-                    <th [nzSortFn]="true" nzColumnKey="tanggalDibayar" [hidden]="!isColVisible('tanggalDibayar')">
+                    <th [nzSortFn]="true" nzColumnKey="tanggalDibayar" *ngIf="isColVisible('tanggalDibayar')">
                         {{ 'tanggalDibayar' | translate }}
                      </th>
                     
-                    <th [nzSortFn]="true" nzColumnKey="tanggalJatuhTempo" [hidden]="!isColVisible('tanggalJatuhTempo')">
+                    <th [nzSortFn]="true" nzColumnKey="tanggalJatuhTempo" *ngIf="isColVisible('tanggalJatuhTempo')">
                         {{ 'tanggalJatuhTempo' | translate }}
                      </th>
                     
-                    <th [nzSortFn]="true" nzColumnKey="tanggalTerbit" [hidden]="!isColVisible('tanggalTerbit')">
+                    <th [nzSortFn]="true" nzColumnKey="tanggalTerbit" *ngIf="isColVisible('tanggalTerbit')">
                         {{ 'tanggalTerbit' | translate }}
                      </th>
                     
-                    <th [nzSortFn]="true" nzColumnKey="updatedAt" [hidden]="!isColVisible('updatedAt')">
+                    <th [nzSortFn]="true" nzColumnKey="updatedAt" *ngIf="isColVisible('updatedAt')">
                         {{ 'updatedAt' | translate }}
                      </th>
                     
-                    <th [nzSortFn]="true" nzColumnKey="updatedBy" [hidden]="!isColVisible('updatedBy')">
+                    <th [nzSortFn]="true" nzColumnKey="updatedBy" *ngIf="isColVisible('updatedBy')">
                         {{ 'updatedBy' | translate }}
                      </th>
                     
@@ -258,115 +258,115 @@
                         </td>
                         
                         
-                            <td [hidden]="!isColVisible('alamatPenagihan')">
+                            <td *ngIf="isColVisible('alamatPenagihan')">
                                 
                                                         {{ data.alamatPenagihan  }}
                                                             
                             </td>
                             
-                            <td [hidden]="!isColVisible('catatan')">
+                            <td *ngIf="isColVisible('catatan')">
                                 
                                                         {{ data.catatan  }}
                                                             
                             </td>
                             
-                            <td [hidden]="!isColVisible('createdAt')">
+                            <td *ngIf="isColVisible('createdAt')">
                                 
                                         {{ data.createdAt | date: 'short' }}
                                             
                             </td>
                             
-                            <td [hidden]="!isColVisible('createdBy')">
+                            <td *ngIf="isColVisible('createdBy')">
                                 
                                         {{ data.createdBy | date: 'short' }}
                                             
                             </td>
                             
-                            <td [hidden]="!isColVisible('dpp')">
+                            <td *ngIf="isColVisible('dpp')">
                                 
                                                         {{ data.dpp  }}
                                                             
                             </td>
                             
-                            <td [hidden]="!isColVisible('jenisInvoice')">
+                            <td *ngIf="isColVisible('jenisInvoice')">
                                 
                                                         {{ data.jenisInvoice  }}
                                                             
                             </td>
                             
-                            <td [hidden]="!isColVisible('metodePembayaran')">
+                            <td *ngIf="isColVisible('metodePembayaran')">
                                 
                                                         {{ data.metodePembayaran  }}
                                                             
                             </td>
                             
-                            <td [hidden]="!isColVisible('nilaiInvoice')">
+                            <td *ngIf="isColVisible('nilaiInvoice')">
                                 
                                                         {{ data.nilaiInvoice  }}
                                                             
                             </td>
                             
-                            <td [hidden]="!isColVisible('nomorInvoice')">
+                            <td *ngIf="isColVisible('nomorInvoice')">
                                 
                                                         {{ data.nomorInvoice  }}
                                                             
                             </td>
                             
-                            <td [hidden]="!isColVisible('npwp')">
+                            <td *ngIf="isColVisible('npwp')">
                                 
                                                         {{ data.npwp  }}
                                                             
                             </td>
                             
-                            <td [hidden]="!isColVisible('periode')">
+                            <td *ngIf="isColVisible('periode')">
                                 
                                                         {{ data.periode  }}
                                                             
                             </td>
                             
-                            <td [hidden]="!isColVisible('picPenagihan')">
+                            <td *ngIf="isColVisible('picPenagihan')">
                                 
                                                         {{ data.picPenagihan  }}
                                                             
                             </td>
                             
-                            <td [hidden]="!isColVisible('ppn')">
+                            <td *ngIf="isColVisible('ppn')">
                                 
                                                         {{ data.ppn  }}
                                                             
                             </td>
                             
-                            <td [hidden]="!isColVisible('statusInvoice')">
+                            <td *ngIf="isColVisible('statusInvoice')">
                                 
                                                         {{ data.statusInvoice  }}
                                                             
                             </td>
                             
-                            <td [hidden]="!isColVisible('tanggalDibayar')">
+                            <td *ngIf="isColVisible('tanggalDibayar')">
                                 
                                         {{ data.tanggalDibayar | date: 'short' }}
                                             
                             </td>
                             
-                            <td [hidden]="!isColVisible('tanggalJatuhTempo')">
+                            <td *ngIf="isColVisible('tanggalJatuhTempo')">
                                 
                                         {{ data.tanggalJatuhTempo | date: 'short' }}
                                             
                             </td>
                             
-                            <td [hidden]="!isColVisible('tanggalTerbit')">
+                            <td *ngIf="isColVisible('tanggalTerbit')">
                                 
                                         {{ data.tanggalTerbit | date: 'short' }}
                                             
                             </td>
                             
-                            <td [hidden]="!isColVisible('updatedAt')">
+                            <td *ngIf="isColVisible('updatedAt')">
                                 
                                         {{ data.updatedAt | date: 'short' }}
                                             
                             </td>
                             
-                            <td [hidden]="!isColVisible('updatedBy')">
+                            <td *ngIf="isColVisible('updatedBy')">
                                 
                                         {{ data.updatedBy | date: 'short' }}
                                             

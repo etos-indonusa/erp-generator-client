@@ -1,0 +1,83 @@
+
+  <div class="mb-3">
+    <div class="text-secondary small">Created At</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt ? (data.createdAt | date:'short') : '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Deskripsi</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Is Aktif</div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isAktif" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isAktif">-</span>
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Kode Module</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.kodeModule || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Nama Db</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.namaDb || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Nama Module</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.namaModule || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Nama Tabel</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.namaTabel || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Updated At</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Urutan</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.urutan || '-' }}
+      
+    </div>
+  </div>
+
