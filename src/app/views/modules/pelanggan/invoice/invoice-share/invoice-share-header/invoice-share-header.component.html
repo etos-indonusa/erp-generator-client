@@ -93,6 +93,40 @@
     
   
     
+  <div class="col-md-3" *ngIf="data?.idContract !== undefined && data?.idContract !== null">
+    <div class="text-secondary small">
+      {{ 'idContract' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idContract || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idInvoice !== undefined && data?.idInvoice !== null">
+    <div class="text-secondary small">
+      {{ 'idInvoice' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idInvoice || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+  
+    
+  
+    
   <div class="col-md-3" *ngIf="data?.jenisInvoice !== undefined && data?.jenisInvoice !== null">
     <div class="text-secondary small">
       {{ 'jenisInvoice' | translate }}
@@ -325,6 +359,1222 @@
     </div>
   </div>
 
+  
+
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.contract">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'contract' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.catatanKontrak !== undefined && data.contract?.catatanKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'catatanKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.catatanKontrak || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.createdAt !== undefined && data.contract?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.dokumenUrl !== undefined && data.contract?.dokumenUrl !== null">
+    <div class="text-secondary small">
+      {{ 'dokumenUrl' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.dokumenUrl || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.durasiBulan !== undefined && data.contract?.durasiBulan !== null">
+    <div class="text-secondary small">
+      {{ 'durasiBulan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.durasiBulan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.feeSales !== undefined && data.contract?.feeSales !== null">
+    <div class="text-secondary small">
+      {{ 'feeSales' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.feeSales | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.idClient !== undefined && data.contract?.idClient !== null">
+    <div class="text-secondary small">
+      {{ 'idClient' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.idClient || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.idContract !== undefined && data.contract?.idContract !== null">
+    <div class="text-secondary small">
+      {{ 'idContract' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.idContract || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.idContractJenis !== undefined && data.contract?.idContractJenis !== null">
+    <div class="text-secondary small">
+      {{ 'idContractJenis' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.idContractJenis || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.idDocument !== undefined && data.contract?.idDocument !== null">
+    <div class="text-secondary small">
+      {{ 'idDocument' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.idDocument || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.idKantor !== undefined && data.contract?.idKantor !== null">
+    <div class="text-secondary small">
+      {{ 'idKantor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.idKantor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.isAutoInvoice !== undefined && data.contract?.isAutoInvoice !== null">
+    <div class="text-secondary small">
+      {{ 'isAutoInvoice' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.contract.isAutoInvoice" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.contract.isAutoInvoice">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.namaSales !== undefined && data.contract?.namaSales !== null">
+    <div class="text-secondary small">
+      {{ 'namaSales' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.namaSales || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.nilaiAkhir !== undefined && data.contract?.nilaiAkhir !== null">
+    <div class="text-secondary small">
+      {{ 'nilaiAkhir' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.nilaiAkhir | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.nilaiBulanan !== undefined && data.contract?.nilaiBulanan !== null">
+    <div class="text-secondary small">
+      {{ 'nilaiBulanan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.nilaiBulanan | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.nilaiDiawal !== undefined && data.contract?.nilaiDiawal !== null">
+    <div class="text-secondary small">
+      {{ 'nilaiDiawal' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.nilaiDiawal | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.nilaiKontrak !== undefined && data.contract?.nilaiKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'nilaiKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.nilaiKontrak | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.nomorKontrak !== undefined && data.contract?.nomorKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'nomorKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.nomorKontrak || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.presentaseFee !== undefined && data.contract?.presentaseFee !== null">
+    <div class="text-secondary small">
+      {{ 'presentaseFee' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.presentaseFee | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.refKontrakSebelumnya !== undefined && data.contract?.refKontrakSebelumnya !== null">
+    <div class="text-secondary small">
+      {{ 'refKontrakSebelumnya' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.refKontrakSebelumnya || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.statusContract !== undefined && data.contract?.statusContract !== null">
+    <div class="text-secondary small">
+      {{ 'statusContract' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.contract.statusContract }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.tanggalAkhir !== undefined && data.contract?.tanggalAkhir !== null">
+    <div class="text-secondary small">
+      {{ 'tanggalAkhir' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.tanggalAkhir | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.tanggalKontrak !== undefined && data.contract?.tanggalKontrak !== null">
+    <div class="text-secondary small">
+      {{ 'tanggalKontrak' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.tanggalKontrak | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.tanggalMulai !== undefined && data.contract?.tanggalMulai !== null">
+    <div class="text-secondary small">
+      {{ 'tanggalMulai' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.tanggalMulai | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract?.updatedAt !== undefined && data.contract?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.contract?.client">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'contract.client' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client?.catatan !== undefined && data.contract.client?.catatan !== null">
+    <div class="text-secondary small">
+      {{ 'catatan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.catatan || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client?.createdAt !== undefined && data.contract.client?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client?.divisi !== undefined && data.contract.client?.divisi !== null">
+    <div class="text-secondary small">
+      {{ 'divisi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.divisi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client?.email !== undefined && data.contract.client?.email !== null">
+    <div class="text-secondary small">
+      {{ 'email' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.email || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client?.idClient !== undefined && data.contract.client?.idClient !== null">
+    <div class="text-secondary small">
+      {{ 'idClient' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.idClient || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client?.idClientContact !== undefined && data.contract.client?.idClientContact !== null">
+    <div class="text-secondary small">
+      {{ 'idClientContact' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.idClientContact || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client?.isPrimary !== undefined && data.contract.client?.isPrimary !== null">
+    <div class="text-secondary small">
+      {{ 'isPrimary' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.contract.client.isPrimary" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.contract.client.isPrimary">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client?.jabatan !== undefined && data.contract.client?.jabatan !== null">
+    <div class="text-secondary small">
+      {{ 'jabatan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.jabatan || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client?.jenisContact !== undefined && data.contract.client?.jenisContact !== null">
+    <div class="text-secondary small">
+      {{ 'jenisContact' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.jenisContact || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client?.namaContact !== undefined && data.contract.client?.namaContact !== null">
+    <div class="text-secondary small">
+      {{ 'namaContact' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.namaContact || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client?.telepon !== undefined && data.contract.client?.telepon !== null">
+    <div class="text-secondary small">
+      {{ 'telepon' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.telepon || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client?.updatedAt !== undefined && data.contract.client?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.contract?.kantor">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'contract.kantor' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.kantor?.alamat !== undefined && data.contract.kantor?.alamat !== null">
+    <div class="text-secondary small">
+      {{ 'alamat' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.kantor.alamat || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.kantor?.catatan !== undefined && data.contract.kantor?.catatan !== null">
+    <div class="text-secondary small">
+      {{ 'catatan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.kantor.catatan || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.kantor?.createdAt !== undefined && data.contract.kantor?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.kantor.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.kantor?.idKantor !== undefined && data.contract.kantor?.idKantor !== null">
+    <div class="text-secondary small">
+      {{ 'idKantor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.kantor.idKantor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.kantor?.isAktif !== undefined && data.contract.kantor?.isAktif !== null">
+    <div class="text-secondary small">
+      {{ 'isAktif' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.contract.kantor.isAktif" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.contract.kantor.isAktif">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.kantor?.isPusat !== undefined && data.contract.kantor?.isPusat !== null">
+    <div class="text-secondary small">
+      {{ 'isPusat' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.contract.kantor.isPusat" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.contract.kantor.isPusat">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.kantor?.kodeKantor !== undefined && data.contract.kantor?.kodeKantor !== null">
+    <div class="text-secondary small">
+      {{ 'kodeKantor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.kantor.kodeKantor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.kantor?.kota !== undefined && data.contract.kantor?.kota !== null">
+    <div class="text-secondary small">
+      {{ 'kota' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.kantor.kota || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.kantor?.namaKantor !== undefined && data.contract.kantor?.namaKantor !== null">
+    <div class="text-secondary small">
+      {{ 'namaKantor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.kantor.namaKantor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.kantor?.provinsi !== undefined && data.contract.kantor?.provinsi !== null">
+    <div class="text-secondary small">
+      {{ 'provinsi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.kantor.provinsi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.kantor?.updatedAt !== undefined && data.contract.kantor?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.kantor.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.invoice">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'invoice' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.alamatPenagihan !== undefined && data.invoice?.alamatPenagihan !== null">
+    <div class="text-secondary small">
+      {{ 'alamatPenagihan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.invoice.alamatPenagihan || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.catatan !== undefined && data.invoice?.catatan !== null">
+    <div class="text-secondary small">
+      {{ 'catatan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.invoice.catatan || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.createdAt !== undefined && data.invoice?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.invoice.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.createdBy !== undefined && data.invoice?.createdBy !== null">
+    <div class="text-secondary small">
+      {{ 'createdBy' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.invoice.createdBy | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.dpp !== undefined && data.invoice?.dpp !== null">
+    <div class="text-secondary small">
+      {{ 'dpp' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.invoice.dpp | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.idContract !== undefined && data.invoice?.idContract !== null">
+    <div class="text-secondary small">
+      {{ 'idContract' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.invoice.idContract || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.idInvoice !== undefined && data.invoice?.idInvoice !== null">
+    <div class="text-secondary small">
+      {{ 'idInvoice' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.invoice.idInvoice || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.jenisInvoice !== undefined && data.invoice?.jenisInvoice !== null">
+    <div class="text-secondary small">
+      {{ 'jenisInvoice' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.invoice.jenisInvoice || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.metodePembayaran !== undefined && data.invoice?.metodePembayaran !== null">
+    <div class="text-secondary small">
+      {{ 'metodePembayaran' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.invoice.metodePembayaran || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.nilaiInvoice !== undefined && data.invoice?.nilaiInvoice !== null">
+    <div class="text-secondary small">
+      {{ 'nilaiInvoice' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.invoice.nilaiInvoice | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.nomorInvoice !== undefined && data.invoice?.nomorInvoice !== null">
+    <div class="text-secondary small">
+      {{ 'nomorInvoice' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.invoice.nomorInvoice || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.npwp !== undefined && data.invoice?.npwp !== null">
+    <div class="text-secondary small">
+      {{ 'npwp' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.invoice.npwp || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.periode !== undefined && data.invoice?.periode !== null">
+    <div class="text-secondary small">
+      {{ 'periode' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.invoice.periode || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.picPenagihan !== undefined && data.invoice?.picPenagihan !== null">
+    <div class="text-secondary small">
+      {{ 'picPenagihan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.invoice.picPenagihan || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.ppn !== undefined && data.invoice?.ppn !== null">
+    <div class="text-secondary small">
+      {{ 'ppn' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.invoice.ppn | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.statusInvoice !== undefined && data.invoice?.statusInvoice !== null">
+    <div class="text-secondary small">
+      {{ 'statusInvoice' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.invoice.statusInvoice }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.tanggalDibayar !== undefined && data.invoice?.tanggalDibayar !== null">
+    <div class="text-secondary small">
+      {{ 'tanggalDibayar' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.invoice.tanggalDibayar | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.tanggalJatuhTempo !== undefined && data.invoice?.tanggalJatuhTempo !== null">
+    <div class="text-secondary small">
+      {{ 'tanggalJatuhTempo' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.invoice.tanggalJatuhTempo | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.tanggalTerbit !== undefined && data.invoice?.tanggalTerbit !== null">
+    <div class="text-secondary small">
+      {{ 'tanggalTerbit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.invoice.tanggalTerbit | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.updatedAt !== undefined && data.invoice?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.invoice.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.invoice?.updatedBy !== undefined && data.invoice?.updatedBy !== null">
+    <div class="text-secondary small">
+      {{ 'updatedBy' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.invoice.updatedBy | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
   
 
   

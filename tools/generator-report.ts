@@ -487,7 +487,7 @@ if (fs.existsSync(dtoPath)) {
 if (fs.existsSync(dtoPath)) {
     searchFields = getSearchableFieldsFromDto(dtoPath);
     console.log(`🔍 Found DTO: ${dtoPath}`);
-    console.log(`🔎 Searchable fields:`, searchFields);
+    // console.log(`🔎 Searchable fields:`, searchFields);
 } else {
     console.warn(`⚠️ DTO tidak ditemukan di: ${dtoPath}`);
 }
@@ -598,6 +598,82 @@ function getSmartDisplayFieldsFromDtoV2(dtoPath: string, visited: Set<string> = 
     return result;
 }
 
+function getSmartDisplayFieldsFromDtoV2Report(dtoPath: string, visited: Set<string> = new Set()): {
+    namaField: string;
+    uiType: string;
+    children?: any[];
+}[] {
+    const fs = require('fs');
+    const path = require('path');
+
+    const dtoContent = fs.readFileSync(dtoPath, 'utf-8');
+    const regex = /^\s*(\w+)\??:\s*([^;=\n]+)/gm;
+
+    const result: any[] = [];
+    let match;
+
+    const idFields = new Set<string>();
+
+    while ((match = regex.exec(dtoContent)) !== null) {
+        const namaField = match[1];
+        const typeRaw = match[2].trim();
+        const cleanType = typeRaw.replace(/\[\]|\|.*$/g, '').trim();
+
+        // 🔹 Field biasa
+        let uiType = 'text';
+        const lower = namaField.toLowerCase();
+
+        if (cleanType === 'boolean' || namaField.startsWith('is')) {
+            uiType = 'boolean';
+        } else if (
+            cleanType === 'Date' ||
+            lower.includes('tanggal') ||
+            lower.includes('created') ||
+            lower.includes('updated')
+        ) {
+            uiType = 'date';
+        } else if (lower.includes('status')) {
+            uiType = 'status';
+        } else if (cleanType === 'number') {
+            uiType = 'currency';
+        }
+
+        result.push({ namaField, uiType });
+
+        // 🔹 Deteksi idXxx atau id_xxx → simpan relasi
+        if ((/^id[A-Z]/.test(namaField) || /^id_/.test(namaField)) &&
+            namaField !== 'id' && namaField !== 'idDto') {
+
+            const baseName = namaField.replace(/^id_/, '').replace(/^id/, '');
+            const objectField = baseName.charAt(0).toLowerCase() + baseName.slice(1);
+            idFields.add(objectField);
+        }
+    }
+
+    // 🔥 Inject field nested berdasarkan idXxx meskipun tidak didefinisikan
+    for (const rel of idFields) {
+        if (visited.has(rel)) continue;
+        visited.add(rel);
+
+        const modelDir = path.resolve('src/sdk/core/models');
+        const files = fs.readdirSync(modelDir);
+
+        const match = files.find((f: string) =>
+            f.endsWith('-dto.ts') && f.includes(`-${rel}-`)
+        );
+
+        if (match) {
+            const nestedPath = path.join(modelDir, match);
+            const children = getSmartDisplayFieldsFromDtoV2Report(nestedPath, visited);
+            result.push({ namaField: rel, uiType: 'nested', children });
+        } else {
+            console.warn(`⚠️ File DTO tidak ditemukan untuk '${rel}'`);
+        }
+    }
+
+    return result;
+}
+
 function toKebabCase(str: string) {
     return str
         .replace(/^id([A-Z])/, (_, c) => 'id_' + c.toLowerCase())
@@ -608,12 +684,15 @@ function toKebabCase(str: string) {
 
 
 let smartDisplayFields: any[] = [];
+let smartDisplayFields_report: any[] = [];
 if (fs.existsSync(dtoPath)) {
     smartDisplayFields = getSmartDisplayFieldsFromDtoV2(dtoPath);
+    smartDisplayFields_report = getSmartDisplayFieldsFromDtoV2Report(dtoPath);
+   
 }
 
 
-console.log("📋 Display Fields:", displayFields);
+console.log("📋 Display Fields:",  (smartDisplayFields_report));
 // ⬇️ Eksekusi
 fse.ensureDirSync(outputDir);
 processDirectory(templateDir, outputDir, {
@@ -621,6 +700,7 @@ processDirectory(templateDir, outputDir, {
     displayFields, dtoDefaultObject, formHtml,
     relationVars, relationNamas, relationInjects, relationInitCalls, relationFunctions, nama_object,
     smartDisplayFields, nama_object_report,
+    smartDisplayFields_report,
     joinWhereKeys,
     pascalCase,
     autoInclude,

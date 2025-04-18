@@ -51,6 +51,15 @@ export class InvoiceShareDetailComponent {
 
     }
 
+    // handleApprovalSubmit(event: { status: 'approve' | 'reject', note: string }) {
+    //     console.log('✔ Approval submitted:', event);
+    // }
+
+    // refreshApprovalSteps() {
+    //     console.log('🔁 Refreshing approval widget...');
+    //     // nanti bisa refresh steps/log, kalau sudah connect ke backend
+    // }
+
     print() {
     let url = environment.srv_document + '/pdf/invoice/' + this.idInvoice + '?token=' + this.tokenService.getToken();
         window.open(url, "_blank");

@@ -11,6 +11,7 @@ import { ContractShareListComponent } from './contract-share-list/contract-share
 import { ContractShareHeaderComponent } from './contract-share-header/contract-share-header.component';
 import { ApprovalModule } from 'src/app/views/lib/approval/approval.module';
 import { ContractSiteShareModule } from '../../contract-site/contract-site-share/contract-site-share.module';
+import { CustomFieldValueShareModule } from 'src/app/views/lib/custom-field-value/custom-field-value-share.module';
 
  
 const COM = [
@@ -36,6 +37,7 @@ const COM = [
         TampilanModule,
         RouterModule,
         ApprovalModule,
+        CustomFieldValueShareModule,
         ContractSiteShareModule
     ]
 }) 

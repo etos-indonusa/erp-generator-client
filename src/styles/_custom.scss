@@ -53,6 +53,7 @@ svg {
     // background: #f9f9f9;
     border: 2px solid #f0f0f0;
 }
+
 .ant-page-header {
     box-sizing: border-box;
     margin: 0;
@@ -64,7 +65,8 @@ svg {
     font-feature-settings: "tnum";
     padding: 16px 24px;
     background-color: #fff;
-} 
+}
+
 .ant-page-header {
     padding: 8px 10px;
     background-color: #fff;
@@ -76,5 +78,16 @@ svg {
 .ant-upload.ant-upload-drag {
     position: relative;
     width: 100%;
-    height: 300px !important; 
-} 
+    height: 300px !important;
+}
+
+ 
+    .table-minimalis {
+        th {
+            padding: 7px !important;
+        }
+        td {
+            padding: 5px !important;
+        }
+    }
+ 

@@ -1,13 +1,29 @@
-<div *ngFor="let group of groups" class="mb-4">
+<div *ngFor="let group of listGroup" class="mt-4">
 
+    <div nz-row>
+        <div nz-col nzFlex="auto">
+            <div class="fw-bold border-bottom mb-2">
+                {{ group.namaGroup | translate }}
+            </div>
+        </div>
+        <div nz-col nzFlex="100px">
+            <button nz-button nzBlock="" nzType="default" nzSize="small" (click)="editGroup(group)">Update</button> 
+        </div>
+        <div nz-col nzFlex="30px"> 
+            <button nz-button nzType="primary" nzBlock="" nzSize="small" *ngIf="group?.isRepeatable" (click)="group.isRepeatable=!group?.isRepeatable">
+                <span nz-icon nzType="down" nzTheme="outline"></span>
+            </button>
+            <button nz-button nzType="default" nzBlock="" nzSize="small" *ngIf="!group?.isRepeatable" (click)="group.isRepeatable=!group?.isRepeatable">
+                <span nz-icon nzType="down" nzTheme="outline"></span>
+            </button>
+        </div>
+    </div>
 
-
-    <nz-card [nzTitle]="group.namaGroup">
-
+    <div [hidden]="!group?.isRepeatable">
         <ng-container [ngSwitch]="group.tipeRender">
 
             <!-- Table Mode -->
-            <table *ngSwitchCase="'table'" class="w-100 table table-bordered">
+            <table *ngSwitchCase="'table'" class="w-100 table table-bordered table-minimalis">
                 <thead>
                     <tr>
                         <th>Field</th>
@@ -16,7 +32,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let field of getFields(group.idCustomFieldGroup)">
-                        <td>{{ field.labelField }}</td>
+                        <td>{{ field.labelField | translate }}</td>
                         <td>{{ valueMap[field.idCustomField] || '-' }}</td>
                     </tr>
                 </tbody>
@@ -25,40 +41,38 @@
             <!-- Card Mode -->
             <div *ngSwitchCase="'card'" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <!-- Card Mode -->
-                <nz-card style="width:300px;" nzTitle="Card title" [nzExtra]="extraTemplate">
+                <div class="row">
                     <ng-container *ngFor="let field of getFields(group.idCustomFieldGroup)">
-                        <div *ngIf="valueMap[field.idCustomField] !== undefined" class="col-md-3 mb-3">
-                            <div class="text-secondary small">
-                                {{ field.labelField }}
-                            </div>
-                            <div class="fw-semibold text-dark">
+                        <div class="col-md-4">
+                            <nz-card [nzTitle]="field.labelField | translate " [nzExtra]="extraTemplate">
                                 {{ field.prefixField || '' }}{{ valueMap[field.idCustomField] || '-' }}
-                            </div>
+                            </nz-card>
+                            <ng-template #extraTemplate>
+                                <a>{{ field.prefixField || '' }}</a>
+                            </ng-template>
                         </div>
                     </ng-container>
-                </nz-card>
-                <ng-template #extraTemplate>
-                    <a>Update</a>
-                </ng-template>
-
-
-
+                </div>
 
             </div>
 
             <!-- Inline Mode -->
             <div *ngSwitchCase="'inline'" class="flex flex-wrap gap-3">
-                <div *ngFor="let field of getFields(group.idCustomFieldGroup)">
-                    <strong>{{ field.labelField }}:</strong> {{ valueMap[field.idCustomField] || '-' }}
+                <div class="row">
+                    <div class="col-md-3" *ngFor="let field of getFields(group.idCustomFieldGroup)">
+                        <div class="text-secondary small">
+                            {{ field.labelField | translate }}
+                        </div>
+                        <div class="fw-semibold text-dark">
+                            {{ valueMap[field.idCustomField] || '-' || '-' }}
+                        </div>
+                    </div>
                 </div>
             </div>
 
         </ng-container>
 
-        <!-- Edit Group Button -->
-        <div class="text-right mt-2">
-            <button nz-button nzType="default" nzSize="small" (click)="editGroup(group)">Edit Group</button>
-        </div>
 
-    </nz-card>
+
+    </div>
 </div>

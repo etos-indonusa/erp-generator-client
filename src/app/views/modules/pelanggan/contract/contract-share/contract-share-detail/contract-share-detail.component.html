@@ -46,7 +46,8 @@
     <div class="card bg-white p-3" style="box-shadow: none;">
         <div class="row">
             <div class="col-md-8">
-                <app-contract-share-header [data]="contract"></app-contract-share-header>
+                <app-contract-share-header [data]="contract"></app-contract-share-header> 
+                <lib-custom-field [from-module]="'PelangganContract'" [from-module-id]="contract?.idContract"></lib-custom-field>
             </div>
             <div class="col-md-4">
                 <document-widget-v1 [for-module-id]="contract?.idContract" [for-module]="'contract_site'"

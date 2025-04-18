@@ -10,7 +10,8 @@ import { <%= Nama %>ShareWidgetComponent } from './<%= nama %>-share-widget/<%= 
 import { <%= Nama %>ShareListComponent } from './<%= nama %>-share-list/<%= nama %>-share-list.component';
 import { <%= Nama %>ShareHeaderComponent } from './<%= nama %>-share-header/<%= nama %>-share-header.component';
 import { ApprovalModule } from 'src/app/views/lib/approval/approval.module';
- 
+import { CustomFieldValueShareModule } from 'src/app/views/lib/custom-field-value/custom-field-value-share.module';
+
 const COM = [
     <%= Nama %>ShareAddComponent,
     <%= Nama %>ShareDetailComponent,
@@ -34,6 +35,7 @@ const COM = [
         TampilanModule,
         RouterModule,
         // ApprovalModule,
+        CustomFieldValueShareModule
     ]
 }) 
 export class <%= Nama %>ShareModule { }

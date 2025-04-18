@@ -1,86 +1,38 @@
-<nz-spin [nzSpinning]="is_loading">
-    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
-        
+<form nz-form [nzLayout]="'vertical'">
+    <ng-container *ngFor="let field of fields">
         <nz-form-item>
-            <nz-form-label nzFor="idCustomField">{{ 'idCustomField' | translate }}</nz-form-label>
+            <nz-form-label [nzRequired]="field.isRequired">{{ field.labelField }}</nz-form-label>
             <nz-form-control>
-                <nz-select formControlName="idCustomField" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idCustomField' | translate }}"> 
-                    <nz-option *ngFor="let item of listCustomField" nzLabel="{{ item.idCustomField }}" nzValue="{{ item.idCustomField }}"></nz-option>
+
+                <!-- Text -->
+                <input *ngIf="field.tipeField === 'text'" nz-input [(ngModel)]="field.nilai"
+                     [name]="'text_' + field.idCustomField"
+                    [required]="!!field.isRequired" />
+
+                <!-- Number -->
+                <input *ngIf="field.tipeField === 'number'" nz-input type="number" [(ngModel)]="field.nilai"
+                     [name]="'number_' + field.idCustomField"
+                    [required]="!!field.isRequired" />
+
+                <!-- Textarea -->
+                <textarea *ngIf="field.tipeField === 'textarea'" nz-input rows="3" [(ngModel)]="field.nilai"
+                     [name]="'textarea_' + field.idCustomField"></textarea>
+
+                <!-- Select -->
+                <nz-select *ngIf="field.tipeField === 'select'" [(ngModel)]="field.nilai"
+                     [name]="'select_' + field.idCustomField"
+                    [nzAllowClear]="true">
+                    <nz-option *ngFor="let option of parseSelect(field.opsiSelect)" [nzValue]="option.label"
+                        [nzLabel]="option.label"></nz-option>
                 </nz-select>
-            </nz-form-control>
-        </nz-form-item>
-            
 
-        <nz-form-item>
-            <nz-form-label nzFor="idCustomFieldGroup">{{ 'idCustomFieldGroup' | translate }}</nz-form-label>
-            <nz-form-control>
-                <nz-select formControlName="idCustomFieldGroup" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idCustomFieldGroup' | translate }}"> 
-                    <nz-option *ngFor="let item of listCustomFieldGroup" nzLabel="{{ item.idCustomFieldGroup }}" nzValue="{{ item.idCustomFieldGroup }}"></nz-option>
-                </nz-select>
+                <!-- Fallback jika tipe tidak dikenali -->
+                <input *ngIf="['text','number','textarea','select'].indexOf(field.tipeField) === -1" nz-input
+                    [(ngModel)]="field.nilai" 
+                    [name]="'default_' + field.idCustomField" />
             </nz-form-control>
         </nz-form-item>
-            
+    </ng-container>
 
-        <nz-form-item>
-            <nz-form-label nzFor="kodeField">{{ 'kodeField' | translate }}</nz-form-label>
-            <nz-form-control>
-                <input nz-input  id="kodeField" formControlName="kodeField" placeholder="Masukkan {{ 'kodeField' | translate }}" />
-            </nz-form-control>
-        </nz-form-item>
-            
-
-        <nz-form-item>
-            <nz-form-label nzFor="labelField">{{ 'labelField' | translate }}</nz-form-label>
-            <nz-form-control>
-                <input nz-input  id="labelField" formControlName="labelField" placeholder="Masukkan {{ 'labelField' | translate }}" />
-            </nz-form-control>
-        </nz-form-item>
-            
-
-        <nz-form-item>
-            <nz-form-label nzFor="modul">{{ 'modul' | translate }}</nz-form-label>
-            <nz-form-control>
-                <input nz-input  id="modul" formControlName="modul" placeholder="Masukkan {{ 'modul' | translate }}" />
-            </nz-form-control>
-        </nz-form-item>
-            
-
-        <nz-form-item>
-            <nz-form-label nzFor="modulId">{{ 'modulId' | translate }}</nz-form-label>
-            <nz-form-control>
-                <input nz-input  id="modulId" formControlName="modulId" placeholder="Masukkan {{ 'modulId' | translate }}" />
-            </nz-form-control>
-        </nz-form-item>
-            
-
-        <nz-form-item>
-            <nz-form-label nzFor="nilai">{{ 'nilai' | translate }}</nz-form-label>
-            <nz-form-control>
-                <input nz-input  id="nilai" formControlName="nilai" placeholder="Masukkan {{ 'nilai' | translate }}" />
-            </nz-form-control>
-        </nz-form-item>
-            
-
-        <nz-form-item>
-            <nz-form-label nzFor="nilaiJson">{{ 'nilaiJson' | translate }}</nz-form-label>
-            <nz-form-control>
-                <input nz-input  id="nilaiJson" formControlName="nilaiJson" placeholder="Masukkan {{ 'nilaiJson' | translate }}" />
-            </nz-form-control>
-        </nz-form-item>
-            
-
-        <nz-form-item>
-            <nz-form-label nzFor="tableName">{{ 'tableName' | translate }}</nz-form-label>
-            <nz-form-control>
-                <input nz-input  id="tableName" formControlName="tableName" placeholder="Masukkan {{ 'tableName' | translate }}" />
-            </nz-form-control>
-        </nz-form-item>
-            
-
-        <nz-form-item>
-            <nz-form-control>
-                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
-            </nz-form-control>
-        </nz-form-item>
-    </form>
-</nz-spin>
+    <button nz-button nzType="primary" (click)="submit()">Update</button>
+</form>

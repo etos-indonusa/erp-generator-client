@@ -1,7 +1,7 @@
 <% function renderField(field, path = 'data', keyPrefix = '') { %>
   <div class="col-md-3" *ngIf="<%= path %>?.<%= field.namaField %> !== undefined && <%= path %>?.<%= field.namaField %> !== null">
     <div class="text-secondary small">
-      {{ '<%= keyPrefix ? keyPrefix + "." + field.namaField : field.namaField %>' | translate }}
+      {{ '<%= keyPrefix ?  field.namaField : field.namaField %>' | translate }}
     </div>
     <div class="fw-semibold text-dark">
       <% if (field.uiType === 'boolean') { %>
@@ -43,7 +43,7 @@
 
 <!-- ✅ Start rendering -->
 <div class="row">
-  <% smartDisplayFields.forEach(field => { %>
-    <% renderSection(field) %>
+  <% smartDisplayFields_report.forEach(field => { %>
+    <% renderSection(field) %> <br> 
   <% }) %>
 </div>

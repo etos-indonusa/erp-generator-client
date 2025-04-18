@@ -36,20 +36,21 @@
             </div>
         </div>
     </div>
-    <!-- <approval-flow-log-widget [module-id]="invoice.id_contractSite" [module]="'invoice'"
-        [data_flow]="invoice.id_data_flow"
-        [flow-detail]="invoice.id_data_flow_detail"></approval-flow-log-widget> -->
-        <br>
+     <!--
+     <lib-approval-steps [for-module-name]="'invoice'" [for-module-id]="invoice?.idInvoice"></lib-approval-steps>
+         -->
+
     <div class="card bg-white p-3" style="box-shadow: none;">
         <div class="row">
             <div class="col-md-8">
                 <app-invoice-share-header [data]="invoice"></app-invoice-share-header>
+                <lib-custom-field [from-module]="'Invoice'" [from-module-id]="invoice?.idInvoice"></lib-custom-field>
             </div>
             <div class="col-md-4">
-                <document-widget-v1 [for-module-id]="invoice?.idInvoice" [for-module]="'contract_site'"  [enable-crud]="true"></document-widget-v1>
+                <document-widget-v1 [for-module-id]="invoice?.idInvoice" [for-module]="'Invoice'"  [enable-crud]="true"></document-widget-v1>
                     
                 <!-- <approval-mode-widget *ngIf="invoice.status??'-'.toLowerCase() !='close'"
-                    style="margin-right: 5px;" [module-id]="invoice.id_contractSite" [module]="'invoice'"
+                    style="margin-right: 5px;" [module-id]="invoice.id_contractSite" [module]="'Invoice'"
                     [flow-id]="invoice.id_data_flow" [flow-detail]="invoice.id_data_flow_detail"
                     (reload)="approve($event)">
                 </approval-mode-widget> -->
@@ -74,6 +75,11 @@
                 <!-- <app-invoice-share-list [filter-extra]="false" [idInvoice]="idInvoice"></app-invoice-share-list> -->
     </div>
     </div >
+
+<!-- 
+    <lib-approval-form-widget [from-module]="'Invoice'" [from-module-id]="invoice?.idInvoice"
+        (onSubmit)="handleApprovalSubmit($event)" (onAfterSubmit)="refreshApprovalSteps()"></lib-approval-form-widget> 
+            -->
 
 </nz-spin>
 <br>

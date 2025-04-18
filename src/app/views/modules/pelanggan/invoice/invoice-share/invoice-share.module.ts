@@ -9,8 +9,9 @@ import { InvoiceShareDetailComponent } from './invoice-share-detail/invoice-shar
 import { InvoiceShareWidgetComponent } from './invoice-share-widget/invoice-share-widget.component';
 import { InvoiceShareListComponent } from './invoice-share-list/invoice-share-list.component';
 import { InvoiceShareHeaderComponent } from './invoice-share-header/invoice-share-header.component';
+import { ApprovalModule } from 'src/app/views/lib/approval/approval.module';
+import { CustomFieldValueShareModule } from 'src/app/views/lib/custom-field-value/custom-field-value-share.module';
 
- 
 const COM = [
     InvoiceShareAddComponent,
     InvoiceShareDetailComponent,
@@ -32,7 +33,9 @@ const COM = [
         ReactiveFormsModule,
         AntSimpleModule,
         TampilanModule,
-        RouterModule
+        RouterModule,
+        // ApprovalModule,
+        CustomFieldValueShareModule
     ]
 }) 
 export class InvoiceShareModule { }

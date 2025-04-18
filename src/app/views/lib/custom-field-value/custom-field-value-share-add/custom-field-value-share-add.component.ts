@@ -1,110 +1,131 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
 import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { generateFormFromSchema } from 'src/app/helpers/form-generator';
-import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { ToolsCustomFieldValueFormSchema } from 'src/sdk/core/form-schema/tools-custom-field-value.form-schema'; 
-import type  { ToolsCustomFieldValueDto } from 'src/sdk/core/models';
-import { CustomFieldValueService } from 'src/sdk/core/services';
-
-import { CustomFieldService } from 'src/sdk/core/services';
-import { CustomFieldGroupService } from 'src/sdk/core/services';
+import { CustomFieldService, CustomFieldValueService } from 'src/sdk/core/services';
+import type { ToolsCustomFieldDto, ToolsCustomFieldGroupDto, ToolsCustomFieldValueDto } from 'src/sdk/core/models';
+import { forkJoin } from 'rxjs';
+import { PesanService } from 'src/app/shared/services/pesan.service';
 
 @Component({
     selector: 'app-custom-field-value-share-add',
     templateUrl: './custom-field-value-share-add.component.html',
-    styleUrl: './custom-field-value-share-add.component.scss'
+    styleUrl: './custom-field-value-share-add.component.scss',
 })
-export class CustomFieldValueShareAddComponent {
-    @Input('customFieldValue') customFieldValue: ToolsCustomFieldValueDto = {
-  idCustomField: '',
-  idCustomFieldValue: '',
-  modulId: ''
-};
-    form!: FormGroup;
+export class CustomFieldValueShareAddComponent implements OnInit {
+    @Input() idCustomFieldGroup: string = '';
+    @Input() modulId: string = '';
+    @Input() group: ToolsCustomFieldGroupDto;
 
-    ngOnChanges(changes: SimpleChanges): void {
-        if(changes.customFieldValue && this.customFieldValue.idCustomFieldValue) {
-        this.form?.patchValue(this.customFieldValue);
-        }
-    }
+    fields: (ToolsCustomFieldDto & { nilai?: string })[] = [];
+
     constructor(
-        private fb: FormBuilder,
+        private pesan: PesanService,
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
+        private customFieldService: CustomFieldService,
         private customFieldValueService: CustomFieldValueService,
-                        private customFieldService: CustomFieldService,
-                private customFieldGroupService: CustomFieldGroupService,
-                    ) { }
+    ) { }
 
     ngOnInit(): void {
-        this.form = generateFormFromSchema(this.fb, ToolsCustomFieldValueFormSchema, {
-            kodeCustomFieldValue: [Validators.minLength(3), Validators.maxLength(3)],
-            catatan: [Validators.maxLength(200)],
-        },'CustomFieldValue');
-
-                            this.getAllCustomField();
-                    this.getAllCustomFieldGroup();
-                    }
-    
-    listCustomField: any[] = [];
-    
-    listCustomFieldGroup: any[] = [];
-    
-
-    // untuk fungsi get ALL relation
-            getAllCustomField() {
-    this.customFieldService.customFieldControllerFindAll().subscribe(
-      data => this.listCustomField = data.data ?? []
-    );
-  }
-        getAllCustomFieldGroup() {
-    this.customFieldGroupService.customFieldGroupControllerFindAll().subscribe(
-      data => this.listCustomFieldGroup = data.data ?? []
-    );
-  }
-        
-    submit(): void {
-        const labelMap = extractLabels(ToolsCustomFieldValueFormSchema);
-
-        if (showFormValidationWarnings(this.form, this.notify, labelMap)) {
-            return;
+        if (this.idCustomFieldGroup) {
+            this.loadFields();
         }
-        this.customFieldValue.idCustomFieldValue ? this.update() : this.simpan();
-
-        // lanjut simpan
     }
-    is_loading = false
-    simpan() {
-        this.is_loading = true;
-        this.customFieldValueService.customFieldValueControllerCreate({ body: this.form.value }).subscribe({
-            next: (data) => {
-                this.notify.success('Berhasil', 'Data customFieldValue berhasil disimpan.');
-                this.nzDrawerRef.close(data);
-            },
-            error: () => {
-                this.notify.error('Gagal', 'Terjadi kesalahan saat menyimpan.');
-            },
-            complete: () => (this.is_loading = false)
+
+    loadFields() {
+        this.customFieldService.customFieldControllerFindAll({
+            filter: JSON.stringify({ idCustomFieldGroup: this.idCustomFieldGroup }),
+        }).subscribe((res) => {
+            const fields = res.data ?? [];
+
+            // tambahkan nilai dari modul saat ini
+            this.customFieldValueService.customFieldValueControllerFindAll({
+
+                filter: JSON.stringify({
+                    modul: this.group.modul,
+                    modulId: this.modulId,
+                }),
+
+            }).subscribe((valRes) => {
+                const values = valRes.data ?? [];
+                this.fields = fields.map((f) => ({
+                    ...f,
+                    nilai: values.find((v: any) => v.idCustomField === f.idCustomField)?.nilai ?? '',
+                }));
+            });
         });
     }
 
-    update() {
-        this.is_loading = true;
-        this.customFieldValueService.customFieldValueControllerUpdate({ id: this.customFieldValue.idCustomFieldValue, body: this.form.value }).subscribe({
-            next: (data) => {
-                this.notify.success('Berhasil', 'Data customFieldValue berhasil diperbarui.');
-                this.nzDrawerRef.close(data);
+    autoSave(field: ToolsCustomFieldDto, value: string) {
+        const payload: ToolsCustomFieldValueDto = {
+            idCustomField: field.idCustomField,
+            modul: this.group.modul,
+            modulId: this.modulId,
+            nilai: value,
+            idCustomFieldValue: '',
+            idCustomFieldGroup: field.idCustomFieldGroup,
+            labelField: field.labelField,
+            kodeField: field.kodeField,
+            tableName: this.group.tableName
+        };
+
+        this.customFieldValueService.customFieldValueControllerCreate({ body: payload }).subscribe({
+            next: () => {
+                this.notify.success('Tersimpan', `${field.labelField} berhasil diperbarui.`);
             },
             error: () => {
-                this.notify.error('Gagal', 'Terjadi kesalahan saat memperbarui.');
-            },
-            complete: () => (this.is_loading = false)
+                this.notify.error('Gagal', `${field.labelField} gagal disimpan.`);
+            }
         });
     }
 
-    goToBack(data = null) {
-        this.nzDrawerRef.close(data);
+    submit() {
+
+        const observables = this.fields.map(field => 
+            this.customFieldValueService.customFieldValueControllerCreate({
+                body:
+                {
+                    idCustomField: field.idCustomField,
+                    modul: this.group.modul,
+                    modulId: this.modulId,
+                    nilai: field.nilai,
+                    idCustomFieldValue: '',
+                    idCustomFieldGroup: field.idCustomFieldGroup,
+                    labelField: field.labelField,
+                    kodeField: field.kodeField,
+                    tableName: this.group.tableName
+                }
+            })
+        );
+
+        forkJoin(observables).subscribe({
+            next: (results) => {
+                this.pesan.pesanBerhasilForm('Semua informasi berhasil disimpan.');
+                this.nzDrawerRef.close();
+            },
+            error: (err) => {
+                this.pesan.pesanWarningForm('Gagal menyimpan beberapa field: ' + err.message);
+                
+            },
+            
+        });
+
+
+    }
+
+    parseSelect(raw: any): any[] {
+        if (!raw) return [];
+        if (typeof raw === 'string') {
+            try {
+                return JSON.parse(raw);
+            } catch {
+                return [];
+            }
+        }
+        return raw;
+    }
+
+    goToBack() {
+        this.nzDrawerRef.close();
     }
 }

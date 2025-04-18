@@ -106,9 +106,7 @@ export class ContractShareListComponent {
             this.filterKantor.idKantor = this.idKantor
         }
 
-
-
-        this.searchData();
+ 
     }
 
     ngOnInit(): void {

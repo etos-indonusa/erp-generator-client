@@ -44,12 +44,13 @@
         <div class="row">
             <div class="col-md-8">
                 <app-<%= nama %>-share-header [data]="<%= nama_object %>"></app-<%= nama %>-share-header>
+                <lib-custom-field [from-module]="'<%= Prefix %><%= Nama %>'" [from-module-id]="<%= nama_object %>?.id<%= Nama %>"></lib-custom-field>
             </div>
             <div class="col-md-4">
-                <document-widget-v1 [for-module-id]="<%= nama_object %>?.id<%= Nama %>" [for-module]="'contract_site'"  [enable-crud]="true"></document-widget-v1>
+                <document-widget-v1 [for-module-id]="<%= nama_object %>?.id<%= Nama %>" [for-module]="'<%= Prefix %><%= Nama %>'"  [enable-crud]="true"></document-widget-v1>
                     
                 <!-- <approval-mode-widget *ngIf="<%= nama_object %>.status??'-'.toLowerCase() !='close'"
-                    style="margin-right: 5px;" [module-id]="<%= nama_object %>.id_contractSite" [module]="'<%= nama_object %>'"
+                    style="margin-right: 5px;" [module-id]="<%= nama_object %>.id_contractSite" [module]="'<%= Prefix %><%= Nama %>'"
                     [flow-id]="<%= nama_object %>.id_data_flow" [flow-detail]="<%= nama_object %>.id_data_flow_detail"
                     (reload)="approve($event)">
                 </approval-mode-widget> -->
@@ -76,7 +77,7 @@
     </div >
 
 <!-- 
-    <lib-approval-form-widget [from-module]="'<%= nama %>'" [from-module-id]="<%= nama %>?.id<%= Nama %>"
+    <lib-approval-form-widget [from-module]="'<%= Prefix %><%= Nama %>'" [from-module-id]="<%= nama %>?.id<%= Nama %>"
         (onSubmit)="handleApprovalSubmit($event)" (onAfterSubmit)="refreshApprovalSteps()"></lib-approval-form-widget> 
             -->
 
