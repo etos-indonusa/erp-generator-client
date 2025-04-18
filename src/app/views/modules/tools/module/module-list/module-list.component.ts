@@ -9,6 +9,9 @@ import { ModuleShareAddComponent } from '../module-share/module-share-add/module
 import { ModuleShareDetailComponent } from '../module-share/module-share-detail/module-share-detail.component';
 import { TranslateService } from '@ngx-translate/core';
 import { CustomFieldGroupShareDetailComponent } from '../../custom-field-group/custom-field-group-share/custom-field-group-share-detail/custom-field-group-share-detail.component';
+import { WorkflowShareListComponent } from '../../workflow/workflow-share/workflow-share-list/workflow-share-list.component';
+import { DocumentNumberingListComponent } from '../../document-numbering/document-numbering-list/document-numbering-list.component';
+
 @Component({
     selector: 'app-module-list',
     templateUrl: './module-list.component.html',
@@ -85,7 +88,7 @@ export class ModuleListComponent {
                 this.loading = false
                 this.total = data.total
                 this.listOfData = data.data
-                this.custumfieldGroup(data.data.find((x:AclModuleDto) => x.idModule =='PelangganContract'))
+                // this.custumfieldGroup(data.data.find((x: AclModuleDto) => x.idModule == 'PelangganContract'))
             },
                 err => {
                     this.loading = false
@@ -197,5 +200,39 @@ export class ModuleListComponent {
         // drawerRef.afterClose.subscribe(data => {
         //     this.searchData()
         // });
+    }
+
+    workFLow(data: AclModuleDto) {
+        if (!this.acl.can("mitra", 'can_list')) {
+            return
+        }
+        const drawerRef = this.drawerService.create<WorkflowShareListComponent, {
+        }, {
+
+        }>({
+            nzTitle: 'WorkFLow',
+            nzContent: WorkflowShareListComponent,
+            nzContentParams: {
+                from_module: data.idModule,
+            },
+            nzWidth: (window.innerWidth - 100) + 'px',
+        });
+    }
+
+    penormoran(data: AclModuleDto) {
+        if (!this.acl.can("mitra", 'can_list')) {
+            return
+        }
+        const drawerRef = this.drawerService.create<DocumentNumberingListComponent, {
+        }, {
+
+        }>({
+            nzTitle: 'Numbering',
+            nzContent: DocumentNumberingListComponent,
+            nzContentParams: {
+                for_module: data.idModule,
+            },
+            nzWidth: (window.innerWidth - 100) + 'px',
+        });
     }
 }

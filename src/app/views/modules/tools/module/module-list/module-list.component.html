@@ -33,7 +33,7 @@
                                         <ul>
                                             <li *ngFor="let item of search_field">{{ item }}</li>
                                         </ul>
-                                    </div> 
+                                    </div>
                                 </ng-template>
                             </ng-template>
                         </nz-form-control>
@@ -58,89 +58,89 @@
             (nzQueryParams)="onQueryParamsChange($event)" nzSize="small">
             <thead>
                 <tr>
-                
-                     
-                
+
+
+
                     <th [nzSortFn]="true" nzColumnKey="isAktif">
-                    {{ 'isAktif' | translate }}
+                        {{ 'isAktif' | translate }}
                     </th>
-                
+
                     <th [nzSortFn]="true" nzColumnKey="kodeModule">
-                    {{ 'kodeModule' | translate }}
+                        {{ 'kodeModule' | translate }}
                     </th>
-                
+
                     <th [nzSortFn]="true" nzColumnKey="namaDb">
-                    {{ 'namaDb' | translate }}
+                        {{ 'namaDb' | translate }}
                     </th>
-                
+
                     <th [nzSortFn]="true" nzColumnKey="namaModule">
-                    {{ 'namaModule' | translate }}
+                        {{ 'namaModule' | translate }}
                     </th>
-                
+
                     <th [nzSortFn]="true" nzColumnKey="namaTabel">
-                    {{ 'namaTabel' | translate }}
+                        {{ 'namaTabel' | translate }}
                     </th>
-                
+
                     <th [nzSortFn]="true" nzColumnKey="updatedAt">
-                    {{ 'updatedAt' | translate }}
+                        {{ 'updatedAt' | translate }}
                     </th>
-                
+
                     <th [nzSortFn]="true" nzColumnKey="urutan">
-                    {{ 'urutan' | translate }}
+                        {{ 'urutan' | translate }}
                     </th>
-                
+
                     <th nzWidth="80px">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <ng-container *ngFor="let data of listOfData" style="vertical-align: top;">
-                   
-                    <tr  >
-                       
-                        
+
+                    <tr>
+
+
                         <td>
-                            
+
                             <nz-tag *ngIf="data.isAktif" nzColor="blue">Ya</nz-tag>
                             <span *ngIf="!data.isAktif">-</span>
-                            
+
                         </td>
-                        
+
                         <td>
-                            
+
                             {{ data.kodeModule || '-' }}
-                            
+
                         </td>
-                        
+
                         <td>
-                            
+
                             {{ data.namaDb || '-' }}
-                            
+
                         </td>
-                        
+
                         <td>
-                            
+
                             {{ data.namaModule || '-' }}
-                            
+
                         </td>
-                        
+
                         <td>
-                            
+
                             {{ data.namaTabel || '-' }}
-                            
+
                         </td>
-                        
+
                         <td>
-                            
+
                             {{ data.updatedAt || '-' }}
-                            
+
                         </td>
-                        
+
                         <td>
-                            
+
                             {{ data.urutan || '-' }}
-                            
+
                         </td>
-                        
+
                         <td nzAlign="right">
                             <button nz-button nz-dropdown [nzDropdownMenu]="menu">
                                 Actions
@@ -152,17 +152,24 @@
                                         <span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Detail
                                     </li>
                                     <li nz-menu-item (click)="custumfieldGroup(data)">
-                                        <span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Custom Field
+                                        <span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Custom
+                                        Field
+                                    </li>
+                                    <li nz-menu-item (click)="workFLow(data)">
+                                        <span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;WorkFLow
+                                    </li>
+                                    <li nz-menu-item (click)="penormoran(data)">
+                                        <span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Numbering
                                     </li>
                                     <!--  -->
                                     <!-- <li nz-menu-item (click)="edit(data)" >
                                         <span nz-icon nzType="edit" nzTheme="outline"></span>&nbsp;&nbsp;Update
                                     </li> -->
-                                    <li nz-menu-divider ></li>
-                                    <li nz-menu-item nz-menu-item nz-popconfirm class="text-danger" 
+                                    <li nz-menu-divider></li>
+                                    <li nz-menu-item nz-menu-item nz-popconfirm class="text-danger"
                                         nzPopconfirmTitle="Apakah Anda yakin akan menghapus data ini?"
-                                        nzPopconfirmPlacement="bottom" (nzOnConfirm)="delete(data)"><span
-                                            nz-icon nzType="delete" nzTheme="outline"></span>
+                                        nzPopconfirmPlacement="bottom" (nzOnConfirm)="delete(data)"><span nz-icon
+                                            nzType="delete" nzTheme="outline"></span>
                                         <a class="m-1 text-danger">&nbsp;&nbsp;Delete</a>
                                     </li>
                                 </ul>
@@ -201,7 +208,7 @@
         (click)="filter_extra=!filter_extra">
         <span nz-icon nzType="filter" nzTheme="outline"></span> Filter
     </button>
-  
+
 
     <!-- <button nz-button nzType="primary" (click)="add()" [nzLoading]="loading" style="margin-left: 10px;"><span nz-icon
             nzType="plus"></span>Add</button> -->

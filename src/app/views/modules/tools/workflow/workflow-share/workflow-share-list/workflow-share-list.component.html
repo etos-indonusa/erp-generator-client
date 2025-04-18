@@ -30,26 +30,27 @@
                         </nz-form-control>
                     </nz-form-item>
                 </div>
-                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
                     <nz-form-item>
-                    <nz-form-label>{{ 'idKantor' | translate }}</nz-form-label>
-                    <nz-form-control>
-                                                <nz-select [(ngModel)]="filter.idKantor" name="idKantor" nzAllowClear>
-                            <nz-option *ngFor="let item of listKantor" [nzValue]="item.idKantor" [nzLabel]="item.namaKantor"></nz-option>
-                        </nz-select>
-                                            </nz-form-control>
+                        <nz-form-label>{{ 'idKantor' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-select [(ngModel)]="filter.idKantor" name="idKantor" nzAllowClear>
+                                <nz-option *ngFor="let item of listKantor" [nzValue]="item.idKantor"
+                                    [nzLabel]="item.namaKantor"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
                     </nz-form-item>
                 </div>
-                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
                     <nz-form-item>
-                    <nz-form-label>{{ 'isDefault' | translate }}</nz-form-label>
-                    <nz-form-control>
-                                                    <label nz-checkbox [(ngModel)]="filter.isDefault" name="isDefault">Yes</label> 
-                                            </nz-form-control>
+                        <nz-form-label>{{ 'isDefault' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <label nz-checkbox [(ngModel)]="filter.isDefault" name="isDefault">Yes</label>
+                        </nz-form-control>
                     </nz-form-item>
                 </div>
-                
- 
+
+
                 <div nz-col nzSpan="24">
 
                     <nz-form-item>
@@ -74,118 +75,101 @@
             (nzQueryParams)="onQueryParamsChange($event)" nzSize="small">
             <thead>
                 <tr>
-                    <th   [nzAlign]="'right'">#ID</th>
-                    
-                    <th [nzSortFn]="true" nzColumnKey="createdAt">
-                        {{ 'createdAt' | translate }}
-                     </th>
-                    
+                    <th [nzAlign]="'right'">#ID</th>
+
+
+
                     <th [nzSortFn]="true" nzColumnKey="forModule">
                         {{ 'forModule' | translate }}
-                     </th>
-                    
+                    </th>
+
                     <th [nzSortFn]="true" nzColumnKey="isDefault">
                         {{ 'isDefault' | translate }}
-                     </th>
-                    
+                    </th>
+
                     <th [nzSortFn]="true" nzColumnKey="keterangan">
                         {{ 'keterangan' | translate }}
-                     </th>
-                    
+                    </th>
+
                     <th [nzSortFn]="true" nzColumnKey="namaWorkflow">
                         {{ 'namaWorkflow' | translate }}
-                     </th>
-                    
+                    </th>
+
                     <th [nzSortFn]="true" nzColumnKey="statusWorkflow">
                         {{ 'statusWorkflow' | translate }}
-                     </th>
-                    
-                    <th [nzSortFn]="true" nzColumnKey="targetDb">
-                        {{ 'targetDb' | translate }}
-                     </th>
-                    
+                    </th>
+
+
                     <th [nzSortFn]="true" nzColumnKey="targetTable">
                         {{ 'targetTable' | translate }}
-                     </th>
-                    
+                    </th>
+
                     <th [nzSortFn]="true" nzColumnKey="updatedAt">
                         {{ 'updatedAt' | translate }}
-                     </th>
-                    
+                    </th>
+
                     <th nzWidth="7%" [nzAlign]="'right'">Action</th>
-                </tr> 
+                </tr>
             </thead>
             <tbody>
                 <ng-container *ngFor="let data of listOfData" style="vertical-align: top;">
                     <tr>
                         <td [nzExpand]="expandSet.has(data.idWorkflow)"
                             (nzExpandChange)="onExpandChange(data.idWorkflow, $event)">
-                            <nz-badge *ngIf="data.idWorkflow!=null" nzColor="{{ data.idWorkflow?.toLowerCase() | status }}"
+                            <nz-badge *ngIf="data.idWorkflow!=null"
+                                nzColor="{{ data.idWorkflow?.toLowerCase() | status }}"
                                 nzText="{{data.idWorkflow?.toLowerCase() }}"></nz-badge> {{ data.idWorkflow }}
                         </td>
-                        
-                        
-                            <td>
-                                
-                                        {{ data.createdAt | date: 'short' }}
-                                            
-                            </td>
-                            
-                            <td>
-                                
-                                                        {{ data.forModule || '-' }}
-                                                            
-                            </td>
-                            
-                            <td>
-                                
-                                    <nz-tag *ngIf="data.isDefault" nzColor="blue">Ya</nz-tag>
-                                    <span *ngIf="!data.isDefault">-</span>
-                                    
-                            </td>
-                            
-                            <td>
-                                
-                                                        {{ data.keterangan || '-' }}
-                                                            
-                            </td>
-                            
-                            <td>
-                                
-                                                        {{ data.namaWorkflow || '-' }}
-                                                            
-                            </td>
-                            
-                            <td>
-                                
-                                                        {{ data.statusWorkflow || '-' }}
-                                                            
-                            </td>
-                            
-                            <td>
-                                
-                                                        {{ data.targetDb || '-' }}
-                                                            
-                            </td>
-                            
-                            <td>
-                                
-                                                        {{ data.targetTable || '-' }}
-                                                            
-                            </td>
-                            
-                            <td>
-                                
-                                        {{ data.updatedAt | date: 'short' }}
-                                            
-                            </td>
-                            
-                            <td>
-                                
-                                                        {{ data.kantor || '-' }}
-                                                            
-                            </td>
-                            
+
+
+
+
+                        <td>
+
+                            {{ data.forModule || '-' }}
+
+                        </td>
+
+                        <td>
+
+                            <nz-tag *ngIf="data.isDefault" nzColor="blue">Ya</nz-tag>
+                            <span *ngIf="!data.isDefault">-</span>
+
+                        </td>
+
+                        <td>
+
+                            {{ data.keterangan || '-' }}
+
+                        </td>
+
+                        <td>
+
+                            {{ data.namaWorkflow || '-' }}
+
+                        </td>
+
+                        <td>
+
+                            {{ data.statusWorkflow || '-' }}
+
+                        </td>
+
+
+
+                        <td>
+
+                            {{ data.targetTable || '-' }}
+
+                        </td>
+
+                        <td>
+
+                            {{ data.updatedAt | date: 'short' }}
+
+                        </td>
+
+
 
                         <td [nzAlign]="'right'">
                             <button nz-button nz-dropdown [nzDropdownMenu]="menu">
@@ -214,10 +198,10 @@
                         </td>
                     </tr>
                     <tr [nzExpand]="expandSet.has(data.idWorkflow)">
-                        <app-workflow-share-header [data]="data"></app-workflow-share-header> 
+                        <app-workflow-share-header [data]="data"></app-workflow-share-header>
                     </tr>
                 </ng-container>
-                 
+
             </tbody>
         </nz-table>
     </div>

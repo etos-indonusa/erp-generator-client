@@ -14,85 +14,48 @@ export const MENU: MenuItem[] = [
         label: 'IN Apps',
         isTitle: true
     }
-    ,{
-        label: 'Module',
-        icon: 'message-square',
-        link: '/app/module',
-    }
-    ,{
-        label: 'CustomFieldValue',
-        icon: 'message-square',
-        link: '/app/custom-field-value',
-    }
-    ,{
-        label: 'CustomFieldGroup',
-        icon: 'message-square',
-        link: '/app/custom-field-group',
-    }
-    ,{
-        label: 'CustomField',
-        icon: 'message-square',
-        link: '/app/custom-field',
-    }
-    ,{
+
+    , {
         label: 'Invoice',
         icon: 'message-square',
         link: '/app/invoice',
     }
-    ,{
-        label: 'WorkflowLog',
-        icon: 'message-square',
-        link: '/app/workflow-log',
-    }
-    ,{
-        label: 'WorkflowStep',
-        icon: 'message-square',
-        link: '/app/workflow-step',
-    }
-    ,{
+
+
+    , {
         label: 'Workflow',
         icon: 'message-square',
         link: '/app/workflow',
     }
-    ,{
-        label: 'ContractJenis',
-        icon: 'message-square',
-        link: '/app/contract-jenis',
-    }
-    ,{
-        label: 'ContractSite',
-        icon: 'message-square',
-        link: '/app/contract-site',
-    }
-    ,{
-        label: 'Contract',
-        icon: 'message-square',
-        link: '/app/contract',
-    }
-    ,{
-        label: 'CompanyConfig',
-        icon: 'message-square',
-        link: '/app/company-config',
-    }
-    ,{
-        label: 'Client',
-        icon: 'message-square',
-        link: '/app/client',
-    }
-    ,{
-        label: 'Client-contact',
-        icon: 'message-square',
-        link: '/app/client-contact',
-    }
-    ,{
-        label: 'Users',
-        icon: 'message-square',
-        link: '/app/users',
-    },
+
+    ,
     {
         label: 'Kantor',
         icon: 'message-square',
         link: '/app/kantor',
+    },
+
+    {
+        label: 'Administrator',
+        isTitle: true
+    }
+    , {
+        label: 'Users',
+        icon: 'message-square',
+        link: '/app/users',
+    }, {
+        label: 'UserGroup',
+        icon: 'message-square',
+        link: '/app/user-group',
+    }, {
+        label: 'Module',
+        icon: 'message-square',
+        link: '/app/module',
+    }
+    , {
+        label: 'Penomoran Document',
+        icon: 'message-square',
+        link: '/app/document-numbering-counter',
     },
     {
         label: 'Web Apps',

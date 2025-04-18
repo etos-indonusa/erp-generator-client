@@ -28,18 +28,7 @@ const routes: Routes = [
                 path: 'workflow',
                 loadChildren: () => import('./tools/workflow/workflow.module').then(m => m.WorkflowModule)
             },
-            {
-                path: 'contract',
-                loadChildren: () => import('./pelanggan/contract/contract.module').then(m => m.ContractModule)
-            },
-            {
-                path: 'contract-site',
-                loadChildren: () => import('./pelanggan/contract-site/contract-site.module').then(m => m.ContractSiteModule)
-            },
-            {
-                path: 'contract-jenis',
-                loadChildren: () => import('./pelanggan/contract-jenis/contract-jenis.module').then(m => m.ContractJenisModule)
-            },
+             
             {
                 path: 'invoice',
                 loadChildren: () => import('./pelanggan/invoice/invoice.module').then(m => m.InvoiceModule)
@@ -55,6 +44,22 @@ const routes: Routes = [
             {
                 path: 'module',
                 loadChildren: () => import('./tools/module/module.module').then(m => m.ModuleModule)
+            },
+            {
+                path: 'document-numbering',
+                loadChildren: () => import('./tools/document-numbering/document-numbering.module').then(m => m.DocumentNumberingModule)
+            },
+            {
+                path: 'document-numbering-counter',
+                loadChildren: () => import('./tools/document-numbering-counter/document-numbering-counter.module').then(m => m.DocumentNumberingCounterModule)
+            },
+            {
+                path: 'users',
+                loadChildren: () => import('./acl/users/users.module').then(m => m.UsersModule)
+            },
+            {
+                path: 'user-group',
+                loadChildren: () => import('./acl/user-group/user-group.module').then(m => m.UserGroupModule)
             }, 
  
         ]

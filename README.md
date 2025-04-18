@@ -25,9 +25,15 @@ npm run generate:report -- contract --prefix=pelanggan
 npm run generate:report -- contract-site --prefix=pelanggan
 npm run generate:report -- contract-site --prefix=pelanggan
 
+
+<!-- TOLS  -->
 npm run generate:report -- workflow --prefix=tools
 npm run generate:crud -- workflow-step --prefix=tools
 
+npm run generate:crud -- document-numbering --prefix=tools
+npm run generate:crud -- document-numbering-counter --prefix=tools
+
 npm run generate:crud -- custom-field --prefix=tools
 npm run generate:report -- custom-field-group --prefix=tools
+npm run generate:report -- custom-field-value --prefix=tools
 npm run generate:report -- custom-field-value --prefix=tools

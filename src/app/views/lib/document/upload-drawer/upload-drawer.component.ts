@@ -4,10 +4,10 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { NzUploadFile } from 'ng-zorro-antd/upload';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
-import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { DocumentControllerUploadFile$Params } from 'src/sdk/lib/fn/document/document-controller-upload-file';
-import { DocumentFormSchema } from 'src/sdk/lib/form-schema/document.form-schema';
-import { DocumentService } from 'src/sdk/lib/services';
+import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier'; 
+import { DocumentControllerUploadFile$Params } from 'src/sdk/core/fn/document/document-controller-upload-file';
+import { DocumentDocumentFormSchema } from 'src/sdk/core/form-schema/document-document.form-schema';
+import { DocumentService } from 'src/sdk/core/services/document.service';
 
 @Component({
     selector: 'document-upload-drawer',
@@ -34,13 +34,13 @@ export class UploadDrawerComponent {
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, {
-            ...DocumentFormSchema,
+            ...DocumentDocumentFormSchema,
             enableDownload: {
-                ...DocumentFormSchema.enableDownload,
+                ...DocumentDocumentFormSchema.enableDownload,
                 default: 'Ya'
             },
             tanggal: {
-                ...DocumentFormSchema.tanggal,
+                ...DocumentDocumentFormSchema.tanggal,
                 default: new Date().toISOString().slice(0, 10) // YYYY-MM-DD
             }
         },{}, 'Document');
@@ -89,7 +89,7 @@ export class UploadDrawerComponent {
     }
 
     submit(): void {
-        const labelMap = extractLabels(DocumentFormSchema);
+        const labelMap = extractLabels(DocumentDocumentFormSchema);
         if (showFormValidationWarnings(this.form, this.notify, labelMap)) return;
 
         if (this.fileList.length === 0) {

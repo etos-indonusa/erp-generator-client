@@ -649,6 +649,7 @@ function getSmartDisplayFieldsFromDtoV2Report(dtoPath: string, visited: Set<stri
             idFields.add(objectField);
         }
     }
+    console.log('idFields', idFields)
 
     // 🔥 Inject field nested berdasarkan idXxx meskipun tidak didefinisikan
     for (const rel of idFields) {
@@ -658,11 +659,12 @@ function getSmartDisplayFieldsFromDtoV2Report(dtoPath: string, visited: Set<stri
         const modelDir = path.resolve('src/sdk/core/models');
         const files = fs.readdirSync(modelDir);
 
+        const kebabRel = rel.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase(); // userGroup -> user-group
         const match = files.find((f: string) =>
-            f.endsWith('-dto.ts') && f.includes(`-${rel}-`)
+            f.endsWith('-dto.ts') && f.includes(`-${kebabRel}-`)
         );
 
-        if (match) {
+        if (match && rel !=nama) {
             const nestedPath = path.join(modelDir, match);
             const children = getSmartDisplayFieldsFromDtoV2Report(nestedPath, visited);
             result.push({ namaField: rel, uiType: 'nested', children });

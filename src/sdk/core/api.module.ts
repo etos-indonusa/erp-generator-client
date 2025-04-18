@@ -9,6 +9,8 @@ import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 import { AppService } from './services/app.service';
 import { AuthPublicService } from './services/auth-public.service';
 import { UsersService } from './services/users.service';
+import { UsersReportService } from './services/users-report.service';
+import { UsersWidgetService } from './services/users-widget.service';
 import { UserTokensService } from './services/user-tokens.service';
 import { AuthProtectService } from './services/auth-protect.service';
 import { ContractService } from './services/contract.service';
@@ -23,6 +25,7 @@ import { ClientService } from './services/client.service';
 import { ClientWidgetService } from './services/client-widget.service';
 import { ClientReportService } from './services/client-report.service';
 import { ClientSiteService } from './services/client-site.service';
+import { DocumentService } from './services/document.service';
 import { WorkflowService } from './services/workflow.service';
 import { WorkflowApplyService } from './services/workflow-apply.service';
 import { WorkflowReportService } from './services/workflow-report.service';
@@ -47,6 +50,8 @@ import { CustomFieldService } from './services/custom-field.service';
 import { CustomFieldValueService } from './services/custom-field-value.service';
 import { CustomFieldValueReportService } from './services/custom-field-value-report.service';
 import { CustomFieldValueWidgetService } from './services/custom-field-value-widget.service';
+import { DocumentNumberingService } from './services/document-numbering.service';
+import { DocumentNumberingCounterService } from './services/document-numbering-counter.service';
 
 /**
  * Module that provides all services and configuration.
@@ -59,6 +64,8 @@ import { CustomFieldValueWidgetService } from './services/custom-field-value-wid
     AppService,
     AuthPublicService,
     UsersService,
+    UsersReportService,
+    UsersWidgetService,
     UserTokensService,
     AuthProtectService,
     ContractService,
@@ -73,6 +80,7 @@ import { CustomFieldValueWidgetService } from './services/custom-field-value-wid
     ClientWidgetService,
     ClientReportService,
     ClientSiteService,
+    DocumentService,
     WorkflowService,
     WorkflowApplyService,
     WorkflowReportService,
@@ -97,6 +105,8 @@ import { CustomFieldValueWidgetService } from './services/custom-field-value-wid
     CustomFieldValueService,
     CustomFieldValueReportService,
     CustomFieldValueWidgetService,
+    DocumentNumberingService,
+    DocumentNumberingCounterService,
     ApiConfiguration
   ],
 })

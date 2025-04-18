@@ -104,7 +104,7 @@
                         <td [nzExpand]="expandSet.has(data.id<%= Nama %>)"
                             (nzExpandChange)="onExpandChange(data.id<%= Nama %>, $event)">
                             <nz-badge *ngIf="data.id<%= Nama %>!=null" nzColor="{{ data.id<%= Nama %>?.toLowerCase() | status }}"
-                                nzText="{{data.id<%= Nama %>?.toLowerCase() }}"></nz-badge> {{ data.id<%= Nama %> }}
+                                nzText="{{data.id<%= Nama %>?.toLowerCase() }}"></nz-badge>  
                         </td>
                         
                         <% smartDisplayFields.forEach(field=> { %>

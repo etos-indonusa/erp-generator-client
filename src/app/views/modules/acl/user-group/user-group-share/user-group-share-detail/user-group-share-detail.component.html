@@ -1,0 +1,37 @@
+
+  <div class="mb-3">
+    <div class="text-secondary small">Created At</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt ? (data.createdAt | date:'short') : '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Deskripsi</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Nama User Group</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.namaUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Status</div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag  nzColor="green">status </nz-tag> 
+      
+    </div>
+  </div>
+

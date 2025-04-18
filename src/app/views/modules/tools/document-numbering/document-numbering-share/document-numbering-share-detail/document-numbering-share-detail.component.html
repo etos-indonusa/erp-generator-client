@@ -1,0 +1,120 @@
+
+  <div class="mb-3">
+    <div class="text-secondary small">Allow Manual Entry</div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.allowManualEntry" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.allowManualEntry">-</span>
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Allowed Roles</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.allowedRoles || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Created At</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt ? (data.createdAt | date:'short') : '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Digit Nomor</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.digitNomor || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">For Module</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.forModule || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Format Nomor</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.formatNomor || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Is Active</div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isActive" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isActive">-</span>
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Label</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.label || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Reset Periode</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.resetPeriode || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Target Column</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.targetColumn || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Target Table</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.targetTable || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Trigger Stage</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.triggerStage || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Updated At</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt || '-' }}
+      
+    </div>
+  </div>
+

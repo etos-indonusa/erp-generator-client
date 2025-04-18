@@ -119,5 +119,19 @@
   "kodeModule": "Kode Module",
   "namaModule": "Nama Module",
   "namaTabel": "Nama Tabel",
-  "namaDb": "Nama Db"
+  "namaDb": "Nama Db",
+  "allowManualEntry": "Allow Manual Entry",
+  "allowedRoles": "Allowed Roles",
+  "digitNomor": "Digit Nomor",
+  "formatNomor": "Format Nomor",
+  "isActive": "Is Active",
+  "label": "Label",
+  "resetPeriode": "Reset Periode",
+  "targetColumn": "Target Column",
+  "triggerStage": "Trigger Stage",
+  "bulan": "Bulan",
+  "forModuleId": "For Module Id",
+  "lastNumber": "Last Number",
+  "tahun": "Tahun",
+  "namaUserGroup": "Nama User Group"
 }

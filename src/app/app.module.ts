@@ -16,8 +16,7 @@ import { ApiModule } from 'src/sdk/core/api.module';
 import { environment } from 'src/environments/environment.prod';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { ApiModule as ApiModuleLib } from 'src/sdk/lib/api.module';
+ 
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { registerLocaleData } from '@angular/common'; 
 import id from '@angular/common/locales/id';
@@ -45,8 +44,7 @@ export function appTranslateInitializer(translate: TranslateService) {
         FormsModule,
         BrowserAnimationsModule,
         AppRoutingModule,
-        TampilanModule,
-        ApiModuleLib.forRoot({ rootUrl: environment.lib }),
+        TampilanModule, 
         ApiModule.forRoot({ rootUrl: environment.core }),
         StoreModule.forRoot({ auth: authReducer }),
         EffectsModule.forRoot([AuthEffects]),

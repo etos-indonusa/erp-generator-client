@@ -8,8 +8,7 @@ import { ToolsWorkflowStepFormSchema } from 'src/sdk/core/form-schema/tools-work
 import type { AclUserGroupDto, AclUsersDto, ToolsWorkflowStepDto } from 'src/sdk/core/models';
 import { UserGroupService, UsersService, WorkflowStepService } from 'src/sdk/core/services';
 
-import { WorkflowService } from 'src/sdk/core/services';
-import { UsersDto } from 'src/sdk/lib/models';
+import { WorkflowService } from 'src/sdk/core/services'; 
 import { WorkflowStepAddTrigerBuilderComponent } from '../workflow-step-add-triger-builder/workflow-step-add-triger-builder.component';
 
 @Component({

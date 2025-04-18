@@ -2,9 +2,9 @@ import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/
 import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { NzTableQueryParams } from 'ng-zorro-antd/table';
-import { AclService } from 'src/app/services/acl.service';
-import { DocumentDto } from 'src/sdk/lib/models';
-import { DocumentService } from 'src/sdk/lib/services';
+import { AclService } from 'src/app/services/acl.service'; 
+import { DocumentDocumentDto } from 'src/sdk/core/models/document-document-dto';
+import { DocumentService } from 'src/sdk/core/services/document.service';
 import { UploadDrawerComponent } from '../upload-drawer/upload-drawer.component';
 
 @Component({
@@ -76,7 +76,7 @@ export class WidgetV1Component {
         if (this.sortValue === 'descend') return 'desc';
         return undefined;
     }
-    download(doc: DocumentDto): void {
+    download(doc: DocumentDocumentDto): void {
         window.open(`/api/nonauth/document/document/${doc.idDocument}/download`, '_blank');
     }
 
@@ -148,7 +148,7 @@ export class WidgetV1Component {
 
 
 
-    delete(data: DocumentDto) {
+    delete(data: DocumentDocumentDto) {
         this.loading = true
         this.documentService.documentControllerRemove({ id: data.idDocument }).subscribe(
             data => {

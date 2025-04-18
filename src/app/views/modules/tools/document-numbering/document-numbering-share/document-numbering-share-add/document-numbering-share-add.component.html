@@ -1,0 +1,124 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+
+
+        <nz-form-item>
+            <nz-form-label nzFor="targetTable">Tabel Tujuan</nz-form-label>
+            <nz-form-control>
+                <!-- <input nz-input id="targetTable" formControlName="targetTable" disabled /> -->
+                {{ form.get('targetTable')?.value }}
+            </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+            <nz-form-label nzFor="targetColumn">Kolom Nomor</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="targetColumn" nzPlaceHolder="Pilih kolom nomor">
+                    <nz-option *ngFor="let col of targetColumnOptions" [nzValue]="col.name"
+                        [nzLabel]="col.name"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+            <nz-form-label nzFor="label">Label</nz-form-label>
+            <nz-form-control>
+                <input nz-input id="label" formControlName="label" placeholder="Label tampilan nomor" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+            <nz-form-label nzFor="formatNomor">Format Nomor</nz-form-label>
+            <nz-form-control>
+                <input nz-input id="formatNomor" formControlName="formatNomor"
+                    placeholder="Contoh: CTR/$tahun/$bulan_romawi/$nomor" />
+                <div class="ant-form-text">
+                    Gunakan <code>$tahun</code>, <code>$bulan</code>, <code>$bulan_romawi</code>, <code>$nomor</code>
+                </div>
+            </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+            <nz-form-label nzFor="digitNomor">Digit Nomor</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="digitNomor" formControlName="digitNomor" placeholder="Contoh: 4" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+            <nz-form-label nzFor="resetPeriode">Reset Periode</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="resetPeriode">
+                    <nz-option nzValue="none" nzLabel="Tidak Pernah"></nz-option>
+                    <nz-option nzValue="bulan" nzLabel="Per Bulan"></nz-option>
+                    <nz-option nzValue="tahun" nzLabel="Per Tahun"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- <nz-form-item>
+            <nz-form-label nzFor="triggerStage">Trigger Generate</nz-form-label>
+            <nz-form-control>
+                <input nz-input id="triggerStage" formControlName="triggerStage" placeholder="Contoh: approved" />
+            </nz-form-control>
+        </nz-form-item> -->
+
+        <nz-form-item>
+            <nz-form-label>Trigger Generate</nz-form-label>
+            <nz-form-control>
+                <div nz-row [nzGutter]="8">
+                    <div nz-col [nzSpan]="8">
+                        <nz-select nzPlaceHolder="Pilih Kolom" [(ngModel)]="triggerBuilder.column"   [ngModelOptions]="{standalone: true}"
+                            nzAllowClear>
+                            <nz-option *ngFor="let item of field" [nzValue]="item.name" [nzLabel]="item.name"></nz-option>
+                        </nz-select>
+                    </div>
+                    <div nz-col [nzSpan]="8">
+                        <nz-select nzPlaceHolder="Trigger" [(ngModel)]="triggerBuilder.on" [nzOptions]="[
+                    { label: 'On New', value: 'new' },
+                    { label: 'On Update', value: 'update' },
+                    { label: 'Always', value: 'any' }
+                  ]" nzAllowClear [ngModelOptions]="{standalone: true}">
+                        </nz-select>
+                    </div>
+                    <div nz-col [nzSpan]="8">
+                        <input nz-input [(ngModel)]="triggerBuilder.value" placeholder="Value (opsional)" [ngModelOptions]="{standalone: true}"/>
+                    </div>
+                </div>
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- Simpan hasil JSON ke form -->
+        <!-- <input type="hidden" [value]="getTriggerStageJson()" formControlName="triggerStage" /> -->
+
+        <!-- <nz-form-item>
+            <nz-form-label nzFor="allowedRoles">Role yang Boleh Generate</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="allowedRoles" nzMode="multiple" nzPlaceHolder="Pilih Role">
+                    <nz-option nzValue="staff" nzLabel="Staff"></nz-option>
+                    <nz-option nzValue="spv" nzLabel="Supervisor"></nz-option>
+                    <nz-option nzValue="manager" nzLabel="Manager"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item> -->
+
+        <nz-form-item>
+            <nz-form-control>
+                <label nz-checkbox formControlName="allowManualEntry">Boleh Isi Manual Jika Belum Ada</label>
+            </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+            <nz-form-control>
+                <label nz-checkbox formControlName="isActive">Aktifkan Penomoran</label>
+            </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid || is_loading"
+                    [nzLoading]="is_loading">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

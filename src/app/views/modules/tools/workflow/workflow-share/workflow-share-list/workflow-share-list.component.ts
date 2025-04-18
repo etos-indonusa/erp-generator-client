@@ -13,7 +13,7 @@ import { ToolsWorkflowDto } from 'src/sdk/core/models';
 import { WorkflowShareAddComponent } from '../workflow-share-add/workflow-share-add.component';
 import { WorkflowShareDetailComponent } from '../workflow-share-detail/workflow-share-detail.component';
 import { KantorService } from 'src/sdk/core/services';
- 
+
 
 
 @Component({
@@ -26,10 +26,11 @@ export class WorkflowShareListComponent {
     @Output('out_filter') out_filter = new EventEmitter<any>();
     @Input('filter-extra') filter_extra = true;
     @Input('enable-crud') enable_crud = true;
+    @Input('from-module') from_module :any = true;
     //untuak filter dari prent
-     
-    @Input('idKantor') idKantor: string | null  = null;
-    
+
+    @Input('idKantor') idKantor: string | null = null;
+
 
     constructor(
         private pesanService: PesanService,
@@ -41,20 +42,19 @@ export class WorkflowShareListComponent {
         private workflowService: WorkflowService,
         private tokenService: TokenService,
 
-                        private kantorService: KantorService,
-                    ) {}
+        private kantorService: KantorService,
+    ) { }
 
     ngOnChanges(changes: SimpleChanges): void {
         this.filter.statusworkflow = this.status == 'semua' ? null : this.status;
 
-            
-           
-            if (changes.idKantor)
-            {
-                this.filterKantor.idKantor = this.idKantor
-            }
-            
-        
+
+
+        if (changes.idKantor) {
+            this.filterKantor.idKantor = this.idKantor
+        }
+
+
 
         this.searchData();
     }
@@ -63,30 +63,30 @@ export class WorkflowShareListComponent {
         this.currentUser = this.userInfoService.getUser;
         this.resetParam();
 
-                            this.getAllKantor();
-                    }
+        this.getAllKantor();
+    }
 
-    
-    listKantor: any[] = []; 
-    
+
+    listKantor: any[] = [];
+
     //untuak filter dari prent
-    
-    filterKantor:any = {} 
-    
+
+    filterKantor: any = {}
+
 
     // untuk fungsi get ALL relation
-            getAllKantor() {
-    this.kantorService.kantorControllerFindAll().subscribe(
-      data => this.listKantor = data.data ?? []
-    );
-  }
-        
+    getAllKantor() {
+        this.kantorService.kantorControllerFindAll().subscribe(
+            data => this.listKantor = data.data ?? []
+        );
+    }
+
     currentUser: any = {};
     filter: any = {
-    idKantor: null,
-  isDefault: null
+        idKantor: null,
+        isDefault: null
     };
- 
+
     expandSet = new Set<string>();
     onExpandChange(id: string, checked: boolean): void {
         if (checked) {
@@ -104,8 +104,8 @@ export class WorkflowShareListComponent {
     sortValue: string | null = 'asc';
     sortKey: string | null = 'created_at';
     search: string | null = null;
-    search_field: string[] = ["forModule","keterangan","namaWorkflow","targetDb","targetTable"];
- 
+    search_field: string[] = ["forModule", "keterangan", "namaWorkflow", "targetDb", "targetTable"];
+
     breadCrumbItems = [{ label: 'List', active: false }];
 
     resetParam() {
@@ -116,7 +116,7 @@ export class WorkflowShareListComponent {
         this.search = null;
         this.filter = {
             idKantor: null,
-  isDefault: null
+            isDefault: null
         };
         this.filter.statusworkflow = this.status == 'semua' ? null : this.status;
     }
@@ -138,23 +138,24 @@ export class WorkflowShareListComponent {
 
         const finalFilter: any = this.buildFilterForBackend(this.filter);
         finalFilter[`id_workflow`] = { isNotNull: 'aktif' };
+        finalFilter[`for_module`] = this.from_module;
 
         this.workflowReportService.workflowReportControllerFindAll({
             body: {
                 filter: finalFilter,
                 joinWhere: [
-                                        {
+                    {
                         "kantor": this.filterKantor, type: 'left'
                     }
-                                        ],
+                ],
                 search_field: this.search_field,
                 search_keyword: this.search || undefined,
-                include:  [
-  {
-    "name": "kantor",
-    "type": "single"
-  }
-],
+                include: [
+                    {
+                        "name": "kantor",
+                        "type": "single"
+                    }
+                ],
                 sortKey: this.sortKey ?? undefined,
                 sortValue: this.validSortValue,
                 pageIndex: this.pageIndex,
@@ -206,30 +207,14 @@ export class WorkflowShareListComponent {
         return backendFilter;
     }
     add() {
-    if (!this.acl.can('workflow', 'can_add') || !this.enable_crud) return;
+        if (!this.acl.can('workflow', 'can_add') || !this.enable_crud) return;
 
         const drawerRef = this.drawerService.create<WorkflowShareAddComponent, {}, string>({
             nzTitle: 'Add',
             nzContent: WorkflowShareAddComponent,
-        nzWidth: (500) + 'px',
-        });
- 
-        drawerRef.afterClose.subscribe(() => {
-            this.searchData();
-        });
-    }
-
-     
-
-    detail(data:ToolsWorkflowDto) {
-        if (!this.acl.can('contract-site', 'can_list')) return;
-
-        const drawerRef = this.drawerService.create<WorkflowShareDetailComponent, {}, string>({
-            nzTitle: 'Detail',
-            nzContent: WorkflowShareDetailComponent,
-            nzWidth: (window.innerWidth * 0.8) + 'px',
+            nzWidth: (500) + 'px',
             nzContentParams:{
-                idWorkflow:data.idWorkflow
+                for_module: this.from_module
             }
         });
 
@@ -238,8 +223,27 @@ export class WorkflowShareListComponent {
         });
     }
 
-    update(data: any) {}
-    delete(id: string) {} 
+
+
+    detail(data: ToolsWorkflowDto) {
+        if (!this.acl.can('contract-site', 'can_list')) return;
+
+        const drawerRef = this.drawerService.create<WorkflowShareDetailComponent, {}, string>({
+            nzTitle: 'Detail',
+            nzContent: WorkflowShareDetailComponent,
+            nzWidth: (window.innerWidth * 0.8) + 'px',
+            nzContentParams: {
+                idWorkflow: data.idWorkflow
+            }
+        });
+
+        drawerRef.afterClose.subscribe(() => {
+            this.searchData();
+        });
+    }
+
+    update(data: any) { }
+    delete(id: string) { }
 
     print() {
         let url = environment.srv_document + '/pdfAkutansi/vouchers?filter=' + JSON.stringify(this.filter) + '&token=' + this.tokenService.getToken();

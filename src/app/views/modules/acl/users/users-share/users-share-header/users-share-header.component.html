@@ -1,0 +1,261 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.createdAt !== undefined && data?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.email !== undefined && data?.email !== null">
+    <div class="text-secondary small">
+      {{ 'email' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.email || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idUserGroup !== undefined && data?.idUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'idUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idUsers !== undefined && data?.idUsers !== null">
+    <div class="text-secondary small">
+      {{ 'idUsers' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idUsers || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.lastLogin !== undefined && data?.lastLogin !== null">
+    <div class="text-secondary small">
+      {{ 'lastLogin' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.lastLogin || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.nama !== undefined && data?.nama !== null">
+    <div class="text-secondary small">
+      {{ 'nama' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.nama || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.password !== undefined && data?.password !== null">
+    <div class="text-secondary small">
+      {{ 'password' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.password || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.status !== undefined && data?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.wajibResetPassword !== undefined && data?.wajibResetPassword !== null">
+    <div class="text-secondary small">
+      {{ 'wajibResetPassword' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.wajibResetPassword" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.wajibResetPassword">-</span>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.userGroup">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'userGroup' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.userGroup?.createdAt !== undefined && data.userGroup?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.userGroup.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.userGroup?.deskripsi !== undefined && data.userGroup?.deskripsi !== null">
+    <div class="text-secondary small">
+      {{ 'deskripsi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.userGroup.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.userGroup?.idUserGroup !== undefined && data.userGroup?.idUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'idUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.userGroup.idUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.userGroup?.namaUserGroup !== undefined && data.userGroup?.namaUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'namaUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.userGroup.namaUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.userGroup?.status !== undefined && data.userGroup?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.userGroup.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>

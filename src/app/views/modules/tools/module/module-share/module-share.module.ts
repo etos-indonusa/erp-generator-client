@@ -6,6 +6,7 @@ import { AntSimpleModule } from 'src/app/shared/ant-simple.module';
 import { TampilanModule } from 'src/app/shared/tampilan.module';
 import { ModuleShareDetailComponent } from './module-share-detail/module-share-detail.component';
 import { CustomFieldGroupShareModule } from '../../custom-field-group/custom-field-group-share/custom-field-group-share.module';
+import { WorkflowShareModule } from '../../workflow/workflow-share/workflow-share.module';
  
  
 @NgModule({
@@ -19,7 +20,8 @@ import { CustomFieldGroupShareModule } from '../../custom-field-group/custom-fie
         ReactiveFormsModule,
         AntSimpleModule,
         TampilanModule,
-        CustomFieldGroupShareModule
+        CustomFieldGroupShareModule,
+        
     ]
 }) 
 export class ModuleShareModule { }
