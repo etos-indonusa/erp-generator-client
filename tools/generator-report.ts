@@ -270,7 +270,7 @@ function generateFormHtmlFromDto(dtoPath: string, dtoName: string) {
 
 
 function injectToModulesRouting(moduleName: string) {
-    const routingPath = path.resolve('src/app/views/modules/modules-routing.module.ts');
+    const routingPath = path.resolve('src/app/views/modules/' + prefix + '/' + prefix+'-routing.module.ts'); 
     if (!fs.existsSync(routingPath)) {
         console.warn('⚠️ Tidak ditemukan modules-routing.module.ts');
         return;
@@ -278,9 +278,10 @@ function injectToModulesRouting(moduleName: string) {
 
     const routingContent = fs.readFileSync(routingPath, 'utf-8');
 
-    const newRoute = `{
+    const newRoute = `
+            {
                 path: '${moduleName}',
-                loadChildren: () => import('./${prefix ? `${prefix}/` : ''}${moduleName}/${moduleName}.module').then(m => m.${Nama}Module)
+                loadChildren: () => import('./${moduleName}/${moduleName}.module').then(m => m.${Nama}Module)
             },`;
 
     if (routingContent.includes(`path: '${moduleName}'`)) {
@@ -289,10 +290,17 @@ function injectToModulesRouting(moduleName: string) {
     }
 
     const modifiedContent = routingContent.replace(
-        /(children:\s*\[\s*)((.|\s)*?)(\s*\])/,
-        `$1$2\n            ${newRoute}$4`
+        /(const\s+routes\s*:\s*Routes\s*=\s*\[\s*)((.|\s)*?)(\s*\])/,
+        (_, prefix, currentContent, _any, suffix) => {
+            const trimmedContent = currentContent.trim();
+            const updatedContent = trimmedContent
+                ? `${trimmedContent},\n  ${newRoute}`
+                : `  ${newRoute}`;
+            return `${prefix}${updatedContent}${suffix}`;
+        }
     );
 
+    console.log(routingPath)
     fs.writeFileSync(routingPath, modifiedContent, 'utf-8');
     console.log(`🚀 Route '${moduleName}' berhasil ditambahkan ke modules-routing.module.ts`);
 }

@@ -20,7 +20,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -37,7 +37,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -54,7 +54,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -71,7 +71,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -88,7 +88,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -105,7 +105,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -122,7 +122,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -139,7 +139,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -156,7 +156,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -173,7 +173,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -190,7 +190,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -207,7 +207,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -224,7 +224,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -241,7 +241,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -258,7 +258,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -275,7 +275,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -292,7 +292,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -309,7 +309,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -326,7 +326,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -343,7 +343,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -360,7 +360,7 @@
   </div>
 
   
-
+ <br> 
   
     
   
@@ -994,6 +994,894 @@
   
 
         
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.contract.client?.clientContact">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'contract.client.clientContact' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client.clientContact?.catatan !== undefined && data.contract.client.clientContact?.catatan !== null">
+    <div class="text-secondary small">
+      {{ 'catatan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.clientContact.catatan || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client.clientContact?.createdAt !== undefined && data.contract.client.clientContact?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.clientContact.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client.clientContact?.divisi !== undefined && data.contract.client.clientContact?.divisi !== null">
+    <div class="text-secondary small">
+      {{ 'divisi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.clientContact.divisi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client.clientContact?.email !== undefined && data.contract.client.clientContact?.email !== null">
+    <div class="text-secondary small">
+      {{ 'email' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.clientContact.email || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client.clientContact?.idClient !== undefined && data.contract.client.clientContact?.idClient !== null">
+    <div class="text-secondary small">
+      {{ 'idClient' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.clientContact.idClient || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client.clientContact?.idClientContact !== undefined && data.contract.client.clientContact?.idClientContact !== null">
+    <div class="text-secondary small">
+      {{ 'idClientContact' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.clientContact.idClientContact || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client.clientContact?.isPrimary !== undefined && data.contract.client.clientContact?.isPrimary !== null">
+    <div class="text-secondary small">
+      {{ 'isPrimary' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.contract.client.clientContact.isPrimary" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.contract.client.clientContact.isPrimary">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client.clientContact?.jabatan !== undefined && data.contract.client.clientContact?.jabatan !== null">
+    <div class="text-secondary small">
+      {{ 'jabatan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.clientContact.jabatan || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client.clientContact?.jenisContact !== undefined && data.contract.client.clientContact?.jenisContact !== null">
+    <div class="text-secondary small">
+      {{ 'jenisContact' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.clientContact.jenisContact || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client.clientContact?.namaContact !== undefined && data.contract.client.clientContact?.namaContact !== null">
+    <div class="text-secondary small">
+      {{ 'namaContact' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.clientContact.namaContact || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client.clientContact?.telepon !== undefined && data.contract.client.clientContact?.telepon !== null">
+    <div class="text-secondary small">
+      {{ 'telepon' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.clientContact.telepon || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.client.clientContact?.updatedAt !== undefined && data.contract.client.clientContact?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.client.clientContact.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.contract?.contractJenis">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'contract.contractJenis' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.contractJenis?.createdAt !== undefined && data.contract.contractJenis?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.contractJenis.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.contractJenis?.idContractJenis !== undefined && data.contract.contractJenis?.idContractJenis !== null">
+    <div class="text-secondary small">
+      {{ 'idContractJenis' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.contractJenis.idContractJenis || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.contractJenis?.keterangan !== undefined && data.contract.contractJenis?.keterangan !== null">
+    <div class="text-secondary small">
+      {{ 'keterangan' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.contractJenis.keterangan || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.contractJenis?.namaContractJenis !== undefined && data.contract.contractJenis?.namaContractJenis !== null">
+    <div class="text-secondary small">
+      {{ 'namaContractJenis' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.contractJenis.namaContractJenis || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.contractJenis?.role !== undefined && data.contract.contractJenis?.role !== null">
+    <div class="text-secondary small">
+      {{ 'role' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.contractJenis.role || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.contractJenis?.statusContractJenis !== undefined && data.contract.contractJenis?.statusContractJenis !== null">
+    <div class="text-secondary small">
+      {{ 'statusContractJenis' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.contract.contractJenis.statusContractJenis }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.contractJenis?.updatedAt !== undefined && data.contract.contractJenis?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.contractJenis.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.contract?.document">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'contract.document' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document?.createdAt !== undefined && data.contract.document?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document?.enableDownload !== undefined && data.contract.document?.enableDownload !== null">
+    <div class="text-secondary small">
+      {{ 'enableDownload' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.enableDownload || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document?.fileExt !== undefined && data.contract.document?.fileExt !== null">
+    <div class="text-secondary small">
+      {{ 'fileExt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.fileExt || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document?.fileLocation !== undefined && data.contract.document?.fileLocation !== null">
+    <div class="text-secondary small">
+      {{ 'fileLocation' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.fileLocation || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document?.fileName !== undefined && data.contract.document?.fileName !== null">
+    <div class="text-secondary small">
+      {{ 'fileName' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.fileName || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document?.forModule !== undefined && data.contract.document?.forModule !== null">
+    <div class="text-secondary small">
+      {{ 'forModule' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.forModule || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document?.forModuleId !== undefined && data.contract.document?.forModuleId !== null">
+    <div class="text-secondary small">
+      {{ 'forModuleId' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.forModuleId || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document?.forTable !== undefined && data.contract.document?.forTable !== null">
+    <div class="text-secondary small">
+      {{ 'forTable' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.forTable || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document?.idDocument !== undefined && data.contract.document?.idDocument !== null">
+    <div class="text-secondary small">
+      {{ 'idDocument' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.idDocument || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document?.idUsers !== undefined && data.contract.document?.idUsers !== null">
+    <div class="text-secondary small">
+      {{ 'idUsers' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.idUsers || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document?.name !== undefined && data.contract.document?.name !== null">
+    <div class="text-secondary small">
+      {{ 'name' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.name || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document?.nomor !== undefined && data.contract.document?.nomor !== null">
+    <div class="text-secondary small">
+      {{ 'nomor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.nomor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document?.revisi !== undefined && data.contract.document?.revisi !== null">
+    <div class="text-secondary small">
+      {{ 'revisi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.revisi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document?.tanggal !== undefined && data.contract.document?.tanggal !== null">
+    <div class="text-secondary small">
+      {{ 'tanggal' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.tanggal | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document?.updatedAt !== undefined && data.contract.document?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.contract.document?.users">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'contract.document.users' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document.users?.createdAt !== undefined && data.contract.document.users?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.users.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document.users?.email !== undefined && data.contract.document.users?.email !== null">
+    <div class="text-secondary small">
+      {{ 'email' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.users.email || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document.users?.idUserGroup !== undefined && data.contract.document.users?.idUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'idUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.users.idUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document.users?.idUsers !== undefined && data.contract.document.users?.idUsers !== null">
+    <div class="text-secondary small">
+      {{ 'idUsers' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.users.idUsers || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document.users?.lastLogin !== undefined && data.contract.document.users?.lastLogin !== null">
+    <div class="text-secondary small">
+      {{ 'lastLogin' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.users.lastLogin || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document.users?.nama !== undefined && data.contract.document.users?.nama !== null">
+    <div class="text-secondary small">
+      {{ 'nama' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.users.nama || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document.users?.password !== undefined && data.contract.document.users?.password !== null">
+    <div class="text-secondary small">
+      {{ 'password' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.users.password || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document.users?.status !== undefined && data.contract.document.users?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.contract.document.users.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document.users?.wajibResetPassword !== undefined && data.contract.document.users?.wajibResetPassword !== null">
+    <div class="text-secondary small">
+      {{ 'wajibResetPassword' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.contract.document.users.wajibResetPassword" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.contract.document.users.wajibResetPassword">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.contract.document.users?.userGroup">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'contract.document.users.userGroup' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document.users.userGroup?.createdAt !== undefined && data.contract.document.users.userGroup?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.users.userGroup.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document.users.userGroup?.deskripsi !== undefined && data.contract.document.users.userGroup?.deskripsi !== null">
+    <div class="text-secondary small">
+      {{ 'deskripsi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.users.userGroup.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document.users.userGroup?.idUserGroup !== undefined && data.contract.document.users.userGroup?.idUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'idUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.users.userGroup.idUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document.users.userGroup?.namaUserGroup !== undefined && data.contract.document.users.userGroup?.namaUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'namaUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contract.document.users.userGroup.namaUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.contract.document.users.userGroup?.status !== undefined && data.contract.document.users.userGroup?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.contract.document.users.userGroup.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+        
       </div>
     </div>
   
@@ -1205,377 +2093,6 @@
       </div>
     </div>
   
-
-  
-    
-  
-    <div class="col-12 mt-4" *ngIf="data?.invoice">
-      <div class="fw-bold border-bottom mb-2">
-        {{ 'invoice' | translate }}
-      </div>
-      <div class="row">
-        
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.alamatPenagihan !== undefined && data.invoice?.alamatPenagihan !== null">
-    <div class="text-secondary small">
-      {{ 'alamatPenagihan' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.invoice.alamatPenagihan || '-' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.catatan !== undefined && data.invoice?.catatan !== null">
-    <div class="text-secondary small">
-      {{ 'catatan' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.invoice.catatan || '-' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.createdAt !== undefined && data.invoice?.createdAt !== null">
-    <div class="text-secondary small">
-      {{ 'createdAt' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.invoice.createdAt | date:'short' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.createdBy !== undefined && data.invoice?.createdBy !== null">
-    <div class="text-secondary small">
-      {{ 'createdBy' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.invoice.createdBy | date:'short' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.dpp !== undefined && data.invoice?.dpp !== null">
-    <div class="text-secondary small">
-      {{ 'dpp' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.invoice.dpp | number:'1.0-0' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.idContract !== undefined && data.invoice?.idContract !== null">
-    <div class="text-secondary small">
-      {{ 'idContract' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.invoice.idContract || '-' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.idInvoice !== undefined && data.invoice?.idInvoice !== null">
-    <div class="text-secondary small">
-      {{ 'idInvoice' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.invoice.idInvoice || '-' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.jenisInvoice !== undefined && data.invoice?.jenisInvoice !== null">
-    <div class="text-secondary small">
-      {{ 'jenisInvoice' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.invoice.jenisInvoice || '-' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.metodePembayaran !== undefined && data.invoice?.metodePembayaran !== null">
-    <div class="text-secondary small">
-      {{ 'metodePembayaran' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.invoice.metodePembayaran || '-' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.nilaiInvoice !== undefined && data.invoice?.nilaiInvoice !== null">
-    <div class="text-secondary small">
-      {{ 'nilaiInvoice' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.invoice.nilaiInvoice | number:'1.0-0' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.nomorInvoice !== undefined && data.invoice?.nomorInvoice !== null">
-    <div class="text-secondary small">
-      {{ 'nomorInvoice' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.invoice.nomorInvoice || '-' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.npwp !== undefined && data.invoice?.npwp !== null">
-    <div class="text-secondary small">
-      {{ 'npwp' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.invoice.npwp || '-' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.periode !== undefined && data.invoice?.periode !== null">
-    <div class="text-secondary small">
-      {{ 'periode' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.invoice.periode || '-' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.picPenagihan !== undefined && data.invoice?.picPenagihan !== null">
-    <div class="text-secondary small">
-      {{ 'picPenagihan' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.invoice.picPenagihan || '-' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.ppn !== undefined && data.invoice?.ppn !== null">
-    <div class="text-secondary small">
-      {{ 'ppn' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.invoice.ppn | number:'1.0-0' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.statusInvoice !== undefined && data.invoice?.statusInvoice !== null">
-    <div class="text-secondary small">
-      {{ 'statusInvoice' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        <nz-tag nzColor="green">{{ data.invoice.statusInvoice }}</nz-tag>
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.tanggalDibayar !== undefined && data.invoice?.tanggalDibayar !== null">
-    <div class="text-secondary small">
-      {{ 'tanggalDibayar' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.invoice.tanggalDibayar | date:'short' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.tanggalJatuhTempo !== undefined && data.invoice?.tanggalJatuhTempo !== null">
-    <div class="text-secondary small">
-      {{ 'tanggalJatuhTempo' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.invoice.tanggalJatuhTempo | date:'short' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.tanggalTerbit !== undefined && data.invoice?.tanggalTerbit !== null">
-    <div class="text-secondary small">
-      {{ 'tanggalTerbit' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.invoice.tanggalTerbit | date:'short' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.updatedAt !== undefined && data.invoice?.updatedAt !== null">
-    <div class="text-secondary small">
-      {{ 'updatedAt' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.invoice.updatedAt | date:'short' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.invoice?.updatedBy !== undefined && data.invoice?.updatedBy !== null">
-    <div class="text-secondary small">
-      {{ 'updatedBy' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.invoice.updatedBy | date:'short' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-      </div>
-    </div>
-  
-
+ <br> 
   
 </div>

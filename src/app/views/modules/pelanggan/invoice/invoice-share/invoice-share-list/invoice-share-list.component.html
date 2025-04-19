@@ -254,7 +254,7 @@
                         <td [nzExpand]="expandSet.has(data.idInvoice)"
                             (nzExpandChange)="onExpandChange(data.idInvoice, $event)">
                             <nz-badge *ngIf="data.idInvoice!=null" nzColor="{{ data.idInvoice?.toLowerCase() | status }}"
-                                nzText="{{data.idInvoice?.toLowerCase() }}"></nz-badge> {{ data.idInvoice }}
+                                nzText="{{data.idInvoice?.toLowerCase() }}"></nz-badge>  
                         </td>
                         
                         
