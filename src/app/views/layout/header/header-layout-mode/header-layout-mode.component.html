@@ -1,0 +1,3 @@
+<nz-switch [ngModel]="(menuMode$ | async) === 'topbar'" (ngModelChange)="onToggleMenu($event)"
+    [nzCheckedChildren]="'Topbar'" [nzUnCheckedChildren]="'Sidebar'">
+</nz-switch>

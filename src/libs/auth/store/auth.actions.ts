@@ -16,5 +16,10 @@ export const logout = createAction('[Auth] Logout');
 export const refreshToken = createAction('[Auth] Refresh Token', props<{ refreshToken: string }>());
 export const refreshTokenSuccess = createAction('[Auth] Refresh Token Success', props<{ token: string }>());
 export const refreshTokenFailure = createAction('[Auth] Refresh Token Failure', props<{ error: string }>());
+
+export const setMenuMode = createAction(
+    '[Layout] Set Menu Mode',
+    props<{ mode: 'sidebar' | 'topbar' }>()
+);
  
 

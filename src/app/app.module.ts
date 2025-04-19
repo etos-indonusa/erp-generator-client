@@ -1,5 +1,5 @@
 import { APP_INITIALIZER, importProvidersFrom, NgModule, provideZoneChangeDetection } from '@angular/core';
-import { StoreModule } from '@ngrx/store';
+import { Store, StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { authReducer } from 'src/libs/auth/store/auth.reducer';
 import { AuthEffects } from 'src/libs/auth/store/auth.effects';
@@ -19,7 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
  
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { registerLocaleData } from '@angular/common'; 
-import id from '@angular/common/locales/id';
+import id from '@angular/common/locales/id'; 
+import { menuModeInitializerFactory } from './app.initializer'; 
 const highlightOptions = {
     coreLibraryLoader: () => import('highlight.js/lib/core'),
     languages: {
@@ -67,6 +68,12 @@ export function appTranslateInitializer(translate: TranslateService) {
             useFactory: appTranslateInitializer,
             deps: [TranslateService],
             multi: true
+        },
+        {
+            provide: APP_INITIALIZER,
+            useFactory: menuModeInitializerFactory,
+            multi: true,
+            deps: [Store] // pastikan Store terdaftar
         },
         {
             provide: HIGHLIGHT_OPTIONS,

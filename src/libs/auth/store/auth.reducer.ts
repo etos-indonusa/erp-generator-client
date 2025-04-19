@@ -12,6 +12,7 @@ export const initialState: AuthState = {
     refresh_token: null,
     isLoading: false,
     error: null,
+    menuMode: 'sidebar'
 };
 
 export const authReducer = createReducer(
@@ -32,5 +33,9 @@ export const authReducer = createReducer(
     on(refreshTokenSuccess, (state, { token }) => ({
         ...state,
         token // ⬅️ update token-nya
+    })),
+    on(AuthActions.setMenuMode, (state, { mode }) => ({
+        ...state,
+        menuMode: mode
     }))
 );

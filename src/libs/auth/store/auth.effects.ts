@@ -55,6 +55,14 @@ export class AuthEffects {
                 ofType(loadCurrentUserSuccess),
                 tap(() => {
                     // this.router.navigate(['/dashboard']); // atau path default-mu
+                    const redirectUrl = localStorage.getItem('redirectAfterLogin');
+                    console.log(redirectUrl)
+                    if (redirectUrl) {
+                        this.router.navigateByUrl(redirectUrl); // ✅ kembali ke halaman yang tadi
+                        localStorage.removeItem('redirectAfterLogin');
+                    } else {
+                        this.router.navigate(['/dashboard']); // fallback default
+                    }
                 })
             ),
         { dispatch: false }

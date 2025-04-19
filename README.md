@@ -7,9 +7,11 @@ npx ts-node tools/template/generator-crud-standart.ts --nama users
 
 GENERATOR STANDAR
 npm run generate:crud -- module --prefix=acl
-npm run generate:crud -- users --prefix=acl
+npm run generate:report -- users --prefix=acl
+npm run generate:report -- users --prefix=acl
+npm run generate:crud -- user_group --prefix=acl
 
-npm run generate:crud -- users --prefix=pelanggan
+ 
 npm run generate:crud -- client-contact --prefix=pelanggan
 npm run generate:crud -- client --prefix=pelanggan
 npm run generate:crud -- company-config --prefix=pelanggan

@@ -7,4 +7,7 @@ export interface AuthState {
     refresh_token: string | null;
     isLoading: boolean;
     error: string | null;
+    menuMode: MenuMode;
+
 }
+export type MenuMode = 'sidebar' | 'topbar';

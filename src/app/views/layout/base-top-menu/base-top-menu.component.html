@@ -1,17 +1,13 @@
-<div class="vertical-layout">
+<div class="horizontal-layout">
     <div class="main-wrapper">
 
-        <!-- partial:sidebar -->
-        <app-sidebar />
+        <!-- partial:navbar -->
+        <app-navbar-menu></app-navbar-menu>
         <!-- partial -->
 
         <div class="page-wrapper">
 
-            <!-- partial:navbar -->
-            <app-navbar></app-navbar>
-            <!-- partial --> 
-
-            <div class="page-content container-xxl">
+            <div class="page-content container">
 
                 <!-- Spinner for lazyload modules -->
                 @if (isLoading) {

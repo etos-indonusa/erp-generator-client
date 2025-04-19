@@ -1,0 +1,17 @@
+<a nz-dropdown [nzDropdownMenu]="langMenu" class="d-inline-flex align-items-center">
+    <img style="    border: 1px solid #ecececb0;" src="images/flags/id.svg" class="w-20px" title="ID" alt="ID" />
+    <span class="ms-2 d-none d-md-inline-block">ID</span> 
+</a>
+
+<nz-dropdown-menu #langMenu="nzDropdownMenu">
+    <ul nz-menu>
+        <li nz-menu-item (click)="changeLang('id')" class="d-flex align-items-center">
+            <img src="images/flags/id.svg" class="w-20px me-2" alt="ID" />
+            <span>ID</span>
+        </li>
+        <li nz-menu-item (click)="changeLang('en')" class="d-flex align-items-center">
+            <img src="images/flags/us.svg" class="w-20px me-2" alt="EN" />
+            <span>EN</span>
+        </li>
+    </ul>
+</nz-dropdown-menu>

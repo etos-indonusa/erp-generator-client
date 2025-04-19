@@ -13,3 +13,7 @@ export const getPegawai = createSelector(selectAuthState, state => state.pegawai
 export const getIsLoading = createSelector(selectAuthState, state => state.isLoading);
 export const getAuthToken = createSelector(selectAuthState, state => state.token);
 export const getRefreshToken = createSelector(selectAuthState, state => state.refresh_token);
+export const selectMenuMode = createSelector(
+    selectAuthState,
+    (state: AuthState) => state.menuMode
+);

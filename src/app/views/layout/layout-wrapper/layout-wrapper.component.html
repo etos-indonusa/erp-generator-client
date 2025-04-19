@@ -1,0 +1,4 @@
+<ng-container *ngIf="menuMode$ | async as mode">
+    <app-base *ngIf="mode === 'sidebar'"></app-base>
+    <app-base-top-menu *ngIf="mode === 'topbar'"></app-base-top-menu>
+</ng-container>

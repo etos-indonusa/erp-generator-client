@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'; 
-import { AuthGuard } from 'src/libs/auth/guards/auth.guard';
-import { BaseComponent } from './views/layout/base/base.component'; 
+import { AuthGuard } from 'src/libs/auth/guards/auth.guard'; 
+import { LayoutWrapperComponent } from './views/layout/layout-wrapper/layout-wrapper.component';
 
 export const routes: Routes = [
     { path: 'auth', loadChildren: () => import('./views/auth/auth.module').then(m=>m.AuthModule) },
@@ -11,7 +11,8 @@ export const routes: Routes = [
     },
     {
         path: '',
-        component: BaseComponent, 
+        // component: BaseComponent, 
+        component: LayoutWrapperComponent, 
         canActivate:[AuthGuard],
         children: [
             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },

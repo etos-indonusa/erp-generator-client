@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BaseComponent } from '../layout/base/base.component';
+import { LayoutWrapperComponent } from '../layout/layout-wrapper/layout-wrapper.component';
 
 const routes: Routes = [
     {
         path: '',
-        component: BaseComponent,
+        // component: BaseComponent,
+        component: LayoutWrapperComponent, 
         children: [
             {
                 path: '',

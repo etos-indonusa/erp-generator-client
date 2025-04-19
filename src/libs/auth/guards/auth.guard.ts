@@ -13,9 +13,13 @@ export class AuthGuard implements CanActivate {
         private store: Store<any>,
         private pesanService: PesanService,
         private router: Router
-    ) { }
+    ) { 
+
+       
+    }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
+        
         if (environment.authenticated) return of(true); // bypass in dev/demo
         if (environment.maintenance) {
             alert('This Site Is Still Under Maintenance');
@@ -28,7 +32,9 @@ export class AuthGuard implements CanActivate {
             take(1),
             map(user => {
                 if (user == null) {
-                    this.router.navigate(['/auth/login'], { queryParams: { returnUrl: state.url } });
+                    // this.router.navigate(['/auth/login'], { queryParams: { returnUrl: state.url } });
+                    localStorage.setItem('redirectAfterLogin', state.url);
+                    this.router.navigate(['/auth/login']);
                     return false;
                 }
 

@@ -5,6 +5,7 @@ import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/c
 import { Injectable } from '@angular/core';
 import { Observable, catchError, filter, take, switchMap, throwError } from 'rxjs';
 import { AuthPublicService } from 'src/sdk/core/services';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
@@ -12,6 +13,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
     constructor(
         private store: Store,
+        private router: Router,
         private authService: AuthPublicService
     ) { }
 
@@ -28,6 +30,7 @@ export class AuthInterceptor implements HttpInterceptor {
         return next.handle(authReq).pipe(
             catchError(error => {
                 if (error.status === 401 && !this.isRefreshing) {
+                    localStorage.setItem('redirectAfterLogin', this.router.url);
                     this.isRefreshing = true;
                     const refreshToken = localStorage.getItem('token');
 
