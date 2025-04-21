@@ -23,7 +23,7 @@ export const AclUsersReportFormSchema = {
   },
   "password": {
     "default": "",
-    "required": true
+    "required": false
   },
   "status": {
     "default": "",

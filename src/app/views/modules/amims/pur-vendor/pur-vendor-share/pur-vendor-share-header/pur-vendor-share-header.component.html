@@ -1,0 +1,1277 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.address !== undefined && data?.address !== null">
+    <div class="text-secondary small">
+      {{ 'address' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.address || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.code !== undefined && data?.code !== null">
+    <div class="text-secondary small">
+      {{ 'code' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.code || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.column1 !== undefined && data?.column1 !== null">
+    <div class="text-secondary small">
+      {{ 'column1' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.column1 || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.country !== undefined && data?.country !== null">
+    <div class="text-secondary small">
+      {{ 'country' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.country || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.createdAt !== undefined && data?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.defaultCurrency !== undefined && data?.defaultCurrency !== null">
+    <div class="text-secondary small">
+      {{ 'defaultCurrency' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.defaultCurrency || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.deliveryTime !== undefined && data?.deliveryTime !== null">
+    <div class="text-secondary small">
+      {{ 'deliveryTime' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.deliveryTime | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.email !== undefined && data?.email !== null">
+    <div class="text-secondary small">
+      {{ 'email' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.email || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.fax !== undefined && data?.fax !== null">
+    <div class="text-secondary small">
+      {{ 'fax' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.fax || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idMcurrency !== undefined && data?.idMcurrency !== null">
+    <div class="text-secondary small">
+      {{ 'idMcurrency' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idMcurrency || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idPurVendor !== undefined && data?.idPurVendor !== null">
+    <div class="text-secondary small">
+      {{ 'idPurVendor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idPurVendor || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idUser !== undefined && data?.idUser !== null">
+    <div class="text-secondary small">
+      {{ 'idUser' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idUser || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.isDeleted !== undefined && data?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.isManufacture !== undefined && data?.isManufacture !== null">
+    <div class="text-secondary small">
+      {{ 'isManufacture' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isManufacture" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isManufacture">-</span>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.isRepairer !== undefined && data?.isRepairer !== null">
+    <div class="text-secondary small">
+      {{ 'isRepairer' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isRepairer" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isRepairer">-</span>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.isShipper !== undefined && data?.isShipper !== null">
+    <div class="text-secondary small">
+      {{ 'isShipper' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isShipper" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isShipper">-</span>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.isVendor !== undefined && data?.isVendor !== null">
+    <div class="text-secondary small">
+      {{ 'isVendor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isVendor" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isVendor">-</span>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.isWorkshop !== undefined && data?.isWorkshop !== null">
+    <div class="text-secondary small">
+      {{ 'isWorkshop' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isWorkshop" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isWorkshop">-</span>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.keyword !== undefined && data?.keyword !== null">
+    <div class="text-secondary small">
+      {{ 'keyword' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.keyword || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.nameVendor !== undefined && data?.nameVendor !== null">
+    <div class="text-secondary small">
+      {{ 'nameVendor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.nameVendor || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.oldId !== undefined && data?.oldId !== null">
+    <div class="text-secondary small">
+      {{ 'oldId' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.oldId || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.pic !== undefined && data?.pic !== null">
+    <div class="text-secondary small">
+      {{ 'pic' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.pic || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.postcode !== undefined && data?.postcode !== null">
+    <div class="text-secondary small">
+      {{ 'postcode' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.postcode || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.rating !== undefined && data?.rating !== null">
+    <div class="text-secondary small">
+      {{ 'rating' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rating || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.services !== undefined && data?.services !== null">
+    <div class="text-secondary small">
+      {{ 'services' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.services || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.status !== undefined && data?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.telephone !== undefined && data?.telephone !== null">
+    <div class="text-secondary small">
+      {{ 'telephone' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.telephone || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.timezone !== undefined && data?.timezone !== null">
+    <div class="text-secondary small">
+      {{ 'timezone' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.timezone || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.tremPayment !== undefined && data?.tremPayment !== null">
+    <div class="text-secondary small">
+      {{ 'tremPayment' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.tremPayment | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.updatedAt !== undefined && data?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.validasi !== undefined && data?.validasi !== null">
+    <div class="text-secondary small">
+      {{ 'validasi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.validasi | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.purVendor">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'purVendor' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor?.address !== undefined && data.purVendor?.address !== null">
+    <div class="text-secondary small">
+      {{ 'address' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.address || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor?.city !== undefined && data.purVendor?.city !== null">
+    <div class="text-secondary small">
+      {{ 'city' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.city || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor?.country !== undefined && data.purVendor?.country !== null">
+    <div class="text-secondary small">
+      {{ 'country' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.country || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor?.createdAt !== undefined && data.purVendor?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor?.email !== undefined && data.purVendor?.email !== null">
+    <div class="text-secondary small">
+      {{ 'email' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.email || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor?.fax !== undefined && data.purVendor?.fax !== null">
+    <div class="text-secondary small">
+      {{ 'fax' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.fax || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor?.idPurVendor !== undefined && data.purVendor?.idPurVendor !== null">
+    <div class="text-secondary small">
+      {{ 'idPurVendor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.idPurVendor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor?.idPurVendorContact !== undefined && data.purVendor?.idPurVendorContact !== null">
+    <div class="text-secondary small">
+      {{ 'idPurVendorContact' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.idPurVendorContact || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor?.linePhone !== undefined && data.purVendor?.linePhone !== null">
+    <div class="text-secondary small">
+      {{ 'linePhone' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.linePhone || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor?.oldId !== undefined && data.purVendor?.oldId !== null">
+    <div class="text-secondary small">
+      {{ 'oldId' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.oldId || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor?.phone !== undefined && data.purVendor?.phone !== null">
+    <div class="text-secondary small">
+      {{ 'phone' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.phone || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor?.pic !== undefined && data.purVendor?.pic !== null">
+    <div class="text-secondary small">
+      {{ 'pic' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.pic || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor?.postcode !== undefined && data.purVendor?.postcode !== null">
+    <div class="text-secondary small">
+      {{ 'postcode' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.postcode || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor?.state !== undefined && data.purVendor?.state !== null">
+    <div class="text-secondary small">
+      {{ 'state' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.state || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor?.updatedAt !== undefined && data.purVendor?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.purVendor?.purVendorContact">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'purVendor.purVendorContact' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor.purVendorContact?.address !== undefined && data.purVendor.purVendorContact?.address !== null">
+    <div class="text-secondary small">
+      {{ 'address' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.purVendorContact.address || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor.purVendorContact?.city !== undefined && data.purVendor.purVendorContact?.city !== null">
+    <div class="text-secondary small">
+      {{ 'city' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.purVendorContact.city || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor.purVendorContact?.country !== undefined && data.purVendor.purVendorContact?.country !== null">
+    <div class="text-secondary small">
+      {{ 'country' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.purVendorContact.country || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor.purVendorContact?.createdAt !== undefined && data.purVendor.purVendorContact?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.purVendorContact.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor.purVendorContact?.email !== undefined && data.purVendor.purVendorContact?.email !== null">
+    <div class="text-secondary small">
+      {{ 'email' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.purVendorContact.email || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor.purVendorContact?.fax !== undefined && data.purVendor.purVendorContact?.fax !== null">
+    <div class="text-secondary small">
+      {{ 'fax' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.purVendorContact.fax || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor.purVendorContact?.idPurVendor !== undefined && data.purVendor.purVendorContact?.idPurVendor !== null">
+    <div class="text-secondary small">
+      {{ 'idPurVendor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.purVendorContact.idPurVendor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor.purVendorContact?.idPurVendorContact !== undefined && data.purVendor.purVendorContact?.idPurVendorContact !== null">
+    <div class="text-secondary small">
+      {{ 'idPurVendorContact' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.purVendorContact.idPurVendorContact || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor.purVendorContact?.linePhone !== undefined && data.purVendor.purVendorContact?.linePhone !== null">
+    <div class="text-secondary small">
+      {{ 'linePhone' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.purVendorContact.linePhone || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor.purVendorContact?.oldId !== undefined && data.purVendor.purVendorContact?.oldId !== null">
+    <div class="text-secondary small">
+      {{ 'oldId' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.purVendorContact.oldId || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor.purVendorContact?.phone !== undefined && data.purVendor.purVendorContact?.phone !== null">
+    <div class="text-secondary small">
+      {{ 'phone' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.purVendorContact.phone || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor.purVendorContact?.pic !== undefined && data.purVendor.purVendorContact?.pic !== null">
+    <div class="text-secondary small">
+      {{ 'pic' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.purVendorContact.pic || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor.purVendorContact?.postcode !== undefined && data.purVendor.purVendorContact?.postcode !== null">
+    <div class="text-secondary small">
+      {{ 'postcode' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.purVendorContact.postcode || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor.purVendorContact?.state !== undefined && data.purVendor.purVendorContact?.state !== null">
+    <div class="text-secondary small">
+      {{ 'state' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.purVendorContact.state || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purVendor.purVendorContact?.updatedAt !== undefined && data.purVendor.purVendorContact?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purVendor.purVendorContact.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.user">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'user' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user?.createdAt !== undefined && data.user?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user?.deskripsi !== undefined && data.user?.deskripsi !== null">
+    <div class="text-secondary small">
+      {{ 'deskripsi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user?.idUserGroup !== undefined && data.user?.idUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'idUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.idUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user?.namaUserGroup !== undefined && data.user?.namaUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'namaUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.namaUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user?.status !== undefined && data.user?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.user.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.user?.userGroup">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'user.userGroup' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user.userGroup?.createdAt !== undefined && data.user.userGroup?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.userGroup.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user.userGroup?.deskripsi !== undefined && data.user.userGroup?.deskripsi !== null">
+    <div class="text-secondary small">
+      {{ 'deskripsi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.userGroup.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user.userGroup?.idUserGroup !== undefined && data.user.userGroup?.idUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'idUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.userGroup.idUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user.userGroup?.namaUserGroup !== undefined && data.user.userGroup?.namaUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'namaUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.userGroup.namaUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user.userGroup?.status !== undefined && data.user.userGroup?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.user.userGroup.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>

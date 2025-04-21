@@ -1,0 +1,80 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="idEngineerPmtrItem">{{ 'idEngineerPmtrItem' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idEngineerPmtrItem" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idEngineerPmtrItem' | translate }}"> 
+                    <nz-option *ngFor="let item of listEngineerPmtrItem" nzLabel="{{ item.idEngineerPmtrItem }}" nzValue="{{ item.idEngineerPmtrItem }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idPart">{{ 'idPart' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idPart" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idPart' | translate }}"> 
+                    <nz-option *ngFor="let item of listPart" nzLabel="{{ item.idPart }}" nzValue="{{ item.idPart }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idStoreTransfer">{{ 'idStoreTransfer' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idStoreTransfer" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idStoreTransfer' | translate }}"> 
+                    <nz-option *ngFor="let item of listStoreTransfer" nzLabel="{{ item.idStoreTransfer }}" nzValue="{{ item.idStoreTransfer }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="newBin">{{ 'newBin' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="newBin" formControlName="newBin" placeholder="Masukkan {{ 'newBin' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="noteItemTransfer">{{ 'noteItemTransfer' | translate }}</nz-form-label>
+            <nz-form-control>
+                <textarea nz-input id="noteItemTransfer" formControlName="noteItemTransfer" placeholder="Masukkan {{ 'noteItemTransfer' | translate }}"></textarea>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="oldIdPart">{{ 'oldIdPart' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="oldIdPart" formControlName="oldIdPart" placeholder="Masukkan {{ 'oldIdPart' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="qtyTransfer">{{ 'qtyTransfer' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="qtyTransfer" formControlName="qtyTransfer" placeholder="Masukkan {{ 'qtyTransfer' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="statusItem">{{ 'statusItem' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="statusItem" formControlName="statusItem" placeholder="Masukkan {{ 'statusItem' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

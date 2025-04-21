@@ -23,7 +23,7 @@ export const AclUsersFormSchema = {
   },
   "password": {
     "default": "",
-    "required": true
+    "required": false
   },
   "status": {
     "default": "",

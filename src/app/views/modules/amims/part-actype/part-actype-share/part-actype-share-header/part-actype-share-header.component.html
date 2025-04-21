@@ -1,0 +1,547 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.createdAt !== undefined && data?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idActype !== undefined && data?.idActype !== null">
+    <div class="text-secondary small">
+      {{ 'idActype' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idActype || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idActypeOld !== undefined && data?.idActypeOld !== null">
+    <div class="text-secondary small">
+      {{ 'idActypeOld' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idActypeOld || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idMpart !== undefined && data?.idMpart !== null">
+    <div class="text-secondary small">
+      {{ 'idMpart' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idMpart || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idPartActype !== undefined && data?.idPartActype !== null">
+    <div class="text-secondary small">
+      {{ 'idPartActype' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idPartActype || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.updatedAt !== undefined && data?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.actype">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'actype' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.actype?.acCategory !== undefined && data.actype?.acCategory !== null">
+    <div class="text-secondary small">
+      {{ 'acCategory' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.actype.acCategory || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.actype?.acManufacture !== undefined && data.actype?.acManufacture !== null">
+    <div class="text-secondary small">
+      {{ 'acManufacture' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.actype.acManufacture || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.actype?.actype !== undefined && data.actype?.actype !== null">
+    <div class="text-secondary small">
+      {{ 'actype' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.actype.actype || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.actype?.createdAt !== undefined && data.actype?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.actype.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.actype?.description !== undefined && data.actype?.description !== null">
+    <div class="text-secondary small">
+      {{ 'description' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.actype.description || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.actype?.eFlight !== undefined && data.actype?.eFlight !== null">
+    <div class="text-secondary small">
+      {{ 'eFlight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.actype.eFlight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.actype?.eStarts !== undefined && data.actype?.eStarts !== null">
+    <div class="text-secondary small">
+      {{ 'eStarts' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.actype.eStarts || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.actype?.engineManufacture !== undefined && data.actype?.engineManufacture !== null">
+    <div class="text-secondary small">
+      {{ 'engineManufacture' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.actype.engineManufacture || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.actype?.engineType !== undefined && data.actype?.engineType !== null">
+    <div class="text-secondary small">
+      {{ 'engineType' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.actype.engineType || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.actype?.hashN1 !== undefined && data.actype?.hashN1 !== null">
+    <div class="text-secondary small">
+      {{ 'hashN1' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.actype.hashN1 || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.actype?.hashN2 !== undefined && data.actype?.hashN2 !== null">
+    <div class="text-secondary small">
+      {{ 'hashN2' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.actype.hashN2 || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.actype?.idActype !== undefined && data.actype?.idActype !== null">
+    <div class="text-secondary small">
+      {{ 'idActype' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.actype.idActype || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.actype?.isDeleted !== undefined && data.actype?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.actype.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.actype.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.actype?.numberEngine !== undefined && data.actype?.numberEngine !== null">
+    <div class="text-secondary small">
+      {{ 'numberEngine' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.actype.numberEngine | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.actype?.oldId !== undefined && data.actype?.oldId !== null">
+    <div class="text-secondary small">
+      {{ 'oldId' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.actype.oldId || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.actype?.statusType !== undefined && data.actype?.statusType !== null">
+    <div class="text-secondary small">
+      {{ 'statusType' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.actype.statusType }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.actype?.updatedAt !== undefined && data.actype?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.actype.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.actype?.wingtype !== undefined && data.actype?.wingtype !== null">
+    <div class="text-secondary small">
+      {{ 'wingtype' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.actype.wingtype || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.partActype">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'partActype' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partActype?.createdAt !== undefined && data.partActype?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partActype.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partActype?.idActype !== undefined && data.partActype?.idActype !== null">
+    <div class="text-secondary small">
+      {{ 'idActype' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partActype.idActype || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partActype?.idActypeOld !== undefined && data.partActype?.idActypeOld !== null">
+    <div class="text-secondary small">
+      {{ 'idActypeOld' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partActype.idActypeOld || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partActype?.idMpart !== undefined && data.partActype?.idMpart !== null">
+    <div class="text-secondary small">
+      {{ 'idMpart' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partActype.idMpart || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partActype?.idPartActype !== undefined && data.partActype?.idPartActype !== null">
+    <div class="text-secondary small">
+      {{ 'idPartActype' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partActype.idPartActype || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partActype?.updatedAt !== undefined && data.partActype?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partActype.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>

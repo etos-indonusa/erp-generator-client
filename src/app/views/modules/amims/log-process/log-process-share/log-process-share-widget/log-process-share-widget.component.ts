@@ -1,0 +1,62 @@
+import { Component, Input, SimpleChanges } from '@angular/core';
+import { LogProcessWidgetService } from 'src/sdk/core/services/log-process-widget.service';
+
+@Component({
+    selector: 'app-log-process-share-widget',
+    templateUrl: './log-process-share-widget.component.html',
+    styleUrl: './log-process-share-widget.component.scss'
+})
+export class LogProcessShareWidgetComponent {
+    @Input('filter') filter: any = {};
+    @Input('reload') reload: number = 0;
+    constructor(
+        private logProcessWidgetService: LogProcessWidgetService,
+    ) { }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        if (changes.reload) {
+            if (changes.reload.currentValue != changes.reload.previousValue && changes.reload.currentValue > 1) {
+                this.getDataWidget()
+            }
+        }
+    }
+ 
+    ngOnInit(): void {
+        this.getDataWidget()
+    }
+
+    breadCrumbItems = [
+        { label: 'List', active: false }
+    ]
+    is_loading: boolean = false
+    total: number = 0;
+    status_urutan: any[] = []
+    //[{"type":"count","field":"status_log-process_site","alias":"total"}, {"type":"max","field":"status_log-process_site","alias":"status_log-process_site"}]
+    getDataWidget() {
+        this.is_loading = true;
+        this.logProcessWidgetService
+            .logProcessWidgetControllerFindAll({
+                body: {
+                    filter: this.filter,
+                    select: [
+                        {
+                            type: "count",
+                            field:"status_log_process" ,
+                            alias: "jumlah" 
+                        }
+                    ],
+                    groupBy:  ['status_log_process'],
+                    sortKey: "status_log_process",
+                    sortValue: "ASC"
+                }
+            })
+            .subscribe((data) => {
+                this.total = data.total ?? 0;
+                this.status_urutan = data.data ?? [] ; 
+                this.status_urutan.forEach(x => {
+                    this.total = this.total + x.jumlah * 1
+                })
+                this.is_loading = false;
+            });
+    }
+}

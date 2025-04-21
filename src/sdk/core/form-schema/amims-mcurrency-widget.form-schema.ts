@@ -1,0 +1,37 @@
+export const AmimsMcurrencyWidgetFormSchema = {
+  "code": {
+    "default": "",
+    "required": false
+  },
+  "createdAt": {
+    "default": "",
+    "required": false
+  },
+  "currency": {
+    "default": "",
+    "required": false
+  },
+  "idMcurrency": {
+    "required": true
+  },
+  "isDeleted": {
+    "default": 0,
+    "required": false
+  },
+  "statusCurrency": {
+    "default": "",
+    "required": false
+  },
+  "total": {
+    "default": 0,
+    "required": false
+  },
+  "updatedAt": {
+    "default": "",
+    "required": false
+  },
+  "usdRate": {
+    "default": 0,
+    "required": false
+  }
+};

@@ -1,0 +1,193 @@
+
+  <div class="mb-3">
+    <div class="text-secondary small">Address</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.address || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">City</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.city || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Code Site</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.codeSite || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Contactname</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.contactname || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Country</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.country || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Created At</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt ? (data.createdAt | date:'short') : '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Emailaddress</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.emailaddress || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Fax</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.fax || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Is Deleted</div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Is Main</div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isMain" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isMain">-</span>
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Is Store</div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isStore" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isStore">-</span>
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Logo Site</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.logoSite || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Mobile</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mobile || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Old Id</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.oldId || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Parent Site</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.parentSite || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Site</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.site || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Status Site</div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag  nzColor="green">statusSite </nz-tag> 
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Telephone</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.telephone || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Type Site</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.typeSite || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Updated At</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Validation</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.validation || '-' }}
+      
+    </div>
+  </div>
+

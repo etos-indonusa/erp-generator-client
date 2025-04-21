@@ -1,0 +1,194 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="bin">{{ 'bin' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="bin" formControlName="bin" placeholder="Masukkan {{ 'bin' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="dateInstall">{{ 'dateInstall' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-date-picker formControlName="dateInstall" style="width: 100%" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="dueOverhaulC">{{ 'dueOverhaulC' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="dueOverhaulC" formControlName="dueOverhaulC" placeholder="Masukkan {{ 'dueOverhaulC' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="dueOverhaulH">{{ 'dueOverhaulH' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="dueOverhaulH" formControlName="dueOverhaulH" placeholder="Masukkan {{ 'dueOverhaulH' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="dueOverhaulValue">{{ 'dueOverhaulValue' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="dueOverhaulValue" formControlName="dueOverhaulValue" placeholder="Masukkan {{ 'dueOverhaulValue' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="figureIndex">{{ 'figureIndex' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="figureIndex" formControlName="figureIndex" placeholder="Masukkan {{ 'figureIndex' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idAircraft">{{ 'idAircraft' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idAircraft" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idAircraft' | translate }}"> 
+                    <nz-option *ngFor="let item of listAircraft" nzLabel="{{ item.idAircraft }}" nzValue="{{ item.idAircraft }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idEngineerPrisItem">{{ 'idEngineerPrisItem' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idEngineerPrisItem" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idEngineerPrisItem' | translate }}"> 
+                    <nz-option *ngFor="let item of listEngineerPrisItem" nzLabel="{{ item.idEngineerPrisItem }}" nzValue="{{ item.idEngineerPrisItem }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idPart">{{ 'idPart' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idPart" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idPart' | translate }}"> 
+                    <nz-option *ngFor="let item of listPart" nzLabel="{{ item.idPart }}" nzValue="{{ item.idPart }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idPartInstall">{{ 'idPartInstall' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idPartInstall" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idPartInstall' | translate }}"> 
+                    <nz-option *ngFor="let item of listPartInstall" nzLabel="{{ item.idPartInstall }}" nzValue="{{ item.idPartInstall }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="installedInspectionC">{{ 'installedInspectionC' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="installedInspectionC" formControlName="installedInspectionC" placeholder="Masukkan {{ 'installedInspectionC' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="installedInspectionH">{{ 'installedInspectionH' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="installedInspectionH" formControlName="installedInspectionH" placeholder="Masukkan {{ 'installedInspectionH' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="installedInspectionValue">{{ 'installedInspectionValue' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="installedInspectionValue" formControlName="installedInspectionValue" placeholder="Masukkan {{ 'installedInspectionValue' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="installedOverhaulC">{{ 'installedOverhaulC' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="installedOverhaulC" formControlName="installedOverhaulC" placeholder="Masukkan {{ 'installedOverhaulC' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="installedOverhaulH">{{ 'installedOverhaulH' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="installedOverhaulH" formControlName="installedOverhaulH" placeholder="Masukkan {{ 'installedOverhaulH' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="installedOverhaulValue">{{ 'installedOverhaulValue' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="installedOverhaulValue" formControlName="installedOverhaulValue" placeholder="Masukkan {{ 'installedOverhaulValue' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="isfeatured">{{ 'isfeatured' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="isfeatured" formControlName="isfeatured" placeholder="Masukkan {{ 'isfeatured' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="itemIndex">{{ 'itemIndex' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="itemIndex" formControlName="itemIndex" placeholder="Masukkan {{ 'itemIndex' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="oldId">{{ 'oldId' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="oldId" formControlName="oldId" placeholder="Masukkan {{ 'oldId' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="parent">{{ 'parent' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="parent" formControlName="parent" placeholder="Masukkan {{ 'parent' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="qtyInstall">{{ 'qtyInstall' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="qtyInstall" formControlName="qtyInstall" placeholder="Masukkan {{ 'qtyInstall' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="statusInstall">{{ 'statusInstall' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="statusInstall" formControlName="statusInstall" placeholder="Masukkan {{ 'statusInstall' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

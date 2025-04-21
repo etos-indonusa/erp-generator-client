@@ -1,0 +1,262 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.category !== undefined && data?.category !== null">
+    <div class="text-secondary small">
+      {{ 'category' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.category || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.createdAt !== undefined && data?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.descriptionCat !== undefined && data?.descriptionCat !== null">
+    <div class="text-secondary small">
+      {{ 'descriptionCat' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.descriptionCat || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idPartCategory !== undefined && data?.idPartCategory !== null">
+    <div class="text-secondary small">
+      {{ 'idPartCategory' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idPartCategory || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.isDeleted !== undefined && data?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.parentCat !== undefined && data?.parentCat !== null">
+    <div class="text-secondary small">
+      {{ 'parentCat' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.parentCat | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.updatedAt !== undefined && data?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.partCategory">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'partCategory' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partCategory?.category !== undefined && data.partCategory?.category !== null">
+    <div class="text-secondary small">
+      {{ 'category' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partCategory.category || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partCategory?.createdAt !== undefined && data.partCategory?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partCategory.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partCategory?.descriptionCat !== undefined && data.partCategory?.descriptionCat !== null">
+    <div class="text-secondary small">
+      {{ 'descriptionCat' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partCategory.descriptionCat || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partCategory?.idPartCategory !== undefined && data.partCategory?.idPartCategory !== null">
+    <div class="text-secondary small">
+      {{ 'idPartCategory' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partCategory.idPartCategory || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partCategory?.isDeleted !== undefined && data.partCategory?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.partCategory.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.partCategory.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partCategory?.parentCat !== undefined && data.partCategory?.parentCat !== null">
+    <div class="text-secondary small">
+      {{ 'parentCat' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partCategory.parentCat | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partCategory?.updatedAt !== undefined && data.partCategory?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partCategory.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>

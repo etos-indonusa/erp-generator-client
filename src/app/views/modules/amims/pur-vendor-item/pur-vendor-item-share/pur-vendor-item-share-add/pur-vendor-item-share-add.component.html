@@ -1,0 +1,77 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="idMpart">{{ 'idMpart' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idMpart" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idMpart' | translate }}"> 
+                    <nz-option *ngFor="let item of listMpart" nzLabel="{{ item.idMpart }}" nzValue="{{ item.idMpart }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idPurVendor">{{ 'idPurVendor' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idPurVendor" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idPurVendor' | translate }}"> 
+                    <nz-option *ngFor="let item of listPurVendor" nzLabel="{{ item.idPurVendor }}" nzValue="{{ item.idPurVendor }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <label nz-checkbox formControlName="isDeleted">{{ 'isDeleted' | translate }}</label>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="manufacture">{{ 'manufacture' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="manufacture" formControlName="manufacture" placeholder="Masukkan {{ 'manufacture' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="minOrder">{{ 'minOrder' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="minOrder" formControlName="minOrder" placeholder="Masukkan {{ 'minOrder' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="note">{{ 'note' | translate }}</nz-form-label>
+            <nz-form-control>
+                <textarea nz-input id="note" formControlName="note" placeholder="Masukkan {{ 'note' | translate }}"></textarea>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="price">{{ 'price' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="price" formControlName="price" placeholder="Masukkan {{ 'price' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="responseTime">{{ 'responseTime' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="responseTime" formControlName="responseTime" placeholder="Masukkan {{ 'responseTime' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

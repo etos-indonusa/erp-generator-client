@@ -1,0 +1,396 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.createdAt !== undefined && data?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.dateClose !== undefined && data?.dateClose !== null">
+    <div class="text-secondary small">
+      {{ 'dateClose' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.dateClose || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.desk !== undefined && data?.desk !== null">
+    <div class="text-secondary small">
+      {{ 'desk' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.desk || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.hasId !== undefined && data?.hasId !== null">
+    <div class="text-secondary small">
+      {{ 'hasId' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.hasId || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.id !== undefined && data?.id !== null">
+    <div class="text-secondary small">
+      {{ 'id' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.id || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idLogSp !== undefined && data?.idLogSp !== null">
+    <div class="text-secondary small">
+      {{ 'idLogSp' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idLogSp || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.name !== undefined && data?.name !== null">
+    <div class="text-secondary small">
+      {{ 'name' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.name || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.param1 !== undefined && data?.param1 !== null">
+    <div class="text-secondary small">
+      {{ 'param1' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.param1 || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.param2 !== undefined && data?.param2 !== null">
+    <div class="text-secondary small">
+      {{ 'param2' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.param2 || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.sp !== undefined && data?.sp !== null">
+    <div class="text-secondary small">
+      {{ 'sp' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.sp || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.status !== undefined && data?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.logSp">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'logSp' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.logSp?.createdAt !== undefined && data.logSp?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.logSp.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.logSp?.dateClose !== undefined && data.logSp?.dateClose !== null">
+    <div class="text-secondary small">
+      {{ 'dateClose' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.logSp.dateClose || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.logSp?.desk !== undefined && data.logSp?.desk !== null">
+    <div class="text-secondary small">
+      {{ 'desk' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.logSp.desk || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.logSp?.hasId !== undefined && data.logSp?.hasId !== null">
+    <div class="text-secondary small">
+      {{ 'hasId' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.logSp.hasId || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.logSp?.id !== undefined && data.logSp?.id !== null">
+    <div class="text-secondary small">
+      {{ 'id' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.logSp.id || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.logSp?.idLogSp !== undefined && data.logSp?.idLogSp !== null">
+    <div class="text-secondary small">
+      {{ 'idLogSp' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.logSp.idLogSp || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.logSp?.name !== undefined && data.logSp?.name !== null">
+    <div class="text-secondary small">
+      {{ 'name' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.logSp.name || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.logSp?.param1 !== undefined && data.logSp?.param1 !== null">
+    <div class="text-secondary small">
+      {{ 'param1' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.logSp.param1 || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.logSp?.param2 !== undefined && data.logSp?.param2 !== null">
+    <div class="text-secondary small">
+      {{ 'param2' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.logSp.param2 || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.logSp?.sp !== undefined && data.logSp?.sp !== null">
+    <div class="text-secondary small">
+      {{ 'sp' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.logSp.sp || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.logSp?.status !== undefined && data.logSp?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.logSp.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>

@@ -282,7 +282,7 @@ function injectToModulesRouting(moduleName: string) {
             {
                 path: '${moduleName}',
                 loadChildren: () => import('./${moduleName}/${moduleName}.module').then(m => m.${Nama}Module)
-            },`;
+            }`;
 
     if (routingContent.includes(`path: '${moduleName}'`)) {
         console.log(`✅ Route '${moduleName}' sudah ada, skip inject.`);
@@ -338,7 +338,7 @@ function injectToSidebarMenu(moduleName: string) {
     const newEntry = `,{
         label: '${Nama}',
         icon: 'message-square',
-        link: '/app/${moduleName}',
+        link: '/app/${prefix}/${moduleName}',
     }`;
 
     if (menuContent.includes(`link: '/app/${moduleName}'`)) {

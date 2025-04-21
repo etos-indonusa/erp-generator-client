@@ -1,0 +1,89 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="address1">{{ 'address1' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="address1" formControlName="address1" placeholder="Masukkan {{ 'address1' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="address2">{{ 'address2' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="address2" formControlName="address2" placeholder="Masukkan {{ 'address2' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="email">{{ 'email' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="email" formControlName="email" placeholder="Masukkan {{ 'email' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="fax">{{ 'fax' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="fax" formControlName="fax" placeholder="Masukkan {{ 'fax' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="hasIdUser">{{ 'hasIdUser' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="hasIdUser" formControlName="hasIdUser" placeholder="Masukkan {{ 'hasIdUser' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <label nz-checkbox formControlName="isDefault">{{ 'isDefault' | translate }}</label>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="nameCompany">{{ 'nameCompany' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="nameCompany" formControlName="nameCompany" placeholder="Masukkan {{ 'nameCompany' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="phone">{{ 'phone' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="phone" formControlName="phone" placeholder="Masukkan {{ 'phone' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="statusCompany">{{ 'statusCompany' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="statusCompany" formControlName="statusCompany" placeholder="Masukkan {{ 'statusCompany' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="website">{{ 'website' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="website" formControlName="website" placeholder="Masukkan {{ 'website' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

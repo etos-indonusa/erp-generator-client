@@ -1,0 +1,46 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="figure">{{ 'figure' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="figure" formControlName="figure" placeholder="Masukkan {{ 'figure' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idAta">{{ 'idAta' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idAta" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idAta' | translate }}"> 
+                    <nz-option *ngFor="let item of listAta" nzLabel="{{ item.idAta }}" nzValue="{{ item.idAta }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idMpart">{{ 'idMpart' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idMpart" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idMpart' | translate }}"> 
+                    <nz-option *ngFor="let item of listMpart" nzLabel="{{ item.idMpart }}" nzValue="{{ item.idMpart }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="item">{{ 'item' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="item" formControlName="item" placeholder="Masukkan {{ 'item' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

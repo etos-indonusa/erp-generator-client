@@ -1,0 +1,160 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.childnamePartCondition !== undefined && data?.childnamePartCondition !== null">
+    <div class="text-secondary small">
+      {{ 'childnamePartCondition' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.childnamePartCondition || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idPartCondition !== undefined && data?.idPartCondition !== null">
+    <div class="text-secondary small">
+      {{ 'idPartCondition' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idPartCondition || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.isDeleted !== undefined && data?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.partCondition !== undefined && data?.partCondition !== null">
+    <div class="text-secondary small">
+      {{ 'partCondition' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partCondition || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.partCondition">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'partCondition' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partCondition?.childnamePartCondition !== undefined && data.partCondition?.childnamePartCondition !== null">
+    <div class="text-secondary small">
+      {{ 'childnamePartCondition' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partCondition.childnamePartCondition || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partCondition?.idPartCondition !== undefined && data.partCondition?.idPartCondition !== null">
+    <div class="text-secondary small">
+      {{ 'idPartCondition' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partCondition.idPartCondition || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partCondition?.isDeleted !== undefined && data.partCondition?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.partCondition.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.partCondition.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partCondition?.partCondition !== undefined && data.partCondition?.partCondition !== null">
+    <div class="text-secondary small">
+      {{ 'partCondition' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partCondition.partCondition || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>

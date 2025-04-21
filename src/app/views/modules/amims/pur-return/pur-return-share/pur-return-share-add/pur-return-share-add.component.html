@@ -1,0 +1,95 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="dateDeadlineReturn">{{ 'dateDeadlineReturn' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-date-picker formControlName="dateDeadlineReturn" style="width: 100%" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="dateReturn">{{ 'dateReturn' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-date-picker formControlName="dateReturn" style="width: 100%" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idPurPo">{{ 'idPurPo' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idPurPo" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idPurPo' | translate }}"> 
+                    <nz-option *ngFor="let item of listPurPo" nzLabel="{{ item.idPurPo }}" nzValue="{{ item.idPurPo }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idPurVendor">{{ 'idPurVendor' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idPurVendor" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idPurVendor' | translate }}"> 
+                    <nz-option *ngFor="let item of listPurVendor" nzLabel="{{ item.idPurVendor }}" nzValue="{{ item.idPurVendor }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idUser">{{ 'idUser' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idUser" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idUser' | translate }}"> 
+                    <nz-option *ngFor="let item of listUser" nzLabel="{{ item.idUser }}" nzValue="{{ item.idUser }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <label nz-checkbox formControlName="isDeleted">{{ 'isDeleted' | translate }}</label>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="noteReturn">{{ 'noteReturn' | translate }}</nz-form-label>
+            <nz-form-control>
+                <textarea nz-input id="noteReturn" formControlName="noteReturn" placeholder="Masukkan {{ 'noteReturn' | translate }}"></textarea>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="numberReturn">{{ 'numberReturn' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="numberReturn" formControlName="numberReturn" placeholder="Masukkan {{ 'numberReturn' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="statusReturn">{{ 'statusReturn' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="statusReturn" formControlName="statusReturn" placeholder="Masukkan {{ 'statusReturn' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="validasi">{{ 'validasi' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="validasi" formControlName="validasi" placeholder="Masukkan {{ 'validasi' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

@@ -2,6 +2,9 @@ ng-openapi-gen --input https://erp.bogor.vm.devetek.com/api-json --output src/sd
 npx ts-node --project tsconfig.tools.json tools/generate-openapi-sdk-with-fields.ts https://erp.bogor.vm.devetek.com/api-json src/sdk/core
 npx ts-node --project tsconfig.tools.json tools/generate-openapi-sdk-with-fields.ts https://erp-lib.bogor.vm.devetek.com/api-json src/sdk/lib
 
+
+export NODE_OPTIONS="--max-old-space-size=8192"
+
 GENERATOR STANDAR 
 npx ts-node tools/template/generator-crud-standart.ts --nama users
 

@@ -1,0 +1,371 @@
+<nz-card nzTitle="{{filter.status|titlecase}} ({{ total }})" [nzExtra]="extraTemplate" [nzBodyStyle]="{padding:0}">
+    <div class="filter" [hidden]="!filter_extra">
+        <form nz-form [nzLayout]="'vertical'" role="form">
+            <div nz-row [nzGutter]="8">
+                <div nz-col [nzXl]="{ span: 6}" [nzLg]="{ span: 8}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
+                    <nz-form-item>
+                        <nz-form-label>&nbsp;</nz-form-label>
+                        <nz-form-control>
+                            <nz-input-group nzSearch [nzAddOnBefore]="addOnBeforeTemplate"
+                                [nzAddOnAfter]="suffixIconButton" style="width: 100%;">
+                                <input type="text" nz-input placeholder="{{'search'|translate|titlecase}}"
+                                    [(ngModel)]="search" name="search" (keyup.enter)="searchData()" />
+                            </nz-input-group>
+                            <ng-template #suffixIconButton>
+                                <button nz-button nzType="default" nzSearch (click)="searchData()"><span nz-icon
+                                        nzType="search"></span></button>
+                            </ng-template>
+                            <ng-template #addOnBeforeTemplate>
+                                <span nz-icon nzTheme="twotone" nzType="question-circle" nz-popover
+                                    nzPopoverTitle="Pencarian berdasarkan" [nzPopoverContent]="tipsPencarian"
+                                    nzPopoverPlacement="top"></span>
+                                <ng-template #tipsPencarian>
+                                    <div>
+                                        <ul>
+                                            <li *ngFor="let item of search_field">{{ item | translate }}</li>
+                                        </ul>
+                                    </div>
+                                </ng-template>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'complianceC' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.complianceCMin" name="complianceCMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.complianceCMax" name="complianceCMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'complianceH' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.complianceHMin" name="complianceHMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.complianceHMax" name="complianceHMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'compliteC' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.compliteCMin" name="compliteCMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.compliteCMax" name="compliteCMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'compliteH' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.compliteHMin" name="compliteHMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.compliteHMax" name="compliteHMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'idAircraft' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <nz-select [(ngModel)]="filter.idAircraft" name="idAircraft" nzAllowClear>
+                            <nz-option *ngFor="let item of listAircraft" [nzValue]="item.idAircraft" [nzLabel]="item.namaAircraft"></nz-option>
+                        </nz-select>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'idTdDetail' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <nz-select [(ngModel)]="filter.idTdDetail" name="idTdDetail" nzAllowClear>
+                            <nz-option *ngFor="let item of listTdDetail" [nzValue]="item.idTdDetail" [nzLabel]="item.namaTdDetail"></nz-option>
+                        </nz-select>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'idTechLog' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <nz-select [(ngModel)]="filter.idTechLog" name="idTechLog" nzAllowClear>
+                            <nz-option *ngFor="let item of listTechLog" [nzValue]="item.idTechLog" [nzLabel]="item.namaTechLog"></nz-option>
+                        </nz-select>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'isActive' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                    <label nz-checkbox [(ngModel)]="filter.isActive" name="isActive">Yes</label> 
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                
+ 
+                <div nz-col nzSpan="24">
+
+                    <nz-form-item>
+                        <nz-form-control>
+                            <button nz-button nzType="primary" (click)="print()" style="margin-right: 5px;">
+                                <span nz-icon nzType="printer"></span>
+                                Print
+                            </button>
+                            <button nz-button nzType="primary" (click)="searchData()" [nzLoading]="loading"
+                                style="margin-right: 10px;"><span nz-icon nzType="filter"></span>Filter</button>
+                            <button nz-button nzType="default" (click)="resetData()" [nzLoading]="loading"
+                                style="margin-right: 10px;"><span nz-icon nzType="reload"></span>Reset</button>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div style="overflow: auto; background-color: white;">
+        <nz-table nzShowSizeChanger [nzData]="listOfData" [nzFrontPagination]="false" [nzLoading]="loading"
+            [nzTotal]="total" [nzPageSize]="pageSize" [nzPageIndex]="pageIndex"
+            (nzQueryParams)="onQueryParamsChange($event)" nzSize="small">
+            <thead>
+                <tr>
+                    <th   [nzAlign]="'right'">#ID</th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="complianceC" *ngIf="isColVisible('complianceC')">
+                        {{ 'complianceC' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="complianceD" *ngIf="isColVisible('complianceD')">
+                        {{ 'complianceD' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="complianceH" *ngIf="isColVisible('complianceH')">
+                        {{ 'complianceH' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="compliteC" *ngIf="isColVisible('compliteC')">
+                        {{ 'compliteC' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="compliteD" *ngIf="isColVisible('compliteD')">
+                        {{ 'compliteD' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="compliteH" *ngIf="isColVisible('compliteH')">
+                        {{ 'compliteH' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="compliteUser" *ngIf="isColVisible('compliteUser')">
+                        {{ 'compliteUser' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="engineer" *ngIf="isColVisible('engineer')">
+                        {{ 'engineer' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="isActive" *ngIf="isColVisible('isActive')">
+                        {{ 'isActive' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="noteClose" *ngIf="isColVisible('noteClose')">
+                        {{ 'noteClose' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="noteDetail" *ngIf="isColVisible('noteDetail')">
+                        {{ 'noteDetail' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="updatedAt" *ngIf="isColVisible('updatedAt')">
+                        {{ 'updatedAt' | translate }}
+                     </th>
+                    
+                    <th nzWidth="7%" [nzAlign]="'right'">Action</th>
+                </tr> 
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let data of listOfData" style="vertical-align: top;">
+                    <tr>
+                        <td [nzExpand]="expandSet.has(data.idTdDetailAc)"
+                            (nzExpandChange)="onExpandChange(data.idTdDetailAc, $event)">
+                            <nz-badge *ngIf="data.idTdDetailAc!=null" nzColor="{{ data.idTdDetailAc?.toLowerCase() | status }}"
+                                nzText="{{data.idTdDetailAc?.toLowerCase() }}"></nz-badge>  
+                        </td>
+                        
+                        
+                            <td *ngIf="isColVisible('complianceC')">
+                                
+                                                        {{ data.complianceC  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('complianceD')">
+                                
+                                                        {{ data.complianceD  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('complianceH')">
+                                
+                                                        {{ data.complianceH  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('compliteC')">
+                                
+                                                        {{ data.compliteC  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('compliteD')">
+                                
+                                                        {{ data.compliteD  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('compliteH')">
+                                
+                                                        {{ data.compliteH  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('compliteUser')">
+                                
+                                                        {{ data.compliteUser  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('engineer')">
+                                
+                                                        {{ data.engineer  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('isActive')">
+                                
+                                    <nz-tag *ngIf="data.isActive" nzColor="blue">Ya</nz-tag>
+                                    <span *ngIf="!data.isActive">-</span>
+                                    
+                            </td>
+                            
+                            <td *ngIf="isColVisible('noteClose')">
+                                
+                                                        {{ data.noteClose  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('noteDetail')">
+                                
+                                                        {{ data.noteDetail  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('updatedAt')">
+                                
+                                        {{ data.updatedAt | date: 'short' }}
+                                            
+                            </td>
+                            
+
+                        <td [nzAlign]="'right'">
+                            <button nz-button nz-dropdown [nzDropdownMenu]="menu">
+                                Actions
+                                <span nz-icon nzType="down"></span>
+                            </button>
+                            <nz-dropdown-menu #menu="nzDropdownMenu">
+                                <ul nz-menu>
+                                    <li nz-menu-item (click)="detail(data)">
+                                        <span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Detail
+                                    </li>
+                                    <!--  -->
+                                    <li nz-menu-item (click)="update(data)" *ngIf="data.status=='draft'">
+                                        <span nz-icon nzType="edit" nzTheme="outline"></span>&nbsp;&nbsp;Update
+                                    </li>
+                                    <li nz-menu-divider *ngIf="data.status=='draft'"></li>
+                                    <li nz-menu-item nz-menu-item nz-popconfirm class="text-danger"
+                                        *ngIf="data.status=='draft'"
+                                        nzPopconfirmTitle="Apakah Anda yakin akan menghapus data ini?"
+                                        nzPopconfirmPlacement="bottom" (nzOnConfirm)="delete(data.idTdDetailAc)"><span
+                                            nz-icon nzType="delete" nzTheme="outline"></span>
+                                        <a class="m-1 text-danger">&nbsp;&nbsp;Delete</a>
+                                    </li>
+                                </ul>
+                            </nz-dropdown-menu>
+                        </td>
+                    </tr>
+                    <tr [nzExpand]="expandSet.has(data.idTdDetailAc)">
+                        <app-td-detail-ac-share-header [data]="data"></app-td-detail-ac-share-header> 
+                    </tr>
+                </ng-container>
+                 
+            </tbody>
+        </nz-table>
+    </div>
+</nz-card>
+<ng-template #extraTemplate>
+    <ng-container *ngIf="!filter_extra">
+        <nz-input-group nzSearch [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="suffixIconButton"
+            style="max-width: 180px;">
+            <input type="text" nz-input placeholder="{{'search'|translate|titlecase}}" [(ngModel)]="search"
+                name="search" (keyup.enter)="searchData()" />
+        </nz-input-group>
+        <ng-template #suffixIconButton>
+            <button nz-button nzType="default" nzSearch (click)="searchData()"><span nz-icon
+                    nzType="search"></span></button>
+        </ng-template>
+        <ng-template #addOnBeforeTemplate>
+            <span nz-icon nzTheme="twotone" nzType="question-circle" nz-popover nzPopoverTitle="Pencarian berdasarkan"
+                [nzPopoverContent]="tipsPencarian" nzPopoverPlacement="top"></span>
+            <ng-template #tipsPencarian>
+                <div>
+                    <ul>
+                        <li *ngFor="let item of search_field">{{ item | translate }}</li>
+                    </ul>
+                </div>
+            </ng-template>
+        </ng-template>
+    </ng-container>
+    <button nz-button [nzType]="filter_extra ? 'primary' :'default'" style="margin-bottom: 8px;margin-left: 10px;"
+        (click)="filter_extra=!filter_extra">
+        <span nz-icon nzType="filter" nzTheme="outline"></span> Filter
+    </button>
+    <button nz-button nz-dropdown [nzDropdownMenu]="menu" nzTy [nzPlacement]="'topRight'"><i nz-icon nzType="appstore"></i></button>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+            <li nz-menu-item *ngFor="let col of columns">
+                <label nz-checkbox [(ngModel)]="col.show" (ngModelChange)="onColumnToggle()">
+                    {{ col.key | translate }}
+                </label>
+            </li>
+        </ul>
+    </nz-dropdown-menu> 
+    <button nz-button nzType="link" (click)="resetColumns()" nz-tooltip nzTooltipTitle="{{ 'Reset Kolom' | translate }}"><i nz-icon nzType="undo"></i></button>
+
+    <button nz-button style="margin-bottom: 8px;margin-left: 10px;" nzType="primary" (click)="add()">
+        <span nz-icon nzType="plus" nzTheme="outline"></span> Add New
+    </button>
+</ng-template>

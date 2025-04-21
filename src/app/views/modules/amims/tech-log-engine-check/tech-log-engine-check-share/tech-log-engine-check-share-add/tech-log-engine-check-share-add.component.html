@@ -1,0 +1,126 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="alt">{{ 'alt' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="alt" formControlName="alt" placeholder="Masukkan {{ 'alt' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idTechLog">{{ 'idTechLog' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idTechLog" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idTechLog' | translate }}"> 
+                    <nz-option *ngFor="let item of listTechLog" nzLabel="{{ item.idTechLog }}" nzValue="{{ item.idTechLog }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idTechLogEngine">{{ 'idTechLogEngine' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idTechLogEngine" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idTechLogEngine' | translate }}"> 
+                    <nz-option *ngFor="let item of listTechLogEngine" nzLabel="{{ item.idTechLogEngine }}" nzValue="{{ item.idTechLogEngine }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="itt">{{ 'itt' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="itt" formControlName="itt" placeholder="Masukkan {{ 'itt' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="n1">{{ 'n1' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="n1" formControlName="n1" placeholder="Masukkan {{ 'n1' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="n2">{{ 'n2' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="n2" formControlName="n2" placeholder="Masukkan {{ 'n2' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="nr">{{ 'nr' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="nr" formControlName="nr" placeholder="Masukkan {{ 'nr' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="oat">{{ 'oat' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="oat" formControlName="oat" placeholder="Masukkan {{ 'oat' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="oilPress">{{ 'oilPress' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="oilPress" formControlName="oilPress" placeholder="Masukkan {{ 'oilPress' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="oilTemp">{{ 'oilTemp' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="oilTemp" formControlName="oilTemp" placeholder="Masukkan {{ 'oilTemp' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="powerMargin">{{ 'powerMargin' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="powerMargin" formControlName="powerMargin" placeholder="Masukkan {{ 'powerMargin' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="speed">{{ 'speed' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="speed" formControlName="speed" placeholder="Masukkan {{ 'speed' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="t5">{{ 't5' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="t5" formControlName="t5" placeholder="Masukkan {{ 't5' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="torque">{{ 'torque' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="torque" formControlName="torque" placeholder="Masukkan {{ 'torque' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

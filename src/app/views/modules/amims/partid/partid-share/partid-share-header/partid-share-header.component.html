@@ -1,0 +1,112 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.childnamePartid !== undefined && data?.childnamePartid !== null">
+    <div class="text-secondary small">
+      {{ 'childnamePartid' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.childnamePartid || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.description !== undefined && data?.description !== null">
+    <div class="text-secondary small">
+      {{ 'description' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.description || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idPartid !== undefined && data?.idPartid !== null">
+    <div class="text-secondary small">
+      {{ 'idPartid' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idPartid || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.isDeleted !== undefined && data?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.issingle !== undefined && data?.issingle !== null">
+    <div class="text-secondary small">
+      {{ 'issingle' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.issingle" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.issingle">-</span>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.partid !== undefined && data?.partid !== null">
+    <div class="text-secondary small">
+      {{ 'partid' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partid || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+</div>

@@ -1,0 +1,77 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="forFigureIndex">{{ 'forFigureIndex' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="forFigureIndex" formControlName="forFigureIndex" placeholder="Masukkan {{ 'forFigureIndex' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idMpart">{{ 'idMpart' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idMpart" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idMpart' | translate }}"> 
+                    <nz-option *ngFor="let item of listMpart" nzLabel="{{ item.idMpart }}" nzValue="{{ item.idMpart }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idMpcPiro">{{ 'idMpcPiro' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idMpcPiro" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idMpcPiro' | translate }}"> 
+                    <nz-option *ngFor="let item of listMpcPiro" nzLabel="{{ item.idMpcPiro }}" nzValue="{{ item.idMpcPiro }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <label nz-checkbox formControlName="isDeleted">{{ 'isDeleted' | translate }}</label>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="noteItemPiro">{{ 'noteItemPiro' | translate }}</nz-form-label>
+            <nz-form-control>
+                <textarea nz-input id="noteItemPiro" formControlName="noteItemPiro" placeholder="Masukkan {{ 'noteItemPiro' | translate }}"></textarea>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="priority">{{ 'priority' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="priority" formControlName="priority" placeholder="Masukkan {{ 'priority' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="qtyPiro">{{ 'qtyPiro' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="qtyPiro" formControlName="qtyPiro" placeholder="Masukkan {{ 'qtyPiro' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="statusItem">{{ 'statusItem' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="statusItem" formControlName="statusItem" placeholder="Masukkan {{ 'statusItem' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

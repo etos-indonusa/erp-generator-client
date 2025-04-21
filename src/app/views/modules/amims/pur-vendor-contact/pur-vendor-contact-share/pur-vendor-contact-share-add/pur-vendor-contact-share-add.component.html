@@ -1,0 +1,108 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="address">{{ 'address' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="address" formControlName="address" placeholder="Masukkan {{ 'address' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="city">{{ 'city' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="city" formControlName="city" placeholder="Masukkan {{ 'city' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="country">{{ 'country' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="country" formControlName="country" placeholder="Masukkan {{ 'country' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="email">{{ 'email' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="email" formControlName="email" placeholder="Masukkan {{ 'email' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="fax">{{ 'fax' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="fax" formControlName="fax" placeholder="Masukkan {{ 'fax' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idPurVendor">{{ 'idPurVendor' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idPurVendor" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idPurVendor' | translate }}"> 
+                    <nz-option *ngFor="let item of listPurVendor" nzLabel="{{ item.idPurVendor }}" nzValue="{{ item.idPurVendor }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="linePhone">{{ 'linePhone' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="linePhone" formControlName="linePhone" placeholder="Masukkan {{ 'linePhone' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="oldId">{{ 'oldId' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="oldId" formControlName="oldId" placeholder="Masukkan {{ 'oldId' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="phone">{{ 'phone' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="phone" formControlName="phone" placeholder="Masukkan {{ 'phone' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="pic">{{ 'pic' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="pic" formControlName="pic" placeholder="Masukkan {{ 'pic' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="postcode">{{ 'postcode' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="postcode" formControlName="postcode" placeholder="Masukkan {{ 'postcode' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="state">{{ 'state' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="state" formControlName="state" placeholder="Masukkan {{ 'state' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

@@ -1,0 +1,50 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="address">{{ 'address' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="address" formControlName="address" placeholder="Masukkan {{ 'address' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="lat">{{ 'lat' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="lat" formControlName="lat" placeholder="Masukkan {{ 'lat' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="lon">{{ 'lon' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="lon" formControlName="lon" placeholder="Masukkan {{ 'lon' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="nameLocation">{{ 'nameLocation' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="nameLocation" formControlName="nameLocation" placeholder="Masukkan {{ 'nameLocation' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="statusLocation">{{ 'statusLocation' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="statusLocation" formControlName="statusLocation" placeholder="Masukkan {{ 'statusLocation' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

@@ -1,0 +1,46 @@
+
+  <div class="mb-3">
+    <div class="text-secondary small">Created At</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt ? (data.createdAt | date:'short') : '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Last Update</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.lastUpdate || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Name File</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.nameFile || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Number Reference</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.numberReference || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Updated At</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt || '-' }}
+      
+    </div>
+  </div>
+

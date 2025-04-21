@@ -1,0 +1,148 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="adj1">{{ 'adj1' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="adj1" formControlName="adj1" placeholder="Masukkan {{ 'adj1' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="adj2">{{ 'adj2' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="adj2" formControlName="adj2" placeholder="Masukkan {{ 'adj2' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="adj3">{{ 'adj3' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="adj3" formControlName="adj3" placeholder="Masukkan {{ 'adj3' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="dateCycle">{{ 'dateCycle' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-date-picker formControlName="dateCycle" style="width: 100%" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="dateHours">{{ 'dateHours' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-date-picker formControlName="dateHours" style="width: 100%" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="factor1">{{ 'factor1' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="factor1" formControlName="factor1" placeholder="Masukkan {{ 'factor1' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="factor2">{{ 'factor2' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="factor2" formControlName="factor2" placeholder="Masukkan {{ 'factor2' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="factor3">{{ 'factor3' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="factor3" formControlName="factor3" placeholder="Masukkan {{ 'factor3' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="hoistLeft">{{ 'hoistLeft' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="hoistLeft" formControlName="hoistLeft" placeholder="Masukkan {{ 'hoistLeft' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="hoistRight">{{ 'hoistRight' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="hoistRight" formControlName="hoistRight" placeholder="Masukkan {{ 'hoistRight' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idMpart">{{ 'idMpart' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idMpart" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idMpart' | translate }}"> 
+                    <nz-option *ngFor="let item of listMpart" nzLabel="{{ item.idMpart }}" nzValue="{{ item.idMpart }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="noteHours">{{ 'noteHours' | translate }}</nz-form-label>
+            <nz-form-control>
+                <textarea nz-input id="noteHours" formControlName="noteHours" placeholder="Masukkan {{ 'noteHours' | translate }}"></textarea>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="noteRotaryFactor">{{ 'noteRotaryFactor' | translate }}</nz-form-label>
+            <nz-form-control>
+                <textarea nz-input id="noteRotaryFactor" formControlName="noteRotaryFactor" placeholder="Masukkan {{ 'noteRotaryFactor' | translate }}"></textarea>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="revisionCycle">{{ 'revisionCycle' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="revisionCycle" formControlName="revisionCycle" placeholder="Masukkan {{ 'revisionCycle' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="revisionHours">{{ 'revisionHours' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="revisionHours" formControlName="revisionHours" placeholder="Masukkan {{ 'revisionHours' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="rumusCycle">{{ 'rumusCycle' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="rumusCycle" formControlName="rumusCycle" placeholder="Masukkan {{ 'rumusCycle' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="rumusHours">{{ 'rumusHours' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="rumusHours" formControlName="rumusHours" placeholder="Masukkan {{ 'rumusHours' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

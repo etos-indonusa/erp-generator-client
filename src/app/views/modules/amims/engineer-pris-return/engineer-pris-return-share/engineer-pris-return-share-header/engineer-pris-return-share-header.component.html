@@ -1,0 +1,4069 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.dateReturn !== undefined && data?.dateReturn !== null">
+    <div class="text-secondary small">
+      {{ 'dateReturn' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.dateReturn || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idEngineerPris !== undefined && data?.idEngineerPris !== null">
+    <div class="text-secondary small">
+      {{ 'idEngineerPris' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idEngineerPris || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idEngineerPrisReturn !== undefined && data?.idEngineerPrisReturn !== null">
+    <div class="text-secondary small">
+      {{ 'idEngineerPrisReturn' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idEngineerPrisReturn || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.statusReturn !== undefined && data?.statusReturn !== null">
+    <div class="text-secondary small">
+      {{ 'statusReturn' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.statusReturn }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.engineerPris">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'engineerPris' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.createdAt !== undefined && data.engineerPris?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.dateAcc !== undefined && data.engineerPris?.dateAcc !== null">
+    <div class="text-secondary small">
+      {{ 'dateAcc' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.dateAcc || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.dateClose !== undefined && data.engineerPris?.dateClose !== null">
+    <div class="text-secondary small">
+      {{ 'dateClose' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.dateClose || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.dateInstall !== undefined && data.engineerPris?.dateInstall !== null">
+    <div class="text-secondary small">
+      {{ 'dateInstall' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.dateInstall || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.dateIssued !== undefined && data.engineerPris?.dateIssued !== null">
+    <div class="text-secondary small">
+      {{ 'dateIssued' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.dateIssued || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.datePris !== undefined && data.engineerPris?.datePris !== null">
+    <div class="text-secondary small">
+      {{ 'datePris' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.datePris || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.description !== undefined && data.engineerPris?.description !== null">
+    <div class="text-secondary small">
+      {{ 'description' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.description || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.idAircraft !== undefined && data.engineerPris?.idAircraft !== null">
+    <div class="text-secondary small">
+      {{ 'idAircraft' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.idAircraft || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.idEngineerPris !== undefined && data.engineerPris?.idEngineerPris !== null">
+    <div class="text-secondary small">
+      {{ 'idEngineerPris' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.idEngineerPris || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.idPosition !== undefined && data.engineerPris?.idPosition !== null">
+    <div class="text-secondary small">
+      {{ 'idPosition' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.idPosition || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.idSite !== undefined && data.engineerPris?.idSite !== null">
+    <div class="text-secondary small">
+      {{ 'idSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.idSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.idUser !== undefined && data.engineerPris?.idUser !== null">
+    <div class="text-secondary small">
+      {{ 'idUser' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.idUser || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.idUserAcc !== undefined && data.engineerPris?.idUserAcc !== null">
+    <div class="text-secondary small">
+      {{ 'idUserAcc' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.idUserAcc || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.idUserClose !== undefined && data.engineerPris?.idUserClose !== null">
+    <div class="text-secondary small">
+      {{ 'idUserClose' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.idUserClose || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.idUserIssued !== undefined && data.engineerPris?.idUserIssued !== null">
+    <div class="text-secondary small">
+      {{ 'idUserIssued' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.idUserIssued || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.isDeleted !== undefined && data.engineerPris?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.engineerPris.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.engineerPris.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.keyword !== undefined && data.engineerPris?.keyword !== null">
+    <div class="text-secondary small">
+      {{ 'keyword' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.keyword || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.noIndex !== undefined && data.engineerPris?.noIndex !== null">
+    <div class="text-secondary small">
+      {{ 'noIndex' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.noIndex | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.notePris !== undefined && data.engineerPris?.notePris !== null">
+    <div class="text-secondary small">
+      {{ 'notePris' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.notePris || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.numberJo !== undefined && data.engineerPris?.numberJo !== null">
+    <div class="text-secondary small">
+      {{ 'numberJo' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.numberJo || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.numberPris !== undefined && data.engineerPris?.numberPris !== null">
+    <div class="text-secondary small">
+      {{ 'numberPris' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.numberPris || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.numberWp !== undefined && data.engineerPris?.numberWp !== null">
+    <div class="text-secondary small">
+      {{ 'numberWp' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.numberWp || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.priority !== undefined && data.engineerPris?.priority !== null">
+    <div class="text-secondary small">
+      {{ 'priority' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.priority || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.statusPris !== undefined && data.engineerPris?.statusPris !== null">
+    <div class="text-secondary small">
+      {{ 'statusPris' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.engineerPris.statusPris }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.typePris !== undefined && data.engineerPris?.typePris !== null">
+    <div class="text-secondary small">
+      {{ 'typePris' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.typePris || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.updatedAt !== undefined && data.engineerPris?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris?.validasi !== undefined && data.engineerPris?.validasi !== null">
+    <div class="text-secondary small">
+      {{ 'validasi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.validasi | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.engineerPris?.aircraft">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'engineerPris.aircraft' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.airworthiness !== undefined && data.engineerPris.aircraft?.airworthiness !== null">
+    <div class="text-secondary small">
+      {{ 'airworthiness' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.airworthiness || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.autoPilot !== undefined && data.engineerPris.aircraft?.autoPilot !== null">
+    <div class="text-secondary small">
+      {{ 'autoPilot' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.autoPilot || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.auxiliaryTank !== undefined && data.engineerPris.aircraft?.auxiliaryTank !== null">
+    <div class="text-secondary small">
+      {{ 'auxiliaryTank' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.auxiliaryTank || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.baggageCompartmentSpace !== undefined && data.engineerPris.aircraft?.baggageCompartmentSpace !== null">
+    <div class="text-secondary small">
+      {{ 'baggageCompartmentSpace' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.baggageCompartmentSpace || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.cargoAreaMaximumHeight !== undefined && data.engineerPris.aircraft?.cargoAreaMaximumHeight !== null">
+    <div class="text-secondary small">
+      {{ 'cargoAreaMaximumHeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.cargoAreaMaximumHeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.cargoAreaOverallLength !== undefined && data.engineerPris.aircraft?.cargoAreaOverallLength !== null">
+    <div class="text-secondary small">
+      {{ 'cargoAreaOverallLength' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.cargoAreaOverallLength || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.cargoDoor !== undefined && data.engineerPris.aircraft?.cargoDoor !== null">
+    <div class="text-secondary small">
+      {{ 'cargoDoor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.cargoDoor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.certificateOfRegistration !== undefined && data.engineerPris.aircraft?.certificateOfRegistration !== null">
+    <div class="text-secondary small">
+      {{ 'certificateOfRegistration' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.certificateOfRegistration || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.compassSwing !== undefined && data.engineerPris.aircraft?.compassSwing !== null">
+    <div class="text-secondary small">
+      {{ 'compassSwing' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.compassSwing || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.configuration !== undefined && data.engineerPris.aircraft?.configuration !== null">
+    <div class="text-secondary small">
+      {{ 'configuration' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.configuration || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.crew !== undefined && data.engineerPris.aircraft?.crew !== null">
+    <div class="text-secondary small">
+      {{ 'crew' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.crew || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.crewDoor !== undefined && data.engineerPris.aircraft?.crewDoor !== null">
+    <div class="text-secondary small">
+      {{ 'crewDoor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.crewDoor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.crewLifeVest !== undefined && data.engineerPris.aircraft?.crewLifeVest !== null">
+    <div class="text-secondary small">
+      {{ 'crewLifeVest' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.crewLifeVest || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.cvr !== undefined && data.engineerPris.aircraft?.cvr !== null">
+    <div class="text-secondary small">
+      {{ 'cvr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.cvr || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.dme !== undefined && data.engineerPris.aircraft?.dme !== null">
+    <div class="text-secondary small">
+      {{ 'dme' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.dme || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.dualAdfSystem !== undefined && data.engineerPris.aircraft?.dualAdfSystem !== null">
+    <div class="text-secondary small">
+      {{ 'dualAdfSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.dualAdfSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.dualRadioNavigationSystem !== undefined && data.engineerPris.aircraft?.dualRadioNavigationSystem !== null">
+    <div class="text-secondary small">
+      {{ 'dualRadioNavigationSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.dualRadioNavigationSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.dualVhfCommunication !== undefined && data.engineerPris.aircraft?.dualVhfCommunication !== null">
+    <div class="text-secondary small">
+      {{ 'dualVhfCommunication' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.dualVhfCommunication || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.earProtector !== undefined && data.engineerPris.aircraft?.earProtector !== null">
+    <div class="text-secondary small">
+      {{ 'earProtector' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.earProtector || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.emergency !== undefined && data.engineerPris.aircraft?.emergency !== null">
+    <div class="text-secondary small">
+      {{ 'emergency' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.emergency || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.emergencyFloatationGear !== undefined && data.engineerPris.aircraft?.emergencyFloatationGear !== null">
+    <div class="text-secondary small">
+      {{ 'emergencyFloatationGear' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.emergencyFloatationGear || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.emergencyLocateTransmitter !== undefined && data.engineerPris.aircraft?.emergencyLocateTransmitter !== null">
+    <div class="text-secondary small">
+      {{ 'emergencyLocateTransmitter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.emergencyLocateTransmitter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.emptyWeight !== undefined && data.engineerPris.aircraft?.emptyWeight !== null">
+    <div class="text-secondary small">
+      {{ 'emptyWeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.emptyWeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.engine !== undefined && data.engineerPris.aircraft?.engine !== null">
+    <div class="text-secondary small">
+      {{ 'engine' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.engine || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.engineInstrument !== undefined && data.engineerPris.aircraft?.engineInstrument !== null">
+    <div class="text-secondary small">
+      {{ 'engineInstrument' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.engineInstrument || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.externalCargoHook !== undefined && data.engineerPris.aircraft?.externalCargoHook !== null">
+    <div class="text-secondary small">
+      {{ 'externalCargoHook' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.externalCargoHook || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.firstAidKit !== undefined && data.engineerPris.aircraft?.firstAidKit !== null">
+    <div class="text-secondary small">
+      {{ 'firstAidKit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.firstAidKit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.flightControl !== undefined && data.engineerPris.aircraft?.flightControl !== null">
+    <div class="text-secondary small">
+      {{ 'flightControl' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.flightControl || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.flightDirector !== undefined && data.engineerPris.aircraft?.flightDirector !== null">
+    <div class="text-secondary small">
+      {{ 'flightDirector' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.flightDirector || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.floatingBeacon !== undefined && data.engineerPris.aircraft?.floatingBeacon !== null">
+    <div class="text-secondary small">
+      {{ 'floatingBeacon' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.floatingBeacon || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.fullDoc !== undefined && data.engineerPris.aircraft?.fullDoc !== null">
+    <div class="text-secondary small">
+      {{ 'fullDoc' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.fullDoc || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.gps !== undefined && data.engineerPris.aircraft?.gps !== null">
+    <div class="text-secondary small">
+      {{ 'gps' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.gps || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.grossWeight !== undefined && data.engineerPris.aircraft?.grossWeight !== null">
+    <div class="text-secondary small">
+      {{ 'grossWeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.grossWeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.gyroMagneticCompass !== undefined && data.engineerPris.aircraft?.gyroMagneticCompass !== null">
+    <div class="text-secondary small">
+      {{ 'gyroMagneticCompass' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.gyroMagneticCompass || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.hfCommunication !== undefined && data.engineerPris.aircraft?.hfCommunication !== null">
+    <div class="text-secondary small">
+      {{ 'hfCommunication' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.hfCommunication || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.homer !== undefined && data.engineerPris.aircraft?.homer !== null">
+    <div class="text-secondary small">
+      {{ 'homer' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.homer || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.hoverCeilingOge !== undefined && data.engineerPris.aircraft?.hoverCeilingOge !== null">
+    <div class="text-secondary small">
+      {{ 'hoverCeilingOge' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.hoverCeilingOge || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.idAircraftDetail !== undefined && data.engineerPris.aircraft?.idAircraftDetail !== null">
+    <div class="text-secondary small">
+      {{ 'idAircraftDetail' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.idAircraftDetail || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.intercommunicationSystem !== undefined && data.engineerPris.aircraft?.intercommunicationSystem !== null">
+    <div class="text-secondary small">
+      {{ 'intercommunicationSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.intercommunicationSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.internalHoist !== undefined && data.engineerPris.aircraft?.internalHoist !== null">
+    <div class="text-secondary small">
+      {{ 'internalHoist' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.internalHoist || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.landingGear !== undefined && data.engineerPris.aircraft?.landingGear !== null">
+    <div class="text-secondary small">
+      {{ 'landingGear' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.landingGear || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.landingLight !== undefined && data.engineerPris.aircraft?.landingLight !== null">
+    <div class="text-secondary small">
+      {{ 'landingLight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.landingLight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.lifeRaft !== undefined && data.engineerPris.aircraft?.lifeRaft !== null">
+    <div class="text-secondary small">
+      {{ 'lifeRaft' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.lifeRaft || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.lifeVest !== undefined && data.engineerPris.aircraft?.lifeVest !== null">
+    <div class="text-secondary small">
+      {{ 'lifeVest' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.lifeVest || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.mainCabinSpace !== undefined && data.engineerPris.aircraft?.mainCabinSpace !== null">
+    <div class="text-secondary small">
+      {{ 'mainCabinSpace' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.mainCabinSpace || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.mainRotorDiscDiameter !== undefined && data.engineerPris.aircraft?.mainRotorDiscDiameter !== null">
+    <div class="text-secondary small">
+      {{ 'mainRotorDiscDiameter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.mainRotorDiscDiameter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.mainRotorSystem !== undefined && data.engineerPris.aircraft?.mainRotorSystem !== null">
+    <div class="text-secondary small">
+      {{ 'mainRotorSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.mainRotorSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.maximumBaggageCompartment !== undefined && data.engineerPris.aircraft?.maximumBaggageCompartment !== null">
+    <div class="text-secondary small">
+      {{ 'maximumBaggageCompartment' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.maximumBaggageCompartment || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.maximumContinuous !== undefined && data.engineerPris.aircraft?.maximumContinuous !== null">
+    <div class="text-secondary small">
+      {{ 'maximumContinuous' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.maximumContinuous || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.maximumSpeed !== undefined && data.engineerPris.aircraft?.maximumSpeed !== null">
+    <div class="text-secondary small">
+      {{ 'maximumSpeed' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.maximumSpeed || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.medicalStretcher !== undefined && data.engineerPris.aircraft?.medicalStretcher !== null">
+    <div class="text-secondary small">
+      {{ 'medicalStretcher' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.medicalStretcher || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.minute !== undefined && data.engineerPris.aircraft?.minute !== null">
+    <div class="text-secondary small">
+      {{ 'minute' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.minute || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.moreDetail !== undefined && data.engineerPris.aircraft?.moreDetail !== null">
+    <div class="text-secondary small">
+      {{ 'moreDetail' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.moreDetail || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.outputPower !== undefined && data.engineerPris.aircraft?.outputPower !== null">
+    <div class="text-secondary small">
+      {{ 'outputPower' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.outputPower || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.passenger !== undefined && data.engineerPris.aircraft?.passenger !== null">
+    <div class="text-secondary small">
+      {{ 'passenger' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.passenger || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.passengerDoorHeight !== undefined && data.engineerPris.aircraft?.passengerDoorHeight !== null">
+    <div class="text-secondary small">
+      {{ 'passengerDoorHeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.passengerDoorHeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.passengerDoorWidth !== undefined && data.engineerPris.aircraft?.passengerDoorWidth !== null">
+    <div class="text-secondary small">
+      {{ 'passengerDoorWidth' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.passengerDoorWidth || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.payload !== undefined && data.engineerPris.aircraft?.payload !== null">
+    <div class="text-secondary small">
+      {{ 'payload' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.payload || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.personal !== undefined && data.engineerPris.aircraft?.personal !== null">
+    <div class="text-secondary small">
+      {{ 'personal' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.personal || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.poweredBy !== undefined && data.engineerPris.aircraft?.poweredBy !== null">
+    <div class="text-secondary small">
+      {{ 'poweredBy' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.poweredBy || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.publicAddress !== undefined && data.engineerPris.aircraft?.publicAddress !== null">
+    <div class="text-secondary small">
+      {{ 'publicAddress' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.publicAddress || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.radioAltimeter !== undefined && data.engineerPris.aircraft?.radioAltimeter !== null">
+    <div class="text-secondary small">
+      {{ 'radioAltimeter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.radioAltimeter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.radioPermit !== undefined && data.engineerPris.aircraft?.radioPermit !== null">
+    <div class="text-secondary small">
+      {{ 'radioPermit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.radioPermit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.range !== undefined && data.engineerPris.aircraft?.range !== null">
+    <div class="text-secondary small">
+      {{ 'range' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.range || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.searchLight !== undefined && data.engineerPris.aircraft?.searchLight !== null">
+    <div class="text-secondary small">
+      {{ 'searchLight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.searchLight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.standardFuelCapacity !== undefined && data.engineerPris.aircraft?.standardFuelCapacity !== null">
+    <div class="text-secondary small">
+      {{ 'standardFuelCapacity' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.standardFuelCapacity || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.survivalKit !== undefined && data.engineerPris.aircraft?.survivalKit !== null">
+    <div class="text-secondary small">
+      {{ 'survivalKit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.survivalKit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.tailRotorDiameter !== undefined && data.engineerPris.aircraft?.tailRotorDiameter !== null">
+    <div class="text-secondary small">
+      {{ 'tailRotorDiameter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.tailRotorDiameter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.tailRotorSystem !== undefined && data.engineerPris.aircraft?.tailRotorSystem !== null">
+    <div class="text-secondary small">
+      {{ 'tailRotorSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.tailRotorSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.takeOff !== undefined && data.engineerPris.aircraft?.takeOff !== null">
+    <div class="text-secondary small">
+      {{ 'takeOff' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.takeOff || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.transponder !== undefined && data.engineerPris.aircraft?.transponder !== null">
+    <div class="text-secondary small">
+      {{ 'transponder' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.transponder || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.underwaterBeacon !== undefined && data.engineerPris.aircraft?.underwaterBeacon !== null">
+    <div class="text-secondary small">
+      {{ 'underwaterBeacon' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.underwaterBeacon || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.updatedAt !== undefined && data.engineerPris.aircraft?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.usefulWeight !== undefined && data.engineerPris.aircraft?.usefulWeight !== null">
+    <div class="text-secondary small">
+      {{ 'usefulWeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.usefulWeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.vor !== undefined && data.engineerPris.aircraft?.vor !== null">
+    <div class="text-secondary small">
+      {{ 'vor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.vor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.weightAndBalance !== undefined && data.engineerPris.aircraft?.weightAndBalance !== null">
+    <div class="text-secondary small">
+      {{ 'weightAndBalance' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.weightAndBalance || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.withFullPassenger !== undefined && data.engineerPris.aircraft?.withFullPassenger !== null">
+    <div class="text-secondary small">
+      {{ 'withFullPassenger' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.withFullPassenger || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.wxRadar !== undefined && data.engineerPris.aircraft?.wxRadar !== null">
+    <div class="text-secondary small">
+      {{ 'wxRadar' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.wxRadar || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft?.yearOfManufacture !== undefined && data.engineerPris.aircraft?.yearOfManufacture !== null">
+    <div class="text-secondary small">
+      {{ 'yearOfManufacture' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.yearOfManufacture || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.engineerPris.aircraft?.aircraftDetail">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'engineerPris.aircraft.aircraftDetail' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.airworthiness !== undefined && data.engineerPris.aircraft.aircraftDetail?.airworthiness !== null">
+    <div class="text-secondary small">
+      {{ 'airworthiness' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.airworthiness || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.autoPilot !== undefined && data.engineerPris.aircraft.aircraftDetail?.autoPilot !== null">
+    <div class="text-secondary small">
+      {{ 'autoPilot' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.autoPilot || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.auxiliaryTank !== undefined && data.engineerPris.aircraft.aircraftDetail?.auxiliaryTank !== null">
+    <div class="text-secondary small">
+      {{ 'auxiliaryTank' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.auxiliaryTank || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.baggageCompartmentSpace !== undefined && data.engineerPris.aircraft.aircraftDetail?.baggageCompartmentSpace !== null">
+    <div class="text-secondary small">
+      {{ 'baggageCompartmentSpace' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.baggageCompartmentSpace || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.cargoAreaMaximumHeight !== undefined && data.engineerPris.aircraft.aircraftDetail?.cargoAreaMaximumHeight !== null">
+    <div class="text-secondary small">
+      {{ 'cargoAreaMaximumHeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.cargoAreaMaximumHeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.cargoAreaOverallLength !== undefined && data.engineerPris.aircraft.aircraftDetail?.cargoAreaOverallLength !== null">
+    <div class="text-secondary small">
+      {{ 'cargoAreaOverallLength' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.cargoAreaOverallLength || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.cargoDoor !== undefined && data.engineerPris.aircraft.aircraftDetail?.cargoDoor !== null">
+    <div class="text-secondary small">
+      {{ 'cargoDoor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.cargoDoor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.certificateOfRegistration !== undefined && data.engineerPris.aircraft.aircraftDetail?.certificateOfRegistration !== null">
+    <div class="text-secondary small">
+      {{ 'certificateOfRegistration' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.certificateOfRegistration || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.compassSwing !== undefined && data.engineerPris.aircraft.aircraftDetail?.compassSwing !== null">
+    <div class="text-secondary small">
+      {{ 'compassSwing' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.compassSwing || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.configuration !== undefined && data.engineerPris.aircraft.aircraftDetail?.configuration !== null">
+    <div class="text-secondary small">
+      {{ 'configuration' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.configuration || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.crew !== undefined && data.engineerPris.aircraft.aircraftDetail?.crew !== null">
+    <div class="text-secondary small">
+      {{ 'crew' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.crew || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.crewDoor !== undefined && data.engineerPris.aircraft.aircraftDetail?.crewDoor !== null">
+    <div class="text-secondary small">
+      {{ 'crewDoor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.crewDoor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.crewLifeVest !== undefined && data.engineerPris.aircraft.aircraftDetail?.crewLifeVest !== null">
+    <div class="text-secondary small">
+      {{ 'crewLifeVest' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.crewLifeVest || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.cvr !== undefined && data.engineerPris.aircraft.aircraftDetail?.cvr !== null">
+    <div class="text-secondary small">
+      {{ 'cvr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.cvr || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.dme !== undefined && data.engineerPris.aircraft.aircraftDetail?.dme !== null">
+    <div class="text-secondary small">
+      {{ 'dme' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.dme || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.dualAdfSystem !== undefined && data.engineerPris.aircraft.aircraftDetail?.dualAdfSystem !== null">
+    <div class="text-secondary small">
+      {{ 'dualAdfSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.dualAdfSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.dualRadioNavigationSystem !== undefined && data.engineerPris.aircraft.aircraftDetail?.dualRadioNavigationSystem !== null">
+    <div class="text-secondary small">
+      {{ 'dualRadioNavigationSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.dualRadioNavigationSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.dualVhfCommunication !== undefined && data.engineerPris.aircraft.aircraftDetail?.dualVhfCommunication !== null">
+    <div class="text-secondary small">
+      {{ 'dualVhfCommunication' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.dualVhfCommunication || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.earProtector !== undefined && data.engineerPris.aircraft.aircraftDetail?.earProtector !== null">
+    <div class="text-secondary small">
+      {{ 'earProtector' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.earProtector || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.emergency !== undefined && data.engineerPris.aircraft.aircraftDetail?.emergency !== null">
+    <div class="text-secondary small">
+      {{ 'emergency' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.emergency || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.emergencyFloatationGear !== undefined && data.engineerPris.aircraft.aircraftDetail?.emergencyFloatationGear !== null">
+    <div class="text-secondary small">
+      {{ 'emergencyFloatationGear' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.emergencyFloatationGear || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.emergencyLocateTransmitter !== undefined && data.engineerPris.aircraft.aircraftDetail?.emergencyLocateTransmitter !== null">
+    <div class="text-secondary small">
+      {{ 'emergencyLocateTransmitter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.emergencyLocateTransmitter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.emptyWeight !== undefined && data.engineerPris.aircraft.aircraftDetail?.emptyWeight !== null">
+    <div class="text-secondary small">
+      {{ 'emptyWeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.emptyWeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.engine !== undefined && data.engineerPris.aircraft.aircraftDetail?.engine !== null">
+    <div class="text-secondary small">
+      {{ 'engine' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.engine || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.engineInstrument !== undefined && data.engineerPris.aircraft.aircraftDetail?.engineInstrument !== null">
+    <div class="text-secondary small">
+      {{ 'engineInstrument' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.engineInstrument || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.externalCargoHook !== undefined && data.engineerPris.aircraft.aircraftDetail?.externalCargoHook !== null">
+    <div class="text-secondary small">
+      {{ 'externalCargoHook' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.externalCargoHook || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.firstAidKit !== undefined && data.engineerPris.aircraft.aircraftDetail?.firstAidKit !== null">
+    <div class="text-secondary small">
+      {{ 'firstAidKit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.firstAidKit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.flightControl !== undefined && data.engineerPris.aircraft.aircraftDetail?.flightControl !== null">
+    <div class="text-secondary small">
+      {{ 'flightControl' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.flightControl || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.flightDirector !== undefined && data.engineerPris.aircraft.aircraftDetail?.flightDirector !== null">
+    <div class="text-secondary small">
+      {{ 'flightDirector' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.flightDirector || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.floatingBeacon !== undefined && data.engineerPris.aircraft.aircraftDetail?.floatingBeacon !== null">
+    <div class="text-secondary small">
+      {{ 'floatingBeacon' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.floatingBeacon || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.fullDoc !== undefined && data.engineerPris.aircraft.aircraftDetail?.fullDoc !== null">
+    <div class="text-secondary small">
+      {{ 'fullDoc' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.fullDoc || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.gps !== undefined && data.engineerPris.aircraft.aircraftDetail?.gps !== null">
+    <div class="text-secondary small">
+      {{ 'gps' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.gps || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.grossWeight !== undefined && data.engineerPris.aircraft.aircraftDetail?.grossWeight !== null">
+    <div class="text-secondary small">
+      {{ 'grossWeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.grossWeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.gyroMagneticCompass !== undefined && data.engineerPris.aircraft.aircraftDetail?.gyroMagneticCompass !== null">
+    <div class="text-secondary small">
+      {{ 'gyroMagneticCompass' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.gyroMagneticCompass || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.hfCommunication !== undefined && data.engineerPris.aircraft.aircraftDetail?.hfCommunication !== null">
+    <div class="text-secondary small">
+      {{ 'hfCommunication' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.hfCommunication || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.homer !== undefined && data.engineerPris.aircraft.aircraftDetail?.homer !== null">
+    <div class="text-secondary small">
+      {{ 'homer' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.homer || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.hoverCeilingOge !== undefined && data.engineerPris.aircraft.aircraftDetail?.hoverCeilingOge !== null">
+    <div class="text-secondary small">
+      {{ 'hoverCeilingOge' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.hoverCeilingOge || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.idAircraftDetail !== undefined && data.engineerPris.aircraft.aircraftDetail?.idAircraftDetail !== null">
+    <div class="text-secondary small">
+      {{ 'idAircraftDetail' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.idAircraftDetail || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.intercommunicationSystem !== undefined && data.engineerPris.aircraft.aircraftDetail?.intercommunicationSystem !== null">
+    <div class="text-secondary small">
+      {{ 'intercommunicationSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.intercommunicationSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.internalHoist !== undefined && data.engineerPris.aircraft.aircraftDetail?.internalHoist !== null">
+    <div class="text-secondary small">
+      {{ 'internalHoist' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.internalHoist || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.landingGear !== undefined && data.engineerPris.aircraft.aircraftDetail?.landingGear !== null">
+    <div class="text-secondary small">
+      {{ 'landingGear' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.landingGear || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.landingLight !== undefined && data.engineerPris.aircraft.aircraftDetail?.landingLight !== null">
+    <div class="text-secondary small">
+      {{ 'landingLight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.landingLight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.lifeRaft !== undefined && data.engineerPris.aircraft.aircraftDetail?.lifeRaft !== null">
+    <div class="text-secondary small">
+      {{ 'lifeRaft' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.lifeRaft || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.lifeVest !== undefined && data.engineerPris.aircraft.aircraftDetail?.lifeVest !== null">
+    <div class="text-secondary small">
+      {{ 'lifeVest' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.lifeVest || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.mainCabinSpace !== undefined && data.engineerPris.aircraft.aircraftDetail?.mainCabinSpace !== null">
+    <div class="text-secondary small">
+      {{ 'mainCabinSpace' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.mainCabinSpace || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.mainRotorDiscDiameter !== undefined && data.engineerPris.aircraft.aircraftDetail?.mainRotorDiscDiameter !== null">
+    <div class="text-secondary small">
+      {{ 'mainRotorDiscDiameter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.mainRotorDiscDiameter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.mainRotorSystem !== undefined && data.engineerPris.aircraft.aircraftDetail?.mainRotorSystem !== null">
+    <div class="text-secondary small">
+      {{ 'mainRotorSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.mainRotorSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.maximumBaggageCompartment !== undefined && data.engineerPris.aircraft.aircraftDetail?.maximumBaggageCompartment !== null">
+    <div class="text-secondary small">
+      {{ 'maximumBaggageCompartment' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.maximumBaggageCompartment || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.maximumContinuous !== undefined && data.engineerPris.aircraft.aircraftDetail?.maximumContinuous !== null">
+    <div class="text-secondary small">
+      {{ 'maximumContinuous' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.maximumContinuous || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.maximumSpeed !== undefined && data.engineerPris.aircraft.aircraftDetail?.maximumSpeed !== null">
+    <div class="text-secondary small">
+      {{ 'maximumSpeed' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.maximumSpeed || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.medicalStretcher !== undefined && data.engineerPris.aircraft.aircraftDetail?.medicalStretcher !== null">
+    <div class="text-secondary small">
+      {{ 'medicalStretcher' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.medicalStretcher || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.minute !== undefined && data.engineerPris.aircraft.aircraftDetail?.minute !== null">
+    <div class="text-secondary small">
+      {{ 'minute' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.minute || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.moreDetail !== undefined && data.engineerPris.aircraft.aircraftDetail?.moreDetail !== null">
+    <div class="text-secondary small">
+      {{ 'moreDetail' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.moreDetail || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.outputPower !== undefined && data.engineerPris.aircraft.aircraftDetail?.outputPower !== null">
+    <div class="text-secondary small">
+      {{ 'outputPower' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.outputPower || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.passenger !== undefined && data.engineerPris.aircraft.aircraftDetail?.passenger !== null">
+    <div class="text-secondary small">
+      {{ 'passenger' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.passenger || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.passengerDoorHeight !== undefined && data.engineerPris.aircraft.aircraftDetail?.passengerDoorHeight !== null">
+    <div class="text-secondary small">
+      {{ 'passengerDoorHeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.passengerDoorHeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.passengerDoorWidth !== undefined && data.engineerPris.aircraft.aircraftDetail?.passengerDoorWidth !== null">
+    <div class="text-secondary small">
+      {{ 'passengerDoorWidth' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.passengerDoorWidth || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.payload !== undefined && data.engineerPris.aircraft.aircraftDetail?.payload !== null">
+    <div class="text-secondary small">
+      {{ 'payload' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.payload || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.personal !== undefined && data.engineerPris.aircraft.aircraftDetail?.personal !== null">
+    <div class="text-secondary small">
+      {{ 'personal' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.personal || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.poweredBy !== undefined && data.engineerPris.aircraft.aircraftDetail?.poweredBy !== null">
+    <div class="text-secondary small">
+      {{ 'poweredBy' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.poweredBy || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.publicAddress !== undefined && data.engineerPris.aircraft.aircraftDetail?.publicAddress !== null">
+    <div class="text-secondary small">
+      {{ 'publicAddress' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.publicAddress || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.radioAltimeter !== undefined && data.engineerPris.aircraft.aircraftDetail?.radioAltimeter !== null">
+    <div class="text-secondary small">
+      {{ 'radioAltimeter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.radioAltimeter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.radioPermit !== undefined && data.engineerPris.aircraft.aircraftDetail?.radioPermit !== null">
+    <div class="text-secondary small">
+      {{ 'radioPermit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.radioPermit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.range !== undefined && data.engineerPris.aircraft.aircraftDetail?.range !== null">
+    <div class="text-secondary small">
+      {{ 'range' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.range || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.searchLight !== undefined && data.engineerPris.aircraft.aircraftDetail?.searchLight !== null">
+    <div class="text-secondary small">
+      {{ 'searchLight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.searchLight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.standardFuelCapacity !== undefined && data.engineerPris.aircraft.aircraftDetail?.standardFuelCapacity !== null">
+    <div class="text-secondary small">
+      {{ 'standardFuelCapacity' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.standardFuelCapacity || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.survivalKit !== undefined && data.engineerPris.aircraft.aircraftDetail?.survivalKit !== null">
+    <div class="text-secondary small">
+      {{ 'survivalKit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.survivalKit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.tailRotorDiameter !== undefined && data.engineerPris.aircraft.aircraftDetail?.tailRotorDiameter !== null">
+    <div class="text-secondary small">
+      {{ 'tailRotorDiameter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.tailRotorDiameter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.tailRotorSystem !== undefined && data.engineerPris.aircraft.aircraftDetail?.tailRotorSystem !== null">
+    <div class="text-secondary small">
+      {{ 'tailRotorSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.tailRotorSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.takeOff !== undefined && data.engineerPris.aircraft.aircraftDetail?.takeOff !== null">
+    <div class="text-secondary small">
+      {{ 'takeOff' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.takeOff || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.transponder !== undefined && data.engineerPris.aircraft.aircraftDetail?.transponder !== null">
+    <div class="text-secondary small">
+      {{ 'transponder' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.transponder || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.underwaterBeacon !== undefined && data.engineerPris.aircraft.aircraftDetail?.underwaterBeacon !== null">
+    <div class="text-secondary small">
+      {{ 'underwaterBeacon' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.underwaterBeacon || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.updatedAt !== undefined && data.engineerPris.aircraft.aircraftDetail?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.usefulWeight !== undefined && data.engineerPris.aircraft.aircraftDetail?.usefulWeight !== null">
+    <div class="text-secondary small">
+      {{ 'usefulWeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.usefulWeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.vor !== undefined && data.engineerPris.aircraft.aircraftDetail?.vor !== null">
+    <div class="text-secondary small">
+      {{ 'vor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.vor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.weightAndBalance !== undefined && data.engineerPris.aircraft.aircraftDetail?.weightAndBalance !== null">
+    <div class="text-secondary small">
+      {{ 'weightAndBalance' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.weightAndBalance || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.withFullPassenger !== undefined && data.engineerPris.aircraft.aircraftDetail?.withFullPassenger !== null">
+    <div class="text-secondary small">
+      {{ 'withFullPassenger' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.withFullPassenger || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.wxRadar !== undefined && data.engineerPris.aircraft.aircraftDetail?.wxRadar !== null">
+    <div class="text-secondary small">
+      {{ 'wxRadar' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.wxRadar || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.aircraft.aircraftDetail?.yearOfManufacture !== undefined && data.engineerPris.aircraft.aircraftDetail?.yearOfManufacture !== null">
+    <div class="text-secondary small">
+      {{ 'yearOfManufacture' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.aircraft.aircraftDetail.yearOfManufacture || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.engineerPris?.position">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'engineerPris.position' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.position?.code !== undefined && data.engineerPris.position?.code !== null">
+    <div class="text-secondary small">
+      {{ 'code' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.position.code || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.position?.description !== undefined && data.engineerPris.position?.description !== null">
+    <div class="text-secondary small">
+      {{ 'description' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.position.description || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.position?.idPosition !== undefined && data.engineerPris.position?.idPosition !== null">
+    <div class="text-secondary small">
+      {{ 'idPosition' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.position.idPosition || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.position?.isDeleted !== undefined && data.engineerPris.position?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.engineerPris.position.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.engineerPris.position.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.position?.position !== undefined && data.engineerPris.position?.position !== null">
+    <div class="text-secondary small">
+      {{ 'position' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.position.position || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.engineerPris?.site">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'engineerPris.site' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.address !== undefined && data.engineerPris.site?.address !== null">
+    <div class="text-secondary small">
+      {{ 'address' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.address || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.city !== undefined && data.engineerPris.site?.city !== null">
+    <div class="text-secondary small">
+      {{ 'city' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.city || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.codeSite !== undefined && data.engineerPris.site?.codeSite !== null">
+    <div class="text-secondary small">
+      {{ 'codeSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.codeSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.contactname !== undefined && data.engineerPris.site?.contactname !== null">
+    <div class="text-secondary small">
+      {{ 'contactname' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.contactname || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.country !== undefined && data.engineerPris.site?.country !== null">
+    <div class="text-secondary small">
+      {{ 'country' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.country || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.createdAt !== undefined && data.engineerPris.site?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.emailaddress !== undefined && data.engineerPris.site?.emailaddress !== null">
+    <div class="text-secondary small">
+      {{ 'emailaddress' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.emailaddress || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.fax !== undefined && data.engineerPris.site?.fax !== null">
+    <div class="text-secondary small">
+      {{ 'fax' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.fax || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.idNewSite !== undefined && data.engineerPris.site?.idNewSite !== null">
+    <div class="text-secondary small">
+      {{ 'idNewSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.idNewSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.idSite !== undefined && data.engineerPris.site?.idSite !== null">
+    <div class="text-secondary small">
+      {{ 'idSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.idSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.idUser !== undefined && data.engineerPris.site?.idUser !== null">
+    <div class="text-secondary small">
+      {{ 'idUser' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.idUser || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.isDeleted !== undefined && data.engineerPris.site?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.engineerPris.site.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.engineerPris.site.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.isMain !== undefined && data.engineerPris.site?.isMain !== null">
+    <div class="text-secondary small">
+      {{ 'isMain' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.engineerPris.site.isMain" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.engineerPris.site.isMain">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.isStore !== undefined && data.engineerPris.site?.isStore !== null">
+    <div class="text-secondary small">
+      {{ 'isStore' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.engineerPris.site.isStore" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.engineerPris.site.isStore">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.logoSite !== undefined && data.engineerPris.site?.logoSite !== null">
+    <div class="text-secondary small">
+      {{ 'logoSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.logoSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.mobile !== undefined && data.engineerPris.site?.mobile !== null">
+    <div class="text-secondary small">
+      {{ 'mobile' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.mobile || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.oldId !== undefined && data.engineerPris.site?.oldId !== null">
+    <div class="text-secondary small">
+      {{ 'oldId' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.oldId || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.parentSite !== undefined && data.engineerPris.site?.parentSite !== null">
+    <div class="text-secondary small">
+      {{ 'parentSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.parentSite | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.site !== undefined && data.engineerPris.site?.site !== null">
+    <div class="text-secondary small">
+      {{ 'site' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.site || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.statusSite !== undefined && data.engineerPris.site?.statusSite !== null">
+    <div class="text-secondary small">
+      {{ 'statusSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.engineerPris.site.statusSite }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.telephone !== undefined && data.engineerPris.site?.telephone !== null">
+    <div class="text-secondary small">
+      {{ 'telephone' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.telephone || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.typeSite !== undefined && data.engineerPris.site?.typeSite !== null">
+    <div class="text-secondary small">
+      {{ 'typeSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.typeSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.updatedAt !== undefined && data.engineerPris.site?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site?.validation !== undefined && data.engineerPris.site?.validation !== null">
+    <div class="text-secondary small">
+      {{ 'validation' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.validation | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.engineerPris.site?.user">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'engineerPris.site.user' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site.user?.createdAt !== undefined && data.engineerPris.site.user?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.user.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site.user?.deskripsi !== undefined && data.engineerPris.site.user?.deskripsi !== null">
+    <div class="text-secondary small">
+      {{ 'deskripsi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.user.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site.user?.idUserGroup !== undefined && data.engineerPris.site.user?.idUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'idUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.user.idUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site.user?.namaUserGroup !== undefined && data.engineerPris.site.user?.namaUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'namaUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.user.namaUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site.user?.status !== undefined && data.engineerPris.site.user?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.engineerPris.site.user.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.engineerPris.site.user?.userGroup">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'engineerPris.site.user.userGroup' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site.user.userGroup?.createdAt !== undefined && data.engineerPris.site.user.userGroup?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.user.userGroup.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site.user.userGroup?.deskripsi !== undefined && data.engineerPris.site.user.userGroup?.deskripsi !== null">
+    <div class="text-secondary small">
+      {{ 'deskripsi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.user.userGroup.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site.user.userGroup?.idUserGroup !== undefined && data.engineerPris.site.user.userGroup?.idUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'idUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.user.userGroup.idUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site.user.userGroup?.namaUserGroup !== undefined && data.engineerPris.site.user.userGroup?.namaUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'namaUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPris.site.user.userGroup.namaUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPris.site.user.userGroup?.status !== undefined && data.engineerPris.site.user.userGroup?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.engineerPris.site.user.userGroup.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.engineerPrisReturn">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'engineerPrisReturn' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPrisReturn?.dateReturn !== undefined && data.engineerPrisReturn?.dateReturn !== null">
+    <div class="text-secondary small">
+      {{ 'dateReturn' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPrisReturn.dateReturn || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPrisReturn?.idEngineerPris !== undefined && data.engineerPrisReturn?.idEngineerPris !== null">
+    <div class="text-secondary small">
+      {{ 'idEngineerPris' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPrisReturn.idEngineerPris || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPrisReturn?.idEngineerPrisReturn !== undefined && data.engineerPrisReturn?.idEngineerPrisReturn !== null">
+    <div class="text-secondary small">
+      {{ 'idEngineerPrisReturn' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPrisReturn.idEngineerPrisReturn || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPrisReturn?.statusReturn !== undefined && data.engineerPrisReturn?.statusReturn !== null">
+    <div class="text-secondary small">
+      {{ 'statusReturn' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.engineerPrisReturn.statusReturn }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>

@@ -129,5 +129,7 @@ function generateBarrelFile(dirPath: string) {
 const servicesDir = path.join(OUTPUT_PATH, 'services');
 if (fs.existsSync(MODEL_DIR)) generateBarrelFile(MODEL_DIR);
 if (fs.existsSync(servicesDir)) generateBarrelFile(servicesDir);
+if (fs.existsSync(FIELDS_DIR)) generateBarrelFile(FIELDS_DIR);
+if (fs.existsSync(SCHEMA_DIR)) generateBarrelFile(SCHEMA_DIR);
 
 console.log('🎉 SDK, Fields, Schema, and index.ts generation complete!');

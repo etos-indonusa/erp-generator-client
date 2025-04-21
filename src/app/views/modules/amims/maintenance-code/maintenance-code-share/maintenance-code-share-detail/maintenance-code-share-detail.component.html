@@ -1,0 +1,65 @@
+
+  <div class="mb-3">
+    <div class="text-secondary small">Classification</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.classification || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Description Maintenance</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.descriptionMaintenance || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Is Deleted</div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Maintenance Code</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.maintenanceCode || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Old Id</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.oldId || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Reference</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.reference || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Updated At</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt || '-' }}
+      
+    </div>
+  </div>
+

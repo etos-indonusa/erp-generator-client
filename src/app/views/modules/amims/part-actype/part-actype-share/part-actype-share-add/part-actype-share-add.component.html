@@ -1,0 +1,40 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="idActype">{{ 'idActype' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idActype" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idActype' | translate }}"> 
+                    <nz-option *ngFor="let item of listActype" nzLabel="{{ item.idActype }}" nzValue="{{ item.idActype }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idActypeOld">{{ 'idActypeOld' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idActypeOld" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idActypeOld' | translate }}"> 
+                    <nz-option *ngFor="let item of listActypeOld" nzLabel="{{ item.idActypeOld }}" nzValue="{{ item.idActypeOld }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idMpart">{{ 'idMpart' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idMpart" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idMpart' | translate }}"> 
+                    <nz-option *ngFor="let item of listMpart" nzLabel="{{ item.idMpart }}" nzValue="{{ item.idMpart }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

@@ -1,0 +1,94 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.code !== undefined && data?.code !== null">
+    <div class="text-secondary small">
+      {{ 'code' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.code || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.description !== undefined && data?.description !== null">
+    <div class="text-secondary small">
+      {{ 'description' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.description || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idPosition !== undefined && data?.idPosition !== null">
+    <div class="text-secondary small">
+      {{ 'idPosition' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idPosition || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.isDeleted !== undefined && data?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.position !== undefined && data?.position !== null">
+    <div class="text-secondary small">
+      {{ 'position' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.position || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+</div>

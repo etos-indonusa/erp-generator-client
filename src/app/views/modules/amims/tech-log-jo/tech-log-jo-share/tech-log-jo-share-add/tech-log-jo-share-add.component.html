@@ -1,0 +1,73 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="dateClose">{{ 'dateClose' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-date-picker formControlName="dateClose" style="width: 100%" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idMpcJo">{{ 'idMpcJo' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idMpcJo" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idMpcJo' | translate }}"> 
+                    <nz-option *ngFor="let item of listMpcJo" nzLabel="{{ item.idMpcJo }}" nzValue="{{ item.idMpcJo }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idPart">{{ 'idPart' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idPart" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idPart' | translate }}"> 
+                    <nz-option *ngFor="let item of listPart" nzLabel="{{ item.idPart }}" nzValue="{{ item.idPart }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idTechLog">{{ 'idTechLog' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idTechLog" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idTechLog' | translate }}"> 
+                    <nz-option *ngFor="let item of listTechLog" nzLabel="{{ item.idTechLog }}" nzValue="{{ item.idTechLog }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idTechLogClose">{{ 'idTechLogClose' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idTechLogClose" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idTechLogClose' | translate }}"> 
+                    <nz-option *ngFor="let item of listTechLogClose" nzLabel="{{ item.idTechLogClose }}" nzValue="{{ item.idTechLogClose }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <label nz-checkbox formControlName="isContinue">{{ 'isContinue' | translate }}</label>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="timeClose">{{ 'timeClose' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="timeClose" formControlName="timeClose" placeholder="Masukkan {{ 'timeClose' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

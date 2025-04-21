@@ -1,0 +1,106 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="dateAccQa">{{ 'dateAccQa' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-date-picker formControlName="dateAccQa" style="width: 100%" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="dateMaintenance">{{ 'dateMaintenance' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-date-picker formControlName="dateMaintenance" style="width: 100%" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="doc">{{ 'doc' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="doc" formControlName="doc" placeholder="Masukkan {{ 'doc' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idEngineerRti">{{ 'idEngineerRti' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idEngineerRti" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idEngineerRti' | translate }}"> 
+                    <nz-option *ngFor="let item of listEngineerRti" nzLabel="{{ item.idEngineerRti }}" nzValue="{{ item.idEngineerRti }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idSite">{{ 'idSite' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idSite" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idSite' | translate }}"> 
+                    <nz-option *ngFor="let item of listSite" nzLabel="{{ item.idSite }}" nzValue="{{ item.idSite }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idUserMaintenance">{{ 'idUserMaintenance' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idUserMaintenance" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idUserMaintenance' | translate }}"> 
+                    <nz-option *ngFor="let item of listUserMaintenance" nzLabel="{{ item.idUserMaintenance }}" nzValue="{{ item.idUserMaintenance }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idUserQa">{{ 'idUserQa' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idUserQa" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idUserQa' | translate }}"> 
+                    <nz-option *ngFor="let item of listUserQa" nzLabel="{{ item.idUserQa }}" nzValue="{{ item.idUserQa }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="numberMaintenance">{{ 'numberMaintenance' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="numberMaintenance" formControlName="numberMaintenance" placeholder="Masukkan {{ 'numberMaintenance' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="reportMaintenance">{{ 'reportMaintenance' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="reportMaintenance" formControlName="reportMaintenance" placeholder="Masukkan {{ 'reportMaintenance' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="statusMaintenance">{{ 'statusMaintenance' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="statusMaintenance" formControlName="statusMaintenance" placeholder="Masukkan {{ 'statusMaintenance' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="typeMaintenance">{{ 'typeMaintenance' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="typeMaintenance" formControlName="typeMaintenance" placeholder="Masukkan {{ 'typeMaintenance' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

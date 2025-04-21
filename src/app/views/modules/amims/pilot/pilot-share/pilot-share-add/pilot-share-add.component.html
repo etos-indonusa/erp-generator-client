@@ -1,0 +1,49 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="hashIdUser">{{ 'hashIdUser' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="hashIdUser" formControlName="hashIdUser" placeholder="Masukkan {{ 'hashIdUser' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <label nz-checkbox formControlName="isDeleted">{{ 'isDeleted' | translate }}</label>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="namePilot">{{ 'namePilot' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="namePilot" formControlName="namePilot" placeholder="Masukkan {{ 'namePilot' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="status">{{ 'status' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="status" formControlName="status" placeholder="Masukkan {{ 'status' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="type">{{ 'type' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="type" formControlName="type" placeholder="Masukkan {{ 'type' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

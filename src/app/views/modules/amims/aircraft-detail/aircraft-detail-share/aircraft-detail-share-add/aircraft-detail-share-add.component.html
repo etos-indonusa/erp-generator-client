@@ -1,0 +1,626 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="airworthiness">{{ 'airworthiness' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="airworthiness" formControlName="airworthiness" placeholder="Masukkan {{ 'airworthiness' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="autoPilot">{{ 'autoPilot' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="autoPilot" formControlName="autoPilot" placeholder="Masukkan {{ 'autoPilot' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="auxiliaryTank">{{ 'auxiliaryTank' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="auxiliaryTank" formControlName="auxiliaryTank" placeholder="Masukkan {{ 'auxiliaryTank' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="baggageCompartmentSpace">{{ 'baggageCompartmentSpace' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="baggageCompartmentSpace" formControlName="baggageCompartmentSpace" placeholder="Masukkan {{ 'baggageCompartmentSpace' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="cargoAreaMaximumHeight">{{ 'cargoAreaMaximumHeight' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="cargoAreaMaximumHeight" formControlName="cargoAreaMaximumHeight" placeholder="Masukkan {{ 'cargoAreaMaximumHeight' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="cargoAreaOverallLength">{{ 'cargoAreaOverallLength' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="cargoAreaOverallLength" formControlName="cargoAreaOverallLength" placeholder="Masukkan {{ 'cargoAreaOverallLength' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="cargoDoor">{{ 'cargoDoor' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="cargoDoor" formControlName="cargoDoor" placeholder="Masukkan {{ 'cargoDoor' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="certificateOfRegistration">{{ 'certificateOfRegistration' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="certificateOfRegistration" formControlName="certificateOfRegistration" placeholder="Masukkan {{ 'certificateOfRegistration' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="compassSwing">{{ 'compassSwing' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="compassSwing" formControlName="compassSwing" placeholder="Masukkan {{ 'compassSwing' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="configuration">{{ 'configuration' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="configuration" formControlName="configuration" placeholder="Masukkan {{ 'configuration' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="crew">{{ 'crew' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="crew" formControlName="crew" placeholder="Masukkan {{ 'crew' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="crewDoor">{{ 'crewDoor' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="crewDoor" formControlName="crewDoor" placeholder="Masukkan {{ 'crewDoor' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="crewLifeVest">{{ 'crewLifeVest' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="crewLifeVest" formControlName="crewLifeVest" placeholder="Masukkan {{ 'crewLifeVest' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="cvr">{{ 'cvr' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="cvr" formControlName="cvr" placeholder="Masukkan {{ 'cvr' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="dme">{{ 'dme' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="dme" formControlName="dme" placeholder="Masukkan {{ 'dme' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="dualAdfSystem">{{ 'dualAdfSystem' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="dualAdfSystem" formControlName="dualAdfSystem" placeholder="Masukkan {{ 'dualAdfSystem' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="dualRadioNavigationSystem">{{ 'dualRadioNavigationSystem' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="dualRadioNavigationSystem" formControlName="dualRadioNavigationSystem" placeholder="Masukkan {{ 'dualRadioNavigationSystem' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="dualVhfCommunication">{{ 'dualVhfCommunication' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="dualVhfCommunication" formControlName="dualVhfCommunication" placeholder="Masukkan {{ 'dualVhfCommunication' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="earProtector">{{ 'earProtector' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="earProtector" formControlName="earProtector" placeholder="Masukkan {{ 'earProtector' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="emergency">{{ 'emergency' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="emergency" formControlName="emergency" placeholder="Masukkan {{ 'emergency' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="emergencyFloatationGear">{{ 'emergencyFloatationGear' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="emergencyFloatationGear" formControlName="emergencyFloatationGear" placeholder="Masukkan {{ 'emergencyFloatationGear' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="emergencyLocateTransmitter">{{ 'emergencyLocateTransmitter' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="emergencyLocateTransmitter" formControlName="emergencyLocateTransmitter" placeholder="Masukkan {{ 'emergencyLocateTransmitter' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="emptyWeight">{{ 'emptyWeight' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="emptyWeight" formControlName="emptyWeight" placeholder="Masukkan {{ 'emptyWeight' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="engine">{{ 'engine' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="engine" formControlName="engine" placeholder="Masukkan {{ 'engine' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="engineInstrument">{{ 'engineInstrument' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="engineInstrument" formControlName="engineInstrument" placeholder="Masukkan {{ 'engineInstrument' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="externalCargoHook">{{ 'externalCargoHook' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="externalCargoHook" formControlName="externalCargoHook" placeholder="Masukkan {{ 'externalCargoHook' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="firstAidKit">{{ 'firstAidKit' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="firstAidKit" formControlName="firstAidKit" placeholder="Masukkan {{ 'firstAidKit' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="flightControl">{{ 'flightControl' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="flightControl" formControlName="flightControl" placeholder="Masukkan {{ 'flightControl' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="flightDirector">{{ 'flightDirector' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="flightDirector" formControlName="flightDirector" placeholder="Masukkan {{ 'flightDirector' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="floatingBeacon">{{ 'floatingBeacon' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="floatingBeacon" formControlName="floatingBeacon" placeholder="Masukkan {{ 'floatingBeacon' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="fullDoc">{{ 'fullDoc' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="fullDoc" formControlName="fullDoc" placeholder="Masukkan {{ 'fullDoc' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="gps">{{ 'gps' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="gps" formControlName="gps" placeholder="Masukkan {{ 'gps' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="grossWeight">{{ 'grossWeight' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="grossWeight" formControlName="grossWeight" placeholder="Masukkan {{ 'grossWeight' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="gyroMagneticCompass">{{ 'gyroMagneticCompass' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="gyroMagneticCompass" formControlName="gyroMagneticCompass" placeholder="Masukkan {{ 'gyroMagneticCompass' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="hfCommunication">{{ 'hfCommunication' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="hfCommunication" formControlName="hfCommunication" placeholder="Masukkan {{ 'hfCommunication' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="homer">{{ 'homer' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="homer" formControlName="homer" placeholder="Masukkan {{ 'homer' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="hoverCeilingOge">{{ 'hoverCeilingOge' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="hoverCeilingOge" formControlName="hoverCeilingOge" placeholder="Masukkan {{ 'hoverCeilingOge' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="intercommunicationSystem">{{ 'intercommunicationSystem' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="intercommunicationSystem" formControlName="intercommunicationSystem" placeholder="Masukkan {{ 'intercommunicationSystem' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="internalHoist">{{ 'internalHoist' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="internalHoist" formControlName="internalHoist" placeholder="Masukkan {{ 'internalHoist' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="landingGear">{{ 'landingGear' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="landingGear" formControlName="landingGear" placeholder="Masukkan {{ 'landingGear' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="landingLight">{{ 'landingLight' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="landingLight" formControlName="landingLight" placeholder="Masukkan {{ 'landingLight' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="lifeRaft">{{ 'lifeRaft' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="lifeRaft" formControlName="lifeRaft" placeholder="Masukkan {{ 'lifeRaft' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="lifeVest">{{ 'lifeVest' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="lifeVest" formControlName="lifeVest" placeholder="Masukkan {{ 'lifeVest' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="mainCabinSpace">{{ 'mainCabinSpace' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="mainCabinSpace" formControlName="mainCabinSpace" placeholder="Masukkan {{ 'mainCabinSpace' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="mainRotorDiscDiameter">{{ 'mainRotorDiscDiameter' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="mainRotorDiscDiameter" formControlName="mainRotorDiscDiameter" placeholder="Masukkan {{ 'mainRotorDiscDiameter' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="mainRotorSystem">{{ 'mainRotorSystem' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="mainRotorSystem" formControlName="mainRotorSystem" placeholder="Masukkan {{ 'mainRotorSystem' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="maximumBaggageCompartment">{{ 'maximumBaggageCompartment' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="maximumBaggageCompartment" formControlName="maximumBaggageCompartment" placeholder="Masukkan {{ 'maximumBaggageCompartment' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="maximumContinuous">{{ 'maximumContinuous' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="maximumContinuous" formControlName="maximumContinuous" placeholder="Masukkan {{ 'maximumContinuous' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="maximumSpeed">{{ 'maximumSpeed' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="maximumSpeed" formControlName="maximumSpeed" placeholder="Masukkan {{ 'maximumSpeed' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="medicalStretcher">{{ 'medicalStretcher' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="medicalStretcher" formControlName="medicalStretcher" placeholder="Masukkan {{ 'medicalStretcher' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="minute">{{ 'minute' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="minute" formControlName="minute" placeholder="Masukkan {{ 'minute' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="moreDetail">{{ 'moreDetail' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="moreDetail" formControlName="moreDetail" placeholder="Masukkan {{ 'moreDetail' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="outputPower">{{ 'outputPower' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="outputPower" formControlName="outputPower" placeholder="Masukkan {{ 'outputPower' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="passenger">{{ 'passenger' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="passenger" formControlName="passenger" placeholder="Masukkan {{ 'passenger' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="passengerDoorHeight">{{ 'passengerDoorHeight' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="passengerDoorHeight" formControlName="passengerDoorHeight" placeholder="Masukkan {{ 'passengerDoorHeight' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="passengerDoorWidth">{{ 'passengerDoorWidth' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="passengerDoorWidth" formControlName="passengerDoorWidth" placeholder="Masukkan {{ 'passengerDoorWidth' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="payload">{{ 'payload' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="payload" formControlName="payload" placeholder="Masukkan {{ 'payload' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="personal">{{ 'personal' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="personal" formControlName="personal" placeholder="Masukkan {{ 'personal' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="poweredBy">{{ 'poweredBy' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="poweredBy" formControlName="poweredBy" placeholder="Masukkan {{ 'poweredBy' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="publicAddress">{{ 'publicAddress' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="publicAddress" formControlName="publicAddress" placeholder="Masukkan {{ 'publicAddress' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="radioAltimeter">{{ 'radioAltimeter' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="radioAltimeter" formControlName="radioAltimeter" placeholder="Masukkan {{ 'radioAltimeter' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="radioPermit">{{ 'radioPermit' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="radioPermit" formControlName="radioPermit" placeholder="Masukkan {{ 'radioPermit' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="range">{{ 'range' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="range" formControlName="range" placeholder="Masukkan {{ 'range' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="searchLight">{{ 'searchLight' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="searchLight" formControlName="searchLight" placeholder="Masukkan {{ 'searchLight' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="standardFuelCapacity">{{ 'standardFuelCapacity' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="standardFuelCapacity" formControlName="standardFuelCapacity" placeholder="Masukkan {{ 'standardFuelCapacity' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="survivalKit">{{ 'survivalKit' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="survivalKit" formControlName="survivalKit" placeholder="Masukkan {{ 'survivalKit' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="tailRotorDiameter">{{ 'tailRotorDiameter' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="tailRotorDiameter" formControlName="tailRotorDiameter" placeholder="Masukkan {{ 'tailRotorDiameter' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="tailRotorSystem">{{ 'tailRotorSystem' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="tailRotorSystem" formControlName="tailRotorSystem" placeholder="Masukkan {{ 'tailRotorSystem' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="takeOff">{{ 'takeOff' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="takeOff" formControlName="takeOff" placeholder="Masukkan {{ 'takeOff' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="transponder">{{ 'transponder' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="transponder" formControlName="transponder" placeholder="Masukkan {{ 'transponder' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="underwaterBeacon">{{ 'underwaterBeacon' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="underwaterBeacon" formControlName="underwaterBeacon" placeholder="Masukkan {{ 'underwaterBeacon' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="usefulWeight">{{ 'usefulWeight' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="usefulWeight" formControlName="usefulWeight" placeholder="Masukkan {{ 'usefulWeight' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="vor">{{ 'vor' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="vor" formControlName="vor" placeholder="Masukkan {{ 'vor' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="weightAndBalance">{{ 'weightAndBalance' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="weightAndBalance" formControlName="weightAndBalance" placeholder="Masukkan {{ 'weightAndBalance' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="withFullPassenger">{{ 'withFullPassenger' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="withFullPassenger" formControlName="withFullPassenger" placeholder="Masukkan {{ 'withFullPassenger' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="wxRadar">{{ 'wxRadar' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="wxRadar" formControlName="wxRadar" placeholder="Masukkan {{ 'wxRadar' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="yearOfManufacture">{{ 'yearOfManufacture' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="yearOfManufacture" formControlName="yearOfManufacture" placeholder="Masukkan {{ 'yearOfManufacture' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

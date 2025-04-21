@@ -1,0 +1,86 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="batasId">{{ 'batasId' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="batasId" formControlName="batasId" placeholder="Masukkan {{ 'batasId' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="cycle">{{ 'cycle' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="cycle" formControlName="cycle" placeholder="Masukkan {{ 'cycle' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="hours">{{ 'hours' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="hours" formControlName="hours" placeholder="Masukkan {{ 'hours' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idPart">{{ 'idPart' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idPart" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idPart' | translate }}"> 
+                    <nz-option *ngFor="let item of listPart" nzLabel="{{ item.idPart }}" nzValue="{{ item.idPart }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idTechLog">{{ 'idTechLog' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idTechLog" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idTechLog' | translate }}"> 
+                    <nz-option *ngFor="let item of listTechLog" nzLabel="{{ item.idTechLog }}" nzValue="{{ item.idTechLog }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="tsnC">{{ 'tsnC' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="tsnC" formControlName="tsnC" placeholder="Masukkan {{ 'tsnC' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="tsnH">{{ 'tsnH' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="tsnH" formControlName="tsnH" placeholder="Masukkan {{ 'tsnH' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="tsoC">{{ 'tsoC' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="tsoC" formControlName="tsoC" placeholder="Masukkan {{ 'tsoC' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="tsoH">{{ 'tsoH' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="tsoH" formControlName="tsoH" placeholder="Masukkan {{ 'tsoH' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

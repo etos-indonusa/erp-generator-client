@@ -1,0 +1,60 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="category">{{ 'category' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="category" formControlName="category" placeholder="Masukkan {{ 'category' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="fileDate">{{ 'fileDate' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-date-picker formControlName="fileDate" style="width: 100%" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="fileName">{{ 'fileName' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="fileName" formControlName="fileName" placeholder="Masukkan {{ 'fileName' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="fileNumber">{{ 'fileNumber' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="fileNumber" formControlName="fileNumber" placeholder="Masukkan {{ 'fileNumber' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="forModule">{{ 'forModule' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="forModule" formControlName="forModule" placeholder="Masukkan {{ 'forModule' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idModule">{{ 'idModule' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idModule" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idModule' | translate }}"> 
+                    <nz-option *ngFor="let item of listModule" nzLabel="{{ item.idModule }}" nzValue="{{ item.idModule }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

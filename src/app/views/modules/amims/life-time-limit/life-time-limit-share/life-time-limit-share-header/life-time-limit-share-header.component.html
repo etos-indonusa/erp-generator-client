@@ -1,0 +1,160 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.childnameLifeTimeLimit !== undefined && data?.childnameLifeTimeLimit !== null">
+    <div class="text-secondary small">
+      {{ 'childnameLifeTimeLimit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.childnameLifeTimeLimit || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idLifeTimeLimit !== undefined && data?.idLifeTimeLimit !== null">
+    <div class="text-secondary small">
+      {{ 'idLifeTimeLimit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idLifeTimeLimit || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.isDeleted !== undefined && data?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.lifeTimeLimit !== undefined && data?.lifeTimeLimit !== null">
+    <div class="text-secondary small">
+      {{ 'lifeTimeLimit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.lifeTimeLimit || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.lifeTimeLimit">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'lifeTimeLimit' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.lifeTimeLimit?.childnameLifeTimeLimit !== undefined && data.lifeTimeLimit?.childnameLifeTimeLimit !== null">
+    <div class="text-secondary small">
+      {{ 'childnameLifeTimeLimit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.lifeTimeLimit.childnameLifeTimeLimit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.lifeTimeLimit?.idLifeTimeLimit !== undefined && data.lifeTimeLimit?.idLifeTimeLimit !== null">
+    <div class="text-secondary small">
+      {{ 'idLifeTimeLimit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.lifeTimeLimit.idLifeTimeLimit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.lifeTimeLimit?.isDeleted !== undefined && data.lifeTimeLimit?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.lifeTimeLimit.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.lifeTimeLimit.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.lifeTimeLimit?.lifeTimeLimit !== undefined && data.lifeTimeLimit?.lifeTimeLimit !== null">
+    <div class="text-secondary small">
+      {{ 'lifeTimeLimit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.lifeTimeLimit.lifeTimeLimit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>

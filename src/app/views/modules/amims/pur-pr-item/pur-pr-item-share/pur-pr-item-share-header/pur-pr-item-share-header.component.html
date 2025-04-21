@@ -1,0 +1,4781 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.createdAt !== undefined && data?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idMpart !== undefined && data?.idMpart !== null">
+    <div class="text-secondary small">
+      {{ 'idMpart' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idMpart || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idMpcPiroItem !== undefined && data?.idMpcPiroItem !== null">
+    <div class="text-secondary small">
+      {{ 'idMpcPiroItem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idMpcPiroItem || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idPurPr !== undefined && data?.idPurPr !== null">
+    <div class="text-secondary small">
+      {{ 'idPurPr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idPurPr || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idPurPrItem !== undefined && data?.idPurPrItem !== null">
+    <div class="text-secondary small">
+      {{ 'idPurPrItem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idPurPrItem || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.isDeleted !== undefined && data?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.notePrItem !== undefined && data?.notePrItem !== null">
+    <div class="text-secondary small">
+      {{ 'notePrItem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.notePrItem || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.oldPrItem !== undefined && data?.oldPrItem !== null">
+    <div class="text-secondary small">
+      {{ 'oldPrItem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.oldPrItem || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.priority !== undefined && data?.priority !== null">
+    <div class="text-secondary small">
+      {{ 'priority' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.priority || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.qtyPr !== undefined && data?.qtyPr !== null">
+    <div class="text-secondary small">
+      {{ 'qtyPr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qtyPr | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.qtyStock !== undefined && data?.qtyStock !== null">
+    <div class="text-secondary small">
+      {{ 'qtyStock' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qtyStock | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.statusItem !== undefined && data?.statusItem !== null">
+    <div class="text-secondary small">
+      {{ 'statusItem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.statusItem }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.updatedAt !== undefined && data?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.mpcPiroItem">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'mpcPiroItem' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem?.createdAt !== undefined && data.mpcPiroItem?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem?.forFigureIndex !== undefined && data.mpcPiroItem?.forFigureIndex !== null">
+    <div class="text-secondary small">
+      {{ 'forFigureIndex' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.forFigureIndex || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem?.idMpart !== undefined && data.mpcPiroItem?.idMpart !== null">
+    <div class="text-secondary small">
+      {{ 'idMpart' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.idMpart || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem?.idMpcPiro !== undefined && data.mpcPiroItem?.idMpcPiro !== null">
+    <div class="text-secondary small">
+      {{ 'idMpcPiro' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.idMpcPiro || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem?.idMpcPiroItem !== undefined && data.mpcPiroItem?.idMpcPiroItem !== null">
+    <div class="text-secondary small">
+      {{ 'idMpcPiroItem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.idMpcPiroItem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem?.isDeleted !== undefined && data.mpcPiroItem?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.mpcPiroItem.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.mpcPiroItem.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem?.noteItemPiro !== undefined && data.mpcPiroItem?.noteItemPiro !== null">
+    <div class="text-secondary small">
+      {{ 'noteItemPiro' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.noteItemPiro || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem?.priority !== undefined && data.mpcPiroItem?.priority !== null">
+    <div class="text-secondary small">
+      {{ 'priority' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.priority || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem?.qtyPiro !== undefined && data.mpcPiroItem?.qtyPiro !== null">
+    <div class="text-secondary small">
+      {{ 'qtyPiro' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.qtyPiro | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem?.statusItem !== undefined && data.mpcPiroItem?.statusItem !== null">
+    <div class="text-secondary small">
+      {{ 'statusItem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.mpcPiroItem.statusItem }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem?.updatedAt !== undefined && data.mpcPiroItem?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.mpcPiroItem?.mpcPiro">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'mpcPiroItem.mpcPiro' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro?.createdAt !== undefined && data.mpcPiroItem.mpcPiro?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro?.dateAcc !== undefined && data.mpcPiroItem.mpcPiro?.dateAcc !== null">
+    <div class="text-secondary small">
+      {{ 'dateAcc' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.dateAcc || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro?.datePiro !== undefined && data.mpcPiroItem.mpcPiro?.datePiro !== null">
+    <div class="text-secondary small">
+      {{ 'datePiro' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.datePiro || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro?.description !== undefined && data.mpcPiroItem.mpcPiro?.description !== null">
+    <div class="text-secondary small">
+      {{ 'description' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.description || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro?.idAircraft !== undefined && data.mpcPiroItem.mpcPiro?.idAircraft !== null">
+    <div class="text-secondary small">
+      {{ 'idAircraft' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.idAircraft || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro?.idMpcPiro !== undefined && data.mpcPiroItem.mpcPiro?.idMpcPiro !== null">
+    <div class="text-secondary small">
+      {{ 'idMpcPiro' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.idMpcPiro || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro?.idSite !== undefined && data.mpcPiroItem.mpcPiro?.idSite !== null">
+    <div class="text-secondary small">
+      {{ 'idSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.idSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro?.idUser !== undefined && data.mpcPiroItem.mpcPiro?.idUser !== null">
+    <div class="text-secondary small">
+      {{ 'idUser' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.idUser || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro?.idUserAcc !== undefined && data.mpcPiroItem.mpcPiro?.idUserAcc !== null">
+    <div class="text-secondary small">
+      {{ 'idUserAcc' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.idUserAcc || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro?.isDeleted !== undefined && data.mpcPiroItem.mpcPiro?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.mpcPiroItem.mpcPiro.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.mpcPiroItem.mpcPiro.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro?.keyword !== undefined && data.mpcPiroItem.mpcPiro?.keyword !== null">
+    <div class="text-secondary small">
+      {{ 'keyword' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.keyword || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro?.noIndex !== undefined && data.mpcPiroItem.mpcPiro?.noIndex !== null">
+    <div class="text-secondary small">
+      {{ 'noIndex' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.noIndex | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro?.notePiro !== undefined && data.mpcPiroItem.mpcPiro?.notePiro !== null">
+    <div class="text-secondary small">
+      {{ 'notePiro' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.notePiro || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro?.numberPiro !== undefined && data.mpcPiroItem.mpcPiro?.numberPiro !== null">
+    <div class="text-secondary small">
+      {{ 'numberPiro' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.numberPiro || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro?.statusPiro !== undefined && data.mpcPiroItem.mpcPiro?.statusPiro !== null">
+    <div class="text-secondary small">
+      {{ 'statusPiro' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.mpcPiroItem.mpcPiro.statusPiro }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro?.typePiro !== undefined && data.mpcPiroItem.mpcPiro?.typePiro !== null">
+    <div class="text-secondary small">
+      {{ 'typePiro' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.typePiro || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro?.updatedAt !== undefined && data.mpcPiroItem.mpcPiro?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro?.validasi !== undefined && data.mpcPiroItem.mpcPiro?.validasi !== null">
+    <div class="text-secondary small">
+      {{ 'validasi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.validasi | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.mpcPiroItem.mpcPiro?.aircraft">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'mpcPiroItem.mpcPiro.aircraft' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.airworthiness !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.airworthiness !== null">
+    <div class="text-secondary small">
+      {{ 'airworthiness' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.airworthiness || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.autoPilot !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.autoPilot !== null">
+    <div class="text-secondary small">
+      {{ 'autoPilot' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.autoPilot || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.auxiliaryTank !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.auxiliaryTank !== null">
+    <div class="text-secondary small">
+      {{ 'auxiliaryTank' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.auxiliaryTank || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.baggageCompartmentSpace !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.baggageCompartmentSpace !== null">
+    <div class="text-secondary small">
+      {{ 'baggageCompartmentSpace' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.baggageCompartmentSpace || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.cargoAreaMaximumHeight !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.cargoAreaMaximumHeight !== null">
+    <div class="text-secondary small">
+      {{ 'cargoAreaMaximumHeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.cargoAreaMaximumHeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.cargoAreaOverallLength !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.cargoAreaOverallLength !== null">
+    <div class="text-secondary small">
+      {{ 'cargoAreaOverallLength' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.cargoAreaOverallLength || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.cargoDoor !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.cargoDoor !== null">
+    <div class="text-secondary small">
+      {{ 'cargoDoor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.cargoDoor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.certificateOfRegistration !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.certificateOfRegistration !== null">
+    <div class="text-secondary small">
+      {{ 'certificateOfRegistration' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.certificateOfRegistration || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.compassSwing !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.compassSwing !== null">
+    <div class="text-secondary small">
+      {{ 'compassSwing' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.compassSwing || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.configuration !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.configuration !== null">
+    <div class="text-secondary small">
+      {{ 'configuration' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.configuration || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.crew !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.crew !== null">
+    <div class="text-secondary small">
+      {{ 'crew' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.crew || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.crewDoor !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.crewDoor !== null">
+    <div class="text-secondary small">
+      {{ 'crewDoor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.crewDoor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.crewLifeVest !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.crewLifeVest !== null">
+    <div class="text-secondary small">
+      {{ 'crewLifeVest' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.crewLifeVest || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.cvr !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.cvr !== null">
+    <div class="text-secondary small">
+      {{ 'cvr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.cvr || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.dme !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.dme !== null">
+    <div class="text-secondary small">
+      {{ 'dme' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.dme || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.dualAdfSystem !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.dualAdfSystem !== null">
+    <div class="text-secondary small">
+      {{ 'dualAdfSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.dualAdfSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.dualRadioNavigationSystem !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.dualRadioNavigationSystem !== null">
+    <div class="text-secondary small">
+      {{ 'dualRadioNavigationSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.dualRadioNavigationSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.dualVhfCommunication !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.dualVhfCommunication !== null">
+    <div class="text-secondary small">
+      {{ 'dualVhfCommunication' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.dualVhfCommunication || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.earProtector !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.earProtector !== null">
+    <div class="text-secondary small">
+      {{ 'earProtector' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.earProtector || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.emergency !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.emergency !== null">
+    <div class="text-secondary small">
+      {{ 'emergency' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.emergency || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.emergencyFloatationGear !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.emergencyFloatationGear !== null">
+    <div class="text-secondary small">
+      {{ 'emergencyFloatationGear' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.emergencyFloatationGear || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.emergencyLocateTransmitter !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.emergencyLocateTransmitter !== null">
+    <div class="text-secondary small">
+      {{ 'emergencyLocateTransmitter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.emergencyLocateTransmitter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.emptyWeight !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.emptyWeight !== null">
+    <div class="text-secondary small">
+      {{ 'emptyWeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.emptyWeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.engine !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.engine !== null">
+    <div class="text-secondary small">
+      {{ 'engine' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.engine || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.engineInstrument !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.engineInstrument !== null">
+    <div class="text-secondary small">
+      {{ 'engineInstrument' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.engineInstrument || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.externalCargoHook !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.externalCargoHook !== null">
+    <div class="text-secondary small">
+      {{ 'externalCargoHook' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.externalCargoHook || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.firstAidKit !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.firstAidKit !== null">
+    <div class="text-secondary small">
+      {{ 'firstAidKit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.firstAidKit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.flightControl !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.flightControl !== null">
+    <div class="text-secondary small">
+      {{ 'flightControl' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.flightControl || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.flightDirector !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.flightDirector !== null">
+    <div class="text-secondary small">
+      {{ 'flightDirector' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.flightDirector || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.floatingBeacon !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.floatingBeacon !== null">
+    <div class="text-secondary small">
+      {{ 'floatingBeacon' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.floatingBeacon || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.fullDoc !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.fullDoc !== null">
+    <div class="text-secondary small">
+      {{ 'fullDoc' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.fullDoc || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.gps !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.gps !== null">
+    <div class="text-secondary small">
+      {{ 'gps' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.gps || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.grossWeight !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.grossWeight !== null">
+    <div class="text-secondary small">
+      {{ 'grossWeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.grossWeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.gyroMagneticCompass !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.gyroMagneticCompass !== null">
+    <div class="text-secondary small">
+      {{ 'gyroMagneticCompass' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.gyroMagneticCompass || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.hfCommunication !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.hfCommunication !== null">
+    <div class="text-secondary small">
+      {{ 'hfCommunication' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.hfCommunication || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.homer !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.homer !== null">
+    <div class="text-secondary small">
+      {{ 'homer' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.homer || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.hoverCeilingOge !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.hoverCeilingOge !== null">
+    <div class="text-secondary small">
+      {{ 'hoverCeilingOge' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.hoverCeilingOge || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.idAircraftDetail !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.idAircraftDetail !== null">
+    <div class="text-secondary small">
+      {{ 'idAircraftDetail' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.idAircraftDetail || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.intercommunicationSystem !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.intercommunicationSystem !== null">
+    <div class="text-secondary small">
+      {{ 'intercommunicationSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.intercommunicationSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.internalHoist !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.internalHoist !== null">
+    <div class="text-secondary small">
+      {{ 'internalHoist' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.internalHoist || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.landingGear !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.landingGear !== null">
+    <div class="text-secondary small">
+      {{ 'landingGear' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.landingGear || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.landingLight !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.landingLight !== null">
+    <div class="text-secondary small">
+      {{ 'landingLight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.landingLight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.lifeRaft !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.lifeRaft !== null">
+    <div class="text-secondary small">
+      {{ 'lifeRaft' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.lifeRaft || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.lifeVest !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.lifeVest !== null">
+    <div class="text-secondary small">
+      {{ 'lifeVest' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.lifeVest || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.mainCabinSpace !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.mainCabinSpace !== null">
+    <div class="text-secondary small">
+      {{ 'mainCabinSpace' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.mainCabinSpace || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.mainRotorDiscDiameter !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.mainRotorDiscDiameter !== null">
+    <div class="text-secondary small">
+      {{ 'mainRotorDiscDiameter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.mainRotorDiscDiameter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.mainRotorSystem !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.mainRotorSystem !== null">
+    <div class="text-secondary small">
+      {{ 'mainRotorSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.mainRotorSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.maximumBaggageCompartment !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.maximumBaggageCompartment !== null">
+    <div class="text-secondary small">
+      {{ 'maximumBaggageCompartment' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.maximumBaggageCompartment || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.maximumContinuous !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.maximumContinuous !== null">
+    <div class="text-secondary small">
+      {{ 'maximumContinuous' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.maximumContinuous || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.maximumSpeed !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.maximumSpeed !== null">
+    <div class="text-secondary small">
+      {{ 'maximumSpeed' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.maximumSpeed || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.medicalStretcher !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.medicalStretcher !== null">
+    <div class="text-secondary small">
+      {{ 'medicalStretcher' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.medicalStretcher || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.minute !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.minute !== null">
+    <div class="text-secondary small">
+      {{ 'minute' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.minute || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.moreDetail !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.moreDetail !== null">
+    <div class="text-secondary small">
+      {{ 'moreDetail' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.moreDetail || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.outputPower !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.outputPower !== null">
+    <div class="text-secondary small">
+      {{ 'outputPower' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.outputPower || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.passenger !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.passenger !== null">
+    <div class="text-secondary small">
+      {{ 'passenger' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.passenger || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.passengerDoorHeight !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.passengerDoorHeight !== null">
+    <div class="text-secondary small">
+      {{ 'passengerDoorHeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.passengerDoorHeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.passengerDoorWidth !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.passengerDoorWidth !== null">
+    <div class="text-secondary small">
+      {{ 'passengerDoorWidth' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.passengerDoorWidth || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.payload !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.payload !== null">
+    <div class="text-secondary small">
+      {{ 'payload' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.payload || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.personal !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.personal !== null">
+    <div class="text-secondary small">
+      {{ 'personal' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.personal || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.poweredBy !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.poweredBy !== null">
+    <div class="text-secondary small">
+      {{ 'poweredBy' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.poweredBy || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.publicAddress !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.publicAddress !== null">
+    <div class="text-secondary small">
+      {{ 'publicAddress' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.publicAddress || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.radioAltimeter !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.radioAltimeter !== null">
+    <div class="text-secondary small">
+      {{ 'radioAltimeter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.radioAltimeter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.radioPermit !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.radioPermit !== null">
+    <div class="text-secondary small">
+      {{ 'radioPermit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.radioPermit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.range !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.range !== null">
+    <div class="text-secondary small">
+      {{ 'range' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.range || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.searchLight !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.searchLight !== null">
+    <div class="text-secondary small">
+      {{ 'searchLight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.searchLight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.standardFuelCapacity !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.standardFuelCapacity !== null">
+    <div class="text-secondary small">
+      {{ 'standardFuelCapacity' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.standardFuelCapacity || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.survivalKit !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.survivalKit !== null">
+    <div class="text-secondary small">
+      {{ 'survivalKit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.survivalKit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.tailRotorDiameter !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.tailRotorDiameter !== null">
+    <div class="text-secondary small">
+      {{ 'tailRotorDiameter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.tailRotorDiameter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.tailRotorSystem !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.tailRotorSystem !== null">
+    <div class="text-secondary small">
+      {{ 'tailRotorSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.tailRotorSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.takeOff !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.takeOff !== null">
+    <div class="text-secondary small">
+      {{ 'takeOff' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.takeOff || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.transponder !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.transponder !== null">
+    <div class="text-secondary small">
+      {{ 'transponder' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.transponder || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.underwaterBeacon !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.underwaterBeacon !== null">
+    <div class="text-secondary small">
+      {{ 'underwaterBeacon' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.underwaterBeacon || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.updatedAt !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.usefulWeight !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.usefulWeight !== null">
+    <div class="text-secondary small">
+      {{ 'usefulWeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.usefulWeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.vor !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.vor !== null">
+    <div class="text-secondary small">
+      {{ 'vor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.vor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.weightAndBalance !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.weightAndBalance !== null">
+    <div class="text-secondary small">
+      {{ 'weightAndBalance' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.weightAndBalance || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.withFullPassenger !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.withFullPassenger !== null">
+    <div class="text-secondary small">
+      {{ 'withFullPassenger' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.withFullPassenger || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.wxRadar !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.wxRadar !== null">
+    <div class="text-secondary small">
+      {{ 'wxRadar' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.wxRadar || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.yearOfManufacture !== undefined && data.mpcPiroItem.mpcPiro.aircraft?.yearOfManufacture !== null">
+    <div class="text-secondary small">
+      {{ 'yearOfManufacture' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.yearOfManufacture || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.mpcPiroItem.mpcPiro.aircraft?.aircraftDetail">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'mpcPiroItem.mpcPiro.aircraft.aircraftDetail' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.airworthiness !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.airworthiness !== null">
+    <div class="text-secondary small">
+      {{ 'airworthiness' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.airworthiness || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.autoPilot !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.autoPilot !== null">
+    <div class="text-secondary small">
+      {{ 'autoPilot' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.autoPilot || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.auxiliaryTank !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.auxiliaryTank !== null">
+    <div class="text-secondary small">
+      {{ 'auxiliaryTank' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.auxiliaryTank || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.baggageCompartmentSpace !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.baggageCompartmentSpace !== null">
+    <div class="text-secondary small">
+      {{ 'baggageCompartmentSpace' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.baggageCompartmentSpace || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.cargoAreaMaximumHeight !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.cargoAreaMaximumHeight !== null">
+    <div class="text-secondary small">
+      {{ 'cargoAreaMaximumHeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.cargoAreaMaximumHeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.cargoAreaOverallLength !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.cargoAreaOverallLength !== null">
+    <div class="text-secondary small">
+      {{ 'cargoAreaOverallLength' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.cargoAreaOverallLength || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.cargoDoor !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.cargoDoor !== null">
+    <div class="text-secondary small">
+      {{ 'cargoDoor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.cargoDoor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.certificateOfRegistration !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.certificateOfRegistration !== null">
+    <div class="text-secondary small">
+      {{ 'certificateOfRegistration' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.certificateOfRegistration || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.compassSwing !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.compassSwing !== null">
+    <div class="text-secondary small">
+      {{ 'compassSwing' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.compassSwing || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.configuration !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.configuration !== null">
+    <div class="text-secondary small">
+      {{ 'configuration' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.configuration || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.crew !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.crew !== null">
+    <div class="text-secondary small">
+      {{ 'crew' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.crew || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.crewDoor !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.crewDoor !== null">
+    <div class="text-secondary small">
+      {{ 'crewDoor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.crewDoor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.crewLifeVest !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.crewLifeVest !== null">
+    <div class="text-secondary small">
+      {{ 'crewLifeVest' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.crewLifeVest || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.cvr !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.cvr !== null">
+    <div class="text-secondary small">
+      {{ 'cvr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.cvr || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.dme !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.dme !== null">
+    <div class="text-secondary small">
+      {{ 'dme' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.dme || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.dualAdfSystem !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.dualAdfSystem !== null">
+    <div class="text-secondary small">
+      {{ 'dualAdfSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.dualAdfSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.dualRadioNavigationSystem !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.dualRadioNavigationSystem !== null">
+    <div class="text-secondary small">
+      {{ 'dualRadioNavigationSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.dualRadioNavigationSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.dualVhfCommunication !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.dualVhfCommunication !== null">
+    <div class="text-secondary small">
+      {{ 'dualVhfCommunication' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.dualVhfCommunication || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.earProtector !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.earProtector !== null">
+    <div class="text-secondary small">
+      {{ 'earProtector' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.earProtector || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.emergency !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.emergency !== null">
+    <div class="text-secondary small">
+      {{ 'emergency' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.emergency || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.emergencyFloatationGear !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.emergencyFloatationGear !== null">
+    <div class="text-secondary small">
+      {{ 'emergencyFloatationGear' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.emergencyFloatationGear || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.emergencyLocateTransmitter !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.emergencyLocateTransmitter !== null">
+    <div class="text-secondary small">
+      {{ 'emergencyLocateTransmitter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.emergencyLocateTransmitter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.emptyWeight !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.emptyWeight !== null">
+    <div class="text-secondary small">
+      {{ 'emptyWeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.emptyWeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.engine !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.engine !== null">
+    <div class="text-secondary small">
+      {{ 'engine' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.engine || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.engineInstrument !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.engineInstrument !== null">
+    <div class="text-secondary small">
+      {{ 'engineInstrument' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.engineInstrument || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.externalCargoHook !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.externalCargoHook !== null">
+    <div class="text-secondary small">
+      {{ 'externalCargoHook' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.externalCargoHook || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.firstAidKit !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.firstAidKit !== null">
+    <div class="text-secondary small">
+      {{ 'firstAidKit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.firstAidKit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.flightControl !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.flightControl !== null">
+    <div class="text-secondary small">
+      {{ 'flightControl' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.flightControl || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.flightDirector !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.flightDirector !== null">
+    <div class="text-secondary small">
+      {{ 'flightDirector' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.flightDirector || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.floatingBeacon !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.floatingBeacon !== null">
+    <div class="text-secondary small">
+      {{ 'floatingBeacon' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.floatingBeacon || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.fullDoc !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.fullDoc !== null">
+    <div class="text-secondary small">
+      {{ 'fullDoc' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.fullDoc || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.gps !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.gps !== null">
+    <div class="text-secondary small">
+      {{ 'gps' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.gps || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.grossWeight !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.grossWeight !== null">
+    <div class="text-secondary small">
+      {{ 'grossWeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.grossWeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.gyroMagneticCompass !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.gyroMagneticCompass !== null">
+    <div class="text-secondary small">
+      {{ 'gyroMagneticCompass' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.gyroMagneticCompass || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.hfCommunication !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.hfCommunication !== null">
+    <div class="text-secondary small">
+      {{ 'hfCommunication' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.hfCommunication || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.homer !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.homer !== null">
+    <div class="text-secondary small">
+      {{ 'homer' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.homer || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.hoverCeilingOge !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.hoverCeilingOge !== null">
+    <div class="text-secondary small">
+      {{ 'hoverCeilingOge' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.hoverCeilingOge || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.idAircraftDetail !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.idAircraftDetail !== null">
+    <div class="text-secondary small">
+      {{ 'idAircraftDetail' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.idAircraftDetail || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.intercommunicationSystem !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.intercommunicationSystem !== null">
+    <div class="text-secondary small">
+      {{ 'intercommunicationSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.intercommunicationSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.internalHoist !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.internalHoist !== null">
+    <div class="text-secondary small">
+      {{ 'internalHoist' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.internalHoist || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.landingGear !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.landingGear !== null">
+    <div class="text-secondary small">
+      {{ 'landingGear' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.landingGear || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.landingLight !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.landingLight !== null">
+    <div class="text-secondary small">
+      {{ 'landingLight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.landingLight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.lifeRaft !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.lifeRaft !== null">
+    <div class="text-secondary small">
+      {{ 'lifeRaft' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.lifeRaft || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.lifeVest !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.lifeVest !== null">
+    <div class="text-secondary small">
+      {{ 'lifeVest' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.lifeVest || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.mainCabinSpace !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.mainCabinSpace !== null">
+    <div class="text-secondary small">
+      {{ 'mainCabinSpace' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.mainCabinSpace || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.mainRotorDiscDiameter !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.mainRotorDiscDiameter !== null">
+    <div class="text-secondary small">
+      {{ 'mainRotorDiscDiameter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.mainRotorDiscDiameter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.mainRotorSystem !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.mainRotorSystem !== null">
+    <div class="text-secondary small">
+      {{ 'mainRotorSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.mainRotorSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.maximumBaggageCompartment !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.maximumBaggageCompartment !== null">
+    <div class="text-secondary small">
+      {{ 'maximumBaggageCompartment' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.maximumBaggageCompartment || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.maximumContinuous !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.maximumContinuous !== null">
+    <div class="text-secondary small">
+      {{ 'maximumContinuous' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.maximumContinuous || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.maximumSpeed !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.maximumSpeed !== null">
+    <div class="text-secondary small">
+      {{ 'maximumSpeed' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.maximumSpeed || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.medicalStretcher !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.medicalStretcher !== null">
+    <div class="text-secondary small">
+      {{ 'medicalStretcher' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.medicalStretcher || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.minute !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.minute !== null">
+    <div class="text-secondary small">
+      {{ 'minute' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.minute || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.moreDetail !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.moreDetail !== null">
+    <div class="text-secondary small">
+      {{ 'moreDetail' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.moreDetail || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.outputPower !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.outputPower !== null">
+    <div class="text-secondary small">
+      {{ 'outputPower' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.outputPower || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.passenger !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.passenger !== null">
+    <div class="text-secondary small">
+      {{ 'passenger' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.passenger || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.passengerDoorHeight !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.passengerDoorHeight !== null">
+    <div class="text-secondary small">
+      {{ 'passengerDoorHeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.passengerDoorHeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.passengerDoorWidth !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.passengerDoorWidth !== null">
+    <div class="text-secondary small">
+      {{ 'passengerDoorWidth' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.passengerDoorWidth || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.payload !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.payload !== null">
+    <div class="text-secondary small">
+      {{ 'payload' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.payload || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.personal !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.personal !== null">
+    <div class="text-secondary small">
+      {{ 'personal' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.personal || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.poweredBy !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.poweredBy !== null">
+    <div class="text-secondary small">
+      {{ 'poweredBy' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.poweredBy || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.publicAddress !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.publicAddress !== null">
+    <div class="text-secondary small">
+      {{ 'publicAddress' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.publicAddress || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.radioAltimeter !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.radioAltimeter !== null">
+    <div class="text-secondary small">
+      {{ 'radioAltimeter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.radioAltimeter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.radioPermit !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.radioPermit !== null">
+    <div class="text-secondary small">
+      {{ 'radioPermit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.radioPermit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.range !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.range !== null">
+    <div class="text-secondary small">
+      {{ 'range' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.range || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.searchLight !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.searchLight !== null">
+    <div class="text-secondary small">
+      {{ 'searchLight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.searchLight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.standardFuelCapacity !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.standardFuelCapacity !== null">
+    <div class="text-secondary small">
+      {{ 'standardFuelCapacity' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.standardFuelCapacity || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.survivalKit !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.survivalKit !== null">
+    <div class="text-secondary small">
+      {{ 'survivalKit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.survivalKit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.tailRotorDiameter !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.tailRotorDiameter !== null">
+    <div class="text-secondary small">
+      {{ 'tailRotorDiameter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.tailRotorDiameter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.tailRotorSystem !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.tailRotorSystem !== null">
+    <div class="text-secondary small">
+      {{ 'tailRotorSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.tailRotorSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.takeOff !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.takeOff !== null">
+    <div class="text-secondary small">
+      {{ 'takeOff' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.takeOff || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.transponder !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.transponder !== null">
+    <div class="text-secondary small">
+      {{ 'transponder' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.transponder || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.underwaterBeacon !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.underwaterBeacon !== null">
+    <div class="text-secondary small">
+      {{ 'underwaterBeacon' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.underwaterBeacon || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.updatedAt !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.usefulWeight !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.usefulWeight !== null">
+    <div class="text-secondary small">
+      {{ 'usefulWeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.usefulWeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.vor !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.vor !== null">
+    <div class="text-secondary small">
+      {{ 'vor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.vor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.weightAndBalance !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.weightAndBalance !== null">
+    <div class="text-secondary small">
+      {{ 'weightAndBalance' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.weightAndBalance || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.withFullPassenger !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.withFullPassenger !== null">
+    <div class="text-secondary small">
+      {{ 'withFullPassenger' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.withFullPassenger || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.wxRadar !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.wxRadar !== null">
+    <div class="text-secondary small">
+      {{ 'wxRadar' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.wxRadar || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.yearOfManufacture !== undefined && data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail?.yearOfManufacture !== null">
+    <div class="text-secondary small">
+      {{ 'yearOfManufacture' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.aircraft.aircraftDetail.yearOfManufacture || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.mpcPiroItem.mpcPiro?.site">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'mpcPiroItem.mpcPiro.site' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.address !== undefined && data.mpcPiroItem.mpcPiro.site?.address !== null">
+    <div class="text-secondary small">
+      {{ 'address' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.address || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.city !== undefined && data.mpcPiroItem.mpcPiro.site?.city !== null">
+    <div class="text-secondary small">
+      {{ 'city' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.city || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.codeSite !== undefined && data.mpcPiroItem.mpcPiro.site?.codeSite !== null">
+    <div class="text-secondary small">
+      {{ 'codeSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.codeSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.contactname !== undefined && data.mpcPiroItem.mpcPiro.site?.contactname !== null">
+    <div class="text-secondary small">
+      {{ 'contactname' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.contactname || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.country !== undefined && data.mpcPiroItem.mpcPiro.site?.country !== null">
+    <div class="text-secondary small">
+      {{ 'country' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.country || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.createdAt !== undefined && data.mpcPiroItem.mpcPiro.site?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.emailaddress !== undefined && data.mpcPiroItem.mpcPiro.site?.emailaddress !== null">
+    <div class="text-secondary small">
+      {{ 'emailaddress' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.emailaddress || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.fax !== undefined && data.mpcPiroItem.mpcPiro.site?.fax !== null">
+    <div class="text-secondary small">
+      {{ 'fax' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.fax || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.idNewSite !== undefined && data.mpcPiroItem.mpcPiro.site?.idNewSite !== null">
+    <div class="text-secondary small">
+      {{ 'idNewSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.idNewSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.idSite !== undefined && data.mpcPiroItem.mpcPiro.site?.idSite !== null">
+    <div class="text-secondary small">
+      {{ 'idSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.idSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.idUser !== undefined && data.mpcPiroItem.mpcPiro.site?.idUser !== null">
+    <div class="text-secondary small">
+      {{ 'idUser' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.idUser || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.isDeleted !== undefined && data.mpcPiroItem.mpcPiro.site?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.mpcPiroItem.mpcPiro.site.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.mpcPiroItem.mpcPiro.site.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.isMain !== undefined && data.mpcPiroItem.mpcPiro.site?.isMain !== null">
+    <div class="text-secondary small">
+      {{ 'isMain' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.mpcPiroItem.mpcPiro.site.isMain" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.mpcPiroItem.mpcPiro.site.isMain">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.isStore !== undefined && data.mpcPiroItem.mpcPiro.site?.isStore !== null">
+    <div class="text-secondary small">
+      {{ 'isStore' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.mpcPiroItem.mpcPiro.site.isStore" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.mpcPiroItem.mpcPiro.site.isStore">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.logoSite !== undefined && data.mpcPiroItem.mpcPiro.site?.logoSite !== null">
+    <div class="text-secondary small">
+      {{ 'logoSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.logoSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.mobile !== undefined && data.mpcPiroItem.mpcPiro.site?.mobile !== null">
+    <div class="text-secondary small">
+      {{ 'mobile' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.mobile || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.oldId !== undefined && data.mpcPiroItem.mpcPiro.site?.oldId !== null">
+    <div class="text-secondary small">
+      {{ 'oldId' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.oldId || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.parentSite !== undefined && data.mpcPiroItem.mpcPiro.site?.parentSite !== null">
+    <div class="text-secondary small">
+      {{ 'parentSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.parentSite | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.site !== undefined && data.mpcPiroItem.mpcPiro.site?.site !== null">
+    <div class="text-secondary small">
+      {{ 'site' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.site || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.statusSite !== undefined && data.mpcPiroItem.mpcPiro.site?.statusSite !== null">
+    <div class="text-secondary small">
+      {{ 'statusSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.mpcPiroItem.mpcPiro.site.statusSite }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.telephone !== undefined && data.mpcPiroItem.mpcPiro.site?.telephone !== null">
+    <div class="text-secondary small">
+      {{ 'telephone' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.telephone || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.typeSite !== undefined && data.mpcPiroItem.mpcPiro.site?.typeSite !== null">
+    <div class="text-secondary small">
+      {{ 'typeSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.typeSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.updatedAt !== undefined && data.mpcPiroItem.mpcPiro.site?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site?.validation !== undefined && data.mpcPiroItem.mpcPiro.site?.validation !== null">
+    <div class="text-secondary small">
+      {{ 'validation' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.validation | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.mpcPiroItem.mpcPiro.site?.user">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'mpcPiroItem.mpcPiro.site.user' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site.user?.createdAt !== undefined && data.mpcPiroItem.mpcPiro.site.user?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.user.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site.user?.deskripsi !== undefined && data.mpcPiroItem.mpcPiro.site.user?.deskripsi !== null">
+    <div class="text-secondary small">
+      {{ 'deskripsi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.user.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site.user?.idUserGroup !== undefined && data.mpcPiroItem.mpcPiro.site.user?.idUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'idUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.user.idUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site.user?.namaUserGroup !== undefined && data.mpcPiroItem.mpcPiro.site.user?.namaUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'namaUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.user.namaUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site.user?.status !== undefined && data.mpcPiroItem.mpcPiro.site.user?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.mpcPiroItem.mpcPiro.site.user.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.mpcPiroItem.mpcPiro.site.user?.userGroup">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'mpcPiroItem.mpcPiro.site.user.userGroup' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site.user.userGroup?.createdAt !== undefined && data.mpcPiroItem.mpcPiro.site.user.userGroup?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.user.userGroup.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site.user.userGroup?.deskripsi !== undefined && data.mpcPiroItem.mpcPiro.site.user.userGroup?.deskripsi !== null">
+    <div class="text-secondary small">
+      {{ 'deskripsi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.user.userGroup.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site.user.userGroup?.idUserGroup !== undefined && data.mpcPiroItem.mpcPiro.site.user.userGroup?.idUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'idUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.user.userGroup.idUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site.user.userGroup?.namaUserGroup !== undefined && data.mpcPiroItem.mpcPiro.site.user.userGroup?.namaUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'namaUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpcPiroItem.mpcPiro.site.user.userGroup.namaUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpcPiroItem.mpcPiro.site.user.userGroup?.status !== undefined && data.mpcPiroItem.mpcPiro.site.user.userGroup?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.mpcPiroItem.mpcPiro.site.user.userGroup.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.purPr">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'purPr' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr?.createdAt !== undefined && data.purPr?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr?.dateAcc !== undefined && data.purPr?.dateAcc !== null">
+    <div class="text-secondary small">
+      {{ 'dateAcc' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.dateAcc || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr?.datePr !== undefined && data.purPr?.datePr !== null">
+    <div class="text-secondary small">
+      {{ 'datePr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.datePr || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr?.description !== undefined && data.purPr?.description !== null">
+    <div class="text-secondary small">
+      {{ 'description' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.description || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr?.idAircraft !== undefined && data.purPr?.idAircraft !== null">
+    <div class="text-secondary small">
+      {{ 'idAircraft' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.idAircraft || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr?.idPosition !== undefined && data.purPr?.idPosition !== null">
+    <div class="text-secondary small">
+      {{ 'idPosition' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.idPosition || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr?.idPurPr !== undefined && data.purPr?.idPurPr !== null">
+    <div class="text-secondary small">
+      {{ 'idPurPr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.idPurPr || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr?.idSite !== undefined && data.purPr?.idSite !== null">
+    <div class="text-secondary small">
+      {{ 'idSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.idSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr?.idUser !== undefined && data.purPr?.idUser !== null">
+    <div class="text-secondary small">
+      {{ 'idUser' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.idUser || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr?.idUserAcc !== undefined && data.purPr?.idUserAcc !== null">
+    <div class="text-secondary small">
+      {{ 'idUserAcc' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.idUserAcc || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr?.isDeleted !== undefined && data.purPr?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.purPr.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.purPr.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr?.keyword !== undefined && data.purPr?.keyword !== null">
+    <div class="text-secondary small">
+      {{ 'keyword' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.keyword || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr?.noIndex !== undefined && data.purPr?.noIndex !== null">
+    <div class="text-secondary small">
+      {{ 'noIndex' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.noIndex | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr?.notePr !== undefined && data.purPr?.notePr !== null">
+    <div class="text-secondary small">
+      {{ 'notePr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.notePr || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr?.numberPr !== undefined && data.purPr?.numberPr !== null">
+    <div class="text-secondary small">
+      {{ 'numberPr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.numberPr || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr?.oldPr !== undefined && data.purPr?.oldPr !== null">
+    <div class="text-secondary small">
+      {{ 'oldPr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.oldPr || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr?.statusPr !== undefined && data.purPr?.statusPr !== null">
+    <div class="text-secondary small">
+      {{ 'statusPr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.purPr.statusPr }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr?.typePr !== undefined && data.purPr?.typePr !== null">
+    <div class="text-secondary small">
+      {{ 'typePr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.typePr || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr?.updatedAt !== undefined && data.purPr?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr?.validasi !== undefined && data.purPr?.validasi !== null">
+    <div class="text-secondary small">
+      {{ 'validasi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.validasi | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.purPr?.position">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'purPr.position' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr.position?.code !== undefined && data.purPr.position?.code !== null">
+    <div class="text-secondary small">
+      {{ 'code' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.position.code || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr.position?.description !== undefined && data.purPr.position?.description !== null">
+    <div class="text-secondary small">
+      {{ 'description' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.position.description || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr.position?.idPosition !== undefined && data.purPr.position?.idPosition !== null">
+    <div class="text-secondary small">
+      {{ 'idPosition' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.position.idPosition || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr.position?.isDeleted !== undefined && data.purPr.position?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.purPr.position.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.purPr.position.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPr.position?.position !== undefined && data.purPr.position?.position !== null">
+    <div class="text-secondary small">
+      {{ 'position' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPr.position.position || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.purPrItem">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'purPrItem' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPrItem?.createdAt !== undefined && data.purPrItem?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPrItem.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPrItem?.idMpart !== undefined && data.purPrItem?.idMpart !== null">
+    <div class="text-secondary small">
+      {{ 'idMpart' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPrItem.idMpart || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPrItem?.idMpcPiroItem !== undefined && data.purPrItem?.idMpcPiroItem !== null">
+    <div class="text-secondary small">
+      {{ 'idMpcPiroItem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPrItem.idMpcPiroItem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPrItem?.idPurPr !== undefined && data.purPrItem?.idPurPr !== null">
+    <div class="text-secondary small">
+      {{ 'idPurPr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPrItem.idPurPr || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPrItem?.idPurPrItem !== undefined && data.purPrItem?.idPurPrItem !== null">
+    <div class="text-secondary small">
+      {{ 'idPurPrItem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPrItem.idPurPrItem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPrItem?.isDeleted !== undefined && data.purPrItem?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.purPrItem.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.purPrItem.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPrItem?.notePrItem !== undefined && data.purPrItem?.notePrItem !== null">
+    <div class="text-secondary small">
+      {{ 'notePrItem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPrItem.notePrItem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPrItem?.oldPrItem !== undefined && data.purPrItem?.oldPrItem !== null">
+    <div class="text-secondary small">
+      {{ 'oldPrItem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPrItem.oldPrItem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPrItem?.priority !== undefined && data.purPrItem?.priority !== null">
+    <div class="text-secondary small">
+      {{ 'priority' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPrItem.priority || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPrItem?.qtyPr !== undefined && data.purPrItem?.qtyPr !== null">
+    <div class="text-secondary small">
+      {{ 'qtyPr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPrItem.qtyPr | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPrItem?.qtyStock !== undefined && data.purPrItem?.qtyStock !== null">
+    <div class="text-secondary small">
+      {{ 'qtyStock' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPrItem.qtyStock | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPrItem?.statusItem !== undefined && data.purPrItem?.statusItem !== null">
+    <div class="text-secondary small">
+      {{ 'statusItem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.purPrItem.statusItem }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purPrItem?.updatedAt !== undefined && data.purPrItem?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purPrItem.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>

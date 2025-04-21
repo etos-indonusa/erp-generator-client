@@ -9,7 +9,7 @@ export interface AclUsersWidgetDto {
   idUsers: string;
   lastLogin?: string;
   nama?: string;
-  password: string;
+  password?: string;
   status?: string;
   total?: number;
   wajibResetPassword?: boolean;

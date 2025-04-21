@@ -1,0 +1,932 @@
+<nz-card nzTitle="{{filter.status|titlecase}} ({{ total }})" [nzExtra]="extraTemplate" [nzBodyStyle]="{padding:0}">
+    <div class="filter" [hidden]="!filter_extra">
+        <form nz-form [nzLayout]="'vertical'" role="form">
+            <div nz-row [nzGutter]="8">
+                <div nz-col [nzXl]="{ span: 6}" [nzLg]="{ span: 8}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
+                    <nz-form-item>
+                        <nz-form-label>&nbsp;</nz-form-label>
+                        <nz-form-control>
+                            <nz-input-group nzSearch [nzAddOnBefore]="addOnBeforeTemplate"
+                                [nzAddOnAfter]="suffixIconButton" style="width: 100%;">
+                                <input type="text" nz-input placeholder="{{'search'|translate|titlecase}}"
+                                    [(ngModel)]="search" name="search" (keyup.enter)="searchData()" />
+                            </nz-input-group>
+                            <ng-template #suffixIconButton>
+                                <button nz-button nzType="default" nzSearch (click)="searchData()"><span nz-icon
+                                        nzType="search"></span></button>
+                            </ng-template>
+                            <ng-template #addOnBeforeTemplate>
+                                <span nz-icon nzTheme="twotone" nzType="question-circle" nz-popover
+                                    nzPopoverTitle="Pencarian berdasarkan" [nzPopoverContent]="tipsPencarian"
+                                    nzPopoverPlacement="top"></span>
+                                <ng-template #tipsPencarian>
+                                    <div>
+                                        <ul>
+                                            <li *ngFor="let item of search_field">{{ item | translate }}</li>
+                                        </ul>
+                                    </div>
+                                </ng-template>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                
+ 
+                <div nz-col nzSpan="24">
+
+                    <nz-form-item>
+                        <nz-form-control>
+                            <button nz-button nzType="primary" (click)="print()" style="margin-right: 5px;">
+                                <span nz-icon nzType="printer"></span>
+                                Print
+                            </button>
+                            <button nz-button nzType="primary" (click)="searchData()" [nzLoading]="loading"
+                                style="margin-right: 10px;"><span nz-icon nzType="filter"></span>Filter</button>
+                            <button nz-button nzType="default" (click)="resetData()" [nzLoading]="loading"
+                                style="margin-right: 10px;"><span nz-icon nzType="reload"></span>Reset</button>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div style="overflow: auto; background-color: white;">
+        <nz-table nzShowSizeChanger [nzData]="listOfData" [nzFrontPagination]="false" [nzLoading]="loading"
+            [nzTotal]="total" [nzPageSize]="pageSize" [nzPageIndex]="pageIndex"
+            (nzQueryParams)="onQueryParamsChange($event)" nzSize="small">
+            <thead>
+                <tr>
+                    <th   [nzAlign]="'right'">#ID</th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="airworthiness" *ngIf="isColVisible('airworthiness')">
+                        {{ 'airworthiness' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="autoPilot" *ngIf="isColVisible('autoPilot')">
+                        {{ 'autoPilot' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="auxiliaryTank" *ngIf="isColVisible('auxiliaryTank')">
+                        {{ 'auxiliaryTank' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="baggageCompartmentSpace" *ngIf="isColVisible('baggageCompartmentSpace')">
+                        {{ 'baggageCompartmentSpace' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="cargoAreaMaximumHeight" *ngIf="isColVisible('cargoAreaMaximumHeight')">
+                        {{ 'cargoAreaMaximumHeight' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="cargoAreaOverallLength" *ngIf="isColVisible('cargoAreaOverallLength')">
+                        {{ 'cargoAreaOverallLength' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="cargoDoor" *ngIf="isColVisible('cargoDoor')">
+                        {{ 'cargoDoor' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="certificateOfRegistration" *ngIf="isColVisible('certificateOfRegistration')">
+                        {{ 'certificateOfRegistration' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="compassSwing" *ngIf="isColVisible('compassSwing')">
+                        {{ 'compassSwing' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="configuration" *ngIf="isColVisible('configuration')">
+                        {{ 'configuration' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="crew" *ngIf="isColVisible('crew')">
+                        {{ 'crew' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="crewDoor" *ngIf="isColVisible('crewDoor')">
+                        {{ 'crewDoor' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="crewLifeVest" *ngIf="isColVisible('crewLifeVest')">
+                        {{ 'crewLifeVest' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="cvr" *ngIf="isColVisible('cvr')">
+                        {{ 'cvr' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="dme" *ngIf="isColVisible('dme')">
+                        {{ 'dme' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="dualAdfSystem" *ngIf="isColVisible('dualAdfSystem')">
+                        {{ 'dualAdfSystem' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="dualRadioNavigationSystem" *ngIf="isColVisible('dualRadioNavigationSystem')">
+                        {{ 'dualRadioNavigationSystem' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="dualVhfCommunication" *ngIf="isColVisible('dualVhfCommunication')">
+                        {{ 'dualVhfCommunication' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="earProtector" *ngIf="isColVisible('earProtector')">
+                        {{ 'earProtector' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="emergency" *ngIf="isColVisible('emergency')">
+                        {{ 'emergency' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="emergencyFloatationGear" *ngIf="isColVisible('emergencyFloatationGear')">
+                        {{ 'emergencyFloatationGear' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="emergencyLocateTransmitter" *ngIf="isColVisible('emergencyLocateTransmitter')">
+                        {{ 'emergencyLocateTransmitter' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="emptyWeight" *ngIf="isColVisible('emptyWeight')">
+                        {{ 'emptyWeight' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="engine" *ngIf="isColVisible('engine')">
+                        {{ 'engine' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="engineInstrument" *ngIf="isColVisible('engineInstrument')">
+                        {{ 'engineInstrument' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="externalCargoHook" *ngIf="isColVisible('externalCargoHook')">
+                        {{ 'externalCargoHook' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="firstAidKit" *ngIf="isColVisible('firstAidKit')">
+                        {{ 'firstAidKit' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="flightControl" *ngIf="isColVisible('flightControl')">
+                        {{ 'flightControl' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="flightDirector" *ngIf="isColVisible('flightDirector')">
+                        {{ 'flightDirector' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="floatingBeacon" *ngIf="isColVisible('floatingBeacon')">
+                        {{ 'floatingBeacon' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="fullDoc" *ngIf="isColVisible('fullDoc')">
+                        {{ 'fullDoc' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="gps" *ngIf="isColVisible('gps')">
+                        {{ 'gps' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="grossWeight" *ngIf="isColVisible('grossWeight')">
+                        {{ 'grossWeight' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="gyroMagneticCompass" *ngIf="isColVisible('gyroMagneticCompass')">
+                        {{ 'gyroMagneticCompass' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="hfCommunication" *ngIf="isColVisible('hfCommunication')">
+                        {{ 'hfCommunication' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="homer" *ngIf="isColVisible('homer')">
+                        {{ 'homer' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="hoverCeilingOge" *ngIf="isColVisible('hoverCeilingOge')">
+                        {{ 'hoverCeilingOge' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="intercommunicationSystem" *ngIf="isColVisible('intercommunicationSystem')">
+                        {{ 'intercommunicationSystem' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="internalHoist" *ngIf="isColVisible('internalHoist')">
+                        {{ 'internalHoist' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="landingGear" *ngIf="isColVisible('landingGear')">
+                        {{ 'landingGear' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="landingLight" *ngIf="isColVisible('landingLight')">
+                        {{ 'landingLight' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="lifeRaft" *ngIf="isColVisible('lifeRaft')">
+                        {{ 'lifeRaft' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="lifeVest" *ngIf="isColVisible('lifeVest')">
+                        {{ 'lifeVest' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="mainCabinSpace" *ngIf="isColVisible('mainCabinSpace')">
+                        {{ 'mainCabinSpace' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="mainRotorDiscDiameter" *ngIf="isColVisible('mainRotorDiscDiameter')">
+                        {{ 'mainRotorDiscDiameter' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="mainRotorSystem" *ngIf="isColVisible('mainRotorSystem')">
+                        {{ 'mainRotorSystem' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="maximumBaggageCompartment" *ngIf="isColVisible('maximumBaggageCompartment')">
+                        {{ 'maximumBaggageCompartment' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="maximumContinuous" *ngIf="isColVisible('maximumContinuous')">
+                        {{ 'maximumContinuous' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="maximumSpeed" *ngIf="isColVisible('maximumSpeed')">
+                        {{ 'maximumSpeed' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="medicalStretcher" *ngIf="isColVisible('medicalStretcher')">
+                        {{ 'medicalStretcher' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="minute" *ngIf="isColVisible('minute')">
+                        {{ 'minute' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="moreDetail" *ngIf="isColVisible('moreDetail')">
+                        {{ 'moreDetail' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="outputPower" *ngIf="isColVisible('outputPower')">
+                        {{ 'outputPower' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="passenger" *ngIf="isColVisible('passenger')">
+                        {{ 'passenger' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="passengerDoorHeight" *ngIf="isColVisible('passengerDoorHeight')">
+                        {{ 'passengerDoorHeight' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="passengerDoorWidth" *ngIf="isColVisible('passengerDoorWidth')">
+                        {{ 'passengerDoorWidth' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="payload" *ngIf="isColVisible('payload')">
+                        {{ 'payload' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="personal" *ngIf="isColVisible('personal')">
+                        {{ 'personal' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="poweredBy" *ngIf="isColVisible('poweredBy')">
+                        {{ 'poweredBy' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="publicAddress" *ngIf="isColVisible('publicAddress')">
+                        {{ 'publicAddress' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="radioAltimeter" *ngIf="isColVisible('radioAltimeter')">
+                        {{ 'radioAltimeter' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="radioPermit" *ngIf="isColVisible('radioPermit')">
+                        {{ 'radioPermit' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="range" *ngIf="isColVisible('range')">
+                        {{ 'range' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="searchLight" *ngIf="isColVisible('searchLight')">
+                        {{ 'searchLight' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="standardFuelCapacity" *ngIf="isColVisible('standardFuelCapacity')">
+                        {{ 'standardFuelCapacity' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="survivalKit" *ngIf="isColVisible('survivalKit')">
+                        {{ 'survivalKit' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="tailRotorDiameter" *ngIf="isColVisible('tailRotorDiameter')">
+                        {{ 'tailRotorDiameter' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="tailRotorSystem" *ngIf="isColVisible('tailRotorSystem')">
+                        {{ 'tailRotorSystem' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="takeOff" *ngIf="isColVisible('takeOff')">
+                        {{ 'takeOff' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="transponder" *ngIf="isColVisible('transponder')">
+                        {{ 'transponder' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="underwaterBeacon" *ngIf="isColVisible('underwaterBeacon')">
+                        {{ 'underwaterBeacon' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="updatedAt" *ngIf="isColVisible('updatedAt')">
+                        {{ 'updatedAt' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="usefulWeight" *ngIf="isColVisible('usefulWeight')">
+                        {{ 'usefulWeight' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="vor" *ngIf="isColVisible('vor')">
+                        {{ 'vor' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="weightAndBalance" *ngIf="isColVisible('weightAndBalance')">
+                        {{ 'weightAndBalance' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="withFullPassenger" *ngIf="isColVisible('withFullPassenger')">
+                        {{ 'withFullPassenger' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="wxRadar" *ngIf="isColVisible('wxRadar')">
+                        {{ 'wxRadar' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="yearOfManufacture" *ngIf="isColVisible('yearOfManufacture')">
+                        {{ 'yearOfManufacture' | translate }}
+                     </th>
+                    
+                    <th nzWidth="7%" [nzAlign]="'right'">Action</th>
+                </tr> 
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let data of listOfData" style="vertical-align: top;">
+                    <tr>
+                        <td [nzExpand]="expandSet.has(data.idAircraftDetail)"
+                            (nzExpandChange)="onExpandChange(data.idAircraftDetail, $event)">
+                            <nz-badge *ngIf="data.idAircraftDetail!=null" nzColor="{{ data.idAircraftDetail?.toLowerCase() | status }}"
+                                nzText="{{data.idAircraftDetail?.toLowerCase() }}"></nz-badge>  
+                        </td>
+                        
+                        
+                            <td *ngIf="isColVisible('airworthiness')">
+                                
+                                                        {{ data.airworthiness  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('autoPilot')">
+                                
+                                                        {{ data.autoPilot  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('auxiliaryTank')">
+                                
+                                                        {{ data.auxiliaryTank  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('baggageCompartmentSpace')">
+                                
+                                                        {{ data.baggageCompartmentSpace  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('cargoAreaMaximumHeight')">
+                                
+                                                        {{ data.cargoAreaMaximumHeight  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('cargoAreaOverallLength')">
+                                
+                                                        {{ data.cargoAreaOverallLength  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('cargoDoor')">
+                                
+                                                        {{ data.cargoDoor  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('certificateOfRegistration')">
+                                
+                                                        {{ data.certificateOfRegistration  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('compassSwing')">
+                                
+                                                        {{ data.compassSwing  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('configuration')">
+                                
+                                                        {{ data.configuration  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('crew')">
+                                
+                                                        {{ data.crew  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('crewDoor')">
+                                
+                                                        {{ data.crewDoor  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('crewLifeVest')">
+                                
+                                                        {{ data.crewLifeVest  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('cvr')">
+                                
+                                                        {{ data.cvr  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('dme')">
+                                
+                                                        {{ data.dme  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('dualAdfSystem')">
+                                
+                                                        {{ data.dualAdfSystem  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('dualRadioNavigationSystem')">
+                                
+                                                        {{ data.dualRadioNavigationSystem  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('dualVhfCommunication')">
+                                
+                                                        {{ data.dualVhfCommunication  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('earProtector')">
+                                
+                                                        {{ data.earProtector  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('emergency')">
+                                
+                                                        {{ data.emergency  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('emergencyFloatationGear')">
+                                
+                                                        {{ data.emergencyFloatationGear  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('emergencyLocateTransmitter')">
+                                
+                                                        {{ data.emergencyLocateTransmitter  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('emptyWeight')">
+                                
+                                                        {{ data.emptyWeight  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('engine')">
+                                
+                                                        {{ data.engine  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('engineInstrument')">
+                                
+                                                        {{ data.engineInstrument  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('externalCargoHook')">
+                                
+                                                        {{ data.externalCargoHook  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('firstAidKit')">
+                                
+                                                        {{ data.firstAidKit  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('flightControl')">
+                                
+                                                        {{ data.flightControl  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('flightDirector')">
+                                
+                                                        {{ data.flightDirector  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('floatingBeacon')">
+                                
+                                                        {{ data.floatingBeacon  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('fullDoc')">
+                                
+                                                        {{ data.fullDoc  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('gps')">
+                                
+                                                        {{ data.gps  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('grossWeight')">
+                                
+                                                        {{ data.grossWeight  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('gyroMagneticCompass')">
+                                
+                                                        {{ data.gyroMagneticCompass  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('hfCommunication')">
+                                
+                                                        {{ data.hfCommunication  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('homer')">
+                                
+                                                        {{ data.homer  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('hoverCeilingOge')">
+                                
+                                                        {{ data.hoverCeilingOge  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('intercommunicationSystem')">
+                                
+                                                        {{ data.intercommunicationSystem  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('internalHoist')">
+                                
+                                                        {{ data.internalHoist  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('landingGear')">
+                                
+                                                        {{ data.landingGear  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('landingLight')">
+                                
+                                                        {{ data.landingLight  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('lifeRaft')">
+                                
+                                                        {{ data.lifeRaft  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('lifeVest')">
+                                
+                                                        {{ data.lifeVest  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('mainCabinSpace')">
+                                
+                                                        {{ data.mainCabinSpace  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('mainRotorDiscDiameter')">
+                                
+                                                        {{ data.mainRotorDiscDiameter  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('mainRotorSystem')">
+                                
+                                                        {{ data.mainRotorSystem  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('maximumBaggageCompartment')">
+                                
+                                                        {{ data.maximumBaggageCompartment  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('maximumContinuous')">
+                                
+                                                        {{ data.maximumContinuous  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('maximumSpeed')">
+                                
+                                                        {{ data.maximumSpeed  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('medicalStretcher')">
+                                
+                                                        {{ data.medicalStretcher  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('minute')">
+                                
+                                                        {{ data.minute  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('moreDetail')">
+                                
+                                                        {{ data.moreDetail  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('outputPower')">
+                                
+                                                        {{ data.outputPower  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('passenger')">
+                                
+                                                        {{ data.passenger  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('passengerDoorHeight')">
+                                
+                                                        {{ data.passengerDoorHeight  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('passengerDoorWidth')">
+                                
+                                                        {{ data.passengerDoorWidth  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('payload')">
+                                
+                                                        {{ data.payload  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('personal')">
+                                
+                                                        {{ data.personal  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('poweredBy')">
+                                
+                                                        {{ data.poweredBy  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('publicAddress')">
+                                
+                                                        {{ data.publicAddress  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('radioAltimeter')">
+                                
+                                                        {{ data.radioAltimeter  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('radioPermit')">
+                                
+                                                        {{ data.radioPermit  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('range')">
+                                
+                                                        {{ data.range  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('searchLight')">
+                                
+                                                        {{ data.searchLight  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('standardFuelCapacity')">
+                                
+                                                        {{ data.standardFuelCapacity  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('survivalKit')">
+                                
+                                                        {{ data.survivalKit  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('tailRotorDiameter')">
+                                
+                                                        {{ data.tailRotorDiameter  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('tailRotorSystem')">
+                                
+                                                        {{ data.tailRotorSystem  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('takeOff')">
+                                
+                                                        {{ data.takeOff  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('transponder')">
+                                
+                                                        {{ data.transponder  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('underwaterBeacon')">
+                                
+                                                        {{ data.underwaterBeacon  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('updatedAt')">
+                                
+                                        {{ data.updatedAt | date: 'short' }}
+                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('usefulWeight')">
+                                
+                                                        {{ data.usefulWeight  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('vor')">
+                                
+                                                        {{ data.vor  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('weightAndBalance')">
+                                
+                                                        {{ data.weightAndBalance  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('withFullPassenger')">
+                                
+                                                        {{ data.withFullPassenger  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('wxRadar')">
+                                
+                                                        {{ data.wxRadar  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('yearOfManufacture')">
+                                
+                                                        {{ data.yearOfManufacture  }}
+                                                            
+                            </td>
+                            
+
+                        <td [nzAlign]="'right'">
+                            <button nz-button nz-dropdown [nzDropdownMenu]="menu">
+                                Actions
+                                <span nz-icon nzType="down"></span>
+                            </button>
+                            <nz-dropdown-menu #menu="nzDropdownMenu">
+                                <ul nz-menu>
+                                    <li nz-menu-item (click)="detail(data)">
+                                        <span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Detail
+                                    </li>
+                                    <!--  -->
+                                    <li nz-menu-item (click)="update(data)" *ngIf="data.status=='draft'">
+                                        <span nz-icon nzType="edit" nzTheme="outline"></span>&nbsp;&nbsp;Update
+                                    </li>
+                                    <li nz-menu-divider *ngIf="data.status=='draft'"></li>
+                                    <li nz-menu-item nz-menu-item nz-popconfirm class="text-danger"
+                                        *ngIf="data.status=='draft'"
+                                        nzPopconfirmTitle="Apakah Anda yakin akan menghapus data ini?"
+                                        nzPopconfirmPlacement="bottom" (nzOnConfirm)="delete(data.idAircraftDetail)"><span
+                                            nz-icon nzType="delete" nzTheme="outline"></span>
+                                        <a class="m-1 text-danger">&nbsp;&nbsp;Delete</a>
+                                    </li>
+                                </ul>
+                            </nz-dropdown-menu>
+                        </td>
+                    </tr>
+                    <tr [nzExpand]="expandSet.has(data.idAircraftDetail)">
+                        <app-aircraft-detail-share-header [data]="data"></app-aircraft-detail-share-header> 
+                    </tr>
+                </ng-container>
+                 
+            </tbody>
+        </nz-table>
+    </div>
+</nz-card>
+<ng-template #extraTemplate>
+    <ng-container *ngIf="!filter_extra">
+        <nz-input-group nzSearch [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="suffixIconButton"
+            style="max-width: 180px;">
+            <input type="text" nz-input placeholder="{{'search'|translate|titlecase}}" [(ngModel)]="search"
+                name="search" (keyup.enter)="searchData()" />
+        </nz-input-group>
+        <ng-template #suffixIconButton>
+            <button nz-button nzType="default" nzSearch (click)="searchData()"><span nz-icon
+                    nzType="search"></span></button>
+        </ng-template>
+        <ng-template #addOnBeforeTemplate>
+            <span nz-icon nzTheme="twotone" nzType="question-circle" nz-popover nzPopoverTitle="Pencarian berdasarkan"
+                [nzPopoverContent]="tipsPencarian" nzPopoverPlacement="top"></span>
+            <ng-template #tipsPencarian>
+                <div>
+                    <ul>
+                        <li *ngFor="let item of search_field">{{ item | translate }}</li>
+                    </ul>
+                </div>
+            </ng-template>
+        </ng-template>
+    </ng-container>
+    <button nz-button [nzType]="filter_extra ? 'primary' :'default'" style="margin-bottom: 8px;margin-left: 10px;"
+        (click)="filter_extra=!filter_extra">
+        <span nz-icon nzType="filter" nzTheme="outline"></span> Filter
+    </button>
+    <button nz-button nz-dropdown [nzDropdownMenu]="menu" nzTy [nzPlacement]="'topRight'"><i nz-icon nzType="appstore"></i></button>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+            <li nz-menu-item *ngFor="let col of columns">
+                <label nz-checkbox [(ngModel)]="col.show" (ngModelChange)="onColumnToggle()">
+                    {{ col.key | translate }}
+                </label>
+            </li>
+        </ul>
+    </nz-dropdown-menu> 
+    <button nz-button nzType="link" (click)="resetColumns()" nz-tooltip nzTooltipTitle="{{ 'Reset Kolom' | translate }}"><i nz-icon nzType="undo"></i></button>
+
+    <button nz-button style="margin-bottom: 8px;margin-left: 10px;" nzType="primary" (click)="add()">
+        <span nz-icon nzType="plus" nzTheme="outline"></span> Add New
+    </button>
+</ng-template>

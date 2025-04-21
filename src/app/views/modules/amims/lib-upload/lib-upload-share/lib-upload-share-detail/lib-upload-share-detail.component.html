@@ -1,0 +1,64 @@
+
+  <div class="mb-3">
+    <div class="text-secondary small">Category</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.category || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Created At</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt ? (data.createdAt | date:'short') : '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">File Date</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.fileDate || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">File Name</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.fileName || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">File Number</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.fileNumber || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">For Module</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.forModule || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Updated At</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt || '-' }}
+      
+    </div>
+  </div>
+

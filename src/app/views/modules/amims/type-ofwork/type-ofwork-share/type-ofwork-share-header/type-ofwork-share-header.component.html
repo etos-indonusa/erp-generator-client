@@ -1,0 +1,194 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.childnameTypeOfwork !== undefined && data?.childnameTypeOfwork !== null">
+    <div class="text-secondary small">
+      {{ 'childnameTypeOfwork' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.childnameTypeOfwork || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.code !== undefined && data?.code !== null">
+    <div class="text-secondary small">
+      {{ 'code' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.code || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idTypeOfwork !== undefined && data?.idTypeOfwork !== null">
+    <div class="text-secondary small">
+      {{ 'idTypeOfwork' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idTypeOfwork || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.isDeleted !== undefined && data?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.typeOfwork !== undefined && data?.typeOfwork !== null">
+    <div class="text-secondary small">
+      {{ 'typeOfwork' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.typeOfwork || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.typeOfwork">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'typeOfwork' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.typeOfwork?.childnameTypeOfwork !== undefined && data.typeOfwork?.childnameTypeOfwork !== null">
+    <div class="text-secondary small">
+      {{ 'childnameTypeOfwork' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.typeOfwork.childnameTypeOfwork || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.typeOfwork?.code !== undefined && data.typeOfwork?.code !== null">
+    <div class="text-secondary small">
+      {{ 'code' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.typeOfwork.code || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.typeOfwork?.idTypeOfwork !== undefined && data.typeOfwork?.idTypeOfwork !== null">
+    <div class="text-secondary small">
+      {{ 'idTypeOfwork' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.typeOfwork.idTypeOfwork || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.typeOfwork?.isDeleted !== undefined && data.typeOfwork?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.typeOfwork.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.typeOfwork.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.typeOfwork?.typeOfwork !== undefined && data.typeOfwork?.typeOfwork !== null">
+    <div class="text-secondary small">
+      {{ 'typeOfwork' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.typeOfwork.typeOfwork || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>

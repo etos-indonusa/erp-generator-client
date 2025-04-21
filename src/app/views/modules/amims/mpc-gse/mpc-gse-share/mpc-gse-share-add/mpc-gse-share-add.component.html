@@ -1,0 +1,54 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="dateGse">{{ 'dateGse' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-date-picker formControlName="dateGse" style="width: 100%" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idEngineerRti">{{ 'idEngineerRti' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idEngineerRti" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idEngineerRti' | translate }}"> 
+                    <nz-option *ngFor="let item of listEngineerRti" nzLabel="{{ item.idEngineerRti }}" nzValue="{{ item.idEngineerRti }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idUserGse">{{ 'idUserGse' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idUserGse" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idUserGse' | translate }}"> 
+                    <nz-option *ngFor="let item of listUserGse" nzLabel="{{ item.idUserGse }}" nzValue="{{ item.idUserGse }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="noteGse">{{ 'noteGse' | translate }}</nz-form-label>
+            <nz-form-control>
+                <textarea nz-input id="noteGse" formControlName="noteGse" placeholder="Masukkan {{ 'noteGse' | translate }}"></textarea>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="statusGse">{{ 'statusGse' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="statusGse" formControlName="statusGse" placeholder="Masukkan {{ 'statusGse' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

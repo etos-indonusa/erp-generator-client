@@ -1,0 +1,50 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="codeDispotition">{{ 'codeDispotition' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="codeDispotition" formControlName="codeDispotition" placeholder="Masukkan {{ 'codeDispotition' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="color">{{ 'color' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="color" formControlName="color" placeholder="Masukkan {{ 'color' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="dispotition">{{ 'dispotition' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="dispotition" formControlName="dispotition" placeholder="Masukkan {{ 'dispotition' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="printTag">{{ 'printTag' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="printTag" formControlName="printTag" placeholder="Masukkan {{ 'printTag' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="toPosition">{{ 'toPosition' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="toPosition" formControlName="toPosition" placeholder="Masukkan {{ 'toPosition' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

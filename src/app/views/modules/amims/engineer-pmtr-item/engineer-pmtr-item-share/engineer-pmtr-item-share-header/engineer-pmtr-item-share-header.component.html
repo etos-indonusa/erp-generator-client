@@ -1,0 +1,3527 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.createdAt !== undefined && data?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.figureIndex !== undefined && data?.figureIndex !== null">
+    <div class="text-secondary small">
+      {{ 'figureIndex' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.figureIndex || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idEngineerPmtr !== undefined && data?.idEngineerPmtr !== null">
+    <div class="text-secondary small">
+      {{ 'idEngineerPmtr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idEngineerPmtr || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idEngineerPmtrItem !== undefined && data?.idEngineerPmtrItem !== null">
+    <div class="text-secondary small">
+      {{ 'idEngineerPmtrItem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idEngineerPmtrItem || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idMpart !== undefined && data?.idMpart !== null">
+    <div class="text-secondary small">
+      {{ 'idMpart' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idMpart || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.noteItemPmtr !== undefined && data?.noteItemPmtr !== null">
+    <div class="text-secondary small">
+      {{ 'noteItemPmtr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.noteItemPmtr || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.priority !== undefined && data?.priority !== null">
+    <div class="text-secondary small">
+      {{ 'priority' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.priority || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.qtyPmtr !== undefined && data?.qtyPmtr !== null">
+    <div class="text-secondary small">
+      {{ 'qtyPmtr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qtyPmtr | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.updatedAt !== undefined && data?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.engineerPmtr">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'engineerPmtr' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr?.createdAt !== undefined && data.engineerPmtr?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr?.dateAcc !== undefined && data.engineerPmtr?.dateAcc !== null">
+    <div class="text-secondary small">
+      {{ 'dateAcc' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.dateAcc || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr?.datePmtr !== undefined && data.engineerPmtr?.datePmtr !== null">
+    <div class="text-secondary small">
+      {{ 'datePmtr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.datePmtr || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr?.fromSite !== undefined && data.engineerPmtr?.fromSite !== null">
+    <div class="text-secondary small">
+      {{ 'fromSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.fromSite | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr?.idAircraft !== undefined && data.engineerPmtr?.idAircraft !== null">
+    <div class="text-secondary small">
+      {{ 'idAircraft' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.idAircraft || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr?.idEngineerPmtr !== undefined && data.engineerPmtr?.idEngineerPmtr !== null">
+    <div class="text-secondary small">
+      {{ 'idEngineerPmtr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.idEngineerPmtr || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr?.idUser !== undefined && data.engineerPmtr?.idUser !== null">
+    <div class="text-secondary small">
+      {{ 'idUser' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.idUser || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr?.idUserAcc !== undefined && data.engineerPmtr?.idUserAcc !== null">
+    <div class="text-secondary small">
+      {{ 'idUserAcc' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.idUserAcc || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr?.isDeleted !== undefined && data.engineerPmtr?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.engineerPmtr.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.engineerPmtr.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr?.noIndex !== undefined && data.engineerPmtr?.noIndex !== null">
+    <div class="text-secondary small">
+      {{ 'noIndex' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.noIndex | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr?.notePmtr !== undefined && data.engineerPmtr?.notePmtr !== null">
+    <div class="text-secondary small">
+      {{ 'notePmtr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.notePmtr || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr?.numberPmtr !== undefined && data.engineerPmtr?.numberPmtr !== null">
+    <div class="text-secondary small">
+      {{ 'numberPmtr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.numberPmtr || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr?.statusPmtr !== undefined && data.engineerPmtr?.statusPmtr !== null">
+    <div class="text-secondary small">
+      {{ 'statusPmtr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.engineerPmtr.statusPmtr }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr?.toSite !== undefined && data.engineerPmtr?.toSite !== null">
+    <div class="text-secondary small">
+      {{ 'toSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.toSite | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr?.updatedAt !== undefined && data.engineerPmtr?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr?.validasi !== undefined && data.engineerPmtr?.validasi !== null">
+    <div class="text-secondary small">
+      {{ 'validasi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.validasi | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.engineerPmtr?.aircraft">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'engineerPmtr.aircraft' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.airworthiness !== undefined && data.engineerPmtr.aircraft?.airworthiness !== null">
+    <div class="text-secondary small">
+      {{ 'airworthiness' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.airworthiness || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.autoPilot !== undefined && data.engineerPmtr.aircraft?.autoPilot !== null">
+    <div class="text-secondary small">
+      {{ 'autoPilot' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.autoPilot || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.auxiliaryTank !== undefined && data.engineerPmtr.aircraft?.auxiliaryTank !== null">
+    <div class="text-secondary small">
+      {{ 'auxiliaryTank' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.auxiliaryTank || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.baggageCompartmentSpace !== undefined && data.engineerPmtr.aircraft?.baggageCompartmentSpace !== null">
+    <div class="text-secondary small">
+      {{ 'baggageCompartmentSpace' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.baggageCompartmentSpace || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.cargoAreaMaximumHeight !== undefined && data.engineerPmtr.aircraft?.cargoAreaMaximumHeight !== null">
+    <div class="text-secondary small">
+      {{ 'cargoAreaMaximumHeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.cargoAreaMaximumHeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.cargoAreaOverallLength !== undefined && data.engineerPmtr.aircraft?.cargoAreaOverallLength !== null">
+    <div class="text-secondary small">
+      {{ 'cargoAreaOverallLength' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.cargoAreaOverallLength || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.cargoDoor !== undefined && data.engineerPmtr.aircraft?.cargoDoor !== null">
+    <div class="text-secondary small">
+      {{ 'cargoDoor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.cargoDoor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.certificateOfRegistration !== undefined && data.engineerPmtr.aircraft?.certificateOfRegistration !== null">
+    <div class="text-secondary small">
+      {{ 'certificateOfRegistration' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.certificateOfRegistration || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.compassSwing !== undefined && data.engineerPmtr.aircraft?.compassSwing !== null">
+    <div class="text-secondary small">
+      {{ 'compassSwing' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.compassSwing || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.configuration !== undefined && data.engineerPmtr.aircraft?.configuration !== null">
+    <div class="text-secondary small">
+      {{ 'configuration' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.configuration || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.crew !== undefined && data.engineerPmtr.aircraft?.crew !== null">
+    <div class="text-secondary small">
+      {{ 'crew' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.crew || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.crewDoor !== undefined && data.engineerPmtr.aircraft?.crewDoor !== null">
+    <div class="text-secondary small">
+      {{ 'crewDoor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.crewDoor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.crewLifeVest !== undefined && data.engineerPmtr.aircraft?.crewLifeVest !== null">
+    <div class="text-secondary small">
+      {{ 'crewLifeVest' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.crewLifeVest || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.cvr !== undefined && data.engineerPmtr.aircraft?.cvr !== null">
+    <div class="text-secondary small">
+      {{ 'cvr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.cvr || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.dme !== undefined && data.engineerPmtr.aircraft?.dme !== null">
+    <div class="text-secondary small">
+      {{ 'dme' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.dme || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.dualAdfSystem !== undefined && data.engineerPmtr.aircraft?.dualAdfSystem !== null">
+    <div class="text-secondary small">
+      {{ 'dualAdfSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.dualAdfSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.dualRadioNavigationSystem !== undefined && data.engineerPmtr.aircraft?.dualRadioNavigationSystem !== null">
+    <div class="text-secondary small">
+      {{ 'dualRadioNavigationSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.dualRadioNavigationSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.dualVhfCommunication !== undefined && data.engineerPmtr.aircraft?.dualVhfCommunication !== null">
+    <div class="text-secondary small">
+      {{ 'dualVhfCommunication' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.dualVhfCommunication || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.earProtector !== undefined && data.engineerPmtr.aircraft?.earProtector !== null">
+    <div class="text-secondary small">
+      {{ 'earProtector' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.earProtector || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.emergency !== undefined && data.engineerPmtr.aircraft?.emergency !== null">
+    <div class="text-secondary small">
+      {{ 'emergency' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.emergency || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.emergencyFloatationGear !== undefined && data.engineerPmtr.aircraft?.emergencyFloatationGear !== null">
+    <div class="text-secondary small">
+      {{ 'emergencyFloatationGear' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.emergencyFloatationGear || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.emergencyLocateTransmitter !== undefined && data.engineerPmtr.aircraft?.emergencyLocateTransmitter !== null">
+    <div class="text-secondary small">
+      {{ 'emergencyLocateTransmitter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.emergencyLocateTransmitter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.emptyWeight !== undefined && data.engineerPmtr.aircraft?.emptyWeight !== null">
+    <div class="text-secondary small">
+      {{ 'emptyWeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.emptyWeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.engine !== undefined && data.engineerPmtr.aircraft?.engine !== null">
+    <div class="text-secondary small">
+      {{ 'engine' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.engine || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.engineInstrument !== undefined && data.engineerPmtr.aircraft?.engineInstrument !== null">
+    <div class="text-secondary small">
+      {{ 'engineInstrument' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.engineInstrument || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.externalCargoHook !== undefined && data.engineerPmtr.aircraft?.externalCargoHook !== null">
+    <div class="text-secondary small">
+      {{ 'externalCargoHook' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.externalCargoHook || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.firstAidKit !== undefined && data.engineerPmtr.aircraft?.firstAidKit !== null">
+    <div class="text-secondary small">
+      {{ 'firstAidKit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.firstAidKit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.flightControl !== undefined && data.engineerPmtr.aircraft?.flightControl !== null">
+    <div class="text-secondary small">
+      {{ 'flightControl' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.flightControl || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.flightDirector !== undefined && data.engineerPmtr.aircraft?.flightDirector !== null">
+    <div class="text-secondary small">
+      {{ 'flightDirector' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.flightDirector || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.floatingBeacon !== undefined && data.engineerPmtr.aircraft?.floatingBeacon !== null">
+    <div class="text-secondary small">
+      {{ 'floatingBeacon' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.floatingBeacon || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.fullDoc !== undefined && data.engineerPmtr.aircraft?.fullDoc !== null">
+    <div class="text-secondary small">
+      {{ 'fullDoc' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.fullDoc || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.gps !== undefined && data.engineerPmtr.aircraft?.gps !== null">
+    <div class="text-secondary small">
+      {{ 'gps' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.gps || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.grossWeight !== undefined && data.engineerPmtr.aircraft?.grossWeight !== null">
+    <div class="text-secondary small">
+      {{ 'grossWeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.grossWeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.gyroMagneticCompass !== undefined && data.engineerPmtr.aircraft?.gyroMagneticCompass !== null">
+    <div class="text-secondary small">
+      {{ 'gyroMagneticCompass' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.gyroMagneticCompass || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.hfCommunication !== undefined && data.engineerPmtr.aircraft?.hfCommunication !== null">
+    <div class="text-secondary small">
+      {{ 'hfCommunication' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.hfCommunication || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.homer !== undefined && data.engineerPmtr.aircraft?.homer !== null">
+    <div class="text-secondary small">
+      {{ 'homer' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.homer || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.hoverCeilingOge !== undefined && data.engineerPmtr.aircraft?.hoverCeilingOge !== null">
+    <div class="text-secondary small">
+      {{ 'hoverCeilingOge' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.hoverCeilingOge || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.idAircraftDetail !== undefined && data.engineerPmtr.aircraft?.idAircraftDetail !== null">
+    <div class="text-secondary small">
+      {{ 'idAircraftDetail' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.idAircraftDetail || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.intercommunicationSystem !== undefined && data.engineerPmtr.aircraft?.intercommunicationSystem !== null">
+    <div class="text-secondary small">
+      {{ 'intercommunicationSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.intercommunicationSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.internalHoist !== undefined && data.engineerPmtr.aircraft?.internalHoist !== null">
+    <div class="text-secondary small">
+      {{ 'internalHoist' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.internalHoist || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.landingGear !== undefined && data.engineerPmtr.aircraft?.landingGear !== null">
+    <div class="text-secondary small">
+      {{ 'landingGear' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.landingGear || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.landingLight !== undefined && data.engineerPmtr.aircraft?.landingLight !== null">
+    <div class="text-secondary small">
+      {{ 'landingLight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.landingLight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.lifeRaft !== undefined && data.engineerPmtr.aircraft?.lifeRaft !== null">
+    <div class="text-secondary small">
+      {{ 'lifeRaft' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.lifeRaft || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.lifeVest !== undefined && data.engineerPmtr.aircraft?.lifeVest !== null">
+    <div class="text-secondary small">
+      {{ 'lifeVest' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.lifeVest || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.mainCabinSpace !== undefined && data.engineerPmtr.aircraft?.mainCabinSpace !== null">
+    <div class="text-secondary small">
+      {{ 'mainCabinSpace' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.mainCabinSpace || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.mainRotorDiscDiameter !== undefined && data.engineerPmtr.aircraft?.mainRotorDiscDiameter !== null">
+    <div class="text-secondary small">
+      {{ 'mainRotorDiscDiameter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.mainRotorDiscDiameter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.mainRotorSystem !== undefined && data.engineerPmtr.aircraft?.mainRotorSystem !== null">
+    <div class="text-secondary small">
+      {{ 'mainRotorSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.mainRotorSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.maximumBaggageCompartment !== undefined && data.engineerPmtr.aircraft?.maximumBaggageCompartment !== null">
+    <div class="text-secondary small">
+      {{ 'maximumBaggageCompartment' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.maximumBaggageCompartment || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.maximumContinuous !== undefined && data.engineerPmtr.aircraft?.maximumContinuous !== null">
+    <div class="text-secondary small">
+      {{ 'maximumContinuous' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.maximumContinuous || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.maximumSpeed !== undefined && data.engineerPmtr.aircraft?.maximumSpeed !== null">
+    <div class="text-secondary small">
+      {{ 'maximumSpeed' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.maximumSpeed || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.medicalStretcher !== undefined && data.engineerPmtr.aircraft?.medicalStretcher !== null">
+    <div class="text-secondary small">
+      {{ 'medicalStretcher' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.medicalStretcher || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.minute !== undefined && data.engineerPmtr.aircraft?.minute !== null">
+    <div class="text-secondary small">
+      {{ 'minute' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.minute || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.moreDetail !== undefined && data.engineerPmtr.aircraft?.moreDetail !== null">
+    <div class="text-secondary small">
+      {{ 'moreDetail' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.moreDetail || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.outputPower !== undefined && data.engineerPmtr.aircraft?.outputPower !== null">
+    <div class="text-secondary small">
+      {{ 'outputPower' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.outputPower || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.passenger !== undefined && data.engineerPmtr.aircraft?.passenger !== null">
+    <div class="text-secondary small">
+      {{ 'passenger' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.passenger || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.passengerDoorHeight !== undefined && data.engineerPmtr.aircraft?.passengerDoorHeight !== null">
+    <div class="text-secondary small">
+      {{ 'passengerDoorHeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.passengerDoorHeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.passengerDoorWidth !== undefined && data.engineerPmtr.aircraft?.passengerDoorWidth !== null">
+    <div class="text-secondary small">
+      {{ 'passengerDoorWidth' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.passengerDoorWidth || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.payload !== undefined && data.engineerPmtr.aircraft?.payload !== null">
+    <div class="text-secondary small">
+      {{ 'payload' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.payload || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.personal !== undefined && data.engineerPmtr.aircraft?.personal !== null">
+    <div class="text-secondary small">
+      {{ 'personal' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.personal || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.poweredBy !== undefined && data.engineerPmtr.aircraft?.poweredBy !== null">
+    <div class="text-secondary small">
+      {{ 'poweredBy' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.poweredBy || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.publicAddress !== undefined && data.engineerPmtr.aircraft?.publicAddress !== null">
+    <div class="text-secondary small">
+      {{ 'publicAddress' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.publicAddress || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.radioAltimeter !== undefined && data.engineerPmtr.aircraft?.radioAltimeter !== null">
+    <div class="text-secondary small">
+      {{ 'radioAltimeter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.radioAltimeter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.radioPermit !== undefined && data.engineerPmtr.aircraft?.radioPermit !== null">
+    <div class="text-secondary small">
+      {{ 'radioPermit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.radioPermit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.range !== undefined && data.engineerPmtr.aircraft?.range !== null">
+    <div class="text-secondary small">
+      {{ 'range' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.range || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.searchLight !== undefined && data.engineerPmtr.aircraft?.searchLight !== null">
+    <div class="text-secondary small">
+      {{ 'searchLight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.searchLight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.standardFuelCapacity !== undefined && data.engineerPmtr.aircraft?.standardFuelCapacity !== null">
+    <div class="text-secondary small">
+      {{ 'standardFuelCapacity' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.standardFuelCapacity || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.survivalKit !== undefined && data.engineerPmtr.aircraft?.survivalKit !== null">
+    <div class="text-secondary small">
+      {{ 'survivalKit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.survivalKit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.tailRotorDiameter !== undefined && data.engineerPmtr.aircraft?.tailRotorDiameter !== null">
+    <div class="text-secondary small">
+      {{ 'tailRotorDiameter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.tailRotorDiameter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.tailRotorSystem !== undefined && data.engineerPmtr.aircraft?.tailRotorSystem !== null">
+    <div class="text-secondary small">
+      {{ 'tailRotorSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.tailRotorSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.takeOff !== undefined && data.engineerPmtr.aircraft?.takeOff !== null">
+    <div class="text-secondary small">
+      {{ 'takeOff' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.takeOff || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.transponder !== undefined && data.engineerPmtr.aircraft?.transponder !== null">
+    <div class="text-secondary small">
+      {{ 'transponder' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.transponder || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.underwaterBeacon !== undefined && data.engineerPmtr.aircraft?.underwaterBeacon !== null">
+    <div class="text-secondary small">
+      {{ 'underwaterBeacon' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.underwaterBeacon || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.updatedAt !== undefined && data.engineerPmtr.aircraft?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.usefulWeight !== undefined && data.engineerPmtr.aircraft?.usefulWeight !== null">
+    <div class="text-secondary small">
+      {{ 'usefulWeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.usefulWeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.vor !== undefined && data.engineerPmtr.aircraft?.vor !== null">
+    <div class="text-secondary small">
+      {{ 'vor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.vor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.weightAndBalance !== undefined && data.engineerPmtr.aircraft?.weightAndBalance !== null">
+    <div class="text-secondary small">
+      {{ 'weightAndBalance' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.weightAndBalance || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.withFullPassenger !== undefined && data.engineerPmtr.aircraft?.withFullPassenger !== null">
+    <div class="text-secondary small">
+      {{ 'withFullPassenger' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.withFullPassenger || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.wxRadar !== undefined && data.engineerPmtr.aircraft?.wxRadar !== null">
+    <div class="text-secondary small">
+      {{ 'wxRadar' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.wxRadar || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft?.yearOfManufacture !== undefined && data.engineerPmtr.aircraft?.yearOfManufacture !== null">
+    <div class="text-secondary small">
+      {{ 'yearOfManufacture' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.yearOfManufacture || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.engineerPmtr.aircraft?.aircraftDetail">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'engineerPmtr.aircraft.aircraftDetail' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.airworthiness !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.airworthiness !== null">
+    <div class="text-secondary small">
+      {{ 'airworthiness' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.airworthiness || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.autoPilot !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.autoPilot !== null">
+    <div class="text-secondary small">
+      {{ 'autoPilot' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.autoPilot || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.auxiliaryTank !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.auxiliaryTank !== null">
+    <div class="text-secondary small">
+      {{ 'auxiliaryTank' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.auxiliaryTank || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.baggageCompartmentSpace !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.baggageCompartmentSpace !== null">
+    <div class="text-secondary small">
+      {{ 'baggageCompartmentSpace' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.baggageCompartmentSpace || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.cargoAreaMaximumHeight !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.cargoAreaMaximumHeight !== null">
+    <div class="text-secondary small">
+      {{ 'cargoAreaMaximumHeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.cargoAreaMaximumHeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.cargoAreaOverallLength !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.cargoAreaOverallLength !== null">
+    <div class="text-secondary small">
+      {{ 'cargoAreaOverallLength' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.cargoAreaOverallLength || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.cargoDoor !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.cargoDoor !== null">
+    <div class="text-secondary small">
+      {{ 'cargoDoor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.cargoDoor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.certificateOfRegistration !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.certificateOfRegistration !== null">
+    <div class="text-secondary small">
+      {{ 'certificateOfRegistration' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.certificateOfRegistration || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.compassSwing !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.compassSwing !== null">
+    <div class="text-secondary small">
+      {{ 'compassSwing' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.compassSwing || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.configuration !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.configuration !== null">
+    <div class="text-secondary small">
+      {{ 'configuration' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.configuration || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.crew !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.crew !== null">
+    <div class="text-secondary small">
+      {{ 'crew' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.crew || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.crewDoor !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.crewDoor !== null">
+    <div class="text-secondary small">
+      {{ 'crewDoor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.crewDoor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.crewLifeVest !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.crewLifeVest !== null">
+    <div class="text-secondary small">
+      {{ 'crewLifeVest' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.crewLifeVest || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.cvr !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.cvr !== null">
+    <div class="text-secondary small">
+      {{ 'cvr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.cvr || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.dme !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.dme !== null">
+    <div class="text-secondary small">
+      {{ 'dme' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.dme || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.dualAdfSystem !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.dualAdfSystem !== null">
+    <div class="text-secondary small">
+      {{ 'dualAdfSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.dualAdfSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.dualRadioNavigationSystem !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.dualRadioNavigationSystem !== null">
+    <div class="text-secondary small">
+      {{ 'dualRadioNavigationSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.dualRadioNavigationSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.dualVhfCommunication !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.dualVhfCommunication !== null">
+    <div class="text-secondary small">
+      {{ 'dualVhfCommunication' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.dualVhfCommunication || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.earProtector !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.earProtector !== null">
+    <div class="text-secondary small">
+      {{ 'earProtector' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.earProtector || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.emergency !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.emergency !== null">
+    <div class="text-secondary small">
+      {{ 'emergency' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.emergency || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.emergencyFloatationGear !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.emergencyFloatationGear !== null">
+    <div class="text-secondary small">
+      {{ 'emergencyFloatationGear' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.emergencyFloatationGear || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.emergencyLocateTransmitter !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.emergencyLocateTransmitter !== null">
+    <div class="text-secondary small">
+      {{ 'emergencyLocateTransmitter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.emergencyLocateTransmitter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.emptyWeight !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.emptyWeight !== null">
+    <div class="text-secondary small">
+      {{ 'emptyWeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.emptyWeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.engine !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.engine !== null">
+    <div class="text-secondary small">
+      {{ 'engine' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.engine || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.engineInstrument !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.engineInstrument !== null">
+    <div class="text-secondary small">
+      {{ 'engineInstrument' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.engineInstrument || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.externalCargoHook !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.externalCargoHook !== null">
+    <div class="text-secondary small">
+      {{ 'externalCargoHook' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.externalCargoHook || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.firstAidKit !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.firstAidKit !== null">
+    <div class="text-secondary small">
+      {{ 'firstAidKit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.firstAidKit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.flightControl !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.flightControl !== null">
+    <div class="text-secondary small">
+      {{ 'flightControl' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.flightControl || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.flightDirector !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.flightDirector !== null">
+    <div class="text-secondary small">
+      {{ 'flightDirector' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.flightDirector || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.floatingBeacon !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.floatingBeacon !== null">
+    <div class="text-secondary small">
+      {{ 'floatingBeacon' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.floatingBeacon || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.fullDoc !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.fullDoc !== null">
+    <div class="text-secondary small">
+      {{ 'fullDoc' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.fullDoc || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.gps !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.gps !== null">
+    <div class="text-secondary small">
+      {{ 'gps' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.gps || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.grossWeight !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.grossWeight !== null">
+    <div class="text-secondary small">
+      {{ 'grossWeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.grossWeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.gyroMagneticCompass !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.gyroMagneticCompass !== null">
+    <div class="text-secondary small">
+      {{ 'gyroMagneticCompass' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.gyroMagneticCompass || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.hfCommunication !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.hfCommunication !== null">
+    <div class="text-secondary small">
+      {{ 'hfCommunication' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.hfCommunication || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.homer !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.homer !== null">
+    <div class="text-secondary small">
+      {{ 'homer' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.homer || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.hoverCeilingOge !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.hoverCeilingOge !== null">
+    <div class="text-secondary small">
+      {{ 'hoverCeilingOge' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.hoverCeilingOge || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.idAircraftDetail !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.idAircraftDetail !== null">
+    <div class="text-secondary small">
+      {{ 'idAircraftDetail' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.idAircraftDetail || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.intercommunicationSystem !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.intercommunicationSystem !== null">
+    <div class="text-secondary small">
+      {{ 'intercommunicationSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.intercommunicationSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.internalHoist !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.internalHoist !== null">
+    <div class="text-secondary small">
+      {{ 'internalHoist' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.internalHoist || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.landingGear !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.landingGear !== null">
+    <div class="text-secondary small">
+      {{ 'landingGear' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.landingGear || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.landingLight !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.landingLight !== null">
+    <div class="text-secondary small">
+      {{ 'landingLight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.landingLight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.lifeRaft !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.lifeRaft !== null">
+    <div class="text-secondary small">
+      {{ 'lifeRaft' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.lifeRaft || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.lifeVest !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.lifeVest !== null">
+    <div class="text-secondary small">
+      {{ 'lifeVest' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.lifeVest || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.mainCabinSpace !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.mainCabinSpace !== null">
+    <div class="text-secondary small">
+      {{ 'mainCabinSpace' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.mainCabinSpace || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.mainRotorDiscDiameter !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.mainRotorDiscDiameter !== null">
+    <div class="text-secondary small">
+      {{ 'mainRotorDiscDiameter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.mainRotorDiscDiameter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.mainRotorSystem !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.mainRotorSystem !== null">
+    <div class="text-secondary small">
+      {{ 'mainRotorSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.mainRotorSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.maximumBaggageCompartment !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.maximumBaggageCompartment !== null">
+    <div class="text-secondary small">
+      {{ 'maximumBaggageCompartment' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.maximumBaggageCompartment || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.maximumContinuous !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.maximumContinuous !== null">
+    <div class="text-secondary small">
+      {{ 'maximumContinuous' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.maximumContinuous || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.maximumSpeed !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.maximumSpeed !== null">
+    <div class="text-secondary small">
+      {{ 'maximumSpeed' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.maximumSpeed || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.medicalStretcher !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.medicalStretcher !== null">
+    <div class="text-secondary small">
+      {{ 'medicalStretcher' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.medicalStretcher || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.minute !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.minute !== null">
+    <div class="text-secondary small">
+      {{ 'minute' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.minute || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.moreDetail !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.moreDetail !== null">
+    <div class="text-secondary small">
+      {{ 'moreDetail' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.moreDetail || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.outputPower !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.outputPower !== null">
+    <div class="text-secondary small">
+      {{ 'outputPower' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.outputPower || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.passenger !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.passenger !== null">
+    <div class="text-secondary small">
+      {{ 'passenger' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.passenger || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.passengerDoorHeight !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.passengerDoorHeight !== null">
+    <div class="text-secondary small">
+      {{ 'passengerDoorHeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.passengerDoorHeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.passengerDoorWidth !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.passengerDoorWidth !== null">
+    <div class="text-secondary small">
+      {{ 'passengerDoorWidth' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.passengerDoorWidth || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.payload !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.payload !== null">
+    <div class="text-secondary small">
+      {{ 'payload' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.payload || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.personal !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.personal !== null">
+    <div class="text-secondary small">
+      {{ 'personal' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.personal || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.poweredBy !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.poweredBy !== null">
+    <div class="text-secondary small">
+      {{ 'poweredBy' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.poweredBy || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.publicAddress !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.publicAddress !== null">
+    <div class="text-secondary small">
+      {{ 'publicAddress' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.publicAddress || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.radioAltimeter !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.radioAltimeter !== null">
+    <div class="text-secondary small">
+      {{ 'radioAltimeter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.radioAltimeter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.radioPermit !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.radioPermit !== null">
+    <div class="text-secondary small">
+      {{ 'radioPermit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.radioPermit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.range !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.range !== null">
+    <div class="text-secondary small">
+      {{ 'range' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.range || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.searchLight !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.searchLight !== null">
+    <div class="text-secondary small">
+      {{ 'searchLight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.searchLight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.standardFuelCapacity !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.standardFuelCapacity !== null">
+    <div class="text-secondary small">
+      {{ 'standardFuelCapacity' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.standardFuelCapacity || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.survivalKit !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.survivalKit !== null">
+    <div class="text-secondary small">
+      {{ 'survivalKit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.survivalKit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.tailRotorDiameter !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.tailRotorDiameter !== null">
+    <div class="text-secondary small">
+      {{ 'tailRotorDiameter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.tailRotorDiameter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.tailRotorSystem !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.tailRotorSystem !== null">
+    <div class="text-secondary small">
+      {{ 'tailRotorSystem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.tailRotorSystem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.takeOff !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.takeOff !== null">
+    <div class="text-secondary small">
+      {{ 'takeOff' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.takeOff || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.transponder !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.transponder !== null">
+    <div class="text-secondary small">
+      {{ 'transponder' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.transponder || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.underwaterBeacon !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.underwaterBeacon !== null">
+    <div class="text-secondary small">
+      {{ 'underwaterBeacon' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.underwaterBeacon || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.updatedAt !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.usefulWeight !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.usefulWeight !== null">
+    <div class="text-secondary small">
+      {{ 'usefulWeight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.usefulWeight || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.vor !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.vor !== null">
+    <div class="text-secondary small">
+      {{ 'vor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.vor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.weightAndBalance !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.weightAndBalance !== null">
+    <div class="text-secondary small">
+      {{ 'weightAndBalance' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.weightAndBalance || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.withFullPassenger !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.withFullPassenger !== null">
+    <div class="text-secondary small">
+      {{ 'withFullPassenger' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.withFullPassenger || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.wxRadar !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.wxRadar !== null">
+    <div class="text-secondary small">
+      {{ 'wxRadar' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.wxRadar || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.aircraft.aircraftDetail?.yearOfManufacture !== undefined && data.engineerPmtr.aircraft.aircraftDetail?.yearOfManufacture !== null">
+    <div class="text-secondary small">
+      {{ 'yearOfManufacture' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.aircraft.aircraftDetail.yearOfManufacture || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.engineerPmtr?.user">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'engineerPmtr.user' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.user?.createdAt !== undefined && data.engineerPmtr.user?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.user.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.user?.deskripsi !== undefined && data.engineerPmtr.user?.deskripsi !== null">
+    <div class="text-secondary small">
+      {{ 'deskripsi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.user.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.user?.idUserGroup !== undefined && data.engineerPmtr.user?.idUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'idUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.user.idUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.user?.namaUserGroup !== undefined && data.engineerPmtr.user?.namaUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'namaUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.user.namaUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.user?.status !== undefined && data.engineerPmtr.user?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.engineerPmtr.user.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.engineerPmtr.user?.userGroup">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'engineerPmtr.user.userGroup' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.user.userGroup?.createdAt !== undefined && data.engineerPmtr.user.userGroup?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.user.userGroup.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.user.userGroup?.deskripsi !== undefined && data.engineerPmtr.user.userGroup?.deskripsi !== null">
+    <div class="text-secondary small">
+      {{ 'deskripsi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.user.userGroup.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.user.userGroup?.idUserGroup !== undefined && data.engineerPmtr.user.userGroup?.idUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'idUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.user.userGroup.idUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.user.userGroup?.namaUserGroup !== undefined && data.engineerPmtr.user.userGroup?.namaUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'namaUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtr.user.userGroup.namaUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtr.user.userGroup?.status !== undefined && data.engineerPmtr.user.userGroup?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.engineerPmtr.user.userGroup.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.engineerPmtrItem">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'engineerPmtrItem' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtrItem?.createdAt !== undefined && data.engineerPmtrItem?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtrItem.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtrItem?.figureIndex !== undefined && data.engineerPmtrItem?.figureIndex !== null">
+    <div class="text-secondary small">
+      {{ 'figureIndex' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtrItem.figureIndex || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtrItem?.idEngineerPmtr !== undefined && data.engineerPmtrItem?.idEngineerPmtr !== null">
+    <div class="text-secondary small">
+      {{ 'idEngineerPmtr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtrItem.idEngineerPmtr || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtrItem?.idEngineerPmtrItem !== undefined && data.engineerPmtrItem?.idEngineerPmtrItem !== null">
+    <div class="text-secondary small">
+      {{ 'idEngineerPmtrItem' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtrItem.idEngineerPmtrItem || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtrItem?.idMpart !== undefined && data.engineerPmtrItem?.idMpart !== null">
+    <div class="text-secondary small">
+      {{ 'idMpart' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtrItem.idMpart || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtrItem?.noteItemPmtr !== undefined && data.engineerPmtrItem?.noteItemPmtr !== null">
+    <div class="text-secondary small">
+      {{ 'noteItemPmtr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtrItem.noteItemPmtr || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtrItem?.priority !== undefined && data.engineerPmtrItem?.priority !== null">
+    <div class="text-secondary small">
+      {{ 'priority' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtrItem.priority || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtrItem?.qtyPmtr !== undefined && data.engineerPmtrItem?.qtyPmtr !== null">
+    <div class="text-secondary small">
+      {{ 'qtyPmtr' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtrItem.qtyPmtr | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.engineerPmtrItem?.updatedAt !== undefined && data.engineerPmtrItem?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.engineerPmtrItem.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>

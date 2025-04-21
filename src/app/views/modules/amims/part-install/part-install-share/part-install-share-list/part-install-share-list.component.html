@@ -1,0 +1,665 @@
+<nz-card nzTitle="{{filter.status|titlecase}} ({{ total }})" [nzExtra]="extraTemplate" [nzBodyStyle]="{padding:0}">
+    <div class="filter" [hidden]="!filter_extra">
+        <form nz-form [nzLayout]="'vertical'" role="form">
+            <div nz-row [nzGutter]="8">
+                <div nz-col [nzXl]="{ span: 6}" [nzLg]="{ span: 8}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
+                    <nz-form-item>
+                        <nz-form-label>&nbsp;</nz-form-label>
+                        <nz-form-control>
+                            <nz-input-group nzSearch [nzAddOnBefore]="addOnBeforeTemplate"
+                                [nzAddOnAfter]="suffixIconButton" style="width: 100%;">
+                                <input type="text" nz-input placeholder="{{'search'|translate|titlecase}}"
+                                    [(ngModel)]="search" name="search" (keyup.enter)="searchData()" />
+                            </nz-input-group>
+                            <ng-template #suffixIconButton>
+                                <button nz-button nzType="default" nzSearch (click)="searchData()"><span nz-icon
+                                        nzType="search"></span></button>
+                            </ng-template>
+                            <ng-template #addOnBeforeTemplate>
+                                <span nz-icon nzTheme="twotone" nzType="question-circle" nz-popover
+                                    nzPopoverTitle="Pencarian berdasarkan" [nzPopoverContent]="tipsPencarian"
+                                    nzPopoverPlacement="top"></span>
+                                <ng-template #tipsPencarian>
+                                    <div>
+                                        <ul>
+                                            <li *ngFor="let item of search_field">{{ item | translate }}</li>
+                                        </ul>
+                                    </div>
+                                </ng-template>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'dateInstall' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <nz-range-picker
+                            [(ngModel)]="filter.dateInstallRange"
+                            name="dateInstallRange"
+                            nzFormat="YYYY-MM-DD"
+                            nzPlaceHolder="['Dari', 'Sampai']"
+                            style="width: 100%;">
+                        </nz-range-picker>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'dueOverhaulC' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.dueOverhaulCMin" name="dueOverhaulCMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.dueOverhaulCMax" name="dueOverhaulCMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'dueOverhaulH' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.dueOverhaulHMin" name="dueOverhaulHMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.dueOverhaulHMax" name="dueOverhaulHMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'dueOverhaulValue' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.dueOverhaulValueMin" name="dueOverhaulValueMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.dueOverhaulValueMax" name="dueOverhaulValueMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'idAircraft' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <nz-select [(ngModel)]="filter.idAircraft" name="idAircraft" nzAllowClear>
+                            <nz-option *ngFor="let item of listAircraft" [nzValue]="item.idAircraft" [nzLabel]="item.namaAircraft"></nz-option>
+                        </nz-select>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'idEngineerPrisItem' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <nz-select [(ngModel)]="filter.idEngineerPrisItem" name="idEngineerPrisItem" nzAllowClear>
+                            <nz-option *ngFor="let item of listEngineerPrisItem" [nzValue]="item.idEngineerPrisItem" [nzLabel]="item.namaEngineerPrisItem"></nz-option>
+                        </nz-select>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'idPart' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <nz-select [(ngModel)]="filter.idPart" name="idPart" nzAllowClear>
+                            <nz-option *ngFor="let item of listPart" [nzValue]="item.idPart" [nzLabel]="item.namaPart"></nz-option>
+                        </nz-select>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'installedOverhaulC' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.installedOverhaulCMin" name="installedOverhaulCMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.installedOverhaulCMax" name="installedOverhaulCMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'installedOverhaulH' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.installedOverhaulHMin" name="installedOverhaulHMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.installedOverhaulHMax" name="installedOverhaulHMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'installedOverhaulValue' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.installedOverhaulValueMin" name="installedOverhaulValueMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.installedOverhaulValueMax" name="installedOverhaulValueMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'installedParentC' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.installedParentCMin" name="installedParentCMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.installedParentCMax" name="installedParentCMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'installedParentH' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.installedParentHMin" name="installedParentHMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.installedParentHMax" name="installedParentHMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'installedParentValue' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.installedParentValueMin" name="installedParentValueMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.installedParentValueMax" name="installedParentValueMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'installedTsnC' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.installedTsnCMin" name="installedTsnCMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.installedTsnCMax" name="installedTsnCMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'installedTsnH' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.installedTsnHMin" name="installedTsnHMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.installedTsnHMax" name="installedTsnHMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'isfeatured' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                    <label nz-checkbox [(ngModel)]="filter.isfeatured" name="isfeatured">Yes</label> 
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                    <nz-form-label>{{ 'qtyInstall' | translate }}</nz-form-label>
+                    <nz-form-control>
+                                                <div nz-row [nzGutter]="8">
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.qtyInstallMin" name="qtyInstallMin" placeholder="Min" />
+                            </div>
+                            <div nz-col nzSpan="12">
+                            <input nz-input type="number" [(ngModel)]="filter.qtyInstallMax" name="qtyInstallMax" placeholder="Max" />
+                            </div>
+                        </div>
+                                            </nz-form-control>
+                    </nz-form-item>
+                </div>
+                
+ 
+                <div nz-col nzSpan="24">
+
+                    <nz-form-item>
+                        <nz-form-control>
+                            <button nz-button nzType="primary" (click)="print()" style="margin-right: 5px;">
+                                <span nz-icon nzType="printer"></span>
+                                Print
+                            </button>
+                            <button nz-button nzType="primary" (click)="searchData()" [nzLoading]="loading"
+                                style="margin-right: 10px;"><span nz-icon nzType="filter"></span>Filter</button>
+                            <button nz-button nzType="default" (click)="resetData()" [nzLoading]="loading"
+                                style="margin-right: 10px;"><span nz-icon nzType="reload"></span>Reset</button>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div style="overflow: auto; background-color: white;">
+        <nz-table nzShowSizeChanger [nzData]="listOfData" [nzFrontPagination]="false" [nzLoading]="loading"
+            [nzTotal]="total" [nzPageSize]="pageSize" [nzPageIndex]="pageIndex"
+            (nzQueryParams)="onQueryParamsChange($event)" nzSize="small">
+            <thead>
+                <tr>
+                    <th   [nzAlign]="'right'">#ID</th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="bin" *ngIf="isColVisible('bin')">
+                        {{ 'bin' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="createdAt" *ngIf="isColVisible('createdAt')">
+                        {{ 'createdAt' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="dateInstall" *ngIf="isColVisible('dateInstall')">
+                        {{ 'dateInstall' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="dueOverhaulC" *ngIf="isColVisible('dueOverhaulC')">
+                        {{ 'dueOverhaulC' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="dueOverhaulH" *ngIf="isColVisible('dueOverhaulH')">
+                        {{ 'dueOverhaulH' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="dueOverhaulValue" *ngIf="isColVisible('dueOverhaulValue')">
+                        {{ 'dueOverhaulValue' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="figureIndex" *ngIf="isColVisible('figureIndex')">
+                        {{ 'figureIndex' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="installedOverhaulC" *ngIf="isColVisible('installedOverhaulC')">
+                        {{ 'installedOverhaulC' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="installedOverhaulH" *ngIf="isColVisible('installedOverhaulH')">
+                        {{ 'installedOverhaulH' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="installedOverhaulValue" *ngIf="isColVisible('installedOverhaulValue')">
+                        {{ 'installedOverhaulValue' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="installedParentC" *ngIf="isColVisible('installedParentC')">
+                        {{ 'installedParentC' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="installedParentH" *ngIf="isColVisible('installedParentH')">
+                        {{ 'installedParentH' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="installedParentValue" *ngIf="isColVisible('installedParentValue')">
+                        {{ 'installedParentValue' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="installedTsnC" *ngIf="isColVisible('installedTsnC')">
+                        {{ 'installedTsnC' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="installedTsnH" *ngIf="isColVisible('installedTsnH')">
+                        {{ 'installedTsnH' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="isfeatured" *ngIf="isColVisible('isfeatured')">
+                        {{ 'isfeatured' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="itemIndex" *ngIf="isColVisible('itemIndex')">
+                        {{ 'itemIndex' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="newParen" *ngIf="isColVisible('newParen')">
+                        {{ 'newParen' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="oldId" *ngIf="isColVisible('oldId')">
+                        {{ 'oldId' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="oldIdPart" *ngIf="isColVisible('oldIdPart')">
+                        {{ 'oldIdPart' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="oldParent" *ngIf="isColVisible('oldParent')">
+                        {{ 'oldParent' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="onPris" *ngIf="isColVisible('onPris')">
+                        {{ 'onPris' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="parent" *ngIf="isColVisible('parent')">
+                        {{ 'parent' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="qtyInstall" *ngIf="isColVisible('qtyInstall')">
+                        {{ 'qtyInstall' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="refTechLog" *ngIf="isColVisible('refTechLog')">
+                        {{ 'refTechLog' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="statusInstall" *ngIf="isColVisible('statusInstall')">
+                        {{ 'statusInstall' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="topParent" *ngIf="isColVisible('topParent')">
+                        {{ 'topParent' | translate }}
+                     </th>
+                    
+                    <th [nzSortFn]="true" nzColumnKey="updatedAt" *ngIf="isColVisible('updatedAt')">
+                        {{ 'updatedAt' | translate }}
+                     </th>
+                    
+                    <th nzWidth="7%" [nzAlign]="'right'">Action</th>
+                </tr> 
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let data of listOfData" style="vertical-align: top;">
+                    <tr>
+                        <td [nzExpand]="expandSet.has(data.idPartInstall)"
+                            (nzExpandChange)="onExpandChange(data.idPartInstall, $event)">
+                            <nz-badge *ngIf="data.idPartInstall!=null" nzColor="{{ data.idPartInstall?.toLowerCase() | status }}"
+                                nzText="{{data.idPartInstall?.toLowerCase() }}"></nz-badge>  
+                        </td>
+                        
+                        
+                            <td *ngIf="isColVisible('bin')">
+                                
+                                                        {{ data.bin  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('createdAt')">
+                                
+                                        {{ data.createdAt | date: 'short' }}
+                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('dateInstall')">
+                                
+                                                        {{ data.dateInstall  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('dueOverhaulC')">
+                                
+                                                        {{ data.dueOverhaulC  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('dueOverhaulH')">
+                                
+                                                        {{ data.dueOverhaulH  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('dueOverhaulValue')">
+                                
+                                                        {{ data.dueOverhaulValue  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('figureIndex')">
+                                
+                                                        {{ data.figureIndex  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('installedOverhaulC')">
+                                
+                                                        {{ data.installedOverhaulC  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('installedOverhaulH')">
+                                
+                                                        {{ data.installedOverhaulH  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('installedOverhaulValue')">
+                                
+                                                        {{ data.installedOverhaulValue  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('installedParentC')">
+                                
+                                                        {{ data.installedParentC  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('installedParentH')">
+                                
+                                                        {{ data.installedParentH  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('installedParentValue')">
+                                
+                                                        {{ data.installedParentValue  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('installedTsnC')">
+                                
+                                                        {{ data.installedTsnC  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('installedTsnH')">
+                                
+                                                        {{ data.installedTsnH  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('isfeatured')">
+                                
+                                    <nz-tag *ngIf="data.isfeatured" nzColor="blue">Ya</nz-tag>
+                                    <span *ngIf="!data.isfeatured">-</span>
+                                    
+                            </td>
+                            
+                            <td *ngIf="isColVisible('itemIndex')">
+                                
+                                                        {{ data.itemIndex  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('newParen')">
+                                
+                                                        {{ data.newParen  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('oldId')">
+                                
+                                                        {{ data.oldId  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('oldIdPart')">
+                                
+                                                        {{ data.oldIdPart  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('oldParent')">
+                                
+                                                        {{ data.oldParent  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('onPris')">
+                                
+                                                        {{ data.onPris  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('parent')">
+                                
+                                                        {{ data.parent  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('qtyInstall')">
+                                
+                                                        {{ data.qtyInstall  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('refTechLog')">
+                                
+                                                        {{ data.refTechLog  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('statusInstall')">
+                                
+                                                        {{ data.statusInstall  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('topParent')">
+                                
+                                                        {{ data.topParent  }}
+                                                            
+                            </td>
+                            
+                            <td *ngIf="isColVisible('updatedAt')">
+                                
+                                        {{ data.updatedAt | date: 'short' }}
+                                            
+                            </td>
+                            
+
+                        <td [nzAlign]="'right'">
+                            <button nz-button nz-dropdown [nzDropdownMenu]="menu">
+                                Actions
+                                <span nz-icon nzType="down"></span>
+                            </button>
+                            <nz-dropdown-menu #menu="nzDropdownMenu">
+                                <ul nz-menu>
+                                    <li nz-menu-item (click)="detail(data)">
+                                        <span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Detail
+                                    </li>
+                                    <!--  -->
+                                    <li nz-menu-item (click)="update(data)" *ngIf="data.status=='draft'">
+                                        <span nz-icon nzType="edit" nzTheme="outline"></span>&nbsp;&nbsp;Update
+                                    </li>
+                                    <li nz-menu-divider *ngIf="data.status=='draft'"></li>
+                                    <li nz-menu-item nz-menu-item nz-popconfirm class="text-danger"
+                                        *ngIf="data.status=='draft'"
+                                        nzPopconfirmTitle="Apakah Anda yakin akan menghapus data ini?"
+                                        nzPopconfirmPlacement="bottom" (nzOnConfirm)="delete(data.idPartInstall)"><span
+                                            nz-icon nzType="delete" nzTheme="outline"></span>
+                                        <a class="m-1 text-danger">&nbsp;&nbsp;Delete</a>
+                                    </li>
+                                </ul>
+                            </nz-dropdown-menu>
+                        </td>
+                    </tr>
+                    <tr [nzExpand]="expandSet.has(data.idPartInstall)">
+                        <app-part-install-share-header [data]="data"></app-part-install-share-header> 
+                    </tr>
+                </ng-container>
+                 
+            </tbody>
+        </nz-table>
+    </div>
+</nz-card>
+<ng-template #extraTemplate>
+    <ng-container *ngIf="!filter_extra">
+        <nz-input-group nzSearch [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="suffixIconButton"
+            style="max-width: 180px;">
+            <input type="text" nz-input placeholder="{{'search'|translate|titlecase}}" [(ngModel)]="search"
+                name="search" (keyup.enter)="searchData()" />
+        </nz-input-group>
+        <ng-template #suffixIconButton>
+            <button nz-button nzType="default" nzSearch (click)="searchData()"><span nz-icon
+                    nzType="search"></span></button>
+        </ng-template>
+        <ng-template #addOnBeforeTemplate>
+            <span nz-icon nzTheme="twotone" nzType="question-circle" nz-popover nzPopoverTitle="Pencarian berdasarkan"
+                [nzPopoverContent]="tipsPencarian" nzPopoverPlacement="top"></span>
+            <ng-template #tipsPencarian>
+                <div>
+                    <ul>
+                        <li *ngFor="let item of search_field">{{ item | translate }}</li>
+                    </ul>
+                </div>
+            </ng-template>
+        </ng-template>
+    </ng-container>
+    <button nz-button [nzType]="filter_extra ? 'primary' :'default'" style="margin-bottom: 8px;margin-left: 10px;"
+        (click)="filter_extra=!filter_extra">
+        <span nz-icon nzType="filter" nzTheme="outline"></span> Filter
+    </button>
+    <button nz-button nz-dropdown [nzDropdownMenu]="menu" nzTy [nzPlacement]="'topRight'"><i nz-icon nzType="appstore"></i></button>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+            <li nz-menu-item *ngFor="let col of columns">
+                <label nz-checkbox [(ngModel)]="col.show" (ngModelChange)="onColumnToggle()">
+                    {{ col.key | translate }}
+                </label>
+            </li>
+        </ul>
+    </nz-dropdown-menu> 
+    <button nz-button nzType="link" (click)="resetColumns()" nz-tooltip nzTooltipTitle="{{ 'Reset Kolom' | translate }}"><i nz-icon nzType="undo"></i></button>
+
+    <button nz-button style="margin-bottom: 8px;margin-left: 10px;" nzType="primary" (click)="add()">
+        <span nz-icon nzType="plus" nzTheme="outline"></span> Add New
+    </button>
+</ng-template>

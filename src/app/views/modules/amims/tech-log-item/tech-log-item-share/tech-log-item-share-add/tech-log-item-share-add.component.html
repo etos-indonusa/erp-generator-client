@@ -1,0 +1,142 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="apuStart">{{ 'apuStart' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="apuStart" formControlName="apuStart" placeholder="Masukkan {{ 'apuStart' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="cgPenalty">{{ 'cgPenalty' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="cgPenalty" formControlName="cgPenalty" placeholder="Masukkan {{ 'cgPenalty' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="cocaCaptain">{{ 'cocaCaptain' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="cocaCaptain" formControlName="cocaCaptain" placeholder="Masukkan {{ 'cocaCaptain' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="cycles">{{ 'cycles' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="cycles" formControlName="cycles" placeholder="Masukkan {{ 'cycles' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="flightFrom">{{ 'flightFrom' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="flightFrom" formControlName="flightFrom" placeholder="Masukkan {{ 'flightFrom' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="flightHours">{{ 'flightHours' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="flightHours" formControlName="flightHours" placeholder="Masukkan {{ 'flightHours' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="flightTo">{{ 'flightTo' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="flightTo" formControlName="flightTo" placeholder="Masukkan {{ 'flightTo' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="hoistOperation">{{ 'hoistOperation' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="hoistOperation" formControlName="hoistOperation" placeholder="Masukkan {{ 'hoistOperation' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="hoistUsage">{{ 'hoistUsage' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="hoistUsage" formControlName="hoistUsage" placeholder="Masukkan {{ 'hoistUsage' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idCaptain">{{ 'idCaptain' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idCaptain" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idCaptain' | translate }}"> 
+                    <nz-option *ngFor="let item of listCaptain" nzLabel="{{ item.idCaptain }}" nzValue="{{ item.idCaptain }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idTechLog">{{ 'idTechLog' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idTechLog" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idTechLog' | translate }}"> 
+                    <nz-option *ngFor="let item of listTechLog" nzLabel="{{ item.idTechLog }}" nzValue="{{ item.idTechLog }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="landingTime">{{ 'landingTime' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="landingTime" formControlName="landingTime" placeholder="Masukkan {{ 'landingTime' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="landings">{{ 'landings' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="landings" formControlName="landings" placeholder="Masukkan {{ 'landings' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="noteTechLogItem">{{ 'noteTechLogItem' | translate }}</nz-form-label>
+            <nz-form-control>
+                <textarea nz-input id="noteTechLogItem" formControlName="noteTechLogItem" placeholder="Masukkan {{ 'noteTechLogItem' | translate }}"></textarea>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="slingReleased">{{ 'slingReleased' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="slingReleased" formControlName="slingReleased" placeholder="Masukkan {{ 'slingReleased' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="takeofTime">{{ 'takeofTime' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="takeofTime" formControlName="takeofTime" placeholder="Masukkan {{ 'takeofTime' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

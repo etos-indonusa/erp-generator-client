@@ -1,0 +1,1155 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.createdAt !== undefined && data?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.dateReceived !== undefined && data?.dateReceived !== null">
+    <div class="text-secondary small">
+      {{ 'dateReceived' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.dateReceived || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.dateTransfer !== undefined && data?.dateTransfer !== null">
+    <div class="text-secondary small">
+      {{ 'dateTransfer' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.dateTransfer || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idQaTransfer !== undefined && data?.idQaTransfer !== null">
+    <div class="text-secondary small">
+      {{ 'idQaTransfer' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idQaTransfer || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idSite !== undefined && data?.idSite !== null">
+    <div class="text-secondary small">
+      {{ 'idSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idUser !== undefined && data?.idUser !== null">
+    <div class="text-secondary small">
+      {{ 'idUser' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idUser || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idUserReceived !== undefined && data?.idUserReceived !== null">
+    <div class="text-secondary small">
+      {{ 'idUserReceived' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idUserReceived || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.noIndex !== undefined && data?.noIndex !== null">
+    <div class="text-secondary small">
+      {{ 'noIndex' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.noIndex | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.noteTransfer !== undefined && data?.noteTransfer !== null">
+    <div class="text-secondary small">
+      {{ 'noteTransfer' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.noteTransfer || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.numberTransfer !== undefined && data?.numberTransfer !== null">
+    <div class="text-secondary small">
+      {{ 'numberTransfer' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.numberTransfer || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.statusTransfer !== undefined && data?.statusTransfer !== null">
+    <div class="text-secondary small">
+      {{ 'statusTransfer' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.statusTransfer }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.toSite !== undefined && data?.toSite !== null">
+    <div class="text-secondary small">
+      {{ 'toSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.toSite | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.typeTransfer !== undefined && data?.typeTransfer !== null">
+    <div class="text-secondary small">
+      {{ 'typeTransfer' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.typeTransfer || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.updatedAt !== undefined && data?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.validasi !== undefined && data?.validasi !== null">
+    <div class="text-secondary small">
+      {{ 'validasi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.validasi | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.qaTransfer">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'qaTransfer' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer?.createdAt !== undefined && data.qaTransfer?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer?.dateReceived !== undefined && data.qaTransfer?.dateReceived !== null">
+    <div class="text-secondary small">
+      {{ 'dateReceived' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.dateReceived || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer?.dateTransfer !== undefined && data.qaTransfer?.dateTransfer !== null">
+    <div class="text-secondary small">
+      {{ 'dateTransfer' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.dateTransfer || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer?.idQaTransfer !== undefined && data.qaTransfer?.idQaTransfer !== null">
+    <div class="text-secondary small">
+      {{ 'idQaTransfer' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.idQaTransfer || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer?.idSite !== undefined && data.qaTransfer?.idSite !== null">
+    <div class="text-secondary small">
+      {{ 'idSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.idSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer?.idUser !== undefined && data.qaTransfer?.idUser !== null">
+    <div class="text-secondary small">
+      {{ 'idUser' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.idUser || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer?.idUserReceived !== undefined && data.qaTransfer?.idUserReceived !== null">
+    <div class="text-secondary small">
+      {{ 'idUserReceived' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.idUserReceived || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer?.noIndex !== undefined && data.qaTransfer?.noIndex !== null">
+    <div class="text-secondary small">
+      {{ 'noIndex' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.noIndex | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer?.noteTransfer !== undefined && data.qaTransfer?.noteTransfer !== null">
+    <div class="text-secondary small">
+      {{ 'noteTransfer' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.noteTransfer || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer?.numberTransfer !== undefined && data.qaTransfer?.numberTransfer !== null">
+    <div class="text-secondary small">
+      {{ 'numberTransfer' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.numberTransfer || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer?.statusTransfer !== undefined && data.qaTransfer?.statusTransfer !== null">
+    <div class="text-secondary small">
+      {{ 'statusTransfer' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.qaTransfer.statusTransfer }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer?.toSite !== undefined && data.qaTransfer?.toSite !== null">
+    <div class="text-secondary small">
+      {{ 'toSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.toSite | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer?.typeTransfer !== undefined && data.qaTransfer?.typeTransfer !== null">
+    <div class="text-secondary small">
+      {{ 'typeTransfer' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.typeTransfer || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer?.updatedAt !== undefined && data.qaTransfer?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer?.validasi !== undefined && data.qaTransfer?.validasi !== null">
+    <div class="text-secondary small">
+      {{ 'validasi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.validasi | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.qaTransfer?.site">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'qaTransfer.site' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.address !== undefined && data.qaTransfer.site?.address !== null">
+    <div class="text-secondary small">
+      {{ 'address' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.address || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.city !== undefined && data.qaTransfer.site?.city !== null">
+    <div class="text-secondary small">
+      {{ 'city' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.city || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.codeSite !== undefined && data.qaTransfer.site?.codeSite !== null">
+    <div class="text-secondary small">
+      {{ 'codeSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.codeSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.contactname !== undefined && data.qaTransfer.site?.contactname !== null">
+    <div class="text-secondary small">
+      {{ 'contactname' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.contactname || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.country !== undefined && data.qaTransfer.site?.country !== null">
+    <div class="text-secondary small">
+      {{ 'country' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.country || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.createdAt !== undefined && data.qaTransfer.site?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.emailaddress !== undefined && data.qaTransfer.site?.emailaddress !== null">
+    <div class="text-secondary small">
+      {{ 'emailaddress' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.emailaddress || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.fax !== undefined && data.qaTransfer.site?.fax !== null">
+    <div class="text-secondary small">
+      {{ 'fax' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.fax || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.idNewSite !== undefined && data.qaTransfer.site?.idNewSite !== null">
+    <div class="text-secondary small">
+      {{ 'idNewSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.idNewSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.idSite !== undefined && data.qaTransfer.site?.idSite !== null">
+    <div class="text-secondary small">
+      {{ 'idSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.idSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.idUser !== undefined && data.qaTransfer.site?.idUser !== null">
+    <div class="text-secondary small">
+      {{ 'idUser' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.idUser || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.isDeleted !== undefined && data.qaTransfer.site?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.qaTransfer.site.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.qaTransfer.site.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.isMain !== undefined && data.qaTransfer.site?.isMain !== null">
+    <div class="text-secondary small">
+      {{ 'isMain' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.qaTransfer.site.isMain" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.qaTransfer.site.isMain">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.isStore !== undefined && data.qaTransfer.site?.isStore !== null">
+    <div class="text-secondary small">
+      {{ 'isStore' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.qaTransfer.site.isStore" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.qaTransfer.site.isStore">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.logoSite !== undefined && data.qaTransfer.site?.logoSite !== null">
+    <div class="text-secondary small">
+      {{ 'logoSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.logoSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.mobile !== undefined && data.qaTransfer.site?.mobile !== null">
+    <div class="text-secondary small">
+      {{ 'mobile' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.mobile || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.oldId !== undefined && data.qaTransfer.site?.oldId !== null">
+    <div class="text-secondary small">
+      {{ 'oldId' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.oldId || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.parentSite !== undefined && data.qaTransfer.site?.parentSite !== null">
+    <div class="text-secondary small">
+      {{ 'parentSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.parentSite | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.site !== undefined && data.qaTransfer.site?.site !== null">
+    <div class="text-secondary small">
+      {{ 'site' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.site || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.statusSite !== undefined && data.qaTransfer.site?.statusSite !== null">
+    <div class="text-secondary small">
+      {{ 'statusSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.qaTransfer.site.statusSite }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.telephone !== undefined && data.qaTransfer.site?.telephone !== null">
+    <div class="text-secondary small">
+      {{ 'telephone' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.telephone || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.typeSite !== undefined && data.qaTransfer.site?.typeSite !== null">
+    <div class="text-secondary small">
+      {{ 'typeSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.typeSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.updatedAt !== undefined && data.qaTransfer.site?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site?.validation !== undefined && data.qaTransfer.site?.validation !== null">
+    <div class="text-secondary small">
+      {{ 'validation' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.validation | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.qaTransfer.site?.user">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'qaTransfer.site.user' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site.user?.createdAt !== undefined && data.qaTransfer.site.user?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.user.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site.user?.deskripsi !== undefined && data.qaTransfer.site.user?.deskripsi !== null">
+    <div class="text-secondary small">
+      {{ 'deskripsi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.user.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site.user?.idUserGroup !== undefined && data.qaTransfer.site.user?.idUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'idUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.user.idUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site.user?.namaUserGroup !== undefined && data.qaTransfer.site.user?.namaUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'namaUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.user.namaUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site.user?.status !== undefined && data.qaTransfer.site.user?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.qaTransfer.site.user.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.qaTransfer.site.user?.userGroup">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'qaTransfer.site.user.userGroup' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site.user.userGroup?.createdAt !== undefined && data.qaTransfer.site.user.userGroup?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.user.userGroup.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site.user.userGroup?.deskripsi !== undefined && data.qaTransfer.site.user.userGroup?.deskripsi !== null">
+    <div class="text-secondary small">
+      {{ 'deskripsi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.user.userGroup.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site.user.userGroup?.idUserGroup !== undefined && data.qaTransfer.site.user.userGroup?.idUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'idUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.user.userGroup.idUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site.user.userGroup?.namaUserGroup !== undefined && data.qaTransfer.site.user.userGroup?.namaUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'namaUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaTransfer.site.user.userGroup.namaUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaTransfer.site.user.userGroup?.status !== undefined && data.qaTransfer.site.user.userGroup?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.qaTransfer.site.user.userGroup.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>

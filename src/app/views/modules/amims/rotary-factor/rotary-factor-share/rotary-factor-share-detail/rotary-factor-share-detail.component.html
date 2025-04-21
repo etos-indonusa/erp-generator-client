@@ -1,0 +1,86 @@
+<nz-spin nzTip="Loading..." [nzSpinning]="is_loading">
+
+    <div class="card border-0 mb-1 border-left-5 border-theme card   bg-white">
+        <div class="card-body p-2">
+            <div class="row">
+                <div class="col-lg-2">
+                    <p class="text-secondary  mb-1">Status</p>
+                    <!-- <h3 class="fw-bold text-capitalize" style.color="{{ rotaryFactor?.statusRotaryFactor| status }}">   {{ rotaryFactor?.statusRotaryFactor}}</h3> -->
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-secondary  mb-1">Nomor</p>
+                    <!-- <h3 class="fw-bold  ">{{rotaryFactor?.nomorRotaryFactor}}</h3> -->
+                </div>
+                <div class="col" style="text-align: right;">
+                    <p class="text-secondary mb-1">&nbsp;</p>
+
+                    <button nz-button nzType="primary" style="margin-right: 5px;" nz-dropdown [nzDropdownMenu]="menu4">
+                        <span nz-icon nzType="printer"></span>
+                        Print
+                        <span nz-icon nzType="down"></span>
+                    </button>
+                    <nz-dropdown-menu #menu4="nzDropdownMenu">
+                        <ul nz-menu>
+                            <li nz-menu-item (click)="print()">Print rotaryFactor</li>
+                        </ul>
+                    </nz-dropdown-menu>
+
+                    <!-- <button *ngIf="rotaryFactor.status=='close' || rotaryFactor.status=='cicil'" nz-button
+                        nzType="primary" (click)="up()" style="margin-right: 5px;">
+                        <span nz-icon nzType="calculator" nzTheme="outline"></span>
+                        Bayar
+                    </button> -->
+                     
+
+                </div>
+            </div>
+        </div>
+    </div>
+     <!--
+     <lib-approval-steps [for-module-name]="'rotary-factor'" [for-module-id]="rotary-factor?.idRotaryFactor"></lib-approval-steps>
+         -->
+
+    <div class="card bg-white p-3" style="box-shadow: none;">
+        <div class="row">
+            <div class="col-md-8">
+                <app-rotary-factor-share-header [data]="rotaryFactor"></app-rotary-factor-share-header>
+                <lib-custom-field [from-module]="'AmimsRotaryFactor'" [from-module-id]="rotaryFactor?.idRotaryFactor"></lib-custom-field>
+            </div>
+            <div class="col-md-4">
+                <document-widget-v1 [for-module-id]="rotaryFactor?.idRotaryFactor" [for-module]="'AmimsRotaryFactor'"  [enable-crud]="true"></document-widget-v1>
+                    
+                <!-- <approval-mode-widget *ngIf="rotaryFactor.status??'-'.toLowerCase() !='close'"
+                    style="margin-right: 5px;" [module-id]="rotaryFactor.id_contractSite" [module]="'AmimsRotaryFactor'"
+                    [flow-id]="rotaryFactor.id_data_flow" [flow-detail]="rotaryFactor.id_data_flow_detail"
+                    (reload)="approve($event)">
+                </approval-mode-widget> -->
+
+            </div>
+        </div>
+
+
+        <br>
+
+ 
+    </div>
+
+    <div class="site-page-header-ghost-wrapper">
+        <nz-page-header [nzGhost]="false">
+        <nz-page-header-title>Item</nz-page-header-title>
+    </nz-page-header>
+    </div >
+
+    <div class="card">
+        <div class="card-body p-2">
+                <!-- <app-rotary-factor-share-list [filter-extra]="false" [idRotaryFactor]="idRotaryFactor"></app-rotary-factor-share-list> -->
+    </div>
+    </div >
+
+<!-- 
+    <lib-approval-form-widget [from-module]="'AmimsRotaryFactor'" [from-module-id]="rotary-factor?.idRotaryFactor"
+        (onSubmit)="handleApprovalSubmit($event)" (onAfterSubmit)="refreshApprovalSteps()"></lib-approval-form-widget> 
+            -->
+
+</nz-spin>
+<br>
+

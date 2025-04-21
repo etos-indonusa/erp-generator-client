@@ -1,0 +1,344 @@
+<div class="content-list-status">
+    <div class="page-title-box">
+        <div class="row align-items-center">
+            <div class="col-md-5">
+                <app-breadcrumbs title="Site" [breadcrumbItems]="breadCrumbItems"></app-breadcrumbs>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nz-card nzTitle="Total ({{total}})" [nzExtra]="extraTemplate" [nzBodyStyle]="{padding:0}">
+    <div class="filter" [hidden]="!filter_extra">
+        <form nz-form [nzLayout]="'vertical'" role="form">
+            <div nz-row [nzGutter]="8">
+                <div nz-col [nzXl]="{ span: 6}" [nzLg]="{ span: 8}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
+                    <nz-form-item>
+                        <nz-form-control>
+                            <nz-input-group nzSearch [nzAddOnBefore]="addOnBeforeTemplate"
+                                [nzAddOnAfter]="suffixIconButton" style="width: 100%;">
+                                <input type="text" nz-input placeholder="{{'search'}}" [(ngModel)]="search"
+                                    name="search" (keyup.enter)="searchData()" />
+                            </nz-input-group>
+                            <ng-template #suffixIconButton>
+                                <button nz-button nzType="default" nzSearch (click)="searchData()"><span nz-icon
+                                        nzType="search"></span></button>
+                            </ng-template>
+                            <ng-template #addOnBeforeTemplate>
+                                <span nz-icon nzTheme="twotone" nzType="question-circle" nz-popover
+                                    nzPopoverTitle="Pencarian berdasarkan" [nzPopoverContent]="tipsPencarian"
+                                    nzPopoverPlacement="top"></span>
+                                <ng-template #tipsPencarian>
+                                    <div>
+                                        <ul>
+                                            <li *ngFor="let item of search_field">{{ item }}</li>
+                                        </ul>
+                                    </div> 
+                                </ng-template>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6}" [nzLg]="{ span: 8}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
+                    <nz-form-item>
+                        <nz-form-control>
+                            <button nz-button nzType="primary" (click)="searchData()" [nzLoading]="loading"><span
+                                    nz-icon nzType="filter"></span>Filter</button>
+                            <button nz-button nzType="default" (click)="resetData()" [nzLoading]="loading"
+                                style="margin-left: 10px;"><span nz-icon nzType="reload"></span>Reset</button>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div style="overflow: auto; background-color: white;">
+        <nz-table nzShowSizeChanger [nzData]="listOfData" [nzFrontPagination]="false" [nzLoading]="loading"
+            [nzTotal]="total" [nzPageSize]="pageSize" [nzPageIndex]="pageIndex"
+            (nzQueryParams)="onQueryParamsChange($event)" nzSize="small">
+            <thead>
+                <tr>
+                
+                    <th [nzSortFn]="true" nzColumnKey="address">
+                    {{ 'address' | translate }}
+                    </th>
+                
+                    <th [nzSortFn]="true" nzColumnKey="city">
+                    {{ 'city' | translate }}
+                    </th>
+                
+                    <th [nzSortFn]="true" nzColumnKey="codeSite">
+                    {{ 'codeSite' | translate }}
+                    </th>
+                
+                    <th [nzSortFn]="true" nzColumnKey="contactname">
+                    {{ 'contactname' | translate }}
+                    </th>
+                
+                    <th [nzSortFn]="true" nzColumnKey="country">
+                    {{ 'country' | translate }}
+                    </th>
+                
+                    <th [nzSortFn]="true" nzColumnKey="createdAt">
+                    {{ 'createdAt' | translate }}
+                    </th>
+                
+                    <th [nzSortFn]="true" nzColumnKey="emailaddress">
+                    {{ 'emailaddress' | translate }}
+                    </th>
+                
+                    <th [nzSortFn]="true" nzColumnKey="fax">
+                    {{ 'fax' | translate }}
+                    </th>
+                
+                    <th [nzSortFn]="true" nzColumnKey="isDeleted">
+                    {{ 'isDeleted' | translate }}
+                    </th>
+                
+                    <th [nzSortFn]="true" nzColumnKey="isMain">
+                    {{ 'isMain' | translate }}
+                    </th>
+                
+                    <th [nzSortFn]="true" nzColumnKey="isStore">
+                    {{ 'isStore' | translate }}
+                    </th>
+                
+                    <th [nzSortFn]="true" nzColumnKey="logoSite">
+                    {{ 'logoSite' | translate }}
+                    </th>
+                
+                    <th [nzSortFn]="true" nzColumnKey="mobile">
+                    {{ 'mobile' | translate }}
+                    </th>
+                
+                    <th [nzSortFn]="true" nzColumnKey="oldId">
+                    {{ 'oldId' | translate }}
+                    </th>
+                
+                    <th [nzSortFn]="true" nzColumnKey="parentSite">
+                    {{ 'parentSite' | translate }}
+                    </th>
+                
+                    <th [nzSortFn]="true" nzColumnKey="site">
+                    {{ 'site' | translate }}
+                    </th>
+                
+                    <th [nzSortFn]="true" nzColumnKey="statusSite">
+                    {{ 'statusSite' | translate }}
+                    </th>
+                
+                    <th [nzSortFn]="true" nzColumnKey="telephone">
+                    {{ 'telephone' | translate }}
+                    </th>
+                
+                    <th [nzSortFn]="true" nzColumnKey="typeSite">
+                    {{ 'typeSite' | translate }}
+                    </th>
+                
+                    <th [nzSortFn]="true" nzColumnKey="updatedAt">
+                    {{ 'updatedAt' | translate }}
+                    </th>
+                
+                    <th [nzSortFn]="true" nzColumnKey="validation">
+                    {{ 'validation' | translate }}
+                    </th>
+                
+                    <th nzWidth="80px">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let data of listOfData" style="vertical-align: top;">
+                   
+                    <tr  >
+                       
+                        <td>
+                            
+                            {{ data.address || '-' }}
+                            
+                        </td>
+                        
+                        <td>
+                            
+                            {{ data.city || '-' }}
+                            
+                        </td>
+                        
+                        <td>
+                            
+                            {{ data.codeSite || '-' }}
+                            
+                        </td>
+                        
+                        <td>
+                            
+                            {{ data.contactname || '-' }}
+                            
+                        </td>
+                        
+                        <td>
+                            
+                            {{ data.country || '-' }}
+                            
+                        </td>
+                        
+                        <td>
+                            
+                            {{ data.createdAt | date: 'short' }}
+                            
+                        </td>
+                        
+                        <td>
+                            
+                            {{ data.emailaddress || '-' }}
+                            
+                        </td>
+                        
+                        <td>
+                            
+                            {{ data.fax || '-' }}
+                            
+                        </td>
+                        
+                        <td>
+                            
+                            <nz-tag *ngIf="data.isDeleted" nzColor="blue">Ya</nz-tag>
+                            <span *ngIf="!data.isDeleted">-</span>
+                            
+                        </td>
+                        
+                        <td>
+                            
+                            <nz-tag *ngIf="data.isMain" nzColor="blue">Ya</nz-tag>
+                            <span *ngIf="!data.isMain">-</span>
+                            
+                        </td>
+                        
+                        <td>
+                            
+                            <nz-tag *ngIf="data.isStore" nzColor="blue">Ya</nz-tag>
+                            <span *ngIf="!data.isStore">-</span>
+                            
+                        </td>
+                        
+                        <td>
+                            
+                            {{ data.logoSite || '-' }}
+                            
+                        </td>
+                        
+                        <td>
+                            
+                            {{ data.mobile || '-' }}
+                            
+                        </td>
+                        
+                        <td>
+                            
+                            {{ data.oldId || '-' }}
+                            
+                        </td>
+                        
+                        <td>
+                            
+                            {{ data.parentSite || '-' }}
+                            
+                        </td>
+                        
+                        <td>
+                            
+                            {{ data.site || '-' }}
+                            
+                        </td>
+                        
+                        <td>
+                            
+                            {{ data.statusSite || '-' }}
+                            
+                        </td>
+                        
+                        <td>
+                            
+                            {{ data.telephone || '-' }}
+                            
+                        </td>
+                        
+                        <td>
+                            
+                            {{ data.typeSite || '-' }}
+                            
+                        </td>
+                        
+                        <td>
+                            
+                            {{ data.updatedAt || '-' }}
+                            
+                        </td>
+                        
+                        <td>
+                            
+                            {{ data.validation || '-' }}
+                            
+                        </td>
+                        
+                        <td nzAlign="right">
+                            <button nz-button nz-dropdown [nzDropdownMenu]="menu">
+                                Actions
+                                <span nz-icon nzType="down"></span>
+                            </button>
+                            <nz-dropdown-menu #menu="nzDropdownMenu">
+                                <ul nz-menu>
+                                    <li nz-menu-item (click)="detail(data)">
+                                        <span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Detail
+                                    </li>
+                                    <!--  -->
+                                    <li nz-menu-item (click)="edit(data)" >
+                                        <span nz-icon nzType="edit" nzTheme="outline"></span>&nbsp;&nbsp;Update
+                                    </li>
+                                    <li nz-menu-divider ></li>
+                                    <li nz-menu-item nz-menu-item nz-popconfirm class="text-danger" 
+                                        nzPopconfirmTitle="Apakah Anda yakin akan menghapus data ini?"
+                                        nzPopconfirmPlacement="bottom" (nzOnConfirm)="delete(data)"><span
+                                            nz-icon nzType="delete" nzTheme="outline"></span>
+                                        <a class="m-1 text-danger">&nbsp;&nbsp;Delete</a>
+                                    </li>
+                                </ul>
+                            </nz-dropdown-menu>
+                        </td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </nz-table>
+    </div>
+</nz-card>
+<ng-template #extraTemplate>
+    <ng-container *ngIf="!filter_extra">
+        <nz-input-group nzSearch [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="suffixIconButton"
+            style="max-width: 230px;">
+            <input type="text" nz-input placeholder="{{'search'}}" [(ngModel)]="search" name="search"
+                (keyup.enter)="searchData()" />
+        </nz-input-group>
+        <ng-template #suffixIconButton>
+            <button nz-button nzType="default" nzSearch (click)="searchData()"><span nz-icon
+                    nzType="search"></span></button>
+        </ng-template>
+        <ng-template #addOnBeforeTemplate>
+            <span nz-icon nzTheme="twotone" nzType="question-circle" nz-popover nzPopoverTitle="Pencarian berdasarkan"
+                [nzPopoverContent]="tipsPencarian" nzPopoverPlacement="top"></span>
+            <ng-template #tipsPencarian>
+                <div>
+                    <ul>
+                        <li *ngFor="let item of search_field">{{ item }}</li>
+                    </ul>
+                </div>
+            </ng-template>
+        </ng-template>
+    </ng-container>
+    <button nz-button [nzType]="filter_extra ? 'primary' :'default'" style="margin-bottom: 8px;margin-left: 10px;"
+        (click)="filter_extra=!filter_extra">
+        <span nz-icon nzType="filter" nzTheme="outline"></span> Filter
+    </button>
+  
+
+    <button nz-button nzType="primary" (click)="add()" [nzLoading]="loading" style="margin-left: 10px;"><span nz-icon
+            nzType="plus"></span>Add</button>
+</ng-template>

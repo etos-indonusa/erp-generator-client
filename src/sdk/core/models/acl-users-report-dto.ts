@@ -9,7 +9,7 @@ export interface AclUsersReportDto {
   idUsers: string;
   lastLogin?: string;
   nama?: string;
-  password: string;
+  password?: string;
   status?: string;
   wajibResetPassword?: boolean;
 }

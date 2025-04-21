@@ -1,0 +1,34 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="day">{{ 'day' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="day" formControlName="day" placeholder="Masukkan {{ 'day' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="descriptionMel">{{ 'descriptionMel' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="descriptionMel" formControlName="descriptionMel" placeholder="Masukkan {{ 'descriptionMel' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="mel">{{ 'mel' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="mel" formControlName="mel" placeholder="Masukkan {{ 'mel' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

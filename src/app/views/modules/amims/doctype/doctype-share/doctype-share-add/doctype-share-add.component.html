@@ -1,0 +1,42 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="childname">{{ 'childname' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="childname" formControlName="childname" placeholder="Masukkan {{ 'childname' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="description">{{ 'description' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="description" formControlName="description" placeholder="Masukkan {{ 'description' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="doctype">{{ 'doctype' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="doctype" formControlName="doctype" placeholder="Masukkan {{ 'doctype' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="lastupdatestamp">{{ 'lastupdatestamp' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-date-picker formControlName="lastupdatestamp" style="width: 100%" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

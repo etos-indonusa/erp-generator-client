@@ -1,0 +1,124 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.descriptionTdType !== undefined && data?.descriptionTdType !== null">
+    <div class="text-secondary small">
+      {{ 'descriptionTdType' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.descriptionTdType || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idTdType !== undefined && data?.idTdType !== null">
+    <div class="text-secondary small">
+      {{ 'idTdType' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idTdType || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.tdType !== undefined && data?.tdType !== null">
+    <div class="text-secondary small">
+      {{ 'tdType' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.tdType || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.tdType">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'tdType' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.tdType?.descriptionTdType !== undefined && data.tdType?.descriptionTdType !== null">
+    <div class="text-secondary small">
+      {{ 'descriptionTdType' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.tdType.descriptionTdType || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.tdType?.idTdType !== undefined && data.tdType?.idTdType !== null">
+    <div class="text-secondary small">
+      {{ 'idTdType' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.tdType.idTdType || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.tdType?.tdType !== undefined && data.tdType?.tdType !== null">
+    <div class="text-secondary small">
+      {{ 'tdType' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.tdType.tdType || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>

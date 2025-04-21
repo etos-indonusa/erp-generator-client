@@ -1,0 +1,376 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.createdAt !== undefined && data?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.dateRpd !== undefined && data?.dateRpd !== null">
+    <div class="text-secondary small">
+      {{ 'dateRpd' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.dateRpd || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idQaRpd !== undefined && data?.idQaRpd !== null">
+    <div class="text-secondary small">
+      {{ 'idQaRpd' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idQaRpd || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idUserQa !== undefined && data?.idUserQa !== null">
+    <div class="text-secondary small">
+      {{ 'idUserQa' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idUserQa || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.numberRpd !== undefined && data?.numberRpd !== null">
+    <div class="text-secondary small">
+      {{ 'numberRpd' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.numberRpd || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.statusRpd !== undefined && data?.statusRpd !== null">
+    <div class="text-secondary small">
+      {{ 'statusRpd' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.statusRpd }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.tipe !== undefined && data?.tipe !== null">
+    <div class="text-secondary small">
+      {{ 'tipe' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.tipe || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.updatedAt !== undefined && data?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.qaRpd">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'qaRpd' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaRpd?.codeDispotition !== undefined && data.qaRpd?.codeDispotition !== null">
+    <div class="text-secondary small">
+      {{ 'codeDispotition' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaRpd.codeDispotition || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaRpd?.color !== undefined && data.qaRpd?.color !== null">
+    <div class="text-secondary small">
+      {{ 'color' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaRpd.color || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaRpd?.dispotition !== undefined && data.qaRpd?.dispotition !== null">
+    <div class="text-secondary small">
+      {{ 'dispotition' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaRpd.dispotition || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaRpd?.idQaRpdDispotition !== undefined && data.qaRpd?.idQaRpdDispotition !== null">
+    <div class="text-secondary small">
+      {{ 'idQaRpdDispotition' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaRpd.idQaRpdDispotition || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaRpd?.printTag !== undefined && data.qaRpd?.printTag !== null">
+    <div class="text-secondary small">
+      {{ 'printTag' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaRpd.printTag || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaRpd?.toPosition !== undefined && data.qaRpd?.toPosition !== null">
+    <div class="text-secondary small">
+      {{ 'toPosition' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaRpd.toPosition || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.qaRpd?.qaRpdDispotition">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'qaRpd.qaRpdDispotition' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaRpd.qaRpdDispotition?.codeDispotition !== undefined && data.qaRpd.qaRpdDispotition?.codeDispotition !== null">
+    <div class="text-secondary small">
+      {{ 'codeDispotition' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaRpd.qaRpdDispotition.codeDispotition || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaRpd.qaRpdDispotition?.color !== undefined && data.qaRpd.qaRpdDispotition?.color !== null">
+    <div class="text-secondary small">
+      {{ 'color' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaRpd.qaRpdDispotition.color || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaRpd.qaRpdDispotition?.dispotition !== undefined && data.qaRpd.qaRpdDispotition?.dispotition !== null">
+    <div class="text-secondary small">
+      {{ 'dispotition' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaRpd.qaRpdDispotition.dispotition || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaRpd.qaRpdDispotition?.idQaRpdDispotition !== undefined && data.qaRpd.qaRpdDispotition?.idQaRpdDispotition !== null">
+    <div class="text-secondary small">
+      {{ 'idQaRpdDispotition' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaRpd.qaRpdDispotition.idQaRpdDispotition || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaRpd.qaRpdDispotition?.printTag !== undefined && data.qaRpd.qaRpdDispotition?.printTag !== null">
+    <div class="text-secondary small">
+      {{ 'printTag' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaRpd.qaRpdDispotition.printTag || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.qaRpd.qaRpdDispotition?.toPosition !== undefined && data.qaRpd.qaRpdDispotition?.toPosition !== null">
+    <div class="text-secondary small">
+      {{ 'toPosition' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qaRpd.qaRpdDispotition.toPosition || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>

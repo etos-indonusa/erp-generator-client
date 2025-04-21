@@ -1,0 +1,1695 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.createdAt !== undefined && data?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.dateGrn !== undefined && data?.dateGrn !== null">
+    <div class="text-secondary small">
+      {{ 'dateGrn' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.dateGrn || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.dateQa !== undefined && data?.dateQa !== null">
+    <div class="text-secondary small">
+      {{ 'dateQa' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.dateQa || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.dateQaClose !== undefined && data?.dateQaClose !== null">
+    <div class="text-secondary small">
+      {{ 'dateQaClose' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.dateQaClose || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.grnKe !== undefined && data?.grnKe !== null">
+    <div class="text-secondary small">
+      {{ 'grnKe' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.grnKe | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idPurGrn !== undefined && data?.idPurGrn !== null">
+    <div class="text-secondary small">
+      {{ 'idPurGrn' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idPurGrn || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idPurVendor !== undefined && data?.idPurVendor !== null">
+    <div class="text-secondary small">
+      {{ 'idPurVendor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idPurVendor || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idSite !== undefined && data?.idSite !== null">
+    <div class="text-secondary small">
+      {{ 'idSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idUser !== undefined && data?.idUser !== null">
+    <div class="text-secondary small">
+      {{ 'idUser' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idUser || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.isDeleted !== undefined && data?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.noIndex !== undefined && data?.noIndex !== null">
+    <div class="text-secondary small">
+      {{ 'noIndex' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.noIndex | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.noteGrn !== undefined && data?.noteGrn !== null">
+    <div class="text-secondary small">
+      {{ 'noteGrn' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.noteGrn || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.numberGrn !== undefined && data?.numberGrn !== null">
+    <div class="text-secondary small">
+      {{ 'numberGrn' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.numberGrn || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.updatedAt !== undefined && data?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.validasi !== undefined && data?.validasi !== null">
+    <div class="text-secondary small">
+      {{ 'validasi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.validasi | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.purGrn">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'purGrn' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn?.createdAt !== undefined && data.purGrn?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn?.dateGrn !== undefined && data.purGrn?.dateGrn !== null">
+    <div class="text-secondary small">
+      {{ 'dateGrn' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.dateGrn || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn?.dateQa !== undefined && data.purGrn?.dateQa !== null">
+    <div class="text-secondary small">
+      {{ 'dateQa' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.dateQa || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn?.dateQaClose !== undefined && data.purGrn?.dateQaClose !== null">
+    <div class="text-secondary small">
+      {{ 'dateQaClose' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.dateQaClose || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn?.grnKe !== undefined && data.purGrn?.grnKe !== null">
+    <div class="text-secondary small">
+      {{ 'grnKe' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.grnKe | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn?.idPurGrn !== undefined && data.purGrn?.idPurGrn !== null">
+    <div class="text-secondary small">
+      {{ 'idPurGrn' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.idPurGrn || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn?.idPurVendor !== undefined && data.purGrn?.idPurVendor !== null">
+    <div class="text-secondary small">
+      {{ 'idPurVendor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.idPurVendor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn?.idSite !== undefined && data.purGrn?.idSite !== null">
+    <div class="text-secondary small">
+      {{ 'idSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.idSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn?.idUser !== undefined && data.purGrn?.idUser !== null">
+    <div class="text-secondary small">
+      {{ 'idUser' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.idUser || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn?.isDeleted !== undefined && data.purGrn?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.purGrn.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.purGrn.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn?.noIndex !== undefined && data.purGrn?.noIndex !== null">
+    <div class="text-secondary small">
+      {{ 'noIndex' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.noIndex | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn?.noteGrn !== undefined && data.purGrn?.noteGrn !== null">
+    <div class="text-secondary small">
+      {{ 'noteGrn' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.noteGrn || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn?.numberGrn !== undefined && data.purGrn?.numberGrn !== null">
+    <div class="text-secondary small">
+      {{ 'numberGrn' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.numberGrn || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn?.updatedAt !== undefined && data.purGrn?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn?.validasi !== undefined && data.purGrn?.validasi !== null">
+    <div class="text-secondary small">
+      {{ 'validasi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.validasi | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.purGrn?.purVendor">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'purGrn.purVendor' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor?.address !== undefined && data.purGrn.purVendor?.address !== null">
+    <div class="text-secondary small">
+      {{ 'address' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.address || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor?.city !== undefined && data.purGrn.purVendor?.city !== null">
+    <div class="text-secondary small">
+      {{ 'city' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.city || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor?.country !== undefined && data.purGrn.purVendor?.country !== null">
+    <div class="text-secondary small">
+      {{ 'country' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.country || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor?.createdAt !== undefined && data.purGrn.purVendor?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor?.email !== undefined && data.purGrn.purVendor?.email !== null">
+    <div class="text-secondary small">
+      {{ 'email' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.email || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor?.fax !== undefined && data.purGrn.purVendor?.fax !== null">
+    <div class="text-secondary small">
+      {{ 'fax' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.fax || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor?.idPurVendor !== undefined && data.purGrn.purVendor?.idPurVendor !== null">
+    <div class="text-secondary small">
+      {{ 'idPurVendor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.idPurVendor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor?.idPurVendorContact !== undefined && data.purGrn.purVendor?.idPurVendorContact !== null">
+    <div class="text-secondary small">
+      {{ 'idPurVendorContact' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.idPurVendorContact || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor?.linePhone !== undefined && data.purGrn.purVendor?.linePhone !== null">
+    <div class="text-secondary small">
+      {{ 'linePhone' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.linePhone || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor?.oldId !== undefined && data.purGrn.purVendor?.oldId !== null">
+    <div class="text-secondary small">
+      {{ 'oldId' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.oldId || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor?.phone !== undefined && data.purGrn.purVendor?.phone !== null">
+    <div class="text-secondary small">
+      {{ 'phone' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.phone || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor?.pic !== undefined && data.purGrn.purVendor?.pic !== null">
+    <div class="text-secondary small">
+      {{ 'pic' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.pic || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor?.postcode !== undefined && data.purGrn.purVendor?.postcode !== null">
+    <div class="text-secondary small">
+      {{ 'postcode' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.postcode || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor?.state !== undefined && data.purGrn.purVendor?.state !== null">
+    <div class="text-secondary small">
+      {{ 'state' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.state || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor?.updatedAt !== undefined && data.purGrn.purVendor?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.purGrn.purVendor?.purVendorContact">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'purGrn.purVendor.purVendorContact' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor.purVendorContact?.address !== undefined && data.purGrn.purVendor.purVendorContact?.address !== null">
+    <div class="text-secondary small">
+      {{ 'address' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.purVendorContact.address || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor.purVendorContact?.city !== undefined && data.purGrn.purVendor.purVendorContact?.city !== null">
+    <div class="text-secondary small">
+      {{ 'city' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.purVendorContact.city || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor.purVendorContact?.country !== undefined && data.purGrn.purVendor.purVendorContact?.country !== null">
+    <div class="text-secondary small">
+      {{ 'country' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.purVendorContact.country || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor.purVendorContact?.createdAt !== undefined && data.purGrn.purVendor.purVendorContact?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.purVendorContact.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor.purVendorContact?.email !== undefined && data.purGrn.purVendor.purVendorContact?.email !== null">
+    <div class="text-secondary small">
+      {{ 'email' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.purVendorContact.email || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor.purVendorContact?.fax !== undefined && data.purGrn.purVendor.purVendorContact?.fax !== null">
+    <div class="text-secondary small">
+      {{ 'fax' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.purVendorContact.fax || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor.purVendorContact?.idPurVendor !== undefined && data.purGrn.purVendor.purVendorContact?.idPurVendor !== null">
+    <div class="text-secondary small">
+      {{ 'idPurVendor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.purVendorContact.idPurVendor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor.purVendorContact?.idPurVendorContact !== undefined && data.purGrn.purVendor.purVendorContact?.idPurVendorContact !== null">
+    <div class="text-secondary small">
+      {{ 'idPurVendorContact' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.purVendorContact.idPurVendorContact || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor.purVendorContact?.linePhone !== undefined && data.purGrn.purVendor.purVendorContact?.linePhone !== null">
+    <div class="text-secondary small">
+      {{ 'linePhone' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.purVendorContact.linePhone || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor.purVendorContact?.oldId !== undefined && data.purGrn.purVendor.purVendorContact?.oldId !== null">
+    <div class="text-secondary small">
+      {{ 'oldId' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.purVendorContact.oldId || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor.purVendorContact?.phone !== undefined && data.purGrn.purVendor.purVendorContact?.phone !== null">
+    <div class="text-secondary small">
+      {{ 'phone' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.purVendorContact.phone || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor.purVendorContact?.pic !== undefined && data.purGrn.purVendor.purVendorContact?.pic !== null">
+    <div class="text-secondary small">
+      {{ 'pic' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.purVendorContact.pic || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor.purVendorContact?.postcode !== undefined && data.purGrn.purVendor.purVendorContact?.postcode !== null">
+    <div class="text-secondary small">
+      {{ 'postcode' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.purVendorContact.postcode || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor.purVendorContact?.state !== undefined && data.purGrn.purVendor.purVendorContact?.state !== null">
+    <div class="text-secondary small">
+      {{ 'state' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.purVendorContact.state || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.purVendor.purVendorContact?.updatedAt !== undefined && data.purGrn.purVendor.purVendorContact?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.purVendor.purVendorContact.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.purGrn?.site">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'purGrn.site' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.address !== undefined && data.purGrn.site?.address !== null">
+    <div class="text-secondary small">
+      {{ 'address' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.address || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.city !== undefined && data.purGrn.site?.city !== null">
+    <div class="text-secondary small">
+      {{ 'city' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.city || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.codeSite !== undefined && data.purGrn.site?.codeSite !== null">
+    <div class="text-secondary small">
+      {{ 'codeSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.codeSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.contactname !== undefined && data.purGrn.site?.contactname !== null">
+    <div class="text-secondary small">
+      {{ 'contactname' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.contactname || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.country !== undefined && data.purGrn.site?.country !== null">
+    <div class="text-secondary small">
+      {{ 'country' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.country || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.createdAt !== undefined && data.purGrn.site?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.emailaddress !== undefined && data.purGrn.site?.emailaddress !== null">
+    <div class="text-secondary small">
+      {{ 'emailaddress' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.emailaddress || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.fax !== undefined && data.purGrn.site?.fax !== null">
+    <div class="text-secondary small">
+      {{ 'fax' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.fax || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.idNewSite !== undefined && data.purGrn.site?.idNewSite !== null">
+    <div class="text-secondary small">
+      {{ 'idNewSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.idNewSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.idSite !== undefined && data.purGrn.site?.idSite !== null">
+    <div class="text-secondary small">
+      {{ 'idSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.idSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.idUser !== undefined && data.purGrn.site?.idUser !== null">
+    <div class="text-secondary small">
+      {{ 'idUser' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.idUser || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.isDeleted !== undefined && data.purGrn.site?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.purGrn.site.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.purGrn.site.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.isMain !== undefined && data.purGrn.site?.isMain !== null">
+    <div class="text-secondary small">
+      {{ 'isMain' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.purGrn.site.isMain" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.purGrn.site.isMain">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.isStore !== undefined && data.purGrn.site?.isStore !== null">
+    <div class="text-secondary small">
+      {{ 'isStore' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.purGrn.site.isStore" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.purGrn.site.isStore">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.logoSite !== undefined && data.purGrn.site?.logoSite !== null">
+    <div class="text-secondary small">
+      {{ 'logoSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.logoSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.mobile !== undefined && data.purGrn.site?.mobile !== null">
+    <div class="text-secondary small">
+      {{ 'mobile' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.mobile || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.oldId !== undefined && data.purGrn.site?.oldId !== null">
+    <div class="text-secondary small">
+      {{ 'oldId' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.oldId || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.parentSite !== undefined && data.purGrn.site?.parentSite !== null">
+    <div class="text-secondary small">
+      {{ 'parentSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.parentSite | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.site !== undefined && data.purGrn.site?.site !== null">
+    <div class="text-secondary small">
+      {{ 'site' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.site || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.statusSite !== undefined && data.purGrn.site?.statusSite !== null">
+    <div class="text-secondary small">
+      {{ 'statusSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.purGrn.site.statusSite }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.telephone !== undefined && data.purGrn.site?.telephone !== null">
+    <div class="text-secondary small">
+      {{ 'telephone' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.telephone || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.typeSite !== undefined && data.purGrn.site?.typeSite !== null">
+    <div class="text-secondary small">
+      {{ 'typeSite' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.typeSite || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.updatedAt !== undefined && data.purGrn.site?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site?.validation !== undefined && data.purGrn.site?.validation !== null">
+    <div class="text-secondary small">
+      {{ 'validation' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.validation | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.purGrn.site?.user">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'purGrn.site.user' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site.user?.createdAt !== undefined && data.purGrn.site.user?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.user.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site.user?.deskripsi !== undefined && data.purGrn.site.user?.deskripsi !== null">
+    <div class="text-secondary small">
+      {{ 'deskripsi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.user.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site.user?.idUserGroup !== undefined && data.purGrn.site.user?.idUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'idUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.user.idUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site.user?.namaUserGroup !== undefined && data.purGrn.site.user?.namaUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'namaUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.user.namaUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site.user?.status !== undefined && data.purGrn.site.user?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.purGrn.site.user.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.purGrn.site.user?.userGroup">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'purGrn.site.user.userGroup' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site.user.userGroup?.createdAt !== undefined && data.purGrn.site.user.userGroup?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.user.userGroup.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site.user.userGroup?.deskripsi !== undefined && data.purGrn.site.user.userGroup?.deskripsi !== null">
+    <div class="text-secondary small">
+      {{ 'deskripsi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.user.userGroup.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site.user.userGroup?.idUserGroup !== undefined && data.purGrn.site.user.userGroup?.idUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'idUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.user.userGroup.idUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site.user.userGroup?.namaUserGroup !== undefined && data.purGrn.site.user.userGroup?.namaUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'namaUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.purGrn.site.user.userGroup.namaUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.purGrn.site.user.userGroup?.status !== undefined && data.purGrn.site.user.userGroup?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.purGrn.site.user.userGroup.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>

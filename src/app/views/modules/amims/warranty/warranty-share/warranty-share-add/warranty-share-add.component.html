@@ -1,0 +1,86 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="cycle">{{ 'cycle' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="cycle" formControlName="cycle" placeholder="Masukkan {{ 'cycle' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="days">{{ 'days' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="days" formControlName="days" placeholder="Masukkan {{ 'days' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="effectiveDate">{{ 'effectiveDate' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-date-picker formControlName="effectiveDate" style="width: 100%" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="expairedDate">{{ 'expairedDate' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-date-picker formControlName="expairedDate" style="width: 100%" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="hours">{{ 'hours' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="hours" formControlName="hours" placeholder="Masukkan {{ 'hours' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idPart">{{ 'idPart' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idPart" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idPart' | translate }}"> 
+                    <nz-option *ngFor="let item of listPart" nzLabel="{{ item.idPart }}" nzValue="{{ item.idPart }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idVendor">{{ 'idVendor' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idVendor" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idVendor' | translate }}"> 
+                    <nz-option *ngFor="let item of listVendor" nzLabel="{{ item.idVendor }}" nzValue="{{ item.idVendor }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="note">{{ 'note' | translate }}</nz-form-label>
+            <nz-form-control>
+                <textarea nz-input id="note" formControlName="note" placeholder="Masukkan {{ 'note' | translate }}"></textarea>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="type">{{ 'type' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="type" formControlName="type" placeholder="Masukkan {{ 'type' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

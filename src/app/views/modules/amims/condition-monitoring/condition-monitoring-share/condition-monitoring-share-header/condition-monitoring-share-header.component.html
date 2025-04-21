@@ -1,0 +1,194 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.childnameConditionMonitoring !== undefined && data?.childnameConditionMonitoring !== null">
+    <div class="text-secondary small">
+      {{ 'childnameConditionMonitoring' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.childnameConditionMonitoring || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.code !== undefined && data?.code !== null">
+    <div class="text-secondary small">
+      {{ 'code' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.code || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.conditionMonitoring !== undefined && data?.conditionMonitoring !== null">
+    <div class="text-secondary small">
+      {{ 'conditionMonitoring' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.conditionMonitoring || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idConditionMonitoring !== undefined && data?.idConditionMonitoring !== null">
+    <div class="text-secondary small">
+      {{ 'idConditionMonitoring' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idConditionMonitoring || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.isDeleted !== undefined && data?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.conditionMonitoring">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'conditionMonitoring' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.conditionMonitoring?.childnameConditionMonitoring !== undefined && data.conditionMonitoring?.childnameConditionMonitoring !== null">
+    <div class="text-secondary small">
+      {{ 'childnameConditionMonitoring' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.conditionMonitoring.childnameConditionMonitoring || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.conditionMonitoring?.code !== undefined && data.conditionMonitoring?.code !== null">
+    <div class="text-secondary small">
+      {{ 'code' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.conditionMonitoring.code || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.conditionMonitoring?.conditionMonitoring !== undefined && data.conditionMonitoring?.conditionMonitoring !== null">
+    <div class="text-secondary small">
+      {{ 'conditionMonitoring' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.conditionMonitoring.conditionMonitoring || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.conditionMonitoring?.idConditionMonitoring !== undefined && data.conditionMonitoring?.idConditionMonitoring !== null">
+    <div class="text-secondary small">
+      {{ 'idConditionMonitoring' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.conditionMonitoring.idConditionMonitoring || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.conditionMonitoring?.isDeleted !== undefined && data.conditionMonitoring?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.conditionMonitoring.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.conditionMonitoring.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>

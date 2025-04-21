@@ -1,0 +1,634 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.adj1 !== undefined && data?.adj1 !== null">
+    <div class="text-secondary small">
+      {{ 'adj1' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.adj1 | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.adj2 !== undefined && data?.adj2 !== null">
+    <div class="text-secondary small">
+      {{ 'adj2' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.adj2 | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.adj3 !== undefined && data?.adj3 !== null">
+    <div class="text-secondary small">
+      {{ 'adj3' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.adj3 | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.dateCycle !== undefined && data?.dateCycle !== null">
+    <div class="text-secondary small">
+      {{ 'dateCycle' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.dateCycle || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.dateHours !== undefined && data?.dateHours !== null">
+    <div class="text-secondary small">
+      {{ 'dateHours' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.dateHours || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.factor1 !== undefined && data?.factor1 !== null">
+    <div class="text-secondary small">
+      {{ 'factor1' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.factor1 | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.factor2 !== undefined && data?.factor2 !== null">
+    <div class="text-secondary small">
+      {{ 'factor2' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.factor2 | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.factor3 !== undefined && data?.factor3 !== null">
+    <div class="text-secondary small">
+      {{ 'factor3' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.factor3 | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.hoistLeft !== undefined && data?.hoistLeft !== null">
+    <div class="text-secondary small">
+      {{ 'hoistLeft' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.hoistLeft | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.hoistRight !== undefined && data?.hoistRight !== null">
+    <div class="text-secondary small">
+      {{ 'hoistRight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.hoistRight | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idMpart !== undefined && data?.idMpart !== null">
+    <div class="text-secondary small">
+      {{ 'idMpart' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idMpart || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idRotaryFactor !== undefined && data?.idRotaryFactor !== null">
+    <div class="text-secondary small">
+      {{ 'idRotaryFactor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idRotaryFactor || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.noteHours !== undefined && data?.noteHours !== null">
+    <div class="text-secondary small">
+      {{ 'noteHours' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.noteHours || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.noteRotaryFactor !== undefined && data?.noteRotaryFactor !== null">
+    <div class="text-secondary small">
+      {{ 'noteRotaryFactor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.noteRotaryFactor || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.revisionCycle !== undefined && data?.revisionCycle !== null">
+    <div class="text-secondary small">
+      {{ 'revisionCycle' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.revisionCycle || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.revisionHours !== undefined && data?.revisionHours !== null">
+    <div class="text-secondary small">
+      {{ 'revisionHours' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.revisionHours || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.rumusCycle !== undefined && data?.rumusCycle !== null">
+    <div class="text-secondary small">
+      {{ 'rumusCycle' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rumusCycle || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.rumusHours !== undefined && data?.rumusHours !== null">
+    <div class="text-secondary small">
+      {{ 'rumusHours' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rumusHours || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.rotaryFactor">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'rotaryFactor' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.rotaryFactor?.adj1 !== undefined && data.rotaryFactor?.adj1 !== null">
+    <div class="text-secondary small">
+      {{ 'adj1' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rotaryFactor.adj1 | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.rotaryFactor?.adj2 !== undefined && data.rotaryFactor?.adj2 !== null">
+    <div class="text-secondary small">
+      {{ 'adj2' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rotaryFactor.adj2 | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.rotaryFactor?.adj3 !== undefined && data.rotaryFactor?.adj3 !== null">
+    <div class="text-secondary small">
+      {{ 'adj3' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rotaryFactor.adj3 | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.rotaryFactor?.dateCycle !== undefined && data.rotaryFactor?.dateCycle !== null">
+    <div class="text-secondary small">
+      {{ 'dateCycle' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rotaryFactor.dateCycle || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.rotaryFactor?.dateHours !== undefined && data.rotaryFactor?.dateHours !== null">
+    <div class="text-secondary small">
+      {{ 'dateHours' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rotaryFactor.dateHours || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.rotaryFactor?.factor1 !== undefined && data.rotaryFactor?.factor1 !== null">
+    <div class="text-secondary small">
+      {{ 'factor1' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rotaryFactor.factor1 | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.rotaryFactor?.factor2 !== undefined && data.rotaryFactor?.factor2 !== null">
+    <div class="text-secondary small">
+      {{ 'factor2' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rotaryFactor.factor2 | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.rotaryFactor?.factor3 !== undefined && data.rotaryFactor?.factor3 !== null">
+    <div class="text-secondary small">
+      {{ 'factor3' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rotaryFactor.factor3 | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.rotaryFactor?.hoistLeft !== undefined && data.rotaryFactor?.hoistLeft !== null">
+    <div class="text-secondary small">
+      {{ 'hoistLeft' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rotaryFactor.hoistLeft | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.rotaryFactor?.hoistRight !== undefined && data.rotaryFactor?.hoistRight !== null">
+    <div class="text-secondary small">
+      {{ 'hoistRight' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rotaryFactor.hoistRight | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.rotaryFactor?.idMpart !== undefined && data.rotaryFactor?.idMpart !== null">
+    <div class="text-secondary small">
+      {{ 'idMpart' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rotaryFactor.idMpart || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.rotaryFactor?.idRotaryFactor !== undefined && data.rotaryFactor?.idRotaryFactor !== null">
+    <div class="text-secondary small">
+      {{ 'idRotaryFactor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rotaryFactor.idRotaryFactor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.rotaryFactor?.noteHours !== undefined && data.rotaryFactor?.noteHours !== null">
+    <div class="text-secondary small">
+      {{ 'noteHours' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rotaryFactor.noteHours || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.rotaryFactor?.noteRotaryFactor !== undefined && data.rotaryFactor?.noteRotaryFactor !== null">
+    <div class="text-secondary small">
+      {{ 'noteRotaryFactor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rotaryFactor.noteRotaryFactor || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.rotaryFactor?.revisionCycle !== undefined && data.rotaryFactor?.revisionCycle !== null">
+    <div class="text-secondary small">
+      {{ 'revisionCycle' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rotaryFactor.revisionCycle || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.rotaryFactor?.revisionHours !== undefined && data.rotaryFactor?.revisionHours !== null">
+    <div class="text-secondary small">
+      {{ 'revisionHours' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rotaryFactor.revisionHours || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.rotaryFactor?.rumusCycle !== undefined && data.rotaryFactor?.rumusCycle !== null">
+    <div class="text-secondary small">
+      {{ 'rumusCycle' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rotaryFactor.rumusCycle || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.rotaryFactor?.rumusHours !== undefined && data.rotaryFactor?.rumusHours !== null">
+    <div class="text-secondary small">
+      {{ 'rumusHours' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.rotaryFactor.rumusHours || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>

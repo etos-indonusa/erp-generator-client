@@ -1,0 +1,88 @@
+import { Component, Input, SimpleChanges } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { NzDrawerRef } from 'ng-zorro-antd/drawer';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
+import { generateFormFromSchema } from 'src/app/helpers/form-generator';
+import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
+import { AmimsPartCategoryFormSchema } from 'src/sdk/core/form-schema/amims-part-category.form-schema'; 
+import type  { AmimsPartCategoryDto } from 'src/sdk/core/models';
+import { PartCategoryService } from 'src/sdk/core/services';
+
+
+@Component({
+    selector: 'app-part-category-share-add',
+    templateUrl: './part-category-share-add.component.html',
+    styleUrl: './part-category-share-add.component.scss'
+})
+export class PartCategoryShareAddComponent {
+    @Input('partCategory') partCategory: AmimsPartCategoryDto = {
+  idPartCategory: ''
+};
+    form!: FormGroup;
+
+    ngOnChanges(changes: SimpleChanges): void {
+        if(changes.partCategory && this.partCategory.idPartCategory) {
+        this.form?.patchValue(this.partCategory);
+        }
+    }
+    constructor(
+        private fb: FormBuilder,
+        private notify: NzNotificationService,
+        private nzDrawerRef: NzDrawerRef<string>,
+        private partCategoryService: PartCategoryService,
+            ) { }
+
+    ngOnInit(): void {
+        this.form = generateFormFromSchema(this.fb, AmimsPartCategoryFormSchema, {
+            kodePartCategory: [Validators.minLength(3), Validators.maxLength(3)],
+            catatan: [Validators.maxLength(200)],
+        },'PartCategory');
+
+            }
+    
+
+    // untuk fungsi get ALL relation
+    
+    submit(): void {
+        const labelMap = extractLabels(AmimsPartCategoryFormSchema);
+
+        if (showFormValidationWarnings(this.form, this.notify, labelMap)) {
+            return;
+        }
+        this.partCategory.idPartCategory ? this.update() : this.simpan();
+
+        // lanjut simpan
+    }
+    is_loading = false
+    simpan() {
+        this.is_loading = true;
+        this.partCategoryService.partCategoryControllerCreate({ body: this.form.value }).subscribe({
+            next: (data) => {
+                this.notify.success('Berhasil', 'Data partCategory berhasil disimpan.');
+                this.nzDrawerRef.close(data);
+            },
+            error: () => {
+                this.notify.error('Gagal', 'Terjadi kesalahan saat menyimpan.');
+            },
+            complete: () => (this.is_loading = false)
+        });
+    }
+
+    update() {
+        this.is_loading = true;
+        this.partCategoryService.partCategoryControllerUpdate({ id: this.partCategory.idPartCategory, body: this.form.value }).subscribe({
+            next: (data) => {
+                this.notify.success('Berhasil', 'Data partCategory berhasil diperbarui.');
+                this.nzDrawerRef.close(data);
+            },
+            error: () => {
+                this.notify.error('Gagal', 'Terjadi kesalahan saat memperbarui.');
+            },
+            complete: () => (this.is_loading = false)
+        });
+    }
+
+    goToBack(data = null) {
+        this.nzDrawerRef.close(data);
+    }
+}

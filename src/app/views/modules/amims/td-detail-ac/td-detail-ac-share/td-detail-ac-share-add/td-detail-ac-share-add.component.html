@@ -1,0 +1,127 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="complianceC">{{ 'complianceC' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="complianceC" formControlName="complianceC" placeholder="Masukkan {{ 'complianceC' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="complianceD">{{ 'complianceD' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="complianceD" formControlName="complianceD" placeholder="Masukkan {{ 'complianceD' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="complianceH">{{ 'complianceH' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="complianceH" formControlName="complianceH" placeholder="Masukkan {{ 'complianceH' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="compliteC">{{ 'compliteC' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="compliteC" formControlName="compliteC" placeholder="Masukkan {{ 'compliteC' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="compliteD">{{ 'compliteD' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="compliteD" formControlName="compliteD" placeholder="Masukkan {{ 'compliteD' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="compliteH">{{ 'compliteH' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="compliteH" formControlName="compliteH" placeholder="Masukkan {{ 'compliteH' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="compliteUser">{{ 'compliteUser' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="compliteUser" formControlName="compliteUser" placeholder="Masukkan {{ 'compliteUser' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="engineer">{{ 'engineer' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="engineer" formControlName="engineer" placeholder="Masukkan {{ 'engineer' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idAircraft">{{ 'idAircraft' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idAircraft" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idAircraft' | translate }}"> 
+                    <nz-option *ngFor="let item of listAircraft" nzLabel="{{ item.idAircraft }}" nzValue="{{ item.idAircraft }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idTdDetail">{{ 'idTdDetail' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idTdDetail" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idTdDetail' | translate }}"> 
+                    <nz-option *ngFor="let item of listTdDetail" nzLabel="{{ item.idTdDetail }}" nzValue="{{ item.idTdDetail }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idTechLog">{{ 'idTechLog' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idTechLog" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idTechLog' | translate }}"> 
+                    <nz-option *ngFor="let item of listTechLog" nzLabel="{{ item.idTechLog }}" nzValue="{{ item.idTechLog }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <label nz-checkbox formControlName="isActive">{{ 'isActive' | translate }}</label>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="noteClose">{{ 'noteClose' | translate }}</nz-form-label>
+            <nz-form-control>
+                <textarea nz-input id="noteClose" formControlName="noteClose" placeholder="Masukkan {{ 'noteClose' | translate }}"></textarea>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="noteDetail">{{ 'noteDetail' | translate }}</nz-form-label>
+            <nz-form-control>
+                <textarea nz-input id="noteDetail" formControlName="noteDetail" placeholder="Masukkan {{ 'noteDetail' | translate }}"></textarea>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

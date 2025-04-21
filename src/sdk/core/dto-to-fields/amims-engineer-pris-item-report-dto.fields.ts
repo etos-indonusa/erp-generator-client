@@ -1,0 +1,23 @@
+export const AmimsEngineerPrisItemReportDtoFields: Record<string, 'string' | 'boolean' | 'number'> = {
+  "createdAt": "string",
+  "fromPart": "string",
+  "hashTechLog": "string",
+  "idEngineerPris": "string",
+  "idEngineerPrisItem": "string",
+  "idPart": "string",
+  "idPartRemove": "string",
+  "isDeleted": "number",
+  "noteItemPris": "string",
+  "part": "string",
+  "partOnDate": "string",
+  "qtyInstall": "number",
+  "qtyPris": "number",
+  "statusItem": "string",
+  "tsnCycle": "number",
+  "tsnHours": "number",
+  "tsnVal": "number",
+  "tsoCycle": "number",
+  "tsoHours": "number",
+  "tsoVal": "number",
+  "updatedAt": "string"
+};

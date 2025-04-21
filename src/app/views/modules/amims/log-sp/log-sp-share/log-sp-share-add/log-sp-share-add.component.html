@@ -1,0 +1,82 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="dateClose">{{ 'dateClose' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-date-picker formControlName="dateClose" style="width: 100%" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="desk">{{ 'desk' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="desk" formControlName="desk" placeholder="Masukkan {{ 'desk' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="hasId">{{ 'hasId' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="hasId" formControlName="hasId" placeholder="Masukkan {{ 'hasId' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="id">{{ 'id' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="id" formControlName="id" placeholder="Masukkan {{ 'id' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="name">{{ 'name' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="name" formControlName="name" placeholder="Masukkan {{ 'name' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="param1">{{ 'param1' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="param1" formControlName="param1" placeholder="Masukkan {{ 'param1' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="param2">{{ 'param2' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="param2" formControlName="param2" placeholder="Masukkan {{ 'param2' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="sp">{{ 'sp' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="sp" formControlName="sp" placeholder="Masukkan {{ 'sp' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="status">{{ 'status' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="status" formControlName="status" placeholder="Masukkan {{ 'status' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

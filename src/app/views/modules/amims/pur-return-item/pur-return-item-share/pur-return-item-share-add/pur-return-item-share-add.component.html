@@ -1,0 +1,74 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="idMpart">{{ 'idMpart' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idMpart" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idMpart' | translate }}"> 
+                    <nz-option *ngFor="let item of listMpart" nzLabel="{{ item.idMpart }}" nzValue="{{ item.idMpart }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idPurGrnItem">{{ 'idPurGrnItem' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idPurGrnItem" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idPurGrnItem' | translate }}"> 
+                    <nz-option *ngFor="let item of listPurGrnItem" nzLabel="{{ item.idPurGrnItem }}" nzValue="{{ item.idPurGrnItem }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idPurPoItem">{{ 'idPurPoItem' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idPurPoItem" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idPurPoItem' | translate }}"> 
+                    <nz-option *ngFor="let item of listPurPoItem" nzLabel="{{ item.idPurPoItem }}" nzValue="{{ item.idPurPoItem }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idPurReturn">{{ 'idPurReturn' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idPurReturn" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idPurReturn' | translate }}"> 
+                    <nz-option *ngFor="let item of listPurReturn" nzLabel="{{ item.idPurReturn }}" nzValue="{{ item.idPurReturn }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="noteReturnItem">{{ 'noteReturnItem' | translate }}</nz-form-label>
+            <nz-form-control>
+                <textarea nz-input id="noteReturnItem" formControlName="noteReturnItem" placeholder="Masukkan {{ 'noteReturnItem' | translate }}"></textarea>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="qtyReturn">{{ 'qtyReturn' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="qtyReturn" formControlName="qtyReturn" placeholder="Masukkan {{ 'qtyReturn' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="statusItem">{{ 'statusItem' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="statusItem" formControlName="statusItem" placeholder="Masukkan {{ 'statusItem' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

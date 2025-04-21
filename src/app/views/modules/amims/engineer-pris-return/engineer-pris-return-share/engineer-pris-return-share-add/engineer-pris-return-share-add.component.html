@@ -1,0 +1,36 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="dateReturn">{{ 'dateReturn' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-date-picker formControlName="dateReturn" style="width: 100%" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idEngineerPris">{{ 'idEngineerPris' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idEngineerPris" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idEngineerPris' | translate }}"> 
+                    <nz-option *ngFor="let item of listEngineerPris" nzLabel="{{ item.idEngineerPris }}" nzValue="{{ item.idEngineerPris }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="statusReturn">{{ 'statusReturn' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="statusReturn" formControlName="statusReturn" placeholder="Masukkan {{ 'statusReturn' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

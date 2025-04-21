@@ -1,0 +1,21 @@
+export const AmimsMpcPiroWidgetDtoFields: Record<string, 'string' | 'boolean' | 'number'> = {
+  "createdAt": "string",
+  "dateAcc": "string",
+  "datePiro": "string",
+  "description": "string",
+  "idAircraft": "string",
+  "idMpcPiro": "string",
+  "idSite": "string",
+  "idUser": "string",
+  "idUserAcc": "string",
+  "isDeleted": "number",
+  "keyword": "string",
+  "noIndex": "number",
+  "notePiro": "string",
+  "numberPiro": "string",
+  "statusPiro": "string",
+  "total": "number",
+  "typePiro": "string",
+  "updatedAt": "string",
+  "validasi": "number"
+};

@@ -1,0 +1,124 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.forMpart !== undefined && data?.forMpart !== null">
+    <div class="text-secondary small">
+      {{ 'forMpart' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.forMpart || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idMpart !== undefined && data?.idMpart !== null">
+    <div class="text-secondary small">
+      {{ 'idMpart' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idMpart || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idPartAlternative !== undefined && data?.idPartAlternative !== null">
+    <div class="text-secondary small">
+      {{ 'idPartAlternative' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idPartAlternative || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.partAlternative">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'partAlternative' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partAlternative?.forMpart !== undefined && data.partAlternative?.forMpart !== null">
+    <div class="text-secondary small">
+      {{ 'forMpart' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partAlternative.forMpart || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partAlternative?.idMpart !== undefined && data.partAlternative?.idMpart !== null">
+    <div class="text-secondary small">
+      {{ 'idMpart' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partAlternative.idMpart || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partAlternative?.idPartAlternative !== undefined && data.partAlternative?.idPartAlternative !== null">
+    <div class="text-secondary small">
+      {{ 'idPartAlternative' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partAlternative.idPartAlternative || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>

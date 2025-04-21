@@ -1,0 +1,86 @@
+<nz-spin nzTip="Loading..." [nzSpinning]="is_loading">
+
+    <div class="card border-0 mb-1 border-left-5 border-theme card   bg-white">
+        <div class="card-body p-2">
+            <div class="row">
+                <div class="col-lg-2">
+                    <p class="text-secondary  mb-1">Status</p>
+                    <!-- <h3 class="fw-bold text-capitalize" style.color="{{ qaRpdDispotition?.statusQaRpdDispotition| status }}">   {{ qaRpdDispotition?.statusQaRpdDispotition}}</h3> -->
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-secondary  mb-1">Nomor</p>
+                    <!-- <h3 class="fw-bold  ">{{qaRpdDispotition?.nomorQaRpdDispotition}}</h3> -->
+                </div>
+                <div class="col" style="text-align: right;">
+                    <p class="text-secondary mb-1">&nbsp;</p>
+
+                    <button nz-button nzType="primary" style="margin-right: 5px;" nz-dropdown [nzDropdownMenu]="menu4">
+                        <span nz-icon nzType="printer"></span>
+                        Print
+                        <span nz-icon nzType="down"></span>
+                    </button>
+                    <nz-dropdown-menu #menu4="nzDropdownMenu">
+                        <ul nz-menu>
+                            <li nz-menu-item (click)="print()">Print qaRpdDispotition</li>
+                        </ul>
+                    </nz-dropdown-menu>
+
+                    <!-- <button *ngIf="qaRpdDispotition.status=='close' || qaRpdDispotition.status=='cicil'" nz-button
+                        nzType="primary" (click)="up()" style="margin-right: 5px;">
+                        <span nz-icon nzType="calculator" nzTheme="outline"></span>
+                        Bayar
+                    </button> -->
+                     
+
+                </div>
+            </div>
+        </div>
+    </div>
+     <!--
+     <lib-approval-steps [for-module-name]="'qa-rpd-dispotition'" [for-module-id]="qa-rpd-dispotition?.idQaRpdDispotition"></lib-approval-steps>
+         -->
+
+    <div class="card bg-white p-3" style="box-shadow: none;">
+        <div class="row">
+            <div class="col-md-8">
+                <app-qa-rpd-dispotition-share-header [data]="qaRpdDispotition"></app-qa-rpd-dispotition-share-header>
+                <lib-custom-field [from-module]="'AmimsQaRpdDispotition'" [from-module-id]="qaRpdDispotition?.idQaRpdDispotition"></lib-custom-field>
+            </div>
+            <div class="col-md-4">
+                <document-widget-v1 [for-module-id]="qaRpdDispotition?.idQaRpdDispotition" [for-module]="'AmimsQaRpdDispotition'"  [enable-crud]="true"></document-widget-v1>
+                    
+                <!-- <approval-mode-widget *ngIf="qaRpdDispotition.status??'-'.toLowerCase() !='close'"
+                    style="margin-right: 5px;" [module-id]="qaRpdDispotition.id_contractSite" [module]="'AmimsQaRpdDispotition'"
+                    [flow-id]="qaRpdDispotition.id_data_flow" [flow-detail]="qaRpdDispotition.id_data_flow_detail"
+                    (reload)="approve($event)">
+                </approval-mode-widget> -->
+
+            </div>
+        </div>
+
+
+        <br>
+
+ 
+    </div>
+
+    <div class="site-page-header-ghost-wrapper">
+        <nz-page-header [nzGhost]="false">
+        <nz-page-header-title>Item</nz-page-header-title>
+    </nz-page-header>
+    </div >
+
+    <div class="card">
+        <div class="card-body p-2">
+                <!-- <app-qa-rpd-dispotition-share-list [filter-extra]="false" [idQaRpdDispotition]="idQaRpdDispotition"></app-qa-rpd-dispotition-share-list> -->
+    </div>
+    </div >
+
+<!-- 
+    <lib-approval-form-widget [from-module]="'AmimsQaRpdDispotition'" [from-module-id]="qa-rpd-dispotition?.idQaRpdDispotition"
+        (onSubmit)="handleApprovalSubmit($event)" (onAfterSubmit)="refreshApprovalSteps()"></lib-approval-form-widget> 
+            -->
+
+</nz-spin>
+<br>
+

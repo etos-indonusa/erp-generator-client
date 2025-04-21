@@ -1,0 +1,65 @@
+
+  <div class="mb-3">
+    <div class="text-secondary small">Date Transfer</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.dateTransfer || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">From Id Part</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.fromIdPart || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">From Site</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.fromSite || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Issingle</div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.issingle" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.issingle">-</span>
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Qty</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.qty || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">To Id Part</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.toIdPart || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">To Site</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.toSite || '-' }}
+      
+    </div>
+  </div>
+

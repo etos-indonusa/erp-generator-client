@@ -1,0 +1,360 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.figure !== undefined && data?.figure !== null">
+    <div class="text-secondary small">
+      {{ 'figure' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.figure || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idAta !== undefined && data?.idAta !== null">
+    <div class="text-secondary small">
+      {{ 'idAta' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idAta || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idMpart !== undefined && data?.idMpart !== null">
+    <div class="text-secondary small">
+      {{ 'idMpart' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idMpart || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idPartAta !== undefined && data?.idPartAta !== null">
+    <div class="text-secondary small">
+      {{ 'idPartAta' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idPartAta || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.item !== undefined && data?.item !== null">
+    <div class="text-secondary small">
+      {{ 'item' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.item || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.ata">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'ata' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.ata?.ata !== undefined && data.ata?.ata !== null">
+    <div class="text-secondary small">
+      {{ 'ata' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.ata.ata || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.ata?.ataType !== undefined && data.ata?.ataType !== null">
+    <div class="text-secondary small">
+      {{ 'ataType' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.ata.ataType || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.ata?.codeAta !== undefined && data.ata?.codeAta !== null">
+    <div class="text-secondary small">
+      {{ 'codeAta' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.ata.codeAta || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.ata?.createdAt !== undefined && data.ata?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.ata.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.ata?.idAta !== undefined && data.ata?.idAta !== null">
+    <div class="text-secondary small">
+      {{ 'idAta' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.ata.idAta || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.ata?.isDeleted !== undefined && data.ata?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.ata.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.ata.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.ata?.keywordAta !== undefined && data.ata?.keywordAta !== null">
+    <div class="text-secondary small">
+      {{ 'keywordAta' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.ata.keywordAta || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.ata?.oldId !== undefined && data.ata?.oldId !== null">
+    <div class="text-secondary small">
+      {{ 'oldId' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.ata.oldId || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.ata?.updatedAt !== undefined && data.ata?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.ata.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.partAta">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'partAta' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partAta?.figure !== undefined && data.partAta?.figure !== null">
+    <div class="text-secondary small">
+      {{ 'figure' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partAta.figure || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partAta?.idAta !== undefined && data.partAta?.idAta !== null">
+    <div class="text-secondary small">
+      {{ 'idAta' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partAta.idAta || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partAta?.idMpart !== undefined && data.partAta?.idMpart !== null">
+    <div class="text-secondary small">
+      {{ 'idMpart' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partAta.idMpart || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partAta?.idPartAta !== undefined && data.partAta?.idPartAta !== null">
+    <div class="text-secondary small">
+      {{ 'idPartAta' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partAta.idPartAta || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.partAta?.item !== undefined && data.partAta?.item !== null">
+    <div class="text-secondary small">
+      {{ 'item' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partAta.item || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>

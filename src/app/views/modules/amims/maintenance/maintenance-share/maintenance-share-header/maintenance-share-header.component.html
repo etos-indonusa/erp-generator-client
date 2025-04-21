@@ -1,0 +1,680 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.atachapter !== undefined && data?.atachapter !== null">
+    <div class="text-secondary small">
+      {{ 'atachapter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.atachapter || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.createdAt !== undefined && data?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.cycleFrom !== undefined && data?.cycleFrom !== null">
+    <div class="text-secondary small">
+      {{ 'cycleFrom' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.cycleFrom | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.cycleTo !== undefined && data?.cycleTo !== null">
+    <div class="text-secondary small">
+      {{ 'cycleTo' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.cycleTo | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.flightHoursFrom !== undefined && data?.flightHoursFrom !== null">
+    <div class="text-secondary small">
+      {{ 'flightHoursFrom' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.flightHoursFrom | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.flightHoursTo !== undefined && data?.flightHoursTo !== null">
+    <div class="text-secondary small">
+      {{ 'flightHoursTo' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.flightHoursTo | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idMaintenance !== undefined && data?.idMaintenance !== null">
+    <div class="text-secondary small">
+      {{ 'idMaintenance' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idMaintenance || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idMaintenanceCode !== undefined && data?.idMaintenanceCode !== null">
+    <div class="text-secondary small">
+      {{ 'idMaintenanceCode' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idMaintenanceCode || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idMpart !== undefined && data?.idMpart !== null">
+    <div class="text-secondary small">
+      {{ 'idMpart' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idMpart || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idUser !== undefined && data?.idUser !== null">
+    <div class="text-secondary small">
+      {{ 'idUser' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idUser || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.noteMaintenance !== undefined && data?.noteMaintenance !== null">
+    <div class="text-secondary small">
+      {{ 'noteMaintenance' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.noteMaintenance || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.oldId !== undefined && data?.oldId !== null">
+    <div class="text-secondary small">
+      {{ 'oldId' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.oldId || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.onLocation !== undefined && data?.onLocation !== null">
+    <div class="text-secondary small">
+      {{ 'onLocation' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.onLocation || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.repetitions !== undefined && data?.repetitions !== null">
+    <div class="text-secondary small">
+      {{ 'repetitions' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.repetitions | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.timeRangeForm !== undefined && data?.timeRangeForm !== null">
+    <div class="text-secondary small">
+      {{ 'timeRangeForm' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.timeRangeForm | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.timeRangeTo !== undefined && data?.timeRangeTo !== null">
+    <div class="text-secondary small">
+      {{ 'timeRangeTo' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.timeRangeTo | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.timeUnit !== undefined && data?.timeUnit !== null">
+    <div class="text-secondary small">
+      {{ 'timeUnit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.timeUnit || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.typeMaintenance !== undefined && data?.typeMaintenance !== null">
+    <div class="text-secondary small">
+      {{ 'typeMaintenance' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.typeMaintenance || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.updatedAt !== undefined && data?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.maintenanceCode">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'maintenanceCode' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.maintenanceCode?.classification !== undefined && data.maintenanceCode?.classification !== null">
+    <div class="text-secondary small">
+      {{ 'classification' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.maintenanceCode.classification || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.maintenanceCode?.descriptionMaintenance !== undefined && data.maintenanceCode?.descriptionMaintenance !== null">
+    <div class="text-secondary small">
+      {{ 'descriptionMaintenance' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.maintenanceCode.descriptionMaintenance || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.maintenanceCode?.idMaintenanceCode !== undefined && data.maintenanceCode?.idMaintenanceCode !== null">
+    <div class="text-secondary small">
+      {{ 'idMaintenanceCode' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.maintenanceCode.idMaintenanceCode || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.maintenanceCode?.isDeleted !== undefined && data.maintenanceCode?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.maintenanceCode.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.maintenanceCode.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.maintenanceCode?.maintenanceCode !== undefined && data.maintenanceCode?.maintenanceCode !== null">
+    <div class="text-secondary small">
+      {{ 'maintenanceCode' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.maintenanceCode.maintenanceCode || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.maintenanceCode?.oldId !== undefined && data.maintenanceCode?.oldId !== null">
+    <div class="text-secondary small">
+      {{ 'oldId' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.maintenanceCode.oldId || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.maintenanceCode?.reference !== undefined && data.maintenanceCode?.reference !== null">
+    <div class="text-secondary small">
+      {{ 'reference' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.maintenanceCode.reference || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.maintenanceCode?.updatedAt !== undefined && data.maintenanceCode?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.maintenanceCode.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.user">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'user' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user?.createdAt !== undefined && data.user?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user?.deskripsi !== undefined && data.user?.deskripsi !== null">
+    <div class="text-secondary small">
+      {{ 'deskripsi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user?.idUserGroup !== undefined && data.user?.idUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'idUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.idUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user?.namaUserGroup !== undefined && data.user?.namaUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'namaUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.namaUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user?.status !== undefined && data.user?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.user.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.user?.userGroup">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'user.userGroup' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user.userGroup?.createdAt !== undefined && data.user.userGroup?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.userGroup.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user.userGroup?.deskripsi !== undefined && data.user.userGroup?.deskripsi !== null">
+    <div class="text-secondary small">
+      {{ 'deskripsi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.userGroup.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user.userGroup?.idUserGroup !== undefined && data.user.userGroup?.idUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'idUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.userGroup.idUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user.userGroup?.namaUserGroup !== undefined && data.user.userGroup?.namaUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'namaUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.userGroup.namaUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user.userGroup?.status !== undefined && data.user.userGroup?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.user.userGroup.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>
