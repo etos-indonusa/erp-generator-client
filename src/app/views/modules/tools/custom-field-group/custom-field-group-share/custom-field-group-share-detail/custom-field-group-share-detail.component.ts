@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import { ToolsCustomFieldDto, ToolsCustomFieldGroupDto, ToolsCustomFieldGroupReportDto } from 'src/sdk/core/models';
-import { CustomFieldGroupReportService, CustomFieldGroupService, CustomFieldService } from 'src/sdk/core/services';
+import { ToolsCustomFieldDto, ToolsCustomFieldGroupDto, ToolsCustomFieldGroupReportDto } from 'de-sdk-core/models';
+import { CustomFieldGroupReportService, CustomFieldGroupService, CustomFieldService } from 'de-sdk-core/services';
 import { CustomFieldShareAddComponent } from '../../../custom-field/custom-field-share/custom-field-share-add/custom-field-share-add.component';
 import { CustomFieldGroupShareAddComponent } from '../custom-field-group-share-add/custom-field-group-share-add.component';
 

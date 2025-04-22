@@ -4,13 +4,13 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsMpcPiroFormSchema } from 'src/sdk/core/form-schema/amims-mpc-piro.form-schema';
-import type { AmimsMpcPiroDto } from 'src/sdk/core/models';
-import { MpcPiroService } from 'src/sdk/core/services';
+import { AmimsMpcPiroFormSchema } from 'de-sdk-core/form-schema/amims-mpc-piro.form-schema';
+import type { AmimsMpcPiroDto } from 'de-sdk-core/models';
+import { MpcPiroService } from 'de-sdk-core/services';
 
-import { AircraftService } from 'src/sdk/core/services';
-import { SiteService } from 'src/sdk/core/services';
-import { UsersService } from 'src/sdk/core/services';
+import { AircraftService } from 'de-sdk-core/services';
+import { SiteService } from 'de-sdk-core/services';
+import { UsersService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-mpc-piro-share-add',

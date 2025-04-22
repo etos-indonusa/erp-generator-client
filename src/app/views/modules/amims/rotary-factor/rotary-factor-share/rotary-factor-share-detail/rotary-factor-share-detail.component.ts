@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   AmimsRotaryFactorReportDto } from 'src/sdk/core/models';
-import { RotaryFactorReportService } from 'src/sdk/core/services';
+import {   AmimsRotaryFactorReportDto } from 'de-sdk-core/models';
+import { RotaryFactorReportService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-rotary-factor-share-detail',

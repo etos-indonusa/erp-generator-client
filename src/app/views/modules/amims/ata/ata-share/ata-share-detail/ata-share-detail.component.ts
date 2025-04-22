@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { AmimsAtaDto } from 'src/sdk/core/models';
+import type { AmimsAtaDto } from 'de-sdk-core/models';
 
 @Component({
     selector: 'app-ata-share-detail',

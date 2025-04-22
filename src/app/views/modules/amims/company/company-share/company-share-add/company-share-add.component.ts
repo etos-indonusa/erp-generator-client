@@ -4,9 +4,9 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsCompanyFormSchema } from 'src/sdk/core/form-schema/amims-company.form-schema'; 
-import type { AmimsCompanyDto } from 'src/sdk/core/models';
-import { CompanyService } from 'src/sdk/core/services';
+import { AmimsCompanyFormSchema } from 'de-sdk-core/form-schema/amims-company.form-schema'; 
+import type { AmimsCompanyDto } from 'de-sdk-core/models';
+import { CompanyService } from 'de-sdk-core/services';
 
  
 @Component({

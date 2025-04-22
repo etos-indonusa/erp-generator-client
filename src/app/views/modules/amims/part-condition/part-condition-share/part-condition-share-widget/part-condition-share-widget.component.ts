@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { PartConditionWidgetService } from 'src/sdk/core/services/part-condition-widget.service';
+import { PartConditionWidgetService } from 'de-sdk-core/services/part-condition-widget.service';
 
 @Component({
     selector: 'app-part-condition-share-widget',

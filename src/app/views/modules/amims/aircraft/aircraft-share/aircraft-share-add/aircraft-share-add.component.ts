@@ -4,11 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsAircraftFormSchema } from 'src/sdk/core/form-schema/amims-aircraft.form-schema'; 
-import type  { AmimsAircraftDto } from 'src/sdk/core/models';
-import { AircraftService } from 'src/sdk/core/services';
+import { AmimsAircraftFormSchema } from 'de-sdk-core/form-schema/amims-aircraft.form-schema'; 
+import type  { AmimsAircraftDto } from 'de-sdk-core/models';
+import { AircraftService } from 'de-sdk-core/services';
 
-import { ActypeService } from 'src/sdk/core/services';
+import { ActypeService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-aircraft-share-add',

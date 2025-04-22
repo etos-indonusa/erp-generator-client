@@ -4,11 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsEngineerPrisReturnItemFormSchema } from 'src/sdk/core/form-schema/amims-engineer-pris-return-item.form-schema'; 
-import type  { AmimsEngineerPrisReturnItemDto } from 'src/sdk/core/models';
-import { EngineerPrisReturnItemService } from 'src/sdk/core/services';
+import { AmimsEngineerPrisReturnItemFormSchema } from 'de-sdk-core/form-schema/amims-engineer-pris-return-item.form-schema'; 
+import type  { AmimsEngineerPrisReturnItemDto } from 'de-sdk-core/models';
+import { EngineerPrisReturnItemService } from 'de-sdk-core/services';
 
-import { EngineerPrisItemService } from 'src/sdk/core/services';
+import { EngineerPrisItemService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-engineer-pris-return-item-share-add',

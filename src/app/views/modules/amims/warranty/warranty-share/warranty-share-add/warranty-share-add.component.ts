@@ -4,11 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsWarrantyFormSchema } from 'src/sdk/core/form-schema/amims-warranty.form-schema';
-import type { AmimsWarrantyDto } from 'src/sdk/core/models';
-import { PurVendorService, WarrantyService } from 'src/sdk/core/services';
+import { AmimsWarrantyFormSchema } from 'de-sdk-core/form-schema/amims-warranty.form-schema';
+import type { AmimsWarrantyDto } from 'de-sdk-core/models';
+import { PurVendorService, WarrantyService } from 'de-sdk-core/services';
 
-import { PartService } from 'src/sdk/core/services';
+import { PartService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-warranty-share-add',

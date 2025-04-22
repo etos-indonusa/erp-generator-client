@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   AmimsTypeOfworkReportDto } from 'src/sdk/core/models';
-import { TypeOfworkReportService } from 'src/sdk/core/services';
+import {   AmimsTypeOfworkReportDto } from 'de-sdk-core/models';
+import { TypeOfworkReportService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-type-ofwork-share-detail',

@@ -4,20 +4,20 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsPurPrclFormSchema } from 'src/sdk/core/form-schema/amims-pur-prcl.form-schema';
-import type { AmimsPurPrclDto } from 'src/sdk/core/models';
-import { PurPrclService, UsersService } from 'src/sdk/core/services';
+import { AmimsPurPrclFormSchema } from 'de-sdk-core/form-schema/amims-pur-prcl.form-schema';
+import type { AmimsPurPrclDto } from 'de-sdk-core/models';
+import { PurPrclService, UsersService } from 'de-sdk-core/services';
 
-import { ConditionMonitoringService } from 'src/sdk/core/services';
-import { CurrencyService } from 'src/sdk/core/services';
-import { InternalGrnItemService } from 'src/sdk/core/services';
-import { LifeTimeLimitService } from 'src/sdk/core/services';
-import { MpartService } from 'src/sdk/core/services';
-import { PartService } from 'src/sdk/core/services';
-import { PartConditionService } from 'src/sdk/core/services';
-import { PurGrnService } from 'src/sdk/core/services';
-import { PurGrnItemService } from 'src/sdk/core/services';
-import { PurVendorService } from 'src/sdk/core/services';
+import { ConditionMonitoringService } from 'de-sdk-core/services';
+import { CurrencyService } from 'de-sdk-core/services';
+import { InternalGrnItemService } from 'de-sdk-core/services';
+import { LifeTimeLimitService } from 'de-sdk-core/services';
+import { MpartService } from 'de-sdk-core/services';
+import { PartService } from 'de-sdk-core/services';
+import { PartConditionService } from 'de-sdk-core/services';
+import { PurGrnService } from 'de-sdk-core/services';
+import { PurGrnItemService } from 'de-sdk-core/services';
+import { PurVendorService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-pur-prcl-share-add',

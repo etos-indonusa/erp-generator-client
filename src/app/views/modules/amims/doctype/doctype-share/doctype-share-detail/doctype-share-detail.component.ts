@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { AmimsDoctypeDto } from 'src/sdk/core/models';
+import type { AmimsDoctypeDto } from 'de-sdk-core/models';
 
 @Component({
     selector: 'app-doctype-share-detail',

@@ -9,13 +9,13 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { PurReturnReportService, PurReturnService } from 'src/sdk/core/services';
-import { AmimsPurReturnDto } from 'src/sdk/core/models';
+import { PurReturnReportService, PurReturnService } from 'de-sdk-core/services';
+import { AmimsPurReturnDto } from 'de-sdk-core/models';
 import { PurReturnShareAddComponent } from '../pur-return-share-add/pur-return-share-add.component';
 import { PurReturnShareDetailComponent } from '../pur-return-share-detail/pur-return-share-detail.component';
-import { PurPoService } from 'src/sdk/core/services';
-import { PurVendorService } from 'src/sdk/core/services';
-import { UsersService } from 'src/sdk/core/services';
+import { PurPoService } from 'de-sdk-core/services';
+import { PurVendorService } from 'de-sdk-core/services';
+import { UsersService } from 'de-sdk-core/services';
  
 
 

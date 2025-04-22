@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { PurVendorContactWidgetService } from 'src/sdk/core/services/pur-vendor-contact-widget.service';
+import { PurVendorContactWidgetService } from 'de-sdk-core/services/pur-vendor-contact-widget.service';
 
 @Component({
     selector: 'app-pur-vendor-contact-share-widget',

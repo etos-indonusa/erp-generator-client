@@ -9,11 +9,11 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { RotaryFactorReportService, RotaryFactorService } from 'src/sdk/core/services';
-import { AmimsRotaryFactorDto } from 'src/sdk/core/models';
+import { RotaryFactorReportService, RotaryFactorService } from 'de-sdk-core/services';
+import { AmimsRotaryFactorDto } from 'de-sdk-core/models';
 import { RotaryFactorShareAddComponent } from '../rotary-factor-share-add/rotary-factor-share-add.component';
 import { RotaryFactorShareDetailComponent } from '../rotary-factor-share-detail/rotary-factor-share-detail.component';
-import { MpartService } from 'src/sdk/core/services';
+import { MpartService } from 'de-sdk-core/services';
  
 
 

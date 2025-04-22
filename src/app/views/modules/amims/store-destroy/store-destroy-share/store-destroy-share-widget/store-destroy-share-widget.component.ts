@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { StoreDestroyWidgetService } from 'src/sdk/core/services/store-destroy-widget.service';
+import { StoreDestroyWidgetService } from 'de-sdk-core/services/store-destroy-widget.service';
 
 @Component({
     selector: 'app-store-destroy-share-widget',

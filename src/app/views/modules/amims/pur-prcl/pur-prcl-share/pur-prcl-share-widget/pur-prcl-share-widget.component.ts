@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { PurPrclWidgetService } from 'src/sdk/core/services/pur-prcl-widget.service';
+import { PurPrclWidgetService } from 'de-sdk-core/services/pur-prcl-widget.service';
 
 @Component({
     selector: 'app-pur-prcl-share-widget',

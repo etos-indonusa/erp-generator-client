@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   AmimsEngineerRtiIdentifyReportDto } from 'src/sdk/core/models';
-import { EngineerRtiIdentifyReportService } from 'src/sdk/core/services';
+import {   AmimsEngineerRtiIdentifyReportDto } from 'de-sdk-core/models';
+import { EngineerRtiIdentifyReportService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-engineer-rti-identify-share-detail',

@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { AircraftDetailWidgetService } from 'src/sdk/core/services/aircraft-detail-widget.service';
+import { AircraftDetailWidgetService } from 'de-sdk-core/services/aircraft-detail-widget.service';
 
 @Component({
     selector: 'app-aircraft-detail-share-widget',

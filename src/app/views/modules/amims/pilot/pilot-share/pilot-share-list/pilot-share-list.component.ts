@@ -9,8 +9,8 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { PilotReportService, PilotService } from 'src/sdk/core/services';
-import { AmimsPilotDto } from 'src/sdk/core/models';
+import { PilotReportService, PilotService } from 'de-sdk-core/services';
+import { AmimsPilotDto } from 'de-sdk-core/models';
 import { PilotShareAddComponent } from '../pilot-share-add/pilot-share-add.component';
 import { PilotShareDetailComponent } from '../pilot-share-detail/pilot-share-detail.component';
  

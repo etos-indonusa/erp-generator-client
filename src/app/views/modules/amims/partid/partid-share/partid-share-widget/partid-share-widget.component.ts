@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { PartidWidgetService } from 'src/sdk/core/services/partid-widget.service';
+import { PartidWidgetService } from 'de-sdk-core/services/partid-widget.service';
 
 @Component({
     selector: 'app-partid-share-widget',

@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   AmimsTdTypeReportDto } from 'src/sdk/core/models';
-import { TdTypeReportService } from 'src/sdk/core/services';
+import {   AmimsTdTypeReportDto } from 'de-sdk-core/models';
+import { TdTypeReportService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-td-type-share-detail',

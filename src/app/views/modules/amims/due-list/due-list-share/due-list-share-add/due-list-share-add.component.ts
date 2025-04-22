@@ -4,14 +4,14 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsDueListFormSchema } from 'src/sdk/core/form-schema/amims-due-list.form-schema';
-import type { AmimsDueListDto } from 'src/sdk/core/models';
-import { DueListService } from 'src/sdk/core/services';
+import { AmimsDueListFormSchema } from 'de-sdk-core/form-schema/amims-due-list.form-schema';
+import type { AmimsDueListDto } from 'de-sdk-core/models';
+import { DueListService } from 'de-sdk-core/services';
 
-import { AircraftService } from 'src/sdk/core/services';
-import { MaintenanceService } from 'src/sdk/core/services';
-import { PartService } from 'src/sdk/core/services';
-import { TypeOfworkService } from 'src/sdk/core/services';
+import { AircraftService } from 'de-sdk-core/services';
+import { MaintenanceService } from 'de-sdk-core/services';
+import { PartService } from 'de-sdk-core/services';
+import { TypeOfworkService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-due-list-share-add',

@@ -4,12 +4,12 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsPartFigureIndexFormSchema } from 'src/sdk/core/form-schema/amims-part-figure-index.form-schema'; 
-import type  { AmimsPartFigureIndexDto } from 'src/sdk/core/models';
-import { PartFigureIndexService } from 'src/sdk/core/services';
+import { AmimsPartFigureIndexFormSchema } from 'de-sdk-core/form-schema/amims-part-figure-index.form-schema'; 
+import type  { AmimsPartFigureIndexDto } from 'de-sdk-core/models';
+import { PartFigureIndexService } from 'de-sdk-core/services';
 
-import { AtaService } from 'src/sdk/core/services';
-import { MpartService } from 'src/sdk/core/services';
+import { AtaService } from 'de-sdk-core/services';
+import { MpartService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-part-figure-index-share-add',

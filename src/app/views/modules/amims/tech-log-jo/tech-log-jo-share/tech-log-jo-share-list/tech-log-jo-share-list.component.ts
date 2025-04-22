@@ -9,13 +9,13 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { TechLogJoReportService, TechLogJoService } from 'src/sdk/core/services';
-import { AmimsTechLogJoDto } from 'src/sdk/core/models';
+import { TechLogJoReportService, TechLogJoService } from 'de-sdk-core/services';
+import { AmimsTechLogJoDto } from 'de-sdk-core/models';
 import { TechLogJoShareAddComponent } from '../tech-log-jo-share-add/tech-log-jo-share-add.component';
 import { TechLogJoShareDetailComponent } from '../tech-log-jo-share-detail/tech-log-jo-share-detail.component';
-import { MpcJoService } from 'src/sdk/core/services';
-import { PartService } from 'src/sdk/core/services';
-import { TechLogService } from 'src/sdk/core/services';
+import { MpcJoService } from 'de-sdk-core/services';
+import { PartService } from 'de-sdk-core/services';
+import { TechLogService } from 'de-sdk-core/services';
 
 
 

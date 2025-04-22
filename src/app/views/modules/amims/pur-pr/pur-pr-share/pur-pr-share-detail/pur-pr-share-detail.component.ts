@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   AmimsPurPrReportDto } from 'src/sdk/core/models';
-import { PurPrReportService } from 'src/sdk/core/services';
+import {   AmimsPurPrReportDto } from 'de-sdk-core/models';
+import { PurPrReportService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-pur-pr-share-detail',

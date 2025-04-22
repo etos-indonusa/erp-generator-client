@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { AmimsMaintenanceCodeReferenceDto } from 'src/sdk/core/models';
+import type { AmimsMaintenanceCodeReferenceDto } from 'de-sdk-core/models';
 
 @Component({
     selector: 'app-maintenance-code-reference-share-detail',

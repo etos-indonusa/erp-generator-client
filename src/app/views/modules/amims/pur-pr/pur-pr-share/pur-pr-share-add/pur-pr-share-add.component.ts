@@ -4,14 +4,14 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsPurPrFormSchema } from 'src/sdk/core/form-schema/amims-pur-pr.form-schema';
-import type { AmimsPurPrDto } from 'src/sdk/core/models';
-import { PurPrService } from 'src/sdk/core/services';
+import { AmimsPurPrFormSchema } from 'de-sdk-core/form-schema/amims-pur-pr.form-schema';
+import type { AmimsPurPrDto } from 'de-sdk-core/models';
+import { PurPrService } from 'de-sdk-core/services';
 
-import { AircraftService } from 'src/sdk/core/services';
-import { PositionService } from 'src/sdk/core/services';
-import { SiteService } from 'src/sdk/core/services';
-import { UsersService } from 'src/sdk/core/services'; 
+import { AircraftService } from 'de-sdk-core/services';
+import { PositionService } from 'de-sdk-core/services';
+import { SiteService } from 'de-sdk-core/services';
+import { UsersService } from 'de-sdk-core/services'; 
 
 @Component({
     selector: 'app-pur-pr-share-add',

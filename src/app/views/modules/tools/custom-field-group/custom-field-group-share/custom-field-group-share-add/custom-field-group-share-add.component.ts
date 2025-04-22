@@ -4,9 +4,9 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { ToolsCustomFieldGroupFormSchema } from 'src/sdk/core/form-schema/tools-custom-field-group.form-schema';
-import type { AclModuleDto, AclUserGroupDto, ToolsCustomFieldGroupDto } from 'src/sdk/core/models';
-import { CustomFieldGroupService, ModuleService, UserGroupService } from 'src/sdk/core/services';
+import { ToolsCustomFieldGroupFormSchema } from 'de-sdk-core/form-schema/tools-custom-field-group.form-schema';
+import type { AclModuleDto, AclUserGroupDto, ToolsCustomFieldGroupDto } from 'de-sdk-core/models';
+import { CustomFieldGroupService, ModuleService, UserGroupService } from 'de-sdk-core/services';
 
 
 @Component({

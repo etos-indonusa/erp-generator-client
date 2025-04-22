@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { AmimsLogUserDto } from 'src/sdk/core/models';
+import type { AmimsLogUserDto } from 'de-sdk-core/models';
 
 @Component({
     selector: 'app-log-user-share-detail',

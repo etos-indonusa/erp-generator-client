@@ -4,16 +4,16 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsPurPoFormSchema } from 'src/sdk/core/form-schema/amims-pur-po.form-schema';
-import type { AmimsPurPoDto } from 'src/sdk/core/models';
-import { PurPoService } from 'src/sdk/core/services';
+import { AmimsPurPoFormSchema } from 'de-sdk-core/form-schema/amims-pur-po.form-schema';
+import type { AmimsPurPoDto } from 'de-sdk-core/models';
+import { PurPoService } from 'de-sdk-core/services';
 
-import { CurrencyService } from 'src/sdk/core/services';
-import { PositionService } from 'src/sdk/core/services';
-import { PurVendorService } from 'src/sdk/core/services';
-import { PurVendorContactService } from 'src/sdk/core/services';
-import { SiteService } from 'src/sdk/core/services';
-import { UsersService } from 'src/sdk/core/services'; 
+import { CurrencyService } from 'de-sdk-core/services';
+import { PositionService } from 'de-sdk-core/services';
+import { PurVendorService } from 'de-sdk-core/services';
+import { PurVendorContactService } from 'de-sdk-core/services';
+import { SiteService } from 'de-sdk-core/services';
+import { UsersService } from 'de-sdk-core/services'; 
 
 @Component({
     selector: 'app-pur-po-share-add',

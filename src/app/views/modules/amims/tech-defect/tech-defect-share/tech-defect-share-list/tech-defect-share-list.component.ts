@@ -9,15 +9,15 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { TechDefectReportService, TechDefectService } from 'src/sdk/core/services';
-import { AmimsTechDefectDto } from 'src/sdk/core/models';
+import { TechDefectReportService, TechDefectService } from 'de-sdk-core/services';
+import { AmimsTechDefectDto } from 'de-sdk-core/models';
 import { TechDefectShareAddComponent } from '../tech-defect-share-add/tech-defect-share-add.component';
 import { TechDefectShareDetailComponent } from '../tech-defect-share-detail/tech-defect-share-detail.component';
-import { AircraftService } from 'src/sdk/core/services';
-import { EngineerRtiService } from 'src/sdk/core/services';
-import { PartService } from 'src/sdk/core/services';
-import { PartInstallService } from 'src/sdk/core/services';
-import { TechLogService } from 'src/sdk/core/services';
+import { AircraftService } from 'de-sdk-core/services';
+import { EngineerRtiService } from 'de-sdk-core/services';
+import { PartService } from 'de-sdk-core/services';
+import { PartInstallService } from 'de-sdk-core/services';
+import { TechLogService } from 'de-sdk-core/services';
  
 
 

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { ToolsWorkflowLogDto } from 'src/sdk/core/models';
+import type { ToolsWorkflowLogDto } from 'de-sdk-core/models';
 
 @Component({
     selector: 'app-workflow-log-share-detail',

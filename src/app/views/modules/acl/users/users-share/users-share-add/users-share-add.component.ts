@@ -4,11 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AclUsersFormSchema } from 'src/sdk/core/form-schema/acl-users.form-schema';
-import type { AclUsersDto } from 'src/sdk/core/models';
-import { UsersService } from 'src/sdk/core/services';
+import { AclUsersFormSchema } from 'de-sdk-core/form-schema/acl-users.form-schema';
+import type { AclUsersDto } from 'de-sdk-core/models';
+import { UsersService } from 'de-sdk-core/services';
 
-import { UserGroupService } from 'src/sdk/core/services';
+import { UserGroupService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-users-share-add',

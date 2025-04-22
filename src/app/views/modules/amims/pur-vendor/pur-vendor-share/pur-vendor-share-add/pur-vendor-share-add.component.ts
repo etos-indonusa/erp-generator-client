@@ -4,12 +4,12 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsPurVendorFormSchema } from 'src/sdk/core/form-schema/amims-pur-vendor.form-schema'; 
-import type  { AmimsPurVendorDto } from 'src/sdk/core/models';
-import { PurVendorService } from 'src/sdk/core/services';
+import { AmimsPurVendorFormSchema } from 'de-sdk-core/form-schema/amims-pur-vendor.form-schema'; 
+import type  { AmimsPurVendorDto } from 'de-sdk-core/models';
+import { PurVendorService } from 'de-sdk-core/services';
 
-import { McurrencyService } from 'src/sdk/core/services';
-import { UsersService } from 'src/sdk/core/services';
+import { McurrencyService } from 'de-sdk-core/services';
+import { UsersService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-pur-vendor-share-add',

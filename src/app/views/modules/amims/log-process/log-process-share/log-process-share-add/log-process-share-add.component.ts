@@ -4,14 +4,14 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsLogProcessFormSchema } from 'src/sdk/core/form-schema/amims-log-process.form-schema'; 
-import type  { AmimsLogProcessDto } from 'src/sdk/core/models';
-import { LogProcessService } from 'src/sdk/core/services';
+import { AmimsLogProcessFormSchema } from 'de-sdk-core/form-schema/amims-log-process.form-schema'; 
+import type  { AmimsLogProcessDto } from 'de-sdk-core/models';
+import { LogProcessService } from 'de-sdk-core/services';
 
-import { MpartService } from 'src/sdk/core/services';
-import { PartService } from 'src/sdk/core/services';
-import { PartInstallService } from 'src/sdk/core/services';
-import { TechLogService } from 'src/sdk/core/services';
+import { MpartService } from 'de-sdk-core/services';
+import { PartService } from 'de-sdk-core/services';
+import { PartInstallService } from 'de-sdk-core/services';
+import { TechLogService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-log-process-share-add',

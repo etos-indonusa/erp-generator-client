@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { WorkflowWidgetService } from 'src/sdk/core/services/workflow-widget.service';
+import { WorkflowWidgetService } from 'de-sdk-core/services/workflow-widget.service';
 
 @Component({
     selector: 'app-workflow-share-widget',

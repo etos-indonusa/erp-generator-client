@@ -9,13 +9,13 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { TdDetailAcReportService, TdDetailAcService } from 'src/sdk/core/services';
-import { AmimsTdDetailAcDto } from 'src/sdk/core/models';
+import { TdDetailAcReportService, TdDetailAcService } from 'de-sdk-core/services';
+import { AmimsTdDetailAcDto } from 'de-sdk-core/models';
 import { TdDetailAcShareAddComponent } from '../td-detail-ac-share-add/td-detail-ac-share-add.component';
 import { TdDetailAcShareDetailComponent } from '../td-detail-ac-share-detail/td-detail-ac-share-detail.component';
-import { AircraftService } from 'src/sdk/core/services';
-import { TdDetailService } from 'src/sdk/core/services';
-import { TechLogService } from 'src/sdk/core/services';
+import { AircraftService } from 'de-sdk-core/services';
+import { TdDetailService } from 'de-sdk-core/services';
+import { TechLogService } from 'de-sdk-core/services';
  
 
 

@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   AmimsInspectionReportDto } from 'src/sdk/core/models';
-import { InspectionReportService } from 'src/sdk/core/services';
+import {   AmimsInspectionReportDto } from 'de-sdk-core/models';
+import { InspectionReportService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-inspection-share-detail',

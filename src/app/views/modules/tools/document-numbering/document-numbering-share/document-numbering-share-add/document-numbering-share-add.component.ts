@@ -5,9 +5,9 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
 import { PesanService } from 'src/app/shared/services/pesan.service';
-import { ToolsDocumentNumberingFormSchema } from 'src/sdk/core/form-schema/tools-document-numbering.form-schema';
-import type { ToolsDocumentNumberingDto } from 'src/sdk/core/models/tools-document-numbering-dto';
-import { DocumentNumberingService } from 'src/sdk/core/services/document-numbering.service';
+import { ToolsDocumentNumberingFormSchema } from 'de-sdk-core/form-schema/tools-document-numbering.form-schema';
+import type { ToolsDocumentNumberingDto } from 'de-sdk-core/models/tools-document-numbering-dto';
+import { DocumentNumberingService } from 'de-sdk-core/services/document-numbering.service';
 
 @Component({
     selector: 'app-document-numbering-share-add',

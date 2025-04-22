@@ -4,12 +4,12 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsPartActypeFormSchema } from 'src/sdk/core/form-schema/amims-part-actype.form-schema';
-import type { AmimsPartActypeDto } from 'src/sdk/core/models';
-import { PartActypeService } from 'src/sdk/core/services';
+import { AmimsPartActypeFormSchema } from 'de-sdk-core/form-schema/amims-part-actype.form-schema';
+import type { AmimsPartActypeDto } from 'de-sdk-core/models';
+import { PartActypeService } from 'de-sdk-core/services';
 
-import { ActypeService } from 'src/sdk/core/services';
-import { MpartService } from 'src/sdk/core/services';
+import { ActypeService } from 'de-sdk-core/services';
+import { MpartService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-part-actype-share-add',

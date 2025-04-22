@@ -11,12 +11,11 @@ import { HighlightModule, HIGHLIGHT_OPTIONS, provideHighlightOptions } from 'ngx
 import { AuthInterceptor } from 'src/libs/auth/interceptors/auth.interceptor';
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routes } from './app.routes';
-import { HttpLoaderFactory, TampilanModule } from './shared/tampilan.module';
-import { ApiModule } from 'src/sdk/core/api.module';
+import { HttpLoaderFactory, TampilanModule } from './shared/tampilan.module'; 
 import { environment } from 'src/environments/environment.prod';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
- 
+import { ApiModule } from 'de-sdk-core/api.module';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { registerLocaleData } from '@angular/common'; 
 import id from '@angular/common/locales/id'; 
@@ -36,7 +35,7 @@ export function appTranslateInitializer(translate: TranslateService) {
         return translate.use('id').toPromise();
     };
 }
-
+ 
 @NgModule({
     declarations: [AppComponent],
     imports: [

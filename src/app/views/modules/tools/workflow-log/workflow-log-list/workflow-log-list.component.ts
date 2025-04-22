@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { NzTableQueryParams } from 'ng-zorro-antd/table';
 import { AclService } from 'src/app/services/acl.service';
-import { ToolsWorkflowLogDto } from 'src/sdk/core/models';
-import { WorkflowLogService } from 'src/sdk/core/services';
+import { ToolsWorkflowLogDto } from 'de-sdk-core/models';
+import { WorkflowLogService } from 'de-sdk-core/services';
 import { WorkflowLogShareAddComponent } from '../workflow-log-share/workflow-log-share-add/workflow-log-share-add.component';
 import { WorkflowLogShareDetailComponent } from '../workflow-log-share/workflow-log-share-detail/workflow-log-share-detail.component';
 

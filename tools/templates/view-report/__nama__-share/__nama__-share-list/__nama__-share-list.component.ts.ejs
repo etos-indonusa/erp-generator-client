@@ -9,13 +9,13 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { <%= Nama_report %>Service, <%= Nama %>Service } from 'src/sdk/core/services';
-import { <%= Prefix %><%= Nama %>Dto } from 'src/sdk/core/models';
+import { <%= Nama_report %>Service, <%= Nama %>Service } from 'de-sdk-core/services';
+import { <%= Prefix %><%= Nama %>Dto } from 'de-sdk-core/models';
 import { <%= Nama %>ShareAddComponent } from '../<%= nama %>-share-add/<%= nama %>-share-add.component';
 import { <%= Nama %>ShareDetailComponent } from '../<%= nama %>-share-detail/<%= nama %>-share-detail.component';
 <% if (relationInjects && relationInjects.length) { -%>
 <% relationInjects.forEach(inj => { -%>
-import { <%- inj.split(':')[1].trim() %> } from 'src/sdk/core/services';
+import { <%- inj.split(':')[1].trim() %> } from 'de-sdk-core/services';
 <% }) -%>
 <% } -%>
  

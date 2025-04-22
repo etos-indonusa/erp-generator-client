@@ -9,14 +9,14 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { EngineerPrisReportService, EngineerPrisService } from 'src/sdk/core/services';
-import { AmimsEngineerPrisDto } from 'src/sdk/core/models';
+import { EngineerPrisReportService, EngineerPrisService } from 'de-sdk-core/services';
+import { AmimsEngineerPrisDto } from 'de-sdk-core/models';
 import { EngineerPrisShareAddComponent } from '../engineer-pris-share-add/engineer-pris-share-add.component';
 import { EngineerPrisShareDetailComponent } from '../engineer-pris-share-detail/engineer-pris-share-detail.component';
-import { AircraftService } from 'src/sdk/core/services';
-import { PositionService } from 'src/sdk/core/services';
-import { SiteService } from 'src/sdk/core/services';
-import { UsersService } from 'src/sdk/core/services';
+import { AircraftService } from 'de-sdk-core/services';
+import { PositionService } from 'de-sdk-core/services';
+import { SiteService } from 'de-sdk-core/services';
+import { UsersService } from 'de-sdk-core/services';
 
 
 

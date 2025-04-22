@@ -9,13 +9,13 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { MpcPiroReportService, MpcPiroService } from 'src/sdk/core/services';
-import { AmimsMpcPiroDto } from 'src/sdk/core/models';
+import { MpcPiroReportService, MpcPiroService } from 'de-sdk-core/services';
+import { AmimsMpcPiroDto } from 'de-sdk-core/models';
 import { MpcPiroShareAddComponent } from '../mpc-piro-share-add/mpc-piro-share-add.component';
 import { MpcPiroShareDetailComponent } from '../mpc-piro-share-detail/mpc-piro-share-detail.component';
-import { AircraftService } from 'src/sdk/core/services';
-import { SiteService } from 'src/sdk/core/services';
-import { UsersService } from 'src/sdk/core/services';
+import { AircraftService } from 'de-sdk-core/services';
+import { SiteService } from 'de-sdk-core/services';
+import { UsersService } from 'de-sdk-core/services';
 
 
 

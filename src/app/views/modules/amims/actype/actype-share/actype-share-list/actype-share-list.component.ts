@@ -9,8 +9,8 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { ActypeReportService, ActypeService } from 'src/sdk/core/services';
-import { AmimsActypeDto } from 'src/sdk/core/models';
+import { ActypeReportService, ActypeService } from 'de-sdk-core/services';
+import { AmimsActypeDto } from 'de-sdk-core/models';
 import { ActypeShareAddComponent } from '../actype-share-add/actype-share-add.component';
 import { ActypeShareDetailComponent } from '../actype-share-detail/actype-share-detail.component';
  

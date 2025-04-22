@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   AmimsMpcWpReportDto } from 'src/sdk/core/models';
-import { MpcWpReportService } from 'src/sdk/core/services';
+import {   AmimsMpcWpReportDto } from 'de-sdk-core/models';
+import { MpcWpReportService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-mpc-wp-share-detail',

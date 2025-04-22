@@ -4,16 +4,16 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsMpcJoFormSchema } from 'src/sdk/core/form-schema/amims-mpc-jo.form-schema'; 
-import type  { AmimsMpcJoDto } from 'src/sdk/core/models';
-import { MpcJoService } from 'src/sdk/core/services';
+import { AmimsMpcJoFormSchema } from 'de-sdk-core/form-schema/amims-mpc-jo.form-schema'; 
+import type  { AmimsMpcJoDto } from 'de-sdk-core/models';
+import { MpcJoService } from 'de-sdk-core/services';
 
-import { DueListService } from 'src/sdk/core/services';
-import { MaintenanceService } from 'src/sdk/core/services';
-import { PartService } from 'src/sdk/core/services';
-import { TechLogService } from 'src/sdk/core/services';
-import { TypeOfworkService } from 'src/sdk/core/services';
-import { UsersService } from 'src/sdk/core/services';
+import { DueListService } from 'de-sdk-core/services';
+import { MaintenanceService } from 'de-sdk-core/services';
+import { PartService } from 'de-sdk-core/services';
+import { TechLogService } from 'de-sdk-core/services';
+import { TypeOfworkService } from 'de-sdk-core/services';
+import { UsersService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-mpc-jo-share-add',

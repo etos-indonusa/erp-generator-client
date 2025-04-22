@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { AmimsMaintenanceCodeDto } from 'src/sdk/core/models';
+import type { AmimsMaintenanceCodeDto } from 'de-sdk-core/models';
 
 @Component({
     selector: 'app-maintenance-code-share-detail',

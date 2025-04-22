@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   AmimsMpcJoOperatorReportDto } from 'src/sdk/core/models';
-import { MpcJoOperatorReportService } from 'src/sdk/core/services';
+import {   AmimsMpcJoOperatorReportDto } from 'de-sdk-core/models';
+import { MpcJoOperatorReportService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-mpc-jo-operator-share-detail',

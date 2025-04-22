@@ -1,0 +1,22 @@
+export const AmimsMaintenanceReportDtoFields: Record<string, 'string' | 'boolean' | 'number'> = {
+  "atachapter": "string",
+  "createdAt": "string",
+  "cycleFrom": "number",
+  "cycleTo": "number",
+  "flightHoursFrom": "number",
+  "flightHoursTo": "number",
+  "idMaintenance": "string",
+  "idMaintenanceCode": "string",
+  "idMpart": "string",
+  "idUser": "string",
+  "mpart": "string",
+  "noteMaintenance": "string",
+  "oldId": "string",
+  "onLocation": "string",
+  "repetitions": "number",
+  "timeRangeForm": "number",
+  "timeRangeTo": "number",
+  "timeUnit": "string",
+  "typeMaintenance": "string",
+  "updatedAt": "string"
+};

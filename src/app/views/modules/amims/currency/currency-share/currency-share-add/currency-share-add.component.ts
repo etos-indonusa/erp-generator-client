@@ -4,9 +4,9 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsCurrencyFormSchema } from 'src/sdk/core/form-schema/amims-currency.form-schema'; 
-import type  { AmimsCurrencyDto } from 'src/sdk/core/models';
-import { CurrencyService } from 'src/sdk/core/services';
+import { AmimsCurrencyFormSchema } from 'de-sdk-core/form-schema/amims-currency.form-schema'; 
+import type  { AmimsCurrencyDto } from 'de-sdk-core/models';
+import { CurrencyService } from 'de-sdk-core/services';
 
 
 @Component({

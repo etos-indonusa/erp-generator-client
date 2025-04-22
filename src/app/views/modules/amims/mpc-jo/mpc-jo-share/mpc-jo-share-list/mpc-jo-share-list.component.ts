@@ -9,16 +9,16 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { MpcJoReportService, MpcJoService } from 'src/sdk/core/services';
-import { AmimsMpcJoDto } from 'src/sdk/core/models';
+import { MpcJoReportService, MpcJoService } from 'de-sdk-core/services';
+import { AmimsMpcJoDto } from 'de-sdk-core/models';
 import { MpcJoShareAddComponent } from '../mpc-jo-share-add/mpc-jo-share-add.component';
 import { MpcJoShareDetailComponent } from '../mpc-jo-share-detail/mpc-jo-share-detail.component';
-import { DueListService } from 'src/sdk/core/services';
-import { MaintenanceService } from 'src/sdk/core/services';
-import { PartService } from 'src/sdk/core/services';
-import { TechLogService } from 'src/sdk/core/services';
-import { TypeOfworkService } from 'src/sdk/core/services';
-import { UsersService } from 'src/sdk/core/services';
+import { DueListService } from 'de-sdk-core/services';
+import { MaintenanceService } from 'de-sdk-core/services';
+import { PartService } from 'de-sdk-core/services';
+import { TechLogService } from 'de-sdk-core/services';
+import { TypeOfworkService } from 'de-sdk-core/services';
+import { UsersService } from 'de-sdk-core/services';
  
 
 

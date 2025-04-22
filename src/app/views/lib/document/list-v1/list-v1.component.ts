@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { NzTableQueryParams } from 'ng-zorro-antd/table';
 import { AclService } from 'src/app/services/acl.service'; 
-import { DocumentDocumentDto } from 'src/sdk/core/models/document-document-dto';
-import { DocumentService } from 'src/sdk/core/services/document.service';
+import { DocumentDocumentDto } from 'de-sdk-core/models/document-document-dto';
+import { DocumentService } from 'de-sdk-core/services/document.service';
 import { UploadDrawerComponent } from '../upload-drawer/upload-drawer.component';
 
 

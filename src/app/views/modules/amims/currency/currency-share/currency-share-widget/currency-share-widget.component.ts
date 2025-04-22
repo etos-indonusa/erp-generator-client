@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { CurrencyWidgetService } from 'src/sdk/core/services/currency-widget.service';
+import { CurrencyWidgetService } from 'de-sdk-core/services/currency-widget.service';
 
 @Component({
     selector: 'app-currency-share-widget',

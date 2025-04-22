@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { PilotWidgetService } from 'src/sdk/core/services/pilot-widget.service';
+import { PilotWidgetService } from 'de-sdk-core/services/pilot-widget.service';
 
 @Component({
     selector: 'app-pilot-share-widget',

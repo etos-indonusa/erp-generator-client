@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { MpartWidgetService } from 'src/sdk/core/services/mpart-widget.service';
+import { MpartWidgetService } from 'de-sdk-core/services/mpart-widget.service';
 
 @Component({
     selector: 'app-mpart-share-widget',

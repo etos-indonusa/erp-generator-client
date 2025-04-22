@@ -9,12 +9,12 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { PartActypeReportService, PartActypeService } from 'src/sdk/core/services';
-import { AmimsPartActypeDto } from 'src/sdk/core/models';
+import { PartActypeReportService, PartActypeService } from 'de-sdk-core/services';
+import { AmimsPartActypeDto } from 'de-sdk-core/models';
 import { PartActypeShareAddComponent } from '../part-actype-share-add/part-actype-share-add.component';
 import { PartActypeShareDetailComponent } from '../part-actype-share-detail/part-actype-share-detail.component';
-import { ActypeService } from 'src/sdk/core/services';
-import { MpartService } from 'src/sdk/core/services';
+import { ActypeService } from 'de-sdk-core/services';
+import { MpartService } from 'de-sdk-core/services';
 
 
 

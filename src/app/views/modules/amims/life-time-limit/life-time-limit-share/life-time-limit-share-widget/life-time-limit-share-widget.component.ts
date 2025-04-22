@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { LifeTimeLimitWidgetService } from 'src/sdk/core/services/life-time-limit-widget.service';
+import { LifeTimeLimitWidgetService } from 'de-sdk-core/services/life-time-limit-widget.service';
 
 @Component({
     selector: 'app-life-time-limit-share-widget',

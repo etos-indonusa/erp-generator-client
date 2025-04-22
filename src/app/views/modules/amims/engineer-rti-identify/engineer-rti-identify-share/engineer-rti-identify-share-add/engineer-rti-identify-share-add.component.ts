@@ -4,13 +4,13 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsEngineerRtiIdentifyFormSchema } from 'src/sdk/core/form-schema/amims-engineer-rti-identify.form-schema'; 
-import type  { AmimsEngineerRtiIdentifyDto } from 'src/sdk/core/models';
-import { EngineerRtiIdentifyService } from 'src/sdk/core/services';
+import { AmimsEngineerRtiIdentifyFormSchema } from 'de-sdk-core/form-schema/amims-engineer-rti-identify.form-schema'; 
+import type  { AmimsEngineerRtiIdentifyDto } from 'de-sdk-core/models';
+import { EngineerRtiIdentifyService } from 'de-sdk-core/services';
 
-import { EngineerRtiService } from 'src/sdk/core/services';
-import { PartService } from 'src/sdk/core/services';
-import { PartInstallService } from 'src/sdk/core/services';
+import { EngineerRtiService } from 'de-sdk-core/services';
+import { PartService } from 'de-sdk-core/services';
+import { PartInstallService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-engineer-rti-identify-share-add',

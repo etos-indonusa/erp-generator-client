@@ -4,15 +4,15 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsEngineerRtiFormSchema } from 'src/sdk/core/form-schema/amims-engineer-rti.form-schema'; 
-import type  { AmimsEngineerRtiDto } from 'src/sdk/core/models';
-import { EngineerRtiService } from 'src/sdk/core/services';
+import { AmimsEngineerRtiFormSchema } from 'de-sdk-core/form-schema/amims-engineer-rti.form-schema'; 
+import type  { AmimsEngineerRtiDto } from 'de-sdk-core/models';
+import { EngineerRtiService } from 'de-sdk-core/services';
 
-import { AircraftService } from 'src/sdk/core/services';
-import { MpcJoService } from 'src/sdk/core/services';
-import { PartService } from 'src/sdk/core/services';
-import { PartInstallService } from 'src/sdk/core/services';
-import { SiteService } from 'src/sdk/core/services';
+import { AircraftService } from 'de-sdk-core/services';
+import { MpcJoService } from 'de-sdk-core/services';
+import { PartService } from 'de-sdk-core/services';
+import { PartInstallService } from 'de-sdk-core/services';
+import { SiteService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-engineer-rti-share-add',

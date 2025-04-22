@@ -9,8 +9,8 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { PartCategoryReportService, PartCategoryService } from 'src/sdk/core/services';
-import { AmimsPartCategoryDto } from 'src/sdk/core/models';
+import { PartCategoryReportService, PartCategoryService } from 'de-sdk-core/services';
+import { AmimsPartCategoryDto } from 'de-sdk-core/models';
 import { PartCategoryShareAddComponent } from '../part-category-share-add/part-category-share-add.component';
 import { PartCategoryShareDetailComponent } from '../part-category-share-detail/part-category-share-detail.component';
  

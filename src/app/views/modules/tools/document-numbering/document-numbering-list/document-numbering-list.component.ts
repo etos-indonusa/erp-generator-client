@@ -6,9 +6,9 @@ import { AclService } from 'src/app/services/acl.service';
 import { DocumentNumberingShareAddComponent } from '../document-numbering-share/document-numbering-share-add/document-numbering-share-add.component';
 import { DocumentNumberingShareDetailComponent } from '../document-numbering-share/document-numbering-share-detail/document-numbering-share-detail.component';
 import { TranslateService } from '@ngx-translate/core';
-import { ToolsDocumentNumberingDto } from 'src/sdk/core/models/tools-document-numbering-dto';
-import { DocumentNumberingService } from 'src/sdk/core/services/document-numbering.service';
-import { ModuleService } from 'src/sdk/core/services';
+import { ToolsDocumentNumberingDto } from 'de-sdk-core/models/tools-document-numbering-dto';
+import { DocumentNumberingService } from 'de-sdk-core/services/document-numbering.service';
+import { ModuleService } from 'de-sdk-core/services';
 @Component({
     selector: 'app-document-numbering-list',
     templateUrl: './document-numbering-list.component.html',

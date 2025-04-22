@@ -9,12 +9,12 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { PartAtaReportService, PartAtaService } from 'src/sdk/core/services';
-import { AmimsPartAtaDto } from 'src/sdk/core/models';
+import { PartAtaReportService, PartAtaService } from 'de-sdk-core/services';
+import { AmimsPartAtaDto } from 'de-sdk-core/models';
 import { PartAtaShareAddComponent } from '../part-ata-share-add/part-ata-share-add.component';
 import { PartAtaShareDetailComponent } from '../part-ata-share-detail/part-ata-share-detail.component';
-import { AtaService } from 'src/sdk/core/services';
-import { MpartService } from 'src/sdk/core/services';
+import { AtaService } from 'de-sdk-core/services';
+import { MpartService } from 'de-sdk-core/services';
  
 
 

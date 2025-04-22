@@ -4,15 +4,15 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsPartFormSchema } from 'src/sdk/core/form-schema/amims-part.form-schema';
-import type { AmimsPartDto } from 'src/sdk/core/models';
-import { PartService } from 'src/sdk/core/services';
+import { AmimsPartFormSchema } from 'de-sdk-core/form-schema/amims-part.form-schema';
+import type { AmimsPartDto } from 'de-sdk-core/models';
+import { PartService } from 'de-sdk-core/services';
 
-import { AtaService } from 'src/sdk/core/services';
-import { ConditionMonitoringService } from 'src/sdk/core/services';
-import { LifeTimeLimitService } from 'src/sdk/core/services';
-import { PartCategoryService } from 'src/sdk/core/services';
-import { PartidService } from 'src/sdk/core/services';
+import { AtaService } from 'de-sdk-core/services';
+import { ConditionMonitoringService } from 'de-sdk-core/services';
+import { LifeTimeLimitService } from 'de-sdk-core/services';
+import { PartCategoryService } from 'de-sdk-core/services';
+import { PartidService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-part-share-add',

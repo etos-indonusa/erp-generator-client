@@ -1,6 +1,6 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
 import { NzDrawerService } from 'ng-zorro-antd/drawer';
-import { WorkflowAggregatorService, WorkflowLogService, WorkflowStepService } from 'src/sdk/core/services';
+import { WorkflowAggregatorService, WorkflowLogService, WorkflowStepService } from 'de-sdk-core/services';
 import { ApprovalLogsComponent } from '../approval-logs/approval-logs.component';
 
 @Component({

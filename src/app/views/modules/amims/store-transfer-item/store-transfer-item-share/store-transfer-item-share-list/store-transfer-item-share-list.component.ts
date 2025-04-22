@@ -9,13 +9,13 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { StoreTransferItemReportService, StoreTransferItemService } from 'src/sdk/core/services';
-import { AmimsStoreTransferItemDto } from 'src/sdk/core/models';
+import { StoreTransferItemReportService, StoreTransferItemService } from 'de-sdk-core/services';
+import { AmimsStoreTransferItemDto } from 'de-sdk-core/models';
 import { StoreTransferItemShareAddComponent } from '../store-transfer-item-share-add/store-transfer-item-share-add.component';
 import { StoreTransferItemShareDetailComponent } from '../store-transfer-item-share-detail/store-transfer-item-share-detail.component';
-import { EngineerPmtrItemService } from 'src/sdk/core/services';
-import { PartService } from 'src/sdk/core/services';
-import { StoreTransferService } from 'src/sdk/core/services';
+import { EngineerPmtrItemService } from 'de-sdk-core/services';
+import { PartService } from 'de-sdk-core/services';
+import { StoreTransferService } from 'de-sdk-core/services';
  
 
 

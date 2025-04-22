@@ -4,11 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsLogUserFormSchema } from 'src/sdk/core/form-schema/amims-log-user.form-schema'; 
-import type { AmimsLogUserDto } from 'src/sdk/core/models';
-import { LogUserService } from 'src/sdk/core/services';
+import { AmimsLogUserFormSchema } from 'de-sdk-core/form-schema/amims-log-user.form-schema'; 
+import type { AmimsLogUserDto } from 'de-sdk-core/models';
+import { LogUserService } from 'de-sdk-core/services';
 
-import { UsersService } from 'src/sdk/core/services';
+import { UsersService } from 'de-sdk-core/services';
  
 @Component({
     selector: 'app-log-user-share-add',

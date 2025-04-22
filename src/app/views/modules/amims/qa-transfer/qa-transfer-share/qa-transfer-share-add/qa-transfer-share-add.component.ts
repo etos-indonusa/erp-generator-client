@@ -4,12 +4,12 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsQaTransferFormSchema } from 'src/sdk/core/form-schema/amims-qa-transfer.form-schema';
-import type { AmimsQaTransferDto } from 'src/sdk/core/models';
-import { QaTransferService } from 'src/sdk/core/services';
+import { AmimsQaTransferFormSchema } from 'de-sdk-core/form-schema/amims-qa-transfer.form-schema';
+import type { AmimsQaTransferDto } from 'de-sdk-core/models';
+import { QaTransferService } from 'de-sdk-core/services';
 
-import { SiteService } from 'src/sdk/core/services';
-import { UsersService } from 'src/sdk/core/services';
+import { SiteService } from 'de-sdk-core/services';
+import { UsersService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-qa-transfer-share-add',

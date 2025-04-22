@@ -9,11 +9,11 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { TechLogReportService, TechLogService, UsersService } from 'src/sdk/core/services';
-import { AmimsTechLogDto } from 'src/sdk/core/models';
+import { TechLogReportService, TechLogService, UsersService } from 'de-sdk-core/services';
+import { AmimsTechLogDto } from 'de-sdk-core/models';
 import { TechLogShareAddComponent } from '../tech-log-share-add/tech-log-share-add.component';
 import { TechLogShareDetailComponent } from '../tech-log-share-detail/tech-log-share-detail.component';
-import { AircraftService } from 'src/sdk/core/services';  
+import { AircraftService } from 'de-sdk-core/services';  
 
 
 

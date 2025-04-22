@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { MpcWpWidgetService } from 'src/sdk/core/services/mpc-wp-widget.service';
+import { MpcWpWidgetService } from 'de-sdk-core/services/mpc-wp-widget.service';
 
 @Component({
     selector: 'app-mpc-wp-share-widget',

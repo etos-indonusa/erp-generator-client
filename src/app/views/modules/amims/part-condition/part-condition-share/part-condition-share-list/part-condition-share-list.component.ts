@@ -9,8 +9,8 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { PartConditionReportService, PartConditionService } from 'src/sdk/core/services';
-import { AmimsPartConditionDto } from 'src/sdk/core/models';
+import { PartConditionReportService, PartConditionService } from 'de-sdk-core/services';
+import { AmimsPartConditionDto } from 'de-sdk-core/models';
 import { PartConditionShareAddComponent } from '../part-condition-share-add/part-condition-share-add.component';
 import { PartConditionShareDetailComponent } from '../part-condition-share-detail/part-condition-share-detail.component';
  

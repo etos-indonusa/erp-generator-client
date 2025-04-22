@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   AmimsLogTsnTsoReportDto } from 'src/sdk/core/models';
-import { LogTsnTsoReportService } from 'src/sdk/core/services';
+import {   AmimsLogTsnTsoReportDto } from 'de-sdk-core/models';
+import { LogTsnTsoReportService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-log-tsn-tso-share-detail',

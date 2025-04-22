@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { AmimsLibUploadDto } from 'src/sdk/core/models';
+import type { AmimsLibUploadDto } from 'de-sdk-core/models';
 
 @Component({
     selector: 'app-lib-upload-share-detail',

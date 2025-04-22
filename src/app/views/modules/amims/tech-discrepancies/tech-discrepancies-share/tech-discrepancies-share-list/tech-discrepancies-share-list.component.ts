@@ -9,12 +9,12 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { TechDiscrepanciesReportService, TechDiscrepanciesService } from 'src/sdk/core/services';
-import { AmimsTechDiscrepanciesDto } from 'src/sdk/core/models';
+import { TechDiscrepanciesReportService, TechDiscrepanciesService } from 'de-sdk-core/services';
+import { AmimsTechDiscrepanciesDto } from 'de-sdk-core/models';
 import { TechDiscrepanciesShareAddComponent } from '../tech-discrepancies-share-add/tech-discrepancies-share-add.component';
 import { TechDiscrepanciesShareDetailComponent } from '../tech-discrepancies-share-detail/tech-discrepancies-share-detail.component';
-import { PartService } from 'src/sdk/core/services';
-import { TechLogService } from 'src/sdk/core/services';
+import { PartService } from 'de-sdk-core/services';
+import { TechLogService } from 'de-sdk-core/services';
  
 
 

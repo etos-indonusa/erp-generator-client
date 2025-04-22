@@ -9,14 +9,14 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { InspectionReportService, InspectionService } from 'src/sdk/core/services';
-import { AmimsInspectionDto } from 'src/sdk/core/models';
+import { InspectionReportService, InspectionService } from 'de-sdk-core/services';
+import { AmimsInspectionDto } from 'de-sdk-core/models';
 import { InspectionShareAddComponent } from '../inspection-share-add/inspection-share-add.component';
 import { InspectionShareDetailComponent } from '../inspection-share-detail/inspection-share-detail.component';
-import { AircraftService } from 'src/sdk/core/services';
-import { MaintenanceCodeService } from 'src/sdk/core/services';
-import { PartService } from 'src/sdk/core/services';
-import { UsersService } from 'src/sdk/core/services';
+import { AircraftService } from 'de-sdk-core/services';
+import { MaintenanceCodeService } from 'de-sdk-core/services';
+import { PartService } from 'de-sdk-core/services';
+import { UsersService } from 'de-sdk-core/services';
  
 
 

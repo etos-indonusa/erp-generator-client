@@ -9,15 +9,15 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { EngineerRtiReportService, EngineerRtiService } from 'src/sdk/core/services';
-import { AmimsEngineerRtiDto } from 'src/sdk/core/models';
+import { EngineerRtiReportService, EngineerRtiService } from 'de-sdk-core/services';
+import { AmimsEngineerRtiDto } from 'de-sdk-core/models';
 import { EngineerRtiShareAddComponent } from '../engineer-rti-share-add/engineer-rti-share-add.component';
 import { EngineerRtiShareDetailComponent } from '../engineer-rti-share-detail/engineer-rti-share-detail.component';
-import { AircraftService } from 'src/sdk/core/services';
-import { MpcJoService } from 'src/sdk/core/services';
-import { PartService } from 'src/sdk/core/services';
-import { PartInstallService } from 'src/sdk/core/services';
-import { SiteService } from 'src/sdk/core/services';
+import { AircraftService } from 'de-sdk-core/services';
+import { MpcJoService } from 'de-sdk-core/services';
+import { PartService } from 'de-sdk-core/services';
+import { PartInstallService } from 'de-sdk-core/services';
+import { SiteService } from 'de-sdk-core/services';
  
 
 

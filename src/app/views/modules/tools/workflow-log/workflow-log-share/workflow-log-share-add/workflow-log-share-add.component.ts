@@ -4,12 +4,12 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { ToolsWorkflowLogFormSchema } from 'src/sdk/core/form-schema/tools-workflow-log.form-schema'; 
-import type { ToolsWorkflowLogDto } from 'src/sdk/core/models';
-import { WorkflowLogService } from 'src/sdk/core/services';
+import { ToolsWorkflowLogFormSchema } from 'de-sdk-core/form-schema/tools-workflow-log.form-schema'; 
+import type { ToolsWorkflowLogDto } from 'de-sdk-core/models';
+import { WorkflowLogService } from 'de-sdk-core/services';
 
-import { UsersService } from 'src/sdk/core/services';
-import { WorkflowStepService } from 'src/sdk/core/services';
+import { UsersService } from 'de-sdk-core/services';
+import { WorkflowStepService } from 'de-sdk-core/services';
  
 @Component({
     selector: 'app-workflow-log-share-add',

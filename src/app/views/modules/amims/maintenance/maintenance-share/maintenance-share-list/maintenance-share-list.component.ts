@@ -9,13 +9,13 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { MaintenanceReportService, MaintenanceService } from 'src/sdk/core/services';
-import { AmimsMaintenanceDto } from 'src/sdk/core/models';
+import { MaintenanceReportService, MaintenanceService } from 'de-sdk-core/services';
+import { AmimsMaintenanceDto } from 'de-sdk-core/models';
 import { MaintenanceShareAddComponent } from '../maintenance-share-add/maintenance-share-add.component';
 import { MaintenanceShareDetailComponent } from '../maintenance-share-detail/maintenance-share-detail.component';
-import { MaintenanceCodeService } from 'src/sdk/core/services';
-import { MpartService } from 'src/sdk/core/services';
-import { UsersService } from 'src/sdk/core/services';
+import { MaintenanceCodeService } from 'de-sdk-core/services';
+import { MpartService } from 'de-sdk-core/services';
+import { UsersService } from 'de-sdk-core/services';
  
 
 

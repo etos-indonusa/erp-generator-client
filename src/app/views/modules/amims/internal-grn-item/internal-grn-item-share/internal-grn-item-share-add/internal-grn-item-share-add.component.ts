@@ -4,14 +4,14 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsInternalGrnItemFormSchema } from 'src/sdk/core/form-schema/amims-internal-grn-item.form-schema'; 
-import type  { AmimsInternalGrnItemDto } from 'src/sdk/core/models';
-import { InternalGrnItemService } from 'src/sdk/core/services';
+import { AmimsInternalGrnItemFormSchema } from 'de-sdk-core/form-schema/amims-internal-grn-item.form-schema'; 
+import type  { AmimsInternalGrnItemDto } from 'de-sdk-core/models';
+import { InternalGrnItemService } from 'de-sdk-core/services';
 
-import { EngineerPrisItemService } from 'src/sdk/core/services';
-import { InternalGrnService } from 'src/sdk/core/services';
-import { MpartService } from 'src/sdk/core/services';
-import { PartService } from 'src/sdk/core/services';
+import { EngineerPrisItemService } from 'de-sdk-core/services';
+import { InternalGrnService } from 'de-sdk-core/services';
+import { MpartService } from 'de-sdk-core/services';
+import { PartService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-internal-grn-item-share-add',

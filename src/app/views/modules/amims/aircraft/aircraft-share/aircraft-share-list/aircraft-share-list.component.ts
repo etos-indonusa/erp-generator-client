@@ -9,11 +9,11 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { AircraftReportService, AircraftService } from 'src/sdk/core/services';
-import { AmimsAircraftDto } from 'src/sdk/core/models';
+import { AircraftReportService, AircraftService } from 'de-sdk-core/services';
+import { AmimsAircraftDto } from 'de-sdk-core/models';
 import { AircraftShareAddComponent } from '../aircraft-share-add/aircraft-share-add.component';
 import { AircraftShareDetailComponent } from '../aircraft-share-detail/aircraft-share-detail.component';
-import { ActypeService } from 'src/sdk/core/services';
+import { ActypeService } from 'de-sdk-core/services';
  
 
 

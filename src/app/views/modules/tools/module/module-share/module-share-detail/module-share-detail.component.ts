@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { AclModuleDto } from 'src/sdk/core/models';
+import type { AclModuleDto } from 'de-sdk-core/models';
 
 @Component({
     selector: 'app-module-share-detail',

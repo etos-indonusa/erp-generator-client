@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "de-sdk-core": {
+      "signature": "11e52550b242029c6f102f860b853629",
+      "file": true
+    }
+  }
+}

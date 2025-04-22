@@ -4,8 +4,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { NzTableQueryParams } from 'ng-zorro-antd/table';
 import { AclService } from 'src/app/services/acl.service';
-import { ToolsCustomFieldDto } from 'src/sdk/core/models';
-import { CustomFieldService } from 'src/sdk/core/services';
+import { ToolsCustomFieldDto } from 'de-sdk-core/models';
+import { CustomFieldService } from 'de-sdk-core/services';
 import { CustomFieldShareAddComponent } from '../custom-field-share/custom-field-share-add/custom-field-share-add.component';
 import { CustomFieldShareDetailComponent } from '../custom-field-share/custom-field-share-detail/custom-field-share-detail.component';
 

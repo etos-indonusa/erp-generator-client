@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { AmimsShippingDto } from 'src/sdk/core/models';
+import type { AmimsShippingDto } from 'de-sdk-core/models';
 
 @Component({
     selector: 'app-shipping-share-detail',

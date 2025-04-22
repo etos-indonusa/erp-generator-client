@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   AmimsInternalGrnItemReportDto } from 'src/sdk/core/models';
-import { InternalGrnItemReportService } from 'src/sdk/core/services';
+import {   AmimsInternalGrnItemReportDto } from 'de-sdk-core/models';
+import { InternalGrnItemReportService } from 'de-sdk-core/services';
 
 @Component({
     selector: 'app-internal-grn-item-share-detail',
