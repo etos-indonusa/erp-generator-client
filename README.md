@@ -3,7 +3,7 @@ npx ts-node --project tsconfig.tools.json tools/generate-openapi-sdk-with-fields
 npx ts-node --project tsconfig.tools.json tools/generate-openapi-sdk-with-fields.ts https://erp-lib.bogor.vm.devetek.com/api-json src/sdk/lib
  
 npx ts-node --project tsconfig.tools.json tools/generate-openapi-sdk-with-fields.ts https://erp.bogor.vm.devetek.com/api-json
-
+ts-node --project tsconfig.tools.json tools/generate-public-api.ts
 
 
 export NODE_OPTIONS="--max-old-space-size=8192"

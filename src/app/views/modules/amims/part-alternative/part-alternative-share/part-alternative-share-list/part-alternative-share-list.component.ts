@@ -9,11 +9,11 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { PartAlternativeReportService, PartAlternativeService } from 'de-sdk-core/services';
-import { AmimsPartAlternativeDto } from 'de-sdk-core/models';
+import { PartAlternativeReportService, PartAlternativeService } from 'de-sdk-core/lib/services';
+import { AmimsPartAlternativeDto } from 'de-sdk-core/lib/models';
 import { PartAlternativeShareAddComponent } from '../part-alternative-share-add/part-alternative-share-add.component';
 import { PartAlternativeShareDetailComponent } from '../part-alternative-share-detail/part-alternative-share-detail.component';
-import { MpartService } from 'de-sdk-core/services';
+import { MpartService } from 'de-sdk-core/lib/services';
  
 
 

@@ -4,7 +4,7 @@ import { getAuthToken } from '../store/auth.selectors';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, filter, take, switchMap, throwError } from 'rxjs';
-import { AuthPublicService } from 'de-sdk-core/services';
+import { AuthPublicService } from 'de-sdk-core/lib/services';
 import { Router } from '@angular/router';
 
 @Injectable()

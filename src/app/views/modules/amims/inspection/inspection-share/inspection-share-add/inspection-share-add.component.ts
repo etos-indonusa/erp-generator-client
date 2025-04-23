@@ -4,14 +4,14 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsInspectionFormSchema } from 'de-sdk-core/form-schema/amims-inspection.form-schema'; 
-import type  { AmimsInspectionDto } from 'de-sdk-core/models';
-import { InspectionService } from 'de-sdk-core/services';
+import { AmimsInspectionFormSchema } from 'de-sdk-core/lib/form-schema/amims-inspection.form-schema'; 
+import type  { AmimsInspectionDto } from 'de-sdk-core/lib/models';
+import { InspectionService } from 'de-sdk-core/lib/services';
 
-import { AircraftService } from 'de-sdk-core/services';
-import { MaintenanceCodeService } from 'de-sdk-core/services';
-import { PartService } from 'de-sdk-core/services';
-import { UsersService } from 'de-sdk-core/services';
+import { AircraftService } from 'de-sdk-core/lib/services';
+import { MaintenanceCodeService } from 'de-sdk-core/lib/services';
+import { PartService } from 'de-sdk-core/lib/services';
+import { UsersService } from 'de-sdk-core/lib/services';
 
 @Component({
     selector: 'app-inspection-share-add',

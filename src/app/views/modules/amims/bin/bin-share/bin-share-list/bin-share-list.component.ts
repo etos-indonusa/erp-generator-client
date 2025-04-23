@@ -9,11 +9,11 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { BinReportService, BinService } from 'de-sdk-core/services';
-import { AmimsBinDto } from 'de-sdk-core/models';
+import { BinReportService, BinService } from 'de-sdk-core/lib/services';
+import { AmimsBinDto } from 'de-sdk-core/lib/models';
 import { BinShareAddComponent } from '../bin-share-add/bin-share-add.component';
 import { BinShareDetailComponent } from '../bin-share-detail/bin-share-detail.component';
-import { SiteService } from 'de-sdk-core/services';
+import { SiteService } from 'de-sdk-core/lib/services';
  
 
 

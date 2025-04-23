@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { EngineerPrisReturnWidgetService } from 'de-sdk-core/services/engineer-pris-return-widget.service';
+import { EngineerPrisReturnWidgetService } from 'de-sdk-core/lib/services/engineer-pris-return-widget.service';
 
 @Component({
     selector: 'app-engineer-pris-return-share-widget',

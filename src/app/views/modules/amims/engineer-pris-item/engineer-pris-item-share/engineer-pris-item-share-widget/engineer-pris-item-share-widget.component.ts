@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { EngineerPrisItemWidgetService } from 'de-sdk-core/services/engineer-pris-item-widget.service';
+import { EngineerPrisItemWidgetService } from 'de-sdk-core/lib/services/engineer-pris-item-widget.service';
 
 @Component({
     selector: 'app-engineer-pris-item-share-widget',

@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { UsersWidgetService } from 'de-sdk-core/services/users-widget.service';
+import { UsersWidgetService } from 'de-sdk-core/lib/services/users-widget.service';
 
 @Component({
     selector: 'app-users-share-widget',

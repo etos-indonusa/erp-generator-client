@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   AmimsPartCategoryReportDto } from 'de-sdk-core/models';
-import { PartCategoryReportService } from 'de-sdk-core/services';
+import {   AmimsPartCategoryReportDto } from 'de-sdk-core/lib/models';
+import { PartCategoryReportService } from 'de-sdk-core/lib/services';
 
 @Component({
     selector: 'app-part-category-share-detail',

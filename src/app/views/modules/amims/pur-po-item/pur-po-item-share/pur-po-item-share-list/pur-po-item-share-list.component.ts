@@ -9,17 +9,17 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { PurPoItemReportService, PurPoItemService } from 'de-sdk-core/services';
-import { AmimsPurPoItemDto } from 'de-sdk-core/models';
+import { PurPoItemReportService, PurPoItemService } from 'de-sdk-core/lib/services';
+import { AmimsPurPoItemDto } from 'de-sdk-core/lib/models';
 import { PurPoItemShareAddComponent } from '../pur-po-item-share-add/pur-po-item-share-add.component';
 import { PurPoItemShareDetailComponent } from '../pur-po-item-share-detail/pur-po-item-share-detail.component';
-import { EngineerRtiService } from 'de-sdk-core/services';
-import { MpartService } from 'de-sdk-core/services';
-import { PartService } from 'de-sdk-core/services';
-import { PurPoService } from 'de-sdk-core/services';
-import { PurPrItemService } from 'de-sdk-core/services';
-import { PurPrclService } from 'de-sdk-core/services';
-import { QaRpdService } from 'de-sdk-core/services';
+import { EngineerRtiService } from 'de-sdk-core/lib/services';
+import { MpartService } from 'de-sdk-core/lib/services';
+import { PartService } from 'de-sdk-core/lib/services';
+import { PurPoService } from 'de-sdk-core/lib/services';
+import { PurPrItemService } from 'de-sdk-core/lib/services';
+import { PurPrclService } from 'de-sdk-core/lib/services';
+import { QaRpdService } from 'de-sdk-core/lib/services';
  
 
 

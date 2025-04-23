@@ -9,14 +9,14 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { DueListOutputReportService, DueListOutputService } from 'de-sdk-core/services';
-import { AmimsDueListOutputDto } from 'de-sdk-core/models';
+import { DueListOutputReportService, DueListOutputService } from 'de-sdk-core/lib/services';
+import { AmimsDueListOutputDto } from 'de-sdk-core/lib/models';
 import { DueListOutputShareAddComponent } from '../due-list-output-share-add/due-list-output-share-add.component';
 import { DueListOutputShareDetailComponent } from '../due-list-output-share-detail/due-list-output-share-detail.component';
-import { AircraftService } from 'de-sdk-core/services';
-import { DueListService } from 'de-sdk-core/services';
-import { MpartService } from 'de-sdk-core/services';
-import { PartService } from 'de-sdk-core/services';
+import { AircraftService } from 'de-sdk-core/lib/services';
+import { DueListService } from 'de-sdk-core/lib/services';
+import { MpartService } from 'de-sdk-core/lib/services';
+import { PartService } from 'de-sdk-core/lib/services';
 
 
 

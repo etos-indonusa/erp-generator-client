@@ -4,11 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsSiteFormSchema } from 'de-sdk-core/form-schema/amims-site.form-schema';
-import type { AmimsSiteDto } from 'de-sdk-core/models';
-import { SiteService } from 'de-sdk-core/services';
+import { AmimsSiteFormSchema } from 'de-sdk-core/lib/form-schema/amims-site.form-schema';
+import type { AmimsSiteDto } from 'de-sdk-core/lib/models';
+import { SiteService } from 'de-sdk-core/lib/services';
 
-import { UsersService } from 'de-sdk-core/services';
+import { UsersService } from 'de-sdk-core/lib/services';
 
 @Component({
     selector: 'app-site-share-add',

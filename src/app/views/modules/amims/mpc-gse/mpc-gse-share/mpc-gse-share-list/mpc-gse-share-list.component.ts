@@ -9,11 +9,11 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { MpcGseReportService, MpcGseService, UsersService } from 'de-sdk-core/services';
-import { AmimsMpcGseDto } from 'de-sdk-core/models';
+import { MpcGseReportService, MpcGseService, UsersService } from 'de-sdk-core/lib/services';
+import { AmimsMpcGseDto } from 'de-sdk-core/lib/models';
 import { MpcGseShareAddComponent } from '../mpc-gse-share-add/mpc-gse-share-add.component';
 import { MpcGseShareDetailComponent } from '../mpc-gse-share-detail/mpc-gse-share-detail.component';
-import { EngineerRtiService } from 'de-sdk-core/services';
+import { EngineerRtiService } from 'de-sdk-core/lib/services';
 
 
 

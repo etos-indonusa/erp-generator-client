@@ -9,12 +9,12 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { MpcSelfMaintenanceReportService, MpcSelfMaintenanceService, UsersService } from 'de-sdk-core/services';
-import { AmimsMpcSelfMaintenanceDto } from 'de-sdk-core/models';
+import { MpcSelfMaintenanceReportService, MpcSelfMaintenanceService, UsersService } from 'de-sdk-core/lib/services';
+import { AmimsMpcSelfMaintenanceDto } from 'de-sdk-core/lib/models';
 import { MpcSelfMaintenanceShareAddComponent } from '../mpc-self-maintenance-share-add/mpc-self-maintenance-share-add.component';
 import { MpcSelfMaintenanceShareDetailComponent } from '../mpc-self-maintenance-share-detail/mpc-self-maintenance-share-detail.component';
-import { EngineerRtiService } from 'de-sdk-core/services';
-import { SiteService } from 'de-sdk-core/services';
+import { EngineerRtiService } from 'de-sdk-core/lib/services';
+import { SiteService } from 'de-sdk-core/lib/services';
 
 
 

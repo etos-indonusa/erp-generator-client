@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { TechDiscrepanciesWidgetService } from 'de-sdk-core/services/tech-discrepancies-widget.service';
+import { TechDiscrepanciesWidgetService } from 'de-sdk-core/lib/services/tech-discrepancies-widget.service';
 
 @Component({
     selector: 'app-tech-discrepancies-share-widget',

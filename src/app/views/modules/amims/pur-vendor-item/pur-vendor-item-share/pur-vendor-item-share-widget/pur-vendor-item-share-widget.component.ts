@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { PurVendorItemWidgetService } from 'de-sdk-core/services/pur-vendor-item-widget.service';
+import { PurVendorItemWidgetService } from 'de-sdk-core/lib/services/pur-vendor-item-widget.service';
 
 @Component({
     selector: 'app-pur-vendor-item-share-widget',

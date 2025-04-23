@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { PurGrnWidgetService } from 'de-sdk-core/services/pur-grn-widget.service';
+import { PurGrnWidgetService } from 'de-sdk-core/lib/services/pur-grn-widget.service';
 
 @Component({
     selector: 'app-pur-grn-share-widget',

@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { ConditionMonitoringWidgetService } from 'de-sdk-core/services/condition-monitoring-widget.service';
+import { ConditionMonitoringWidgetService } from 'de-sdk-core/lib/services/condition-monitoring-widget.service';
 
 @Component({
     selector: 'app-condition-monitoring-share-widget',

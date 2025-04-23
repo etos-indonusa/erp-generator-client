@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { LogProcessWidgetService } from 'de-sdk-core/services/log-process-widget.service';
+import { LogProcessWidgetService } from 'de-sdk-core/lib/services/log-process-widget.service';
 
 @Component({
     selector: 'app-log-process-share-widget',

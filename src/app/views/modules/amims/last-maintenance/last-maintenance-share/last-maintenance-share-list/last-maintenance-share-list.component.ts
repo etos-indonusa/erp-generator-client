@@ -9,14 +9,14 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { LastMaintenanceReportService, LastMaintenanceService } from 'de-sdk-core/services';
-import { AmimsLastMaintenanceDto } from 'de-sdk-core/models';
+import { LastMaintenanceReportService, LastMaintenanceService } from 'de-sdk-core/lib/services';
+import { AmimsLastMaintenanceDto } from 'de-sdk-core/lib/models';
 import { LastMaintenanceShareAddComponent } from '../last-maintenance-share-add/last-maintenance-share-add.component';
 import { LastMaintenanceShareDetailComponent } from '../last-maintenance-share-detail/last-maintenance-share-detail.component';
-import { MaintenanceService } from 'de-sdk-core/services';
-import { MpcJoService } from 'de-sdk-core/services';
-import { PartService } from 'de-sdk-core/services';
-import { UsersService } from 'de-sdk-core/services';
+import { MaintenanceService } from 'de-sdk-core/lib/services';
+import { MpcJoService } from 'de-sdk-core/lib/services';
+import { PartService } from 'de-sdk-core/lib/services';
+import { UsersService } from 'de-sdk-core/lib/services';
  
 
 

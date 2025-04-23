@@ -15,11 +15,13 @@ import { HttpLoaderFactory, TampilanModule } from './shared/tampilan.module';
 import { environment } from 'src/environments/environment.prod';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ApiModule } from 'de-sdk-core/api.module';
+ 
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { registerLocaleData } from '@angular/common'; 
 import id from '@angular/common/locales/id'; 
-import { menuModeInitializerFactory } from './app.initializer'; 
+import { menuModeInitializerFactory } from './app.initializer';  
+import { ApiModule } from 'de-sdk-core';
+ 
 const highlightOptions = {
     coreLibraryLoader: () => import('highlight.js/lib/core'),
     languages: {

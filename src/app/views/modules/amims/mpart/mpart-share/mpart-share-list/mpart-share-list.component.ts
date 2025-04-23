@@ -9,15 +9,15 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { MpartReportService, MpartService } from 'de-sdk-core/services';
-import { AmimsMpartDto } from 'de-sdk-core/models';
+import { MpartReportService, MpartService } from 'de-sdk-core/lib/services';
+import { AmimsMpartDto } from 'de-sdk-core/lib/models';
 import { MpartShareAddComponent } from '../mpart-share-add/mpart-share-add.component';
 import { MpartShareDetailComponent } from '../mpart-share-detail/mpart-share-detail.component';
-import { AtaService } from 'de-sdk-core/services';
-import { ConditionMonitoringService } from 'de-sdk-core/services'; 
-import { LifeTimeLimitService } from 'de-sdk-core/services';
-import { PartCategoryService } from 'de-sdk-core/services';
-import { PartidService } from 'de-sdk-core/services';
+import { AtaService } from 'de-sdk-core/lib/services';
+import { ConditionMonitoringService } from 'de-sdk-core/lib/services'; 
+import { LifeTimeLimitService } from 'de-sdk-core/lib/services';
+import { PartCategoryService } from 'de-sdk-core/lib/services';
+import { PartidService } from 'de-sdk-core/lib/services';
  
 
 

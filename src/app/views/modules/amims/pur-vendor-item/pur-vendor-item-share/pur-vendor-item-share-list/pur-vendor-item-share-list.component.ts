@@ -9,12 +9,12 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { PurVendorItemReportService, PurVendorItemService } from 'de-sdk-core/services';
-import { AmimsPurVendorItemDto } from 'de-sdk-core/models';
+import { PurVendorItemReportService, PurVendorItemService } from 'de-sdk-core/lib/services';
+import { AmimsPurVendorItemDto } from 'de-sdk-core/lib/models';
 import { PurVendorItemShareAddComponent } from '../pur-vendor-item-share-add/pur-vendor-item-share-add.component';
 import { PurVendorItemShareDetailComponent } from '../pur-vendor-item-share-detail/pur-vendor-item-share-detail.component';
-import { MpartService } from 'de-sdk-core/services';
-import { PurVendorService } from 'de-sdk-core/services';
+import { MpartService } from 'de-sdk-core/lib/services';
+import { PurVendorService } from 'de-sdk-core/lib/services';
  
 
 

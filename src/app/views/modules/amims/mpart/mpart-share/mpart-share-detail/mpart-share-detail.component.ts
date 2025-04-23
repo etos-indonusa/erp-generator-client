@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   AmimsMpartReportDto } from 'de-sdk-core/models';
-import { MpartReportService } from 'de-sdk-core/services';
+import {   AmimsMpartReportDto } from 'de-sdk-core/lib/models';
+import { MpartReportService } from 'de-sdk-core/lib/services';
 
 @Component({
     selector: 'app-mpart-share-detail',

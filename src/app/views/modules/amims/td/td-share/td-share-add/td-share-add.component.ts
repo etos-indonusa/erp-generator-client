@@ -4,12 +4,12 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsTdFormSchema } from 'de-sdk-core/form-schema/amims-td.form-schema'; 
-import type  { AmimsTdDto } from 'de-sdk-core/models';
-import { TdService } from 'de-sdk-core/services';
+import { AmimsTdFormSchema } from 'de-sdk-core/lib/form-schema/amims-td.form-schema'; 
+import type  { AmimsTdDto } from 'de-sdk-core/lib/models';
+import { TdService } from 'de-sdk-core/lib/services';
 
-import { DoctypeService } from 'de-sdk-core/services';
-import { UsersService } from 'de-sdk-core/services';
+import { DoctypeService } from 'de-sdk-core/lib/services';
+import { UsersService } from 'de-sdk-core/lib/services';
 
 @Component({
     selector: 'app-td-share-add',

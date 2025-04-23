@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
-import { WorkflowLogService } from 'de-sdk-core/services';
+import { WorkflowLogService } from 'de-sdk-core/lib/services';
 
 @Component({
     selector: 'app-approval-logs',

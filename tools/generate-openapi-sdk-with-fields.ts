@@ -12,7 +12,7 @@ if (!OPENAPI_INPUT) {
     process.exit(1);
 }
 
-const OUTPUT_PATH = path.resolve(process.cwd(), OUTPUT_DIR_ARG || 'packages/sdkcore');
+const OUTPUT_PATH = path.resolve(process.cwd(), 'projects/sdkcore/src/lib');
 const MODEL_DIR = path.join(OUTPUT_PATH, 'models');
 const FIELDS_DIR = path.join(OUTPUT_PATH, 'dto-to-fields');
 const SCHEMA_DIR = path.join(OUTPUT_PATH, 'form-schema');
@@ -106,78 +106,4 @@ function generateBarrelFile(dirPath: string) {
     if (fs.existsSync(fullPath)) generateBarrelFile(fullPath);
 });
 
-
-// ===================== STEP 0: Prepare SDK folder and config =====================
-fs.ensureDirSync(OUTPUT_PATH);
-if (!fs.existsSync(path.join(OUTPUT_PATH, 'package.json'))) {
-    fs.writeJsonSync(path.join(OUTPUT_PATH, 'package.json'), {
-        name: 'de-sdk-core',
-        version: '1.0.0',
-        main: 'index.ts',
-        types: 'index.ts'
-    }, { spaces: 2 });
-}
-
-const tsconfigSdkPath = path.join(OUTPUT_PATH, 'tsconfig.json');
-if (!fs.existsSync(tsconfigSdkPath)) {
-    fs.writeJsonSync(tsconfigSdkPath, {
-        extends: '../../tsconfig.json',
-        compilerOptions: {
-            composite: true,
-            declaration: true,
-            declarationMap: true,
-            emitDeclarationOnly: true,
-            outDir: '../../dist/sdkcore'
-        },
-        include: ['./**/*.ts']
-    }, { spaces: 2 });
-}
-
-// Update root tsconfig paths safely (with comment stripping)
-const tsconfigPath = path.resolve('tsconfig.json');
-if (fs.existsSync(tsconfigPath)) {
-    const raw = fs.readFileSync(tsconfigPath, 'utf-8');
-    const clean = stripJsonComments(raw);
-    const tsconfig = JSON5.parse(clean);
-
-    tsconfig.compilerOptions = tsconfig.compilerOptions || {};
-    tsconfig.compilerOptions.paths = tsconfig.compilerOptions.paths || {};
-    tsconfig.compilerOptions.paths['sdkcore'] = [path.join(OUTPUT_PATH, 'index.ts')];
-
-    fs.writeJsonSync(tsconfigPath, tsconfig, { spaces: 2 });
-}
-
-
-// ===================== STEP 6: Build SDK using tsc =====================
-console.log('🛠  Building SDK library...');
-try {
-    execSync(`tsc -p ${tsconfigSdkPath}`, { stdio: 'inherit' });
-    console.log('✅ SDK built successfully!');
-} catch (e: any) {
-    console.error('❌ Build failed:', e.message);
-    process.exit(1);
-}
-
-
-// ===================== STEP 7: Publish via yalc =====================
-try {
-    console.log('📦 Publishing to local yalc registry...');
-    execSync('yalc publish --push', {
-        cwd: OUTPUT_PATH,
-        stdio: 'inherit'
-    });
-    console.log('✅ yalc publish --push completed!');
-} catch (e: any) {
-    console.error('❌ Failed to publish with yalc:', e.message);
-}
-
-// ===================== STEP 8: Add to project using yalc add =====================
-try {
-    console.log('🔗 Linking SDK into project with yalc add...');
-    execSync('yalc add de-sdk-core', {
-        stdio: 'inherit'
-    });
-    console.log('✅ yalc add de-sdk-core completed!');
-} catch (e: any) {
-    console.error('❌ Failed to link SDK using yalc add:', e.message);
-}
+  

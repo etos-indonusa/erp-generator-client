@@ -8,11 +8,11 @@ import { TokenService } from 'src/app/services/token.service';
 import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { environment } from 'src/environments/environment.prod';
-import { WorkflowStepReportService, WorkflowStepService } from 'de-sdk-core/services';
-import { ToolsWorkflowStepDto } from 'de-sdk-core/models';
+import { WorkflowStepReportService, WorkflowStepService } from 'de-sdk-core/lib/services';
+import { ToolsWorkflowStepDto } from 'de-sdk-core/lib/models';
 import { WorkflowStepShareAddComponent } from '../workflow-step-share-add/workflow-step-share-add.component';
 import { WorkflowStepShareDetailComponent } from '../workflow-step-share-detail/workflow-step-share-detail.component';
-import { WorkflowService } from 'de-sdk-core/services';
+import { WorkflowService } from 'de-sdk-core/lib/services';
 
 
 

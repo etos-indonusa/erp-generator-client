@@ -4,12 +4,12 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsLogTransferFormSchema } from 'de-sdk-core/form-schema/amims-log-transfer.form-schema'; 
-import type { AmimsLogTransferDto } from 'de-sdk-core/models';
-import { LogTransferService } from 'de-sdk-core/services';
+import { AmimsLogTransferFormSchema } from 'de-sdk-core/lib/form-schema/amims-log-transfer.form-schema'; 
+import type { AmimsLogTransferDto } from 'de-sdk-core/lib/models';
+import { LogTransferService } from 'de-sdk-core/lib/services';
 
-import { MpartService } from 'de-sdk-core/services';
-import { UsersService } from 'de-sdk-core/services';
+import { MpartService } from 'de-sdk-core/lib/services';
+import { UsersService } from 'de-sdk-core/lib/services';
  
 @Component({
     selector: 'app-log-transfer-share-add',

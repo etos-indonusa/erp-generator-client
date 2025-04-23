@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { PartCategoryWidgetService } from 'de-sdk-core/services/part-category-widget.service';
+import { PartCategoryWidgetService } from 'de-sdk-core/lib/services/part-category-widget.service';
 
 @Component({
     selector: 'app-part-category-share-widget',

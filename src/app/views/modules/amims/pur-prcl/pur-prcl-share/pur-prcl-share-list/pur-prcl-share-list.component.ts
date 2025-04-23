@@ -9,20 +9,20 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { PurPrclReportService, PurPrclService, UsersService } from 'de-sdk-core/services';
-import { AmimsPurPrclDto } from 'de-sdk-core/models';
+import { PurPrclReportService, PurPrclService, UsersService } from 'de-sdk-core/lib/services';
+import { AmimsPurPrclDto } from 'de-sdk-core/lib/models';
 import { PurPrclShareAddComponent } from '../pur-prcl-share-add/pur-prcl-share-add.component';
 import { PurPrclShareDetailComponent } from '../pur-prcl-share-detail/pur-prcl-share-detail.component';
-import { ConditionMonitoringService } from 'de-sdk-core/services';
-import { CurrencyService } from 'de-sdk-core/services';
-import { InternalGrnItemService } from 'de-sdk-core/services';
-import { LifeTimeLimitService } from 'de-sdk-core/services';
-import { MpartService } from 'de-sdk-core/services';
-import { PartService } from 'de-sdk-core/services';
-import { PartConditionService } from 'de-sdk-core/services';
-import { PurGrnService } from 'de-sdk-core/services';
-import { PurGrnItemService } from 'de-sdk-core/services';
-import { PurVendorService } from 'de-sdk-core/services';
+import { ConditionMonitoringService } from 'de-sdk-core/lib/services';
+import { CurrencyService } from 'de-sdk-core/lib/services';
+import { InternalGrnItemService } from 'de-sdk-core/lib/services';
+import { LifeTimeLimitService } from 'de-sdk-core/lib/services';
+import { MpartService } from 'de-sdk-core/lib/services';
+import { PartService } from 'de-sdk-core/lib/services';
+import { PartConditionService } from 'de-sdk-core/lib/services';
+import { PurGrnService } from 'de-sdk-core/lib/services';
+import { PurGrnItemService } from 'de-sdk-core/lib/services';
+import { PurVendorService } from 'de-sdk-core/lib/services';
 
 
 

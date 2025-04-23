@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { AclUserGroupDto } from 'de-sdk-core/models';
+import type { AclUserGroupDto } from 'de-sdk-core/lib/models';
 
 @Component({
     selector: 'app-user-group-share-detail',

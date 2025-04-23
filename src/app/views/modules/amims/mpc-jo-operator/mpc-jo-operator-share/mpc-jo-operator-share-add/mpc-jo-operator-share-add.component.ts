@@ -4,11 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsMpcJoOperatorFormSchema } from 'de-sdk-core/form-schema/amims-mpc-jo-operator.form-schema';
-import type { AmimsMpcJoOperatorDto } from 'de-sdk-core/models';
-import { MpcJoOperatorService, UsersService } from 'de-sdk-core/services';
+import { AmimsMpcJoOperatorFormSchema } from 'de-sdk-core/lib/form-schema/amims-mpc-jo-operator.form-schema';
+import type { AmimsMpcJoOperatorDto } from 'de-sdk-core/lib/models';
+import { MpcJoOperatorService, UsersService } from 'de-sdk-core/lib/services';
 
-import { MpcJoService } from 'de-sdk-core/services';
+import { MpcJoService } from 'de-sdk-core/lib/services';
 
 @Component({
     selector: 'app-mpc-jo-operator-share-add',

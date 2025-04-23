@@ -4,13 +4,13 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsStoreTransferItemFormSchema } from 'de-sdk-core/form-schema/amims-store-transfer-item.form-schema'; 
-import type  { AmimsStoreTransferItemDto } from 'de-sdk-core/models';
-import { StoreTransferItemService } from 'de-sdk-core/services';
+import { AmimsStoreTransferItemFormSchema } from 'de-sdk-core/lib/form-schema/amims-store-transfer-item.form-schema'; 
+import type  { AmimsStoreTransferItemDto } from 'de-sdk-core/lib/models';
+import { StoreTransferItemService } from 'de-sdk-core/lib/services';
 
-import { EngineerPmtrItemService } from 'de-sdk-core/services';
-import { PartService } from 'de-sdk-core/services';
-import { StoreTransferService } from 'de-sdk-core/services';
+import { EngineerPmtrItemService } from 'de-sdk-core/lib/services';
+import { PartService } from 'de-sdk-core/lib/services';
+import { StoreTransferService } from 'de-sdk-core/lib/services';
 
 @Component({
     selector: 'app-store-transfer-item-share-add',

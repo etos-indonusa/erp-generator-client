@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { PurReturnItemWidgetService } from 'de-sdk-core/services/pur-return-item-widget.service';
+import { PurReturnItemWidgetService } from 'de-sdk-core/lib/services/pur-return-item-widget.service';
 
 @Component({
     selector: 'app-pur-return-item-share-widget',

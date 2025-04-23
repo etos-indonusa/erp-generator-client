@@ -9,14 +9,14 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { InternalGrnItemReportService, InternalGrnItemService } from 'de-sdk-core/services';
-import { AmimsInternalGrnItemDto } from 'de-sdk-core/models';
+import { InternalGrnItemReportService, InternalGrnItemService } from 'de-sdk-core/lib/services';
+import { AmimsInternalGrnItemDto } from 'de-sdk-core/lib/models';
 import { InternalGrnItemShareAddComponent } from '../internal-grn-item-share-add/internal-grn-item-share-add.component';
 import { InternalGrnItemShareDetailComponent } from '../internal-grn-item-share-detail/internal-grn-item-share-detail.component';
-import { EngineerPrisItemService } from 'de-sdk-core/services';
-import { InternalGrnService } from 'de-sdk-core/services';
-import { MpartService } from 'de-sdk-core/services';
-import { PartService } from 'de-sdk-core/services';
+import { EngineerPrisItemService } from 'de-sdk-core/lib/services';
+import { InternalGrnService } from 'de-sdk-core/lib/services';
+import { MpartService } from 'de-sdk-core/lib/services';
+import { PartService } from 'de-sdk-core/lib/services';
 
 
 

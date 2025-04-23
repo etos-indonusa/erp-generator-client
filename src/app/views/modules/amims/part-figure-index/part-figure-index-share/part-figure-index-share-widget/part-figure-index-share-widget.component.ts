@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { PartFigureIndexWidgetService } from 'de-sdk-core/services/part-figure-index-widget.service';
+import { PartFigureIndexWidgetService } from 'de-sdk-core/lib/services/part-figure-index-widget.service';
 
 @Component({
     selector: 'app-part-figure-index-share-widget',

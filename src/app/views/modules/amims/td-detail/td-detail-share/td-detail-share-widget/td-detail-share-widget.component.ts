@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { TdDetailWidgetService } from 'de-sdk-core/services/td-detail-widget.service';
+import { TdDetailWidgetService } from 'de-sdk-core/lib/services/td-detail-widget.service';
 
 @Component({
     selector: 'app-td-detail-share-widget',

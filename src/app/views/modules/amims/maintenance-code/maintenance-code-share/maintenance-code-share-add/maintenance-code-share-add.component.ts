@@ -4,9 +4,9 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsMaintenanceCodeFormSchema } from 'de-sdk-core/form-schema/amims-maintenance-code.form-schema'; 
-import type { AmimsMaintenanceCodeDto } from 'de-sdk-core/models';
-import { MaintenanceCodeService } from 'de-sdk-core/services';
+import { AmimsMaintenanceCodeFormSchema } from 'de-sdk-core/lib/form-schema/amims-maintenance-code.form-schema'; 
+import type { AmimsMaintenanceCodeDto } from 'de-sdk-core/lib/models';
+import { MaintenanceCodeService } from 'de-sdk-core/lib/services';
 
  
 @Component({

@@ -4,11 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { ToolsCustomFieldFormSchema } from 'de-sdk-core/form-schema/tools-custom-field.form-schema';
-import type { ToolsCustomFieldDto } from 'de-sdk-core/models';
-import { CustomFieldService } from 'de-sdk-core/services';
+import { ToolsCustomFieldFormSchema } from 'de-sdk-core/lib/form-schema/tools-custom-field.form-schema';
+import type { ToolsCustomFieldDto } from 'de-sdk-core/lib/models';
+import { CustomFieldService } from 'de-sdk-core/lib/services';
 
-import { CustomFieldGroupService } from 'de-sdk-core/services';
+import { CustomFieldGroupService } from 'de-sdk-core/lib/services';
 
 @Component({
     selector: 'app-custom-field-share-add',

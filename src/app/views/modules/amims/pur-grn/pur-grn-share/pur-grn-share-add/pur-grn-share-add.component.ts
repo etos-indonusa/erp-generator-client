@@ -4,13 +4,13 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsPurGrnFormSchema } from 'de-sdk-core/form-schema/amims-pur-grn.form-schema'; 
-import type  { AmimsPurGrnDto } from 'de-sdk-core/models';
-import { PurGrnService } from 'de-sdk-core/services';
+import { AmimsPurGrnFormSchema } from 'de-sdk-core/lib/form-schema/amims-pur-grn.form-schema'; 
+import type  { AmimsPurGrnDto } from 'de-sdk-core/lib/models';
+import { PurGrnService } from 'de-sdk-core/lib/services';
 
-import { PurVendorService } from 'de-sdk-core/services';
-import { SiteService } from 'de-sdk-core/services';
-import { UsersService } from 'de-sdk-core/services';
+import { PurVendorService } from 'de-sdk-core/lib/services';
+import { SiteService } from 'de-sdk-core/lib/services';
+import { UsersService } from 'de-sdk-core/lib/services';
 
 @Component({
     selector: 'app-pur-grn-share-add',

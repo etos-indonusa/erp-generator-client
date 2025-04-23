@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { InspectionWidgetService } from 'de-sdk-core/services/inspection-widget.service';
+import { InspectionWidgetService } from 'de-sdk-core/lib/services/inspection-widget.service';
 
 @Component({
     selector: 'app-inspection-share-widget',

@@ -9,13 +9,13 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { EngineerRtiPartReportService, EngineerRtiPartService } from 'de-sdk-core/services';
-import { AmimsEngineerRtiPartDto } from 'de-sdk-core/models';
+import { EngineerRtiPartReportService, EngineerRtiPartService } from 'de-sdk-core/lib/services';
+import { AmimsEngineerRtiPartDto } from 'de-sdk-core/lib/models';
 import { EngineerRtiPartShareAddComponent } from '../engineer-rti-part-share-add/engineer-rti-part-share-add.component';
 import { EngineerRtiPartShareDetailComponent } from '../engineer-rti-part-share-detail/engineer-rti-part-share-detail.component';
-import { EngineerRtiService } from 'de-sdk-core/services';
-import { PartService } from 'de-sdk-core/services';
-import { PartInstallService } from 'de-sdk-core/services';
+import { EngineerRtiService } from 'de-sdk-core/lib/services';
+import { PartService } from 'de-sdk-core/lib/services';
+import { PartInstallService } from 'de-sdk-core/lib/services';
  
 
 

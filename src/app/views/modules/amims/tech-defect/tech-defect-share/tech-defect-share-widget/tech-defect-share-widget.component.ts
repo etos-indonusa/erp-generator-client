@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { TechDefectWidgetService } from 'de-sdk-core/services/tech-defect-widget.service';
+import { TechDefectWidgetService } from 'de-sdk-core/lib/services/tech-defect-widget.service';
 
 @Component({
     selector: 'app-tech-defect-share-widget',

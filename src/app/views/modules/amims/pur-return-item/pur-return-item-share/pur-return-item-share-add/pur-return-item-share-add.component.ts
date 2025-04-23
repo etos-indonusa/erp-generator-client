@@ -4,14 +4,14 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsPurReturnItemFormSchema } from 'de-sdk-core/form-schema/amims-pur-return-item.form-schema';
-import type { AmimsPurReturnItemDto } from 'de-sdk-core/models';
-import { PurReturnItemService } from 'de-sdk-core/services';
+import { AmimsPurReturnItemFormSchema } from 'de-sdk-core/lib/form-schema/amims-pur-return-item.form-schema';
+import type { AmimsPurReturnItemDto } from 'de-sdk-core/lib/models';
+import { PurReturnItemService } from 'de-sdk-core/lib/services';
 
-import { MpartService } from 'de-sdk-core/services';
-import { PurGrnItemService } from 'de-sdk-core/services';
-import { PurPoItemService } from 'de-sdk-core/services';
-import { PurReturnService } from 'de-sdk-core/services';
+import { MpartService } from 'de-sdk-core/lib/services';
+import { PurGrnItemService } from 'de-sdk-core/lib/services';
+import { PurPoItemService } from 'de-sdk-core/lib/services';
+import { PurReturnService } from 'de-sdk-core/lib/services';
 
 @Component({
     selector: 'app-pur-return-item-share-add',

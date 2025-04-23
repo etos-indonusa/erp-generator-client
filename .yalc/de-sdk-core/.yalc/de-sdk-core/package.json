@@ -1,7 +1,0 @@
-{
-  "name": "de-sdk-core",
-  "version": "1.0.0",
-  "main": "index.ts",
-  "types": "index.ts",
-  "yalcSig": "d17c9219190a24e0d11a9ccb00ea2ef4"
-}

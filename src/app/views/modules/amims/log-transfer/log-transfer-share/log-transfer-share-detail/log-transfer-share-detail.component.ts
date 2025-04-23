@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { AmimsLogTransferDto } from 'de-sdk-core/models';
+import type { AmimsLogTransferDto } from 'de-sdk-core/lib/models';
 
 @Component({
     selector: 'app-log-transfer-share-detail',

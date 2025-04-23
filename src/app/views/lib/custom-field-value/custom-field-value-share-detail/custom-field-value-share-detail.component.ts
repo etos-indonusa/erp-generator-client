@@ -6,13 +6,13 @@ import {
     ToolsCustomFieldDto,
     ToolsCustomFieldGroupDto,
     ToolsCustomFieldValueReportDto
-} from 'de-sdk-core/models';
+} from 'de-sdk-core/lib/models';
 import {
     CustomFieldGroupService,
     CustomFieldService,
     CustomFieldValueReportService,
     CustomFieldValueService
-} from 'de-sdk-core/services';
+} from 'de-sdk-core/lib/services';
 import { CustomFieldValueShareAddComponent } from '../custom-field-value-share-add/custom-field-value-share-add.component';
 
 @Component({

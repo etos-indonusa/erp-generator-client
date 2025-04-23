@@ -9,13 +9,13 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { QaTransferItemReportService, QaTransferItemService } from 'de-sdk-core/services';
-import { AmimsQaTransferItemDto } from 'de-sdk-core/models';
+import { QaTransferItemReportService, QaTransferItemService } from 'de-sdk-core/lib/services';
+import { AmimsQaTransferItemDto } from 'de-sdk-core/lib/models';
 import { QaTransferItemShareAddComponent } from '../qa-transfer-item-share-add/qa-transfer-item-share-add.component';
 import { QaTransferItemShareDetailComponent } from '../qa-transfer-item-share-detail/qa-transfer-item-share-detail.component';
-import { MpcSelfMaintenanceService } from 'de-sdk-core/services';
-import { PurPrclService } from 'de-sdk-core/services';
-import { QaTransferService } from 'de-sdk-core/services';
+import { MpcSelfMaintenanceService } from 'de-sdk-core/lib/services';
+import { PurPrclService } from 'de-sdk-core/lib/services';
+import { QaTransferService } from 'de-sdk-core/lib/services';
  
 
 

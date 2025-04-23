@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { TechLogJoWidgetService } from 'de-sdk-core/services/tech-log-jo-widget.service';
+import { TechLogJoWidgetService } from 'de-sdk-core/lib/services/tech-log-jo-widget.service';
 
 @Component({
     selector: 'app-tech-log-jo-share-widget',

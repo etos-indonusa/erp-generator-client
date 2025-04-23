@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { StoreTransferWidgetService } from 'de-sdk-core/services/store-transfer-widget.service';
+import { StoreTransferWidgetService } from 'de-sdk-core/lib/services/store-transfer-widget.service';
 
 @Component({
     selector: 'app-store-transfer-share-widget',

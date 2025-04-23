@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { AmimsMelDto } from 'de-sdk-core/models';
+import type { AmimsMelDto } from 'de-sdk-core/lib/models';
 
 @Component({
     selector: 'app-mel-share-detail',

@@ -4,13 +4,13 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsTechLogJoFormSchema } from 'de-sdk-core/form-schema/amims-tech-log-jo.form-schema';
-import type { AmimsTechLogJoDto } from 'de-sdk-core/models';
-import { TechLogJoService } from 'de-sdk-core/services';
+import { AmimsTechLogJoFormSchema } from 'de-sdk-core/lib/form-schema/amims-tech-log-jo.form-schema';
+import type { AmimsTechLogJoDto } from 'de-sdk-core/lib/models';
+import { TechLogJoService } from 'de-sdk-core/lib/services';
 
-import { MpcJoService } from 'de-sdk-core/services';
-import { PartService } from 'de-sdk-core/services';
-import { TechLogService } from 'de-sdk-core/services';
+import { MpcJoService } from 'de-sdk-core/lib/services';
+import { PartService } from 'de-sdk-core/lib/services';
+import { TechLogService } from 'de-sdk-core/lib/services';
 
 @Component({
     selector: 'app-tech-log-jo-share-add',

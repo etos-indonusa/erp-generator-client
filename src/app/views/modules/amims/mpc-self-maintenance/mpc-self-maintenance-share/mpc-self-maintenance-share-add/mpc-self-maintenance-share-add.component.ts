@@ -4,12 +4,12 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsMpcSelfMaintenanceFormSchema } from 'de-sdk-core/form-schema/amims-mpc-self-maintenance.form-schema';
-import type { AmimsMpcSelfMaintenanceDto } from 'de-sdk-core/models';
-import { MpcSelfMaintenanceService, UsersService } from 'de-sdk-core/services';
+import { AmimsMpcSelfMaintenanceFormSchema } from 'de-sdk-core/lib/form-schema/amims-mpc-self-maintenance.form-schema';
+import type { AmimsMpcSelfMaintenanceDto } from 'de-sdk-core/lib/models';
+import { MpcSelfMaintenanceService, UsersService } from 'de-sdk-core/lib/services';
 
-import { EngineerRtiService } from 'de-sdk-core/services';
-import { SiteService } from 'de-sdk-core/services';
+import { EngineerRtiService } from 'de-sdk-core/lib/services';
+import { SiteService } from 'de-sdk-core/lib/services';
 
 @Component({
     selector: 'app-mpc-self-maintenance-share-add',

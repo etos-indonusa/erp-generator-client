@@ -26,7 +26,10 @@
     ],
     "baseUrl": "./",
     "paths": {
-       
+      "sdkcore": [
+        "/Users/arivin29macmini/Documents/DEVETEK/erp-client/packages/sdkcore/index.ts",
+        "./dist/sdkcore"
+      ]
     }
   },
   "angularCompilerOptions": {

@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { BinWidgetService } from 'de-sdk-core/services/bin-widget.service';
+import { BinWidgetService } from 'de-sdk-core/lib/services/bin-widget.service';
 
 @Component({
     selector: 'app-bin-share-widget',

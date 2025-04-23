@@ -4,12 +4,12 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsPartAtaFormSchema } from 'de-sdk-core/form-schema/amims-part-ata.form-schema'; 
-import type  { AmimsPartAtaDto } from 'de-sdk-core/models';
-import { PartAtaService } from 'de-sdk-core/services';
+import { AmimsPartAtaFormSchema } from 'de-sdk-core/lib/form-schema/amims-part-ata.form-schema'; 
+import type  { AmimsPartAtaDto } from 'de-sdk-core/lib/models';
+import { PartAtaService } from 'de-sdk-core/lib/services';
 
-import { AtaService } from 'de-sdk-core/services';
-import { MpartService } from 'de-sdk-core/services';
+import { AtaService } from 'de-sdk-core/lib/services';
+import { MpartService } from 'de-sdk-core/lib/services';
 
 @Component({
     selector: 'app-part-ata-share-add',

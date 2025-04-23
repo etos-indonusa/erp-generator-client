@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { LastMaintenanceWidgetService } from 'de-sdk-core/services/last-maintenance-widget.service';
+import { LastMaintenanceWidgetService } from 'de-sdk-core/lib/services/last-maintenance-widget.service';
 
 @Component({
     selector: 'app-last-maintenance-share-widget',

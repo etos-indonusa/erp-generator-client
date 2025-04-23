@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { AmimsLocationFlightDto } from 'de-sdk-core/models';
+import type { AmimsLocationFlightDto } from 'de-sdk-core/lib/models';
 
 @Component({
     selector: 'app-location-flight-share-detail',

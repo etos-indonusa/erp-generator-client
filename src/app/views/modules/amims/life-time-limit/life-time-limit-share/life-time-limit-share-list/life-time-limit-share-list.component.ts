@@ -9,8 +9,8 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { LifeTimeLimitReportService, LifeTimeLimitService } from 'de-sdk-core/services';
-import { AmimsLifeTimeLimitDto } from 'de-sdk-core/models';
+import { LifeTimeLimitReportService, LifeTimeLimitService } from 'de-sdk-core/lib/services';
+import { AmimsLifeTimeLimitDto } from 'de-sdk-core/lib/models';
 import { LifeTimeLimitShareAddComponent } from '../life-time-limit-share-add/life-time-limit-share-add.component';
 import { LifeTimeLimitShareDetailComponent } from '../life-time-limit-share-detail/life-time-limit-share-detail.component';
  

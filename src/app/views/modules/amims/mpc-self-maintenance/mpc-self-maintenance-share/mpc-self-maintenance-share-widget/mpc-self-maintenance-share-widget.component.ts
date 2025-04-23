@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { MpcSelfMaintenanceWidgetService } from 'de-sdk-core/services/mpc-self-maintenance-widget.service';
+import { MpcSelfMaintenanceWidgetService } from 'de-sdk-core/lib/services/mpc-self-maintenance-widget.service';
 
 @Component({
     selector: 'app-mpc-self-maintenance-share-widget',

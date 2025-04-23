@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { RotaryFactorWidgetService } from 'de-sdk-core/services/rotary-factor-widget.service';
+import { RotaryFactorWidgetService } from 'de-sdk-core/lib/services/rotary-factor-widget.service';
 
 @Component({
     selector: 'app-rotary-factor-share-widget',

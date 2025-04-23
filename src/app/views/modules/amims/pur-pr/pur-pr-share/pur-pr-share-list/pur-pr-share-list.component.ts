@@ -9,14 +9,14 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { PurPrReportService, PurPrService } from 'de-sdk-core/services';
-import { AmimsPurPrDto } from 'de-sdk-core/models';
+import { PurPrReportService, PurPrService } from 'de-sdk-core/lib/services';
+import { AmimsPurPrDto } from 'de-sdk-core/lib/models';
 import { PurPrShareAddComponent } from '../pur-pr-share-add/pur-pr-share-add.component';
 import { PurPrShareDetailComponent } from '../pur-pr-share-detail/pur-pr-share-detail.component';
-import { AircraftService } from 'de-sdk-core/services';
-import { PositionService } from 'de-sdk-core/services';
-import { SiteService } from 'de-sdk-core/services';
-import { UsersService } from 'de-sdk-core/services';
+import { AircraftService } from 'de-sdk-core/lib/services';
+import { PositionService } from 'de-sdk-core/lib/services';
+import { SiteService } from 'de-sdk-core/lib/services';
+import { UsersService } from 'de-sdk-core/lib/services';
 
 
 

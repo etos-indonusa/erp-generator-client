@@ -9,8 +9,8 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { AircraftDetailReportService, AircraftDetailService } from 'de-sdk-core/services';
-import { AmimsAircraftDetailDto } from 'de-sdk-core/models';
+import { AircraftDetailReportService, AircraftDetailService } from 'de-sdk-core/lib/services';
+import { AmimsAircraftDetailDto } from 'de-sdk-core/lib/models';
 import { AircraftDetailShareAddComponent } from '../aircraft-detail-share-add/aircraft-detail-share-add.component';
 import { AircraftDetailShareDetailComponent } from '../aircraft-detail-share-detail/aircraft-detail-share-detail.component';
  

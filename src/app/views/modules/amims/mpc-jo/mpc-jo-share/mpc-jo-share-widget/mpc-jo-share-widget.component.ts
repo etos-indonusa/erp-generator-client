@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { MpcJoWidgetService } from 'de-sdk-core/services/mpc-jo-widget.service';
+import { MpcJoWidgetService } from 'de-sdk-core/lib/services/mpc-jo-widget.service';
 
 @Component({
     selector: 'app-mpc-jo-share-widget',
