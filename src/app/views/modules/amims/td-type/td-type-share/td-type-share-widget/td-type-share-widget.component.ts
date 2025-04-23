@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { TdTypeWidgetService } from 'de-sdk-core/lib/services/td-type-widget.service';
+import { TdTypeWidgetService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-td-type-share-widget',

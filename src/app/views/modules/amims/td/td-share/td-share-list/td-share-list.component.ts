@@ -9,12 +9,12 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { TdReportService, TdService } from 'de-sdk-core/lib/services';
-import { AmimsTdDto } from 'de-sdk-core/lib/models';
+import { TdReportService, TdService } from 'de-sdk-core';
+import { AmimsTdDto } from 'de-sdk-core';
 import { TdShareAddComponent } from '../td-share-add/td-share-add.component';
 import { TdShareDetailComponent } from '../td-share-detail/td-share-detail.component';
-import { DoctypeService } from 'de-sdk-core/lib/services';
-import { UsersService } from 'de-sdk-core/lib/services';
+import { DoctypeService } from 'de-sdk-core';
+import { UsersService } from 'de-sdk-core';
  
 
 

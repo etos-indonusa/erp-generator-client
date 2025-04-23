@@ -4,9 +4,9 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsLifeTimeLimitFormSchema } from 'de-sdk-core/lib/form-schema/amims-life-time-limit.form-schema'; 
-import type  { AmimsLifeTimeLimitDto } from 'de-sdk-core/lib/models';
-import { LifeTimeLimitService } from 'de-sdk-core/lib/services';
+import { AmimsLifeTimeLimitFormSchema } from 'de-sdk-core'; 
+import type  { AmimsLifeTimeLimitDto } from 'de-sdk-core';
+import { LifeTimeLimitService } from 'de-sdk-core';
 
 
 @Component({

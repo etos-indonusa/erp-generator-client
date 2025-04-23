@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { EngineerRtiPartWidgetService } from 'de-sdk-core/lib/services/engineer-rti-part-widget.service';
+import { EngineerRtiPartWidgetService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-engineer-rti-part-share-widget',

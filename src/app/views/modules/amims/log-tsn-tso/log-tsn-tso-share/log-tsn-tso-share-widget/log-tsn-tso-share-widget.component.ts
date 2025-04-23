@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { LogTsnTsoWidgetService } from 'de-sdk-core/lib/services/log-tsn-tso-widget.service';
+import { LogTsnTsoWidgetService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-log-tsn-tso-share-widget',

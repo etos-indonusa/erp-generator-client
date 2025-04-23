@@ -4,12 +4,12 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsTechDiscrepanciesFormSchema } from 'de-sdk-core/lib/form-schema/amims-tech-discrepancies.form-schema'; 
-import type  { AmimsTechDiscrepanciesDto } from 'de-sdk-core/lib/models';
-import { TechDiscrepanciesService } from 'de-sdk-core/lib/services';
+import { AmimsTechDiscrepanciesFormSchema } from 'de-sdk-core'; 
+import type  { AmimsTechDiscrepanciesDto } from 'de-sdk-core';
+import { TechDiscrepanciesService } from 'de-sdk-core';
 
-import { PartService } from 'de-sdk-core/lib/services';
-import { TechLogService } from 'de-sdk-core/lib/services';
+import { PartService } from 'de-sdk-core';
+import { TechLogService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-tech-discrepancies-share-add',

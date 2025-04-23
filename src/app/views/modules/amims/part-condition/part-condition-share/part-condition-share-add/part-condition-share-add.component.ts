@@ -4,9 +4,9 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsPartConditionFormSchema } from 'de-sdk-core/lib/form-schema/amims-part-condition.form-schema'; 
-import type  { AmimsPartConditionDto } from 'de-sdk-core/lib/models';
-import { PartConditionService } from 'de-sdk-core/lib/services';
+import { AmimsPartConditionFormSchema } from 'de-sdk-core'; 
+import type  { AmimsPartConditionDto } from 'de-sdk-core';
+import { PartConditionService } from 'de-sdk-core';
 
 
 @Component({

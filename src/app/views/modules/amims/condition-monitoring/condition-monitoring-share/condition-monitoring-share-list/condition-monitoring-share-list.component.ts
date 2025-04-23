@@ -9,8 +9,8 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { ConditionMonitoringReportService, ConditionMonitoringService } from 'de-sdk-core/lib/services';
-import { AmimsConditionMonitoringDto } from 'de-sdk-core/lib/models';
+import { ConditionMonitoringReportService, ConditionMonitoringService } from 'de-sdk-core';
+import { AmimsConditionMonitoringDto } from 'de-sdk-core';
 import { ConditionMonitoringShareAddComponent } from '../condition-monitoring-share-add/condition-monitoring-share-add.component';
 import { ConditionMonitoringShareDetailComponent } from '../condition-monitoring-share-detail/condition-monitoring-share-detail.component';
  

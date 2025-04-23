@@ -9,11 +9,11 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { EngineerPrisReturnItemReportService, EngineerPrisReturnItemService } from 'de-sdk-core/lib/services';
-import { AmimsEngineerPrisReturnItemDto } from 'de-sdk-core/lib/models';
+import { EngineerPrisReturnItemReportService, EngineerPrisReturnItemService } from 'de-sdk-core';
+import { AmimsEngineerPrisReturnItemDto } from 'de-sdk-core';
 import { EngineerPrisReturnItemShareAddComponent } from '../engineer-pris-return-item-share-add/engineer-pris-return-item-share-add.component';
 import { EngineerPrisReturnItemShareDetailComponent } from '../engineer-pris-return-item-share-detail/engineer-pris-return-item-share-detail.component';
-import { EngineerPrisItemService } from 'de-sdk-core/lib/services';
+import { EngineerPrisItemService } from 'de-sdk-core';
  
 
 

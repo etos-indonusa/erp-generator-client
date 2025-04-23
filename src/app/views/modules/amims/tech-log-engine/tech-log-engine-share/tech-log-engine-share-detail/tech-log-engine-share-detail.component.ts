@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   AmimsTechLogEngineReportDto } from 'de-sdk-core/lib/models';
-import { TechLogEngineReportService } from 'de-sdk-core/lib/services';
+import {   AmimsTechLogEngineReportDto } from 'de-sdk-core';
+import { TechLogEngineReportService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-tech-log-engine-share-detail',

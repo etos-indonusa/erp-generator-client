@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { AmimsSiteDto } from 'de-sdk-core/lib/models';
+import type { AmimsSiteDto } from 'de-sdk-core';
 
 @Component({
     selector: 'app-site-share-detail',

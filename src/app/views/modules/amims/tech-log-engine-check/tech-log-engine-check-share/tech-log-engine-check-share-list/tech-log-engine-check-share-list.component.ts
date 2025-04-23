@@ -9,12 +9,12 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { TechLogEngineCheckReportService, TechLogEngineCheckService } from 'de-sdk-core/lib/services';
-import { AmimsTechLogEngineCheckDto } from 'de-sdk-core/lib/models';
+import { TechLogEngineCheckReportService, TechLogEngineCheckService } from 'de-sdk-core';
+import { AmimsTechLogEngineCheckDto } from 'de-sdk-core';
 import { TechLogEngineCheckShareAddComponent } from '../tech-log-engine-check-share-add/tech-log-engine-check-share-add.component';
 import { TechLogEngineCheckShareDetailComponent } from '../tech-log-engine-check-share-detail/tech-log-engine-check-share-detail.component';
-import { TechLogService } from 'de-sdk-core/lib/services';
-import { TechLogEngineService } from 'de-sdk-core/lib/services';
+import { TechLogService } from 'de-sdk-core';
+import { TechLogEngineService } from 'de-sdk-core';
  
 
 

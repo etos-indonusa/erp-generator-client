@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { PartAlternativeWidgetService } from 'de-sdk-core/lib/services/part-alternative-widget.service';
+import { PartAlternativeWidgetService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-part-alternative-share-widget',

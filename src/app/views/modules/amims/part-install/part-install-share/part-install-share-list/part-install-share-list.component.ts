@@ -9,13 +9,13 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { PartInstallReportService, PartInstallService } from 'de-sdk-core/lib/services';
-import { AmimsPartInstallDto } from 'de-sdk-core/lib/models';
+import { PartInstallReportService, PartInstallService } from 'de-sdk-core';
+import { AmimsPartInstallDto } from 'de-sdk-core';
 import { PartInstallShareAddComponent } from '../part-install-share-add/part-install-share-add.component';
 import { PartInstallShareDetailComponent } from '../part-install-share-detail/part-install-share-detail.component';
-import { AircraftService } from 'de-sdk-core/lib/services';
-import { EngineerPrisItemService } from 'de-sdk-core/lib/services';
-import { PartService } from 'de-sdk-core/lib/services';
+import { AircraftService } from 'de-sdk-core';
+import { EngineerPrisItemService } from 'de-sdk-core';
+import { PartService } from 'de-sdk-core';
  
 
 

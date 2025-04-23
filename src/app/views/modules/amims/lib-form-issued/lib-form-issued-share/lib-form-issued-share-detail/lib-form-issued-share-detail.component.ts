@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { AmimsLibFormIssuedDto } from 'de-sdk-core/lib/models';
+import type { AmimsLibFormIssuedDto } from 'de-sdk-core';
 
 @Component({
     selector: 'app-lib-form-issued-share-detail',

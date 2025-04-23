@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { MpcPiroItemWidgetService } from 'de-sdk-core/lib/services/mpc-piro-item-widget.service';
+import { MpcPiroItemWidgetService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-mpc-piro-item-share-widget',

@@ -9,12 +9,12 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { QaTransferReportService, QaTransferService } from 'de-sdk-core/lib/services';
-import { AmimsQaTransferDto } from 'de-sdk-core/lib/models';
+import { QaTransferReportService, QaTransferService } from 'de-sdk-core';
+import { AmimsQaTransferDto } from 'de-sdk-core';
 import { QaTransferShareAddComponent } from '../qa-transfer-share-add/qa-transfer-share-add.component';
 import { QaTransferShareDetailComponent } from '../qa-transfer-share-detail/qa-transfer-share-detail.component';
-import { SiteService } from 'de-sdk-core/lib/services';
-import { UsersService } from 'de-sdk-core/lib/services';
+import { SiteService } from 'de-sdk-core';
+import { UsersService } from 'de-sdk-core';
 
 
 

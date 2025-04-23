@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { TypeOfworkWidgetService } from 'de-sdk-core/lib/services/type-ofwork-widget.service';
+import { TypeOfworkWidgetService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-type-ofwork-share-widget',

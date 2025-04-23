@@ -4,9 +4,9 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsLocationFlightFormSchema } from 'de-sdk-core/lib/form-schema/amims-location-flight.form-schema'; 
-import type { AmimsLocationFlightDto } from 'de-sdk-core/lib/models';
-import { LocationFlightService } from 'de-sdk-core/lib/services';
+import { AmimsLocationFlightFormSchema } from 'de-sdk-core'; 
+import type { AmimsLocationFlightDto } from 'de-sdk-core';
+import { LocationFlightService } from 'de-sdk-core';
 
  
 @Component({

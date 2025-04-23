@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   AmimsTechDefectReportDto } from 'de-sdk-core/lib/models';
-import { TechDefectReportService } from 'de-sdk-core/lib/services';
+import {   AmimsTechDefectReportDto } from 'de-sdk-core';
+import { TechDefectReportService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-tech-defect-share-detail',

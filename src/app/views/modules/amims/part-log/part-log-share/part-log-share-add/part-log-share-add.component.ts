@@ -4,15 +4,15 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsPartLogFormSchema } from 'de-sdk-core/lib/form-schema/amims-part-log.form-schema'; 
-import type  { AmimsPartLogDto } from 'de-sdk-core/lib/models';
-import { PartLogService } from 'de-sdk-core/lib/services';
+import { AmimsPartLogFormSchema } from 'de-sdk-core'; 
+import type  { AmimsPartLogDto } from 'de-sdk-core';
+import { PartLogService } from 'de-sdk-core';
 
-import { ModuleService } from 'de-sdk-core/lib/services';
-import { PartService } from 'de-sdk-core/lib/services';
-import { PositionService } from 'de-sdk-core/lib/services';
-import { SiteService } from 'de-sdk-core/lib/services';
-import { UsersService } from 'de-sdk-core/lib/services';
+import { ModuleService } from 'de-sdk-core';
+import { PartService } from 'de-sdk-core';
+import { PositionService } from 'de-sdk-core';
+import { SiteService } from 'de-sdk-core';
+import { UsersService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-part-log-share-add',

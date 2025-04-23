@@ -9,15 +9,15 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { PartLogReportService, PartLogService } from 'de-sdk-core/lib/services';
-import { AmimsPartLogDto } from 'de-sdk-core/lib/models';
+import { PartLogReportService, PartLogService } from 'de-sdk-core';
+import { AmimsPartLogDto } from 'de-sdk-core';
 import { PartLogShareAddComponent } from '../part-log-share-add/part-log-share-add.component';
 import { PartLogShareDetailComponent } from '../part-log-share-detail/part-log-share-detail.component';
-import { ModuleService } from 'de-sdk-core/lib/services';
-import { PartService } from 'de-sdk-core/lib/services';
-import { PositionService } from 'de-sdk-core/lib/services';
-import { SiteService } from 'de-sdk-core/lib/services';
-import { UsersService } from 'de-sdk-core/lib/services';
+import { ModuleService } from 'de-sdk-core';
+import { PartService } from 'de-sdk-core';
+import { PositionService } from 'de-sdk-core';
+import { SiteService } from 'de-sdk-core';
+import { UsersService } from 'de-sdk-core';
  
 
 

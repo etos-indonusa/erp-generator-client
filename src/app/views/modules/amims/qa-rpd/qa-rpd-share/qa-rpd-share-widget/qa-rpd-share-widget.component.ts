@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { QaRpdWidgetService } from 'de-sdk-core/lib/services/qa-rpd-widget.service';
+import { QaRpdWidgetService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-qa-rpd-share-widget',

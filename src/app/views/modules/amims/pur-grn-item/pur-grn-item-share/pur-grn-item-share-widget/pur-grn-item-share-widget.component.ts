@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { PurGrnItemWidgetService } from 'de-sdk-core/lib/services/pur-grn-item-widget.service';
+import { PurGrnItemWidgetService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-pur-grn-item-share-widget',

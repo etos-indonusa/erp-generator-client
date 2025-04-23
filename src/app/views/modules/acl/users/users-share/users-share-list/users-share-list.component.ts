@@ -9,11 +9,11 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { AclUsersDto } from 'de-sdk-core/lib/models';
+import { AclUsersDto } from 'de-sdk-core';
 import { UsersShareAddComponent } from '../users-share-add/users-share-add.component';
 import { UsersShareDetailComponent } from '../users-share-detail/users-share-detail.component';
-import { UserGroupService, UsersService } from 'de-sdk-core/lib/services';
-import { UsersReportService } from 'de-sdk-core/lib/services/users-report.service';
+import { UserGroupService, UsersService } from 'de-sdk-core';
+import { UsersReportService } from 'de-sdk-core';
 
 
 

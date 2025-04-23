@@ -9,12 +9,12 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { PartFigureIndexReportService, PartFigureIndexService } from 'de-sdk-core/lib/services';
-import { AmimsPartFigureIndexDto } from 'de-sdk-core/lib/models';
+import { PartFigureIndexReportService, PartFigureIndexService } from 'de-sdk-core';
+import { AmimsPartFigureIndexDto } from 'de-sdk-core';
 import { PartFigureIndexShareAddComponent } from '../part-figure-index-share-add/part-figure-index-share-add.component';
 import { PartFigureIndexShareDetailComponent } from '../part-figure-index-share-detail/part-figure-index-share-detail.component';
-import { AtaService } from 'de-sdk-core/lib/services';
-import { MpartService } from 'de-sdk-core/lib/services';
+import { AtaService } from 'de-sdk-core';
+import { MpartService } from 'de-sdk-core';
  
 
 

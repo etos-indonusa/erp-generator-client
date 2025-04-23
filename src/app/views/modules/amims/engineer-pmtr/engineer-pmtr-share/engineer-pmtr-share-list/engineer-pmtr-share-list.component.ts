@@ -9,12 +9,12 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { EngineerPmtrReportService, EngineerPmtrService } from 'de-sdk-core/lib/services';
-import { AmimsEngineerPmtrDto } from 'de-sdk-core/lib/models';
+import { EngineerPmtrReportService, EngineerPmtrService } from 'de-sdk-core';
+import { AmimsEngineerPmtrDto } from 'de-sdk-core';
 import { EngineerPmtrShareAddComponent } from '../engineer-pmtr-share-add/engineer-pmtr-share-add.component';
 import { EngineerPmtrShareDetailComponent } from '../engineer-pmtr-share-detail/engineer-pmtr-share-detail.component';
-import { AircraftService } from 'de-sdk-core/lib/services';
-import { UsersService } from 'de-sdk-core/lib/services';
+import { AircraftService } from 'de-sdk-core';
+import { UsersService } from 'de-sdk-core';
 
 
 

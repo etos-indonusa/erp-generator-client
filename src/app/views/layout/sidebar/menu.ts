@@ -14,31 +14,9 @@ export const MENU: MenuItem[] = [
         label: 'IN Apps',
         isTitle: true
     }
-    ,{
-        label: 'MaintenanceCodeReference',
-        icon: 'message-square',
-        link: '/app/amims/maintenance-code-reference',
-    }
-    ,{
-        label: 'MaintenanceCodeFormIssued',
-        icon: 'message-square',
-        link: '/app/amims/maintenance-code-form-issued',
-    }
-    ,{
-        label: 'MaintenanceCodeFormIssued',
-        icon: 'message-square',
-        link: '/app/amims/maintenance-code-form-issued',
-    }
-    ,{
-        label: 'MaintenanceCode',
-        icon: 'message-square',
-        link: '/app/amims/maintenance-code',
-    }
-    ,{
-        label: 'MaintenanceCodeReference',
-        icon: 'message-square',
-        link: '/app/amims/maintenance-code-reference',
-    }
+     
+     
+     
     ,{
         label: 'Mpart',
         icon: 'message-square',
@@ -399,16 +377,7 @@ export const MENU: MenuItem[] = [
         icon: 'message-square',
         link: '/app/amims/lib-form-issued',
     }
-    ,{
-        label: 'InternalGrnItem',
-        icon: 'message-square',
-        link: '/app/amims/internal-grn-item',
-    }
-    ,{
-        label: 'InternalGrn',
-        icon: 'message-square',
-        link: '/app/amims/internal-grn',
-    }
+     
     ,{
         label: 'Inspection',
         icon: 'message-square',
@@ -479,91 +448,9 @@ export const MENU: MenuItem[] = [
         icon: 'message-square',
         link: '/app/amims/aircraft-detail',
     }
-    ,{
-        label: 'Aircraft',
-        icon: 'message-square',
-        link: '/app/amims/aircraft',
-    }
-    ,{
-        label: 'InternalGrnItem',
-        icon: 'message-square',
-        link: '/app/amims/internal-grn-item',
-    }
-    ,{
-        label: 'InternalGrn',
-        icon: 'message-square',
-        link: '/app/amims/internal-grn',
-    }
-    ,{
-        label: 'Inspection',
-        icon: 'message-square',
-        link: '/app/amims/inspection',
-    }
-    ,{
-        label: 'FigureIndex',
-        icon: 'message-square',
-        link: '/app/amims/figure-index',
-    }
-    ,{
-        label: 'EngineerRtiPart',
-        icon: 'message-square',
-        link: '/app/amims/engineer-rti-part',
-    }
-    ,{
-        label: 'EngineerRtiIdentify',
-        icon: 'message-square',
-        link: '/app/amims/engineer-rti-identify',
-    }
-    ,{
-        label: 'EngineerRti',
-        icon: 'message-square',
-        link: '/app/amims/engineer-rti',
-    }
-    ,{
-        label: 'EngineerPrisReturnItem',
-        icon: 'message-square',
-        link: '/app/amims/engineer-pris-return-item',
-    }
-    ,{
-        label: 'EngineerPrisReturn',
-        icon: 'message-square',
-        link: '/app/amims/engineer-pris-return',
-    }
-    ,{
-        label: 'EngineerPrisItem',
-        icon: 'message-square',
-        link: '/app/amims/engineer-pris-item',
-    }
-    ,{
-        label: 'EngineerPris',
-        icon: 'message-square',
-        link: '/app/amims/engineer-pris',
-    }
-    ,{
-        label: 'EngineerPmtrItem',
-        icon: 'message-square',
-        link: '/app/amims/engineer-pmtr-item',
-    }
-    ,{
-        label: 'EngineerPmtr',
-        icon: 'message-square',
-        link: '/app/amims/engineer-pmtr',
-    }
-    ,{
-        label: 'DueListOutput',
-        icon: 'message-square',
-        link: '/app/amims/due-list-output',
-    }
-    ,{
-        label: 'DueList',
-        icon: 'message-square',
-        link: '/app/amims/due-list',
-    }
-    ,{
-        label: 'Aircraft',
-        icon: 'message-square',
-        link: '/app/amims/aircraft',
-    }
+    
+   
+  
     ,{
         label: 'InternalGrnItem',
         icon: 'message-square',

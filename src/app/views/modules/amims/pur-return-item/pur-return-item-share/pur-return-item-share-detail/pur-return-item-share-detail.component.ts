@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   AmimsPurReturnItemReportDto } from 'de-sdk-core/lib/models';
-import { PurReturnItemReportService } from 'de-sdk-core/lib/services';
+import {   AmimsPurReturnItemReportDto } from 'de-sdk-core';
+import { PurReturnItemReportService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-pur-return-item-share-detail',

@@ -4,12 +4,12 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsStoreDestroyFormSchema } from 'de-sdk-core/lib/form-schema/amims-store-destroy.form-schema';
-import type { AmimsStoreDestroyDto } from 'de-sdk-core/lib/models';
-import { StoreDestroyService, UsersService } from 'de-sdk-core/lib/services';
+import { AmimsStoreDestroyFormSchema } from 'de-sdk-core';
+import type { AmimsStoreDestroyDto } from 'de-sdk-core';
+import { StoreDestroyService, UsersService } from 'de-sdk-core';
 
-import { PartService } from 'de-sdk-core/lib/services';
-import { SiteService } from 'de-sdk-core/lib/services';
+import { PartService } from 'de-sdk-core';
+import { SiteService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-store-destroy-share-add',

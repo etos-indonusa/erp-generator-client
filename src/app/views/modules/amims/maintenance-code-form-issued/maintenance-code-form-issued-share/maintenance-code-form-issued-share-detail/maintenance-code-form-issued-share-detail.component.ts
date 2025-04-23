@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { AmimsMaintenanceCodeFormIssuedDto } from 'de-sdk-core/lib/models';
+import type { AmimsMaintenanceCodeFormIssuedDto } from 'de-sdk-core';
 
 @Component({
     selector: 'app-maintenance-code-form-issued-share-detail',

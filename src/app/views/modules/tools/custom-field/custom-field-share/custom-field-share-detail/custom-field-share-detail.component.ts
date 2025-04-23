@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { ToolsCustomFieldDto } from 'de-sdk-core/lib/models';
+import type { ToolsCustomFieldDto } from 'de-sdk-core';
 
 @Component({
     selector: 'app-custom-field-share-detail',

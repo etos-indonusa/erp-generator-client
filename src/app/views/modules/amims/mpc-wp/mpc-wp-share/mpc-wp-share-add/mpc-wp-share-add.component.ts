@@ -4,11 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsMpcWpFormSchema } from 'de-sdk-core/lib/form-schema/amims-mpc-wp.form-schema';
-import type { AmimsMpcWpDto } from 'de-sdk-core/lib/models';
-import { MpcWpService, UsersService } from 'de-sdk-core/lib/services';
+import { AmimsMpcWpFormSchema } from 'de-sdk-core';
+import type { AmimsMpcWpDto } from 'de-sdk-core';
+import { MpcWpService, UsersService } from 'de-sdk-core';
 
-import { AircraftService } from 'de-sdk-core/lib/services';
+import { AircraftService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-mpc-wp-share-add',

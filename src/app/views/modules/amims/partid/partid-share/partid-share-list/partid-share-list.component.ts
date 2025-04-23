@@ -9,8 +9,8 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { PartidReportService, PartidService } from 'de-sdk-core/lib/services';
-import { AmimsPartidDto } from 'de-sdk-core/lib/models';
+import { PartidReportService, PartidService } from 'de-sdk-core';
+import { AmimsPartidDto } from 'de-sdk-core';
 import { PartidShareAddComponent } from '../partid-share-add/partid-share-add.component';
 import { PartidShareDetailComponent } from '../partid-share-detail/partid-share-detail.component';
  

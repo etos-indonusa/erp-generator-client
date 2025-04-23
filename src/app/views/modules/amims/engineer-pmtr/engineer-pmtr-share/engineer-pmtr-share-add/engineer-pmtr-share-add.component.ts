@@ -4,12 +4,12 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsEngineerPmtrFormSchema } from 'de-sdk-core/lib/form-schema/amims-engineer-pmtr.form-schema';
-import type { AmimsEngineerPmtrDto } from 'de-sdk-core/lib/models';
-import { EngineerPmtrService } from 'de-sdk-core/lib/services';
+import { AmimsEngineerPmtrFormSchema } from 'de-sdk-core';
+import type { AmimsEngineerPmtrDto } from 'de-sdk-core';
+import { EngineerPmtrService } from 'de-sdk-core';
 
-import { AircraftService } from 'de-sdk-core/lib/services';
-import { UsersService } from 'de-sdk-core/lib/services';
+import { AircraftService } from 'de-sdk-core';
+import { UsersService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-engineer-pmtr-share-add',

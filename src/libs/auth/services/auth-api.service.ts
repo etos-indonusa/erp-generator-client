@@ -2,8 +2,8 @@
 import { Injectable } from '@angular/core';
 import { TokenService } from './token.service';
 import { map, tap } from 'rxjs/operators';
-import { AuthPublicService } from 'de-sdk-core/lib/services';
-import { AuthProtectService } from 'de-sdk-core/lib/services';
+import { AuthPublicService } from 'de-sdk-core';
+import { AuthProtectService } from 'de-sdk-core';
 
 @Injectable({ providedIn: 'root' })
 export class AuthApiService {

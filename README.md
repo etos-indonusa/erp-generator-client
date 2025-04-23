@@ -5,6 +5,8 @@ npx ts-node --project tsconfig.tools.json tools/generate-openapi-sdk-with-fields
 npx ts-node --project tsconfig.tools.json tools/generate-openapi-sdk-with-fields.ts https://erp.bogor.vm.devetek.com/api-json
 ts-node --project tsconfig.tools.json tools/generate-public-api.ts
 
+ng build sdkcore
+npm publish --access public
 
 export NODE_OPTIONS="--max-old-space-size=8192"
 

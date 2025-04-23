@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { AmimsCompanyDto } from 'de-sdk-core/lib/models';
+import type { AmimsCompanyDto } from 'de-sdk-core';
 
 @Component({
     selector: 'app-company-share-detail',

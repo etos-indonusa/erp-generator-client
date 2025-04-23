@@ -9,8 +9,8 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { CurrencyReportService, CurrencyService } from 'de-sdk-core/lib/services';
-import { AmimsCurrencyDto } from 'de-sdk-core/lib/models';
+import { CurrencyReportService, CurrencyService } from 'de-sdk-core';
+import { AmimsCurrencyDto } from 'de-sdk-core';
 import { CurrencyShareAddComponent } from '../currency-share-add/currency-share-add.component';
 import { CurrencyShareDetailComponent } from '../currency-share-detail/currency-share-detail.component';
  

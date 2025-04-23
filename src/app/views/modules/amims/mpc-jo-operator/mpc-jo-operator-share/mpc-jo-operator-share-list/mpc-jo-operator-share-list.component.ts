@@ -9,11 +9,11 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { MpcJoOperatorReportService, MpcJoOperatorService, UsersService } from 'de-sdk-core/lib/services';
-import { AmimsMpcJoOperatorDto } from 'de-sdk-core/lib/models';
+import { MpcJoOperatorReportService, MpcJoOperatorService, UsersService } from 'de-sdk-core';
+import { AmimsMpcJoOperatorDto } from 'de-sdk-core';
 import { MpcJoOperatorShareAddComponent } from '../mpc-jo-operator-share-add/mpc-jo-operator-share-add.component';
 import { MpcJoOperatorShareDetailComponent } from '../mpc-jo-operator-share-detail/mpc-jo-operator-share-detail.component';
-import { MpcJoService } from 'de-sdk-core/lib/services';
+import { MpcJoService } from 'de-sdk-core';
 
 
 

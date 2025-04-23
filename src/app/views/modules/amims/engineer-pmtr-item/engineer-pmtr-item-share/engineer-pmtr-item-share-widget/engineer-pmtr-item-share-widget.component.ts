@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { EngineerPmtrItemWidgetService } from 'de-sdk-core/lib/services/engineer-pmtr-item-widget.service';
+import { EngineerPmtrItemWidgetService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-engineer-pmtr-item-share-widget',

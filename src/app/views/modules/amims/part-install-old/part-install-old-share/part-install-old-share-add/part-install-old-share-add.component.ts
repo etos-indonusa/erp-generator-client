@@ -4,14 +4,14 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsPartInstallOldFormSchema } from 'de-sdk-core/lib/form-schema/amims-part-install-old.form-schema'; 
-import type  { AmimsPartInstallOldDto } from 'de-sdk-core/lib/models';
-import { PartInstallOldService } from 'de-sdk-core/lib/services';
+import { AmimsPartInstallOldFormSchema } from 'de-sdk-core'; 
+import type  { AmimsPartInstallOldDto } from 'de-sdk-core';
+import { PartInstallOldService } from 'de-sdk-core';
 
-import { AircraftService } from 'de-sdk-core/lib/services';
-import { EngineerPrisItemService } from 'de-sdk-core/lib/services';
-import { PartService } from 'de-sdk-core/lib/services';
-import { PartInstallService } from 'de-sdk-core/lib/services';
+import { AircraftService } from 'de-sdk-core';
+import { EngineerPrisItemService } from 'de-sdk-core';
+import { PartService } from 'de-sdk-core';
+import { PartInstallService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-part-install-old-share-add',

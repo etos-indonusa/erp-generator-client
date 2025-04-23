@@ -4,12 +4,12 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { ToolsDocumentNumberingCounterFormSchema } from 'de-sdk-core/lib/form-schema/tools-document-numbering-counter.form-schema'; 
-import type { ToolsDocumentNumberingCounterDto } from 'de-sdk-core/lib/models';
-import { DocumentNumberingCounterService } from 'de-sdk-core/lib/services';
+import { ToolsDocumentNumberingCounterFormSchema } from 'de-sdk-core'; 
+import type { ToolsDocumentNumberingCounterDto } from 'de-sdk-core';
+import { DocumentNumberingCounterService } from 'de-sdk-core';
 
-import { DocumentNumberingService } from 'de-sdk-core/lib/services';
-import { KantorService } from 'de-sdk-core/lib/services';
+import { DocumentNumberingService } from 'de-sdk-core';
+import { KantorService } from 'de-sdk-core';
  
 @Component({
     selector: 'app-document-numbering-counter-share-add',

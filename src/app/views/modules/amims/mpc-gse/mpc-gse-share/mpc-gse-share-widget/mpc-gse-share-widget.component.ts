@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { MpcGseWidgetService } from 'de-sdk-core/lib/services/mpc-gse-widget.service';
+import { MpcGseWidgetService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-mpc-gse-share-widget',

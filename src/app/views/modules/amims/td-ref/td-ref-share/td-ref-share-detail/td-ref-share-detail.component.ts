@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   AmimsTdRefReportDto } from 'de-sdk-core/lib/models';
-import { TdRefReportService } from 'de-sdk-core/lib/services';
+import {   AmimsTdRefReportDto } from 'de-sdk-core';
+import { TdRefReportService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-td-ref-share-detail',

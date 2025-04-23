@@ -9,13 +9,13 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { StoreDestroyReportService, StoreDestroyService } from 'de-sdk-core/lib/services';
-import { UsersService } from 'de-sdk-core/lib/services';
-import { AmimsStoreDestroyDto } from 'de-sdk-core/lib/models';
+import { StoreDestroyReportService, StoreDestroyService } from 'de-sdk-core';
+import { UsersService } from 'de-sdk-core';
+import { AmimsStoreDestroyDto } from 'de-sdk-core';
 import { StoreDestroyShareAddComponent } from '../store-destroy-share-add/store-destroy-share-add.component';
 import { StoreDestroyShareDetailComponent } from '../store-destroy-share-detail/store-destroy-share-detail.component';
-import { PartService } from 'de-sdk-core/lib/services';
-import { SiteService } from 'de-sdk-core/lib/services';
+import { PartService } from 'de-sdk-core';
+import { SiteService } from 'de-sdk-core';
 
 
 

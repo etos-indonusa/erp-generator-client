@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { PositionWidgetService } from 'de-sdk-core/lib/services/position-widget.service';
+import { PositionWidgetService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-position-share-widget',

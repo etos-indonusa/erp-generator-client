@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod'; 
-import { AclUsersReportDto } from 'de-sdk-core/lib/models/acl-users-report-dto';
-import { UsersReportService } from 'de-sdk-core/lib/services/users-report.service';
+import { AclUsersReportDto } from 'de-sdk-core';
+import { UsersReportService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-users-share-detail',

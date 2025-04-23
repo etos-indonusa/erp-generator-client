@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { ActypeWidgetService } from 'de-sdk-core/lib/services/actype-widget.service';
+import { ActypeWidgetService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-actype-share-widget',

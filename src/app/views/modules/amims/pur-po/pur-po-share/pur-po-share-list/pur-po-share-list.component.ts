@@ -9,16 +9,16 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { PurPoReportService, PurPoService } from 'de-sdk-core/lib/services';
-import { AmimsPurPoDto } from 'de-sdk-core/lib/models';
+import { PurPoReportService, PurPoService } from 'de-sdk-core';
+import { AmimsPurPoDto } from 'de-sdk-core';
 import { PurPoShareAddComponent } from '../pur-po-share-add/pur-po-share-add.component';
 import { PurPoShareDetailComponent } from '../pur-po-share-detail/pur-po-share-detail.component';
-import { CurrencyService } from 'de-sdk-core/lib/services';
-import { PositionService } from 'de-sdk-core/lib/services';
-import { PurVendorService } from 'de-sdk-core/lib/services';
-import { PurVendorContactService } from 'de-sdk-core/lib/services';
-import { SiteService } from 'de-sdk-core/lib/services';
-import { UsersService } from 'de-sdk-core/lib/services';
+import { CurrencyService } from 'de-sdk-core';
+import { PositionService } from 'de-sdk-core';
+import { PurVendorService } from 'de-sdk-core';
+import { PurVendorContactService } from 'de-sdk-core';
+import { SiteService } from 'de-sdk-core';
+import { UsersService } from 'de-sdk-core';
 
 
 

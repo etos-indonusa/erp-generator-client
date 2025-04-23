@@ -6,9 +6,9 @@ import { NzUploadFile } from 'ng-zorro-antd/upload';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier'; 
 // import { DocumentControllerUploadFile$Params } from 'de-sdk-core/lib/fn/document/document-controller-upload-file';
-// import { DocumentDocumentFormSchema } from 'de-sdk-core/lib/form-schema/document-document.form-schema'; 
-import { DocumentService } from 'de-sdk-core/lib/services/document.service';
-import { DocumentDocumentFormSchema } from 'de-sdk-core/lib/form-schema/document-document.form-schema';
+// import { DocumentDocumentFormSchema } from 'de-sdk-core'; 
+import { DocumentService } from 'de-sdk-core';
+import { DocumentDocumentFormSchema } from 'de-sdk-core';
 import { DocumentControllerUploadFile$Params } from 'de-sdk-core/lib/fn/document/document-controller-upload-file';
 
 @Component({

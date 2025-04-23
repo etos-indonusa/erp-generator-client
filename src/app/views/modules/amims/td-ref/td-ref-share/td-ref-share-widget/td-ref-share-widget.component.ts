@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { TdRefWidgetService } from 'de-sdk-core/lib/services/td-ref-widget.service';
+import { TdRefWidgetService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-td-ref-share-widget',

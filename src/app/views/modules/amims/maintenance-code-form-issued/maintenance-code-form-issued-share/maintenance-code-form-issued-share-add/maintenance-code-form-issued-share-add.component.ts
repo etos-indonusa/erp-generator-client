@@ -4,12 +4,12 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsMaintenanceCodeFormIssuedFormSchema } from 'de-sdk-core/lib/form-schema/amims-maintenance-code-form-issued.form-schema'; 
-import type { AmimsMaintenanceCodeFormIssuedDto } from 'de-sdk-core/lib/models';
-import { MaintenanceCodeFormIssuedService } from 'de-sdk-core/lib/services';
+import { AmimsMaintenanceCodeFormIssuedFormSchema } from 'de-sdk-core'; 
+import type { AmimsMaintenanceCodeFormIssuedDto } from 'de-sdk-core';
+import { MaintenanceCodeFormIssuedService } from 'de-sdk-core';
 
-import { LibFormIssuedService } from 'de-sdk-core/lib/services';
-import { MaintenanceCodeService } from 'de-sdk-core/lib/services';
+import { LibFormIssuedService } from 'de-sdk-core';
+import { MaintenanceCodeService } from 'de-sdk-core';
  
 @Component({
     selector: 'app-maintenance-code-form-issued-share-add',

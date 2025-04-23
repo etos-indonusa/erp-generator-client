@@ -4,17 +4,17 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsPurPoItemFormSchema } from 'de-sdk-core/lib/form-schema/amims-pur-po-item.form-schema'; 
-import type  { AmimsPurPoItemDto } from 'de-sdk-core/lib/models';
-import { PurPoItemService } from 'de-sdk-core/lib/services';
+import { AmimsPurPoItemFormSchema } from 'de-sdk-core'; 
+import type  { AmimsPurPoItemDto } from 'de-sdk-core';
+import { PurPoItemService } from 'de-sdk-core';
 
-import { EngineerRtiService } from 'de-sdk-core/lib/services';
-import { MpartService } from 'de-sdk-core/lib/services';
-import { PartService } from 'de-sdk-core/lib/services';
-import { PurPoService } from 'de-sdk-core/lib/services';
-import { PurPrItemService } from 'de-sdk-core/lib/services';
-import { PurPrclService } from 'de-sdk-core/lib/services';
-import { QaRpdService } from 'de-sdk-core/lib/services';
+import { EngineerRtiService } from 'de-sdk-core';
+import { MpartService } from 'de-sdk-core';
+import { PartService } from 'de-sdk-core';
+import { PurPoService } from 'de-sdk-core';
+import { PurPrItemService } from 'de-sdk-core';
+import { PurPrclService } from 'de-sdk-core';
+import { QaRpdService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-pur-po-item-share-add',

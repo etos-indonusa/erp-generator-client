@@ -3,8 +3,8 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   ToolsWorkflowReportDto } from 'de-sdk-core/lib/models';
-import { WorkflowReportService } from 'de-sdk-core/lib/services';
+import {   ToolsWorkflowReportDto } from 'de-sdk-core';
+import { WorkflowReportService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-workflow-share-detail',

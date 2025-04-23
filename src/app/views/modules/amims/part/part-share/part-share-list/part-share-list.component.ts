@@ -9,15 +9,15 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { PartReportService, PartService } from 'de-sdk-core/lib/services';
-import { AmimsPartDto } from 'de-sdk-core/lib/models';
+import { PartReportService, PartService } from 'de-sdk-core';
+import { AmimsPartDto } from 'de-sdk-core';
 import { PartShareAddComponent } from '../part-share-add/part-share-add.component';
 import { PartShareDetailComponent } from '../part-share-detail/part-share-detail.component';
-import { AtaService } from 'de-sdk-core/lib/services';
-import { ConditionMonitoringService } from 'de-sdk-core/lib/services';
-import { LifeTimeLimitService } from 'de-sdk-core/lib/services';
-import { PartCategoryService } from 'de-sdk-core/lib/services';
-import { PartidService } from 'de-sdk-core/lib/services';
+import { AtaService } from 'de-sdk-core';
+import { ConditionMonitoringService } from 'de-sdk-core';
+import { LifeTimeLimitService } from 'de-sdk-core';
+import { PartCategoryService } from 'de-sdk-core';
+import { PartidService } from 'de-sdk-core';
 
 
 

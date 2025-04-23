@@ -9,8 +9,8 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { QaRpdDispotitionReportService, QaRpdDispotitionService } from 'de-sdk-core/lib/services';
-import { AmimsQaRpdDispotitionDto } from 'de-sdk-core/lib/models';
+import { QaRpdDispotitionReportService, QaRpdDispotitionService } from 'de-sdk-core';
+import { AmimsQaRpdDispotitionDto } from 'de-sdk-core';
 import { QaRpdDispotitionShareAddComponent } from '../qa-rpd-dispotition-share-add/qa-rpd-dispotition-share-add.component';
 import { QaRpdDispotitionShareDetailComponent } from '../qa-rpd-dispotition-share-detail/qa-rpd-dispotition-share-detail.component';
  

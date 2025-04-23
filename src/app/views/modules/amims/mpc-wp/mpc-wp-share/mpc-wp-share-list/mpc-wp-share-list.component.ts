@@ -9,11 +9,11 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { MpcWpReportService, MpcWpService, UsersService } from 'de-sdk-core/lib/services';
-import { AmimsMpcWpDto } from 'de-sdk-core/lib/models';
+import { MpcWpReportService, MpcWpService, UsersService } from 'de-sdk-core';
+import { AmimsMpcWpDto } from 'de-sdk-core';
 import { MpcWpShareAddComponent } from '../mpc-wp-share-add/mpc-wp-share-add.component';
 import { MpcWpShareDetailComponent } from '../mpc-wp-share-detail/mpc-wp-share-detail.component';
-import { AircraftService } from 'de-sdk-core/lib/services';
+import { AircraftService } from 'de-sdk-core';
 
 
 

@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { MaintenanceWidgetService } from 'de-sdk-core/lib/services/maintenance-widget.service';
+import { MaintenanceWidgetService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-maintenance-share-widget',

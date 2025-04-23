@@ -4,11 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsBinFormSchema } from 'de-sdk-core/lib/form-schema/amims-bin.form-schema'; 
-import type  { AmimsBinDto } from 'de-sdk-core/lib/models';
-import { BinService } from 'de-sdk-core/lib/services';
+import { AmimsBinFormSchema } from 'de-sdk-core'; 
+import type  { AmimsBinDto } from 'de-sdk-core';
+import { BinService } from 'de-sdk-core';
 
-import { SiteService } from 'de-sdk-core/lib/services';
+import { SiteService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-bin-share-add',

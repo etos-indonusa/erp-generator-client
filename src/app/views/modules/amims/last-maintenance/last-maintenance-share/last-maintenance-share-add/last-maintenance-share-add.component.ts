@@ -4,14 +4,14 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsLastMaintenanceFormSchema } from 'de-sdk-core/lib/form-schema/amims-last-maintenance.form-schema'; 
-import type  { AmimsLastMaintenanceDto } from 'de-sdk-core/lib/models';
-import { LastMaintenanceService } from 'de-sdk-core/lib/services';
+import { AmimsLastMaintenanceFormSchema } from 'de-sdk-core'; 
+import type  { AmimsLastMaintenanceDto } from 'de-sdk-core';
+import { LastMaintenanceService } from 'de-sdk-core';
 
-import { MaintenanceService } from 'de-sdk-core/lib/services';
-import { MpcJoService } from 'de-sdk-core/lib/services';
-import { PartService } from 'de-sdk-core/lib/services';
-import { UsersService } from 'de-sdk-core/lib/services';
+import { MaintenanceService } from 'de-sdk-core';
+import { MpcJoService } from 'de-sdk-core';
+import { PartService } from 'de-sdk-core';
+import { UsersService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-last-maintenance-share-add',

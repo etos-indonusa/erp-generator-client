@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { LogSpWidgetService } from 'de-sdk-core/lib/services/log-sp-widget.service';
+import { LogSpWidgetService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-log-sp-share-widget',

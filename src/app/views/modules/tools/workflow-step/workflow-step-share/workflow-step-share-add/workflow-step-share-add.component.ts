@@ -4,11 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { ToolsWorkflowStepFormSchema } from 'de-sdk-core/lib/form-schema/tools-workflow-step.form-schema';
-import type { AclUserGroupDto, AclUsersDto, ToolsWorkflowStepDto } from 'de-sdk-core/lib/models';
-import { UserGroupService, UsersService, WorkflowStepService } from 'de-sdk-core/lib/services';
+import { ToolsWorkflowStepFormSchema } from 'de-sdk-core';
+import type { AclUserGroupDto, AclUsersDto, ToolsWorkflowStepDto } from 'de-sdk-core';
+import { UserGroupService, UsersService, WorkflowStepService } from 'de-sdk-core';
 
-import { WorkflowService } from 'de-sdk-core/lib/services'; 
+import { WorkflowService } from 'de-sdk-core'; 
 import { WorkflowStepAddTrigerBuilderComponent } from '../workflow-step-add-triger-builder/workflow-step-add-triger-builder.component';
 
 @Component({

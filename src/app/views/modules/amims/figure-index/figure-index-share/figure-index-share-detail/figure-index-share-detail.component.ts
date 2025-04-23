@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { AmimsFigureIndexDto } from 'de-sdk-core/lib/models';
+import type { AmimsFigureIndexDto } from 'de-sdk-core';
 
 @Component({
     selector: 'app-figure-index-share-detail',

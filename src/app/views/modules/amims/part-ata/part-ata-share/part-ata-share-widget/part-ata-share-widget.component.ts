@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { PartAtaWidgetService } from 'de-sdk-core/lib/services/part-ata-widget.service';
+import { PartAtaWidgetService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-part-ata-share-widget',

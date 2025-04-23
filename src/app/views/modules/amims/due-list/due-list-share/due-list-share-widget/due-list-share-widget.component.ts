@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { DueListWidgetService } from 'de-sdk-core/lib/services/due-list-widget.service';
+import { DueListWidgetService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-due-list-share-widget',

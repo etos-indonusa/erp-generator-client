@@ -4,12 +4,12 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsLogTsnTsoFormSchema } from 'de-sdk-core/lib/form-schema/amims-log-tsn-tso.form-schema'; 
-import type  { AmimsLogTsnTsoDto } from 'de-sdk-core/lib/models';
-import { LogTsnTsoService } from 'de-sdk-core/lib/services';
+import { AmimsLogTsnTsoFormSchema } from 'de-sdk-core'; 
+import type  { AmimsLogTsnTsoDto } from 'de-sdk-core';
+import { LogTsnTsoService } from 'de-sdk-core';
 
-import { PartService } from 'de-sdk-core/lib/services';
-import { TechLogService } from 'de-sdk-core/lib/services';
+import { PartService } from 'de-sdk-core';
+import { TechLogService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-log-tsn-tso-share-add',

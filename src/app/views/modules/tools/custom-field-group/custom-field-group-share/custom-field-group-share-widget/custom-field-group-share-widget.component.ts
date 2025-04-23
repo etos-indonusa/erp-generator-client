@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { CustomFieldGroupWidgetService } from 'de-sdk-core/lib/services/custom-field-group-widget.service';
+import { CustomFieldGroupWidgetService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-custom-field-group-share-widget',

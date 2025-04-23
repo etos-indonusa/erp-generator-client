@@ -4,15 +4,15 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsTechDefectFormSchema } from 'de-sdk-core/lib/form-schema/amims-tech-defect.form-schema'; 
-import type  { AmimsTechDefectDto } from 'de-sdk-core/lib/models';
-import { TechDefectService } from 'de-sdk-core/lib/services';
+import { AmimsTechDefectFormSchema } from 'de-sdk-core'; 
+import type  { AmimsTechDefectDto } from 'de-sdk-core';
+import { TechDefectService } from 'de-sdk-core';
 
-import { AircraftService } from 'de-sdk-core/lib/services';
-import { EngineerRtiService } from 'de-sdk-core/lib/services';
-import { PartService } from 'de-sdk-core/lib/services';
-import { PartInstallService } from 'de-sdk-core/lib/services';
-import { TechLogService } from 'de-sdk-core/lib/services';
+import { AircraftService } from 'de-sdk-core';
+import { EngineerRtiService } from 'de-sdk-core';
+import { PartService } from 'de-sdk-core';
+import { PartInstallService } from 'de-sdk-core';
+import { TechLogService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-tech-defect-share-add',

@@ -9,8 +9,8 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { LogSpReportService, LogSpService } from 'de-sdk-core/lib/services';
-import { AmimsLogSpDto } from 'de-sdk-core/lib/models';
+import { LogSpReportService, LogSpService } from 'de-sdk-core';
+import { AmimsLogSpDto } from 'de-sdk-core';
 import { LogSpShareAddComponent } from '../log-sp-share-add/log-sp-share-add.component';
 import { LogSpShareDetailComponent } from '../log-sp-share-detail/log-sp-share-detail.component';
  

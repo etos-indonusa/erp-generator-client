@@ -4,11 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsMpcGseFormSchema } from 'de-sdk-core/lib/form-schema/amims-mpc-gse.form-schema';
-import type { AmimsMpcGseDto } from 'de-sdk-core/lib/models';
-import { MpcGseService, UsersService } from 'de-sdk-core/lib/services';
+import { AmimsMpcGseFormSchema } from 'de-sdk-core';
+import type { AmimsMpcGseDto } from 'de-sdk-core';
+import { MpcGseService, UsersService } from 'de-sdk-core';
 
-import { EngineerRtiService } from 'de-sdk-core/lib/services'; 
+import { EngineerRtiService } from 'de-sdk-core'; 
 
 @Component({
     selector: 'app-mpc-gse-share-add',

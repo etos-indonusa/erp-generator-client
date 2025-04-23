@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { CustomFieldService, CustomFieldValueService } from 'de-sdk-core/lib/services';
-import type { ToolsCustomFieldDto, ToolsCustomFieldGroupDto, ToolsCustomFieldValueDto } from 'de-sdk-core/lib/models';
+import { CustomFieldService, CustomFieldValueService } from 'de-sdk-core';
+import type { ToolsCustomFieldDto, ToolsCustomFieldGroupDto, ToolsCustomFieldValueDto } from 'de-sdk-core';
 import { forkJoin } from 'rxjs';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 

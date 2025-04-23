@@ -4,11 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsLibUploadFormSchema } from 'de-sdk-core/lib/form-schema/amims-lib-upload.form-schema'; 
-import type { AmimsLibUploadDto } from 'de-sdk-core/lib/models';
-import { LibUploadService } from 'de-sdk-core/lib/services';
+import { AmimsLibUploadFormSchema } from 'de-sdk-core'; 
+import type { AmimsLibUploadDto } from 'de-sdk-core';
+import { LibUploadService } from 'de-sdk-core';
 
-import { ModuleService } from 'de-sdk-core/lib/services';
+import { ModuleService } from 'de-sdk-core';
  
 @Component({
     selector: 'app-lib-upload-share-add',

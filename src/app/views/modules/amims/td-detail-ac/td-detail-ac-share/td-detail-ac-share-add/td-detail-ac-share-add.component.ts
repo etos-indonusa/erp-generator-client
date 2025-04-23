@@ -4,13 +4,13 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsTdDetailAcFormSchema } from 'de-sdk-core/lib/form-schema/amims-td-detail-ac.form-schema'; 
-import type  { AmimsTdDetailAcDto } from 'de-sdk-core/lib/models';
-import { TdDetailAcService } from 'de-sdk-core/lib/services';
+import { AmimsTdDetailAcFormSchema } from 'de-sdk-core'; 
+import type  { AmimsTdDetailAcDto } from 'de-sdk-core';
+import { TdDetailAcService } from 'de-sdk-core';
 
-import { AircraftService } from 'de-sdk-core/lib/services';
-import { TdDetailService } from 'de-sdk-core/lib/services';
-import { TechLogService } from 'de-sdk-core/lib/services';
+import { AircraftService } from 'de-sdk-core';
+import { TdDetailService } from 'de-sdk-core';
+import { TechLogService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-td-detail-ac-share-add',

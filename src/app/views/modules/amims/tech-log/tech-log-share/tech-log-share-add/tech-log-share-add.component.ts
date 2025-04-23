@@ -4,11 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsTechLogFormSchema } from 'de-sdk-core/lib/form-schema/amims-tech-log.form-schema';
-import type { AmimsTechLogDto } from 'de-sdk-core/lib/models';
-import { TechLogService, UsersService } from 'de-sdk-core/lib/services';
+import { AmimsTechLogFormSchema } from 'de-sdk-core';
+import type { AmimsTechLogDto } from 'de-sdk-core';
+import { TechLogService, UsersService } from 'de-sdk-core';
 
-import { AircraftService } from 'de-sdk-core/lib/services';
+import { AircraftService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-tech-log-share-add',

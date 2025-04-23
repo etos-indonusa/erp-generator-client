@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { ToolsDocumentNumberingCounterDto } from 'de-sdk-core/lib/models';
+import type { ToolsDocumentNumberingCounterDto } from 'de-sdk-core';
 
 @Component({
     selector: 'app-document-numbering-counter-share-detail',

@@ -4,14 +4,14 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsEngineerPrisFormSchema } from 'de-sdk-core/lib/form-schema/amims-engineer-pris.form-schema';
-import type { AmimsEngineerPrisDto } from 'de-sdk-core/lib/models';
-import { EngineerPrisService } from 'de-sdk-core/lib/services';
+import { AmimsEngineerPrisFormSchema } from 'de-sdk-core';
+import type { AmimsEngineerPrisDto } from 'de-sdk-core';
+import { EngineerPrisService } from 'de-sdk-core';
 
-import { AircraftService } from 'de-sdk-core/lib/services';
-import { PositionService } from 'de-sdk-core/lib/services';
-import { SiteService } from 'de-sdk-core/lib/services';
-import { UsersService } from 'de-sdk-core/lib/services'; 
+import { AircraftService } from 'de-sdk-core';
+import { PositionService } from 'de-sdk-core';
+import { SiteService } from 'de-sdk-core';
+import { UsersService } from 'de-sdk-core'; 
 
 @Component({
     selector: 'app-engineer-pris-share-add',

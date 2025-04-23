@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 import { PesanService } from 'src/app/shared/services/pesan.service';
-import { ToolsWorkflowAggregatorDto } from 'de-sdk-core/lib/models';
-import { WorkflowAggregatorService, WorkflowApplyService, WorkflowLogService, WorkflowService, WorkflowStepService } from 'de-sdk-core/lib/services';
+import { ToolsWorkflowAggregatorDto } from 'de-sdk-core';
+import { WorkflowAggregatorService, WorkflowApplyService, WorkflowLogService, WorkflowService, WorkflowStepService } from 'de-sdk-core';
 
 @Component({
     selector: 'lib-approval-form-widget',

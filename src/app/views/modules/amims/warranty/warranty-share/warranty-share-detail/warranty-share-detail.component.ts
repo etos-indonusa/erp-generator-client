@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { AmimsWarrantyDto } from 'de-sdk-core/lib/models';
+import type { AmimsWarrantyDto } from 'de-sdk-core';
 
 @Component({
     selector: 'app-warranty-share-detail',

@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { QaTransferWidgetService } from 'de-sdk-core/lib/services/qa-transfer-widget.service';
+import { QaTransferWidgetService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-qa-transfer-share-widget',

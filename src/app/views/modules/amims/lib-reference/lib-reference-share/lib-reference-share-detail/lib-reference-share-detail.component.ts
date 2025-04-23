@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { AmimsLibReferenceDto } from 'de-sdk-core/lib/models';
+import type { AmimsLibReferenceDto } from 'de-sdk-core';
 
 @Component({
     selector: 'app-lib-reference-share-detail',
