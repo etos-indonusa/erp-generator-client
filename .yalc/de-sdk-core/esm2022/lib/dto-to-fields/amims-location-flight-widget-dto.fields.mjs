@@ -1,0 +1,12 @@
+export const AmimsLocationFlightWidgetDtoFields = {
+    "address": "string",
+    "createdAt": "string",
+    "idLocationFlight": "string",
+    "lat": "string",
+    "lon": "string",
+    "nameLocation": "string",
+    "statusLocation": "string",
+    "total": "number",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtbG9jYXRpb24tZmxpZ2h0LXdpZGdldC1kdG8uZmllbGRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvc2RrY29yZS9zcmMvbGliL2R0by10by1maWVsZHMvYW1pbXMtbG9jYXRpb24tZmxpZ2h0LXdpZGdldC1kdG8uZmllbGRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE1BQU0sQ0FBQyxNQUFNLGtDQUFrQyxHQUFvRDtJQUNqRyxTQUFTLEVBQUUsUUFBUTtJQUNuQixXQUFXLEVBQUUsUUFBUTtJQUNyQixrQkFBa0IsRUFBRSxRQUFRO0lBQzVCLEtBQUssRUFBRSxRQUFRO0lBQ2YsS0FBSyxFQUFFLFFBQVE7SUFDZixjQUFjLEVBQUUsUUFBUTtJQUN4QixnQkFBZ0IsRUFBRSxRQUFRO0lBQzFCLE9BQU8sRUFBRSxRQUFRO0lBQ2pCLFdBQVcsRUFBRSxRQUFRO0NBQ3RCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgQW1pbXNMb2NhdGlvbkZsaWdodFdpZGdldER0b0ZpZWxkczogUmVjb3JkPHN0cmluZywgJ3N0cmluZycgfCAnYm9vbGVhbicgfCAnbnVtYmVyJz4gPSB7XG4gIFwiYWRkcmVzc1wiOiBcInN0cmluZ1wiLFxuICBcImNyZWF0ZWRBdFwiOiBcInN0cmluZ1wiLFxuICBcImlkTG9jYXRpb25GbGlnaHRcIjogXCJzdHJpbmdcIixcbiAgXCJsYXRcIjogXCJzdHJpbmdcIixcbiAgXCJsb25cIjogXCJzdHJpbmdcIixcbiAgXCJuYW1lTG9jYXRpb25cIjogXCJzdHJpbmdcIixcbiAgXCJzdGF0dXNMb2NhdGlvblwiOiBcInN0cmluZ1wiLFxuICBcInRvdGFsXCI6IFwibnVtYmVyXCIsXG4gIFwidXBkYXRlZEF0XCI6IFwic3RyaW5nXCJcbn07XG4iXX0=

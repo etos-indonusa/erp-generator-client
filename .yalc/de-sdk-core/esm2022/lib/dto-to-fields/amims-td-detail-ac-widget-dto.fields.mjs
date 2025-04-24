@@ -1,0 +1,20 @@
+export const AmimsTdDetailAcWidgetDtoFields = {
+    "complianceC": "number",
+    "complianceD": "string",
+    "complianceH": "number",
+    "compliteC": "number",
+    "compliteD": "string",
+    "compliteH": "number",
+    "compliteUser": "string",
+    "engineer": "string",
+    "idAircraft": "string",
+    "idTdDetail": "string",
+    "idTdDetailAc": "string",
+    "idTechLog": "string",
+    "isActive": "string",
+    "noteClose": "string",
+    "noteDetail": "string",
+    "total": "number",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtdGQtZGV0YWlsLWFjLXdpZGdldC1kdG8uZmllbGRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvc2RrY29yZS9zcmMvbGliL2R0by10by1maWVsZHMvYW1pbXMtdGQtZGV0YWlsLWFjLXdpZGdldC1kdG8uZmllbGRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE1BQU0sQ0FBQyxNQUFNLDhCQUE4QixHQUFvRDtJQUM3RixhQUFhLEVBQUUsUUFBUTtJQUN2QixhQUFhLEVBQUUsUUFBUTtJQUN2QixhQUFhLEVBQUUsUUFBUTtJQUN2QixXQUFXLEVBQUUsUUFBUTtJQUNyQixXQUFXLEVBQUUsUUFBUTtJQUNyQixXQUFXLEVBQUUsUUFBUTtJQUNyQixjQUFjLEVBQUUsUUFBUTtJQUN4QixVQUFVLEVBQUUsUUFBUTtJQUNwQixZQUFZLEVBQUUsUUFBUTtJQUN0QixZQUFZLEVBQUUsUUFBUTtJQUN0QixjQUFjLEVBQUUsUUFBUTtJQUN4QixXQUFXLEVBQUUsUUFBUTtJQUNyQixVQUFVLEVBQUUsUUFBUTtJQUNwQixXQUFXLEVBQUUsUUFBUTtJQUNyQixZQUFZLEVBQUUsUUFBUTtJQUN0QixPQUFPLEVBQUUsUUFBUTtJQUNqQixXQUFXLEVBQUUsUUFBUTtDQUN0QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IEFtaW1zVGREZXRhaWxBY1dpZGdldER0b0ZpZWxkczogUmVjb3JkPHN0cmluZywgJ3N0cmluZycgfCAnYm9vbGVhbicgfCAnbnVtYmVyJz4gPSB7XG4gIFwiY29tcGxpYW5jZUNcIjogXCJudW1iZXJcIixcbiAgXCJjb21wbGlhbmNlRFwiOiBcInN0cmluZ1wiLFxuICBcImNvbXBsaWFuY2VIXCI6IFwibnVtYmVyXCIsXG4gIFwiY29tcGxpdGVDXCI6IFwibnVtYmVyXCIsXG4gIFwiY29tcGxpdGVEXCI6IFwic3RyaW5nXCIsXG4gIFwiY29tcGxpdGVIXCI6IFwibnVtYmVyXCIsXG4gIFwiY29tcGxpdGVVc2VyXCI6IFwic3RyaW5nXCIsXG4gIFwiZW5naW5lZXJcIjogXCJzdHJpbmdcIixcbiAgXCJpZEFpcmNyYWZ0XCI6IFwic3RyaW5nXCIsXG4gIFwiaWRUZERldGFpbFwiOiBcInN0cmluZ1wiLFxuICBcImlkVGREZXRhaWxBY1wiOiBcInN0cmluZ1wiLFxuICBcImlkVGVjaExvZ1wiOiBcInN0cmluZ1wiLFxuICBcImlzQWN0aXZlXCI6IFwic3RyaW5nXCIsXG4gIFwibm90ZUNsb3NlXCI6IFwic3RyaW5nXCIsXG4gIFwibm90ZURldGFpbFwiOiBcInN0cmluZ1wiLFxuICBcInRvdGFsXCI6IFwibnVtYmVyXCIsXG4gIFwidXBkYXRlZEF0XCI6IFwic3RyaW5nXCJcbn07XG4iXX0=

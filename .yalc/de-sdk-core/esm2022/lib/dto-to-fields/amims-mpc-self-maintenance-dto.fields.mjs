@@ -1,0 +1,17 @@
+export const AmimsMpcSelfMaintenanceDtoFields = {
+    "createdAt": "string",
+    "dateAccQa": "string",
+    "dateMaintenance": "string",
+    "doc": "string",
+    "idEngineerRti": "string",
+    "idMpcSelfMaintenance": "string",
+    "idSite": "string",
+    "idUserMaintenance": "string",
+    "idUserQa": "string",
+    "numberMaintenance": "string",
+    "reportMaintenance": "string",
+    "statusMaintenance": "string",
+    "typeMaintenance": "string",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtbXBjLXNlbGYtbWFpbnRlbmFuY2UtZHRvLmZpZWxkcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL3Nka2NvcmUvc3JjL2xpYi9kdG8tdG8tZmllbGRzL2FtaW1zLW1wYy1zZWxmLW1haW50ZW5hbmNlLWR0by5maWVsZHMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsTUFBTSxDQUFDLE1BQU0sZ0NBQWdDLEdBQW9EO0lBQy9GLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLGlCQUFpQixFQUFFLFFBQVE7SUFDM0IsS0FBSyxFQUFFLFFBQVE7SUFDZixlQUFlLEVBQUUsUUFBUTtJQUN6QixzQkFBc0IsRUFBRSxRQUFRO0lBQ2hDLFFBQVEsRUFBRSxRQUFRO0lBQ2xCLG1CQUFtQixFQUFFLFFBQVE7SUFDN0IsVUFBVSxFQUFFLFFBQVE7SUFDcEIsbUJBQW1CLEVBQUUsUUFBUTtJQUM3QixtQkFBbUIsRUFBRSxRQUFRO0lBQzdCLG1CQUFtQixFQUFFLFFBQVE7SUFDN0IsaUJBQWlCLEVBQUUsUUFBUTtJQUMzQixXQUFXLEVBQUUsUUFBUTtDQUN0QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IEFtaW1zTXBjU2VsZk1haW50ZW5hbmNlRHRvRmllbGRzOiBSZWNvcmQ8c3RyaW5nLCAnc3RyaW5nJyB8ICdib29sZWFuJyB8ICdudW1iZXInPiA9IHtcbiAgXCJjcmVhdGVkQXRcIjogXCJzdHJpbmdcIixcbiAgXCJkYXRlQWNjUWFcIjogXCJzdHJpbmdcIixcbiAgXCJkYXRlTWFpbnRlbmFuY2VcIjogXCJzdHJpbmdcIixcbiAgXCJkb2NcIjogXCJzdHJpbmdcIixcbiAgXCJpZEVuZ2luZWVyUnRpXCI6IFwic3RyaW5nXCIsXG4gIFwiaWRNcGNTZWxmTWFpbnRlbmFuY2VcIjogXCJzdHJpbmdcIixcbiAgXCJpZFNpdGVcIjogXCJzdHJpbmdcIixcbiAgXCJpZFVzZXJNYWludGVuYW5jZVwiOiBcInN0cmluZ1wiLFxuICBcImlkVXNlclFhXCI6IFwic3RyaW5nXCIsXG4gIFwibnVtYmVyTWFpbnRlbmFuY2VcIjogXCJzdHJpbmdcIixcbiAgXCJyZXBvcnRNYWludGVuYW5jZVwiOiBcInN0cmluZ1wiLFxuICBcInN0YXR1c01haW50ZW5hbmNlXCI6IFwic3RyaW5nXCIsXG4gIFwidHlwZU1haW50ZW5hbmNlXCI6IFwic3RyaW5nXCIsXG4gIFwidXBkYXRlZEF0XCI6IFwic3RyaW5nXCJcbn07XG4iXX0=

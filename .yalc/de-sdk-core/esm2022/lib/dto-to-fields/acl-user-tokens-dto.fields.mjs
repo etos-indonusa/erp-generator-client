@@ -1,0 +1,9 @@
+export const AclUserTokensDtoFields = {
+    "createdAt": "string",
+    "id": "string",
+    "idUser": "string",
+    "ipAddress": "string",
+    "refreshToken": "string",
+    "userAgent": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYWNsLXVzZXItdG9rZW5zLWR0by5maWVsZHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9zZGtjb3JlL3NyYy9saWIvZHRvLXRvLWZpZWxkcy9hY2wtdXNlci10b2tlbnMtZHRvLmZpZWxkcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxNQUFNLENBQUMsTUFBTSxzQkFBc0IsR0FBb0Q7SUFDckYsV0FBVyxFQUFFLFFBQVE7SUFDckIsSUFBSSxFQUFFLFFBQVE7SUFDZCxRQUFRLEVBQUUsUUFBUTtJQUNsQixXQUFXLEVBQUUsUUFBUTtJQUNyQixjQUFjLEVBQUUsUUFBUTtJQUN4QixXQUFXLEVBQUUsUUFBUTtDQUN0QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IEFjbFVzZXJUb2tlbnNEdG9GaWVsZHM6IFJlY29yZDxzdHJpbmcsICdzdHJpbmcnIHwgJ2Jvb2xlYW4nIHwgJ251bWJlcic+ID0ge1xuICBcImNyZWF0ZWRBdFwiOiBcInN0cmluZ1wiLFxuICBcImlkXCI6IFwic3RyaW5nXCIsXG4gIFwiaWRVc2VyXCI6IFwic3RyaW5nXCIsXG4gIFwiaXBBZGRyZXNzXCI6IFwic3RyaW5nXCIsXG4gIFwicmVmcmVzaFRva2VuXCI6IFwic3RyaW5nXCIsXG4gIFwidXNlckFnZW50XCI6IFwic3RyaW5nXCJcbn07XG4iXX0=

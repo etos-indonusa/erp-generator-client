@@ -1,0 +1,18 @@
+export const AmimsInspectionDtoFields = {
+    "atachapter": "string",
+    "createdAt": "string",
+    "cycleTo": "number",
+    "flightHoursTo": "number",
+    "idAircraft": "string",
+    "idInspection": "string",
+    "idMaintenanceCode": "string",
+    "idPart": "string",
+    "idUser": "string",
+    "noteInspection": "string",
+    "oldId": "string",
+    "repetitions": "number",
+    "timeRangeTo": "number",
+    "timeUnit": "string",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtaW5zcGVjdGlvbi1kdG8uZmllbGRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvc2RrY29yZS9zcmMvbGliL2R0by10by1maWVsZHMvYW1pbXMtaW5zcGVjdGlvbi1kdG8uZmllbGRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE1BQU0sQ0FBQyxNQUFNLHdCQUF3QixHQUFvRDtJQUN2RixZQUFZLEVBQUUsUUFBUTtJQUN0QixXQUFXLEVBQUUsUUFBUTtJQUNyQixTQUFTLEVBQUUsUUFBUTtJQUNuQixlQUFlLEVBQUUsUUFBUTtJQUN6QixZQUFZLEVBQUUsUUFBUTtJQUN0QixjQUFjLEVBQUUsUUFBUTtJQUN4QixtQkFBbUIsRUFBRSxRQUFRO0lBQzdCLFFBQVEsRUFBRSxRQUFRO0lBQ2xCLFFBQVEsRUFBRSxRQUFRO0lBQ2xCLGdCQUFnQixFQUFFLFFBQVE7SUFDMUIsT0FBTyxFQUFFLFFBQVE7SUFDakIsYUFBYSxFQUFFLFFBQVE7SUFDdkIsYUFBYSxFQUFFLFFBQVE7SUFDdkIsVUFBVSxFQUFFLFFBQVE7SUFDcEIsV0FBVyxFQUFFLFFBQVE7Q0FDdEIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBBbWltc0luc3BlY3Rpb25EdG9GaWVsZHM6IFJlY29yZDxzdHJpbmcsICdzdHJpbmcnIHwgJ2Jvb2xlYW4nIHwgJ251bWJlcic+ID0ge1xuICBcImF0YWNoYXB0ZXJcIjogXCJzdHJpbmdcIixcbiAgXCJjcmVhdGVkQXRcIjogXCJzdHJpbmdcIixcbiAgXCJjeWNsZVRvXCI6IFwibnVtYmVyXCIsXG4gIFwiZmxpZ2h0SG91cnNUb1wiOiBcIm51bWJlclwiLFxuICBcImlkQWlyY3JhZnRcIjogXCJzdHJpbmdcIixcbiAgXCJpZEluc3BlY3Rpb25cIjogXCJzdHJpbmdcIixcbiAgXCJpZE1haW50ZW5hbmNlQ29kZVwiOiBcInN0cmluZ1wiLFxuICBcImlkUGFydFwiOiBcInN0cmluZ1wiLFxuICBcImlkVXNlclwiOiBcInN0cmluZ1wiLFxuICBcIm5vdGVJbnNwZWN0aW9uXCI6IFwic3RyaW5nXCIsXG4gIFwib2xkSWRcIjogXCJzdHJpbmdcIixcbiAgXCJyZXBldGl0aW9uc1wiOiBcIm51bWJlclwiLFxuICBcInRpbWVSYW5nZVRvXCI6IFwibnVtYmVyXCIsXG4gIFwidGltZVVuaXRcIjogXCJzdHJpbmdcIixcbiAgXCJ1cGRhdGVkQXRcIjogXCJzdHJpbmdcIlxufTtcbiJdfQ==

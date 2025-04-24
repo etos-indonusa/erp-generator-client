@@ -1,0 +1,14 @@
+export const AmimsMpcPiroItemDtoFields = {
+    "createdAt": "string",
+    "forFigureIndex": "string",
+    "idMpart": "string",
+    "idMpcPiro": "string",
+    "idMpcPiroItem": "string",
+    "isDeleted": "number",
+    "noteItemPiro": "string",
+    "priority": "string",
+    "qtyPiro": "number",
+    "statusItem": "string",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtbXBjLXBpcm8taXRlbS1kdG8uZmllbGRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvc2RrY29yZS9zcmMvbGliL2R0by10by1maWVsZHMvYW1pbXMtbXBjLXBpcm8taXRlbS1kdG8uZmllbGRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE1BQU0sQ0FBQyxNQUFNLHlCQUF5QixHQUFvRDtJQUN4RixXQUFXLEVBQUUsUUFBUTtJQUNyQixnQkFBZ0IsRUFBRSxRQUFRO0lBQzFCLFNBQVMsRUFBRSxRQUFRO0lBQ25CLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLGVBQWUsRUFBRSxRQUFRO0lBQ3pCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLGNBQWMsRUFBRSxRQUFRO0lBQ3hCLFVBQVUsRUFBRSxRQUFRO0lBQ3BCLFNBQVMsRUFBRSxRQUFRO0lBQ25CLFlBQVksRUFBRSxRQUFRO0lBQ3RCLFdBQVcsRUFBRSxRQUFRO0NBQ3RCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgQW1pbXNNcGNQaXJvSXRlbUR0b0ZpZWxkczogUmVjb3JkPHN0cmluZywgJ3N0cmluZycgfCAnYm9vbGVhbicgfCAnbnVtYmVyJz4gPSB7XG4gIFwiY3JlYXRlZEF0XCI6IFwic3RyaW5nXCIsXG4gIFwiZm9yRmlndXJlSW5kZXhcIjogXCJzdHJpbmdcIixcbiAgXCJpZE1wYXJ0XCI6IFwic3RyaW5nXCIsXG4gIFwiaWRNcGNQaXJvXCI6IFwic3RyaW5nXCIsXG4gIFwiaWRNcGNQaXJvSXRlbVwiOiBcInN0cmluZ1wiLFxuICBcImlzRGVsZXRlZFwiOiBcIm51bWJlclwiLFxuICBcIm5vdGVJdGVtUGlyb1wiOiBcInN0cmluZ1wiLFxuICBcInByaW9yaXR5XCI6IFwic3RyaW5nXCIsXG4gIFwicXR5UGlyb1wiOiBcIm51bWJlclwiLFxuICBcInN0YXR1c0l0ZW1cIjogXCJzdHJpbmdcIixcbiAgXCJ1cGRhdGVkQXRcIjogXCJzdHJpbmdcIlxufTtcbiJdfQ==

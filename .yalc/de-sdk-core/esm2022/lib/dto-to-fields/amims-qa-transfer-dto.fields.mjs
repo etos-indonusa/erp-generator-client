@@ -1,0 +1,18 @@
+export const AmimsQaTransferDtoFields = {
+    "createdAt": "string",
+    "dateReceived": "string",
+    "dateTransfer": "string",
+    "idQaTransfer": "string",
+    "idSite": "string",
+    "idUser": "string",
+    "idUserReceived": "string",
+    "noIndex": "number",
+    "noteTransfer": "string",
+    "numberTransfer": "string",
+    "statusTransfer": "string",
+    "toSite": "number",
+    "typeTransfer": "string",
+    "updatedAt": "string",
+    "validasi": "number"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtcWEtdHJhbnNmZXItZHRvLmZpZWxkcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL3Nka2NvcmUvc3JjL2xpYi9kdG8tdG8tZmllbGRzL2FtaW1zLXFhLXRyYW5zZmVyLWR0by5maWVsZHMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsTUFBTSxDQUFDLE1BQU0sd0JBQXdCLEdBQW9EO0lBQ3ZGLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLGNBQWMsRUFBRSxRQUFRO0lBQ3hCLGNBQWMsRUFBRSxRQUFRO0lBQ3hCLGNBQWMsRUFBRSxRQUFRO0lBQ3hCLFFBQVEsRUFBRSxRQUFRO0lBQ2xCLFFBQVEsRUFBRSxRQUFRO0lBQ2xCLGdCQUFnQixFQUFFLFFBQVE7SUFDMUIsU0FBUyxFQUFFLFFBQVE7SUFDbkIsY0FBYyxFQUFFLFFBQVE7SUFDeEIsZ0JBQWdCLEVBQUUsUUFBUTtJQUMxQixnQkFBZ0IsRUFBRSxRQUFRO0lBQzFCLFFBQVEsRUFBRSxRQUFRO0lBQ2xCLGNBQWMsRUFBRSxRQUFRO0lBQ3hCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLFVBQVUsRUFBRSxRQUFRO0NBQ3JCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgQW1pbXNRYVRyYW5zZmVyRHRvRmllbGRzOiBSZWNvcmQ8c3RyaW5nLCAnc3RyaW5nJyB8ICdib29sZWFuJyB8ICdudW1iZXInPiA9IHtcbiAgXCJjcmVhdGVkQXRcIjogXCJzdHJpbmdcIixcbiAgXCJkYXRlUmVjZWl2ZWRcIjogXCJzdHJpbmdcIixcbiAgXCJkYXRlVHJhbnNmZXJcIjogXCJzdHJpbmdcIixcbiAgXCJpZFFhVHJhbnNmZXJcIjogXCJzdHJpbmdcIixcbiAgXCJpZFNpdGVcIjogXCJzdHJpbmdcIixcbiAgXCJpZFVzZXJcIjogXCJzdHJpbmdcIixcbiAgXCJpZFVzZXJSZWNlaXZlZFwiOiBcInN0cmluZ1wiLFxuICBcIm5vSW5kZXhcIjogXCJudW1iZXJcIixcbiAgXCJub3RlVHJhbnNmZXJcIjogXCJzdHJpbmdcIixcbiAgXCJudW1iZXJUcmFuc2ZlclwiOiBcInN0cmluZ1wiLFxuICBcInN0YXR1c1RyYW5zZmVyXCI6IFwic3RyaW5nXCIsXG4gIFwidG9TaXRlXCI6IFwibnVtYmVyXCIsXG4gIFwidHlwZVRyYW5zZmVyXCI6IFwic3RyaW5nXCIsXG4gIFwidXBkYXRlZEF0XCI6IFwic3RyaW5nXCIsXG4gIFwidmFsaWRhc2lcIjogXCJudW1iZXJcIlxufTtcbiJdfQ==

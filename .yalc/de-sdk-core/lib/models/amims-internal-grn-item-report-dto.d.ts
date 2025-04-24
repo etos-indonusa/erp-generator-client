@@ -1,0 +1,16 @@
+import { AmimsMpartDto } from '../models/amims-mpart-dto';
+import { AmimsPartDto } from '../models/amims-part-dto';
+export interface AmimsInternalGrnItemReportDto {
+    createdAt?: string;
+    idEngineerPrisItem?: string;
+    idInternalGrn?: string;
+    idInternalGrnItem: string;
+    idMpart?: string;
+    idPart?: string;
+    mpart: AmimsMpartDto;
+    part: AmimsPartDto;
+    qtyGrn?: number;
+    remark?: string;
+    statusItem?: string;
+    updatedAt?: string;
+}

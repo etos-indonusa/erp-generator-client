@@ -1,0 +1,12 @@
+export const AmimsPurGrnItemDtoFields = {
+    "idMpart": "string",
+    "idPart": "string",
+    "idPurGrn": "string",
+    "idPurGrnItem": "string",
+    "idPurPoItem": "string",
+    "noteGrnItem": "string",
+    "qtyGrn": "number",
+    "serialNumber": "string",
+    "statusGrn": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtcHVyLWdybi1pdGVtLWR0by5maWVsZHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9zZGtjb3JlL3NyYy9saWIvZHRvLXRvLWZpZWxkcy9hbWltcy1wdXItZ3JuLWl0ZW0tZHRvLmZpZWxkcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxNQUFNLENBQUMsTUFBTSx3QkFBd0IsR0FBb0Q7SUFDdkYsU0FBUyxFQUFFLFFBQVE7SUFDbkIsUUFBUSxFQUFFLFFBQVE7SUFDbEIsVUFBVSxFQUFFLFFBQVE7SUFDcEIsY0FBYyxFQUFFLFFBQVE7SUFDeEIsYUFBYSxFQUFFLFFBQVE7SUFDdkIsYUFBYSxFQUFFLFFBQVE7SUFDdkIsUUFBUSxFQUFFLFFBQVE7SUFDbEIsY0FBYyxFQUFFLFFBQVE7SUFDeEIsV0FBVyxFQUFFLFFBQVE7Q0FDdEIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBBbWltc1B1ckdybkl0ZW1EdG9GaWVsZHM6IFJlY29yZDxzdHJpbmcsICdzdHJpbmcnIHwgJ2Jvb2xlYW4nIHwgJ251bWJlcic+ID0ge1xuICBcImlkTXBhcnRcIjogXCJzdHJpbmdcIixcbiAgXCJpZFBhcnRcIjogXCJzdHJpbmdcIixcbiAgXCJpZFB1ckdyblwiOiBcInN0cmluZ1wiLFxuICBcImlkUHVyR3JuSXRlbVwiOiBcInN0cmluZ1wiLFxuICBcImlkUHVyUG9JdGVtXCI6IFwic3RyaW5nXCIsXG4gIFwibm90ZUdybkl0ZW1cIjogXCJzdHJpbmdcIixcbiAgXCJxdHlHcm5cIjogXCJudW1iZXJcIixcbiAgXCJzZXJpYWxOdW1iZXJcIjogXCJzdHJpbmdcIixcbiAgXCJzdGF0dXNHcm5cIjogXCJzdHJpbmdcIlxufTtcbiJdfQ==

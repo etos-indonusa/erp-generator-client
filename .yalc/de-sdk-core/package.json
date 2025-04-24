@@ -1,0 +1,27 @@
+{
+  "name": "de-sdk-core",
+  "version": "0.0.4",
+  "peerDependencies": {
+    "@angular/common": "^18.2.0",
+    "@angular/core": "^18.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "module": "fesm2022/de-sdk-core.mjs",
+  "typings": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "esm2022": "./esm2022/de-sdk-core.mjs",
+      "esm": "./esm2022/de-sdk-core.mjs",
+      "default": "./fesm2022/de-sdk-core.mjs"
+    },
+    "./package.json": {
+      "default": "./package.json"
+    }
+  },
+  "main": "fesm2022/de-sdk-core.mjs",
+  "yalcSig": "c382a629f3cdd0bf030e79029d84a93c"
+}

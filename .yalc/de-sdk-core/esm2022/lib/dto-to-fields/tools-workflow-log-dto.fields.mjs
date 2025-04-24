@@ -1,0 +1,15 @@
+export const ToolsWorkflowLogDtoFields = {
+    "approvedAt": "string",
+    "approvedBy": "string",
+    "catatan": "string",
+    "forModule": "string",
+    "fromModuleId": "string",
+    "idUsers": "string",
+    "idWorkflow": "string",
+    "idWorkflowLog": "string",
+    "idWorkflowStep": "string",
+    "namaUser": "string",
+    "statusAfter": "string",
+    "statusBefore": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidG9vbHMtd29ya2Zsb3ctbG9nLWR0by5maWVsZHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9zZGtjb3JlL3NyYy9saWIvZHRvLXRvLWZpZWxkcy90b29scy13b3JrZmxvdy1sb2ctZHRvLmZpZWxkcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxNQUFNLENBQUMsTUFBTSx5QkFBeUIsR0FBb0Q7SUFDeEYsWUFBWSxFQUFFLFFBQVE7SUFDdEIsWUFBWSxFQUFFLFFBQVE7SUFDdEIsU0FBUyxFQUFFLFFBQVE7SUFDbkIsV0FBVyxFQUFFLFFBQVE7SUFDckIsY0FBYyxFQUFFLFFBQVE7SUFDeEIsU0FBUyxFQUFFLFFBQVE7SUFDbkIsWUFBWSxFQUFFLFFBQVE7SUFDdEIsZUFBZSxFQUFFLFFBQVE7SUFDekIsZ0JBQWdCLEVBQUUsUUFBUTtJQUMxQixVQUFVLEVBQUUsUUFBUTtJQUNwQixhQUFhLEVBQUUsUUFBUTtJQUN2QixjQUFjLEVBQUUsUUFBUTtDQUN6QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IFRvb2xzV29ya2Zsb3dMb2dEdG9GaWVsZHM6IFJlY29yZDxzdHJpbmcsICdzdHJpbmcnIHwgJ2Jvb2xlYW4nIHwgJ251bWJlcic+ID0ge1xuICBcImFwcHJvdmVkQXRcIjogXCJzdHJpbmdcIixcbiAgXCJhcHByb3ZlZEJ5XCI6IFwic3RyaW5nXCIsXG4gIFwiY2F0YXRhblwiOiBcInN0cmluZ1wiLFxuICBcImZvck1vZHVsZVwiOiBcInN0cmluZ1wiLFxuICBcImZyb21Nb2R1bGVJZFwiOiBcInN0cmluZ1wiLFxuICBcImlkVXNlcnNcIjogXCJzdHJpbmdcIixcbiAgXCJpZFdvcmtmbG93XCI6IFwic3RyaW5nXCIsXG4gIFwiaWRXb3JrZmxvd0xvZ1wiOiBcInN0cmluZ1wiLFxuICBcImlkV29ya2Zsb3dTdGVwXCI6IFwic3RyaW5nXCIsXG4gIFwibmFtYVVzZXJcIjogXCJzdHJpbmdcIixcbiAgXCJzdGF0dXNBZnRlclwiOiBcInN0cmluZ1wiLFxuICBcInN0YXR1c0JlZm9yZVwiOiBcInN0cmluZ1wiXG59O1xuIl19

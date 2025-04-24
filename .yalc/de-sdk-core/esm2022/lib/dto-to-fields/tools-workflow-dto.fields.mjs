@@ -1,0 +1,14 @@
+export const ToolsWorkflowDtoFields = {
+    "createdAt": "string",
+    "forModule": "string",
+    "idKantor": "string",
+    "idWorkflow": "string",
+    "isDefault": "boolean",
+    "keterangan": "string",
+    "namaWorkflow": "string",
+    "statusWorkflow": "string",
+    "targetDb": "string",
+    "targetTable": "string",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidG9vbHMtd29ya2Zsb3ctZHRvLmZpZWxkcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL3Nka2NvcmUvc3JjL2xpYi9kdG8tdG8tZmllbGRzL3Rvb2xzLXdvcmtmbG93LWR0by5maWVsZHMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsTUFBTSxDQUFDLE1BQU0sc0JBQXNCLEdBQW9EO0lBQ3JGLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLFVBQVUsRUFBRSxRQUFRO0lBQ3BCLFlBQVksRUFBRSxRQUFRO0lBQ3RCLFdBQVcsRUFBRSxTQUFTO0lBQ3RCLFlBQVksRUFBRSxRQUFRO0lBQ3RCLGNBQWMsRUFBRSxRQUFRO0lBQ3hCLGdCQUFnQixFQUFFLFFBQVE7SUFDMUIsVUFBVSxFQUFFLFFBQVE7SUFDcEIsYUFBYSxFQUFFLFFBQVE7SUFDdkIsV0FBVyxFQUFFLFFBQVE7Q0FDdEIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBUb29sc1dvcmtmbG93RHRvRmllbGRzOiBSZWNvcmQ8c3RyaW5nLCAnc3RyaW5nJyB8ICdib29sZWFuJyB8ICdudW1iZXInPiA9IHtcbiAgXCJjcmVhdGVkQXRcIjogXCJzdHJpbmdcIixcbiAgXCJmb3JNb2R1bGVcIjogXCJzdHJpbmdcIixcbiAgXCJpZEthbnRvclwiOiBcInN0cmluZ1wiLFxuICBcImlkV29ya2Zsb3dcIjogXCJzdHJpbmdcIixcbiAgXCJpc0RlZmF1bHRcIjogXCJib29sZWFuXCIsXG4gIFwia2V0ZXJhbmdhblwiOiBcInN0cmluZ1wiLFxuICBcIm5hbWFXb3JrZmxvd1wiOiBcInN0cmluZ1wiLFxuICBcInN0YXR1c1dvcmtmbG93XCI6IFwic3RyaW5nXCIsXG4gIFwidGFyZ2V0RGJcIjogXCJzdHJpbmdcIixcbiAgXCJ0YXJnZXRUYWJsZVwiOiBcInN0cmluZ1wiLFxuICBcInVwZGF0ZWRBdFwiOiBcInN0cmluZ1wiXG59O1xuIl19

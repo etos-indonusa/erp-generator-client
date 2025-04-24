@@ -1,0 +1,16 @@
+export const AmimsShippingReportDtoFields = {
+    "createdAt": "string",
+    "idShipping": "string",
+    "line0": "string",
+    "line1": "string",
+    "line2": "string",
+    "line3": "string",
+    "line4": "string",
+    "line5": "string",
+    "line6": "string",
+    "line7": "string",
+    "line8": "string",
+    "statusShipping": "string",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtc2hpcHBpbmctcmVwb3J0LWR0by5maWVsZHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9zZGtjb3JlL3NyYy9saWIvZHRvLXRvLWZpZWxkcy9hbWltcy1zaGlwcGluZy1yZXBvcnQtZHRvLmZpZWxkcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxNQUFNLENBQUMsTUFBTSw0QkFBNEIsR0FBb0Q7SUFDM0YsV0FBVyxFQUFFLFFBQVE7SUFDckIsWUFBWSxFQUFFLFFBQVE7SUFDdEIsT0FBTyxFQUFFLFFBQVE7SUFDakIsT0FBTyxFQUFFLFFBQVE7SUFDakIsT0FBTyxFQUFFLFFBQVE7SUFDakIsT0FBTyxFQUFFLFFBQVE7SUFDakIsT0FBTyxFQUFFLFFBQVE7SUFDakIsT0FBTyxFQUFFLFFBQVE7SUFDakIsT0FBTyxFQUFFLFFBQVE7SUFDakIsT0FBTyxFQUFFLFFBQVE7SUFDakIsT0FBTyxFQUFFLFFBQVE7SUFDakIsZ0JBQWdCLEVBQUUsUUFBUTtJQUMxQixXQUFXLEVBQUUsUUFBUTtDQUN0QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IEFtaW1zU2hpcHBpbmdSZXBvcnREdG9GaWVsZHM6IFJlY29yZDxzdHJpbmcsICdzdHJpbmcnIHwgJ2Jvb2xlYW4nIHwgJ251bWJlcic+ID0ge1xuICBcImNyZWF0ZWRBdFwiOiBcInN0cmluZ1wiLFxuICBcImlkU2hpcHBpbmdcIjogXCJzdHJpbmdcIixcbiAgXCJsaW5lMFwiOiBcInN0cmluZ1wiLFxuICBcImxpbmUxXCI6IFwic3RyaW5nXCIsXG4gIFwibGluZTJcIjogXCJzdHJpbmdcIixcbiAgXCJsaW5lM1wiOiBcInN0cmluZ1wiLFxuICBcImxpbmU0XCI6IFwic3RyaW5nXCIsXG4gIFwibGluZTVcIjogXCJzdHJpbmdcIixcbiAgXCJsaW5lNlwiOiBcInN0cmluZ1wiLFxuICBcImxpbmU3XCI6IFwic3RyaW5nXCIsXG4gIFwibGluZThcIjogXCJzdHJpbmdcIixcbiAgXCJzdGF0dXNTaGlwcGluZ1wiOiBcInN0cmluZ1wiLFxuICBcInVwZGF0ZWRBdFwiOiBcInN0cmluZ1wiXG59O1xuIl19

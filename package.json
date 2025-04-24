@@ -46,7 +46,7 @@
         "apexcharts": "^3.53.0",
         "bootstrap": "^5.3.3",
         "chart.js": "^4.4.4",
-        "de-sdk-core": "^0.0.4",
+        "de-sdk-core": "file:.yalc/de-sdk-core",
         "feather-icons": "^4.29.2",
         "fs-extra": "^11.3.0",
         "json5": "^2.2.3",

@@ -1,0 +1,14 @@
+export const PelangganContractSiteDtoFields = {
+    "biayaAkhir": "number",
+    "biayaBulanan": "number",
+    "biayaDiawal": "number",
+    "catatan": "string",
+    "createdAt": "string",
+    "idClientSite": "string",
+    "idContract": "string",
+    "idContractSite": "string",
+    "jumlahJadwalPerBulan": "number",
+    "statusContractSite": "string",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGVsYW5nZ2FuLWNvbnRyYWN0LXNpdGUtZHRvLmZpZWxkcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL3Nka2NvcmUvc3JjL2xpYi9kdG8tdG8tZmllbGRzL3BlbGFuZ2dhbi1jb250cmFjdC1zaXRlLWR0by5maWVsZHMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsTUFBTSxDQUFDLE1BQU0sOEJBQThCLEdBQW9EO0lBQzdGLFlBQVksRUFBRSxRQUFRO0lBQ3RCLGNBQWMsRUFBRSxRQUFRO0lBQ3hCLGFBQWEsRUFBRSxRQUFRO0lBQ3ZCLFNBQVMsRUFBRSxRQUFRO0lBQ25CLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLGNBQWMsRUFBRSxRQUFRO0lBQ3hCLFlBQVksRUFBRSxRQUFRO0lBQ3RCLGdCQUFnQixFQUFFLFFBQVE7SUFDMUIsc0JBQXNCLEVBQUUsUUFBUTtJQUNoQyxvQkFBb0IsRUFBRSxRQUFRO0lBQzlCLFdBQVcsRUFBRSxRQUFRO0NBQ3RCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgUGVsYW5nZ2FuQ29udHJhY3RTaXRlRHRvRmllbGRzOiBSZWNvcmQ8c3RyaW5nLCAnc3RyaW5nJyB8ICdib29sZWFuJyB8ICdudW1iZXInPiA9IHtcbiAgXCJiaWF5YUFraGlyXCI6IFwibnVtYmVyXCIsXG4gIFwiYmlheWFCdWxhbmFuXCI6IFwibnVtYmVyXCIsXG4gIFwiYmlheWFEaWF3YWxcIjogXCJudW1iZXJcIixcbiAgXCJjYXRhdGFuXCI6IFwic3RyaW5nXCIsXG4gIFwiY3JlYXRlZEF0XCI6IFwic3RyaW5nXCIsXG4gIFwiaWRDbGllbnRTaXRlXCI6IFwic3RyaW5nXCIsXG4gIFwiaWRDb250cmFjdFwiOiBcInN0cmluZ1wiLFxuICBcImlkQ29udHJhY3RTaXRlXCI6IFwic3RyaW5nXCIsXG4gIFwianVtbGFoSmFkd2FsUGVyQnVsYW5cIjogXCJudW1iZXJcIixcbiAgXCJzdGF0dXNDb250cmFjdFNpdGVcIjogXCJzdHJpbmdcIixcbiAgXCJ1cGRhdGVkQXRcIjogXCJzdHJpbmdcIlxufTtcbiJdfQ==

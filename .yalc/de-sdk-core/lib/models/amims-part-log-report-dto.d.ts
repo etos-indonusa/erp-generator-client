@@ -1,0 +1,36 @@
+import { AmimsPartDto } from '../models/amims-part-dto';
+import { AmimsPositionDto } from '../models/amims-position-dto';
+import { AmimsSiteDto } from '../models/amims-site-dto';
+export interface AmimsPartLogReportDto {
+    activity?: string;
+    createdAt?: string;
+    dateLog?: string;
+    fromModule?: string;
+    idModule?: string;
+    idPart?: string;
+    idPartLog: string;
+    idPosition?: string;
+    idSite?: string;
+    idUser?: string;
+    numberModule?: string;
+    oldId?: string;
+    part: AmimsPartDto;
+    position: AmimsPositionDto;
+    qtyLog?: number;
+    site: AmimsSiteDto;
+    statusOnInventory?: string;
+    tboCycle?: number;
+    tboHours?: number;
+    tboVal?: number;
+    tboVar?: string;
+    toLocation?: string;
+    tsnCycle?: number;
+    tsnHours?: number;
+    tsnVal?: number;
+    tsnVar?: string;
+    tsoCycle?: number;
+    tsoHours?: number;
+    tsoVal?: number;
+    tsoVar?: string;
+    updatedAt?: string;
+}

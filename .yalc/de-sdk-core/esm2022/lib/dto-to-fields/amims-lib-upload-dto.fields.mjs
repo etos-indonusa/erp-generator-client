@@ -1,0 +1,12 @@
+export const AmimsLibUploadDtoFields = {
+    "category": "string",
+    "createdAt": "string",
+    "fileDate": "string",
+    "fileName": "string",
+    "fileNumber": "string",
+    "forModule": "string",
+    "idLibUpload": "string",
+    "idModule": "string",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtbGliLXVwbG9hZC1kdG8uZmllbGRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvc2RrY29yZS9zcmMvbGliL2R0by10by1maWVsZHMvYW1pbXMtbGliLXVwbG9hZC1kdG8uZmllbGRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE1BQU0sQ0FBQyxNQUFNLHVCQUF1QixHQUFvRDtJQUN0RixVQUFVLEVBQUUsUUFBUTtJQUNwQixXQUFXLEVBQUUsUUFBUTtJQUNyQixVQUFVLEVBQUUsUUFBUTtJQUNwQixVQUFVLEVBQUUsUUFBUTtJQUNwQixZQUFZLEVBQUUsUUFBUTtJQUN0QixXQUFXLEVBQUUsUUFBUTtJQUNyQixhQUFhLEVBQUUsUUFBUTtJQUN2QixVQUFVLEVBQUUsUUFBUTtJQUNwQixXQUFXLEVBQUUsUUFBUTtDQUN0QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IEFtaW1zTGliVXBsb2FkRHRvRmllbGRzOiBSZWNvcmQ8c3RyaW5nLCAnc3RyaW5nJyB8ICdib29sZWFuJyB8ICdudW1iZXInPiA9IHtcbiAgXCJjYXRlZ29yeVwiOiBcInN0cmluZ1wiLFxuICBcImNyZWF0ZWRBdFwiOiBcInN0cmluZ1wiLFxuICBcImZpbGVEYXRlXCI6IFwic3RyaW5nXCIsXG4gIFwiZmlsZU5hbWVcIjogXCJzdHJpbmdcIixcbiAgXCJmaWxlTnVtYmVyXCI6IFwic3RyaW5nXCIsXG4gIFwiZm9yTW9kdWxlXCI6IFwic3RyaW5nXCIsXG4gIFwiaWRMaWJVcGxvYWRcIjogXCJzdHJpbmdcIixcbiAgXCJpZE1vZHVsZVwiOiBcInN0cmluZ1wiLFxuICBcInVwZGF0ZWRBdFwiOiBcInN0cmluZ1wiXG59O1xuIl19

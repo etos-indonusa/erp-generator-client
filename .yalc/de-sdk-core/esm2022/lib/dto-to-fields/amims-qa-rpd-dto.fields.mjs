@@ -1,0 +1,11 @@
+export const AmimsQaRpdDtoFields = {
+    "createdAt": "string",
+    "dateRpd": "string",
+    "idQaRpd": "string",
+    "idUserQa": "string",
+    "numberRpd": "string",
+    "statusRpd": "string",
+    "tipe": "string",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtcWEtcnBkLWR0by5maWVsZHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9zZGtjb3JlL3NyYy9saWIvZHRvLXRvLWZpZWxkcy9hbWltcy1xYS1ycGQtZHRvLmZpZWxkcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxNQUFNLENBQUMsTUFBTSxtQkFBbUIsR0FBb0Q7SUFDbEYsV0FBVyxFQUFFLFFBQVE7SUFDckIsU0FBUyxFQUFFLFFBQVE7SUFDbkIsU0FBUyxFQUFFLFFBQVE7SUFDbkIsVUFBVSxFQUFFLFFBQVE7SUFDcEIsV0FBVyxFQUFFLFFBQVE7SUFDckIsV0FBVyxFQUFFLFFBQVE7SUFDckIsTUFBTSxFQUFFLFFBQVE7SUFDaEIsV0FBVyxFQUFFLFFBQVE7Q0FDdEIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBBbWltc1FhUnBkRHRvRmllbGRzOiBSZWNvcmQ8c3RyaW5nLCAnc3RyaW5nJyB8ICdib29sZWFuJyB8ICdudW1iZXInPiA9IHtcbiAgXCJjcmVhdGVkQXRcIjogXCJzdHJpbmdcIixcbiAgXCJkYXRlUnBkXCI6IFwic3RyaW5nXCIsXG4gIFwiaWRRYVJwZFwiOiBcInN0cmluZ1wiLFxuICBcImlkVXNlclFhXCI6IFwic3RyaW5nXCIsXG4gIFwibnVtYmVyUnBkXCI6IFwic3RyaW5nXCIsXG4gIFwic3RhdHVzUnBkXCI6IFwic3RyaW5nXCIsXG4gIFwidGlwZVwiOiBcInN0cmluZ1wiLFxuICBcInVwZGF0ZWRBdFwiOiBcInN0cmluZ1wiXG59O1xuIl19

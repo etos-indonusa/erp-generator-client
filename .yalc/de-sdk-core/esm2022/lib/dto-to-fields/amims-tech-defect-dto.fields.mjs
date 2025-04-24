@@ -1,0 +1,18 @@
+export const AmimsTechDefectDtoFields = {
+    "createdAt": "string",
+    "dateDefect": "string",
+    "doneCycle": "number",
+    "doneDate": "string",
+    "doneHours": "number",
+    "idAircraft": "string",
+    "idEngineerRti": "string",
+    "idPart": "string",
+    "idPartInstall": "string",
+    "idTechDefect": "string",
+    "idTechLog": "string",
+    "noteDefect": "string",
+    "statusDefect": "string",
+    "updatedAt": "string",
+    "userSign": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtdGVjaC1kZWZlY3QtZHRvLmZpZWxkcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL3Nka2NvcmUvc3JjL2xpYi9kdG8tdG8tZmllbGRzL2FtaW1zLXRlY2gtZGVmZWN0LWR0by5maWVsZHMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsTUFBTSxDQUFDLE1BQU0sd0JBQXdCLEdBQW9EO0lBQ3ZGLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLFlBQVksRUFBRSxRQUFRO0lBQ3RCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLFVBQVUsRUFBRSxRQUFRO0lBQ3BCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLFlBQVksRUFBRSxRQUFRO0lBQ3RCLGVBQWUsRUFBRSxRQUFRO0lBQ3pCLFFBQVEsRUFBRSxRQUFRO0lBQ2xCLGVBQWUsRUFBRSxRQUFRO0lBQ3pCLGNBQWMsRUFBRSxRQUFRO0lBQ3hCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLFlBQVksRUFBRSxRQUFRO0lBQ3RCLGNBQWMsRUFBRSxRQUFRO0lBQ3hCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLFVBQVUsRUFBRSxRQUFRO0NBQ3JCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgQW1pbXNUZWNoRGVmZWN0RHRvRmllbGRzOiBSZWNvcmQ8c3RyaW5nLCAnc3RyaW5nJyB8ICdib29sZWFuJyB8ICdudW1iZXInPiA9IHtcbiAgXCJjcmVhdGVkQXRcIjogXCJzdHJpbmdcIixcbiAgXCJkYXRlRGVmZWN0XCI6IFwic3RyaW5nXCIsXG4gIFwiZG9uZUN5Y2xlXCI6IFwibnVtYmVyXCIsXG4gIFwiZG9uZURhdGVcIjogXCJzdHJpbmdcIixcbiAgXCJkb25lSG91cnNcIjogXCJudW1iZXJcIixcbiAgXCJpZEFpcmNyYWZ0XCI6IFwic3RyaW5nXCIsXG4gIFwiaWRFbmdpbmVlclJ0aVwiOiBcInN0cmluZ1wiLFxuICBcImlkUGFydFwiOiBcInN0cmluZ1wiLFxuICBcImlkUGFydEluc3RhbGxcIjogXCJzdHJpbmdcIixcbiAgXCJpZFRlY2hEZWZlY3RcIjogXCJzdHJpbmdcIixcbiAgXCJpZFRlY2hMb2dcIjogXCJzdHJpbmdcIixcbiAgXCJub3RlRGVmZWN0XCI6IFwic3RyaW5nXCIsXG4gIFwic3RhdHVzRGVmZWN0XCI6IFwic3RyaW5nXCIsXG4gIFwidXBkYXRlZEF0XCI6IFwic3RyaW5nXCIsXG4gIFwidXNlclNpZ25cIjogXCJzdHJpbmdcIlxufTtcbiJdfQ==

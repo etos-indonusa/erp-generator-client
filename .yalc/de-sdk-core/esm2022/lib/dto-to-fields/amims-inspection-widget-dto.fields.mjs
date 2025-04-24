@@ -1,0 +1,19 @@
+export const AmimsInspectionWidgetDtoFields = {
+    "atachapter": "string",
+    "createdAt": "string",
+    "cycleTo": "number",
+    "flightHoursTo": "number",
+    "idAircraft": "string",
+    "idInspection": "string",
+    "idMaintenanceCode": "string",
+    "idPart": "string",
+    "idUser": "string",
+    "noteInspection": "string",
+    "oldId": "string",
+    "repetitions": "number",
+    "timeRangeTo": "number",
+    "timeUnit": "string",
+    "total": "number",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtaW5zcGVjdGlvbi13aWRnZXQtZHRvLmZpZWxkcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL3Nka2NvcmUvc3JjL2xpYi9kdG8tdG8tZmllbGRzL2FtaW1zLWluc3BlY3Rpb24td2lkZ2V0LWR0by5maWVsZHMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsTUFBTSxDQUFDLE1BQU0sOEJBQThCLEdBQW9EO0lBQzdGLFlBQVksRUFBRSxRQUFRO0lBQ3RCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLFNBQVMsRUFBRSxRQUFRO0lBQ25CLGVBQWUsRUFBRSxRQUFRO0lBQ3pCLFlBQVksRUFBRSxRQUFRO0lBQ3RCLGNBQWMsRUFBRSxRQUFRO0lBQ3hCLG1CQUFtQixFQUFFLFFBQVE7SUFDN0IsUUFBUSxFQUFFLFFBQVE7SUFDbEIsUUFBUSxFQUFFLFFBQVE7SUFDbEIsZ0JBQWdCLEVBQUUsUUFBUTtJQUMxQixPQUFPLEVBQUUsUUFBUTtJQUNqQixhQUFhLEVBQUUsUUFBUTtJQUN2QixhQUFhLEVBQUUsUUFBUTtJQUN2QixVQUFVLEVBQUUsUUFBUTtJQUNwQixPQUFPLEVBQUUsUUFBUTtJQUNqQixXQUFXLEVBQUUsUUFBUTtDQUN0QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IEFtaW1zSW5zcGVjdGlvbldpZGdldER0b0ZpZWxkczogUmVjb3JkPHN0cmluZywgJ3N0cmluZycgfCAnYm9vbGVhbicgfCAnbnVtYmVyJz4gPSB7XG4gIFwiYXRhY2hhcHRlclwiOiBcInN0cmluZ1wiLFxuICBcImNyZWF0ZWRBdFwiOiBcInN0cmluZ1wiLFxuICBcImN5Y2xlVG9cIjogXCJudW1iZXJcIixcbiAgXCJmbGlnaHRIb3Vyc1RvXCI6IFwibnVtYmVyXCIsXG4gIFwiaWRBaXJjcmFmdFwiOiBcInN0cmluZ1wiLFxuICBcImlkSW5zcGVjdGlvblwiOiBcInN0cmluZ1wiLFxuICBcImlkTWFpbnRlbmFuY2VDb2RlXCI6IFwic3RyaW5nXCIsXG4gIFwiaWRQYXJ0XCI6IFwic3RyaW5nXCIsXG4gIFwiaWRVc2VyXCI6IFwic3RyaW5nXCIsXG4gIFwibm90ZUluc3BlY3Rpb25cIjogXCJzdHJpbmdcIixcbiAgXCJvbGRJZFwiOiBcInN0cmluZ1wiLFxuICBcInJlcGV0aXRpb25zXCI6IFwibnVtYmVyXCIsXG4gIFwidGltZVJhbmdlVG9cIjogXCJudW1iZXJcIixcbiAgXCJ0aW1lVW5pdFwiOiBcInN0cmluZ1wiLFxuICBcInRvdGFsXCI6IFwibnVtYmVyXCIsXG4gIFwidXBkYXRlZEF0XCI6IFwic3RyaW5nXCJcbn07XG4iXX0=

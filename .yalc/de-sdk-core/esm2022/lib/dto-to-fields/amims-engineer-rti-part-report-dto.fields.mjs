@@ -1,0 +1,26 @@
+export const AmimsEngineerRtiPartReportDtoFields = {
+    "dateInstall": "string",
+    "idEngineerRti": "string",
+    "idEngineerRtiPart": "string",
+    "idPart": "string",
+    "idPartInstall": "string",
+    "parent": "string",
+    "part": "string",
+    "tsiCycle": "number",
+    "tsiHours": "number",
+    "tsiVal": "number",
+    "tsiVar": "string",
+    "tsnCycle": "number",
+    "tsnHours": "number",
+    "tsnVal": "number",
+    "tsnVar": "string",
+    "tsoCycle": "number",
+    "tsoHours": "number",
+    "tsoVal": "number",
+    "tsoVar": "string",
+    "warantyStartCycle": "number",
+    "warantyStartDate": "string",
+    "warantyStartDays": "number",
+    "warantyStartHours": "number"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtZW5naW5lZXItcnRpLXBhcnQtcmVwb3J0LWR0by5maWVsZHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9zZGtjb3JlL3NyYy9saWIvZHRvLXRvLWZpZWxkcy9hbWltcy1lbmdpbmVlci1ydGktcGFydC1yZXBvcnQtZHRvLmZpZWxkcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxNQUFNLENBQUMsTUFBTSxtQ0FBbUMsR0FBb0Q7SUFDbEcsYUFBYSxFQUFFLFFBQVE7SUFDdkIsZUFBZSxFQUFFLFFBQVE7SUFDekIsbUJBQW1CLEVBQUUsUUFBUTtJQUM3QixRQUFRLEVBQUUsUUFBUTtJQUNsQixlQUFlLEVBQUUsUUFBUTtJQUN6QixRQUFRLEVBQUUsUUFBUTtJQUNsQixNQUFNLEVBQUUsUUFBUTtJQUNoQixVQUFVLEVBQUUsUUFBUTtJQUNwQixVQUFVLEVBQUUsUUFBUTtJQUNwQixRQUFRLEVBQUUsUUFBUTtJQUNsQixRQUFRLEVBQUUsUUFBUTtJQUNsQixVQUFVLEVBQUUsUUFBUTtJQUNwQixVQUFVLEVBQUUsUUFBUTtJQUNwQixRQUFRLEVBQUUsUUFBUTtJQUNsQixRQUFRLEVBQUUsUUFBUTtJQUNsQixVQUFVLEVBQUUsUUFBUTtJQUNwQixVQUFVLEVBQUUsUUFBUTtJQUNwQixRQUFRLEVBQUUsUUFBUTtJQUNsQixRQUFRLEVBQUUsUUFBUTtJQUNsQixtQkFBbUIsRUFBRSxRQUFRO0lBQzdCLGtCQUFrQixFQUFFLFFBQVE7SUFDNUIsa0JBQWtCLEVBQUUsUUFBUTtJQUM1QixtQkFBbUIsRUFBRSxRQUFRO0NBQzlCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgQW1pbXNFbmdpbmVlclJ0aVBhcnRSZXBvcnREdG9GaWVsZHM6IFJlY29yZDxzdHJpbmcsICdzdHJpbmcnIHwgJ2Jvb2xlYW4nIHwgJ251bWJlcic+ID0ge1xuICBcImRhdGVJbnN0YWxsXCI6IFwic3RyaW5nXCIsXG4gIFwiaWRFbmdpbmVlclJ0aVwiOiBcInN0cmluZ1wiLFxuICBcImlkRW5naW5lZXJSdGlQYXJ0XCI6IFwic3RyaW5nXCIsXG4gIFwiaWRQYXJ0XCI6IFwic3RyaW5nXCIsXG4gIFwiaWRQYXJ0SW5zdGFsbFwiOiBcInN0cmluZ1wiLFxuICBcInBhcmVudFwiOiBcInN0cmluZ1wiLFxuICBcInBhcnRcIjogXCJzdHJpbmdcIixcbiAgXCJ0c2lDeWNsZVwiOiBcIm51bWJlclwiLFxuICBcInRzaUhvdXJzXCI6IFwibnVtYmVyXCIsXG4gIFwidHNpVmFsXCI6IFwibnVtYmVyXCIsXG4gIFwidHNpVmFyXCI6IFwic3RyaW5nXCIsXG4gIFwidHNuQ3ljbGVcIjogXCJudW1iZXJcIixcbiAgXCJ0c25Ib3Vyc1wiOiBcIm51bWJlclwiLFxuICBcInRzblZhbFwiOiBcIm51bWJlclwiLFxuICBcInRzblZhclwiOiBcInN0cmluZ1wiLFxuICBcInRzb0N5Y2xlXCI6IFwibnVtYmVyXCIsXG4gIFwidHNvSG91cnNcIjogXCJudW1iZXJcIixcbiAgXCJ0c29WYWxcIjogXCJudW1iZXJcIixcbiAgXCJ0c29WYXJcIjogXCJzdHJpbmdcIixcbiAgXCJ3YXJhbnR5U3RhcnRDeWNsZVwiOiBcIm51bWJlclwiLFxuICBcIndhcmFudHlTdGFydERhdGVcIjogXCJzdHJpbmdcIixcbiAgXCJ3YXJhbnR5U3RhcnREYXlzXCI6IFwibnVtYmVyXCIsXG4gIFwid2FyYW50eVN0YXJ0SG91cnNcIjogXCJudW1iZXJcIlxufTtcbiJdfQ==

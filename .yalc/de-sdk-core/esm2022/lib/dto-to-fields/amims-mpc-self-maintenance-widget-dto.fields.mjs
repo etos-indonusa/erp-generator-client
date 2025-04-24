@@ -1,0 +1,18 @@
+export const AmimsMpcSelfMaintenanceWidgetDtoFields = {
+    "createdAt": "string",
+    "dateAccQa": "string",
+    "dateMaintenance": "string",
+    "doc": "string",
+    "idEngineerRti": "string",
+    "idMpcSelfMaintenance": "string",
+    "idSite": "string",
+    "idUserMaintenance": "string",
+    "idUserQa": "string",
+    "numberMaintenance": "string",
+    "reportMaintenance": "string",
+    "statusMaintenance": "string",
+    "total": "number",
+    "typeMaintenance": "string",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtbXBjLXNlbGYtbWFpbnRlbmFuY2Utd2lkZ2V0LWR0by5maWVsZHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9zZGtjb3JlL3NyYy9saWIvZHRvLXRvLWZpZWxkcy9hbWltcy1tcGMtc2VsZi1tYWludGVuYW5jZS13aWRnZXQtZHRvLmZpZWxkcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxNQUFNLENBQUMsTUFBTSxzQ0FBc0MsR0FBb0Q7SUFDckcsV0FBVyxFQUFFLFFBQVE7SUFDckIsV0FBVyxFQUFFLFFBQVE7SUFDckIsaUJBQWlCLEVBQUUsUUFBUTtJQUMzQixLQUFLLEVBQUUsUUFBUTtJQUNmLGVBQWUsRUFBRSxRQUFRO0lBQ3pCLHNCQUFzQixFQUFFLFFBQVE7SUFDaEMsUUFBUSxFQUFFLFFBQVE7SUFDbEIsbUJBQW1CLEVBQUUsUUFBUTtJQUM3QixVQUFVLEVBQUUsUUFBUTtJQUNwQixtQkFBbUIsRUFBRSxRQUFRO0lBQzdCLG1CQUFtQixFQUFFLFFBQVE7SUFDN0IsbUJBQW1CLEVBQUUsUUFBUTtJQUM3QixPQUFPLEVBQUUsUUFBUTtJQUNqQixpQkFBaUIsRUFBRSxRQUFRO0lBQzNCLFdBQVcsRUFBRSxRQUFRO0NBQ3RCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgQW1pbXNNcGNTZWxmTWFpbnRlbmFuY2VXaWRnZXREdG9GaWVsZHM6IFJlY29yZDxzdHJpbmcsICdzdHJpbmcnIHwgJ2Jvb2xlYW4nIHwgJ251bWJlcic+ID0ge1xuICBcImNyZWF0ZWRBdFwiOiBcInN0cmluZ1wiLFxuICBcImRhdGVBY2NRYVwiOiBcInN0cmluZ1wiLFxuICBcImRhdGVNYWludGVuYW5jZVwiOiBcInN0cmluZ1wiLFxuICBcImRvY1wiOiBcInN0cmluZ1wiLFxuICBcImlkRW5naW5lZXJSdGlcIjogXCJzdHJpbmdcIixcbiAgXCJpZE1wY1NlbGZNYWludGVuYW5jZVwiOiBcInN0cmluZ1wiLFxuICBcImlkU2l0ZVwiOiBcInN0cmluZ1wiLFxuICBcImlkVXNlck1haW50ZW5hbmNlXCI6IFwic3RyaW5nXCIsXG4gIFwiaWRVc2VyUWFcIjogXCJzdHJpbmdcIixcbiAgXCJudW1iZXJNYWludGVuYW5jZVwiOiBcInN0cmluZ1wiLFxuICBcInJlcG9ydE1haW50ZW5hbmNlXCI6IFwic3RyaW5nXCIsXG4gIFwic3RhdHVzTWFpbnRlbmFuY2VcIjogXCJzdHJpbmdcIixcbiAgXCJ0b3RhbFwiOiBcIm51bWJlclwiLFxuICBcInR5cGVNYWludGVuYW5jZVwiOiBcInN0cmluZ1wiLFxuICBcInVwZGF0ZWRBdFwiOiBcInN0cmluZ1wiXG59O1xuIl19

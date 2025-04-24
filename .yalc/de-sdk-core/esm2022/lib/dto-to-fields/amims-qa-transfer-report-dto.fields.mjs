@@ -1,0 +1,19 @@
+export const AmimsQaTransferReportDtoFields = {
+    "createdAt": "string",
+    "dateReceived": "string",
+    "dateTransfer": "string",
+    "idQaTransfer": "string",
+    "idSite": "string",
+    "idUser": "string",
+    "idUserReceived": "string",
+    "noIndex": "number",
+    "noteTransfer": "string",
+    "numberTransfer": "string",
+    "site": "string",
+    "statusTransfer": "string",
+    "toSite": "number",
+    "typeTransfer": "string",
+    "updatedAt": "string",
+    "validasi": "number"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtcWEtdHJhbnNmZXItcmVwb3J0LWR0by5maWVsZHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9zZGtjb3JlL3NyYy9saWIvZHRvLXRvLWZpZWxkcy9hbWltcy1xYS10cmFuc2Zlci1yZXBvcnQtZHRvLmZpZWxkcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxNQUFNLENBQUMsTUFBTSw4QkFBOEIsR0FBb0Q7SUFDN0YsV0FBVyxFQUFFLFFBQVE7SUFDckIsY0FBYyxFQUFFLFFBQVE7SUFDeEIsY0FBYyxFQUFFLFFBQVE7SUFDeEIsY0FBYyxFQUFFLFFBQVE7SUFDeEIsUUFBUSxFQUFFLFFBQVE7SUFDbEIsUUFBUSxFQUFFLFFBQVE7SUFDbEIsZ0JBQWdCLEVBQUUsUUFBUTtJQUMxQixTQUFTLEVBQUUsUUFBUTtJQUNuQixjQUFjLEVBQUUsUUFBUTtJQUN4QixnQkFBZ0IsRUFBRSxRQUFRO0lBQzFCLE1BQU0sRUFBRSxRQUFRO0lBQ2hCLGdCQUFnQixFQUFFLFFBQVE7SUFDMUIsUUFBUSxFQUFFLFFBQVE7SUFDbEIsY0FBYyxFQUFFLFFBQVE7SUFDeEIsV0FBVyxFQUFFLFFBQVE7SUFDckIsVUFBVSxFQUFFLFFBQVE7Q0FDckIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBBbWltc1FhVHJhbnNmZXJSZXBvcnREdG9GaWVsZHM6IFJlY29yZDxzdHJpbmcsICdzdHJpbmcnIHwgJ2Jvb2xlYW4nIHwgJ251bWJlcic+ID0ge1xuICBcImNyZWF0ZWRBdFwiOiBcInN0cmluZ1wiLFxuICBcImRhdGVSZWNlaXZlZFwiOiBcInN0cmluZ1wiLFxuICBcImRhdGVUcmFuc2ZlclwiOiBcInN0cmluZ1wiLFxuICBcImlkUWFUcmFuc2ZlclwiOiBcInN0cmluZ1wiLFxuICBcImlkU2l0ZVwiOiBcInN0cmluZ1wiLFxuICBcImlkVXNlclwiOiBcInN0cmluZ1wiLFxuICBcImlkVXNlclJlY2VpdmVkXCI6IFwic3RyaW5nXCIsXG4gIFwibm9JbmRleFwiOiBcIm51bWJlclwiLFxuICBcIm5vdGVUcmFuc2ZlclwiOiBcInN0cmluZ1wiLFxuICBcIm51bWJlclRyYW5zZmVyXCI6IFwic3RyaW5nXCIsXG4gIFwic2l0ZVwiOiBcInN0cmluZ1wiLFxuICBcInN0YXR1c1RyYW5zZmVyXCI6IFwic3RyaW5nXCIsXG4gIFwidG9TaXRlXCI6IFwibnVtYmVyXCIsXG4gIFwidHlwZVRyYW5zZmVyXCI6IFwic3RyaW5nXCIsXG4gIFwidXBkYXRlZEF0XCI6IFwic3RyaW5nXCIsXG4gIFwidmFsaWRhc2lcIjogXCJudW1iZXJcIlxufTtcbiJdfQ==

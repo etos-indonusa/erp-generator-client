@@ -1,0 +1,17 @@
+export const AmimsPurPrItemWidgetDtoFields = {
+    "createdAt": "string",
+    "idMpart": "string",
+    "idMpcPiroItem": "string",
+    "idPurPr": "string",
+    "idPurPrItem": "string",
+    "isDeleted": "number",
+    "notePrItem": "string",
+    "oldPrItem": "string",
+    "priority": "string",
+    "qtyPr": "number",
+    "qtyStock": "number",
+    "statusItem": "string",
+    "total": "number",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtcHVyLXByLWl0ZW0td2lkZ2V0LWR0by5maWVsZHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9zZGtjb3JlL3NyYy9saWIvZHRvLXRvLWZpZWxkcy9hbWltcy1wdXItcHItaXRlbS13aWRnZXQtZHRvLmZpZWxkcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxNQUFNLENBQUMsTUFBTSw2QkFBNkIsR0FBb0Q7SUFDNUYsV0FBVyxFQUFFLFFBQVE7SUFDckIsU0FBUyxFQUFFLFFBQVE7SUFDbkIsZUFBZSxFQUFFLFFBQVE7SUFDekIsU0FBUyxFQUFFLFFBQVE7SUFDbkIsYUFBYSxFQUFFLFFBQVE7SUFDdkIsV0FBVyxFQUFFLFFBQVE7SUFDckIsWUFBWSxFQUFFLFFBQVE7SUFDdEIsV0FBVyxFQUFFLFFBQVE7SUFDckIsVUFBVSxFQUFFLFFBQVE7SUFDcEIsT0FBTyxFQUFFLFFBQVE7SUFDakIsVUFBVSxFQUFFLFFBQVE7SUFDcEIsWUFBWSxFQUFFLFFBQVE7SUFDdEIsT0FBTyxFQUFFLFFBQVE7SUFDakIsV0FBVyxFQUFFLFFBQVE7Q0FDdEIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBBbWltc1B1clBySXRlbVdpZGdldER0b0ZpZWxkczogUmVjb3JkPHN0cmluZywgJ3N0cmluZycgfCAnYm9vbGVhbicgfCAnbnVtYmVyJz4gPSB7XG4gIFwiY3JlYXRlZEF0XCI6IFwic3RyaW5nXCIsXG4gIFwiaWRNcGFydFwiOiBcInN0cmluZ1wiLFxuICBcImlkTXBjUGlyb0l0ZW1cIjogXCJzdHJpbmdcIixcbiAgXCJpZFB1clByXCI6IFwic3RyaW5nXCIsXG4gIFwiaWRQdXJQckl0ZW1cIjogXCJzdHJpbmdcIixcbiAgXCJpc0RlbGV0ZWRcIjogXCJudW1iZXJcIixcbiAgXCJub3RlUHJJdGVtXCI6IFwic3RyaW5nXCIsXG4gIFwib2xkUHJJdGVtXCI6IFwic3RyaW5nXCIsXG4gIFwicHJpb3JpdHlcIjogXCJzdHJpbmdcIixcbiAgXCJxdHlQclwiOiBcIm51bWJlclwiLFxuICBcInF0eVN0b2NrXCI6IFwibnVtYmVyXCIsXG4gIFwic3RhdHVzSXRlbVwiOiBcInN0cmluZ1wiLFxuICBcInRvdGFsXCI6IFwibnVtYmVyXCIsXG4gIFwidXBkYXRlZEF0XCI6IFwic3RyaW5nXCJcbn07XG4iXX0=

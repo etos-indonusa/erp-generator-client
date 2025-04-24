@@ -1,0 +1,12 @@
+export const AmimsAtaDtoFields = {
+    "ata": "string",
+    "ataType": "string",
+    "codeAta": "string",
+    "createdAt": "string",
+    "idAta": "string",
+    "isDeleted": "number",
+    "keywordAta": "string",
+    "oldId": "string",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtYXRhLWR0by5maWVsZHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9zZGtjb3JlL3NyYy9saWIvZHRvLXRvLWZpZWxkcy9hbWltcy1hdGEtZHRvLmZpZWxkcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxNQUFNLENBQUMsTUFBTSxpQkFBaUIsR0FBb0Q7SUFDaEYsS0FBSyxFQUFFLFFBQVE7SUFDZixTQUFTLEVBQUUsUUFBUTtJQUNuQixTQUFTLEVBQUUsUUFBUTtJQUNuQixXQUFXLEVBQUUsUUFBUTtJQUNyQixPQUFPLEVBQUUsUUFBUTtJQUNqQixXQUFXLEVBQUUsUUFBUTtJQUNyQixZQUFZLEVBQUUsUUFBUTtJQUN0QixPQUFPLEVBQUUsUUFBUTtJQUNqQixXQUFXLEVBQUUsUUFBUTtDQUN0QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IEFtaW1zQXRhRHRvRmllbGRzOiBSZWNvcmQ8c3RyaW5nLCAnc3RyaW5nJyB8ICdib29sZWFuJyB8ICdudW1iZXInPiA9IHtcbiAgXCJhdGFcIjogXCJzdHJpbmdcIixcbiAgXCJhdGFUeXBlXCI6IFwic3RyaW5nXCIsXG4gIFwiY29kZUF0YVwiOiBcInN0cmluZ1wiLFxuICBcImNyZWF0ZWRBdFwiOiBcInN0cmluZ1wiLFxuICBcImlkQXRhXCI6IFwic3RyaW5nXCIsXG4gIFwiaXNEZWxldGVkXCI6IFwibnVtYmVyXCIsXG4gIFwia2V5d29yZEF0YVwiOiBcInN0cmluZ1wiLFxuICBcIm9sZElkXCI6IFwic3RyaW5nXCIsXG4gIFwidXBkYXRlZEF0XCI6IFwic3RyaW5nXCJcbn07XG4iXX0=

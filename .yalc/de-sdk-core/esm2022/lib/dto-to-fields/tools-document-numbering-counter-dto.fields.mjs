@@ -1,0 +1,14 @@
+export const ToolsDocumentNumberingCounterDtoFields = {
+    "bulan": "number",
+    "createdAt": "string",
+    "forModule": "string",
+    "forModuleId": "string",
+    "idDocumentNumbering": "string",
+    "idDocumentNumberingCounter": "string",
+    "idKantor": "string",
+    "lastNumber": "number",
+    "tahun": "number",
+    "targetColumn": "string",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidG9vbHMtZG9jdW1lbnQtbnVtYmVyaW5nLWNvdW50ZXItZHRvLmZpZWxkcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL3Nka2NvcmUvc3JjL2xpYi9kdG8tdG8tZmllbGRzL3Rvb2xzLWRvY3VtZW50LW51bWJlcmluZy1jb3VudGVyLWR0by5maWVsZHMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsTUFBTSxDQUFDLE1BQU0sc0NBQXNDLEdBQW9EO0lBQ3JHLE9BQU8sRUFBRSxRQUFRO0lBQ2pCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLGFBQWEsRUFBRSxRQUFRO0lBQ3ZCLHFCQUFxQixFQUFFLFFBQVE7SUFDL0IsNEJBQTRCLEVBQUUsUUFBUTtJQUN0QyxVQUFVLEVBQUUsUUFBUTtJQUNwQixZQUFZLEVBQUUsUUFBUTtJQUN0QixPQUFPLEVBQUUsUUFBUTtJQUNqQixjQUFjLEVBQUUsUUFBUTtJQUN4QixXQUFXLEVBQUUsUUFBUTtDQUN0QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IFRvb2xzRG9jdW1lbnROdW1iZXJpbmdDb3VudGVyRHRvRmllbGRzOiBSZWNvcmQ8c3RyaW5nLCAnc3RyaW5nJyB8ICdib29sZWFuJyB8ICdudW1iZXInPiA9IHtcbiAgXCJidWxhblwiOiBcIm51bWJlclwiLFxuICBcImNyZWF0ZWRBdFwiOiBcInN0cmluZ1wiLFxuICBcImZvck1vZHVsZVwiOiBcInN0cmluZ1wiLFxuICBcImZvck1vZHVsZUlkXCI6IFwic3RyaW5nXCIsXG4gIFwiaWREb2N1bWVudE51bWJlcmluZ1wiOiBcInN0cmluZ1wiLFxuICBcImlkRG9jdW1lbnROdW1iZXJpbmdDb3VudGVyXCI6IFwic3RyaW5nXCIsXG4gIFwiaWRLYW50b3JcIjogXCJzdHJpbmdcIixcbiAgXCJsYXN0TnVtYmVyXCI6IFwibnVtYmVyXCIsXG4gIFwidGFodW5cIjogXCJudW1iZXJcIixcbiAgXCJ0YXJnZXRDb2x1bW5cIjogXCJzdHJpbmdcIixcbiAgXCJ1cGRhdGVkQXRcIjogXCJzdHJpbmdcIlxufTtcbiJdfQ==

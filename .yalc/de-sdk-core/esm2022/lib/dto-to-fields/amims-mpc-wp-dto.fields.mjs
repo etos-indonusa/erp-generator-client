@@ -1,0 +1,26 @@
+export const AmimsMpcWpDtoFields = {
+    "createdAt": "string",
+    "dateAcc": "string",
+    "endDateWp": "string",
+    "endHours": "number",
+    "engineEnd": "string",
+    "engineStart": "string",
+    "idAircraft": "string",
+    "idMpcWp": "string",
+    "idUserMm": "string",
+    "idUserMpc": "string",
+    "noteWp": "string",
+    "numberWp": "string",
+    "onSite": "number",
+    "period": "string",
+    "periodYear": "number",
+    "place": "string",
+    "reason": "string",
+    "startDateWp": "string",
+    "startHours": "number",
+    "statusWp": "string",
+    "typeWork": "string",
+    "updatedAt": "string",
+    "validated": "number"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtbXBjLXdwLWR0by5maWVsZHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9zZGtjb3JlL3NyYy9saWIvZHRvLXRvLWZpZWxkcy9hbWltcy1tcGMtd3AtZHRvLmZpZWxkcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxNQUFNLENBQUMsTUFBTSxtQkFBbUIsR0FBb0Q7SUFDbEYsV0FBVyxFQUFFLFFBQVE7SUFDckIsU0FBUyxFQUFFLFFBQVE7SUFDbkIsV0FBVyxFQUFFLFFBQVE7SUFDckIsVUFBVSxFQUFFLFFBQVE7SUFDcEIsV0FBVyxFQUFFLFFBQVE7SUFDckIsYUFBYSxFQUFFLFFBQVE7SUFDdkIsWUFBWSxFQUFFLFFBQVE7SUFDdEIsU0FBUyxFQUFFLFFBQVE7SUFDbkIsVUFBVSxFQUFFLFFBQVE7SUFDcEIsV0FBVyxFQUFFLFFBQVE7SUFDckIsUUFBUSxFQUFFLFFBQVE7SUFDbEIsVUFBVSxFQUFFLFFBQVE7SUFDcEIsUUFBUSxFQUFFLFFBQVE7SUFDbEIsUUFBUSxFQUFFLFFBQVE7SUFDbEIsWUFBWSxFQUFFLFFBQVE7SUFDdEIsT0FBTyxFQUFFLFFBQVE7SUFDakIsUUFBUSxFQUFFLFFBQVE7SUFDbEIsYUFBYSxFQUFFLFFBQVE7SUFDdkIsWUFBWSxFQUFFLFFBQVE7SUFDdEIsVUFBVSxFQUFFLFFBQVE7SUFDcEIsVUFBVSxFQUFFLFFBQVE7SUFDcEIsV0FBVyxFQUFFLFFBQVE7SUFDckIsV0FBVyxFQUFFLFFBQVE7Q0FDdEIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBBbWltc01wY1dwRHRvRmllbGRzOiBSZWNvcmQ8c3RyaW5nLCAnc3RyaW5nJyB8ICdib29sZWFuJyB8ICdudW1iZXInPiA9IHtcbiAgXCJjcmVhdGVkQXRcIjogXCJzdHJpbmdcIixcbiAgXCJkYXRlQWNjXCI6IFwic3RyaW5nXCIsXG4gIFwiZW5kRGF0ZVdwXCI6IFwic3RyaW5nXCIsXG4gIFwiZW5kSG91cnNcIjogXCJudW1iZXJcIixcbiAgXCJlbmdpbmVFbmRcIjogXCJzdHJpbmdcIixcbiAgXCJlbmdpbmVTdGFydFwiOiBcInN0cmluZ1wiLFxuICBcImlkQWlyY3JhZnRcIjogXCJzdHJpbmdcIixcbiAgXCJpZE1wY1dwXCI6IFwic3RyaW5nXCIsXG4gIFwiaWRVc2VyTW1cIjogXCJzdHJpbmdcIixcbiAgXCJpZFVzZXJNcGNcIjogXCJzdHJpbmdcIixcbiAgXCJub3RlV3BcIjogXCJzdHJpbmdcIixcbiAgXCJudW1iZXJXcFwiOiBcInN0cmluZ1wiLFxuICBcIm9uU2l0ZVwiOiBcIm51bWJlclwiLFxuICBcInBlcmlvZFwiOiBcInN0cmluZ1wiLFxuICBcInBlcmlvZFllYXJcIjogXCJudW1iZXJcIixcbiAgXCJwbGFjZVwiOiBcInN0cmluZ1wiLFxuICBcInJlYXNvblwiOiBcInN0cmluZ1wiLFxuICBcInN0YXJ0RGF0ZVdwXCI6IFwic3RyaW5nXCIsXG4gIFwic3RhcnRIb3Vyc1wiOiBcIm51bWJlclwiLFxuICBcInN0YXR1c1dwXCI6IFwic3RyaW5nXCIsXG4gIFwidHlwZVdvcmtcIjogXCJzdHJpbmdcIixcbiAgXCJ1cGRhdGVkQXRcIjogXCJzdHJpbmdcIixcbiAgXCJ2YWxpZGF0ZWRcIjogXCJudW1iZXJcIlxufTtcbiJdfQ==

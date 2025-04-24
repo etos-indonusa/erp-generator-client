@@ -1,0 +1,14 @@
+export const AmimsCurrencyReportDtoFields = {
+    "createdAt": "string",
+    "effectiveDate": "string",
+    "forcurrency": "string",
+    "idCurrency": "string",
+    "idMcurrency": "string",
+    "idUser": "string",
+    "mcurrency": "string",
+    "newValue": "number",
+    "noteCurrency": "string",
+    "oldValue": "number",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtY3VycmVuY3ktcmVwb3J0LWR0by5maWVsZHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9zZGtjb3JlL3NyYy9saWIvZHRvLXRvLWZpZWxkcy9hbWltcy1jdXJyZW5jeS1yZXBvcnQtZHRvLmZpZWxkcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxNQUFNLENBQUMsTUFBTSw0QkFBNEIsR0FBb0Q7SUFDM0YsV0FBVyxFQUFFLFFBQVE7SUFDckIsZUFBZSxFQUFFLFFBQVE7SUFDekIsYUFBYSxFQUFFLFFBQVE7SUFDdkIsWUFBWSxFQUFFLFFBQVE7SUFDdEIsYUFBYSxFQUFFLFFBQVE7SUFDdkIsUUFBUSxFQUFFLFFBQVE7SUFDbEIsV0FBVyxFQUFFLFFBQVE7SUFDckIsVUFBVSxFQUFFLFFBQVE7SUFDcEIsY0FBYyxFQUFFLFFBQVE7SUFDeEIsVUFBVSxFQUFFLFFBQVE7SUFDcEIsV0FBVyxFQUFFLFFBQVE7Q0FDdEIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBBbWltc0N1cnJlbmN5UmVwb3J0RHRvRmllbGRzOiBSZWNvcmQ8c3RyaW5nLCAnc3RyaW5nJyB8ICdib29sZWFuJyB8ICdudW1iZXInPiA9IHtcbiAgXCJjcmVhdGVkQXRcIjogXCJzdHJpbmdcIixcbiAgXCJlZmZlY3RpdmVEYXRlXCI6IFwic3RyaW5nXCIsXG4gIFwiZm9yY3VycmVuY3lcIjogXCJzdHJpbmdcIixcbiAgXCJpZEN1cnJlbmN5XCI6IFwic3RyaW5nXCIsXG4gIFwiaWRNY3VycmVuY3lcIjogXCJzdHJpbmdcIixcbiAgXCJpZFVzZXJcIjogXCJzdHJpbmdcIixcbiAgXCJtY3VycmVuY3lcIjogXCJzdHJpbmdcIixcbiAgXCJuZXdWYWx1ZVwiOiBcIm51bWJlclwiLFxuICBcIm5vdGVDdXJyZW5jeVwiOiBcInN0cmluZ1wiLFxuICBcIm9sZFZhbHVlXCI6IFwibnVtYmVyXCIsXG4gIFwidXBkYXRlZEF0XCI6IFwic3RyaW5nXCJcbn07XG4iXX0=

@@ -1,0 +1,15 @@
+export const AmimsStoreTransferItemWidgetDtoFields = {
+    "createdAt": "string",
+    "idEngineerPmtrItem": "string",
+    "idPart": "string",
+    "idStoreTransfer": "string",
+    "idStoreTransferItem": "string",
+    "newBin": "string",
+    "noteItemTransfer": "string",
+    "oldIdPart": "string",
+    "qtyTransfer": "number",
+    "statusItem": "string",
+    "total": "number",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtc3RvcmUtdHJhbnNmZXItaXRlbS13aWRnZXQtZHRvLmZpZWxkcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL3Nka2NvcmUvc3JjL2xpYi9kdG8tdG8tZmllbGRzL2FtaW1zLXN0b3JlLXRyYW5zZmVyLWl0ZW0td2lkZ2V0LWR0by5maWVsZHMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsTUFBTSxDQUFDLE1BQU0scUNBQXFDLEdBQW9EO0lBQ3BHLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLG9CQUFvQixFQUFFLFFBQVE7SUFDOUIsUUFBUSxFQUFFLFFBQVE7SUFDbEIsaUJBQWlCLEVBQUUsUUFBUTtJQUMzQixxQkFBcUIsRUFBRSxRQUFRO0lBQy9CLFFBQVEsRUFBRSxRQUFRO0lBQ2xCLGtCQUFrQixFQUFFLFFBQVE7SUFDNUIsV0FBVyxFQUFFLFFBQVE7SUFDckIsYUFBYSxFQUFFLFFBQVE7SUFDdkIsWUFBWSxFQUFFLFFBQVE7SUFDdEIsT0FBTyxFQUFFLFFBQVE7SUFDakIsV0FBVyxFQUFFLFFBQVE7Q0FDdEIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBBbWltc1N0b3JlVHJhbnNmZXJJdGVtV2lkZ2V0RHRvRmllbGRzOiBSZWNvcmQ8c3RyaW5nLCAnc3RyaW5nJyB8ICdib29sZWFuJyB8ICdudW1iZXInPiA9IHtcbiAgXCJjcmVhdGVkQXRcIjogXCJzdHJpbmdcIixcbiAgXCJpZEVuZ2luZWVyUG10ckl0ZW1cIjogXCJzdHJpbmdcIixcbiAgXCJpZFBhcnRcIjogXCJzdHJpbmdcIixcbiAgXCJpZFN0b3JlVHJhbnNmZXJcIjogXCJzdHJpbmdcIixcbiAgXCJpZFN0b3JlVHJhbnNmZXJJdGVtXCI6IFwic3RyaW5nXCIsXG4gIFwibmV3QmluXCI6IFwic3RyaW5nXCIsXG4gIFwibm90ZUl0ZW1UcmFuc2ZlclwiOiBcInN0cmluZ1wiLFxuICBcIm9sZElkUGFydFwiOiBcInN0cmluZ1wiLFxuICBcInF0eVRyYW5zZmVyXCI6IFwibnVtYmVyXCIsXG4gIFwic3RhdHVzSXRlbVwiOiBcInN0cmluZ1wiLFxuICBcInRvdGFsXCI6IFwibnVtYmVyXCIsXG4gIFwidXBkYXRlZEF0XCI6IFwic3RyaW5nXCJcbn07XG4iXX0=

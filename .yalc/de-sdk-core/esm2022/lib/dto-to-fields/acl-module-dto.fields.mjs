@@ -1,0 +1,13 @@
+export const AclModuleDtoFields = {
+    "createdAt": "string",
+    "deskripsi": "string",
+    "idModule": "string",
+    "isAktif": "boolean",
+    "kodeModule": "string",
+    "namaDb": "string",
+    "namaModule": "string",
+    "namaTabel": "string",
+    "updatedAt": "string",
+    "urutan": "number"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYWNsLW1vZHVsZS1kdG8uZmllbGRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvc2RrY29yZS9zcmMvbGliL2R0by10by1maWVsZHMvYWNsLW1vZHVsZS1kdG8uZmllbGRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE1BQU0sQ0FBQyxNQUFNLGtCQUFrQixHQUFvRDtJQUNqRixXQUFXLEVBQUUsUUFBUTtJQUNyQixXQUFXLEVBQUUsUUFBUTtJQUNyQixVQUFVLEVBQUUsUUFBUTtJQUNwQixTQUFTLEVBQUUsU0FBUztJQUNwQixZQUFZLEVBQUUsUUFBUTtJQUN0QixRQUFRLEVBQUUsUUFBUTtJQUNsQixZQUFZLEVBQUUsUUFBUTtJQUN0QixXQUFXLEVBQUUsUUFBUTtJQUNyQixXQUFXLEVBQUUsUUFBUTtJQUNyQixRQUFRLEVBQUUsUUFBUTtDQUNuQixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IEFjbE1vZHVsZUR0b0ZpZWxkczogUmVjb3JkPHN0cmluZywgJ3N0cmluZycgfCAnYm9vbGVhbicgfCAnbnVtYmVyJz4gPSB7XG4gIFwiY3JlYXRlZEF0XCI6IFwic3RyaW5nXCIsXG4gIFwiZGVza3JpcHNpXCI6IFwic3RyaW5nXCIsXG4gIFwiaWRNb2R1bGVcIjogXCJzdHJpbmdcIixcbiAgXCJpc0FrdGlmXCI6IFwiYm9vbGVhblwiLFxuICBcImtvZGVNb2R1bGVcIjogXCJzdHJpbmdcIixcbiAgXCJuYW1hRGJcIjogXCJzdHJpbmdcIixcbiAgXCJuYW1hTW9kdWxlXCI6IFwic3RyaW5nXCIsXG4gIFwibmFtYVRhYmVsXCI6IFwic3RyaW5nXCIsXG4gIFwidXBkYXRlZEF0XCI6IFwic3RyaW5nXCIsXG4gIFwidXJ1dGFuXCI6IFwibnVtYmVyXCJcbn07XG4iXX0=

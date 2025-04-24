@@ -1,0 +1,15 @@
+export const PelangganClientContactDtoFields = {
+    "catatan": "string",
+    "createdAt": "string",
+    "divisi": "string",
+    "email": "string",
+    "idClient": "string",
+    "idClientContact": "string",
+    "isPrimary": "boolean",
+    "jabatan": "string",
+    "jenisContact": "string",
+    "namaContact": "string",
+    "telepon": "string",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGVsYW5nZ2FuLWNsaWVudC1jb250YWN0LWR0by5maWVsZHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9zZGtjb3JlL3NyYy9saWIvZHRvLXRvLWZpZWxkcy9wZWxhbmdnYW4tY2xpZW50LWNvbnRhY3QtZHRvLmZpZWxkcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxNQUFNLENBQUMsTUFBTSwrQkFBK0IsR0FBb0Q7SUFDOUYsU0FBUyxFQUFFLFFBQVE7SUFDbkIsV0FBVyxFQUFFLFFBQVE7SUFDckIsUUFBUSxFQUFFLFFBQVE7SUFDbEIsT0FBTyxFQUFFLFFBQVE7SUFDakIsVUFBVSxFQUFFLFFBQVE7SUFDcEIsaUJBQWlCLEVBQUUsUUFBUTtJQUMzQixXQUFXLEVBQUUsU0FBUztJQUN0QixTQUFTLEVBQUUsUUFBUTtJQUNuQixjQUFjLEVBQUUsUUFBUTtJQUN4QixhQUFhLEVBQUUsUUFBUTtJQUN2QixTQUFTLEVBQUUsUUFBUTtJQUNuQixXQUFXLEVBQUUsUUFBUTtDQUN0QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IFBlbGFuZ2dhbkNsaWVudENvbnRhY3REdG9GaWVsZHM6IFJlY29yZDxzdHJpbmcsICdzdHJpbmcnIHwgJ2Jvb2xlYW4nIHwgJ251bWJlcic+ID0ge1xuICBcImNhdGF0YW5cIjogXCJzdHJpbmdcIixcbiAgXCJjcmVhdGVkQXRcIjogXCJzdHJpbmdcIixcbiAgXCJkaXZpc2lcIjogXCJzdHJpbmdcIixcbiAgXCJlbWFpbFwiOiBcInN0cmluZ1wiLFxuICBcImlkQ2xpZW50XCI6IFwic3RyaW5nXCIsXG4gIFwiaWRDbGllbnRDb250YWN0XCI6IFwic3RyaW5nXCIsXG4gIFwiaXNQcmltYXJ5XCI6IFwiYm9vbGVhblwiLFxuICBcImphYmF0YW5cIjogXCJzdHJpbmdcIixcbiAgXCJqZW5pc0NvbnRhY3RcIjogXCJzdHJpbmdcIixcbiAgXCJuYW1hQ29udGFjdFwiOiBcInN0cmluZ1wiLFxuICBcInRlbGVwb25cIjogXCJzdHJpbmdcIixcbiAgXCJ1cGRhdGVkQXRcIjogXCJzdHJpbmdcIlxufTtcbiJdfQ==

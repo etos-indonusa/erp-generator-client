@@ -1,0 +1,27 @@
+export const AmimsSiteDtoFields = {
+    "address": "string",
+    "city": "string",
+    "codeSite": "string",
+    "contactname": "string",
+    "country": "string",
+    "createdAt": "string",
+    "emailaddress": "string",
+    "fax": "string",
+    "idNewSite": "string",
+    "idSite": "string",
+    "idUser": "string",
+    "isDeleted": "number",
+    "isMain": "number",
+    "isStore": "string",
+    "logoSite": "string",
+    "mobile": "string",
+    "oldId": "string",
+    "parentSite": "number",
+    "site": "string",
+    "statusSite": "number",
+    "telephone": "string",
+    "typeSite": "string",
+    "updatedAt": "string",
+    "validation": "number"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtc2l0ZS1kdG8uZmllbGRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvc2RrY29yZS9zcmMvbGliL2R0by10by1maWVsZHMvYW1pbXMtc2l0ZS1kdG8uZmllbGRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE1BQU0sQ0FBQyxNQUFNLGtCQUFrQixHQUFvRDtJQUNqRixTQUFTLEVBQUUsUUFBUTtJQUNuQixNQUFNLEVBQUUsUUFBUTtJQUNoQixVQUFVLEVBQUUsUUFBUTtJQUNwQixhQUFhLEVBQUUsUUFBUTtJQUN2QixTQUFTLEVBQUUsUUFBUTtJQUNuQixXQUFXLEVBQUUsUUFBUTtJQUNyQixjQUFjLEVBQUUsUUFBUTtJQUN4QixLQUFLLEVBQUUsUUFBUTtJQUNmLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLFFBQVEsRUFBRSxRQUFRO0lBQ2xCLFFBQVEsRUFBRSxRQUFRO0lBQ2xCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLFFBQVEsRUFBRSxRQUFRO0lBQ2xCLFNBQVMsRUFBRSxRQUFRO0lBQ25CLFVBQVUsRUFBRSxRQUFRO0lBQ3BCLFFBQVEsRUFBRSxRQUFRO0lBQ2xCLE9BQU8sRUFBRSxRQUFRO0lBQ2pCLFlBQVksRUFBRSxRQUFRO0lBQ3RCLE1BQU0sRUFBRSxRQUFRO0lBQ2hCLFlBQVksRUFBRSxRQUFRO0lBQ3RCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLFVBQVUsRUFBRSxRQUFRO0lBQ3BCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLFlBQVksRUFBRSxRQUFRO0NBQ3ZCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgQW1pbXNTaXRlRHRvRmllbGRzOiBSZWNvcmQ8c3RyaW5nLCAnc3RyaW5nJyB8ICdib29sZWFuJyB8ICdudW1iZXInPiA9IHtcbiAgXCJhZGRyZXNzXCI6IFwic3RyaW5nXCIsXG4gIFwiY2l0eVwiOiBcInN0cmluZ1wiLFxuICBcImNvZGVTaXRlXCI6IFwic3RyaW5nXCIsXG4gIFwiY29udGFjdG5hbWVcIjogXCJzdHJpbmdcIixcbiAgXCJjb3VudHJ5XCI6IFwic3RyaW5nXCIsXG4gIFwiY3JlYXRlZEF0XCI6IFwic3RyaW5nXCIsXG4gIFwiZW1haWxhZGRyZXNzXCI6IFwic3RyaW5nXCIsXG4gIFwiZmF4XCI6IFwic3RyaW5nXCIsXG4gIFwiaWROZXdTaXRlXCI6IFwic3RyaW5nXCIsXG4gIFwiaWRTaXRlXCI6IFwic3RyaW5nXCIsXG4gIFwiaWRVc2VyXCI6IFwic3RyaW5nXCIsXG4gIFwiaXNEZWxldGVkXCI6IFwibnVtYmVyXCIsXG4gIFwiaXNNYWluXCI6IFwibnVtYmVyXCIsXG4gIFwiaXNTdG9yZVwiOiBcInN0cmluZ1wiLFxuICBcImxvZ29TaXRlXCI6IFwic3RyaW5nXCIsXG4gIFwibW9iaWxlXCI6IFwic3RyaW5nXCIsXG4gIFwib2xkSWRcIjogXCJzdHJpbmdcIixcbiAgXCJwYXJlbnRTaXRlXCI6IFwibnVtYmVyXCIsXG4gIFwic2l0ZVwiOiBcInN0cmluZ1wiLFxuICBcInN0YXR1c1NpdGVcIjogXCJudW1iZXJcIixcbiAgXCJ0ZWxlcGhvbmVcIjogXCJzdHJpbmdcIixcbiAgXCJ0eXBlU2l0ZVwiOiBcInN0cmluZ1wiLFxuICBcInVwZGF0ZWRBdFwiOiBcInN0cmluZ1wiLFxuICBcInZhbGlkYXRpb25cIjogXCJudW1iZXJcIlxufTtcbiJdfQ==

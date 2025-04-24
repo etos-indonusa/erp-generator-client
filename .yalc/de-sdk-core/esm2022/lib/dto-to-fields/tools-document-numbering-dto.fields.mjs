@@ -1,0 +1,17 @@
+export const ToolsDocumentNumberingDtoFields = {
+    "allowManualEntry": "boolean",
+    "allowedRoles": "string",
+    "createdAt": "string",
+    "digitNomor": "number",
+    "forModule": "string",
+    "formatNomor": "string",
+    "idDocumentNumbering": "string",
+    "isActive": "boolean",
+    "label": "string",
+    "resetPeriode": "string",
+    "targetColumn": "string",
+    "targetTable": "string",
+    "triggerStage": "string",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidG9vbHMtZG9jdW1lbnQtbnVtYmVyaW5nLWR0by5maWVsZHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9zZGtjb3JlL3NyYy9saWIvZHRvLXRvLWZpZWxkcy90b29scy1kb2N1bWVudC1udW1iZXJpbmctZHRvLmZpZWxkcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxNQUFNLENBQUMsTUFBTSwrQkFBK0IsR0FBb0Q7SUFDOUYsa0JBQWtCLEVBQUUsU0FBUztJQUM3QixjQUFjLEVBQUUsUUFBUTtJQUN4QixXQUFXLEVBQUUsUUFBUTtJQUNyQixZQUFZLEVBQUUsUUFBUTtJQUN0QixXQUFXLEVBQUUsUUFBUTtJQUNyQixhQUFhLEVBQUUsUUFBUTtJQUN2QixxQkFBcUIsRUFBRSxRQUFRO0lBQy9CLFVBQVUsRUFBRSxTQUFTO0lBQ3JCLE9BQU8sRUFBRSxRQUFRO0lBQ2pCLGNBQWMsRUFBRSxRQUFRO0lBQ3hCLGNBQWMsRUFBRSxRQUFRO0lBQ3hCLGFBQWEsRUFBRSxRQUFRO0lBQ3ZCLGNBQWMsRUFBRSxRQUFRO0lBQ3hCLFdBQVcsRUFBRSxRQUFRO0NBQ3RCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgVG9vbHNEb2N1bWVudE51bWJlcmluZ0R0b0ZpZWxkczogUmVjb3JkPHN0cmluZywgJ3N0cmluZycgfCAnYm9vbGVhbicgfCAnbnVtYmVyJz4gPSB7XG4gIFwiYWxsb3dNYW51YWxFbnRyeVwiOiBcImJvb2xlYW5cIixcbiAgXCJhbGxvd2VkUm9sZXNcIjogXCJzdHJpbmdcIixcbiAgXCJjcmVhdGVkQXRcIjogXCJzdHJpbmdcIixcbiAgXCJkaWdpdE5vbW9yXCI6IFwibnVtYmVyXCIsXG4gIFwiZm9yTW9kdWxlXCI6IFwic3RyaW5nXCIsXG4gIFwiZm9ybWF0Tm9tb3JcIjogXCJzdHJpbmdcIixcbiAgXCJpZERvY3VtZW50TnVtYmVyaW5nXCI6IFwic3RyaW5nXCIsXG4gIFwiaXNBY3RpdmVcIjogXCJib29sZWFuXCIsXG4gIFwibGFiZWxcIjogXCJzdHJpbmdcIixcbiAgXCJyZXNldFBlcmlvZGVcIjogXCJzdHJpbmdcIixcbiAgXCJ0YXJnZXRDb2x1bW5cIjogXCJzdHJpbmdcIixcbiAgXCJ0YXJnZXRUYWJsZVwiOiBcInN0cmluZ1wiLFxuICBcInRyaWdnZXJTdGFnZVwiOiBcInN0cmluZ1wiLFxuICBcInVwZGF0ZWRBdFwiOiBcInN0cmluZ1wiXG59O1xuIl19

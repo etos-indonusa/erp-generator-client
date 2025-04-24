@@ -1,0 +1,21 @@
+export const AmimsTechLogItemWidgetDtoFields = {
+    "apuStart": "number",
+    "cgPenalty": "string",
+    "cocaCaptain": "string",
+    "cycles": "number",
+    "flightFrom": "string",
+    "flightHours": "number",
+    "flightTo": "string",
+    "hoistOperation": "string",
+    "hoistUsage": "number",
+    "idCaptain": "string",
+    "idTechLog": "string",
+    "idTechLogItem": "string",
+    "landingTime": "string",
+    "landings": "number",
+    "noteTechLogItem": "string",
+    "slingReleased": "number",
+    "takeofTime": "string",
+    "total": "number"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtdGVjaC1sb2ctaXRlbS13aWRnZXQtZHRvLmZpZWxkcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL3Nka2NvcmUvc3JjL2xpYi9kdG8tdG8tZmllbGRzL2FtaW1zLXRlY2gtbG9nLWl0ZW0td2lkZ2V0LWR0by5maWVsZHMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsTUFBTSxDQUFDLE1BQU0sK0JBQStCLEdBQW9EO0lBQzlGLFVBQVUsRUFBRSxRQUFRO0lBQ3BCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLGFBQWEsRUFBRSxRQUFRO0lBQ3ZCLFFBQVEsRUFBRSxRQUFRO0lBQ2xCLFlBQVksRUFBRSxRQUFRO0lBQ3RCLGFBQWEsRUFBRSxRQUFRO0lBQ3ZCLFVBQVUsRUFBRSxRQUFRO0lBQ3BCLGdCQUFnQixFQUFFLFFBQVE7SUFDMUIsWUFBWSxFQUFFLFFBQVE7SUFDdEIsV0FBVyxFQUFFLFFBQVE7SUFDckIsV0FBVyxFQUFFLFFBQVE7SUFDckIsZUFBZSxFQUFFLFFBQVE7SUFDekIsYUFBYSxFQUFFLFFBQVE7SUFDdkIsVUFBVSxFQUFFLFFBQVE7SUFDcEIsaUJBQWlCLEVBQUUsUUFBUTtJQUMzQixlQUFlLEVBQUUsUUFBUTtJQUN6QixZQUFZLEVBQUUsUUFBUTtJQUN0QixPQUFPLEVBQUUsUUFBUTtDQUNsQixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IEFtaW1zVGVjaExvZ0l0ZW1XaWRnZXREdG9GaWVsZHM6IFJlY29yZDxzdHJpbmcsICdzdHJpbmcnIHwgJ2Jvb2xlYW4nIHwgJ251bWJlcic+ID0ge1xuICBcImFwdVN0YXJ0XCI6IFwibnVtYmVyXCIsXG4gIFwiY2dQZW5hbHR5XCI6IFwic3RyaW5nXCIsXG4gIFwiY29jYUNhcHRhaW5cIjogXCJzdHJpbmdcIixcbiAgXCJjeWNsZXNcIjogXCJudW1iZXJcIixcbiAgXCJmbGlnaHRGcm9tXCI6IFwic3RyaW5nXCIsXG4gIFwiZmxpZ2h0SG91cnNcIjogXCJudW1iZXJcIixcbiAgXCJmbGlnaHRUb1wiOiBcInN0cmluZ1wiLFxuICBcImhvaXN0T3BlcmF0aW9uXCI6IFwic3RyaW5nXCIsXG4gIFwiaG9pc3RVc2FnZVwiOiBcIm51bWJlclwiLFxuICBcImlkQ2FwdGFpblwiOiBcInN0cmluZ1wiLFxuICBcImlkVGVjaExvZ1wiOiBcInN0cmluZ1wiLFxuICBcImlkVGVjaExvZ0l0ZW1cIjogXCJzdHJpbmdcIixcbiAgXCJsYW5kaW5nVGltZVwiOiBcInN0cmluZ1wiLFxuICBcImxhbmRpbmdzXCI6IFwibnVtYmVyXCIsXG4gIFwibm90ZVRlY2hMb2dJdGVtXCI6IFwic3RyaW5nXCIsXG4gIFwic2xpbmdSZWxlYXNlZFwiOiBcIm51bWJlclwiLFxuICBcInRha2VvZlRpbWVcIjogXCJzdHJpbmdcIixcbiAgXCJ0b3RhbFwiOiBcIm51bWJlclwiXG59O1xuIl19

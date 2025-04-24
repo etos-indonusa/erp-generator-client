@@ -1,0 +1,20 @@
+export const AmimsTdDetailAcReportDtoFields = {
+    "aircraft": "string",
+    "complianceC": "number",
+    "complianceD": "string",
+    "complianceH": "number",
+    "compliteC": "number",
+    "compliteD": "string",
+    "compliteH": "number",
+    "compliteUser": "string",
+    "engineer": "string",
+    "idAircraft": "string",
+    "idTdDetail": "string",
+    "idTdDetailAc": "string",
+    "idTechLog": "string",
+    "isActive": "string",
+    "noteClose": "string",
+    "noteDetail": "string",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtdGQtZGV0YWlsLWFjLXJlcG9ydC1kdG8uZmllbGRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvc2RrY29yZS9zcmMvbGliL2R0by10by1maWVsZHMvYW1pbXMtdGQtZGV0YWlsLWFjLXJlcG9ydC1kdG8uZmllbGRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE1BQU0sQ0FBQyxNQUFNLDhCQUE4QixHQUFvRDtJQUM3RixVQUFVLEVBQUUsUUFBUTtJQUNwQixhQUFhLEVBQUUsUUFBUTtJQUN2QixhQUFhLEVBQUUsUUFBUTtJQUN2QixhQUFhLEVBQUUsUUFBUTtJQUN2QixXQUFXLEVBQUUsUUFBUTtJQUNyQixXQUFXLEVBQUUsUUFBUTtJQUNyQixXQUFXLEVBQUUsUUFBUTtJQUNyQixjQUFjLEVBQUUsUUFBUTtJQUN4QixVQUFVLEVBQUUsUUFBUTtJQUNwQixZQUFZLEVBQUUsUUFBUTtJQUN0QixZQUFZLEVBQUUsUUFBUTtJQUN0QixjQUFjLEVBQUUsUUFBUTtJQUN4QixXQUFXLEVBQUUsUUFBUTtJQUNyQixVQUFVLEVBQUUsUUFBUTtJQUNwQixXQUFXLEVBQUUsUUFBUTtJQUNyQixZQUFZLEVBQUUsUUFBUTtJQUN0QixXQUFXLEVBQUUsUUFBUTtDQUN0QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IEFtaW1zVGREZXRhaWxBY1JlcG9ydER0b0ZpZWxkczogUmVjb3JkPHN0cmluZywgJ3N0cmluZycgfCAnYm9vbGVhbicgfCAnbnVtYmVyJz4gPSB7XG4gIFwiYWlyY3JhZnRcIjogXCJzdHJpbmdcIixcbiAgXCJjb21wbGlhbmNlQ1wiOiBcIm51bWJlclwiLFxuICBcImNvbXBsaWFuY2VEXCI6IFwic3RyaW5nXCIsXG4gIFwiY29tcGxpYW5jZUhcIjogXCJudW1iZXJcIixcbiAgXCJjb21wbGl0ZUNcIjogXCJudW1iZXJcIixcbiAgXCJjb21wbGl0ZURcIjogXCJzdHJpbmdcIixcbiAgXCJjb21wbGl0ZUhcIjogXCJudW1iZXJcIixcbiAgXCJjb21wbGl0ZVVzZXJcIjogXCJzdHJpbmdcIixcbiAgXCJlbmdpbmVlclwiOiBcInN0cmluZ1wiLFxuICBcImlkQWlyY3JhZnRcIjogXCJzdHJpbmdcIixcbiAgXCJpZFRkRGV0YWlsXCI6IFwic3RyaW5nXCIsXG4gIFwiaWRUZERldGFpbEFjXCI6IFwic3RyaW5nXCIsXG4gIFwiaWRUZWNoTG9nXCI6IFwic3RyaW5nXCIsXG4gIFwiaXNBY3RpdmVcIjogXCJzdHJpbmdcIixcbiAgXCJub3RlQ2xvc2VcIjogXCJzdHJpbmdcIixcbiAgXCJub3RlRGV0YWlsXCI6IFwic3RyaW5nXCIsXG4gIFwidXBkYXRlZEF0XCI6IFwic3RyaW5nXCJcbn07XG4iXX0=

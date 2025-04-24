@@ -1,0 +1,15 @@
+export const AmimsWarrantyDtoFields = {
+    "createdAt": "string",
+    "cycle": "number",
+    "days": "number",
+    "effectiveDate": "string",
+    "expairedDate": "string",
+    "hours": "number",
+    "idPart": "string",
+    "idVendor": "string",
+    "idWarranty": "string",
+    "note": "string",
+    "type": "string",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtd2FycmFudHktZHRvLmZpZWxkcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL3Nka2NvcmUvc3JjL2xpYi9kdG8tdG8tZmllbGRzL2FtaW1zLXdhcnJhbnR5LWR0by5maWVsZHMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsTUFBTSxDQUFDLE1BQU0sc0JBQXNCLEdBQW9EO0lBQ3JGLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLE9BQU8sRUFBRSxRQUFRO0lBQ2pCLE1BQU0sRUFBRSxRQUFRO0lBQ2hCLGVBQWUsRUFBRSxRQUFRO0lBQ3pCLGNBQWMsRUFBRSxRQUFRO0lBQ3hCLE9BQU8sRUFBRSxRQUFRO0lBQ2pCLFFBQVEsRUFBRSxRQUFRO0lBQ2xCLFVBQVUsRUFBRSxRQUFRO0lBQ3BCLFlBQVksRUFBRSxRQUFRO0lBQ3RCLE1BQU0sRUFBRSxRQUFRO0lBQ2hCLE1BQU0sRUFBRSxRQUFRO0lBQ2hCLFdBQVcsRUFBRSxRQUFRO0NBQ3RCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgQW1pbXNXYXJyYW50eUR0b0ZpZWxkczogUmVjb3JkPHN0cmluZywgJ3N0cmluZycgfCAnYm9vbGVhbicgfCAnbnVtYmVyJz4gPSB7XG4gIFwiY3JlYXRlZEF0XCI6IFwic3RyaW5nXCIsXG4gIFwiY3ljbGVcIjogXCJudW1iZXJcIixcbiAgXCJkYXlzXCI6IFwibnVtYmVyXCIsXG4gIFwiZWZmZWN0aXZlRGF0ZVwiOiBcInN0cmluZ1wiLFxuICBcImV4cGFpcmVkRGF0ZVwiOiBcInN0cmluZ1wiLFxuICBcImhvdXJzXCI6IFwibnVtYmVyXCIsXG4gIFwiaWRQYXJ0XCI6IFwic3RyaW5nXCIsXG4gIFwiaWRWZW5kb3JcIjogXCJzdHJpbmdcIixcbiAgXCJpZFdhcnJhbnR5XCI6IFwic3RyaW5nXCIsXG4gIFwibm90ZVwiOiBcInN0cmluZ1wiLFxuICBcInR5cGVcIjogXCJzdHJpbmdcIixcbiAgXCJ1cGRhdGVkQXRcIjogXCJzdHJpbmdcIlxufTtcbiJdfQ==

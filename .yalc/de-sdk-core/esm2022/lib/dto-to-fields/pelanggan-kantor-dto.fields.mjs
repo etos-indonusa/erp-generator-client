@@ -1,0 +1,14 @@
+export const PelangganKantorDtoFields = {
+    "alamat": "string",
+    "catatan": "string",
+    "createdAt": "string",
+    "idKantor": "string",
+    "isAktif": "boolean",
+    "isPusat": "boolean",
+    "kodeKantor": "string",
+    "kota": "string",
+    "namaKantor": "string",
+    "provinsi": "string",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGVsYW5nZ2FuLWthbnRvci1kdG8uZmllbGRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvc2RrY29yZS9zcmMvbGliL2R0by10by1maWVsZHMvcGVsYW5nZ2FuLWthbnRvci1kdG8uZmllbGRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE1BQU0sQ0FBQyxNQUFNLHdCQUF3QixHQUFvRDtJQUN2RixRQUFRLEVBQUUsUUFBUTtJQUNsQixTQUFTLEVBQUUsUUFBUTtJQUNuQixXQUFXLEVBQUUsUUFBUTtJQUNyQixVQUFVLEVBQUUsUUFBUTtJQUNwQixTQUFTLEVBQUUsU0FBUztJQUNwQixTQUFTLEVBQUUsU0FBUztJQUNwQixZQUFZLEVBQUUsUUFBUTtJQUN0QixNQUFNLEVBQUUsUUFBUTtJQUNoQixZQUFZLEVBQUUsUUFBUTtJQUN0QixVQUFVLEVBQUUsUUFBUTtJQUNwQixXQUFXLEVBQUUsUUFBUTtDQUN0QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IFBlbGFuZ2dhbkthbnRvckR0b0ZpZWxkczogUmVjb3JkPHN0cmluZywgJ3N0cmluZycgfCAnYm9vbGVhbicgfCAnbnVtYmVyJz4gPSB7XG4gIFwiYWxhbWF0XCI6IFwic3RyaW5nXCIsXG4gIFwiY2F0YXRhblwiOiBcInN0cmluZ1wiLFxuICBcImNyZWF0ZWRBdFwiOiBcInN0cmluZ1wiLFxuICBcImlkS2FudG9yXCI6IFwic3RyaW5nXCIsXG4gIFwiaXNBa3RpZlwiOiBcImJvb2xlYW5cIixcbiAgXCJpc1B1c2F0XCI6IFwiYm9vbGVhblwiLFxuICBcImtvZGVLYW50b3JcIjogXCJzdHJpbmdcIixcbiAgXCJrb3RhXCI6IFwic3RyaW5nXCIsXG4gIFwibmFtYUthbnRvclwiOiBcInN0cmluZ1wiLFxuICBcInByb3ZpbnNpXCI6IFwic3RyaW5nXCIsXG4gIFwidXBkYXRlZEF0XCI6IFwic3RyaW5nXCJcbn07XG4iXX0=

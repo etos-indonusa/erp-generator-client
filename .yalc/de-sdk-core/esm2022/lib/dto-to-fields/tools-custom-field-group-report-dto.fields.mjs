@@ -1,0 +1,16 @@
+export const ToolsCustomFieldGroupReportDtoFields = {
+    "createdAt": "string",
+    "deskripsi": "string",
+    "forKantor": "string",
+    "forRole": "string",
+    "idCustomFieldGroup": "string",
+    "isRepeatable": "boolean",
+    "modul": "string",
+    "namaGroup": "string",
+    "tableName": "string",
+    "tipeRender": "string",
+    "updatedAt": "string",
+    "urutan": "number",
+    "visibilityRule": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidG9vbHMtY3VzdG9tLWZpZWxkLWdyb3VwLXJlcG9ydC1kdG8uZmllbGRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvc2RrY29yZS9zcmMvbGliL2R0by10by1maWVsZHMvdG9vbHMtY3VzdG9tLWZpZWxkLWdyb3VwLXJlcG9ydC1kdG8uZmllbGRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE1BQU0sQ0FBQyxNQUFNLG9DQUFvQyxHQUFvRDtJQUNuRyxXQUFXLEVBQUUsUUFBUTtJQUNyQixXQUFXLEVBQUUsUUFBUTtJQUNyQixXQUFXLEVBQUUsUUFBUTtJQUNyQixTQUFTLEVBQUUsUUFBUTtJQUNuQixvQkFBb0IsRUFBRSxRQUFRO0lBQzlCLGNBQWMsRUFBRSxTQUFTO0lBQ3pCLE9BQU8sRUFBRSxRQUFRO0lBQ2pCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLFlBQVksRUFBRSxRQUFRO0lBQ3RCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLFFBQVEsRUFBRSxRQUFRO0lBQ2xCLGdCQUFnQixFQUFFLFFBQVE7Q0FDM0IsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBUb29sc0N1c3RvbUZpZWxkR3JvdXBSZXBvcnREdG9GaWVsZHM6IFJlY29yZDxzdHJpbmcsICdzdHJpbmcnIHwgJ2Jvb2xlYW4nIHwgJ251bWJlcic+ID0ge1xuICBcImNyZWF0ZWRBdFwiOiBcInN0cmluZ1wiLFxuICBcImRlc2tyaXBzaVwiOiBcInN0cmluZ1wiLFxuICBcImZvckthbnRvclwiOiBcInN0cmluZ1wiLFxuICBcImZvclJvbGVcIjogXCJzdHJpbmdcIixcbiAgXCJpZEN1c3RvbUZpZWxkR3JvdXBcIjogXCJzdHJpbmdcIixcbiAgXCJpc1JlcGVhdGFibGVcIjogXCJib29sZWFuXCIsXG4gIFwibW9kdWxcIjogXCJzdHJpbmdcIixcbiAgXCJuYW1hR3JvdXBcIjogXCJzdHJpbmdcIixcbiAgXCJ0YWJsZU5hbWVcIjogXCJzdHJpbmdcIixcbiAgXCJ0aXBlUmVuZGVyXCI6IFwic3RyaW5nXCIsXG4gIFwidXBkYXRlZEF0XCI6IFwic3RyaW5nXCIsXG4gIFwidXJ1dGFuXCI6IFwibnVtYmVyXCIsXG4gIFwidmlzaWJpbGl0eVJ1bGVcIjogXCJzdHJpbmdcIlxufTtcbiJdfQ==

@@ -1,0 +1,33 @@
+import { AmimsMpartDto } from '../models/amims-mpart-dto';
+import { AmimsPartDto } from '../models/amims-part-dto';
+export interface AmimsPurPoItemReportDto {
+    edd?: number;
+    idEngineerRti?: string;
+    idMpart?: string;
+    idPart?: string;
+    idPurPo?: string;
+    idPurPoItem: string;
+    idPurPrItem?: string;
+    idPurPrcl?: string;
+    idQaRpd?: string;
+    mpart: AmimsMpartDto;
+    notePoItem?: string;
+    oldPoItem?: string;
+    part: AmimsPartDto;
+    price?: number;
+    priorityPoItem?: string;
+    qtyPo?: number;
+    totalQtyGrn?: number;
+    tsnCycle?: number;
+    tsnHours?: number;
+    tsnVal?: number;
+    tsnVar?: string;
+    tsoCycle?: number;
+    tsoHours?: number;
+    tsoVal?: number;
+    tsoVar?: string;
+    warantyStartCycle?: number;
+    warantyStartDate?: string;
+    warantyStartDays?: number;
+    warantyStartHours?: number;
+}

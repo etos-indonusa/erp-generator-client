@@ -1,0 +1,27 @@
+import { AmimsAircraftDto } from '../models/amims-aircraft-dto';
+export interface AmimsMpcWpReportDto {
+    aircraft: AmimsAircraftDto;
+    createdAt?: string;
+    dateAcc?: string;
+    endDateWp?: string;
+    endHours?: number;
+    engineEnd?: string;
+    engineStart?: string;
+    idAircraft?: string;
+    idMpcWp: string;
+    idUserMm?: string;
+    idUserMpc?: string;
+    noteWp?: string;
+    numberWp?: string;
+    onSite?: number;
+    period?: string;
+    periodYear?: number;
+    place?: string;
+    reason?: string;
+    startDateWp?: string;
+    startHours?: number;
+    statusWp?: string;
+    typeWork?: string;
+    updatedAt?: string;
+    validated?: number;
+}

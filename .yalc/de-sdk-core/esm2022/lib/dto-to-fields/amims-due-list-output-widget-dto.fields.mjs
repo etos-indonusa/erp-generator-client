@@ -1,0 +1,28 @@
+export const AmimsDueListOutputWidgetDtoFields = {
+    "atInstall": "string",
+    "ata": "string",
+    "code": "string",
+    "currentPart": "string",
+    "dueAt": "string",
+    "dueC": "number",
+    "dueH": "number",
+    "dueT": "number",
+    "idAircraft": "string",
+    "idDueList": "string",
+    "idDueListOutput": "string",
+    "idMpart": "string",
+    "idPart": "string",
+    "installPart": "string",
+    "keyword": "string",
+    "noteDue": "string",
+    "partNumber": "string",
+    "peruntukan": "string",
+    "ramaining": "number",
+    "sn": "string",
+    "toDue": "number",
+    "total": "number",
+    "typeDue": "string",
+    "typeOfwork": "string",
+    "variabel": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtZHVlLWxpc3Qtb3V0cHV0LXdpZGdldC1kdG8uZmllbGRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvc2RrY29yZS9zcmMvbGliL2R0by10by1maWVsZHMvYW1pbXMtZHVlLWxpc3Qtb3V0cHV0LXdpZGdldC1kdG8uZmllbGRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE1BQU0sQ0FBQyxNQUFNLGlDQUFpQyxHQUFvRDtJQUNoRyxXQUFXLEVBQUUsUUFBUTtJQUNyQixLQUFLLEVBQUUsUUFBUTtJQUNmLE1BQU0sRUFBRSxRQUFRO0lBQ2hCLGFBQWEsRUFBRSxRQUFRO0lBQ3ZCLE9BQU8sRUFBRSxRQUFRO0lBQ2pCLE1BQU0sRUFBRSxRQUFRO0lBQ2hCLE1BQU0sRUFBRSxRQUFRO0lBQ2hCLE1BQU0sRUFBRSxRQUFRO0lBQ2hCLFlBQVksRUFBRSxRQUFRO0lBQ3RCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLGlCQUFpQixFQUFFLFFBQVE7SUFDM0IsU0FBUyxFQUFFLFFBQVE7SUFDbkIsUUFBUSxFQUFFLFFBQVE7SUFDbEIsYUFBYSxFQUFFLFFBQVE7SUFDdkIsU0FBUyxFQUFFLFFBQVE7SUFDbkIsU0FBUyxFQUFFLFFBQVE7SUFDbkIsWUFBWSxFQUFFLFFBQVE7SUFDdEIsWUFBWSxFQUFFLFFBQVE7SUFDdEIsV0FBVyxFQUFFLFFBQVE7SUFDckIsSUFBSSxFQUFFLFFBQVE7SUFDZCxPQUFPLEVBQUUsUUFBUTtJQUNqQixPQUFPLEVBQUUsUUFBUTtJQUNqQixTQUFTLEVBQUUsUUFBUTtJQUNuQixZQUFZLEVBQUUsUUFBUTtJQUN0QixVQUFVLEVBQUUsUUFBUTtDQUNyQixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IEFtaW1zRHVlTGlzdE91dHB1dFdpZGdldER0b0ZpZWxkczogUmVjb3JkPHN0cmluZywgJ3N0cmluZycgfCAnYm9vbGVhbicgfCAnbnVtYmVyJz4gPSB7XG4gIFwiYXRJbnN0YWxsXCI6IFwic3RyaW5nXCIsXG4gIFwiYXRhXCI6IFwic3RyaW5nXCIsXG4gIFwiY29kZVwiOiBcInN0cmluZ1wiLFxuICBcImN1cnJlbnRQYXJ0XCI6IFwic3RyaW5nXCIsXG4gIFwiZHVlQXRcIjogXCJzdHJpbmdcIixcbiAgXCJkdWVDXCI6IFwibnVtYmVyXCIsXG4gIFwiZHVlSFwiOiBcIm51bWJlclwiLFxuICBcImR1ZVRcIjogXCJudW1iZXJcIixcbiAgXCJpZEFpcmNyYWZ0XCI6IFwic3RyaW5nXCIsXG4gIFwiaWREdWVMaXN0XCI6IFwic3RyaW5nXCIsXG4gIFwiaWREdWVMaXN0T3V0cHV0XCI6IFwic3RyaW5nXCIsXG4gIFwiaWRNcGFydFwiOiBcInN0cmluZ1wiLFxuICBcImlkUGFydFwiOiBcInN0cmluZ1wiLFxuICBcImluc3RhbGxQYXJ0XCI6IFwic3RyaW5nXCIsXG4gIFwia2V5d29yZFwiOiBcInN0cmluZ1wiLFxuICBcIm5vdGVEdWVcIjogXCJzdHJpbmdcIixcbiAgXCJwYXJ0TnVtYmVyXCI6IFwic3RyaW5nXCIsXG4gIFwicGVydW50dWthblwiOiBcInN0cmluZ1wiLFxuICBcInJhbWFpbmluZ1wiOiBcIm51bWJlclwiLFxuICBcInNuXCI6IFwic3RyaW5nXCIsXG4gIFwidG9EdWVcIjogXCJudW1iZXJcIixcbiAgXCJ0b3RhbFwiOiBcIm51bWJlclwiLFxuICBcInR5cGVEdWVcIjogXCJzdHJpbmdcIixcbiAgXCJ0eXBlT2Z3b3JrXCI6IFwic3RyaW5nXCIsXG4gIFwidmFyaWFiZWxcIjogXCJzdHJpbmdcIlxufTtcbiJdfQ==

@@ -1,0 +1,15 @@
+import { HttpClient, HttpContext } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { StrictHttpResponse } from '../../strict-http-response';
+import { AmimsLogTsnTsoDto } from '../../models/amims-log-tsn-tso-dto';
+export interface LogTsnTsoControllerRemove$Params {
+    id: string;
+}
+export declare function logTsnTsoControllerRemove(http: HttpClient, rootUrl: string, params: LogTsnTsoControllerRemove$Params, context?: HttpContext): Observable<StrictHttpResponse<{
+    'code'?: number;
+    'pesan'?: string;
+    'data'?: AmimsLogTsnTsoDto;
+}>>;
+export declare namespace logTsnTsoControllerRemove {
+    var PATH: string;
+}

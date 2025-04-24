@@ -1,0 +1,12 @@
+export const AmimsMaintenanceCodeFormIssuedFormSchema = {
+    "idLibFormIssued": {
+        "required": false
+    },
+    "idMaintenanceCode": {
+        "required": false
+    },
+    "idMaintenanceCodeFormIssued": {
+        "required": true
+    }
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtbWFpbnRlbmFuY2UtY29kZS1mb3JtLWlzc3VlZC5mb3JtLXNjaGVtYS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL3Nka2NvcmUvc3JjL2xpYi9mb3JtLXNjaGVtYS9hbWltcy1tYWludGVuYW5jZS1jb2RlLWZvcm0taXNzdWVkLmZvcm0tc2NoZW1hLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE1BQU0sQ0FBQyxNQUFNLHdDQUF3QyxHQUFHO0lBQ3RELGlCQUFpQixFQUFFO1FBQ2pCLFVBQVUsRUFBRSxLQUFLO0tBQ2xCO0lBQ0QsbUJBQW1CLEVBQUU7UUFDbkIsVUFBVSxFQUFFLEtBQUs7S0FDbEI7SUFDRCw2QkFBNkIsRUFBRTtRQUM3QixVQUFVLEVBQUUsSUFBSTtLQUNqQjtDQUNGLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgQW1pbXNNYWludGVuYW5jZUNvZGVGb3JtSXNzdWVkRm9ybVNjaGVtYSA9IHtcbiAgXCJpZExpYkZvcm1Jc3N1ZWRcIjoge1xuICAgIFwicmVxdWlyZWRcIjogZmFsc2VcbiAgfSxcbiAgXCJpZE1haW50ZW5hbmNlQ29kZVwiOiB7XG4gICAgXCJyZXF1aXJlZFwiOiBmYWxzZVxuICB9LFxuICBcImlkTWFpbnRlbmFuY2VDb2RlRm9ybUlzc3VlZFwiOiB7XG4gICAgXCJyZXF1aXJlZFwiOiB0cnVlXG4gIH1cbn07XG4iXX0=

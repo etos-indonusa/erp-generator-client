@@ -1,0 +1,15 @@
+export const AmimsLogTsnTsoWidgetDtoFields = {
+    "batasId": "string",
+    "createdAt": "string",
+    "cycle": "number",
+    "hours": "number",
+    "idLogTsnTso": "string",
+    "idPart": "string",
+    "idTechLog": "string",
+    "total": "number",
+    "tsnC": "number",
+    "tsnH": "number",
+    "tsoC": "number",
+    "tsoH": "number"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtbG9nLXRzbi10c28td2lkZ2V0LWR0by5maWVsZHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9zZGtjb3JlL3NyYy9saWIvZHRvLXRvLWZpZWxkcy9hbWltcy1sb2ctdHNuLXRzby13aWRnZXQtZHRvLmZpZWxkcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxNQUFNLENBQUMsTUFBTSw2QkFBNkIsR0FBb0Q7SUFDNUYsU0FBUyxFQUFFLFFBQVE7SUFDbkIsV0FBVyxFQUFFLFFBQVE7SUFDckIsT0FBTyxFQUFFLFFBQVE7SUFDakIsT0FBTyxFQUFFLFFBQVE7SUFDakIsYUFBYSxFQUFFLFFBQVE7SUFDdkIsUUFBUSxFQUFFLFFBQVE7SUFDbEIsV0FBVyxFQUFFLFFBQVE7SUFDckIsT0FBTyxFQUFFLFFBQVE7SUFDakIsTUFBTSxFQUFFLFFBQVE7SUFDaEIsTUFBTSxFQUFFLFFBQVE7SUFDaEIsTUFBTSxFQUFFLFFBQVE7SUFDaEIsTUFBTSxFQUFFLFFBQVE7Q0FDakIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBBbWltc0xvZ1RzblRzb1dpZGdldER0b0ZpZWxkczogUmVjb3JkPHN0cmluZywgJ3N0cmluZycgfCAnYm9vbGVhbicgfCAnbnVtYmVyJz4gPSB7XG4gIFwiYmF0YXNJZFwiOiBcInN0cmluZ1wiLFxuICBcImNyZWF0ZWRBdFwiOiBcInN0cmluZ1wiLFxuICBcImN5Y2xlXCI6IFwibnVtYmVyXCIsXG4gIFwiaG91cnNcIjogXCJudW1iZXJcIixcbiAgXCJpZExvZ1RzblRzb1wiOiBcInN0cmluZ1wiLFxuICBcImlkUGFydFwiOiBcInN0cmluZ1wiLFxuICBcImlkVGVjaExvZ1wiOiBcInN0cmluZ1wiLFxuICBcInRvdGFsXCI6IFwibnVtYmVyXCIsXG4gIFwidHNuQ1wiOiBcIm51bWJlclwiLFxuICBcInRzbkhcIjogXCJudW1iZXJcIixcbiAgXCJ0c29DXCI6IFwibnVtYmVyXCIsXG4gIFwidHNvSFwiOiBcIm51bWJlclwiXG59O1xuIl19

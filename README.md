@@ -3,7 +3,7 @@ npx ts-node --project tsconfig.tools.json tools/generate-openapi-sdk-with-fields
 npx ts-node --project tsconfig.tools.json tools/generate-openapi-sdk-with-fields.ts https://erp-lib.bogor.vm.devetek.com/api-json src/sdk/lib
  
 npx ts-node --project tsconfig.tools.json tools/generate-openapi-sdk-with-fields.ts https://erp.bogor.vm.devetek.com/api-json
-ts-node --project tsconfig.tools.json tools/generate-public-api.ts
+ ts-node --project tsconfig.tools.json tools/publish-sdk-local-yalc.ts
 
 <!-- REMOVE ENTER BALOBIAH  -->
 ts-node --project tsconfig.tools.json tools/remove-extra-lines.ts [lokasi file ]

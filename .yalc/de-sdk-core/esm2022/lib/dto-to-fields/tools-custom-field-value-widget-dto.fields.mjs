@@ -1,0 +1,16 @@
+export const ToolsCustomFieldValueWidgetDtoFields = {
+    "createdAt": "string",
+    "idCustomField": "string",
+    "idCustomFieldGroup": "string",
+    "idCustomFieldValue": "string",
+    "kodeField": "string",
+    "labelField": "string",
+    "modul": "string",
+    "modulId": "string",
+    "nilai": "string",
+    "nilaiJson": "string",
+    "tableName": "string",
+    "total": "number",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidG9vbHMtY3VzdG9tLWZpZWxkLXZhbHVlLXdpZGdldC1kdG8uZmllbGRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvc2RrY29yZS9zcmMvbGliL2R0by10by1maWVsZHMvdG9vbHMtY3VzdG9tLWZpZWxkLXZhbHVlLXdpZGdldC1kdG8uZmllbGRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE1BQU0sQ0FBQyxNQUFNLG9DQUFvQyxHQUFvRDtJQUNuRyxXQUFXLEVBQUUsUUFBUTtJQUNyQixlQUFlLEVBQUUsUUFBUTtJQUN6QixvQkFBb0IsRUFBRSxRQUFRO0lBQzlCLG9CQUFvQixFQUFFLFFBQVE7SUFDOUIsV0FBVyxFQUFFLFFBQVE7SUFDckIsWUFBWSxFQUFFLFFBQVE7SUFDdEIsT0FBTyxFQUFFLFFBQVE7SUFDakIsU0FBUyxFQUFFLFFBQVE7SUFDbkIsT0FBTyxFQUFFLFFBQVE7SUFDakIsV0FBVyxFQUFFLFFBQVE7SUFDckIsV0FBVyxFQUFFLFFBQVE7SUFDckIsT0FBTyxFQUFFLFFBQVE7SUFDakIsV0FBVyxFQUFFLFFBQVE7Q0FDdEIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBUb29sc0N1c3RvbUZpZWxkVmFsdWVXaWRnZXREdG9GaWVsZHM6IFJlY29yZDxzdHJpbmcsICdzdHJpbmcnIHwgJ2Jvb2xlYW4nIHwgJ251bWJlcic+ID0ge1xuICBcImNyZWF0ZWRBdFwiOiBcInN0cmluZ1wiLFxuICBcImlkQ3VzdG9tRmllbGRcIjogXCJzdHJpbmdcIixcbiAgXCJpZEN1c3RvbUZpZWxkR3JvdXBcIjogXCJzdHJpbmdcIixcbiAgXCJpZEN1c3RvbUZpZWxkVmFsdWVcIjogXCJzdHJpbmdcIixcbiAgXCJrb2RlRmllbGRcIjogXCJzdHJpbmdcIixcbiAgXCJsYWJlbEZpZWxkXCI6IFwic3RyaW5nXCIsXG4gIFwibW9kdWxcIjogXCJzdHJpbmdcIixcbiAgXCJtb2R1bElkXCI6IFwic3RyaW5nXCIsXG4gIFwibmlsYWlcIjogXCJzdHJpbmdcIixcbiAgXCJuaWxhaUpzb25cIjogXCJzdHJpbmdcIixcbiAgXCJ0YWJsZU5hbWVcIjogXCJzdHJpbmdcIixcbiAgXCJ0b3RhbFwiOiBcIm51bWJlclwiLFxuICBcInVwZGF0ZWRBdFwiOiBcInN0cmluZ1wiXG59O1xuIl19

@@ -1,0 +1,32 @@
+import { AmimsAircraftDto } from '../models/amims-aircraft-dto';
+import { AmimsMpartDto } from '../models/amims-mpart-dto';
+import { AmimsPartDto } from '../models/amims-part-dto';
+export interface AmimsDueListOutputReportDto {
+    aircraft: AmimsAircraftDto;
+    atInstall?: string;
+    ata?: string;
+    code?: string;
+    currentPart?: string;
+    dueAt?: string;
+    dueC?: number;
+    dueH?: number;
+    dueT?: number;
+    idAircraft?: string;
+    idDueList?: string;
+    idDueListOutput: string;
+    idMpart?: string;
+    idPart?: string;
+    installPart?: string;
+    keyword?: string;
+    mpart: AmimsMpartDto;
+    noteDue?: string;
+    part: AmimsPartDto;
+    partNumber?: string;
+    peruntukan?: string;
+    ramaining?: number;
+    sn?: string;
+    toDue?: number;
+    typeDue?: string;
+    typeOfwork?: string;
+    variabel?: string;
+}

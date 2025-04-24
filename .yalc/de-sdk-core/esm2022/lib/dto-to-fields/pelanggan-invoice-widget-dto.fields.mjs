@@ -1,0 +1,25 @@
+export const PelangganInvoiceWidgetDtoFields = {
+    "alamatPenagihan": "string",
+    "catatan": "string",
+    "createdAt": "string",
+    "createdBy": "string",
+    "dpp": "number",
+    "idContract": "string",
+    "idInvoice": "string",
+    "jenisInvoice": "string",
+    "metodePembayaran": "string",
+    "nilaiInvoice": "number",
+    "nomorInvoice": "string",
+    "npwp": "string",
+    "periode": "string",
+    "picPenagihan": "string",
+    "ppn": "number",
+    "statusInvoice": "string",
+    "tanggalDibayar": "string",
+    "tanggalJatuhTempo": "string",
+    "tanggalTerbit": "string",
+    "total": "number",
+    "updatedAt": "string",
+    "updatedBy": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGVsYW5nZ2FuLWludm9pY2Utd2lkZ2V0LWR0by5maWVsZHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9zZGtjb3JlL3NyYy9saWIvZHRvLXRvLWZpZWxkcy9wZWxhbmdnYW4taW52b2ljZS13aWRnZXQtZHRvLmZpZWxkcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxNQUFNLENBQUMsTUFBTSwrQkFBK0IsR0FBb0Q7SUFDOUYsaUJBQWlCLEVBQUUsUUFBUTtJQUMzQixTQUFTLEVBQUUsUUFBUTtJQUNuQixXQUFXLEVBQUUsUUFBUTtJQUNyQixXQUFXLEVBQUUsUUFBUTtJQUNyQixLQUFLLEVBQUUsUUFBUTtJQUNmLFlBQVksRUFBRSxRQUFRO0lBQ3RCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLGNBQWMsRUFBRSxRQUFRO0lBQ3hCLGtCQUFrQixFQUFFLFFBQVE7SUFDNUIsY0FBYyxFQUFFLFFBQVE7SUFDeEIsY0FBYyxFQUFFLFFBQVE7SUFDeEIsTUFBTSxFQUFFLFFBQVE7SUFDaEIsU0FBUyxFQUFFLFFBQVE7SUFDbkIsY0FBYyxFQUFFLFFBQVE7SUFDeEIsS0FBSyxFQUFFLFFBQVE7SUFDZixlQUFlLEVBQUUsUUFBUTtJQUN6QixnQkFBZ0IsRUFBRSxRQUFRO0lBQzFCLG1CQUFtQixFQUFFLFFBQVE7SUFDN0IsZUFBZSxFQUFFLFFBQVE7SUFDekIsT0FBTyxFQUFFLFFBQVE7SUFDakIsV0FBVyxFQUFFLFFBQVE7SUFDckIsV0FBVyxFQUFFLFFBQVE7Q0FDdEIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBQZWxhbmdnYW5JbnZvaWNlV2lkZ2V0RHRvRmllbGRzOiBSZWNvcmQ8c3RyaW5nLCAnc3RyaW5nJyB8ICdib29sZWFuJyB8ICdudW1iZXInPiA9IHtcbiAgXCJhbGFtYXRQZW5hZ2loYW5cIjogXCJzdHJpbmdcIixcbiAgXCJjYXRhdGFuXCI6IFwic3RyaW5nXCIsXG4gIFwiY3JlYXRlZEF0XCI6IFwic3RyaW5nXCIsXG4gIFwiY3JlYXRlZEJ5XCI6IFwic3RyaW5nXCIsXG4gIFwiZHBwXCI6IFwibnVtYmVyXCIsXG4gIFwiaWRDb250cmFjdFwiOiBcInN0cmluZ1wiLFxuICBcImlkSW52b2ljZVwiOiBcInN0cmluZ1wiLFxuICBcImplbmlzSW52b2ljZVwiOiBcInN0cmluZ1wiLFxuICBcIm1ldG9kZVBlbWJheWFyYW5cIjogXCJzdHJpbmdcIixcbiAgXCJuaWxhaUludm9pY2VcIjogXCJudW1iZXJcIixcbiAgXCJub21vckludm9pY2VcIjogXCJzdHJpbmdcIixcbiAgXCJucHdwXCI6IFwic3RyaW5nXCIsXG4gIFwicGVyaW9kZVwiOiBcInN0cmluZ1wiLFxuICBcInBpY1BlbmFnaWhhblwiOiBcInN0cmluZ1wiLFxuICBcInBwblwiOiBcIm51bWJlclwiLFxuICBcInN0YXR1c0ludm9pY2VcIjogXCJzdHJpbmdcIixcbiAgXCJ0YW5nZ2FsRGliYXlhclwiOiBcInN0cmluZ1wiLFxuICBcInRhbmdnYWxKYXR1aFRlbXBvXCI6IFwic3RyaW5nXCIsXG4gIFwidGFuZ2dhbFRlcmJpdFwiOiBcInN0cmluZ1wiLFxuICBcInRvdGFsXCI6IFwibnVtYmVyXCIsXG4gIFwidXBkYXRlZEF0XCI6IFwic3RyaW5nXCIsXG4gIFwidXBkYXRlZEJ5XCI6IFwic3RyaW5nXCJcbn07XG4iXX0=

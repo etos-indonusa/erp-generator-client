@@ -1,0 +1,20 @@
+export const AmimsInspectionReportDtoFields = {
+    "aircraft": "string",
+    "atachapter": "string",
+    "createdAt": "string",
+    "cycleTo": "number",
+    "flightHoursTo": "number",
+    "idAircraft": "string",
+    "idInspection": "string",
+    "idMaintenanceCode": "string",
+    "idPart": "string",
+    "idUser": "string",
+    "noteInspection": "string",
+    "oldId": "string",
+    "part": "string",
+    "repetitions": "number",
+    "timeRangeTo": "number",
+    "timeUnit": "string",
+    "updatedAt": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtaW5zcGVjdGlvbi1yZXBvcnQtZHRvLmZpZWxkcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL3Nka2NvcmUvc3JjL2xpYi9kdG8tdG8tZmllbGRzL2FtaW1zLWluc3BlY3Rpb24tcmVwb3J0LWR0by5maWVsZHMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsTUFBTSxDQUFDLE1BQU0sOEJBQThCLEdBQW9EO0lBQzdGLFVBQVUsRUFBRSxRQUFRO0lBQ3BCLFlBQVksRUFBRSxRQUFRO0lBQ3RCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLFNBQVMsRUFBRSxRQUFRO0lBQ25CLGVBQWUsRUFBRSxRQUFRO0lBQ3pCLFlBQVksRUFBRSxRQUFRO0lBQ3RCLGNBQWMsRUFBRSxRQUFRO0lBQ3hCLG1CQUFtQixFQUFFLFFBQVE7SUFDN0IsUUFBUSxFQUFFLFFBQVE7SUFDbEIsUUFBUSxFQUFFLFFBQVE7SUFDbEIsZ0JBQWdCLEVBQUUsUUFBUTtJQUMxQixPQUFPLEVBQUUsUUFBUTtJQUNqQixNQUFNLEVBQUUsUUFBUTtJQUNoQixhQUFhLEVBQUUsUUFBUTtJQUN2QixhQUFhLEVBQUUsUUFBUTtJQUN2QixVQUFVLEVBQUUsUUFBUTtJQUNwQixXQUFXLEVBQUUsUUFBUTtDQUN0QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IEFtaW1zSW5zcGVjdGlvblJlcG9ydER0b0ZpZWxkczogUmVjb3JkPHN0cmluZywgJ3N0cmluZycgfCAnYm9vbGVhbicgfCAnbnVtYmVyJz4gPSB7XG4gIFwiYWlyY3JhZnRcIjogXCJzdHJpbmdcIixcbiAgXCJhdGFjaGFwdGVyXCI6IFwic3RyaW5nXCIsXG4gIFwiY3JlYXRlZEF0XCI6IFwic3RyaW5nXCIsXG4gIFwiY3ljbGVUb1wiOiBcIm51bWJlclwiLFxuICBcImZsaWdodEhvdXJzVG9cIjogXCJudW1iZXJcIixcbiAgXCJpZEFpcmNyYWZ0XCI6IFwic3RyaW5nXCIsXG4gIFwiaWRJbnNwZWN0aW9uXCI6IFwic3RyaW5nXCIsXG4gIFwiaWRNYWludGVuYW5jZUNvZGVcIjogXCJzdHJpbmdcIixcbiAgXCJpZFBhcnRcIjogXCJzdHJpbmdcIixcbiAgXCJpZFVzZXJcIjogXCJzdHJpbmdcIixcbiAgXCJub3RlSW5zcGVjdGlvblwiOiBcInN0cmluZ1wiLFxuICBcIm9sZElkXCI6IFwic3RyaW5nXCIsXG4gIFwicGFydFwiOiBcInN0cmluZ1wiLFxuICBcInJlcGV0aXRpb25zXCI6IFwibnVtYmVyXCIsXG4gIFwidGltZVJhbmdlVG9cIjogXCJudW1iZXJcIixcbiAgXCJ0aW1lVW5pdFwiOiBcInN0cmluZ1wiLFxuICBcInVwZGF0ZWRBdFwiOiBcInN0cmluZ1wiXG59O1xuIl19

@@ -1,0 +1,25 @@
+export const AmimsAircraftDtoFields = {
+    "acFoto": "string",
+    "createdAt": "string",
+    "descriptionAircraft": "string",
+    "hasapu": "string",
+    "idActype": "string",
+    "idAircraft": "string",
+    "isDeleted": "number",
+    "keywordAircraft": "string",
+    "manufactureAircraft": "string",
+    "manufactureDate": "string",
+    "manufactureEngine": "string",
+    "manufacturedBy": "string",
+    "oldActype": "string",
+    "oldId": "string",
+    "purchasedate": "string",
+    "reasonRegschange": "string",
+    "registrationNumber": "string",
+    "serialNumber": "string",
+    "statusAc": "string",
+    "tendurance": "number",
+    "updatedAt": "string",
+    "yearMade": "string"
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYW1pbXMtYWlyY3JhZnQtZHRvLmZpZWxkcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL3Nka2NvcmUvc3JjL2xpYi9kdG8tdG8tZmllbGRzL2FtaW1zLWFpcmNyYWZ0LWR0by5maWVsZHMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsTUFBTSxDQUFDLE1BQU0sc0JBQXNCLEdBQW9EO0lBQ3JGLFFBQVEsRUFBRSxRQUFRO0lBQ2xCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLHFCQUFxQixFQUFFLFFBQVE7SUFDL0IsUUFBUSxFQUFFLFFBQVE7SUFDbEIsVUFBVSxFQUFFLFFBQVE7SUFDcEIsWUFBWSxFQUFFLFFBQVE7SUFDdEIsV0FBVyxFQUFFLFFBQVE7SUFDckIsaUJBQWlCLEVBQUUsUUFBUTtJQUMzQixxQkFBcUIsRUFBRSxRQUFRO0lBQy9CLGlCQUFpQixFQUFFLFFBQVE7SUFDM0IsbUJBQW1CLEVBQUUsUUFBUTtJQUM3QixnQkFBZ0IsRUFBRSxRQUFRO0lBQzFCLFdBQVcsRUFBRSxRQUFRO0lBQ3JCLE9BQU8sRUFBRSxRQUFRO0lBQ2pCLGNBQWMsRUFBRSxRQUFRO0lBQ3hCLGtCQUFrQixFQUFFLFFBQVE7SUFDNUIsb0JBQW9CLEVBQUUsUUFBUTtJQUM5QixjQUFjLEVBQUUsUUFBUTtJQUN4QixVQUFVLEVBQUUsUUFBUTtJQUNwQixZQUFZLEVBQUUsUUFBUTtJQUN0QixXQUFXLEVBQUUsUUFBUTtJQUNyQixVQUFVLEVBQUUsUUFBUTtDQUNyQixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IEFtaW1zQWlyY3JhZnREdG9GaWVsZHM6IFJlY29yZDxzdHJpbmcsICdzdHJpbmcnIHwgJ2Jvb2xlYW4nIHwgJ251bWJlcic+ID0ge1xuICBcImFjRm90b1wiOiBcInN0cmluZ1wiLFxuICBcImNyZWF0ZWRBdFwiOiBcInN0cmluZ1wiLFxuICBcImRlc2NyaXB0aW9uQWlyY3JhZnRcIjogXCJzdHJpbmdcIixcbiAgXCJoYXNhcHVcIjogXCJzdHJpbmdcIixcbiAgXCJpZEFjdHlwZVwiOiBcInN0cmluZ1wiLFxuICBcImlkQWlyY3JhZnRcIjogXCJzdHJpbmdcIixcbiAgXCJpc0RlbGV0ZWRcIjogXCJudW1iZXJcIixcbiAgXCJrZXl3b3JkQWlyY3JhZnRcIjogXCJzdHJpbmdcIixcbiAgXCJtYW51ZmFjdHVyZUFpcmNyYWZ0XCI6IFwic3RyaW5nXCIsXG4gIFwibWFudWZhY3R1cmVEYXRlXCI6IFwic3RyaW5nXCIsXG4gIFwibWFudWZhY3R1cmVFbmdpbmVcIjogXCJzdHJpbmdcIixcbiAgXCJtYW51ZmFjdHVyZWRCeVwiOiBcInN0cmluZ1wiLFxuICBcIm9sZEFjdHlwZVwiOiBcInN0cmluZ1wiLFxuICBcIm9sZElkXCI6IFwic3RyaW5nXCIsXG4gIFwicHVyY2hhc2VkYXRlXCI6IFwic3RyaW5nXCIsXG4gIFwicmVhc29uUmVnc2NoYW5nZVwiOiBcInN0cmluZ1wiLFxuICBcInJlZ2lzdHJhdGlvbk51bWJlclwiOiBcInN0cmluZ1wiLFxuICBcInNlcmlhbE51bWJlclwiOiBcInN0cmluZ1wiLFxuICBcInN0YXR1c0FjXCI6IFwic3RyaW5nXCIsXG4gIFwidGVuZHVyYW5jZVwiOiBcIm51bWJlclwiLFxuICBcInVwZGF0ZWRBdFwiOiBcInN0cmluZ1wiLFxuICBcInllYXJNYWRlXCI6IFwic3RyaW5nXCJcbn07XG4iXX0=
