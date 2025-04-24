@@ -14,562 +14,389 @@ export const MENU: MenuItem[] = [
         label: 'IN Apps',
         isTitle: true
     }
-     
-     
-     
-    ,{
-        label: 'Mpart',
-        icon: 'message-square',
-        link: '/app/amims/mpart',
-    }
-    ,{
-        label: 'Warranty',
-        icon: 'message-square',
-        link: '/app/amims/warranty',
-    }
-    ,{
-        label: 'TypeOfwork',
-        icon: 'message-square',
-        link: '/app/amims/type-ofwork',
-    }
-    ,{
-        label: 'TechLogJo',
-        icon: 'message-square',
-        link: '/app/amims/tech-log-jo',
-    }
-    ,{
-        label: 'TechLogItem',
-        icon: 'message-square',
-        link: '/app/amims/tech-log-item',
-    }
-    ,{
-        label: 'TechLogEngineCheck',
-        icon: 'message-square',
-        link: '/app/amims/tech-log-engine-check',
-    }
-    ,{
-        label: 'TechLogEngine',
-        icon: 'message-square',
-        link: '/app/amims/tech-log-engine',
-    }
-    ,{
-        label: 'TechLog',
-        icon: 'message-square',
-        link: '/app/amims/tech-log',
-    }
-    ,{
-        label: 'TechDiscrepancies',
-        icon: 'message-square',
-        link: '/app/amims/tech-discrepancies',
-    }
-    ,{
-        label: 'TechDefect',
-        icon: 'message-square',
-        link: '/app/amims/tech-defect',
-    }
-    ,{
-        label: 'TdType',
-        icon: 'message-square',
-        link: '/app/amims/td-type',
-    }
-    ,{
-        label: 'TdRef',
-        icon: 'message-square',
-        link: '/app/amims/td-ref',
-    }
-    ,{
-        label: 'TdDetailAc',
-        icon: 'message-square',
-        link: '/app/amims/td-detail-ac',
-    }
-    ,{
-        label: 'TdDetail',
-        icon: 'message-square',
-        link: '/app/amims/td-detail',
-    }
-    ,{
-        label: 'Td',
-        icon: 'message-square',
-        link: '/app/amims/td',
-    }
-    ,{
-        label: 'StoreTransferItem',
-        icon: 'message-square',
-        link: '/app/amims/store-transfer-item',
-    }
-    ,{
-        label: 'StoreTransfer',
-        icon: 'message-square',
-        link: '/app/amims/store-transfer',
-    }
-    ,{
-        label: 'StoreDestroy',
-        icon: 'message-square',
-        link: '/app/amims/store-destroy',
-    }
-    ,{
-        label: 'Site',
-        icon: 'message-square',
-        link: '/app/amims/site',
-    }
-    ,{
-        label: 'Shipping',
-        icon: 'message-square',
-        link: '/app/amims/shipping',
-    }
-    ,{
-        label: 'RotaryFactor',
-        icon: 'message-square',
-        link: '/app/amims/rotary-factor',
-    }
-    ,{
-        label: 'QaTransferItem',
-        icon: 'message-square',
-        link: '/app/amims/qa-transfer-item',
-    }
-    ,{
-        label: 'QaTransfer',
-        icon: 'message-square',
-        link: '/app/amims/qa-transfer',
-    }
-    ,{
-        label: 'QaRpdDispotition',
-        icon: 'message-square',
-        link: '/app/amims/qa-rpd-dispotition',
-    }
-    ,{
-        label: 'QaRpd',
-        icon: 'message-square',
-        link: '/app/amims/qa-rpd',
-    }
-    ,{
-        label: 'PurVendorItem',
-        icon: 'message-square',
-        link: '/app/amims/pur-vendor-item',
-    }
-    ,{
-        label: 'PurVendorContact',
-        icon: 'message-square',
-        link: '/app/amims/pur-vendor-contact',
-    }
-    ,{
-        label: 'PurVendor',
-        icon: 'message-square',
-        link: '/app/amims/pur-vendor',
-    }
-    ,{
-        label: 'PurReturnItem',
-        icon: 'message-square',
-        link: '/app/amims/pur-return-item',
-    }
-    ,{
-        label: 'PurReturn',
-        icon: 'message-square',
-        link: '/app/amims/pur-return',
-    }
-    ,{
-        label: 'PurPrcl',
-        icon: 'message-square',
-        link: '/app/amims/pur-prcl',
-    }
-    ,{
-        label: 'PurPrItem',
-        icon: 'message-square',
-        link: '/app/amims/pur-pr-item',
-    }
-    ,{
-        label: 'PurPr',
-        icon: 'message-square',
-        link: '/app/amims/pur-pr',
-    }
-    ,{
-        label: 'PurPoItem',
-        icon: 'message-square',
-        link: '/app/amims/pur-po-item',
-    }
-    ,{
-        label: 'PurPo',
-        icon: 'message-square',
-        link: '/app/amims/pur-po',
-    }
-    ,{
-        label: 'PurGrnItem',
-        icon: 'message-square',
-        link: '/app/amims/pur-grn-item',
-    }
-    ,{
-        label: 'PurGrn',
-        icon: 'message-square',
-        link: '/app/amims/pur-grn',
-    }
-    ,{
-        label: 'Position',
-        icon: 'message-square',
-        link: '/app/amims/position',
-    }
-    ,{
-        label: 'Pilot',
-        icon: 'message-square',
-        link: '/app/amims/pilot',
-    }
-    ,{
-        label: 'Partid',
-        icon: 'message-square',
-        link: '/app/amims/partid',
-    }
-    ,{
-        label: 'PartLog',
-        icon: 'message-square',
-        link: '/app/amims/part-log',
-    }
-    ,{
-        label: 'PartInstallOld',
-        icon: 'message-square',
-        link: '/app/amims/part-install-old',
-    }
-    ,{
-        label: 'PartInstall',
-        icon: 'message-square',
-        link: '/app/amims/part-install',
-    }
-    ,{
-        label: 'PartFigureIndex',
-        icon: 'message-square',
-        link: '/app/amims/part-figure-index',
-    }
-    ,{
-        label: 'PartCondition',
-        icon: 'message-square',
-        link: '/app/amims/part-condition',
-    }
-    ,{
-        label: 'PartCategory',
-        icon: 'message-square',
-        link: '/app/amims/part-category',
-    }
-    ,{
-        label: 'PartAta',
-        icon: 'message-square',
-        link: '/app/amims/part-ata',
-    }
-    ,{
-        label: 'PartAlternative',
-        icon: 'message-square',
-        link: '/app/amims/part-alternative',
-    }
-    ,{
-        label: 'PartActype',
-        icon: 'message-square',
-        link: '/app/amims/part-actype',
-    }
-    ,{
-        label: 'Part',
-        icon: 'message-square',
-        link: '/app/amims/part',
-    }
-    ,{
-        label: 'MpcWp',
-        icon: 'message-square',
-        link: '/app/amims/mpc-wp',
-    }
-    ,{
-        label: 'MpcSelfMaintenance',
-        icon: 'message-square',
-        link: '/app/amims/mpc-self-maintenance',
-    }
-    ,{
-        label: 'MpcPiroItem',
-        icon: 'message-square',
-        link: '/app/amims/mpc-piro-item',
-    }
-    ,{
-        label: 'MpcPiro',
-        icon: 'message-square',
-        link: '/app/amims/mpc-piro',
-    }
-    ,{
-        label: 'MpcJoOperator',
-        icon: 'message-square',
-        link: '/app/amims/mpc-jo-operator',
-    }
-    ,{
-        label: 'MpcJo',
-        icon: 'message-square',
-        link: '/app/amims/mpc-jo',
-    }
-    ,{
-        label: 'MpcGse',
-        icon: 'message-square',
-        link: '/app/amims/mpc-gse',
-    }
-    ,{
-        label: 'Mel',
-        icon: 'message-square',
-        link: '/app/amims/mel',
-    }
-    ,{
-        label: 'MaintenanceCodeReference',
-        icon: 'message-square',
-        link: '/app/amims/maintenance-code-reference',
-    }
-    ,{
-        label: 'MaintenanceCodeFormIssued',
-        icon: 'message-square',
-        link: '/app/amims/maintenance-code-form-issued',
-    }
-    ,{
-        label: 'MaintenanceCode',
-        icon: 'message-square',
-        link: '/app/amims/maintenance-code',
-    }
-    ,{
-        label: 'Maintenance',
-        icon: 'message-square',
-        link: '/app/amims/maintenance',
-    }
-    ,{
-        label: 'LogUser',
-        icon: 'message-square',
-        link: '/app/amims/log-user',
-    }
-    ,{
-        label: 'LogTsnTso',
-        icon: 'message-square',
-        link: '/app/amims/log-tsn-tso',
-    }
-    ,{
-        label: 'LogTransfer',
-        icon: 'message-square',
-        link: '/app/amims/log-transfer',
-    }
-    ,{
-        label: 'LogSp',
-        icon: 'message-square',
-        link: '/app/amims/log-sp',
-    }
-    ,{
-        label: 'LogProcess',
-        icon: 'message-square',
-        link: '/app/amims/log-process',
-    }
-    ,{
-        label: 'LocationFlight',
-        icon: 'message-square',
-        link: '/app/amims/location-flight',
-    }
-    ,{
-        label: 'LifeTimeLimit',
-        icon: 'message-square',
-        link: '/app/amims/life-time-limit',
-    }
-    ,{
-        label: 'LibUpload',
-        icon: 'message-square',
-        link: '/app/amims/lib-upload',
-    }
-    ,{
-        label: 'LibReference',
-        icon: 'message-square',
-        link: '/app/amims/lib-reference',
-    }
-    ,{
-        label: 'LibFormIssued',
-        icon: 'message-square',
-        link: '/app/amims/lib-form-issued',
-    }
-     
-    ,{
-        label: 'Inspection',
-        icon: 'message-square',
-        link: '/app/amims/inspection',
-    }
-    ,{
-        label: 'FigureIndex',
-        icon: 'message-square',
-        link: '/app/amims/figure-index',
-    }
-    ,{
-        label: 'EngineerRtiPart',
-        icon: 'message-square',
-        link: '/app/amims/engineer-rti-part',
-    }
-    ,{
-        label: 'EngineerRtiIdentify',
-        icon: 'message-square',
-        link: '/app/amims/engineer-rti-identify',
-    }
-    ,{
-        label: 'EngineerRti',
-        icon: 'message-square',
-        link: '/app/amims/engineer-rti',
-    }
-    ,{
-        label: 'EngineerPrisReturnItem',
-        icon: 'message-square',
-        link: '/app/amims/engineer-pris-return-item',
-    }
-    ,{
-        label: 'EngineerPrisReturn',
-        icon: 'message-square',
-        link: '/app/amims/engineer-pris-return',
-    }
-    ,{
-        label: 'EngineerPrisItem',
-        icon: 'message-square',
-        link: '/app/amims/engineer-pris-item',
-    }
-    ,{
-        label: 'EngineerPris',
-        icon: 'message-square',
-        link: '/app/amims/engineer-pris',
-    }
-    ,{
-        label: 'EngineerPmtrItem',
-        icon: 'message-square',
-        link: '/app/amims/engineer-pmtr-item',
-    }
-    ,{
-        label: 'EngineerPmtr',
-        icon: 'message-square',
-        link: '/app/amims/engineer-pmtr',
-    }
-    ,{
-        label: 'DueListOutput',
-        icon: 'message-square',
-        link: '/app/amims/due-list-output',
-    }
-    ,{
-        label: 'DueList',
-        icon: 'message-square',
-        link: '/app/amims/due-list',
-    }
-    ,{
-        label: 'AircraftDetail',
-        icon: 'message-square',
-        link: '/app/amims/aircraft-detail',
-    }
-    
-   
-  
-    ,{
-        label: 'InternalGrnItem',
-        icon: 'message-square',
-        link: '/app/amims/internal-grn-item',
-    }
-    ,{
-        label: 'InternalGrn',
-        icon: 'message-square',
-        link: '/app/amims/internal-grn',
-    }
-    ,{
-        label: 'Inspection',
-        icon: 'message-square',
-        link: '/app/amims/inspection',
-    }
-    ,{
-        label: 'FigureIndex',
-        icon: 'message-square',
-        link: '/app/amims/figure-index',
-    }
-    ,{
-        label: 'EngineerRtiPart',
-        icon: 'message-square',
-        link: '/app/amims/engineer-rti-part',
-    }
-    ,{
-        label: 'EngineerRtiIdentify',
-        icon: 'message-square',
-        link: '/app/amims/engineer-rti-identify',
-    }
-    ,{
-        label: 'EngineerRti',
-        icon: 'message-square',
-        link: '/app/amims/engineer-rti',
-    }
-    ,{
-        label: 'EngineerPrisReturnItem',
-        icon: 'message-square',
-        link: '/app/amims/engineer-pris-return-item',
-    }
-    ,{
-        label: 'EngineerPrisReturn',
-        icon: 'message-square',
-        link: '/app/amims/engineer-pris-return',
-    }
-    ,{
-        label: 'EngineerPrisItem',
-        icon: 'message-square',
-        link: '/app/amims/engineer-pris-item',
-    }
-    ,{
-        label: 'EngineerPris',
-        icon: 'message-square',
-        link: '/app/amims/engineer-pris',
-    }
-    ,{
-        label: 'EngineerPmtrItem',
-        icon: 'message-square',
-        link: '/app/amims/engineer-pmtr-item',
-    }
-    ,{
-        label: 'EngineerPmtr',
-        icon: 'message-square',
-        link: '/app/amims/engineer-pmtr',
-    }
-    ,{
-        label: 'DueListOutput',
-        icon: 'message-square',
-        link: '/app/amims/due-list-output',
-    }
-    ,{
-        label: 'DueList',
-        icon: 'message-square',
-        link: '/app/amims/due-list',
-    }
-    ,{
-        label: 'Doctype',
-        icon: 'message-square',
-        link: '/app/doctype',
-    }
     ,{
         label: 'Currency',
         icon: 'message-square',
-        link: '/app/currency',
-    }
-    ,{
-        label: 'ConditionMonitoring',
+        link: '/app/amims/currency',
+    },
+
+    // Inventory
+    {
+        label: 'Inventory',
+        isTitle: true
+    },
+    {
+        label: 'part',
         icon: 'message-square',
-        link: '/app/condition-monitoring',
-    }
-    ,{
-        label: 'Company',
+        link: '/app/amims/amims-inventory/part',
+    },
+    
+    {
+        label: 'part-install',
         icon: 'message-square',
-        link: '/app/company',
-    }
-    ,{
-        label: 'Bin',
+        link: '/app/amims/amims-inventory/part-install',
+    },
+    {
+        label: 'part-figure-index',
         icon: 'message-square',
-        link: '/app/bin',
-    }
-    ,{
-        label: 'Ata',
+        link: '/app/amims/amims-inventory/part-figure-index',
+    },
+    {
+        label: 'part-condition',
         icon: 'message-square',
-        link: '/app/ata',
-    }
-    ,{
-        label: 'Aircraft',
+        link: '/app/amims/amims-inventory/part-condition',
+    },
+    {
+        label: 'part-category',
         icon: 'message-square',
-        link: '/app/amims/aircraft',
-    }
-    ,{
-        label: 'Actype',
+        link: '/app/amims/amims-inventory/part-category',
+    },
+    {
+        label: 'part-ata',
         icon: 'message-square',
-        link: '/app/actype',
+        link: '/app/amims/amims-inventory/part-ata',
+    },
+    {
+        label: 'part-actype',
+        icon: 'message-square',
+        link: '/app/amims/amims-inventory/part-actype',
+    },
+    
+    {
+        label: 'part-alternative',
+        icon: 'message-square',
+        link: '/app/amims/amims-inventory/part-alternative',
+    },
+    {
+        label: 'mpart',
+        icon: 'message-square',
+        link: '/app/amims/amims-inventory/mpart',
+    },
+    {
+        label: 'bin',
+        icon: 'message-square',
+        link: '/app/amims/amims-inventory/bin',
+    }
+
+    //Master
+
+    , {
+        label: 'Master',
+        isTitle: true
     }
     , {
-        label: 'LastMaintenance',
+        label: 'ata',
         icon: 'message-square',
-        link: '/app/last-maintenance',
+        link: '/app/amims/amims-master/ata',
+    }
+
+    , {
+        label: 'company',
+        icon: 'message-square',
+        link: '/app/amims/amims-master/company',
+    }
+    , {
+        label: 'doctype',
+        icon: 'message-square',
+        link: '/app/amims/amims-master/doctype',
+    }
+    , {
+        label: 'lib-form-issued',
+        icon: 'message-square',
+        link: '/app/amims/amims-master/lib-form-issued',
+    }
+    , {
+        label: 'lib-reference',
+        icon: 'message-square',
+        link: '/app/amims/amims-master/lib-reference',
+    }
+    // , {
+    //     label: 'lib-upload',
+    //     icon: 'message-square',
+    //     link: '/app/amims/amims-master/lib-upload',
+    // }
+    , {
+        label: 'life-time-limit',
+        icon: 'message-square',
+        link: '/app/amims/amims-master/life-time-limit',
+    }
+    , {
+        label: 'location-flight',
+        icon: 'message-square',
+        link: '/app/amims/amims-master/location-flight',
+    }
+    , {
+        label: 'mel',
+        icon: 'message-square',
+        link: '/app/amims/amims-master/mel',
+    }
+
+    , {
+        label: 'partid',
+        icon: 'message-square',
+        link: '/app/amims/amims-master/partid',
+    }
+    , {
+        label: 'pilot',
+        icon: 'message-square',
+        link: '/app/amims/amims-master/pilot',
+    }
+    , {
+        label: 'position',
+        icon: 'message-square',
+        link: '/app/amims/amims-master/position',
+    }
+    , {
+        label: 'shipping',
+        icon: 'message-square',
+        link: '/app/amims/amims-master/shipping',
+    }
+    , {
+        label: 'type-ofwork',
+        icon: 'message-square',
+        link: '/app/amims/amims-master/type-ofwork',
+    }
+    , {
+        label: 'warranty',
+        icon: 'message-square',
+        link: '/app/amims/amims-master/warranty',
+    },
+
+    // Maintenance
+    {
+        label: 'Maintenance',
+        isTitle: true
+    }
+    , {
+        label: 'actype',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/actype',
+    }
+    , {
+        label: 'aircraft',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/aircraft',
+    }
+    , {
+        label: 'aircraft-detail',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/aircraft-detail',
+    }
+    , {
+        label: 'condition-monitoring',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/condition-monitoring',
+    }
+    , {
+        label: 'due-list',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/due-list',
+    }
+    , {
+        label: 'due-list-output',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/due-list-output',
+    }
+    , {
+        label: 'engineer-rti',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/engineer-rti',
+    }
+    , {
+        label: 'engineer-rti-identify',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/engineer-rti-identify',
+    }
+    , {
+        label: 'engineer-rti-part',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/engineer-rti-part',
+    }
+    , {
+        label: 'inspection',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/inspection',
+    }
+    , {
+        label: 'last-maintenance',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/last-maintenance',
+    }
+    , {
+        label: 'log-process',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/log-process',
+    }
+    , {
+        label: 'log-sp',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/log-sp',
+    }
+    , {
+        label: 'log-transfer',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/log-transfer',
+    }
+    , {
+        label: 'log-tsn-tso',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/log-tsn-tso',
+    }
+    , {
+        label: 'log-user',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/log-user',
+    }
+    , {
+        label: 'maintenance',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/maintenance',
+    }
+    , {
+        label: 'maintenance-code',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/maintenance-code',
+    }
+    , {
+        label: 'maintenance-code-form-issued',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/maintenance-code-form-issued',
+    }
+    , {
+        label: 'maintenance-code-reference',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/maintenance-code-reference',
+    }
+    , {
+        label: 'rotary-factor',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/rotary-factor',
+    }
+    , {
+        label: 'tech-defect',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/tech-defect',
+    }
+    , {
+        label: 'tech-discrepancies',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/tech-discrepancies',
+    }
+    , {
+        label: 'tech-log',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/tech-log',
+    }
+    , {
+        label: 'tech-log-engine',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/tech-log-engine',
+    }
+    , {
+        label: 'tech-log-engine-check',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/tech-log-engine-check',
+    }
+    , {
+        label: 'tech-log-item',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/tech-log-item',
+    }
+    , {
+        label: 'tech-log-jo',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/tech-log-jo',
+    },
+
+    // DOCUMENT 
+    {
+        label: 'Document',
+        isTitle: true
+    }
+    , {
+        label: 'internal-grn',
+        icon: 'message-square',
+        link: '/app/amims/amims-erp/internal-grn',
+    }
+    , {
+        label: 'internal-grn-item',
+        icon: 'message-square',
+        link: '/app/amims/amims-erp/internal-grn-item',
+    }
+    , {
+        label: 'currency',
+        icon: 'message-square',
+        link: '/app/amims/amims-erp/currency',
+    }
+    , {
+        label: 'engineer-pmtr',
+        icon: 'message-square',
+        link: '/app/amims/amims-erp/engineer-pmtr',
+    }
+    , {
+        label: 'engineer-pmtr-item',
+        icon: 'message-square',
+        link: '/app/amims/amims-erp/engineer-pmtr-item',
+    }
+    , {
+        label: 'engineer-pris',
+        icon: 'message-square',
+        link: '/app/amims/amims-erp/engineer-pris',
+    }
+    , {
+        label: 'engineer-pris-item',
+        icon: 'message-square',
+        link: '/app/amims/amims-erp/engineer-pris-item',
+    }
+    , {
+        label: 'engineer-pris-return',
+        icon: 'message-square',
+        link: '/app/amims/amims-erp/engineer-pris-return',
+    }
+    , {
+        label: 'engineer-pris-return-item',
+        icon: 'message-square',
+        link: '/app/amims/amims-erp/engineer-pris-return-item',
+    }
+    , {
+        label: 'mpc-gse',
+        icon: 'message-square',
+        link: '/app/amims/amims-erp/mpc-gse',
+    }
+    , {
+        label: 'mpc-jo',
+        icon: 'message-square',
+        link: '/app/amims/amims-erp/mpc-jo',
+    }
+    , {
+        label: 'mpc-jo-operator',
+        icon: 'message-square',
+        link: '/app/amims/amims-erp/mpc-jo-operator',
+    }
+    , {
+        label: 'mpc-piro',
+        icon: 'message-square',
+        link: '/app/amims/amims-erp/mpc-piro',
+    }
+    , {
+        label: 'mpc-piro-item',
+        icon: 'message-square',
+        link: '/app/amims/amims-erp/mpc-piro-item',
+    }
+    , {
+        label: 'mpc-self-maintenance',
+        icon: 'message-square',
+        link: '/app/amims/amims-erp/mpc-self-maintenance',
+    }
+    , {
+        label: 'mpc-wp',
+        icon: 'message-square',
+        link: '/app/amims/amims-erp/mpc-wp',
+    }
+    , {
+        label: 'qa-rpd',
+        icon: 'message-square',
+        link: '/app/amims/amims-erp/qa-rpd',
     },
 
     {

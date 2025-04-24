@@ -1,0 +1,29 @@
+<div class="content-list-status">
+    <div class="page-title-box">
+        <div class="row align-items-center">
+            <div class="col-md-5">
+                <app-breadcrumbs title="SERIAL NUMBER" [breadcrumbItems]="breadCrumbItems"></app-breadcrumbs>
+            </div><!--end col-->
+            <div class="col-md-auto ms-auto">
+                <button nz-button nzType="default" [routerLink]="['../list']">Cancel</button>
+                <nz-button-group>
+                    <button nz-button [nzType]="'primary'">Action</button>
+                    <button nz-button nz-dropdown [nzDropdownMenu]="menu1" nzPlacement="bottomRight">
+                        <span nz-icon nzType="ellipsis"></span>
+                    </button>
+                </nz-button-group>
+                <nz-dropdown-menu #menu1="nzDropdownMenu">
+                    <ul nz-menu>
+                        <li nz-menu-item [routerLink]="['../edit']">
+                            <a>Update</a>
+                        </li>
+                        <li nz-menu-item [routerLink]="['../detail']">
+                            <a>Detail</a>
+                        </li>
+                    </ul>
+                </nz-dropdown-menu>
+            </div><!--end col-->
+        </div><!--end row-->
+    </div>
+</div>
+<app-part-share-detail [idPart]="idPart"></app-part-share-detail>

@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef,Component } from '@angular/core';
 import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { NzTableQueryParams } from 'ng-zorro-antd/table';
 import { AclService } from 'src/app/services/acl.service';
-import { <%= Prefix %><%= Nama %>Dto } from 'de-sdk-core/lib/models';
-import { <%= Nama %>Service } from 'de-sdk-core/lib/services';
+import { <%= Prefix %><%= Nama %>Dto } from 'de-sdk-core';
+import { <%= Nama %>Service } from 'de-sdk-core';
 import { <%= Nama %>ShareAddComponent } from '../<%= nama %>-share/<%= nama %>-share-add/<%= nama %>-share-add.component';
 import { <%= Nama %>ShareDetailComponent } from '../<%= nama %>-share/<%= nama %>-share-detail/<%= nama %>-share-detail.component';
 import { TranslateService } from '@ngx-translate/core';
@@ -17,6 +17,7 @@ export class <%= Nama %>ListComponent {
     constructor(
         private drawerService: NzDrawerService,
         private acl: AclService,
+        private cd: ChangeDetectorRef,
 
         private notify: NzNotificationService,
         private <%= nama_object %>Service: <%= Nama %>Service,
@@ -84,6 +85,7 @@ export class <%= Nama %>ListComponent {
                 this.loading = false
                 this.total = data.total
                 this.listOfData = data.data
+                this.cd.detectChanges()
             },
                 err => {
                     this.loading = false

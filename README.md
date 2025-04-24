@@ -5,6 +5,10 @@ npx ts-node --project tsconfig.tools.json tools/generate-openapi-sdk-with-fields
 npx ts-node --project tsconfig.tools.json tools/generate-openapi-sdk-with-fields.ts https://erp.bogor.vm.devetek.com/api-json
 ts-node --project tsconfig.tools.json tools/generate-public-api.ts
 
+<!-- REMOVE ENTER BALOBIAH  -->
+ts-node --project tsconfig.tools.json tools/remove-extra-lines.ts [lokasi file ]
+npx ts-node --project tsconfig.tools.json tools/remove-extra-lines.ts src/app/views/modules/amims/amims-inventory/part/part-share/part-share-header/part-share-header.component.html
+
 ng build sdkcore
 npm publish --access public
 

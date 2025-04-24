@@ -1,10 +1,12 @@
 export const AmimsCurrencyDtoFields: Record<string, 'string' | 'boolean' | 'number'> = {
-  "code": "string",
   "createdAt": "string",
-  "currency": "string",
+  "effectiveDate": "string",
+  "forcurrency": "string",
   "idCurrency": "string",
-  "isDeleted": "number",
-  "statusCurrency": "string",
-  "updatedAt": "string",
-  "usdRate": "number"
+  "idMcurrency": "string",
+  "idUser": "string",
+  "newValue": "number",
+  "noteCurrency": "string",
+  "oldValue": "number",
+  "updatedAt": "string"
 };

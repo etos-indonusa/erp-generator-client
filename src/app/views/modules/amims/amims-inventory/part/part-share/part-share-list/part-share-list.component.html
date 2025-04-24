@@ -1,0 +1,1374 @@
+<nz-card nzTitle="{{filter.status|titlecase}} ({{ total }})" [nzExtra]="extraTemplate" [nzBodyStyle]="{padding:0}">
+    <div class="filter" [hidden]="!filter_extra">
+        <form nz-form [nzLayout]="'vertical'" role="form">
+            <div nz-row [nzGutter]="8">
+                <div nz-col [nzXl]="{ span: 6}" [nzLg]="{ span: 8}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
+                    <nz-form-item>
+                        <nz-form-label>&nbsp;</nz-form-label>
+                        <nz-form-control>
+                            <nz-input-group nzSearch [nzAddOnBefore]="addOnBeforeTemplate"
+                                [nzAddOnAfter]="suffixIconButton" style="width: 100%;">
+                                <input type="text" nz-input placeholder="{{'search'|translate|titlecase}}"
+                                    [(ngModel)]="search" name="search" (keyup.enter)="searchData()" />
+                            </nz-input-group>
+                            <ng-template #suffixIconButton>
+                                <button nz-button nzType="default" nzSearch (click)="searchData()"><span nz-icon
+                                        nzType="search"></span></button>
+                            </ng-template>
+                            <ng-template #addOnBeforeTemplate>
+                                <span nz-icon nzTheme="twotone" nzType="question-circle" nz-popover
+                                    nzPopoverTitle="Pencarian berdasarkan" [nzPopoverContent]="tipsPencarian"
+                                    nzPopoverPlacement="top"></span>
+                                <ng-template #tipsPencarian>
+                                    <div>
+                                        <ul>
+                                            <li *ngFor="let item of search_field">{{ item | translate }}</li>
+                                        </ul>
+                                    </div>
+                                </ng-template>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'dateOrder' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-range-picker [(ngModel)]="filter.dateOrderRange" name="dateOrderRange"
+                                nzFormat="YYYY-MM-DD" nzPlaceHolder="['Dari', 'Sampai']" style="width: 100%;">
+                            </nz-range-picker>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'firstInstallC' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.firstInstallCMin"
+                                        name="firstInstallCMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.firstInstallCMax"
+                                        name="firstInstallCMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'firstInstallDate' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-range-picker [(ngModel)]="filter.firstInstallDateRange" name="firstInstallDateRange"
+                                nzFormat="YYYY-MM-DD" nzPlaceHolder="['Dari', 'Sampai']" style="width: 100%;">
+                            </nz-range-picker>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'firstInstallH' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.firstInstallHMin"
+                                        name="firstInstallHMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.firstInstallHMax"
+                                        name="firstInstallHMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'idConditionMonitoring' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-select [(ngModel)]="filter.idConditionMonitoring" name="idConditionMonitoring"
+                                nzAllowClear>
+                                <nz-option *ngFor="let item of listConditionMonitoring"
+                                    [nzValue]="item.idConditionMonitoring"
+                                    [nzLabel]="item.conditionMonitoring"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                 
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'idLifeTimeLimit' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-select [(ngModel)]="filter.idLifeTimeLimit" name="idLifeTimeLimit" nzAllowClear>
+                                <nz-option *ngFor="let item of listLifeTimeLimit" [nzValue]="item.idLifeTimeLimit"
+                                    [nzLabel]="item.lifeTimeLimit"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                 
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'idPartCondition' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-select [(ngModel)]="filter.idPartCondition" name="idPartCondition" nzAllowClear>
+                                <nz-option *ngFor="let item of listPartCondition" [nzValue]="item.idPartCondition"
+                                    [nzLabel]="item.partCondition"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                   
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'idPurVendor' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-select [(ngModel)]="filter.idPurVendor" name="idPurVendor" nzAllowClear>
+                                <nz-option *ngFor="let item of listPurVendor" [nzValue]="item.idPurVendor"
+                                    [nzLabel]="item.nameVendor"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'idSite' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-select [(ngModel)]="filter.idSite" name="idSite" nzAllowClear>
+                                <nz-option *ngFor="let item of listSite" [nzValue]="item.idSite"
+                                    [nzLabel]="item.site"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'idTypeOfwork' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-select [(ngModel)]="filter.idTypeOfwork" name="idTypeOfwork" nzAllowClear>
+                                <nz-option *ngFor="let item of listTypeOfwork" [nzValue]="item.idTypeOfwork"
+                                    [nzLabel]="item.typeOfwork"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                
+                 
+                 
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'lifeLimitCycle' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.lifeLimitCycleMin"
+                                        name="lifeLimitCycleMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.lifeLimitCycleMax"
+                                        name="lifeLimitCycleMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'lifeLimitHours' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.lifeLimitHoursMin"
+                                        name="lifeLimitHoursMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.lifeLimitHoursMax"
+                                        name="lifeLimitHoursMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'lifeLimitVal' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.lifeLimitValMin"
+                                        name="lifeLimitValMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.lifeLimitValMax"
+                                        name="lifeLimitValMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'manufactureDate' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-range-picker [(ngModel)]="filter.manufactureDateRange" name="manufactureDateRange"
+                                nzFormat="YYYY-MM-DD" nzPlaceHolder="['Dari', 'Sampai']" style="width: 100%;">
+                            </nz-range-picker>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'newFirstInstallH' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.newFirstInstallHMin"
+                                        name="newFirstInstallHMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.newFirstInstallHMax"
+                                        name="newFirstInstallHMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'price' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.priceMin" name="priceMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.priceMax" name="priceMax"
+                                        placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'purchaseDate' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-range-picker [(ngModel)]="filter.purchaseDateRange" name="purchaseDateRange"
+                                nzFormat="YYYY-MM-DD" nzPlaceHolder="['Dari', 'Sampai']" style="width: 100%;">
+                            </nz-range-picker>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'qty' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.qtyMin" name="qtyMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.qtyMax" name="qtyMax"
+                                        placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'startInstallC' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.startInstallCMin"
+                                        name="startInstallCMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.startInstallCMax"
+                                        name="startInstallCMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'startInstallDate' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-range-picker [(ngModel)]="filter.startInstallDateRange" name="startInstallDateRange"
+                                nzFormat="YYYY-MM-DD" nzPlaceHolder="['Dari', 'Sampai']" style="width: 100%;">
+                            </nz-range-picker>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'startInstallH' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.startInstallHMin"
+                                        name="startInstallHMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.startInstallHMax"
+                                        name="startInstallHMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'tbiCycle' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tbiCycleMin" name="tbiCycleMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tbiCycleMax" name="tbiCycleMax"
+                                        placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'tbiHours' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tbiHoursMin" name="tbiHoursMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tbiHoursMax" name="tbiHoursMax"
+                                        placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'tbiVal' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tbiValMin" name="tbiValMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tbiValMax" name="tbiValMax"
+                                        placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'tboCycle' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tboCycleMin" name="tboCycleMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tboCycleMax" name="tboCycleMax"
+                                        placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'tboHours' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tboHoursMin" name="tboHoursMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tboHoursMax" name="tboHoursMax"
+                                        placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'tboVal' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tboValMin" name="tboValMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tboValMax" name="tboValMax"
+                                        placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'tsiCycle' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tsiCycleMin" name="tsiCycleMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tsiCycleMax" name="tsiCycleMax"
+                                        placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'tsiHours' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tsiHoursMin" name="tsiHoursMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tsiHoursMax" name="tsiHoursMax"
+                                        placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'tsiVal' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tsiValMin" name="tsiValMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tsiValMax" name="tsiValMax"
+                                        placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'tsnCycle' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tsnCycleMin" name="tsnCycleMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tsnCycleMax" name="tsnCycleMax"
+                                        placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'tsnHours' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tsnHoursMin" name="tsnHoursMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tsnHoursMax" name="tsnHoursMax"
+                                        placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'tsnVal' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tsnValMin" name="tsnValMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tsnValMax" name="tsnValMax"
+                                        placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'tsoCycle' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tsoCycleMin" name="tsoCycleMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tsoCycleMax" name="tsoCycleMax"
+                                        placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'tsoHours' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tsoHoursMin" name="tsoHoursMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tsoHoursMax" name="tsoHoursMax"
+                                        placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'tsoVal' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tsoValMin" name="tsoValMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.tsoValMax" name="tsoValMax"
+                                        placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'warrantyCycle' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.warrantyCycleMin"
+                                        name="warrantyCycleMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.warrantyCycleMax"
+                                        name="warrantyCycleMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'warrantyDays' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.warrantyDaysMin"
+                                        name="warrantyDaysMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.warrantyDaysMax"
+                                        name="warrantyDaysMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'warrantyHours' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.warrantyHoursMin"
+                                        name="warrantyHoursMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.warrantyHoursMax"
+                                        name="warrantyHoursMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'warrantyStartCycle' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.warrantyStartCycleMin"
+                                        name="warrantyStartCycleMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.warrantyStartCycleMax"
+                                        name="warrantyStartCycleMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'warrantyStartDate' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-range-picker [(ngModel)]="filter.warrantyStartDateRange" name="warrantyStartDateRange"
+                                nzFormat="YYYY-MM-DD" nzPlaceHolder="['Dari', 'Sampai']" style="width: 100%;">
+                            </nz-range-picker>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'warrantyVal' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.warrantyValMin"
+                                        name="warrantyValMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.warrantyValMax"
+                                        name="warrantyValMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'warrantyYears' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.warrantyYearsMin"
+                                        name="warrantyYearsMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.warrantyYearsMax"
+                                        name="warrantyYearsMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+
+                <div nz-col nzSpan="24">
+
+                    <nz-form-item>
+                        <nz-form-control>
+                            <button nz-button nzType="primary" (click)="print()" style="margin-right: 5px;">
+                                <span nz-icon nzType="printer"></span>
+                                Print
+                            </button>
+                            <button nz-button nzType="primary" (click)="searchData()" [nzLoading]="loading"
+                                style="margin-right: 10px;"><span nz-icon nzType="filter"></span>Filter</button>
+                            <button nz-button nzType="default" (click)="resetData()" [nzLoading]="loading"
+                                style="margin-right: 10px;"><span nz-icon nzType="reload"></span>Reset</button>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div style="overflow: auto; background-color: white;">
+        <nz-table nzShowSizeChanger [nzData]="listOfData" [nzFrontPagination]="false" [nzLoading]="loading"
+            [nzTotal]="total" [nzPageSize]="pageSize" [nzPageIndex]="pageIndex"
+            (nzQueryParams)="onQueryParamsChange($event)" nzSize="small">
+            <thead>
+                <tr>
+                    <th [nzAlign]="'right'">#STATUS</th>
+
+                    <th [nzSortFn]="true" nzColumnKey="sn" *ngIf="isColVisible('sn')">
+                        {{ 'sn' | translate }}
+                    </th>
+                    <th [nzSortFn]="true" nzColumnKey="idMpart" *ngIf="isColVisible('keyword')">
+                        {{ 'keyword' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="bin" *ngIf="isColVisible('bin')">
+                        {{ 'bin' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="certificationNo" *ngIf="isColVisible('certificationNo')">
+                        {{ 'certificationNo' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="createdAt" *ngIf="isColVisible('createdAt')">
+                        {{ 'createdAt' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="dateOrder" *ngIf="isColVisible('dateOrder')">
+                        {{ 'dateOrder' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="endOfLife" *ngIf="isColVisible('endOfLife')">
+                        {{ 'endOfLife' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="firstInstallC" *ngIf="isColVisible('firstInstallC')">
+                        {{ 'firstInstallC' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="firstInstallDate" *ngIf="isColVisible('firstInstallDate')">
+                        {{ 'firstInstallDate' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="firstInstallH" *ngIf="isColVisible('firstInstallH')">
+                        {{ 'firstInstallH' | translate }}
+                    </th>
+
+
+
+                    <th [nzSortFn]="true" nzColumnKey="isDeleted" *ngIf="isColVisible('isDeleted')">
+                        {{ 'isDeleted' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="lifeLimitCycle" *ngIf="isColVisible('lifeLimitCycle')">
+                        {{ 'lifeLimitCycle' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="lifeLimitHours" *ngIf="isColVisible('lifeLimitHours')">
+                        {{ 'lifeLimitHours' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="lifeLimitVal" *ngIf="isColVisible('lifeLimitVal')">
+                        {{ 'lifeLimitVal' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="lifeLimitVar" *ngIf="isColVisible('lifeLimitVar')">
+                        {{ 'lifeLimitVar' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="manufacture" *ngIf="isColVisible('manufacture')">
+                        {{ 'manufacture' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="manufactureDate" *ngIf="isColVisible('manufactureDate')">
+                        {{ 'manufactureDate' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="newFirstInstallH" *ngIf="isColVisible('newFirstInstallH')">
+                        {{ 'newFirstInstallH' | translate }}
+                    </th>
+
+
+
+                    <th [nzSortFn]="true" nzColumnKey="position" *ngIf="isColVisible('position')">
+                        {{ 'position' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="price" *ngIf="isColVisible('price')">
+                         {{ 'price' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="purchaseDate" *ngIf="isColVisible('purchaseDate')">
+                        {{ 'purchaseDate' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="qty" *ngIf="isColVisible('qty')">
+                        {{ 'qty' | translate }}
+                    </th>
+
+
+
+                    <th [nzSortFn]="true" nzColumnKey="startInstallC" *ngIf="isColVisible('startInstallC')">
+                        {{ 'startInstallC' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="startInstallDate" *ngIf="isColVisible('startInstallDate')">
+                        {{ 'startInstallDate' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="startInstallH" *ngIf="isColVisible('startInstallH')">
+                        {{ 'startInstallH' | translate }}
+                    </th>
+ 
+
+                    <th [nzSortFn]="true" nzColumnKey="tbiCycle" *ngIf="isColVisible('tbiCycle')">
+                        {{ 'tbiCycle' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="tbiHours" *ngIf="isColVisible('tbiHours')">
+                        {{ 'tbiHours' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="tbiVal" *ngIf="isColVisible('tbiVal')">
+                        {{ 'tbiVal' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="tbiVar" *ngIf="isColVisible('tbiVar')">
+                        {{ 'tbiVar' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="tboCycle" *ngIf="isColVisible('tboCycle')">
+                        {{ 'tboCycle' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="tboHours" *ngIf="isColVisible('tboHours')">
+                        {{ 'tboHours' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="tboVal" *ngIf="isColVisible('tboVal')">
+                        {{ 'tboVal' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="tboVar" *ngIf="isColVisible('tboVar')">
+                        {{ 'tboVar' | translate }}
+                    </th>
+
+
+
+                    <th [nzSortFn]="true" nzColumnKey="tsiCycle" *ngIf="isColVisible('tsiCycle')">
+                        {{ 'tsiCycle' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="tsiHours" *ngIf="isColVisible('tsiHours')">
+                        {{ 'tsiHours' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="tsiVal" *ngIf="isColVisible('tsiVal')">
+                        {{ 'tsiVal' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="tsiVar" *ngIf="isColVisible('tsiVar')">
+                        {{ 'tsiVar' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="tsnCycle" *ngIf="isColVisible('tsnCycle')">
+                        {{ 'tsnCycle' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="tsnHours" *ngIf="isColVisible('tsnHours')">
+                        {{ 'tsnHours' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="tsnVal" *ngIf="isColVisible('tsnVal')">
+                        {{ 'tsnVal' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="tsnVar" *ngIf="isColVisible('tsnVar')">
+                        {{ 'tsnVar' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="tsoCycle" *ngIf="isColVisible('tsoCycle')">
+                        {{ 'tsoCycle' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="tsoHours" *ngIf="isColVisible('tsoHours')">
+                        {{ 'tsoHours' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="tsoVal" *ngIf="isColVisible('tsoVal')">
+                        {{ 'tsoVal' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="tsoVar" *ngIf="isColVisible('tsoVar')">
+                        {{ 'tsoVar' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="updatedAt" *ngIf="isColVisible('updatedAt')">
+                        {{ 'updatedAt' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="useableStatus" *ngIf="isColVisible('useableStatus')">
+                        {{ 'useableStatus' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="warrantyCycle" *ngIf="isColVisible('warrantyCycle')">
+                        {{ 'warrantyCycle' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="warrantyDays" *ngIf="isColVisible('warrantyDays')">
+                        {{ 'warrantyDays' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="warrantyHours" *ngIf="isColVisible('warrantyHours')">
+                        {{ 'warrantyHours' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="warrantyStartCycle" *ngIf="isColVisible('warrantyStartCycle')">
+                        {{ 'warrantyStartCycle' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="warrantyStartDate" *ngIf="isColVisible('warrantyStartDate')">
+                        {{ 'warrantyStartDate' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="warrantyVal" *ngIf="isColVisible('warrantyVal')">
+                        {{ 'warrantyVal' | translate }}
+                    </th>
+
+                    <th [nzSortFn]="true" nzColumnKey="warrantyYears" *ngIf="isColVisible('warrantyYears')">
+                        {{ 'warrantyYears' | translate }}
+                    </th>
+
+                    <th nzWidth="7%" [nzAlign]="'right'">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let data of listOfData" style="vertical-align: top;">
+                    <tr>
+                        <td [nzExpand]="expandSet.has(data.idPart)"
+                            (nzExpandChange)="onExpandChange(data.idPart, $event)">
+                            <nz-badge *ngIf="data.statusOnInventory!=null" nzColor="{{ data.statusOnInventory?.toLowerCase() | status }}"
+                                nzText="{{data.statusOnInventory?.toLowerCase() }}"></nz-badge>
+                        </td>
+
+                        <td *ngIf="isColVisible('sn')">
+
+                            {{ data.sn }}
+
+                        </td>
+                        <td *ngIf="isColVisible('keyword')">
+
+                            {{ data?.mpart?.keyword }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('bin')">
+
+                            {{ data.bin }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('certificationNo')">
+
+                            {{ data.certificationNo }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('createdAt')">
+
+                            {{ data.createdAt | date: 'short' }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('dateOrder')">
+
+                            {{ data.dateOrder }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('endOfLife')">
+
+                            {{ data.endOfLife }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('firstInstallC')">
+
+                            {{ data.firstInstallC }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('firstInstallDate')">
+
+                            {{ data.firstInstallDate }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('firstInstallH')">
+
+                            {{ data.firstInstallH }}
+
+                        </td>
+
+
+                        <td *ngIf="isColVisible('isDeleted')">
+
+                            <nz-tag *ngIf="data.isDeleted" nzColor="blue">Ya</nz-tag>
+                            <span *ngIf="!data.isDeleted">-</span>
+
+                        </td>
+
+                        <td *ngIf="isColVisible('lifeLimitCycle')">
+
+                            {{ data.lifeLimitCycle }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('lifeLimitHours')">
+
+                            {{ data.lifeLimitHours }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('lifeLimitVal')">
+
+                            {{ data.lifeLimitVal }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('lifeLimitVar')">
+
+                            {{ data.lifeLimitVar }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('manufacture')">
+
+                            {{ data.manufacture }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('manufactureDate')">
+
+                            {{ data.manufactureDate }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('newFirstInstallH')">
+
+                            {{ data.newFirstInstallH }}
+
+                        </td>
+
+
+
+                        <td *ngIf="isColVisible('position')">
+
+                            {{ data.position }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('price')">
+
+                            {{ data?.currency?.s ? data?.currency?.s: 'Rp.' }} {{ data.price | number }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('purchaseDate')">
+
+                            {{ data.purchaseDate }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('qty')">
+
+                            {{ data.qty }}
+
+                        </td>
+
+
+
+                        <td *ngIf="isColVisible('startInstallC')">
+
+                            {{ data.startInstallC }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('startInstallDate')">
+
+                            {{ data.startInstallDate }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('startInstallH')">
+
+                            {{ data.startInstallH }}
+
+                        </td>
+
+                        
+
+                        <td *ngIf="isColVisible('tbiCycle')">
+
+                            {{ data.tbiCycle }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('tbiHours')">
+
+                            {{ data.tbiHours }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('tbiVal')">
+
+                            {{ data.tbiVal }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('tbiVar')">
+
+                            {{ data.tbiVar }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('tboCycle')">
+
+                            {{ data.tboCycle }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('tboHours')">
+
+                            {{ data.tboHours }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('tboVal')">
+
+                            {{ data.tboVal }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('tboVar')">
+
+                            {{ data.tboVar }}
+
+                        </td>
+
+
+
+                        <td *ngIf="isColVisible('tsiCycle')">
+
+                            {{ data.tsiCycle }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('tsiHours')">
+
+                            {{ data.tsiHours }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('tsiVal')">
+
+                            {{ data.tsiVal }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('tsiVar')">
+
+                            {{ data.tsiVar }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('tsnCycle')">
+
+                            {{ data.tsnCycle }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('tsnHours')">
+
+                            {{ data.tsnHours }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('tsnVal')">
+
+                            {{ data.tsnVal }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('tsnVar')">
+
+                            {{ data.tsnVar }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('tsoCycle')">
+
+                            {{ data.tsoCycle }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('tsoHours')">
+
+                            {{ data.tsoHours }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('tsoVal')">
+
+                            {{ data.tsoVal }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('tsoVar')">
+
+                            {{ data.tsoVar }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('updatedAt')">
+
+                            {{ data.updatedAt | date: 'short' }}
+
+                        </td>
+
+                         
+
+                        <td *ngIf="isColVisible('warrantyCycle')">
+
+                            {{ data.warrantyCycle }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('warrantyDays')">
+
+                            {{ data.warrantyDays }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('warrantyHours')">
+
+                            {{ data.warrantyHours }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('warrantyStartCycle')">
+
+                            {{ data.warrantyStartCycle }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('warrantyStartDate')">
+
+                            {{ data.warrantyStartDate }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('warrantyVal')">
+
+                            {{ data.warrantyVal }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('warrantyYears')">
+
+                            {{ data.warrantyYears }}
+
+                        </td>
+
+
+                        <td [nzAlign]="'right'">
+                            <button nz-button nz-dropdown [nzDropdownMenu]="menu">
+                                Actions
+                                <span nz-icon nzType="down"></span>
+                            </button>
+                            <nz-dropdown-menu #menu="nzDropdownMenu">
+                                <ul nz-menu>
+                                    <li nz-menu-item  >
+                                        <a [routerLink]="['../detail',data.idPart]" target="_blank"><span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Detail Tab</a>
+                                    </li>
+                                    <li nz-menu-item  >
+                                        <a [routerLink]="['../../mpart/detail',data.idMpart]" target="_blank"><span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Detail {{ 'mpart' | translate }} Tab</a>
+                                    </li>
+                                    <li nz-menu-item (click)="detail(data)">
+                                        <span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Detail Drawer
+                                    </li>
+                                    <!--  -->
+                                    <li nz-menu-item (click)="update(data)" *ngIf="data.status=='draft'">
+                                        <span nz-icon nzType="edit" nzTheme="outline"></span>&nbsp;&nbsp;Update
+                                    </li>
+                                    <li nz-menu-divider *ngIf="data.status=='draft'"></li>
+                                    <li nz-menu-item nz-menu-item nz-popconfirm class="text-danger"
+                                        *ngIf="data.status=='draft'"
+                                        nzPopconfirmTitle="Apakah Anda yakin akan menghapus data ini?"
+                                        nzPopconfirmPlacement="bottom" (nzOnConfirm)="delete(data.idPart)"><span nz-icon
+                                            nzType="delete" nzTheme="outline"></span>
+                                        <a class="m-1 text-danger">&nbsp;&nbsp;Delete</a>
+                                    </li>
+                                </ul>
+                            </nz-dropdown-menu>
+                        </td>
+                    </tr>
+                    <tr [nzExpand]="expandSet.has(data.idPart)">
+                        <app-part-share-header [data]="data"></app-part-share-header>
+                    </tr>
+                </ng-container>
+
+            </tbody>
+        </nz-table>
+    </div>
+</nz-card>
+<ng-template #extraTemplate>
+    <ng-container *ngIf="!filter_extra">
+        <nz-input-group nzSearch [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="suffixIconButton"
+            style="max-width: 180px;">
+            <input type="text" nz-input placeholder="{{'search'|translate|titlecase}}" [(ngModel)]="search"
+                name="search" (keyup.enter)="searchData()" />
+        </nz-input-group>
+        <ng-template #suffixIconButton>
+            <button nz-button nzType="default" nzSearch (click)="searchData()"><span nz-icon
+                    nzType="search"></span></button>
+        </ng-template>
+        <ng-template #addOnBeforeTemplate>
+            <span nz-icon nzTheme="twotone" nzType="question-circle" nz-popover nzPopoverTitle="Pencarian berdasarkan"
+                [nzPopoverContent]="tipsPencarian" nzPopoverPlacement="top"></span>
+            <ng-template #tipsPencarian>
+                <div>
+                    <ul>
+                        <li *ngFor="let item of search_field">{{ item | translate }}</li>
+                    </ul>
+                </div>
+            </ng-template>
+        </ng-template>
+    </ng-container>
+    <button nz-button [nzType]="filter_extra ? 'primary' :'default'" style="margin-bottom: 8px;margin-left: 10px;"
+        (click)="filter_extra=!filter_extra">
+        <span nz-icon nzType="filter" nzTheme="outline"></span> Filter
+    </button>
+    <button nz-button nz-dropdown [nzDropdownMenu]="menu" nzTy [nzPlacement]="'topRight'"><i nz-icon
+            nzType="appstore"></i></button>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+            <li nz-menu-item *ngFor="let col of columns">
+                <label nz-checkbox [(ngModel)]="col.show" (ngModelChange)="onColumnToggle()">
+                    {{ col.key | translate }}
+                </label>
+            </li>
+        </ul>
+    </nz-dropdown-menu>
+    <button nz-button nzType="link" (click)="resetColumns()" nz-tooltip
+        nzTooltipTitle="{{ 'Reset Kolom' | translate }}"><i nz-icon nzType="undo"></i></button>
+
+    <button nz-button style="margin-bottom: 8px;margin-left: 10px;" nzType="primary" (click)="add()">
+        <span nz-icon nzType="plus" nzTheme="outline"></span> Add New
+    </button>
+</ng-template>

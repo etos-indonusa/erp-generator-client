@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { NzTableQueryParams } from 'ng-zorro-antd/table';
@@ -9,13 +9,13 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { <%= Nama_report %>Service, <%= Nama %>Service } from 'de-sdk-core/lib/services';
-import { <%= Prefix %><%= Nama %>Dto } from 'de-sdk-core/lib/models';
+import { <%= Nama_report %>Service, <%= Nama %>Service } from 'de-sdk-core';
+import { <%= Prefix %><%= Nama %>Dto } from 'de-sdk-core';
 import { <%= Nama %>ShareAddComponent } from '../<%= nama %>-share-add/<%= nama %>-share-add.component';
 import { <%= Nama %>ShareDetailComponent } from '../<%= nama %>-share-detail/<%= nama %>-share-detail.component';
 <% if (relationInjects && relationInjects.length) { -%>
 <% relationInjects.forEach(inj => { -%>
-import { <%- inj.split(':')[1].trim() %> } from 'de-sdk-core/lib/services';
+import { <%- inj.split(':')[1].trim() %> } from 'de-sdk-core';
 <% }) -%>
 <% } -%>
  
@@ -38,6 +38,7 @@ export class <%= Nama %>ShareListComponent {
 
     constructor(
         private pesanService: PesanService,
+        private cd: ChangeDetectorRef,
         private drawerService: NzDrawerService,
         private acl: AclService,
         private router: Router,
@@ -177,6 +178,7 @@ export class <%= Nama %>ShareListComponent {
             this.loading = false;
             this.total = data.total || 0;
             this.listOfData = data.data || [];
+            this.cd.detectChanges()
         }, err => {
             this.loading = false;
         });

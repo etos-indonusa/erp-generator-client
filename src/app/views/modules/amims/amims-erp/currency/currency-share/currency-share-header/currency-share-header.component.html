@@ -1,0 +1,527 @@
+
+
+
+
+<!-- ✅ Start rendering -->
+<div class="row">
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.createdAt !== undefined && data?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.effectiveDate !== undefined && data?.effectiveDate !== null">
+    <div class="text-secondary small">
+      {{ 'effectiveDate' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.effectiveDate || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.forcurrency !== undefined && data?.forcurrency !== null">
+    <div class="text-secondary small">
+      {{ 'forcurrency' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.forcurrency || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idCurrency !== undefined && data?.idCurrency !== null">
+    <div class="text-secondary small">
+      {{ 'idCurrency' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idCurrency || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idMcurrency !== undefined && data?.idMcurrency !== null">
+    <div class="text-secondary small">
+      {{ 'idMcurrency' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idMcurrency || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.idUser !== undefined && data?.idUser !== null">
+    <div class="text-secondary small">
+      {{ 'idUser' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.idUser || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.newValue !== undefined && data?.newValue !== null">
+    <div class="text-secondary small">
+      {{ 'newValue' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.newValue | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.noteCurrency !== undefined && data?.noteCurrency !== null">
+    <div class="text-secondary small">
+      {{ 'noteCurrency' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.noteCurrency || '-' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.oldValue !== undefined && data?.oldValue !== null">
+    <div class="text-secondary small">
+      {{ 'oldValue' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.oldValue | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    
+  <div class="col-md-3" *ngIf="data?.updatedAt !== undefined && data?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.mcurrency">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'mcurrency' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mcurrency?.code !== undefined && data.mcurrency?.code !== null">
+    <div class="text-secondary small">
+      {{ 'code' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mcurrency.code || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mcurrency?.createdAt !== undefined && data.mcurrency?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mcurrency.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mcurrency?.currency !== undefined && data.mcurrency?.currency !== null">
+    <div class="text-secondary small">
+      {{ 'currency' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mcurrency.currency || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mcurrency?.idMcurrency !== undefined && data.mcurrency?.idMcurrency !== null">
+    <div class="text-secondary small">
+      {{ 'idMcurrency' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mcurrency.idMcurrency || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mcurrency?.isDeleted !== undefined && data.mcurrency?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.mcurrency.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.mcurrency.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mcurrency?.statusCurrency !== undefined && data.mcurrency?.statusCurrency !== null">
+    <div class="text-secondary small">
+      {{ 'statusCurrency' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.mcurrency.statusCurrency }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mcurrency?.updatedAt !== undefined && data.mcurrency?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mcurrency.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mcurrency?.usdRate !== undefined && data.mcurrency?.usdRate !== null">
+    <div class="text-secondary small">
+      {{ 'usdRate' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mcurrency.usdRate | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.user">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'user' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user?.createdAt !== undefined && data.user?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user?.deskripsi !== undefined && data.user?.deskripsi !== null">
+    <div class="text-secondary small">
+      {{ 'deskripsi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user?.idUserGroup !== undefined && data.user?.idUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'idUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.idUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user?.namaUserGroup !== undefined && data.user?.namaUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'namaUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.namaUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user?.status !== undefined && data.user?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.user.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    <div class="col-12 mt-4" *ngIf="data.user?.userGroup">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'user.userGroup' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user.userGroup?.createdAt !== undefined && data.user.userGroup?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.userGroup.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user.userGroup?.deskripsi !== undefined && data.user.userGroup?.deskripsi !== null">
+    <div class="text-secondary small">
+      {{ 'deskripsi' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.userGroup.deskripsi || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user.userGroup?.idUserGroup !== undefined && data.user.userGroup?.idUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'idUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.userGroup.idUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user.userGroup?.namaUserGroup !== undefined && data.user.userGroup?.namaUserGroup !== null">
+    <div class="text-secondary small">
+      {{ 'namaUserGroup' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.user.userGroup.namaUserGroup || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.user.userGroup?.status !== undefined && data.user.userGroup?.status !== null">
+    <div class="text-secondary small">
+      {{ 'status' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.user.userGroup.status }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+</div>

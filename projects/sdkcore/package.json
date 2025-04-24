@@ -1,6 +1,6 @@
 {
     "name": "de-sdk-core",
-    "version": "0.0.2",
+    "version": "0.0.4",
     "peerDependencies": {
         "@angular/common": "^18.2.0",
         "@angular/core": "^18.2.0"
@@ -8,15 +8,5 @@
     "dependencies": {
         "tslib": "^2.3.0"
     },
-    "sideEffects": false,
-    "exports": {
-        ".": {
-            "import": "./fesm2022/sdkcore.mjs",
-            "require": "./bundles/sdkcore.umd.js"
-        },
-        "./index": {
-            "import": "./fesm2022/sdkcore.mjs",
-            "require": "./bundles/sdkcore.umd.js"
-        }
-    }
+    "sideEffects": false
 }

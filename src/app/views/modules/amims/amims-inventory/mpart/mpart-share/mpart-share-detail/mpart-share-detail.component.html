@@ -1,0 +1,100 @@
+<nz-spin nzTip="Loading..." [nzSpinning]="is_loading">
+
+    <div class="card border-0 mb-1 border-left-5 border-theme card   bg-white">
+        <div class="card-body p-2">
+            <div class="row">
+                <div class="col-lg-2">
+                    <p class="text-secondary  mb-1">Status</p>
+                    <!-- <h3 class="fw-bold text-capitalize" style.color="{{ mpart?.statusMpart| status }}">   {{ mpart?.statusMpart}}</h3> -->
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-secondary  mb-1">Nomor</p>
+                    <!-- <h3 class="fw-bold  ">{{mpart?.nomorMpart}}</h3> -->
+                </div>
+                <div class="col" style="text-align: right;">
+                    <p class="text-secondary mb-1">&nbsp;</p>
+
+                    <button nz-button nzType="primary" style="margin-right: 5px;" nz-dropdown [nzDropdownMenu]="menu4">
+                        <span nz-icon nzType="printer"></span>
+                        Print
+                        <span nz-icon nzType="down"></span>
+                    </button>
+                    <nz-dropdown-menu #menu4="nzDropdownMenu">
+                        <ul nz-menu>
+                            <li nz-menu-item (click)="print()">Print mpart</li>
+                        </ul>
+                    </nz-dropdown-menu>
+
+                    <!-- <button *ngIf="mpart.status=='close' || mpart.status=='cicil'" nz-button
+                        nzType="primary" (click)="up()" style="margin-right: 5px;">
+                        <span nz-icon nzType="calculator" nzTheme="outline"></span>
+                        Bayar
+                    </button> -->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+     <lib-approval-steps [for-module-name]="'mpart'" [for-module-id]="mpart?.idMpart"></lib-approval-steps>
+         -->
+
+    <div class="card bg-white p-3" style="box-shadow: none;">
+        <div class="row">
+            <div class="col-md-8">
+                <app-mpart-share-header [data]="mpart"></app-mpart-share-header>
+                <lib-custom-field [from-module]="'AmimsMpart'" [from-module-id]="mpart?.idMpart"></lib-custom-field>
+            </div>
+            <div class="col-md-4">
+                <document-widget-v1 [for-module-id]="mpart?.idMpart" [for-module]="'AmimsMpart'"
+                    [enable-crud]="true"></document-widget-v1>
+
+                <!-- <approval-mode-widget *ngIf="mpart.status??'-'.toLowerCase() !='close'"
+                    style="margin-right: 5px;" [module-id]="mpart.id_contractSite" [module]="'AmimsMpart'"
+                    [flow-id]="mpart.id_data_flow" [flow-detail]="mpart.id_data_flow_detail"
+                    (reload)="approve($event)">
+                </approval-mode-widget> -->
+
+            </div>
+        </div>
+
+
+        <br>
+
+
+    </div>
+
+    <ul nz-menu nzMode="horizontal">
+        <li nz-menu-item nzMatchRouter>
+            <a [routerLink]="['part']">Quantities</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+            <a [routerLink]="['routine-maintenance']">Routine Maintenance</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+            <a [routerLink]="['figure-index']">Figure Index</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+            <a [routerLink]="['threshold']">Threshold</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+            <a [routerLink]="['alternative']">Alternative</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+            <a [routerLink]="['attachment']">Attachments</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+            <a [routerLink]="['log']">Log</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+            <a [routerLink]="['last-maintenance']">Last Maintenance</a>
+        </li>
+    </ul>
+    <router-outlet></router-outlet>
+
+    
+ 
+
+</nz-spin>
+<br>

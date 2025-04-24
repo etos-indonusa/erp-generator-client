@@ -1,0 +1,36 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+        
+        <nz-form-item>
+            <nz-form-label nzFor="description">{{ 'description' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="description" formControlName="description" placeholder="Masukkan {{ 'description' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="figureIndex">{{ 'figureIndex' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input  id="figureIndex" formControlName="figureIndex" placeholder="Masukkan {{ 'figureIndex' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-label nzFor="idAta">{{ 'idAta' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idAta" nzShowSearch nzAllowClear nzPlaceHolder="Pilih {{ 'idAta' | translate }}"> 
+                    <nz-option *ngFor="let item of listAta" nzLabel="[{{ item.codeAta }}] - {{ item.ata }} " nzValue="{{ item.idAta }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+            
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

@@ -464,7 +464,7 @@ const idPrimary = toSnakeCase(nama_object)
 
 // ⬇️ Ambil field dari DTO jika ada
 const dtoFile = `${prefix ? `${prefix}-` : ''}${nama}-dto.ts`;
-const dtoPath = path.resolve('src/sdk/core/models', dtoFile); 
+const dtoPath = path.resolve('projects/sdkcore/src/lib/models', dtoFile); 
  
 let searchFields: string[] = [];
 let searchFields_report: string[] = [];
@@ -593,7 +593,7 @@ function getSmartDisplayFieldsFromDtoV2(dtoPath: string, visited: Set<string> = 
         visited.add(rel);
 
         const dtoFile = `${prefix ? `${prefix}-` : ''}${nama}-dto.ts`;
-        const nestedPath = path.resolve('src/sdk/core/models', dtoFile); 
+        const nestedPath = path.resolve('projects/sdkcore/src/lib/models', dtoFile); 
 
         if (fs.existsSync(nestedPath)) {
             const children = getSmartDisplayFieldsFromDtoV2(nestedPath, visited);
@@ -664,7 +664,7 @@ function getSmartDisplayFieldsFromDtoV2Report(dtoPath: string, visited: Set<stri
         if (visited.has(rel)) continue;
         visited.add(rel);
 
-        const modelDir = path.resolve('src/sdk/core/models');
+        const modelDir = path.resolve('projects/sdkcore/src/lib/models');
         const files = fs.readdirSync(modelDir);
 
         const kebabRel = rel.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase(); // userGroup -> user-group

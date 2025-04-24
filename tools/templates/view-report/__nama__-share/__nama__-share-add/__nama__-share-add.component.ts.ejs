@@ -1,16 +1,16 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, SimpleChanges } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { <%= Prefix %><%= Nama %>FormSchema } from 'de-sdk-core/lib/form-schema/<%= prefix %>-<%= nama %>.form-schema'; 
-import type  { <%= Prefix %><%= Nama %>Dto } from 'de-sdk-core/lib/models';
-import { <%= Nama %>Service } from 'de-sdk-core/lib/services';
+import { <%= Prefix %><%= Nama %>FormSchema } from 'de-sdk-core'; 
+import type  { <%= Prefix %><%= Nama %>Dto } from 'de-sdk-core';
+import { <%= Nama %>Service } from 'de-sdk-core';
 
 <% if (relationInjects && relationInjects.length) { -%>
 <% relationInjects.forEach(inj => { -%>
-import { <%- inj.split(':')[1].trim() %> } from 'de-sdk-core/lib/services';
+import { <%- inj.split(':')[1].trim() %> } from 'de-sdk-core';
 <% }) -%>
 <% } -%>
 
@@ -29,6 +29,7 @@ export class <%= Nama %>ShareAddComponent {
         }
     }
     constructor(
+        private cd: ChangeDetectorRef,
         private fb: FormBuilder,
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
@@ -94,6 +95,7 @@ export class <%= Nama %>ShareAddComponent {
             next: (data) => {
                 this.notify.success('Berhasil', 'Data <%= nama_object %> berhasil diperbarui.');
                 this.nzDrawerRef.close(data);
+                this.cd.detectChanges()
             },
             error: () => {
                 this.notify.error('Gagal', 'Terjadi kesalahan saat memperbarui.');
