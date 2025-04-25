@@ -70,6 +70,24 @@
     </nz-page-header>
     </div >
 
+
+        <nz-tabset>
+        <nz-tab nzTitle="{{ 'Contact PIC' | translate }}">
+             <!-- <app-client-contact-share-list [idClient]="idClient"></app-client-contact-share-list>  -->
+        </nz-tab>
+         
+        <nz-tab nzTitle="{{ 'Contract' | translate }}">
+            <ng-template nz-tab>
+                <!-- <app-contract-share-list [idClient]="idClient"></app-contract-share-list> -->
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'Site' | translate }}">
+            <ng-template nz-tab>
+                    <!-- <app-client-site-share-list [idClient]="idClient"></app-client-site-share-list>  -->
+            </ng-template>
+        </nz-tab>
+    </nz-tabset>
+
     <div class="card">
         <div class="card-body p-2">
                 <!-- <app-<%= nama %>-share-list [filter-extra]="false" [id<%= Nama %>]="id<%= Nama %>"></app-<%= nama %>-share-list> -->

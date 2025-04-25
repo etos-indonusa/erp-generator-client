@@ -8,6 +8,7 @@ export interface PelangganContractSiteWidgetDto {
     idContract: string;
     idContractSite: string;
     jumlahJadwalPerBulan?: number;
+    nilaiTotal?: number;
     statusContractSite?: string;
     total?: number;
     updatedAt?: string;

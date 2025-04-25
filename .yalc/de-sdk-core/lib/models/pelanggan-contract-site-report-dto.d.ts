@@ -10,6 +10,7 @@ export interface PelangganContractSiteReportDto {
     idContract: string;
     idContractSite: string;
     jumlahJadwalPerBulan?: number;
+    nilaiTotal?: number;
     statusContractSite?: string;
     updatedAt?: string;
 }

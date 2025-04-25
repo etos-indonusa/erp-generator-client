@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
             rememberMe: [false],
         });
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+        
     }
 
     onLoggedin(e: Event): void {

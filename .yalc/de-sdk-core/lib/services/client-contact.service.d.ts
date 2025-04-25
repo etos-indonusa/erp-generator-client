@@ -13,7 +13,7 @@ import * as i0 from "@angular/core";
 export declare class ClientContactService extends BaseService {
     constructor(config: ApiConfiguration, http: HttpClient);
     /** Path part for operation `clientContactControllerFindAll()` */
-    static readonly ClientContactControllerFindAllPath = "/auth/client_contact/client_contact";
+    static readonly ClientContactControllerFindAllPath = "/pelanggan/client_contact/client_contact";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `clientContactControllerFindAll()` instead.
@@ -39,7 +39,7 @@ export declare class ClientContactService extends BaseService {
         'total'?: number;
     }>;
     /** Path part for operation `clientContactControllerCreate()` */
-    static readonly ClientContactControllerCreatePath = "/auth/client_contact/client_contact";
+    static readonly ClientContactControllerCreatePath = "/pelanggan/client_contact/client_contact";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `clientContactControllerCreate()` instead.
@@ -63,7 +63,7 @@ export declare class ClientContactService extends BaseService {
         'data'?: PelangganClientContactDto;
     }>;
     /** Path part for operation `clientContactControllerFindOne()` */
-    static readonly ClientContactControllerFindOnePath = "/auth/client_contact/client_contact/{id}";
+    static readonly ClientContactControllerFindOnePath = "/pelanggan/client_contact/client_contact/{id}";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `clientContactControllerFindOne()` instead.
@@ -87,7 +87,7 @@ export declare class ClientContactService extends BaseService {
         'data'?: PelangganClientContactDto;
     }>;
     /** Path part for operation `clientContactControllerUpdate()` */
-    static readonly ClientContactControllerUpdatePath = "/auth/client_contact/client_contact/{id}";
+    static readonly ClientContactControllerUpdatePath = "/pelanggan/client_contact/client_contact/{id}";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `clientContactControllerUpdate()` instead.
@@ -111,7 +111,7 @@ export declare class ClientContactService extends BaseService {
         'data'?: PelangganClientContactDto;
     }>;
     /** Path part for operation `clientContactControllerRemove()` */
-    static readonly ClientContactControllerRemovePath = "/auth/client_contact/client_contact/{id}";
+    static readonly ClientContactControllerRemovePath = "/pelanggan/client_contact/client_contact/{id}";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `clientContactControllerRemove()` instead.

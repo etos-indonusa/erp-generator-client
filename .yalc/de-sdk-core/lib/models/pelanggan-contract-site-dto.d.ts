@@ -8,6 +8,7 @@ export interface PelangganContractSiteDto {
     idContract: string;
     idContractSite: string;
     jumlahJadwalPerBulan?: number;
+    nilaiTotal?: number;
     statusContractSite?: string;
     updatedAt?: string;
 }

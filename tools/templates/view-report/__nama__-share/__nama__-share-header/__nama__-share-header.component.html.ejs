@@ -10,11 +10,11 @@
       <% } else if (field.uiType === 'status') { %>
         <nz-tag nzColor="green">{{ <%= path %>.<%= field.namaField %> }}</nz-tag>
       <% } else if (field.uiType === 'date') { %>
-        {{ <%= path %>.<%= field.namaField %> | date:'short' }}
+        {{ <%= path %>?.<%= field.namaField %> | date:'short' }}
       <% } else if (field.uiType === 'currency') { %>
-        {{ <%= path %>.<%= field.namaField %> | number:'1.0-0' }}
+        {{ <%= path %>?.<%= field.namaField %> | number:'1.0-0' }}
       <% } else { %>
-        {{ <%= path %>.<%= field.namaField %> || '-' }}
+        {{ <%= path %>?.<%= field.namaField %> || '-' }}
       <% } %>
     </div>
   </div>

@@ -13,7 +13,7 @@ import * as i0 from "@angular/core";
 export declare class ContractSiteService extends BaseService {
     constructor(config: ApiConfiguration, http: HttpClient);
     /** Path part for operation `contractSiteControllerFindAll()` */
-    static readonly ContractSiteControllerFindAllPath = "/auth/contract_site/contract_site";
+    static readonly ContractSiteControllerFindAllPath = "/pelanggan/contract_site/contract_site";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `contractSiteControllerFindAll()` instead.
@@ -39,7 +39,7 @@ export declare class ContractSiteService extends BaseService {
         'total'?: number;
     }>;
     /** Path part for operation `contractSiteControllerCreate()` */
-    static readonly ContractSiteControllerCreatePath = "/auth/contract_site/contract_site";
+    static readonly ContractSiteControllerCreatePath = "/pelanggan/contract_site/contract_site";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `contractSiteControllerCreate()` instead.
@@ -63,7 +63,7 @@ export declare class ContractSiteService extends BaseService {
         'data'?: PelangganContractSiteDto;
     }>;
     /** Path part for operation `contractSiteControllerFindOne()` */
-    static readonly ContractSiteControllerFindOnePath = "/auth/contract_site/contract_site/{id}";
+    static readonly ContractSiteControllerFindOnePath = "/pelanggan/contract_site/contract_site/{id}";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `contractSiteControllerFindOne()` instead.
@@ -87,7 +87,7 @@ export declare class ContractSiteService extends BaseService {
         'data'?: PelangganContractSiteDto;
     }>;
     /** Path part for operation `contractSiteControllerUpdate()` */
-    static readonly ContractSiteControllerUpdatePath = "/auth/contract_site/contract_site/{id}";
+    static readonly ContractSiteControllerUpdatePath = "/pelanggan/contract_site/contract_site/{id}";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `contractSiteControllerUpdate()` instead.
@@ -111,7 +111,7 @@ export declare class ContractSiteService extends BaseService {
         'data'?: PelangganContractSiteDto;
     }>;
     /** Path part for operation `contractSiteControllerRemove()` */
-    static readonly ContractSiteControllerRemovePath = "/auth/contract_site/contract_site/{id}";
+    static readonly ContractSiteControllerRemovePath = "/pelanggan/contract_site/contract_site/{id}";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `contractSiteControllerRemove()` instead.

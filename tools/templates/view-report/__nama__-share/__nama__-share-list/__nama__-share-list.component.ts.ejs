@@ -9,13 +9,13 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { <%= Nama_report %>Service, <%= Nama %>Service } from 'de-sdk-core';
-import { <%= Prefix %><%= Nama %>Dto } from 'de-sdk-core';
+import { <%= Nama_report %>Service, <%= Nama %>Service } from 'de-sdk-jasa';
+import { <%= Prefix %><%= Nama %>Dto } from 'de-sdk-jasa';
 import { <%= Nama %>ShareAddComponent } from '../<%= nama %>-share-add/<%= nama %>-share-add.component';
 import { <%= Nama %>ShareDetailComponent } from '../<%= nama %>-share-detail/<%= nama %>-share-detail.component';
 <% if (relationInjects && relationInjects.length) { -%>
 <% relationInjects.forEach(inj => { -%>
-import { <%- inj.split(':')[1].trim() %> } from 'de-sdk-core';
+import { <%- inj.split(':')[1].trim() %> } from 'de-sdk-jasa';
 <% }) -%>
 <% } -%>
  
@@ -144,8 +144,8 @@ export class <%= Nama %>ShareListComponent {
     }
 
     get validSortValue(): 'asc' | 'desc' | undefined {
-        if (this.sortValue === 'ascend') return 'asc';
-        if (this.sortValue === 'descend') return 'desc';
+        if (this.sortValue === 'asc') return 'asc';
+        if (this.sortValue === 'desc') return 'desc';
         return undefined;
     }
 
@@ -259,7 +259,7 @@ export class <%= Nama %>ShareListComponent {
 
 
     add() {
-    if (!this.acl.can('<%= nama %>', 'can_add') || !this.enable_crud) return;
+        if (!this.acl.can('<%= nama %>', 'can_add') || !this.enable_crud) return;
 
         const drawerRef = this.drawerService.create<<%= Nama %>ShareAddComponent, {}, string>({
             nzTitle: 'Add',
@@ -291,7 +291,22 @@ export class <%= Nama %>ShareListComponent {
         });
     }
 
-    update(data: any) {}
+    update(data: any) {
+        if (!this.acl.can('contract-site', 'can_edit')) return;
+
+        const drawerRef = this.drawerService.create<<%= Nama %>ShareAddComponent, {}, string>({
+            nzTitle: 'Detail',
+            nzContent: <%= Nama %>ShareAddComponent,
+            nzWidth: (500) + 'px',
+            nzContentParams:{
+                <%= nama_object %>:data
+            }
+        });
+
+        drawerRef.afterClose.subscribe(() => {
+            this.searchData();
+        });
+    }
     delete(id: string) {} 
 
     print() {

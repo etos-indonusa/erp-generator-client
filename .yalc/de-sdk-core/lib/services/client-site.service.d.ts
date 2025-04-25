@@ -13,7 +13,7 @@ import * as i0 from "@angular/core";
 export declare class ClientSiteService extends BaseService {
     constructor(config: ApiConfiguration, http: HttpClient);
     /** Path part for operation `clientSiteControllerFindAll()` */
-    static readonly ClientSiteControllerFindAllPath = "/auth/client_site/client_site";
+    static readonly ClientSiteControllerFindAllPath = "/pelanggan/client_site/client_site";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `clientSiteControllerFindAll()` instead.
@@ -39,7 +39,7 @@ export declare class ClientSiteService extends BaseService {
         'total'?: number;
     }>;
     /** Path part for operation `clientSiteControllerCreate()` */
-    static readonly ClientSiteControllerCreatePath = "/auth/client_site/client_site";
+    static readonly ClientSiteControllerCreatePath = "/pelanggan/client_site/client_site";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `clientSiteControllerCreate()` instead.
@@ -63,7 +63,7 @@ export declare class ClientSiteService extends BaseService {
         'data'?: PelangganClientSiteDto;
     }>;
     /** Path part for operation `clientSiteControllerFindOne()` */
-    static readonly ClientSiteControllerFindOnePath = "/auth/client_site/client_site/{id}";
+    static readonly ClientSiteControllerFindOnePath = "/pelanggan/client_site/client_site/{id}";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `clientSiteControllerFindOne()` instead.
@@ -87,7 +87,7 @@ export declare class ClientSiteService extends BaseService {
         'data'?: PelangganClientSiteDto;
     }>;
     /** Path part for operation `clientSiteControllerUpdate()` */
-    static readonly ClientSiteControllerUpdatePath = "/auth/client_site/client_site/{id}";
+    static readonly ClientSiteControllerUpdatePath = "/pelanggan/client_site/client_site/{id}";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `clientSiteControllerUpdate()` instead.
@@ -111,7 +111,7 @@ export declare class ClientSiteService extends BaseService {
         'data'?: PelangganClientSiteDto;
     }>;
     /** Path part for operation `clientSiteControllerRemove()` */
-    static readonly ClientSiteControllerRemovePath = "/auth/client_site/client_site/{id}";
+    static readonly ClientSiteControllerRemovePath = "/pelanggan/client_site/client_site/{id}";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `clientSiteControllerRemove()` instead.

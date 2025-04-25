@@ -10,7 +10,7 @@ import * as i0 from "@angular/core";
 export declare class ContractSiteReportService extends BaseService {
     constructor(config: ApiConfiguration, http: HttpClient);
     /** Path part for operation `contractSiteReportControllerFindAll()` */
-    static readonly ContractSiteReportControllerFindAllPath = "/auth/contract_site/contract_site_report/list";
+    static readonly ContractSiteReportControllerFindAllPath = "/pelanggan/contract_site/contract_site_report/list";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `contractSiteReportControllerFindAll()` instead.
@@ -36,7 +36,7 @@ export declare class ContractSiteReportService extends BaseService {
         'total'?: number;
     }>;
     /** Path part for operation `contractSiteReportControllerFindOne()` */
-    static readonly ContractSiteReportControllerFindOnePath = "/auth/contract_site/contract_site_report/{id}";
+    static readonly ContractSiteReportControllerFindOnePath = "/pelanggan/contract_site/contract_site_report/{id}";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `contractSiteReportControllerFindOne()` instead.

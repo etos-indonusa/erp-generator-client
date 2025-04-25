@@ -9,7 +9,7 @@ import * as i0 from "@angular/core";
 export declare class ContractSiteWidgetService extends BaseService {
     constructor(config: ApiConfiguration, http: HttpClient);
     /** Path part for operation `contractSiteWidgetControllerFindAll()` */
-    static readonly ContractSiteWidgetControllerFindAllPath = "/auth/contract_site/contract_site_widget";
+    static readonly ContractSiteWidgetControllerFindAllPath = "/pelanggan/contract_site/contract_site_widget";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `contractSiteWidgetControllerFindAll()` instead.

@@ -3,8 +3,7 @@ import * as AuthActions from '../store/auth.actions';
 import { getAuthToken } from '../store/auth.selectors';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, filter, take, switchMap, throwError } from 'rxjs';
-import { AuthPublicService } from 'de-sdk-core';
+import { Observable, catchError, filter, take, switchMap, throwError } from 'rxjs'; 
 import { Router } from '@angular/router';
 
 @Injectable()
@@ -13,8 +12,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
     constructor(
         private store: Store,
-        private router: Router,
-        private authService: AuthPublicService
+        private router: Router, 
     ) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {

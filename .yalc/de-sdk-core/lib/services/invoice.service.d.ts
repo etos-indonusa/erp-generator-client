@@ -13,7 +13,7 @@ import * as i0 from "@angular/core";
 export declare class InvoiceService extends BaseService {
     constructor(config: ApiConfiguration, http: HttpClient);
     /** Path part for operation `invoiceControllerFindAll()` */
-    static readonly InvoiceControllerFindAllPath = "/auth/invoice/invoice";
+    static readonly InvoiceControllerFindAllPath = "/pelanggan/invoice/invoice";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `invoiceControllerFindAll()` instead.
@@ -39,7 +39,7 @@ export declare class InvoiceService extends BaseService {
         'total'?: number;
     }>;
     /** Path part for operation `invoiceControllerCreate()` */
-    static readonly InvoiceControllerCreatePath = "/auth/invoice/invoice";
+    static readonly InvoiceControllerCreatePath = "/pelanggan/invoice/invoice";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `invoiceControllerCreate()` instead.
@@ -63,7 +63,7 @@ export declare class InvoiceService extends BaseService {
         'data'?: PelangganInvoiceDto;
     }>;
     /** Path part for operation `invoiceControllerFindOne()` */
-    static readonly InvoiceControllerFindOnePath = "/auth/invoice/invoice/{id}";
+    static readonly InvoiceControllerFindOnePath = "/pelanggan/invoice/invoice/{id}";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `invoiceControllerFindOne()` instead.
@@ -87,7 +87,7 @@ export declare class InvoiceService extends BaseService {
         'data'?: PelangganInvoiceDto;
     }>;
     /** Path part for operation `invoiceControllerUpdate()` */
-    static readonly InvoiceControllerUpdatePath = "/auth/invoice/invoice/{id}";
+    static readonly InvoiceControllerUpdatePath = "/pelanggan/invoice/invoice/{id}";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `invoiceControllerUpdate()` instead.
@@ -111,7 +111,7 @@ export declare class InvoiceService extends BaseService {
         'data'?: PelangganInvoiceDto;
     }>;
     /** Path part for operation `invoiceControllerRemove()` */
-    static readonly InvoiceControllerRemovePath = "/auth/invoice/invoice/{id}";
+    static readonly InvoiceControllerRemovePath = "/pelanggan/invoice/invoice/{id}";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `invoiceControllerRemove()` instead.

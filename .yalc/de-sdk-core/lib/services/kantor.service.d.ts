@@ -13,7 +13,7 @@ import * as i0 from "@angular/core";
 export declare class KantorService extends BaseService {
     constructor(config: ApiConfiguration, http: HttpClient);
     /** Path part for operation `kantorControllerFindAll()` */
-    static readonly KantorControllerFindAllPath = "/auth/kantor/kantor";
+    static readonly KantorControllerFindAllPath = "/pelanggan/kantor/kantor";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `kantorControllerFindAll()` instead.
@@ -39,7 +39,7 @@ export declare class KantorService extends BaseService {
         'total'?: number;
     }>;
     /** Path part for operation `kantorControllerCreate()` */
-    static readonly KantorControllerCreatePath = "/auth/kantor/kantor";
+    static readonly KantorControllerCreatePath = "/pelanggan/kantor/kantor";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `kantorControllerCreate()` instead.
@@ -63,7 +63,7 @@ export declare class KantorService extends BaseService {
         'data'?: PelangganKantorDto;
     }>;
     /** Path part for operation `kantorControllerFindOne()` */
-    static readonly KantorControllerFindOnePath = "/auth/kantor/kantor/{id}";
+    static readonly KantorControllerFindOnePath = "/pelanggan/kantor/kantor/{id}";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `kantorControllerFindOne()` instead.
@@ -87,7 +87,7 @@ export declare class KantorService extends BaseService {
         'data'?: PelangganKantorDto;
     }>;
     /** Path part for operation `kantorControllerUpdate()` */
-    static readonly KantorControllerUpdatePath = "/auth/kantor/kantor/{id}";
+    static readonly KantorControllerUpdatePath = "/pelanggan/kantor/kantor/{id}";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `kantorControllerUpdate()` instead.
@@ -111,7 +111,7 @@ export declare class KantorService extends BaseService {
         'data'?: PelangganKantorDto;
     }>;
     /** Path part for operation `kantorControllerRemove()` */
-    static readonly KantorControllerRemovePath = "/auth/kantor/kantor/{id}";
+    static readonly KantorControllerRemovePath = "/pelanggan/kantor/kantor/{id}";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `kantorControllerRemove()` instead.

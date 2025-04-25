@@ -56,13 +56,13 @@ export class AuthEffects {
                 tap(() => {
                     // this.router.navigate(['/dashboard']); // atau path default-mu
                     const redirectUrl = localStorage.getItem('redirectAfterLogin');
-                    // console.log(redirectUrl)
-                    // if (redirectUrl && redirectUrl != '/error/404') {
-                    //     this.router.navigateByUrl(redirectUrl); // ✅ kembali ke halaman yang tadi
-                    //     localStorage.removeItem('redirectAfterLogin');
-                    // } else {
-                    //     this.router.navigate(['/dashboard']); // fallback default
-                    // }
+                    console.log(redirectUrl)
+                    if (redirectUrl && !redirectUrl.includes('error')) {
+                        this.router.navigateByUrl(redirectUrl); // ✅ kembali ke halaman yang tadi
+                        localStorage.removeItem('redirectAfterLogin');
+                    } else {
+                        this.router.navigate(['/dashboard']); // fallback default
+                    }
                 })
             ),
         { dispatch: false }

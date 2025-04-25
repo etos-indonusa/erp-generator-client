@@ -4,13 +4,13 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { <%= Prefix %><%= Nama %>FormSchema } from 'de-sdk-core'; 
-import type  { <%= Prefix %><%= Nama %>Dto } from 'de-sdk-core';
-import { <%= Nama %>Service } from 'de-sdk-core';
+import { <%= Prefix %><%= Nama %>FormSchema } from 'de-sdk-jasa'; 
+import type  { <%= Prefix %><%= Nama %>Dto } from 'de-sdk-jasa';
+import { <%= Nama %>Service } from 'de-sdk-jasa';
 
 <% if (relationInjects && relationInjects.length) { -%>
 <% relationInjects.forEach(inj => { -%>
-import { <%- inj.split(':')[1].trim() %> } from 'de-sdk-core';
+import { <%- inj.split(':')[1].trim() %> } from 'de-sdk-jasa';
 <% }) -%>
 <% } -%>
 

@@ -13,7 +13,7 @@ import * as i0 from "@angular/core";
 export declare class ContractJenisService extends BaseService {
     constructor(config: ApiConfiguration, http: HttpClient);
     /** Path part for operation `contractJenisControllerFindAll()` */
-    static readonly ContractJenisControllerFindAllPath = "/auth/contract_jenis/contract_jenis";
+    static readonly ContractJenisControllerFindAllPath = "/pelanggan/contract_jenis/contract_jenis";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `contractJenisControllerFindAll()` instead.
@@ -39,7 +39,7 @@ export declare class ContractJenisService extends BaseService {
         'total'?: number;
     }>;
     /** Path part for operation `contractJenisControllerCreate()` */
-    static readonly ContractJenisControllerCreatePath = "/auth/contract_jenis/contract_jenis";
+    static readonly ContractJenisControllerCreatePath = "/pelanggan/contract_jenis/contract_jenis";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `contractJenisControllerCreate()` instead.
@@ -63,7 +63,7 @@ export declare class ContractJenisService extends BaseService {
         'data'?: PelangganContractJenisDto;
     }>;
     /** Path part for operation `contractJenisControllerFindOne()` */
-    static readonly ContractJenisControllerFindOnePath = "/auth/contract_jenis/contract_jenis/{id}";
+    static readonly ContractJenisControllerFindOnePath = "/pelanggan/contract_jenis/contract_jenis/{id}";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `contractJenisControllerFindOne()` instead.
@@ -87,7 +87,7 @@ export declare class ContractJenisService extends BaseService {
         'data'?: PelangganContractJenisDto;
     }>;
     /** Path part for operation `contractJenisControllerUpdate()` */
-    static readonly ContractJenisControllerUpdatePath = "/auth/contract_jenis/contract_jenis/{id}";
+    static readonly ContractJenisControllerUpdatePath = "/pelanggan/contract_jenis/contract_jenis/{id}";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `contractJenisControllerUpdate()` instead.
@@ -111,7 +111,7 @@ export declare class ContractJenisService extends BaseService {
         'data'?: PelangganContractJenisDto;
     }>;
     /** Path part for operation `contractJenisControllerRemove()` */
-    static readonly ContractJenisControllerRemovePath = "/auth/contract_jenis/contract_jenis/{id}";
+    static readonly ContractJenisControllerRemovePath = "/pelanggan/contract_jenis/contract_jenis/{id}";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `contractJenisControllerRemove()` instead.

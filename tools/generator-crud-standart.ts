@@ -350,7 +350,8 @@ function injectToSidebarMenu(moduleName: string) {
 
 // ⬇️ Ambil field dari DTO jika ada
 const dtoFile = `${prefix ? `${prefix}-` : ''}${nama}-dto.ts`;
-const dtoPath = path.resolve('src/sdk/core/models', dtoFile);
+// const dtoPath = path.resolve('src/sdk/core/models', dtoFile);
+const dtoPath = path.resolve('projects/sdkcore/src/lib/models', dtoFile);
 let searchFields: string[] = [];
 
 if (fs.existsSync(dtoPath)) {

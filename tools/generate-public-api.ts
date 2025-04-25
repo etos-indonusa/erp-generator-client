@@ -7,6 +7,10 @@ const PUBLIC_API_PATH = path.resolve(SDK_LIB_PATH, '../public-api.ts');
 const folders = ['dto-to-fields', 'fn', 'form-schema', 'models', 'services'];
 
 let exportLines: string[] = [];
+exportLines.push(`export * from './lib/api.module';
+export * from './lib/models';
+export * from './lib/services';
+export * from './lib/form-schema';`)
 
 folders.forEach(folder => {
     const folderPath = path.join(SDK_LIB_PATH, folder);

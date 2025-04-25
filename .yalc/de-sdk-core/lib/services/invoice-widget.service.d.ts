@@ -9,7 +9,7 @@ import * as i0 from "@angular/core";
 export declare class InvoiceWidgetService extends BaseService {
     constructor(config: ApiConfiguration, http: HttpClient);
     /** Path part for operation `invoiceWidgetControllerFindAll()` */
-    static readonly InvoiceWidgetControllerFindAllPath = "/auth/invoice/invoice_widget";
+    static readonly InvoiceWidgetControllerFindAllPath = "/pelanggan/invoice/invoice_widget";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `invoiceWidgetControllerFindAll()` instead.

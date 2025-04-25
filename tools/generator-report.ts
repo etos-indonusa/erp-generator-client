@@ -654,7 +654,12 @@ function getSmartDisplayFieldsFromDtoV2Report(dtoPath: string, visited: Set<stri
 
             const baseName = namaField.replace(/^id_/, '').replace(/^id/, '');
             const objectField = baseName.charAt(0).toLowerCase() + baseName.slice(1);
-            idFields.add(objectField);
+            
+            if (objectField != nama_object)
+            {
+                idFields.add(objectField);
+            }
+            
         }
     }
     console.log('idFields', idFields)
@@ -669,12 +674,13 @@ function getSmartDisplayFieldsFromDtoV2Report(dtoPath: string, visited: Set<stri
 
         const kebabRel = rel.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase(); // userGroup -> user-group
         const match = files.find((f: string) =>
-            f.endsWith('-dto.ts') && f.includes(`-${kebabRel}-`)
+            f.endsWith('-dto.ts') && f.includes(`-${kebabRel}-dto.ts`)
         );
+        
 
         if (match && rel !=nama) {
             const nestedPath = path.join(modelDir, match);
-            const children = getSmartDisplayFieldsFromDtoV2Report(nestedPath, visited);
+            const children = getSmartDisplayFieldsFromDtoV2(nestedPath, visited);
             result.push({ namaField: rel, uiType: 'nested', children });
         } else {
             console.warn(`⚠️ File DTO tidak ditemukan untuk '${rel}'`);
@@ -702,7 +708,7 @@ if (fs.existsSync(dtoPath)) {
 }
 
 
-console.log("📋 Display Fields:",  (smartDisplayFields_report));
+console.log("📋 Display Fields:",  JSON.stringify(smartDisplayFields_report));
 // ⬇️ Eksekusi
 fse.ensureDirSync(outputDir);
 processDirectory(templateDir, outputDir, {

@@ -10,7 +10,7 @@ import * as i0 from "@angular/core";
 export declare class InvoiceReportService extends BaseService {
     constructor(config: ApiConfiguration, http: HttpClient);
     /** Path part for operation `invoiceReportControllerFindAll()` */
-    static readonly InvoiceReportControllerFindAllPath = "/auth/invoice/invoice_report/list";
+    static readonly InvoiceReportControllerFindAllPath = "/pelanggan/invoice/invoice_report/list";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `invoiceReportControllerFindAll()` instead.
@@ -36,7 +36,7 @@ export declare class InvoiceReportService extends BaseService {
         'total'?: number;
     }>;
     /** Path part for operation `invoiceReportControllerFindOne()` */
-    static readonly InvoiceReportControllerFindOnePath = "/auth/invoice/invoice_report/{id}";
+    static readonly InvoiceReportControllerFindOnePath = "/pelanggan/invoice/invoice_report/{id}";
     /**
      * This method provides access to the full `HttpResponse`, allowing access to response headers.
      * To access only the response body, use `invoiceReportControllerFindOne()` instead.
