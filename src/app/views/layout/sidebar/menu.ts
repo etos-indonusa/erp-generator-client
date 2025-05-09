@@ -14,68 +14,45 @@ export const MENU: MenuItem[] = [
         label: 'IN Apps',
         isTitle: true
     }
-    ,{
-        label: 'Currency',
-        icon: 'message-square',
-        link: '/app/amims/currency',
-    },
+    ,
 
     // Inventory
     {
         label: 'Inventory',
         isTitle: true
+    }, {
+        label: 'Site',
+        icon: 'message-square',
+        link: '/app/amims/amims-inventory/site',
     },
     {
         label: 'part',
         icon: 'message-square',
         link: '/app/amims/amims-inventory/part',
     },
-    
-    {
-        label: 'part-install',
-        icon: 'message-square',
-        link: '/app/amims/amims-inventory/part-install',
-    },
-    {
-        label: 'part-figure-index',
-        icon: 'message-square',
-        link: '/app/amims/amims-inventory/part-figure-index',
-    },
-    {
-        label: 'part-condition',
-        icon: 'message-square',
-        link: '/app/amims/amims-inventory/part-condition',
-    },
-    {
-        label: 'part-category',
-        icon: 'message-square',
-        link: '/app/amims/amims-inventory/part-category',
-    },
-    {
-        label: 'part-ata',
-        icon: 'message-square',
-        link: '/app/amims/amims-inventory/part-ata',
-    },
-    {
-        label: 'part-actype',
-        icon: 'message-square',
-        link: '/app/amims/amims-inventory/part-actype',
-    },
-    
-    {
-        label: 'part-alternative',
-        icon: 'message-square',
-        link: '/app/amims/amims-inventory/part-alternative',
-    },
+
+
+    // {
+    //     label: 'part-condition',
+    //     icon: 'message-square',
+    //     link: '/app/amims/amims-inventory/part-condition',
+    // },
+    // {
+    //     label: 'part-category',
+    //     icon: 'message-square',
+    //     link: '/app/amims/amims-inventory/part-category',
+    // },
+
+    // {
+    //     label: 'part-actype',
+    //     icon: 'message-square',
+    //     link: '/app/amims/amims-inventory/part-actype',
+    // },
+
     {
         label: 'mpart',
         icon: 'message-square',
         link: '/app/amims/amims-inventory/mpart',
-    },
-    {
-        label: 'bin',
-        icon: 'message-square',
-        link: '/app/amims/amims-inventory/bin',
     }
 
     //Master
@@ -90,11 +67,6 @@ export const MENU: MenuItem[] = [
         link: '/app/amims/amims-master/ata',
     }
 
-    , {
-        label: 'company',
-        icon: 'message-square',
-        link: '/app/amims/amims-master/company',
-    }
     , {
         label: 'doctype',
         icon: 'message-square',
@@ -115,11 +87,7 @@ export const MENU: MenuItem[] = [
     //     icon: 'message-square',
     //     link: '/app/amims/amims-master/lib-upload',
     // }
-    , {
-        label: 'life-time-limit',
-        icon: 'message-square',
-        link: '/app/amims/amims-master/life-time-limit',
-    }
+
     , {
         label: 'location-flight',
         icon: 'message-square',
@@ -131,36 +99,24 @@ export const MENU: MenuItem[] = [
         link: '/app/amims/amims-master/mel',
     }
 
-    , {
-        label: 'partid',
-        icon: 'message-square',
-        link: '/app/amims/amims-master/partid',
-    }
+
     , {
         label: 'pilot',
         icon: 'message-square',
         link: '/app/amims/amims-master/pilot',
     }
-    , {
-        label: 'position',
-        icon: 'message-square',
-        link: '/app/amims/amims-master/position',
-    }
+
     , {
         label: 'shipping',
         icon: 'message-square',
         link: '/app/amims/amims-master/shipping',
-    }
-    , {
-        label: 'type-ofwork',
-        icon: 'message-square',
-        link: '/app/amims/amims-master/type-ofwork',
-    }
-    , {
-        label: 'warranty',
-        icon: 'message-square',
-        link: '/app/amims/amims-master/warranty',
     },
+    {
+        label: 'Currency',
+        icon: 'message-square',
+        link: '/app/amims/amims-master/currency',
+    },
+
 
     // Maintenance
     {

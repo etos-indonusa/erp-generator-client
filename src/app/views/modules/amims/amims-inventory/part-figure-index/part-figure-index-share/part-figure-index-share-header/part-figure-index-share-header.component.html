@@ -1,428 +1,286 @@
-
-
-
-
 <!-- ✅ Start rendering -->
 <div class="row">
-  
-    
-  
-    
-  <div class="col-md-3" *ngIf="data?.createdAt !== undefined && data?.createdAt !== null">
-    <div class="text-secondary small">
-      {{ 'createdAt' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.createdAt | date:'short' }}
-      
-    </div>
-  </div>
 
-  
- <br> 
-  
-    
-  
-    
-  <div class="col-md-3" *ngIf="data?.figureIndex !== undefined && data?.figureIndex !== null">
-    <div class="text-secondary small">
-      {{ 'figureIndex' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.figureIndex || '-' }}
-      
-    </div>
-  </div>
+    <div class="col-md-3" >
+        <div class="text-secondary small">
+            {{ 'createdAt' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
 
-  
- <br> 
-  
-    
-  
-    
-  <div class="col-md-3" *ngIf="data?.idAta !== undefined && data?.idAta !== null">
-    <div class="text-secondary small">
-      {{ 'idAta' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.idAta || '-' }}
-      
-    </div>
-  </div>
+            {{ data?.createdAt | date: 'yyyy-MM-dd' }}
 
-  
- <br> 
-  
-    
-  
-    
-  <div class="col-md-3" *ngIf="data?.idMpart !== undefined && data?.idMpart !== null">
-    <div class="text-secondary small">
-      {{ 'idMpart' | translate }}
+        </div>
     </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.idMpart || '-' }}
-      
-    </div>
-  </div>
+    <div class="col-md-3" >
+        <div class="text-secondary small">
+            {{ 'figureIndex' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
 
-  
- <br> 
-  
-    
-  
-    
-  <div class="col-md-3" *ngIf="data?.idPartFigureIndex !== undefined && data?.idPartFigureIndex !== null">
-    <div class="text-secondary small">
-      {{ 'idPartFigureIndex' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.idPartFigureIndex || '-' }}
-      
-    </div>
-  </div>
+            {{ data?.figureIndex || '-' }}
 
-  
- <br> 
-  
-    
-  
-    
-  <div class="col-md-3" *ngIf="data?.itemIndex !== undefined && data?.itemIndex !== null">
-    <div class="text-secondary small">
-      {{ 'itemIndex' | translate }}
+        </div>
     </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.itemIndex || '-' }}
-      
-    </div>
-  </div>
+    <div class="col-md-3" >
+        <div class="text-secondary small">
+            {{ 'idAta' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
 
-  
- <br> 
-  
-    
-  
-    
-  <div class="col-md-3" *ngIf="data?.updatedAt !== undefined && data?.updatedAt !== null">
-    <div class="text-secondary small">
-      {{ 'updatedAt' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.updatedAt | date:'short' }}
-      
-    </div>
-  </div>
+            {{ data?.idAta || '-' }}
 
-  
- <br> 
-  
-    
-  
-    <div class="col-12 mt-4" *ngIf="data?.ata">
-      <div class="fw-bold border-bottom mb-2">
-        {{ 'ata' | translate }}
-      </div>
-      <div class="row">
-        
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.ata?.ata !== undefined && data.ata?.ata !== null">
-    <div class="text-secondary small">
+        </div>
+    </div>
+    <div class="col-md-3" >
+        <div class="text-secondary small">
+            {{ 'idMpart' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.idMpart || '-' }}
+
+        </div>
+    </div>
+    <div class="col-md-3" >
+        <div class="text-secondary small">
+            {{ 'idPartFigureIndex' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.idPartFigureIndex || '-' }}
+
+        </div>
+    </div>
+    <div class="col-md-3" >
+        <div class="text-secondary small">
+            {{ 'itemIndex' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.itemIndex || '-' }}
+
+        </div>
+    </div>
+    <div class="col-md-3" >
+        <div class="text-secondary small">
+            {{ 'updatedAt' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.updatedAt | date: 'yyyy-MM-dd' }}
+
+        </div>
+    </div>
+    <div class="col-12 {{ expand_ata.hidden ? 'mb-0' : 'mb-4' }} " *ngIf="data?.ata">
+    <div class="fw-bold border-bottom mb-2">
       {{ 'ata' | translate }}
+      <button class="btn btn-link btn-sm" (click)="expand_ata.hidden = !expand_ata.hidden">
+        <span *ngIf="expand_ata.hidden">Expand</span>
+        <span *ngIf="!expand_ata.hidden">Collapse</span>
+        <span *ngIf="expand_ata.hidden" nz-icon nzType="down" nzTheme="outline"></span>
+        <span *ngIf="!expand_ata.hidden" nz-icon nzType="up" nzTheme="outline"></span>
+      </button>
     </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.ata.ata || '-' }}
-      
-    </div>
-  </div>
+    <div class="row" #expand_ata hidden>
 
-  
+            <div class="col-md-3" *ngIf="data?.ata?.ata !== undefined && data?.ata?.ata !== null">
+                <div class="text-secondary small">
+                    {{ 'ata' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
 
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.ata?.ataType !== undefined && data.ata?.ataType !== null">
-    <div class="text-secondary small">
-      {{ 'ataType' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.ata.ataType || '-' }}
-      
-    </div>
-  </div>
+                    {{ data?.ata.ata || '-' }}
 
-  
+                </div>
+            </div>
 
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.ata?.codeAta !== undefined && data.ata?.codeAta !== null">
-    <div class="text-secondary small">
-      {{ 'codeAta' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.ata.codeAta || '-' }}
-      
-    </div>
-  </div>
+            <div class="col-md-3" *ngIf="data?.ata?.ataType !== undefined && data?.ata?.ataType !== null">
+                <div class="text-secondary small">
+                    {{ 'ataType' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
 
-  
+                    {{ data?.ata.ataType || '-' }}
 
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.ata?.createdAt !== undefined && data.ata?.createdAt !== null">
-    <div class="text-secondary small">
-      {{ 'createdAt' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.ata.createdAt | date:'short' }}
-      
-    </div>
-  </div>
+                </div>
+            </div>
 
-  
+            <div class="col-md-3" *ngIf="data?.ata?.codeAta !== undefined && data?.ata?.codeAta !== null">
+                <div class="text-secondary small">
+                    {{ 'codeAta' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
 
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.ata?.idAta !== undefined && data.ata?.idAta !== null">
-    <div class="text-secondary small">
-      {{ 'idAta' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.ata.idAta || '-' }}
-      
-    </div>
-  </div>
+                    {{ data?.ata.codeAta || '-' }}
 
-  
+                </div>
+            </div>
 
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.ata?.isDeleted !== undefined && data.ata?.isDeleted !== null">
-    <div class="text-secondary small">
-      {{ 'isDeleted' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        <nz-tag *ngIf="data.ata.isDeleted" nzColor="blue">Ya</nz-tag>
-        <span *ngIf="!data.ata.isDeleted">-</span>
-      
-    </div>
-  </div>
+            <div class="col-md-3" *ngIf="data?.ata?.createdAt !== undefined && data?.ata?.createdAt !== null">
+                <div class="text-secondary small">
+                    {{ 'createdAt' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
 
-  
+                    {{ data?.ata.createdAt | date: 'yyyy-MM-dd' }}
 
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.ata?.keywordAta !== undefined && data.ata?.keywordAta !== null">
-    <div class="text-secondary small">
-      {{ 'keywordAta' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.ata.keywordAta || '-' }}
-      
-    </div>
-  </div>
+                </div>
+            </div>
 
-  
+            <div class="col-md-3" *ngIf="data?.ata?.idAta !== undefined && data?.ata?.idAta !== null">
+                <div class="text-secondary small">
+                    {{ 'idAta' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
 
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.ata?.oldId !== undefined && data.ata?.oldId !== null">
-    <div class="text-secondary small">
-      {{ 'oldId' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.ata.oldId || '-' }}
-      
-    </div>
-  </div>
+                    {{ data?.ata.idAta || '-' }}
 
-  
+                </div>
+            </div>
 
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.ata?.updatedAt !== undefined && data.ata?.updatedAt !== null">
-    <div class="text-secondary small">
-      {{ 'updatedAt' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.ata.updatedAt | date:'short' }}
-      
-    </div>
-  </div>
+            <div class="col-md-3" *ngIf="data?.ata?.isDeleted !== undefined && data?.ata?.isDeleted !== null">
+                <div class="text-secondary small">
+                    {{ 'isDeleted' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
 
-  
+                    <nz-tag *ngIf="data?.ata.isDeleted" nzColor="blue">Ya</nz-tag>
+                    <span *ngIf="!data?.ata.isDeleted">-</span>
 
-        
-      </div>
-    </div>
-  
- <br> 
-  
-    
-  
-    <div class="col-12 mt-4" *ngIf="data?.partFigureIndex">
-      <div class="fw-bold border-bottom mb-2">
-        {{ 'partFigureIndex' | translate }}
-      </div>
-      <div class="row">
-        
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.partFigureIndex?.createdAt !== undefined && data.partFigureIndex?.createdAt !== null">
-    <div class="text-secondary small">
-      {{ 'createdAt' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.partFigureIndex.createdAt | date:'short' }}
-      
-    </div>
-  </div>
+                </div>
+            </div>
 
-  
+            <div class="col-md-3" *ngIf="data?.ata?.keywordAta !== undefined && data?.ata?.keywordAta !== null">
+                <div class="text-secondary small">
+                    {{ 'keywordAta' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
 
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.partFigureIndex?.figureIndex !== undefined && data.partFigureIndex?.figureIndex !== null">
-    <div class="text-secondary small">
-      {{ 'figureIndex' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.partFigureIndex.figureIndex || '-' }}
-      
-    </div>
-  </div>
+                    {{ data?.ata.keywordAta || '-' }}
 
-  
+                </div>
+            </div>
 
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.partFigureIndex?.idAta !== undefined && data.partFigureIndex?.idAta !== null">
-    <div class="text-secondary small">
-      {{ 'idAta' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.partFigureIndex.idAta || '-' }}
-      
-    </div>
-  </div>
+            <div class="col-md-3" *ngIf="data?.ata?.oldId !== undefined && data?.ata?.oldId !== null">
+                <div class="text-secondary small">
+                    {{ 'oldId' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
 
-  
+                    {{ data?.ata.oldId || '-' }}
 
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.partFigureIndex?.idMpart !== undefined && data.partFigureIndex?.idMpart !== null">
-    <div class="text-secondary small">
-      {{ 'idMpart' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.partFigureIndex.idMpart || '-' }}
-      
-    </div>
-  </div>
+                </div>
+            </div>
 
-  
+            <div class="col-md-3" *ngIf="data?.ata?.updatedAt !== undefined && data?.ata?.updatedAt !== null">
+                <div class="text-secondary small">
+                    {{ 'updatedAt' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
 
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.partFigureIndex?.idPartFigureIndex !== undefined && data.partFigureIndex?.idPartFigureIndex !== null">
-    <div class="text-secondary small">
-      {{ 'idPartFigureIndex' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.partFigureIndex.idPartFigureIndex || '-' }}
-      
-    </div>
-  </div>
+                    {{ data?.ata.updatedAt | date: 'yyyy-MM-dd' }}
 
-  
+                </div>
+            </div>
 
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.partFigureIndex?.itemIndex !== undefined && data.partFigureIndex?.itemIndex !== null">
-    <div class="text-secondary small">
-      {{ 'itemIndex' | translate }}
+        </div>
     </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.partFigureIndex.itemIndex || '-' }}
-      
+    <div class="col-12 {{ expand_part_figure_index.hidden ? 'mb-0' : 'mb-4' }} " *ngIf="data?.partFigureIndex">
+    <div class="fw-bold border-bottom mb-2">
+      {{ 'partFigureIndex' | translate }}
+      <button class="btn btn-link btn-sm" (click)="expand_part_figure_index.hidden = !expand_part_figure_index.hidden">
+        <span *ngIf="expand_part_figure_index.hidden">Expand</span>
+        <span *ngIf="!expand_part_figure_index.hidden">Collapse</span>
+        <span *ngIf="expand_part_figure_index.hidden" nz-icon nzType="down" nzTheme="outline"></span>
+        <span *ngIf="!expand_part_figure_index.hidden" nz-icon nzType="up" nzTheme="outline"></span>
+      </button>
     </div>
-  </div>
+    <div class="row" #expand_part_figure_index hidden>
 
-  
+            <div class="col-md-3"
+                *ngIf="data?.partFigureIndex?.createdAt !== undefined && data?.partFigureIndex?.createdAt !== null">
+                <div class="text-secondary small">
+                    {{ 'createdAt' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
 
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.partFigureIndex?.updatedAt !== undefined && data.partFigureIndex?.updatedAt !== null">
-    <div class="text-secondary small">
-      {{ 'updatedAt' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.partFigureIndex.updatedAt | date:'short' }}
-      
-    </div>
-  </div>
+                    {{ data?.partFigureIndex.createdAt | date: 'yyyy-MM-dd' }}
 
-  
+                </div>
+            </div>
 
-        
-      </div>
+            <div class="col-md-3"
+                *ngIf="data?.partFigureIndex?.figureIndex !== undefined && data?.partFigureIndex?.figureIndex !== null">
+                <div class="text-secondary small">
+                    {{ 'figureIndex' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+
+                    {{ data?.partFigureIndex.figureIndex || '-' }}
+
+                </div>
+            </div>
+
+            <div class="col-md-3"
+                *ngIf="data?.partFigureIndex?.idAta !== undefined && data?.partFigureIndex?.idAta !== null">
+                <div class="text-secondary small">
+                    {{ 'idAta' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+
+                    {{ data?.partFigureIndex.idAta || '-' }}
+
+                </div>
+            </div>
+
+            <div class="col-md-3"
+                *ngIf="data?.partFigureIndex?.idMpart !== undefined && data?.partFigureIndex?.idMpart !== null">
+                <div class="text-secondary small">
+                    {{ 'idMpart' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+
+                    {{ data?.partFigureIndex.idMpart || '-' }}
+
+                </div>
+            </div>
+
+            <div class="col-md-3"
+                *ngIf="data?.partFigureIndex?.idPartFigureIndex !== undefined && data?.partFigureIndex?.idPartFigureIndex !== null">
+                <div class="text-secondary small">
+                    {{ 'idPartFigureIndex' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+
+                    {{ data?.partFigureIndex.idPartFigureIndex || '-' }}
+
+                </div>
+            </div>
+
+            <div class="col-md-3"
+                *ngIf="data?.partFigureIndex?.itemIndex !== undefined && data?.partFigureIndex?.itemIndex !== null">
+                <div class="text-secondary small">
+                    {{ 'itemIndex' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+
+                    {{ data?.partFigureIndex.itemIndex || '-' }}
+
+                </div>
+            </div>
+
+            <div class="col-md-3"
+                *ngIf="data?.partFigureIndex?.updatedAt !== undefined && data?.partFigureIndex?.updatedAt !== null">
+                <div class="text-secondary small">
+                    {{ 'updatedAt' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+
+                    {{ data?.partFigureIndex.updatedAt | date: 'yyyy-MM-dd' }}
+
+                </div>
+            </div>
+
+        </div>
     </div>
-  
- <br> 
-  
 </div>

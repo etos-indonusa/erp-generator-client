@@ -113,7 +113,7 @@
                                     <nz-tag *ngIf="data.<%= field.namaField %>" nzColor="blue">Ya</nz-tag>
                                     <span *ngIf="!data.<%= field.namaField %>">-</span>
                                     <% } else if (field.uiType==='date' ) { %>
-                                        {{ data.<%= field.namaField %> | date: 'short' }}
+                                        {{ data.<%= field.namaField %> | date }}
                                             <% } else if (field.uiType==='relation' ) { %>
                                                 {{ data.<%= field.relasiField %>?.nama  }}
                                                     <% } else { %>

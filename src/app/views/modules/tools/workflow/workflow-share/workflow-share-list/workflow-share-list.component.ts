@@ -12,7 +12,7 @@ import { WorkflowReportService, WorkflowService } from 'de-sdk-core';
 import { ToolsWorkflowDto } from 'de-sdk-core';
 import { WorkflowShareAddComponent } from '../workflow-share-add/workflow-share-add.component';
 import { WorkflowShareDetailComponent } from '../workflow-share-detail/workflow-share-detail.component';
-import { KantorService } from 'de-sdk-core';
+
 
 
 
@@ -42,7 +42,6 @@ export class WorkflowShareListComponent {
         private workflowService: WorkflowService,
         private tokenService: TokenService,
 
-        private kantorService: KantorService,
     ) { }
 
     ngOnChanges(changes: SimpleChanges): void {
@@ -63,7 +62,6 @@ export class WorkflowShareListComponent {
         this.currentUser = this.userInfoService.getUser;
         this.resetParam();
 
-        this.getAllKantor();
     }
 
 
@@ -74,12 +72,6 @@ export class WorkflowShareListComponent {
     filterKantor: any = {}
 
 
-    // untuk fungsi get ALL relation
-    getAllKantor() {
-        this.kantorService.kantorControllerFindAll().subscribe(
-            data => this.listKantor = data.data ?? []
-        );
-    }
 
     currentUser: any = {};
     filter: any = {

@@ -4,11 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsCompanyFormSchema } from 'de-sdk-core'; 
+import { AmimsCompanyFormSchema } from 'de-sdk-core';
 import type { AmimsCompanyDto } from 'de-sdk-core';
 import { CompanyService } from 'de-sdk-core';
 
- 
+
 @Component({
     selector: 'app-company-share-add',
     templateUrl: './company-share-add.component.html',
@@ -16,13 +16,13 @@ import { CompanyService } from 'de-sdk-core';
 })
 export class CompanyShareAddComponent {
     @Input('company') company: AmimsCompanyDto = {
-  idCompany: ''
-};
+        idCompany: ''
+    };
     form!: FormGroup;
 
     ngOnChanges(changes: SimpleChanges): void {
-        if(changes.company && this.company.idCompany) {
-        this.form?.patchValue(this.company);
+        if (changes.company && this.company.idCompany) {
+            this.form?.patchValue(this.company);
         }
     }
     constructor(
@@ -30,19 +30,19 @@ export class CompanyShareAddComponent {
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
         private companyService: CompanyService,
-            ) { }
+    ) { }
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, AmimsCompanyFormSchema, {
             // kodeCompany: [Validators.minLength(3), Validators.maxLength(3)],
             // catatan: [Validators.maxLength(200)],
-        },'Company');
+        }, 'Company');
+        this.form?.patchValue(this.company);
+    }
 
-            }
-    
 
     // untuk fungsi get ALL relation
-    
+
     submit(): void {
         const labelMap = extractLabels(AmimsCompanyFormSchema);
 

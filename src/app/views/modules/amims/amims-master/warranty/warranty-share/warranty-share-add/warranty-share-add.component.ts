@@ -40,7 +40,7 @@ export class WarrantyShareAddComponent {
             // kodeWarranty: [Validators.minLength(3), Validators.maxLength(3)],
             // catatan: [Validators.maxLength(200)],
         }, 'Warranty');
-
+        this.form?.patchValue(this.warranty);
         this.getAllPart();
         this.getAllVendor();
     }

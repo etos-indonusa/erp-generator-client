@@ -5,11 +5,12 @@
             <div class="row">
                 <div class="col-lg-2">
                     <p class="text-secondary  mb-1">Status</p>
-                    <!-- <h3 class="fw-bold text-capitalize" style.color="{{ mpart?.statusMpart| status }}">   {{ mpart?.statusMpart}}</h3> -->
+                    <h3 class="fw-bold text-capitalize" style.color="{{ mpart?.statusMpart| status }}"> {{
+                        mpart?.statusMpart}}</h3>
                 </div>
                 <div class="col-lg-6">
-                    <p class="text-secondary  mb-1">Nomor</p>
-                    <!-- <h3 class="fw-bold  ">{{mpart?.nomorMpart}}</h3> -->
+                    <p class="text-secondary  mb-1">{{ 'partNumber' | translate }}</p>
+                    <h3 class="fw-bold  ">{{mpart?.partNumber}} <small>{{ mpart?.keyword }}</small></h3>
                 </div>
                 <div class="col" style="text-align: right;">
                     <p class="text-secondary mb-1">&nbsp;</p>
@@ -65,7 +66,7 @@
 
     </div>
 
-    <ul nz-menu nzMode="horizontal">
+    <!-- <ul nz-menu nzMode="horizontal">
         <li nz-menu-item nzMatchRouter>
             <a [routerLink]="['part']">Quantities</a>
         </li>
@@ -90,11 +91,45 @@
         <li nz-menu-item nzMatchRouter>
             <a [routerLink]="['last-maintenance']">Last Maintenance</a>
         </li>
-    </ul>
-    <router-outlet></router-outlet>
+    </ul> -->
+    <!-- <router-outlet></router-outlet> -->
 
-    
- 
+    <nz-tabset>
+        <nz-tab nzTitle="{{ 'Quantities' | translate }}">
+
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'Routine Maintenance' | translate }}">
+            <ng-template nz-tab>
+                <!-- <app-client-contact-share-list [idClient]="penawaran?.idClient"></app-client-contact-share-list> -->
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'Figure Index' | translate }}">
+            <ng-template nz-tab>
+                <app-part-figure-index-share-list [idMpart]="idMpart"></app-part-figure-index-share-list>
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'Alternative' | translate }}">
+            <ng-template nz-tab>
+                <app-part-alternative-share-list [forMpart]="idMpart"></app-part-alternative-share-list>
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'Attachments' | translate }}">
+            <ng-template nz-tab>
+                <document-list-v1 [for-module]="'mpart'" [for-module-id]="idMpart"></document-list-v1>
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'Log' | translate }}">
+            <ng-template nz-tab>
+
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'Last Maintenance' | translate }}">
+            <ng-template nz-tab>
+                <app-last-maintenance-share-list [idMpart]="idMpart"></app-last-maintenance-share-list>
+            </ng-template>
+        </nz-tab>
+    </nz-tabset>
+
 
 </nz-spin>
 <br>

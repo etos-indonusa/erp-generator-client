@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-    { path: 'currency', loadChildren: () => import('./currency/currency.module').then(m => m.CurrencyModule) },
     { path: 'engineer-pmtr', loadChildren: () => import('./engineer-pmtr/engineer-pmtr.module').then(m => m.EngineerPmtrModule) },
     { path: 'engineer-pmtr-item', loadChildren: () => import('./engineer-pmtr-item/engineer-pmtr-item.module').then(m => m.EngineerPmtrItemModule) },
     { path: 'engineer-pris', loadChildren: () => import('./engineer-pris/engineer-pris.module').then(m => m.EngineerPrisModule) },

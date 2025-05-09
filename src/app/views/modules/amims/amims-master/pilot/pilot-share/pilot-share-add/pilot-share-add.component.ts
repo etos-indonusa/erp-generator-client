@@ -4,8 +4,8 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsPilotFormSchema } from 'de-sdk-core'; 
-import type  { AmimsPilotDto } from 'de-sdk-core';
+import { AmimsPilotFormSchema } from 'de-sdk-core';
+import type { AmimsPilotDto } from 'de-sdk-core';
 import { PilotService } from 'de-sdk-core';
 
 
@@ -16,13 +16,13 @@ import { PilotService } from 'de-sdk-core';
 })
 export class PilotShareAddComponent {
     @Input('pilot') pilot: AmimsPilotDto = {
-  idPilot: ''
-};
+        idPilot: ''
+    };
     form!: FormGroup;
 
     ngOnChanges(changes: SimpleChanges): void {
-        if(changes.pilot && this.pilot.idPilot) {
-        this.form?.patchValue(this.pilot);
+        if (changes.pilot && this.pilot.idPilot) {
+            this.form?.patchValue(this.pilot);
         }
     }
     constructor(
@@ -30,19 +30,19 @@ export class PilotShareAddComponent {
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
         private pilotService: PilotService,
-            ) { }
+    ) { }
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, AmimsPilotFormSchema, {
             kodePilot: [Validators.minLength(3), Validators.maxLength(3)],
             catatan: [Validators.maxLength(200)],
-        },'Pilot');
+        }, 'Pilot');
+        this.form?.patchValue(this.pilot);
+    }
 
-            }
-    
 
     // untuk fungsi get ALL relation
-    
+
     submit(): void {
         const labelMap = extractLabels(AmimsPilotFormSchema);
 

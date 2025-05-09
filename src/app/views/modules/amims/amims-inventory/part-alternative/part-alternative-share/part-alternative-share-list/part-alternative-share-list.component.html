@@ -30,18 +30,19 @@
                         </nz-form-control>
                     </nz-form-item>
                 </div>
-                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
                     <nz-form-item>
-                    <nz-form-label>{{ 'idMpart' | translate }}</nz-form-label>
-                    <nz-form-control>
-                                                <nz-select [(ngModel)]="filter.idMpart" name="idMpart" nzAllowClear>
-                            <nz-option *ngFor="let item of listMpart" [nzValue]="item.idMpart" [nzLabel]="item.namaMpart"></nz-option>
-                        </nz-select>
-                                            </nz-form-control>
+                        <nz-form-label>{{ 'idMpart' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-select [(ngModel)]="filter.idMpart" name="idMpart" nzAllowClear>
+                                <nz-option *ngFor="let item of listMpart" [nzValue]="item.idMpart"
+                                    [nzLabel]="item.namaMpart"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
                     </nz-form-item>
                 </div>
-                
- 
+
+
                 <div nz-col nzSpan="24">
 
                     <nz-form-item>
@@ -66,31 +67,44 @@
             (nzQueryParams)="onQueryParamsChange($event)" nzSize="small">
             <thead>
                 <tr>
-                    <th   [nzAlign]="'right'">#ID</th>
-                    
-                    <th [nzSortFn]="true" nzColumnKey="forMpart" *ngIf="isColVisible('forMpart')">
-                        {{ 'forMpart' | translate }}
-                     </th>
-                    
+                    <th [nzAlign]="'right'">#partNumber</th>
+ 
+                    <th >
+                        {{ 'keyword' | translate }}
+                    </th>
+                    <th >
+                        {{ 'unit' | translate }}
+                    </th>
+                    <th >
+                        {{ 'codeAta' | translate }}
+                    </th>
+
                     <th nzWidth="7%" [nzAlign]="'right'">Action</th>
-                </tr> 
+                </tr>
             </thead>
             <tbody>
                 <ng-container *ngFor="let data of listOfData" style="vertical-align: top;">
                     <tr>
                         <td [nzExpand]="expandSet.has(data.idPartAlternative)"
                             (nzExpandChange)="onExpandChange(data.idPartAlternative, $event)">
-                            <nz-badge *ngIf="data.idPartAlternative!=null" nzColor="{{ data.idPartAlternative?.toLowerCase() | status }}"
-                                nzText="{{data.idPartAlternative?.toLowerCase() }}"></nz-badge>  
+                            <nz-badge *ngIf="data.idPartAlternative!=null"
+                                nzColor="{{ data.mpart?.partNumber?.toLowerCase() | status }}"
+                                nzText="{{data.mpart?.partNumber?.toLowerCase() }}"></nz-badge>
                         </td>
-                        
-                        
-                            <td *ngIf="isColVisible('forMpart')">
-                                
-                                                        {{ data.forMpart  }}
-                                                            
-                            </td>
-                            
+
+
+                         
+                        <td> 
+                            {{ data?.mpart?.keyword }} 
+                        </td>
+                        <td> 
+                            {{ data?.mpart?.unit }} 
+                        </td>
+                        <td> 
+                            {{ data?.mpart?.ata?.codeAta }}-{{ data?.mpart?.mfigureIndex }}-{{ data?.mpart?.mitemIndex }}
+                        </td>
+
+                         
 
                         <td [nzAlign]="'right'">
                             <button nz-button nz-dropdown [nzDropdownMenu]="menu">
@@ -99,19 +113,15 @@
                             </button>
                             <nz-dropdown-menu #menu="nzDropdownMenu">
                                 <ul nz-menu>
-                                    <li nz-menu-item (click)="detail(data)">
-                                        <span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Detail
-                                    </li>
-                                    <!--  -->
-                                    <li nz-menu-item (click)="update(data)" *ngIf="data.status=='draft'">
+                                    
+                                    <li nz-menu-item (click)="update(data)" >
                                         <span nz-icon nzType="edit" nzTheme="outline"></span>&nbsp;&nbsp;Update
                                     </li>
-                                    <li nz-menu-divider *ngIf="data.status=='draft'"></li>
-                                    <li nz-menu-item nz-menu-item nz-popconfirm class="text-danger"
-                                        *ngIf="data.status=='draft'"
+                                    <li nz-menu-divider  ></li>
+                                    <li nz-menu-item nz-menu-item nz-popconfirm class="text-danger" 
                                         nzPopconfirmTitle="Apakah Anda yakin akan menghapus data ini?"
-                                        nzPopconfirmPlacement="bottom" (nzOnConfirm)="delete(data.idPartAlternative)"><span
-                                            nz-icon nzType="delete" nzTheme="outline"></span>
+                                        nzPopconfirmPlacement="bottom" (nzOnConfirm)="delete(data.idPartAlternative)">
+                                        <span nz-icon nzType="delete" nzTheme="outline"></span>
                                         <a class="m-1 text-danger">&nbsp;&nbsp;Delete</a>
                                     </li>
                                 </ul>
@@ -119,10 +129,10 @@
                         </td>
                     </tr>
                     <tr [nzExpand]="expandSet.has(data.idPartAlternative)">
-                        <app-part-alternative-share-header [data]="data"></app-part-alternative-share-header> 
+                        <app-part-alternative-share-header [data]="data"></app-part-alternative-share-header>
                     </tr>
                 </ng-container>
-                 
+
             </tbody>
         </nz-table>
     </div>
@@ -154,7 +164,8 @@
         (click)="filter_extra=!filter_extra">
         <span nz-icon nzType="filter" nzTheme="outline"></span> Filter
     </button>
-    <button nz-button nz-dropdown [nzDropdownMenu]="menu" nzTy [nzPlacement]="'topRight'"><i nz-icon nzType="appstore"></i></button>
+    <button nz-button nz-dropdown [nzDropdownMenu]="menu" nzTy [nzPlacement]="'topRight'"><i nz-icon
+            nzType="appstore"></i></button>
     <nz-dropdown-menu #menu="nzDropdownMenu">
         <ul nz-menu>
             <li nz-menu-item *ngFor="let col of columns">
@@ -163,8 +174,9 @@
                 </label>
             </li>
         </ul>
-    </nz-dropdown-menu> 
-    <button nz-button nzType="link" (click)="resetColumns()" nz-tooltip nzTooltipTitle="{{ 'Reset Kolom' | translate }}"><i nz-icon nzType="undo"></i></button>
+    </nz-dropdown-menu>
+    <button nz-button nzType="link" (click)="resetColumns()" nz-tooltip
+        nzTooltipTitle="{{ 'Reset Kolom' | translate }}"><i nz-icon nzType="undo"></i></button>
 
     <button nz-button style="margin-bottom: 8px;margin-left: 10px;" nzType="primary" (click)="add()">
         <span nz-icon nzType="plus" nzTheme="outline"></span> Add New

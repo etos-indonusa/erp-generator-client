@@ -4,13 +4,12 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { ToolsDocumentNumberingCounterFormSchema } from 'de-sdk-core'; 
+import { ToolsDocumentNumberingCounterFormSchema } from 'de-sdk-core';
 import type { ToolsDocumentNumberingCounterDto } from 'de-sdk-core';
 import { DocumentNumberingCounterService } from 'de-sdk-core';
 
 import { DocumentNumberingService } from 'de-sdk-core';
-import { KantorService } from 'de-sdk-core';
- 
+
 @Component({
     selector: 'app-document-numbering-counter-share-add',
     templateUrl: './document-numbering-counter-share-add.component.html',
@@ -18,15 +17,15 @@ import { KantorService } from 'de-sdk-core';
 })
 export class DocumentNumberingCounterShareAddComponent {
     @Input('documentNumberingCounter') documentNumberingCounter: ToolsDocumentNumberingCounterDto = {
-  idDocumentNumbering: '',
-  idDocumentNumberingCounter: '',
-  tahun: 0
-};
+        idDocumentNumbering: '',
+        idDocumentNumberingCounter: '',
+        tahun: 0
+    };
     form!: FormGroup;
 
     ngOnChanges(changes: SimpleChanges): void {
-        if(changes.documentNumberingCounter && this.documentNumberingCounter.idDocumentNumberingCounter) {
-        this.form?.patchValue(this.documentNumberingCounter);
+        if (changes.documentNumberingCounter && this.documentNumberingCounter.idDocumentNumberingCounter) {
+            this.form?.patchValue(this.documentNumberingCounter);
         }
     }
     constructor(
@@ -34,37 +33,32 @@ export class DocumentNumberingCounterShareAddComponent {
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
         private documentNumberingCounterService: DocumentNumberingCounterService,
-                        private documentNumberingService: DocumentNumberingService,
-                private kantorService: KantorService,
-                    ) { }
+        private documentNumberingService: DocumentNumberingService,
+    ) { }
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, ToolsDocumentNumberingCounterFormSchema, {
             // kodeDocumentNumberingCounter: [Validators.minLength(3), Validators.maxLength(3)],
             // catatan: [Validators.maxLength(200)],
-        },'DocumentNumberingCounter');
+        }, 'DocumentNumberingCounter');
 
-                            this.getAllDocumentNumbering();
-                    this.getAllKantor();
-                    }
-    
+        this.getAllDocumentNumbering();
+
+    }
+
     listDocumentNumbering: any[] = [];
-    
+
     listKantor: any[] = [];
-    
+
 
     // untuk fungsi get ALL relation
-            getAllDocumentNumbering() {
-    this.documentNumberingService.documentNumberingControllerFindAll().subscribe(
-      data => this.listDocumentNumbering = data.data ?? []
-    );
-  }
-        getAllKantor() {
-    this.kantorService.kantorControllerFindAll().subscribe(
-      data => this.listKantor = data.data ?? []
-    );
-  }
-        
+    getAllDocumentNumbering() {
+        this.documentNumberingService.documentNumberingControllerFindAll().subscribe(
+            data => this.listDocumentNumbering = data.data ?? []
+        );
+    }
+
+
     submit(): void {
         const labelMap = extractLabels(ToolsDocumentNumberingCounterFormSchema);
 

@@ -1293,12 +1293,12 @@
                             </button>
                             <nz-dropdown-menu #menu="nzDropdownMenu">
                                 <ul nz-menu>
-                                    <li nz-menu-item  >
+                                    <!-- <li nz-menu-item  >
                                         <a [routerLink]="['../detail',data.idPart]" target="_blank"><span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Detail Tab</a>
                                     </li>
                                     <li nz-menu-item  >
                                         <a [routerLink]="['../../mpart/detail',data.idMpart]" target="_blank"><span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Detail {{ 'mpart' | translate }} Tab</a>
-                                    </li>
+                                    </li> -->
                                     <li nz-menu-item (click)="detail(data)">
                                         <span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Detail Drawer
                                     </li>

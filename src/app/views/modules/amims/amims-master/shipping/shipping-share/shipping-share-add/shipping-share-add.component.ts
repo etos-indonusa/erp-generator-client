@@ -4,11 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsShippingFormSchema } from 'de-sdk-core'; 
+import { AmimsShippingFormSchema } from 'de-sdk-core';
 import type { AmimsShippingDto } from 'de-sdk-core';
 import { ShippingService } from 'de-sdk-core';
 
- 
+
 @Component({
     selector: 'app-shipping-share-add',
     templateUrl: './shipping-share-add.component.html',
@@ -16,13 +16,13 @@ import { ShippingService } from 'de-sdk-core';
 })
 export class ShippingShareAddComponent {
     @Input('shipping') shipping: AmimsShippingDto = {
-  idShipping: ''
-};
+        idShipping: ''
+    };
     form!: FormGroup;
 
     ngOnChanges(changes: SimpleChanges): void {
-        if(changes.shipping && this.shipping.idShipping) {
-        this.form?.patchValue(this.shipping);
+        if (changes.shipping && this.shipping.idShipping) {
+            this.form?.patchValue(this.shipping);
         }
     }
     constructor(
@@ -30,19 +30,19 @@ export class ShippingShareAddComponent {
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
         private shippingService: ShippingService,
-            ) { }
+    ) { }
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, AmimsShippingFormSchema, {
             // kodeShipping: [Validators.minLength(3), Validators.maxLength(3)],
             // catatan: [Validators.maxLength(200)],
-        },'Shipping');
+        }, 'Shipping');
+        this.form?.patchValue(this.shipping);
+    }
 
-            }
-    
 
     // untuk fungsi get ALL relation
-    
+
     submit(): void {
         const labelMap = extractLabels(AmimsShippingFormSchema);
 

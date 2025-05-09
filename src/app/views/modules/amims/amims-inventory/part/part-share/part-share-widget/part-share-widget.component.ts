@@ -41,12 +41,12 @@ export class PartShareWidgetComponent {
                     select: [
                         {
                             type: "count",
-                            field:"statusOnInventory" ,
+                            field:"status_on_inventory" ,
                             alias: "jumlah" 
                         }
                     ],
-                    groupBy: ['statusOnInventory'],
-                    sortKey: "statusOnInventory",
+                    groupBy: ['status_on_inventory'],
+                    sortKey: "status_on_inventory",
                     sortValue: "ASC"
                 }
             })

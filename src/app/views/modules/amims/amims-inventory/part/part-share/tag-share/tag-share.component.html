@@ -1,0 +1,60 @@
+<nz-card nzTitle="Tag" [nzExtra]="extraTemplate" [nzBodyStyle]="{padding:0}">
+
+    <div class="row">
+        <div class="col-md-7">
+            <div class="row">
+                <div class="col-md-6">
+                    <app-part-tag></app-part-tag>
+                </div>
+                <div class="col-md-6">
+                    <app-part-tag-unservice></app-part-tag-unservice>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="container mt-4">
+                <nz-table #basicTable [nzBordered] [nzData]="listOfData" [nzSize]="'middle'">
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Inspection by</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of listOfData">
+                            <td>
+                                <span [ngClass]="{
+                            'text-primary': data.status === 'Serviceable',
+                            'text-danger': data.status === 'Unserviceable'
+                          }">
+                                    ● {{ data.status }}
+                                </span>
+                            </td>
+                            <td>{{ data.date }}</td>
+                            <td>{{ data.inspector }}</td>
+                            <td>
+                                <a href="#" class="text-primary">Download</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </div>
+        </div>
+    </div>
+
+
+</nz-card>
+<ng-template #extraTemplate>
+
+
+    <button nz-button style="margin-bottom: 8px;">
+        <span nz-icon nzType="setting" nzTheme="outline"></span>
+    </button>
+    <button nz-button [nzType]="'primary'" style="margin-bottom: 8px;">
+        <span nz-icon nzType="download" nzTheme="outline"></span> Print
+    </button>
+
+
+</ng-template>

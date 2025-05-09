@@ -1,3 +1,8 @@
+npx ts-node --project tsconfig.tools.json tools/generate-openapi-sdk-with-fields.ts https://erp.bogor.vm.devetek.com/api-json
+ts-node --project tsconfig.tools.json tools/generate-public-api.ts
+ts-node --project tsconfig.tools.json tools/publish-sdk-local-yalc.ts
+
+
 npm run generate:report -- mpart --prefix=amims
 npm run generate:report -- actype --prefix=amims
 npm run generate:report -- aircraft --prefix=amims
@@ -77,7 +82,7 @@ npm run generate:report -- qa-transfer --prefix=amims
 npm run generate:report -- qa-transfer-item --prefix=amims
 npm run generate:report -- rotary-factor --prefix=amims
 npm run generate:crud -- shipping --prefix=amims
-npm run generate:crud -- site --prefix=amims
+npm run generate:report -- site --prefix=amims
 npm run generate:report -- store-destroy --prefix=amims
 npm run generate:report -- store-transfer --prefix=amims
 npm run generate:report -- store-transfer-item --prefix=amims

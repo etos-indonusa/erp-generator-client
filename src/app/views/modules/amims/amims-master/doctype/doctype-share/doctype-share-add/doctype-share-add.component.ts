@@ -4,11 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsDoctypeFormSchema } from 'de-sdk-core'; 
+import { AmimsDoctypeFormSchema } from 'de-sdk-core';
 import type { AmimsDoctypeDto } from 'de-sdk-core';
 import { DoctypeService } from 'de-sdk-core';
 
- 
+
 @Component({
     selector: 'app-doctype-share-add',
     templateUrl: './doctype-share-add.component.html',
@@ -16,13 +16,13 @@ import { DoctypeService } from 'de-sdk-core';
 })
 export class DoctypeShareAddComponent {
     @Input('doctype') doctype: AmimsDoctypeDto = {
-  idDoctype: ''
-};
+        idDoctype: ''
+    };
     form!: FormGroup;
 
     ngOnChanges(changes: SimpleChanges): void {
-        if(changes.doctype && this.doctype.idDoctype) {
-        this.form?.patchValue(this.doctype);
+        if (changes.doctype && this.doctype.idDoctype) {
+            this.form?.patchValue(this.doctype);
         }
     }
     constructor(
@@ -30,19 +30,20 @@ export class DoctypeShareAddComponent {
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
         private doctypeService: DoctypeService,
-            ) { }
+    ) { }
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, AmimsDoctypeFormSchema, {
             // kodeDoctype: [Validators.minLength(3), Validators.maxLength(3)],
             // catatan: [Validators.maxLength(200)],
-        },'Doctype');
+        }, 'Doctype');
+        this.form?.patchValue(this.doctype);
 
-            }
-    
+    }
+
 
     // untuk fungsi get ALL relation
-    
+
     submit(): void {
         const labelMap = extractLabels(AmimsDoctypeFormSchema);
 

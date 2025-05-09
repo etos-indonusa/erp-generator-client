@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { NzTableQueryParams } from 'ng-zorro-antd/table';
@@ -15,7 +15,7 @@ import { PartFigureIndexShareAddComponent } from '../part-figure-index-share-add
 import { PartFigureIndexShareDetailComponent } from '../part-figure-index-share-detail/part-figure-index-share-detail.component';
 import { AtaService } from 'de-sdk-core';
 import { MpartService } from 'de-sdk-core';
- 
+
 
 
 @Component({
@@ -29,11 +29,11 @@ export class PartFigureIndexShareListComponent {
     @Input('filter-extra') filter_extra = false;
     @Input('enable-crud') enable_crud = true;
     //untuak filter dari prent
-     
-    @Input('idAta') idAta: string | null  = null;
-     
-    @Input('idMpart') idMpart: string | null  = null;
-    
+
+    @Input('idAta') idAta: string | null = null;
+
+    @Input('idMpart') idMpart: string | null = null;
+
 
     constructor(
         private pesanService: PesanService,
@@ -44,10 +44,9 @@ export class PartFigureIndexShareListComponent {
         private partFigureIndexReportService: PartFigureIndexReportService,
         private partFigureIndexService: PartFigureIndexService,
         private tokenService: TokenService,
-
-                        private ataService: AtaService,
-                private mpartService: MpartService,
-                        private translate: TranslateService
+        private cd: ChangeDetectorRef,
+        private ataService: AtaService,
+        private translate: TranslateService
     ) {
         translate.setDefaultLang('id');
         translate.use('id');
@@ -56,20 +55,18 @@ export class PartFigureIndexShareListComponent {
     ngOnChanges(changes: SimpleChanges): void {
         this.filter.status_partFigureIndex = this.status == 'semua' ? null : this.status;
 
-            
-           
-            if (changes.idAta)
-            {
-                this.filterAta.idAta = this.idAta
-            }
-            
-           
-            if (changes.idMpart)
-            {
-                this.filterMpart.idMpart = this.idMpart
-            }
-            
-        
+
+
+        if (changes.idAta) {
+            this.filterAta.idAta = this.idAta
+        }
+
+
+        if (changes.idMpart) {
+            this.filterMpart.idMpart = this.idMpart
+        }
+
+
 
         this.searchData();
     }
@@ -79,40 +76,35 @@ export class PartFigureIndexShareListComponent {
         this.resetParam();
         this.loadColumnSettings();
 
-                            this.getAllAta();
-                    this.getAllMpart();
-                    }
+        this.getAllAta(); 
+    }
 
-    
-    listAta: any[] = []; 
-    
-    listMpart: any[] = []; 
-    
+
+    listAta: any[] = [];
+
+    listMpart: any[] = [];
+
     //untuak filter dari prent
-    
-    filterAta:any = {} 
-    
-    filterMpart:any = {} 
-    
+
+    filterAta: any = {}
+
+    filterMpart: any = {}
+
 
     // untuk fungsi get ALL relation
-            getAllAta() {
-    this.ataService.ataControllerFindAll().subscribe(
-      data => this.listAta = data.data ?? []
-    );
-  }
-        getAllMpart() {
-    this.mpartService.mpartControllerFindAll().subscribe(
-      data => this.listMpart = data.data ?? []
-    );
-  }
-        
+    getAllAta() {
+        this.ataService.ataControllerFindAll().subscribe(
+            data => this.listAta = data.data ?? []
+        );
+    }
+    
+
     currentUser: any = {};
     filter: any = {
-    idAta: null,
-  idMpart: null
+        idAta: null,
+        idMpart: null
     };
- 
+
     expandSet = new Set<string>();
     onExpandChange(id: string, checked: boolean): void {
         if (checked) {
@@ -130,8 +122,8 @@ export class PartFigureIndexShareListComponent {
     sortValue: string | null = 'asc';
     sortKey: string | null = 'created_at';
     search: string | null = null;
-    search_field: string[] = ["figureIndex","itemIndex"];
- 
+    search_field: string[] = ["figureIndex", "itemIndex"];
+
     breadCrumbItems = [{ label: 'List', active: false }];
 
     resetParam() {
@@ -142,7 +134,7 @@ export class PartFigureIndexShareListComponent {
         this.search = null;
         this.filter = {
             idAta: null,
-  idMpart: null
+            idMpart: null
         };
         this.filter.status_partFigureIndex = this.status == 'semua' ? null : this.status;
     }
@@ -169,25 +161,18 @@ export class PartFigureIndexShareListComponent {
             body: {
                 filter: finalFilter,
                 joinWhere: [
-                                        {
+                    {
                         "ata": this.filterAta, type: 'inner'
-                    },
-                                        {
-                        "mpart": this.filterMpart, type: 'inner'
-                    }
-                                        ],
+                    } 
+                ],
                 search_field: this.search_field,
                 search_keyword: this.search || undefined,
-                include:  [
-  {
-    "name": "ata",
-    "type": "single"
-  },
-  {
-    "name": "mpart",
-    "type": "single"
-  }
-],
+                include: [
+                    {
+                        "name": "ata",
+                        "type": "single"
+                    } 
+                ],
                 sortKey: this.sortKey ?? undefined,
                 sortValue: this.validSortValue,
                 pageIndex: this.pageIndex,
@@ -197,6 +182,8 @@ export class PartFigureIndexShareListComponent {
             this.loading = false;
             this.total = data.total || 0;
             this.listOfData = data.data || [];
+
+            this.cd.detectChanges()
         }, err => {
             this.loading = false;
         });
@@ -239,13 +226,13 @@ export class PartFigureIndexShareListComponent {
         return backendFilter;
     }
 
-     // TABLE DINAMIS 
-    columns = [ 
-         { key: 'createdAt',  show: true },
-              { key: 'figureIndex',  show: true },
-              { key: 'itemIndex',  show: true },
-              { key: 'updatedAt',  show: true },
-             
+    // TABLE DINAMIS 
+    columns = [
+        { key: 'createdAt', show: true },
+        { key: 'figureIndex', show: true },
+        { key: 'itemIndex', show: true },
+        { key: 'updatedAt', show: true },
+
     ];
 
     isColVisible(key: string): boolean {
@@ -263,47 +250,47 @@ export class PartFigureIndexShareListComponent {
         const saved = localStorage.getItem('partFigureIndex_columns');
         if (saved) {
             try {
-            const parsed = JSON.parse(saved);
-            if (Array.isArray(parsed)) {
-                // Sinkronkan dengan default jika ada key yang hilang
-                this.columns.forEach((col, index) => {
-                const found = parsed.find((p: any) => p.key === col.key);
-                if (found) this.columns[index].show = found.show;
-                });
-            }
+                const parsed = JSON.parse(saved);
+                if (Array.isArray(parsed)) {
+                    // Sinkronkan dengan default jika ada key yang hilang
+                    this.columns.forEach((col, index) => {
+                        const found = parsed.find((p: any) => p.key === col.key);
+                        if (found) this.columns[index].show = found.show;
+                    });
+                }
             } catch (e) {
                 console.warn('Gagal parse partFigureIndex dari localStorage', e);
             }
         }
-        }
+    }
     // TABLE DINAMIS 
 
 
     add() {
-    if (!this.acl.can('part-figure-index', 'can_add') || !this.enable_crud) return;
+        if (!this.acl.can('part-figure-index', 'can_add') || !this.enable_crud) return;
 
         const drawerRef = this.drawerService.create<PartFigureIndexShareAddComponent, {}, string>({
             nzTitle: 'Add',
             nzContent: PartFigureIndexShareAddComponent,
-        nzWidth: (500) + 'px',
+            nzWidth: (500) + 'px',
         });
- 
+
         drawerRef.afterClose.subscribe(() => {
             this.searchData();
         });
     }
 
-     
 
-    detail(data:AmimsPartFigureIndexDto) {
+
+    detail(data: AmimsPartFigureIndexDto) {
         if (!this.acl.can('contract-site', 'can_list')) return;
 
         const drawerRef = this.drawerService.create<PartFigureIndexShareDetailComponent, {}, string>({
             nzTitle: 'Detail',
             nzContent: PartFigureIndexShareDetailComponent,
             nzWidth: (window.innerWidth * 0.8) + 'px',
-            nzContentParams:{
-                idPartFigureIndex:data.idPartFigureIndex
+            nzContentParams: {
+                idPartFigureIndex: data.idPartFigureIndex
             }
         });
 
@@ -312,8 +299,8 @@ export class PartFigureIndexShareListComponent {
         });
     }
 
-    update(data: any) {}
-    delete(id: string) {} 
+    update(data: any) { }
+    delete(id: string) { }
 
     print() {
         let url = environment.srv_document + '/pdfAkutansi/vouchers?filter=' + JSON.stringify(this.filter) + '&token=' + this.tokenService.getToken();

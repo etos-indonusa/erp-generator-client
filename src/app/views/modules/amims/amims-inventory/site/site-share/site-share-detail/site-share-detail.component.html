@@ -1,0 +1,151 @@
+<nz-spin nzTip="Loading..." [nzSpinning]="is_loading">
+
+    <div class="card border-0 mb-1 border-left-5 border-theme card   bg-white">
+        <div class="card-body p-2">
+            <div class="row">
+                <div class="col-lg-2">
+                    <p class="text-secondary  mb-1">Status</p>
+                    <h3 class="fw-bold text-capitalize"
+                        style.color="{{ site?.statusSite  == 1 ? 'Actice': 'nonActive' | status }}"> {{ site?.statusSite
+                        ==1 ? 'Actice': 'nonActive'}}</h3>
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-secondary  mb-1">Code</p>
+                    <h3 class="fw-bold  ">{{site?.codeSite}}</h3>
+                </div>
+                <div class="col" style="text-align: right;">
+                    <p class="text-secondary mb-1">&nbsp;</p>
+
+                    <button nz-button nzType="primary" style="margin-right: 5px;" nz-dropdown [nzDropdownMenu]="menu4">
+                        <span nz-icon nzType="printer"></span>
+                        Print
+                        <span nz-icon nzType="down"></span>
+                    </button>
+                    <nz-dropdown-menu #menu4="nzDropdownMenu">
+                        <ul nz-menu>
+                            <li nz-menu-item (click)="print()">Print site</li>
+                        </ul>
+                    </nz-dropdown-menu>
+
+                    <!-- <button *ngIf="site.status=='close' || site.status=='cicil'" nz-button
+                        nzType="primary" (click)="up()" style="margin-right: 5px;">
+                        <span nz-icon nzType="calculator" nzTheme="outline"></span>
+                        Bayar
+                    </button> -->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+     <lib-approval-steps [for-module-name]="'site'" [for-module-id]="site?.idSite"></lib-approval-steps>
+         -->
+
+    <div class="card bg-white p-3" style="box-shadow: none;">
+        <div class="row">
+            <div class="col-md-8">
+                <app-site-share-header [data]="site"></app-site-share-header>
+                <lib-custom-field [from-module]="'AmimsSite'" [from-module-id]="site?.idSite"></lib-custom-field>
+
+                <div class="col-12 {{ expand_user.hidden ? 'mb-0' : 'mb-4' }} ">
+                    <div class="fw-bold border-bottom mb-2">
+                        {{ 'PROCUREMENT - AUTHORIZED PERSON ONLY' | translate }}
+                        <button class="btn btn-link btn-sm" (click)="expand_user.hidden = !expand_user.hidden">
+                            <span *ngIf="expand_user.hidden">Expand</span>
+                            <span *ngIf="!expand_user.hidden">Collapse</span>
+                            <span *ngIf="expand_user.hidden" nz-icon nzType="down" nzTheme="outline"></span>
+                            <span *ngIf="!expand_user.hidden" nz-icon nzType="up" nzTheme="outline"></span>
+                        </button>
+                    </div>
+                    <div class="row" #expand_user hidden>
+
+
+
+                        <div class="col-md-6">
+                            <div class="text-secondary small">
+                                {{ 'Value' | translate }}
+                            </div>
+                            <div class="fw-semibold text-dark">
+                                1000 Part
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-secondary small">
+                                {{ 'WIthout Value' | translate }}
+                            </div>
+                            <div class="fw-semibold text-dark">
+                                1000 Part
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-secondary small">
+                                {{ 'Total Assets' | translate }}
+                            </div>
+                            <div class="fw-semibold text-dark">
+                                IDR 1.000.000
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-4">
+                <document-widget-v1 [for-module-id]="site?.idSite" [for-module]="'AmimsSite'"
+                    [enable-crud]="true"></document-widget-v1>
+
+                <!-- <approval-mode-widget *ngIf="site.status??'-'.toLowerCase() !='close'"
+                    style="margin-right: 5px;" [module-id]="site.id_contractSite" [module]="'AmimsSite'"
+                    [flow-id]="site.id_data_flow" [flow-detail]="site.id_data_flow_detail"
+                    (reload)="approve($event)">
+                </approval-mode-widget> -->
+
+            </div>
+        </div>
+
+
+        <br>
+
+
+    </div>
+
+
+
+    <nz-tabset>
+        <nz-tab nzTitle="{{ 'Quantities' | translate }}">
+            <app-part-share-list [idSite]="idSite"></app-part-share-list>
+        </nz-tab>
+
+        <nz-tab nzTitle="{{ 'Stock Activity' | translate }}">
+            <ng-template nz-tab>
+                <!-- <app-contract-share-list [idClient]="idClient"></app-contract-share-list> -->
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'Store Due List' | translate }}">
+            <ng-template nz-tab>
+                <!-- <app-client-site-share-list [idClient]="idClient"></app-client-site-share-list>  -->
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'Merge / Change' | translate }}">
+            <ng-template nz-tab>
+                <!-- <app-client-site-share-list [idClient]="idClient"></app-client-site-share-list>  -->
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'BIN' | translate }}">
+            <ng-template nz-tab>
+                <app-bin-share-list [idSite]="idSite"></app-bin-share-list>
+            </ng-template>
+        </nz-tab>
+    </nz-tabset>
+
+
+
+    <!-- 
+    <lib-approval-form-widget [from-module]="'AmimsSite'" [from-module-id]="site?.idSite"
+        (onSubmit)="handleApprovalSubmit($event)" (onAfterSubmit)="refreshApprovalSteps()"></lib-approval-form-widget> 
+            -->
+
+</nz-spin>
+<br>

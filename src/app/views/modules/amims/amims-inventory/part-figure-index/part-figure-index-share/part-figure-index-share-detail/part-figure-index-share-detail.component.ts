@@ -3,7 +3,7 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   AmimsPartFigureIndexReportDto } from 'de-sdk-core';
+import { AmimsPartFigureIndexReportDto } from 'de-sdk-core';
 import { PartFigureIndexReportService } from 'de-sdk-core';
 
 @Component({
@@ -11,7 +11,7 @@ import { PartFigureIndexReportService } from 'de-sdk-core';
     templateUrl: './part-figure-index-share-detail.component.html',
     styleUrl: './part-figure-index-share-detail.component.scss'
 })
-export class PartFigureIndexShareDetailComponent { 
+export class PartFigureIndexShareDetailComponent {
     @Input('idPartFigureIndex') idPartFigureIndex: string // replace dengan id+Nama
     constructor(
         private partFigureIndexReportService: PartFigureIndexReportService,
@@ -46,8 +46,7 @@ export class PartFigureIndexShareDetailComponent {
     }
 
     // artinya one to many 
-    getListData()
-    {
+    getListData() {
 
     }
 
@@ -61,7 +60,7 @@ export class PartFigureIndexShareDetailComponent {
     // }
 
     print() {
-    let url = environment.srv_document + '/pdf/partFigureIndex/' + this.idPartFigureIndex + '?token=' + this.tokenService.getToken();
+        let url = environment.srv_document + '/pdf/partFigureIndex/' + this.idPartFigureIndex + '?token=' + this.tokenService.getToken();
         window.open(url, "_blank");
     }
 

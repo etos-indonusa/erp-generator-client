@@ -36,10 +36,6 @@ export declare const PelangganContractSiteReportFormSchema: {
         default: number;
         required: boolean;
     };
-    nilaiTotal: {
-        default: number;
-        required: boolean;
-    };
     statusContractSite: {
         default: string;
         required: boolean;

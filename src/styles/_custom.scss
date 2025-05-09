@@ -81,13 +81,17 @@ svg {
     height: 300px !important;
 }
 
- 
-    .table-minimalis {
-        th {
-            padding: 7px !important;
-        }
-        td {
-            padding: 5px !important;
-        }
+
+.table-minimalis {
+    th {
+        padding: 7px !important;
     }
- 
+
+    td {
+        padding: 5px !important;
+    }
+}
+
+h3>small {
+    font-size: 13px;
+}

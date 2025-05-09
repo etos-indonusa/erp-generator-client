@@ -1,0 +1,372 @@
+<!-- ✅ Start rendering -->
+<div class="row">
+
+
+
+
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'address' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.address || '-' }}
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'city' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.city || '-' }}
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'codeSite' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.codeSite || '-' }}
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'contactname' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.contactname || '-' }}
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'country' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.country || '-' }}
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'createdAt' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.createdAt | date: 'yyyy-MM-dd' }}
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'emailaddress' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.emailaddress || '-' }}
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'fax' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.fax || '-' }}
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'idNewSite' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.idNewSite || '-' }}
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'idSite' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.idSite || '-' }}
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'idUser' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.idUser || '-' }}
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'isDeleted' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            <nz-tag *ngIf="data?.isDeleted" nzColor="blue">Ya</nz-tag>
+            <span *ngIf="!data?.isDeleted">-</span>
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'isMain' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            <nz-tag *ngIf="data?.isMain" nzColor="blue">Ya</nz-tag>
+            <span *ngIf="!data?.isMain">-</span>
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'isStore' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            <nz-tag *ngIf="data?.isStore" nzColor="blue">Ya</nz-tag>
+            <span *ngIf="!data?.isStore">-</span>
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'logoSite' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.logoSite || '-' }}
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'mobile' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.mobile || '-' }}
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'oldId' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.oldId || '-' }}
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'parentSite' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.parentSite | number:'1.0-0' }}
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'site' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.site || '-' }}
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'statusSite' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            <nz-tag nzColor="green">{{ data?.statusSite }}</nz-tag>
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'telephone' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.telephone || '-' }}
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'typeSite' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.typeSite || '-' }}
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'updatedAt' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.updatedAt | date: 'yyyy-MM-dd' }}
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-secondary small">
+            {{ 'validation' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.validation | number:'1.0-0' }}
+
+        </div>
+    </div>
+    <div class="col-12 {{ expand_user.hidden ? 'mb-0' : 'mb-4' }} " *ngIf="data?.user">
+        <div class="fw-bold border-bottom mb-2">
+            {{ 'user' | translate }}
+            <button class="btn btn-link btn-sm" (click)="expand_user.hidden = !expand_user.hidden">
+                <span *ngIf="expand_user.hidden">Expand</span>
+                <span *ngIf="!expand_user.hidden">Collapse</span>
+                <span *ngIf="expand_user.hidden" nz-icon nzType="down" nzTheme="outline"></span>
+                <span *ngIf="!expand_user.hidden" nz-icon nzType="up" nzTheme="outline"></span>
+            </button>
+        </div>
+        <div class="row" #expand_user hidden>
+
+
+
+
+
+            <div class="col-md-3" *ngIf="data?.user?.dateLog !== undefined && data?.user?.dateLog !== null">
+                <div class="text-secondary small">
+                    {{ 'dateLog' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+
+                    {{ data?.user?.dateLog || '-' }}
+
+                </div>
+            </div>
+
+
+
+
+
+            <div class="col-md-3" *ngIf="data?.user?.method !== undefined && data?.user?.method !== null">
+                <div class="text-secondary small">
+                    {{ 'method' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+
+                    {{ data?.user?.method || '-' }}
+
+                </div>
+            </div>
+
+
+
+
+
+            <div class="col-md-3" *ngIf="data?.user?.methodValue !== undefined && data?.user?.methodValue !== null">
+                <div class="text-secondary small">
+                    {{ 'methodValue' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+
+                    {{ data?.user?.methodValue || '-' }}
+
+                </div>
+            </div>
+
+
+
+
+
+            <div class="col-md-3" *ngIf="data?.user?.typeIdKey !== undefined && data?.user?.typeIdKey !== null">
+                <div class="text-secondary small">
+                    {{ 'typeIdKey' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+
+                    {{ data?.user?.typeIdKey || '-' }}
+
+                </div>
+            </div>
+
+
+
+
+
+            <div class="col-md-3" *ngIf="data?.user?.typeLog !== undefined && data?.user?.typeLog !== null">
+                <div class="text-secondary small">
+                    {{ 'typeLog' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+
+                    {{ data?.user?.typeLog || '-' }}
+
+                </div>
+            </div>
+
+
+
+
+
+            <div class="col-md-3" *ngIf="data?.user?.typeValue !== undefined && data?.user?.typeValue !== null">
+                <div class="text-secondary small">
+                    {{ 'typeValue' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+
+                    {{ data?.user?.typeValue || '-' }}
+
+                </div>
+            </div>
+
+
+
+
+
+            <div class="col-md-3" *ngIf="data?.user?.typeWork !== undefined && data?.user?.typeWork !== null">
+                <div class="text-secondary small">
+                    {{ 'typeWork' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+
+                    {{ data?.user?.typeWork || '-' }}
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>

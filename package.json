@@ -9,6 +9,7 @@
         "watch": "ng build --watch --configuration development",
         "rtl": "webpack --config rtl.config.js",
         "test": "ng test",
+        "clear:html": "npx ts-node --project tsconfig.tools.json tools/remove-extra-lines.ts",
         "generate:crud": "ts-node --project tsconfig.tools.json tools/generator-crud-standart.ts",
         "generate:report": "ts-node --project tsconfig.tools.json tools/generator-report.ts"
     },

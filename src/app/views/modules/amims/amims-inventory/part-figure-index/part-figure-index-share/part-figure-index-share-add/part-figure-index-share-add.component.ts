@@ -1,11 +1,11 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, SimpleChanges } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsPartFigureIndexFormSchema } from 'de-sdk-core'; 
-import type  { AmimsPartFigureIndexDto } from 'de-sdk-core';
+import { AmimsPartFigureIndexFormSchema } from 'de-sdk-core';
+import type { AmimsPartFigureIndexDto } from 'de-sdk-core';
 import { PartFigureIndexService } from 'de-sdk-core';
 
 import { AtaService } from 'de-sdk-core';
@@ -17,14 +17,15 @@ import { MpartService } from 'de-sdk-core';
     styleUrl: './part-figure-index-share-add.component.scss'
 })
 export class PartFigureIndexShareAddComponent {
+    @Input('idMpart') idMpart: any = null
     @Input('partFigureIndex') partFigureIndex: AmimsPartFigureIndexDto = {
-  idPartFigureIndex: ''
-};
+        idPartFigureIndex: ''
+    };
     form!: FormGroup;
 
     ngOnChanges(changes: SimpleChanges): void {
-        if(changes.partFigureIndex && this.partFigureIndex.idPartFigureIndex) {
-        this.form?.patchValue(this.partFigureIndex);
+        if (changes.partFigureIndex && this.partFigureIndex.idPartFigureIndex) {
+            this.form?.patchValue(this.partFigureIndex);
         }
     }
     constructor(
@@ -32,37 +33,35 @@ export class PartFigureIndexShareAddComponent {
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
         private partFigureIndexService: PartFigureIndexService,
-                        private ataService: AtaService,
-                private mpartService: MpartService,
-                    ) { }
+        private ataService: AtaService,
+        private cd: ChangeDetectorRef,
+    ) { }
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, AmimsPartFigureIndexFormSchema, {
-            kodePartFigureIndex: [Validators.minLength(3), Validators.maxLength(3)],
-            catatan: [Validators.maxLength(200)],
-        },'PartFigureIndex');
+            // kodePartFigureIndex: [Validators.minLength(3), Validators.maxLength(3)],
+            // catatan: [Validators.maxLength(200)],
+        }, 'PartFigureIndex');
+        this.form.patchValue({ idMpart: this.idMpart })
+        if (this.partFigureIndex.idPartFigureIndex) {
+            this.form.patchValue(this.partFigureIndex)
+        }
+        this.getAllAta();
+    }
 
-                            this.getAllAta();
-                    this.getAllMpart();
-                    }
-    
     listAta: any[] = [];
-    
+
     listMpart: any[] = [];
-    
+
 
     // untuk fungsi get ALL relation
-            getAllAta() {
-    this.ataService.ataControllerFindAll().subscribe(
-      data => this.listAta = data.data ?? []
-    );
-  }
-        getAllMpart() {
-    this.mpartService.mpartControllerFindAll().subscribe(
-      data => this.listMpart = data.data ?? []
-    );
-  }
-        
+    getAllAta() {
+        this.ataService.ataControllerFindAll().subscribe(
+            data => this.listAta = data.data ?? []
+        );
+    }
+
+
     submit(): void {
         const labelMap = extractLabels(AmimsPartFigureIndexFormSchema);
 

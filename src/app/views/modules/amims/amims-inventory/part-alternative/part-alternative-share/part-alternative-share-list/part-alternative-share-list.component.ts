@@ -14,7 +14,7 @@ import { AmimsPartAlternativeDto } from 'de-sdk-core';
 import { PartAlternativeShareAddComponent } from '../part-alternative-share-add/part-alternative-share-add.component';
 import { PartAlternativeShareDetailComponent } from '../part-alternative-share-detail/part-alternative-share-detail.component';
 import { MpartService } from 'de-sdk-core';
- 
+
 
 
 @Component({
@@ -28,9 +28,10 @@ export class PartAlternativeShareListComponent {
     @Input('filter-extra') filter_extra = false;
     @Input('enable-crud') enable_crud = true;
     //untuak filter dari prent
-     
-    @Input('idMpart') idMpart: string | null  = null;
-    
+
+    @Input('idMpart') idMpart: string | null = null;
+    @Input('forMpart') forMpart: string | null = null;
+
 
     constructor(
         private pesanService: PesanService,
@@ -40,10 +41,8 @@ export class PartAlternativeShareListComponent {
         private userInfoService: UserInfoService,
         private partAlternativeReportService: PartAlternativeReportService,
         private partAlternativeService: PartAlternativeService,
-        private tokenService: TokenService,
-
-                        private mpartService: MpartService,
-                        private translate: TranslateService
+        private tokenService: TokenService, 
+        private translate: TranslateService
     ) {
         translate.setDefaultLang('id');
         translate.use('id');
@@ -52,14 +51,7 @@ export class PartAlternativeShareListComponent {
     ngOnChanges(changes: SimpleChanges): void {
         this.filter.status_partAlternative = this.status == 'semua' ? null : this.status;
 
-            
-           
-            if (changes.idMpart)
-            {
-                this.filterMpart.idMpart = this.idMpart
-            }
-            
-        
+        this.filter.forMpart = this.forMpart
 
         this.searchData();
     }
@@ -67,31 +59,23 @@ export class PartAlternativeShareListComponent {
     ngOnInit(): void {
         this.currentUser = this.userInfoService.getUser;
         this.resetParam();
-        this.loadColumnSettings();
+        this.loadColumnSettings(); 
+    }
 
-                            this.getAllMpart();
-                    }
 
-    
-    listMpart: any[] = []; 
-    
+    listMpart: any[] = [];
+
     //untuak filter dari prent
-    
-    filterMpart:any = {} 
-    
 
-    // untuk fungsi get ALL relation
-            getAllMpart() {
-    this.mpartService.mpartControllerFindAll().subscribe(
-      data => this.listMpart = data.data ?? []
-    );
-  }
-        
+    filterMpart: any = {}
+
+ 
+
     currentUser: any = {};
     filter: any = {
-    idMpart: null
+        idMpart: null
     };
- 
+
     expandSet = new Set<string>();
     onExpandChange(id: string, checked: boolean): void {
         if (checked) {
@@ -107,17 +91,17 @@ export class PartAlternativeShareListComponent {
     listOfData: any[] = [];
     loading = true;
     sortValue: string | null = 'asc';
-    sortKey: string | null = 'created_at';
+    sortKey: string | null = 'for_mpart';
     search: string | null = null;
     search_field: string[] = ["forMpart"];
- 
+
     breadCrumbItems = [{ label: 'List', active: false }];
 
     resetParam() {
         this.pageIndex = 1;
         this.pageSize = 30;
         this.sortValue = 'asc';
-        this.sortKey = 'created_at';
+        this.sortKey = 'for_mpart';
         this.search = null;
         this.filter = {
             idMpart: null
@@ -147,18 +131,23 @@ export class PartAlternativeShareListComponent {
             body: {
                 filter: finalFilter,
                 joinWhere: [
-                                        {
+                    {
                         "mpart": this.filterMpart, type: 'inner'
                     }
-                                        ],
+                ],
                 search_field: this.search_field,
                 search_keyword: this.search || undefined,
-                include:  [
-  {
-    "name": "mpart",
-    "type": "single"
-  }
-],
+                include: [
+                    {
+                        "name": "mpart",
+                        "type": "single"
+                    },
+                    {
+                        "name": "ata",
+                        "to":"mpart",
+                        "type": "single"
+                    }
+                ],
                 sortKey: this.sortKey ?? undefined,
                 sortValue: this.validSortValue,
                 pageIndex: this.pageIndex,
@@ -178,7 +167,7 @@ export class PartAlternativeShareListComponent {
         this.pageIndex = params.pageIndex;
         this.pageSize = params.pageSize;
         this.currentSort = params.sort.find(item => item.value !== null);
-        this.sortKey = (this.currentSort && this.currentSort.key) || 'created_at';
+        this.sortKey = (this.currentSort && this.currentSort.key) || 'for_mpart';
         this.sortValue = (this.currentSort && this.currentSort.value) || 'asc';
         this.searchData();
     }
@@ -210,10 +199,10 @@ export class PartAlternativeShareListComponent {
         return backendFilter;
     }
 
-     // TABLE DINAMIS 
-    columns = [ 
-         { key: 'forMpart',  show: true },
-             
+    // TABLE DINAMIS 
+    columns = [
+        { key: 'forMpart', show: true },
+
     ];
 
     isColVisible(key: string): boolean {
@@ -231,47 +220,47 @@ export class PartAlternativeShareListComponent {
         const saved = localStorage.getItem('partAlternative_columns');
         if (saved) {
             try {
-            const parsed = JSON.parse(saved);
-            if (Array.isArray(parsed)) {
-                // Sinkronkan dengan default jika ada key yang hilang
-                this.columns.forEach((col, index) => {
-                const found = parsed.find((p: any) => p.key === col.key);
-                if (found) this.columns[index].show = found.show;
-                });
-            }
+                const parsed = JSON.parse(saved);
+                if (Array.isArray(parsed)) {
+                    // Sinkronkan dengan default jika ada key yang hilang
+                    this.columns.forEach((col, index) => {
+                        const found = parsed.find((p: any) => p.key === col.key);
+                        if (found) this.columns[index].show = found.show;
+                    });
+                }
             } catch (e) {
                 console.warn('Gagal parse partAlternative dari localStorage', e);
             }
         }
-        }
+    }
     // TABLE DINAMIS 
 
 
     add() {
-    if (!this.acl.can('part-alternative', 'can_add') || !this.enable_crud) return;
+        if (!this.acl.can('part-alternative', 'can_add') || !this.enable_crud) return;
 
         const drawerRef = this.drawerService.create<PartAlternativeShareAddComponent, {}, string>({
             nzTitle: 'Add',
             nzContent: PartAlternativeShareAddComponent,
-        nzWidth: (500) + 'px',
+            nzWidth: (500) + 'px',
         });
- 
+
         drawerRef.afterClose.subscribe(() => {
             this.searchData();
         });
     }
 
-     
 
-    detail(data:AmimsPartAlternativeDto) {
+
+    detail(data: AmimsPartAlternativeDto) {
         if (!this.acl.can('contract-site', 'can_list')) return;
 
         const drawerRef = this.drawerService.create<PartAlternativeShareDetailComponent, {}, string>({
             nzTitle: 'Detail',
             nzContent: PartAlternativeShareDetailComponent,
             nzWidth: (window.innerWidth * 0.8) + 'px',
-            nzContentParams:{
-                idPartAlternative:data.idPartAlternative
+            nzContentParams: {
+                idPartAlternative: data.idPartAlternative
             }
         });
 
@@ -280,8 +269,8 @@ export class PartAlternativeShareListComponent {
         });
     }
 
-    update(data: any) {}
-    delete(id: string) {} 
+    update(data: any) { }
+    delete(id: string) { }
 
     print() {
         let url = environment.srv_document + '/pdfAkutansi/vouchers?filter=' + JSON.stringify(this.filter) + '&token=' + this.tokenService.getToken();

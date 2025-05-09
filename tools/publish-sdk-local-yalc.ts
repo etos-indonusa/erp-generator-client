@@ -16,15 +16,15 @@ execSync(`ng build ${sdkName}`, { stdio: 'inherit' });
 if (fs.existsSync(projectPackageJson)) {
     const pkg = JSON.parse(fs.readFileSync(projectPackageJson, 'utf-8'));
 
-    pkg.main = 'fesm2022/de-sdk-jasa.mjs';
-    pkg.module = 'fesm2022/de-sdk-jasa.mjs';
+    pkg.main = 'fesm2022/de-sdk-core.mjs';
+    pkg.module = 'fesm2022/de-sdk-core.mjs';
     pkg.typings = 'index.d.ts';
     pkg.exports = {
         ".": {
             "types": "./index.d.ts",
-            "esm2022": "./esm2022/de-sdk-jasa.mjs",
-            "esm": "./esm2022/de-sdk-jasa.mjs",
-            "default": "./fesm2022/de-sdk-jasa.mjs"
+            "esm2022": "./esm2022/de-sdk-core.mjs",
+            "esm": "./esm2022/de-sdk-core.mjs",
+            "default": "./fesm2022/de-sdk-core.mjs"
         },
         "./package.json": {
             "default": "./package.json"

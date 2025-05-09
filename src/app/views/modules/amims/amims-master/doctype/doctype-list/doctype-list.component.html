@@ -33,7 +33,7 @@
                                         <ul>
                                             <li *ngFor="let item of search_field">{{ item }}</li>
                                         </ul>
-                                    </div> 
+                                    </div>
                                 </ng-template>
                             </ng-template>
                         </nz-form-control>
@@ -58,55 +58,47 @@
             (nzQueryParams)="onQueryParamsChange($event)" nzSize="small">
             <thead>
                 <tr>
-                
-                    <th [nzSortFn]="true" nzColumnKey="childname">
-                    {{ 'childname' | translate }}
-                    </th>
-                
+
+
                     <th [nzSortFn]="true" nzColumnKey="description">
-                    {{ 'description' | translate }}
+                        {{ 'description' | translate }}
                     </th>
-                
+
                     <th [nzSortFn]="true" nzColumnKey="doctype">
-                    {{ 'doctype' | translate }}
+                        {{ 'doctype' | translate }}
                     </th>
-                
+
                     <th [nzSortFn]="true" nzColumnKey="lastupdatestamp">
-                    {{ 'lastupdatestamp' | translate }}
+                        {{ 'lastupdatestamp' | translate }}
                     </th>
-                
+
                     <th nzWidth="80px">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <ng-container *ngFor="let data of listOfData" style="vertical-align: top;">
-                   
-                    <tr  >
-                       
+
+                    <tr>
+
+
                         <td>
-                            
-                            {{ data.childname || '-' }}
-                            
-                        </td>
-                        
-                        <td>
-                            
+
                             {{ data.description || '-' }}
-                            
+
                         </td>
-                        
+
                         <td>
-                            
+
                             {{ data.doctype || '-' }}
-                            
+
                         </td>
-                        
+
                         <td>
-                            
+
                             {{ data.lastupdatestamp || '-' }}
-                            
+
                         </td>
-                        
+
                         <td nzAlign="right">
                             <button nz-button nz-dropdown [nzDropdownMenu]="menu">
                                 Actions
@@ -118,14 +110,14 @@
                                         <span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Detail
                                     </li>
                                     <!--  -->
-                                    <li nz-menu-item (click)="edit(data)" >
+                                    <li nz-menu-item (click)="edit(data)">
                                         <span nz-icon nzType="edit" nzTheme="outline"></span>&nbsp;&nbsp;Update
                                     </li>
-                                    <li nz-menu-divider ></li>
-                                    <li nz-menu-item nz-menu-item nz-popconfirm class="text-danger" 
+                                    <li nz-menu-divider></li>
+                                    <li nz-menu-item nz-menu-item nz-popconfirm class="text-danger"
                                         nzPopconfirmTitle="Apakah Anda yakin akan menghapus data ini?"
-                                        nzPopconfirmPlacement="bottom" (nzOnConfirm)="delete(data)"><span
-                                            nz-icon nzType="delete" nzTheme="outline"></span>
+                                        nzPopconfirmPlacement="bottom" (nzOnConfirm)="delete(data)"><span nz-icon
+                                            nzType="delete" nzTheme="outline"></span>
                                         <a class="m-1 text-danger">&nbsp;&nbsp;Delete</a>
                                     </li>
                                 </ul>
@@ -164,7 +156,7 @@
         (click)="filter_extra=!filter_extra">
         <span nz-icon nzType="filter" nzTheme="outline"></span> Filter
     </button>
-  
+
 
     <button nz-button nzType="primary" (click)="add()" [nzLoading]="loading" style="margin-left: 10px;"><span nz-icon
             nzType="plus"></span>Add</button>

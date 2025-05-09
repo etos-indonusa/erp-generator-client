@@ -4,11 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsLibFormIssuedFormSchema } from 'de-sdk-core'; 
+import { AmimsLibFormIssuedFormSchema } from 'de-sdk-core';
 import type { AmimsLibFormIssuedDto } from 'de-sdk-core';
 import { LibFormIssuedService } from 'de-sdk-core';
 
- 
+
 @Component({
     selector: 'app-lib-form-issued-share-add',
     templateUrl: './lib-form-issued-share-add.component.html',
@@ -16,13 +16,13 @@ import { LibFormIssuedService } from 'de-sdk-core';
 })
 export class LibFormIssuedShareAddComponent {
     @Input('libFormIssued') libFormIssued: AmimsLibFormIssuedDto = {
-  idLibFormIssued: ''
-};
+        idLibFormIssued: ''
+    };
     form!: FormGroup;
 
     ngOnChanges(changes: SimpleChanges): void {
-        if(changes.libFormIssued && this.libFormIssued.idLibFormIssued) {
-        this.form?.patchValue(this.libFormIssued);
+        if (changes.libFormIssued && this.libFormIssued.idLibFormIssued) {
+            this.form?.patchValue(this.libFormIssued);
         }
     }
     constructor(
@@ -30,19 +30,19 @@ export class LibFormIssuedShareAddComponent {
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
         private libFormIssuedService: LibFormIssuedService,
-            ) { }
+    ) { }
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, AmimsLibFormIssuedFormSchema, {
             // kodeLibFormIssued: [Validators.minLength(3), Validators.maxLength(3)],
             // catatan: [Validators.maxLength(200)],
-        },'LibFormIssued');
+        }, 'LibFormIssued');
+        this.form?.patchValue(this.libFormIssued);
+    }
 
-            }
-    
 
     // untuk fungsi get ALL relation
-    
+
     submit(): void {
         const labelMap = extractLabels(AmimsLibFormIssuedFormSchema);
 

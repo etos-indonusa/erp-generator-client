@@ -1,124 +1,435 @@
-
-
-
-
 <!-- ✅ Start rendering -->
 <div class="row">
-  
-    
-  
-    
-  <div class="col-md-3" *ngIf="data?.forMpart !== undefined && data?.forMpart !== null">
-    <div class="text-secondary small">
-      {{ 'forMpart' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.forMpart || '-' }}
-      
-    </div>
-  </div>
 
-  
- <br> 
-  
-    
-  
-    
-  <div class="col-md-3" *ngIf="data?.idMpart !== undefined && data?.idMpart !== null">
-    <div class="text-secondary small">
-      {{ 'idMpart' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.idMpart || '-' }}
-      
-    </div>
-  </div>
 
-  
- <br> 
-  
-    
-  
-    
-  <div class="col-md-3" *ngIf="data?.idPartAlternative !== undefined && data?.idPartAlternative !== null">
-    <div class="text-secondary small">
-      {{ 'idPartAlternative' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.idPartAlternative || '-' }}
-      
-    </div>
-  </div>
 
-  
- <br> 
-  
-    
-  
-    <div class="col-12 mt-4" *ngIf="data?.partAlternative">
-      <div class="fw-bold border-bottom mb-2">
-        {{ 'partAlternative' | translate }}
-      </div>
-      <div class="row">
+
+    <div class="col-md-3" *ngIf="data?.forMpart !== undefined && data?.forMpart !== null">
+        <div class="text-secondary small">
+            {{ 'forMpart' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data.forMpart || '-' }}
+
+        </div>
+    </div>
+
+
+    <br>
+
+
+
+
+    <div class="col-md-3" *ngIf="data?.idMpart !== undefined && data?.idMpart !== null">
+        <div class="text-secondary small">
+            {{ 'idMpart' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data.idMpart || '-' }}
+
+        </div>
+    </div>
+
+
+    <br>
+
+
+
+
+    <div class="col-md-3" *ngIf="data?.idPartAlternative !== undefined && data?.idPartAlternative !== null">
+        <div class="text-secondary small">
+            {{ 'idPartAlternative' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data.idPartAlternative || '-' }}
+
+        </div>
+    </div>
+
+
+    <br>
+
+
+
+    <div class="col-12 mt-4" >
+        <!-- ✅ Start rendering -->
+        <div class="row">
         
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'isDeleted' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
         
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.partAlternative?.forMpart !== undefined && data.partAlternative?.forMpart !== null">
-    <div class="text-secondary small">
-      {{ 'forMpart' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.partAlternative.forMpart || '-' }}
-      
-    </div>
-  </div>
-
-  
-
+                    <nz-tag *ngIf="data?.mpart?.isDeleted" nzColor="blue">Ya</nz-tag>
+                    <span *ngIf="!data?.mpart?.isDeleted">-</span>
         
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.partAlternative?.idMpart !== undefined && data.partAlternative?.idMpart !== null">
-    <div class="text-secondary small">
-      {{ 'idMpart' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.partAlternative.idMpart || '-' }}
-      
-    </div>
-  </div>
-
-  
-
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'isMandatory' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
         
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.partAlternative?.idPartAlternative !== undefined && data.partAlternative?.idPartAlternative !== null">
-    <div class="text-secondary small">
-      {{ 'idPartAlternative' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.partAlternative.idPartAlternative || '-' }}
-      
-    </div>
-  </div>
-
-  
-
+                    <nz-tag *ngIf="data?.mpart?.isMandatory" nzColor="blue">Ya</nz-tag>
+                    <span *ngIf="!data?.mpart?.isMandatory">-</span>
         
-      </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'ismayor' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    <nz-tag *ngIf="data?.mpart?.ismayor" nzColor="blue">Ya</nz-tag>
+                    <span *ngIf="!data?.mpart?.ismayor">-</span>
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'keyword' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.keyword || '-' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'lifeLimitCycle' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.lifeLimitCycle | number:'1.0-0' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'lifeLimitHours' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.lifeLimitHours | number:'1.0-0' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'lifeLimitVal' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.lifeLimitVal | number:'1.0-0' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'lifeLimitVar' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.lifeLimitVar || '-' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'manufactureMpart' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.manufactureMpart || '-' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'mat_82' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.mat_82 || '-' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'mfigureIndex' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.mfigureIndex || '-' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'minQty' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.minQty | number:'1.0-0' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'mitemIndex' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.mitemIndex || '-' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'mtboCycle' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.mtboCycle | number:'1.0-0' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'mtboHours' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.mtboHours | number:'1.0-0' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'mtboVal' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.mtboVal | number:'1.0-0' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'mtboVar' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.mtboVar || '-' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'oldAtachapter' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.oldAtachapter || '-' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'oldId' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.oldId || '-' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'parent' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.parent || '-' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'partNumber' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.partNumber || '-' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'partname' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.partname || '-' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'refMel' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.refMel || '-' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'statusMpart' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    <nz-tag nzColor="green">{{ data?.mpart?.statusMpart }}</nz-tag>
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'unit' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.unit || '-' }}
+        
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-secondary small">
+                    {{ 'updatedAt' | translate }}
+                </div>
+                <div class="fw-semibold text-dark">
+        
+                    {{ data?.mpart?.updatedAt | date:'yyyy-MM-dd' }}
+        
+                </div>
+            </div>
+            <div class="col-12 {{ expand_ata.hidden ? 'mb-0' : 'mb-4' }} ">
+                <div class="fw-bold border-bottom mb-2">
+                    {{ 'ata' | translate }}
+                    <button class="btn btn-link btn-sm" (click)="expand_ata.hidden = !expand_ata.hidden">
+                        <span *ngIf="expand_ata.hidden">Expand</span>
+                        <span *ngIf="!expand_ata.hidden">Collapse</span>
+                        <span *ngIf="expand_ata.hidden" nz-icon nzType="down" nzTheme="outline"></span>
+                        <span *ngIf="!expand_ata.hidden" nz-icon nzType="up" nzTheme="outline"></span>
+                    </button>
+                </div>
+                <div class="row" #expand_ata hidden>
+        
+                    <div class="col-md-3">
+                        <div class="text-secondary small">
+                            {{ 'ata' | translate }}
+                        </div>
+                        <div class="fw-semibold text-dark">
+        
+                            {{ data?.mpart?.ata?.ata || '-' }}
+        
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-secondary small">
+                            {{ 'ataType' | translate }}
+                        </div>
+                        <div class="fw-semibold text-dark">
+        
+                            {{ data?.mpart?.ata?.ataType || '-' }}
+        
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-secondary small">
+                            {{ 'codeAta' | translate }}
+                        </div>
+                        <div class="fw-semibold text-dark">
+        
+                            {{ data?.mpart?.ata?.codeAta || '-' }}
+        
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-secondary small">
+                            {{ 'createdAt' | translate }}
+                        </div>
+                        <div class="fw-semibold text-dark">
+        
+                            {{ data?.mpart?.ata?.createdAt | date:'yyyy-MM-dd' }}
+        
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-secondary small">
+                            {{ 'idAta' | translate }}
+                        </div>
+                        <div class="fw-semibold text-dark">
+        
+                            {{ data?.mpart?.ata?.idAta || '-' }}
+        
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-secondary small">
+                            {{ 'isDeleted' | translate }}
+                        </div>
+                        <div class="fw-semibold text-dark">
+        
+                            <nz-tag *ngIf="data?.mpart?.ata?.isDeleted" nzColor="blue">Ya</nz-tag>
+                            <span *ngIf="!data?.mpart?.ata?.isDeleted">-</span>
+        
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-secondary small">
+                            {{ 'keywordAta' | translate }}
+                        </div>
+                        <div class="fw-semibold text-dark">
+        
+                            {{ data?.mpart?.ata?.keywordAta || '-' }}
+        
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-secondary small">
+                            {{ 'oldId' | translate }}
+                        </div>
+                        <div class="fw-semibold text-dark">
+        
+                            {{ data?.mpart?.ata?.oldId || '-' }}
+        
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-secondary small">
+                            {{ 'updatedAt' | translate }}
+                        </div>
+                        <div class="fw-semibold text-dark">
+        
+                            {{ data?.mpart?.ata?.updatedAt | date:'yyyy-MM-dd' }}
+        
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
     </div>
-  
- <br> 
-  
+
+    <br>
+
 </div>

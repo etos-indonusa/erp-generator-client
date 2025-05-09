@@ -17,7 +17,7 @@ import { MaintenanceService } from 'de-sdk-core';
 import { MpcJoService } from 'de-sdk-core';
 import { PartService } from 'de-sdk-core';
 import { UsersService } from 'de-sdk-core';
- 
+
 
 
 @Component({
@@ -31,16 +31,16 @@ export class LastMaintenanceShareListComponent {
     @Input('filter-extra') filter_extra = false;
     @Input('enable-crud') enable_crud = true;
     //untuak filter dari prent
-     
-    @Input('idMaintenance') idMaintenance: string | null  = null;
-     
-    @Input('idMpcJo') idMpcJo: string | null  = null;
-     
-    @Input('idPart') idPart: string | null  = null;
-     
-    @Input('idUser') idUser: string | null  = null;
-    
 
+    @Input('idMaintenance') idMaintenance: string | null = null;
+
+    @Input('idMpcJo') idMpcJo: string | null = null;
+
+    @Input('idPart') idPart: any | null = null;
+    @Input('idMpart') idMpart: any | null = null;
+
+    @Input('idUser') idUser: string | null = null;
+ 
     constructor(
         private pesanService: PesanService,
         private drawerService: NzDrawerService,
@@ -51,11 +51,11 @@ export class LastMaintenanceShareListComponent {
         private lastMaintenanceService: LastMaintenanceService,
         private tokenService: TokenService,
 
-                        private maintenanceService: MaintenanceService,
-                private mpcJoService: MpcJoService,
-                private partService: PartService,
-                private usersService: UsersService,
-                        private translate: TranslateService
+        private maintenanceService: MaintenanceService,
+        private mpcJoService: MpcJoService,
+        private partService: PartService,
+        private usersService: UsersService,
+        private translate: TranslateService
     ) {
         translate.setDefaultLang('id');
         translate.use('id');
@@ -64,32 +64,31 @@ export class LastMaintenanceShareListComponent {
     ngOnChanges(changes: SimpleChanges): void {
         this.filter.status_lastMaintenance = this.status == 'semua' ? null : this.status;
 
-            
-           
-            if (changes.idMaintenance)
-            {
-                this.filterMaintenance.idMaintenance = this.idMaintenance
-            }
-            
-           
-            if (changes.idMpcJo)
-            {
-                this.filterMpcJo.idMpcJo = this.idMpcJo
-            }
-            
-           
-            if (changes.idPart)
-            {
-                this.filterPart.idPart = this.idPart
-            }
-            
-           
-            if (changes.idUser)
-            {
-                this.filterUser.idUser = this.idUser
-            }
-            
-        
+
+
+        if (changes.idMaintenance) {
+            this.filterMaintenance.idMaintenance = this.idMaintenance
+        }
+
+
+        if (changes.idMpcJo) {
+            this.filterMpcJo.idMpcJo = this.idMpcJo
+        }
+
+
+        if (changes.idPart) {
+            this.filterPart.idPart = this.idPart
+        }
+        if (changes.idMpart) {
+            this.filterPart.idMpart = this.idMpart
+        }
+
+
+        if (changes.idUser) {
+            this.filterUser.idUser = this.idUser
+        }
+
+
 
         this.searchData();
     }
@@ -99,73 +98,73 @@ export class LastMaintenanceShareListComponent {
         this.resetParam();
         this.loadColumnSettings();
 
-                            this.getAllMaintenance();
-                    this.getAllMpcJo();
-                    this.getAllPart();
-                    this.getAllUser();
-                    }
+        this.getAllMaintenance();
+        this.getAllMpcJo();
+        this.getAllPart();
+        this.getAllUser();
+    }
 
-    
-    listMaintenance: any[] = []; 
-    
-    listMpcJo: any[] = []; 
-    
-    listPart: any[] = []; 
-    
-    listUser: any[] = []; 
-    
+
+    listMaintenance: any[] = [];
+
+    listMpcJo: any[] = [];
+
+    listPart: any[] = [];
+
+    listUser: any[] = [];
+
     //untuak filter dari prent
-    
-    filterMaintenance:any = {} 
-    
-    filterMpcJo:any = {} 
-    
-    filterPart:any = {} 
-    
-    filterUser:any = {} 
-    
+
+    filterMaintenance: any = {}
+
+    filterMpcJo: any = {}
+
+    filterPart: any = {}
+
+    filterUser: any = {}
+
 
     // untuk fungsi get ALL relation
-            getAllMaintenance() {
-    this.maintenanceService.maintenanceControllerFindAll().subscribe(
-      data => this.listMaintenance = data.data ?? []
-    );
-  }
-        getAllMpcJo() {
-    this.mpcJoService.mpcJoControllerFindAll().subscribe(
-      data => this.listMpcJo = data.data ?? []
-    );
-  }
-        getAllPart() {
-    this.partService.partControllerFindAll().subscribe(
-      data => this.listPart = data.data ?? []
-    );
-  }
-        getAllUser() {
-    this.usersService.usersControllerFindAll().subscribe(
-      data => this.listUser = data.data ?? []
-    );
-  }
-        
+    getAllMaintenance() {
+        this.maintenanceService.maintenanceControllerFindAll().subscribe(
+            data => this.listMaintenance = data.data ?? []
+        );
+    }
+    getAllMpcJo() {
+        this.mpcJoService.mpcJoControllerFindAll().subscribe(
+            data => this.listMpcJo = data.data ?? []
+        );
+    }
+    getAllPart() {
+        this.partService.partControllerFindAll().subscribe(
+            data => this.listPart = data.data ?? []
+        );
+    }
+    getAllUser() {
+        this.usersService.usersControllerFindAll().subscribe(
+            data => this.listUser = data.data ?? []
+        );
+    }
+
     currentUser: any = {};
     filter: any = {
-    idMaintenance: null,
-  idMpcJo: null,
-  idPart: null,
-  idUser: null,
-  lastCycleMin: null,
-  lastCycleMax: null,
-  lastDateRange: null,
-  lastHoursMin: null,
-  lastHoursMax: null,
-  parentCycleMin: null,
-  parentCycleMax: null,
-  parentHoursMin: null,
-  parentHoursMax: null,
-  typeOfWorkMin: null,
-  typeOfWorkMax: null
+        idMaintenance: null,
+        idMpcJo: null,
+        idPart: null,
+        idUser: null,
+        lastCycleMin: null,
+        lastCycleMax: null,
+        lastDateRange: null,
+        lastHoursMin: null,
+        lastHoursMax: null,
+        parentCycleMin: null,
+        parentCycleMax: null,
+        parentHoursMin: null,
+        parentHoursMax: null,
+        typeOfWorkMin: null,
+        typeOfWorkMax: null
     };
- 
+
     expandSet = new Set<string>();
     onExpandChange(id: string, checked: boolean): void {
         if (checked) {
@@ -183,8 +182,8 @@ export class LastMaintenanceShareListComponent {
     sortValue: string | null = 'asc';
     sortKey: string | null = 'created_at';
     search: string | null = null;
-    search_field: string[] = ["lastDate","oldId"];
- 
+    search_field: string[] = ["lastDate", "oldId"];
+
     breadCrumbItems = [{ label: 'List', active: false }];
 
     resetParam() {
@@ -195,20 +194,20 @@ export class LastMaintenanceShareListComponent {
         this.search = null;
         this.filter = {
             idMaintenance: null,
-  idMpcJo: null,
-  idPart: null,
-  idUser: null,
-  lastCycleMin: null,
-  lastCycleMax: null,
-  lastDateRange: null,
-  lastHoursMin: null,
-  lastHoursMax: null,
-  parentCycleMin: null,
-  parentCycleMax: null,
-  parentHoursMin: null,
-  parentHoursMax: null,
-  typeOfWorkMin: null,
-  typeOfWorkMax: null
+            idMpcJo: null,
+            idPart: null,
+            idUser: null,
+            lastCycleMin: null,
+            lastCycleMax: null,
+            lastDateRange: null,
+            lastHoursMin: null,
+            lastHoursMax: null,
+            parentCycleMin: null,
+            parentCycleMax: null,
+            parentHoursMin: null,
+            parentHoursMax: null,
+            typeOfWorkMin: null,
+            typeOfWorkMax: null
         };
         this.filter.status_lastMaintenance = this.status == 'semua' ? null : this.status;
     }
@@ -235,39 +234,39 @@ export class LastMaintenanceShareListComponent {
             body: {
                 filter: finalFilter,
                 joinWhere: [
-                                        {
+                    {
                         "maintenance": this.filterMaintenance, type: 'inner'
                     },
-                                        {
+                    {
                         "mpc_jo": this.filterMpcJo, type: 'inner'
                     },
-                                        {
+                    {
                         "part": this.filterPart, type: 'inner'
                     },
-                                        {
+                    {
                         "user": this.filterUser, type: 'inner'
                     }
-                                        ],
+                ],
                 search_field: this.search_field,
                 search_keyword: this.search || undefined,
-                include:  [
-  {
-    "name": "maintenance",
-    "type": "single"
-  },
-  {
-    "name": "mpc_jo",
-    "type": "single"
-  },
-  {
-    "name": "part",
-    "type": "single"
-  },
-  {
-    "name": "user",
-    "type": "single"
-  }
-],
+                include: [
+                    {
+                        "name": "maintenance",
+                        "type": "single"
+                    },
+                    {
+                        "name": "mpc_jo",
+                        "type": "single"
+                    },
+                    {
+                        "name": "part",
+                        "type": "single"
+                    },
+                    {
+                        "name": "user",
+                        "type": "single"
+                    }
+                ],
                 sortKey: this.sortKey ?? undefined,
                 sortValue: this.validSortValue,
                 pageIndex: this.pageIndex,
@@ -319,18 +318,18 @@ export class LastMaintenanceShareListComponent {
         return backendFilter;
     }
 
-     // TABLE DINAMIS 
-    columns = [ 
-         { key: 'createdAt',  show: true },
-              { key: 'lastCycle',  show: true },
-              { key: 'lastDate',  show: true },
-              { key: 'lastHours',  show: true },
-              { key: 'oldId',  show: true },
-              { key: 'parentCycle',  show: true },
-              { key: 'parentHours',  show: true },
-              { key: 'typeOfWork',  show: true },
-              { key: 'updatedAt',  show: true },
-             
+    // TABLE DINAMIS 
+    columns = [
+        { key: 'createdAt', show: true },
+        { key: 'lastCycle', show: true },
+        { key: 'lastDate', show: true },
+        { key: 'lastHours', show: true },
+        { key: 'oldId', show: true },
+        { key: 'parentCycle', show: true },
+        { key: 'parentHours', show: true },
+        { key: 'typeOfWork', show: true },
+        { key: 'updatedAt', show: true },
+
     ];
 
     isColVisible(key: string): boolean {
@@ -348,47 +347,47 @@ export class LastMaintenanceShareListComponent {
         const saved = localStorage.getItem('lastMaintenance_columns');
         if (saved) {
             try {
-            const parsed = JSON.parse(saved);
-            if (Array.isArray(parsed)) {
-                // Sinkronkan dengan default jika ada key yang hilang
-                this.columns.forEach((col, index) => {
-                const found = parsed.find((p: any) => p.key === col.key);
-                if (found) this.columns[index].show = found.show;
-                });
-            }
+                const parsed = JSON.parse(saved);
+                if (Array.isArray(parsed)) {
+                    // Sinkronkan dengan default jika ada key yang hilang
+                    this.columns.forEach((col, index) => {
+                        const found = parsed.find((p: any) => p.key === col.key);
+                        if (found) this.columns[index].show = found.show;
+                    });
+                }
             } catch (e) {
                 console.warn('Gagal parse lastMaintenance dari localStorage', e);
             }
         }
-        }
+    }
     // TABLE DINAMIS 
 
 
     add() {
-    if (!this.acl.can('last-maintenance', 'can_add') || !this.enable_crud) return;
+        if (!this.acl.can('last-maintenance', 'can_add') || !this.enable_crud) return;
 
         const drawerRef = this.drawerService.create<LastMaintenanceShareAddComponent, {}, string>({
             nzTitle: 'Add',
             nzContent: LastMaintenanceShareAddComponent,
-        nzWidth: (500) + 'px',
+            nzWidth: (500) + 'px',
         });
- 
+
         drawerRef.afterClose.subscribe(() => {
             this.searchData();
         });
     }
 
-     
 
-    detail(data:AmimsLastMaintenanceDto) {
+
+    detail(data: AmimsLastMaintenanceDto) {
         if (!this.acl.can('contract-site', 'can_list')) return;
 
         const drawerRef = this.drawerService.create<LastMaintenanceShareDetailComponent, {}, string>({
             nzTitle: 'Detail',
             nzContent: LastMaintenanceShareDetailComponent,
             nzWidth: (window.innerWidth * 0.8) + 'px',
-            nzContentParams:{
-                idLastMaintenance:data.idLastMaintenance
+            nzContentParams: {
+                idLastMaintenance: data.idLastMaintenance
             }
         });
 
@@ -397,8 +396,8 @@ export class LastMaintenanceShareListComponent {
         });
     }
 
-    update(data: any) {}
-    delete(id: string) {} 
+    update(data: any) { }
+    delete(id: string) { }
 
     print() {
         let url = environment.srv_document + '/pdfAkutansi/vouchers?filter=' + JSON.stringify(this.filter) + '&token=' + this.tokenService.getToken();

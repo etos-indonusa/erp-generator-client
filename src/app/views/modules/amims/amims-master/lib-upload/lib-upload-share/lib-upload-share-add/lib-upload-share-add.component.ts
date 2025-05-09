@@ -4,12 +4,12 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsLibUploadFormSchema } from 'de-sdk-core'; 
+import { AmimsLibUploadFormSchema } from 'de-sdk-core';
 import type { AmimsLibUploadDto } from 'de-sdk-core';
 import { LibUploadService } from 'de-sdk-core';
 
 import { ModuleService } from 'de-sdk-core';
- 
+
 @Component({
     selector: 'app-lib-upload-share-add',
     templateUrl: './lib-upload-share-add.component.html',
@@ -17,13 +17,13 @@ import { ModuleService } from 'de-sdk-core';
 })
 export class LibUploadShareAddComponent {
     @Input('libUpload') libUpload: AmimsLibUploadDto = {
-  idLibUpload: ''
-};
+        idLibUpload: ''
+    };
     form!: FormGroup;
 
     ngOnChanges(changes: SimpleChanges): void {
-        if(changes.libUpload && this.libUpload.idLibUpload) {
-        this.form?.patchValue(this.libUpload);
+        if (changes.libUpload && this.libUpload.idLibUpload) {
+            this.form?.patchValue(this.libUpload);
         }
     }
     constructor(
@@ -31,28 +31,28 @@ export class LibUploadShareAddComponent {
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
         private libUploadService: LibUploadService,
-                        private moduleService: ModuleService,
-                    ) { }
+        private moduleService: ModuleService,
+    ) { }
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, AmimsLibUploadFormSchema, {
             // kodeLibUpload: [Validators.minLength(3), Validators.maxLength(3)],
             // catatan: [Validators.maxLength(200)],
-        },'LibUpload');
+        }, 'LibUpload');
+        this.form?.patchValue(this.libUpload);
+        this.getAllModule();
+    }
 
-                            this.getAllModule();
-                    }
-    
     listModule: any[] = [];
-    
+
 
     // untuk fungsi get ALL relation
-            getAllModule() {
-    this.moduleService.moduleControllerFindAll().subscribe(
-      data => this.listModule = data.data ?? []
-    );
-  }
-        
+    getAllModule() {
+        this.moduleService.moduleControllerFindAll().subscribe(
+            data => this.listModule = data.data ?? []
+        );
+    }
+
     submit(): void {
         const labelMap = extractLabels(AmimsLibUploadFormSchema);
 

@@ -8,7 +8,6 @@ import { ToolsWorkflowFormSchema } from 'de-sdk-core';
 import type { ToolsWorkflowDto } from 'de-sdk-core';
 import { WorkflowService } from 'de-sdk-core';
 
-import { KantorService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-workflow-share-add',
@@ -36,7 +35,6 @@ export class WorkflowShareAddComponent {
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
         private workflowService: WorkflowService,
-        private kantorService: KantorService,
     ) { }
 
     ngOnInit(): void {
@@ -45,18 +43,11 @@ export class WorkflowShareAddComponent {
             catatan: [Validators.maxLength(200)],
         }, 'Workflow');
 
-        this.getAllKantor();
     }
 
     listKantor: any[] = [];
 
 
-    // untuk fungsi get ALL relation
-    getAllKantor() {
-        this.kantorService.kantorControllerFindAll().subscribe(
-            data => this.listKantor = data.data ?? []
-        );
-    }
 
     submit(): void {
         const labelMap = extractLabels(ToolsWorkflowFormSchema);

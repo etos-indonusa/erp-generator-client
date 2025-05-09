@@ -4,11 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsLibReferenceFormSchema } from 'de-sdk-core'; 
+import { AmimsLibReferenceFormSchema } from 'de-sdk-core';
 import type { AmimsLibReferenceDto } from 'de-sdk-core';
 import { LibReferenceService } from 'de-sdk-core';
 
- 
+
 @Component({
     selector: 'app-lib-reference-share-add',
     templateUrl: './lib-reference-share-add.component.html',
@@ -16,13 +16,13 @@ import { LibReferenceService } from 'de-sdk-core';
 })
 export class LibReferenceShareAddComponent {
     @Input('libReference') libReference: AmimsLibReferenceDto = {
-  idLibReference: ''
-};
+        idLibReference: ''
+    };
     form!: FormGroup;
 
     ngOnChanges(changes: SimpleChanges): void {
-        if(changes.libReference && this.libReference.idLibReference) {
-        this.form?.patchValue(this.libReference);
+        if (changes.libReference && this.libReference.idLibReference) {
+            this.form?.patchValue(this.libReference);
         }
     }
     constructor(
@@ -30,19 +30,19 @@ export class LibReferenceShareAddComponent {
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
         private libReferenceService: LibReferenceService,
-            ) { }
+    ) { }
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, AmimsLibReferenceFormSchema, {
             // kodeLibReference: [Validators.minLength(3), Validators.maxLength(3)],
             // catatan: [Validators.maxLength(200)],
-        },'LibReference');
+        }, 'LibReference');
+        this.form?.patchValue(this.libReference);
+    }
 
-            }
-    
 
     // untuk fungsi get ALL relation
-    
+
     submit(): void {
         const labelMap = extractLabels(AmimsLibReferenceFormSchema);
 

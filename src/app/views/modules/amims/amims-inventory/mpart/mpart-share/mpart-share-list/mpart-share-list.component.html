@@ -609,11 +609,11 @@
                             </button>
                             <nz-dropdown-menu #menu="nzDropdownMenu">
                                 <ul nz-menu>
-                                    <li nz-menu-item >
+                                    <!-- <li nz-menu-item >
                                         <a [routerLink]="['../detail', data.idMpart]" routerLinkActive="router-link-active" target="_blank"><span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Detail New Tab</a>
-                                    </li>
-                                    <li nz-menu-item  >
-                                        <span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Detail Drawer
+                                    </li> -->
+                                    <li nz-menu-item  (click)="detail(data)">
+                                        <span nz-icon nzType="pic-center"  nzTheme="outline"></span>&nbsp;&nbsp;Detail Drawer
                                     </li>
                                     <!--  -->
                                     <li nz-menu-item (click)="update(data)">

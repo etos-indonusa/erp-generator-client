@@ -13,18 +13,6 @@ import { UsersReportService } from './services/users-report.service';
 import { UsersWidgetService } from './services/users-widget.service';
 import { UserTokensService } from './services/user-tokens.service';
 import { AuthProtectService } from './services/auth-protect.service';
-import { ContractService } from './services/contract.service';
-import { ContractReportService } from './services/contract-report.service';
-import { ContractWidgetService } from './services/contract-widget.service';
-import { ContractJenisService } from './services/contract-jenis.service';
-import { KantorService } from './services/kantor.service';
-import { ContractSiteService } from './services/contract-site.service';
-import { ContractSiteReportService } from './services/contract-site-report.service';
-import { ContractSiteWidgetService } from './services/contract-site-widget.service';
-import { ClientService } from './services/client.service';
-import { ClientWidgetService } from './services/client-widget.service';
-import { ClientReportService } from './services/client-report.service';
-import { ClientSiteService } from './services/client-site.service';
 import { DocumentService } from './services/document.service';
 import { WorkflowService } from './services/workflow.service';
 import { WorkflowApplyService } from './services/workflow-apply.service';
@@ -36,11 +24,7 @@ import { WorkflowLogWidgetService } from './services/workflow-log-widget.service
 import { WorkflowStepService } from './services/workflow-step.service';
 import { WorkflowStepReportService } from './services/workflow-step-report.service';
 import { WorkflowStepWidgetService } from './services/workflow-step-widget.service';
-import { ClientContactService } from './services/client-contact.service';
 import { UserGroupService } from './services/user-group.service';
-import { InvoiceService } from './services/invoice.service';
-import { InvoiceWidgetService } from './services/invoice-widget.service';
-import { InvoiceReportService } from './services/invoice-report.service';
 import { WorkflowAggregatorService } from './services/workflow-aggregator.service';
 import { ModuleService } from './services/module.service';
 import { CustomFieldGroupService } from './services/custom-field-group.service';
@@ -318,6 +302,9 @@ import { MpartService } from './services/mpart.service';
 import { MpartReportService } from './services/mpart-report.service';
 import { MpartWidgetService } from './services/mpart-widget.service';
 import { McurrencyService } from './services/mcurrency.service';
+import { StockService } from './services/stock.service';
+import { StockReportService } from './services/stock-report.service';
+import { StockWidgetService } from './services/stock-widget.service';
 
 /**
  * Module that provides all services and configuration.
@@ -334,18 +321,6 @@ import { McurrencyService } from './services/mcurrency.service';
     UsersWidgetService,
     UserTokensService,
     AuthProtectService,
-    ContractService,
-    ContractReportService,
-    ContractWidgetService,
-    ContractJenisService,
-    KantorService,
-    ContractSiteService,
-    ContractSiteReportService,
-    ContractSiteWidgetService,
-    ClientService,
-    ClientWidgetService,
-    ClientReportService,
-    ClientSiteService,
     DocumentService,
     WorkflowService,
     WorkflowApplyService,
@@ -357,11 +332,7 @@ import { McurrencyService } from './services/mcurrency.service';
     WorkflowStepService,
     WorkflowStepReportService,
     WorkflowStepWidgetService,
-    ClientContactService,
     UserGroupService,
-    InvoiceService,
-    InvoiceWidgetService,
-    InvoiceReportService,
     WorkflowAggregatorService,
     ModuleService,
     CustomFieldGroupService,
@@ -639,6 +610,9 @@ import { McurrencyService } from './services/mcurrency.service';
     MpartReportService,
     MpartWidgetService,
     McurrencyService,
+    StockService,
+    StockReportService,
+    StockWidgetService,
     ApiConfiguration
   ],
 })
