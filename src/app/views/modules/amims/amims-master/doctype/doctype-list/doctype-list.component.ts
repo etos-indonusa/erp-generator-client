@@ -38,7 +38,7 @@ export class DoctypeListComponent {
     listOfData: any[] = []
     loading = true
     sortValue: string | null = "asc"
-    sortKey: string | null = "createdAt"
+    sortKey: string | null = "doctype"
     search: string | null = null
     search_field: string[] = []
 
@@ -50,7 +50,7 @@ export class DoctypeListComponent {
         this.pageIndex = 1;
         this.pageSize = 30;
         this.sortValue = "asc"
-        this.sortKey = "createdAt"
+        this.sortKey = "doctype"
         this.search = null;
     }
     resetData() {
@@ -58,9 +58,9 @@ export class DoctypeListComponent {
         this.searchData();
     }
 
-    get validSortValue(): 'asc' | 'desc' | undefined {
-        if (this.sortValue === 'ascend') return 'asc';
-        if (this.sortValue === 'descend') return 'desc';
+     get validSortValue(): 'asc' | 'desc' | undefined {
+        if (this.sortValue === 'asc') return 'asc';
+        if (this.sortValue === 'desc') return 'desc';
         return undefined;
     }
 
@@ -95,7 +95,7 @@ export class DoctypeListComponent {
         this.pageIndex = params.pageIndex
         this.pageSize = params.pageSize
         this.currentSort = params.sort.find(item => item.value !== null);
-        this.sortKey = (this.currentSort && this.currentSort.key) || "createdAt";
+        this.sortKey = (this.currentSort && this.currentSort.key) || "doctype";
         this.sortValue = (this.currentSort && this.currentSort.value) || "asc";
         this.searchData();
     }

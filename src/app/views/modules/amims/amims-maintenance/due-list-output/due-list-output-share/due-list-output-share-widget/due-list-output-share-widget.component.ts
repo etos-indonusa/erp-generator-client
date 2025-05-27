@@ -22,7 +22,7 @@ export class DueListOutputShareWidgetComponent {
     }
  
     ngOnInit(): void {
-        this.getDataWidget()
+        // this.getDataWidget()
     }
 
     breadCrumbItems = [

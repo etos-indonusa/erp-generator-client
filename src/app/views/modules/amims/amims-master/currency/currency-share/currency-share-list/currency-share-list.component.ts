@@ -124,7 +124,7 @@ export class CurrencyShareListComponent {
     total = 0;
     listOfData: any[] = [];
     loading = true;
-    sortValue: string | null = 'asc';
+    sortValue: string | null = 'desc';
     sortKey: string | null = 'effectiveDate';
     search: string | null = null;
     search_field: string[] = ["effectiveDate", "forcurrency", "noteCurrency"];

@@ -16,13 +16,13 @@ export class DueListShareWidgetComponent {
     ngOnChanges(changes: SimpleChanges): void {
         if (changes.reload) {
             if (changes.reload.currentValue != changes.reload.previousValue && changes.reload.currentValue > 1) {
-                this.getDataWidget()
+                // this.getDataWidget()
             }
         }
     }
  
     ngOnInit(): void {
-        this.getDataWidget()
+        // this.getDataWidget()
     }
 
     breadCrumbItems = [

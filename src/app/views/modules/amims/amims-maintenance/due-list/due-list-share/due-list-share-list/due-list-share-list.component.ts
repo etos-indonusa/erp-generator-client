@@ -207,8 +207,8 @@ export class DueListShareListComponent {
     total = 0;
     listOfData: any[] = [];
     loading = true;
-    sortValue: string | null = 'asc';
-    sortKey: string | null = 'created_at';
+    sortValue: string | null = 'desc';
+    sortKey: string | null = 'noteDue';
     search: string | null = null;
     search_field: string[] = ["dueDate", "lastDate", "noteDue", "parentAss", "remainingDay", "sn", "timeUnit", "typeDue", "typeOfwork"];
 
@@ -217,8 +217,8 @@ export class DueListShareListComponent {
     resetParam() {
         this.pageIndex = 1;
         this.pageSize = 30;
-        this.sortValue = 'asc';
-        this.sortKey = 'created_at';
+        this.sortValue = 'desc';
+        this.sortKey = 'noteDue';
         this.search = null;
         this.filter = {
             currentCycleMin: null,
@@ -278,8 +278,8 @@ export class DueListShareListComponent {
     }
 
     get validSortValue(): 'asc' | 'desc' | undefined {
-        if (this.sortValue === 'ascend') return 'asc';
-        if (this.sortValue === 'descend') return 'desc';
+        if (this.sortValue === 'asc') return 'asc';
+        if (this.sortValue === 'desc') return 'desc';
         return undefined;
     }
 
@@ -298,14 +298,8 @@ export class DueListShareListComponent {
                         "aircraft": this.filterAircraft, type: 'inner'
                     },
                     {
-                        "mantenance": this.filterMantenance, type: 'inner'
-                    },
-                    {
                         "part": this.filterPart, type: 'inner'
-                    },
-                    {
-                        "type_ofwork": this.filterTypeOfwork, type: 'inner'
-                    }
+                    } 
                 ],
                 search_field: this.search_field,
                 search_keyword: this.search || undefined,
@@ -320,6 +314,16 @@ export class DueListShareListComponent {
                     },
                     {
                         "name": "part",
+                        "type": "single"
+                    },
+                    {
+                        "name": "mpart",
+                        "to": "part",
+                        "type": "single"
+                    },
+                    {
+                        "name": "ata",
+                        "to": "mpart",
                         "type": "single"
                     },
                     {
@@ -346,8 +350,8 @@ export class DueListShareListComponent {
         this.pageIndex = params.pageIndex;
         this.pageSize = params.pageSize;
         this.currentSort = params.sort.find(item => item.value !== null);
-        this.sortKey = (this.currentSort && this.currentSort.key) || 'created_at';
-        this.sortValue = (this.currentSort && this.currentSort.value) || 'asc';
+        this.sortKey = (this.currentSort && this.currentSort.key) || 'noteDue';
+        this.sortValue = (this.currentSort && this.currentSort.value) || 'desc';
         this.searchData();
     }
 

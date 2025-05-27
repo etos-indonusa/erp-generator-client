@@ -11,7 +11,7 @@ const routes: Routes = [
     // { path: 'amims-erp', loadChildren: () => import('./amims-erp/amims-erp.module').then(m => m.AmimsErpModule) },
 
     // // amims-maintenance
-    // { path: 'amims-maintenance', loadChildren: () => import('./amims-maintenance/amims-maintenance.module').then(m => m.AmimsMaintenanceModule) },,
+    { path: 'amims-maintenance', loadChildren: () => import('./amims-maintenance/amims-maintenance.module').then(m => m.AmimsMaintenanceModule) },
 
     // amims-maintenance
     { path: 'amims-inventory', loadChildren: () => import('./amims-inventory/amims-inventory.module').then(m => m.AmimsInventoryModule) } 

@@ -1,0 +1,134 @@
+.status-card {
+    background-color: #f8f9fa;
+    border: none;
+    border-radius: 8px;
+}
+
+.card-body {
+    padding: 4px 10px;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6c757d;
+    /* Bootstrap gray color */
+    margin-bottom: 2px;
+}
+
+.status-text {
+    color: #28a745;
+    /* Bootstrap success green */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.value {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+.hide-link {
+    font-size: 14px;
+    color: #007bff;
+    /* Bootstrap primary blue */
+    text-decoration: none;
+}
+
+.hide-link:hover {
+    text-decoration: underline;
+}
+
+.status-section {
+    flex: 1;
+}
+
+.info-section {
+    flex: 1;
+    text-align: center;
+}
+
+
+// segement filter periode 
+.production-card {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: transparent;
+    border-bottom: none;
+    padding: 6px 16px;
+    padding-top: 8px;
+}
+
+// .card-footer { 
+//     padding: 4px 16px;
+// }
+
+.production-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.production-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.production-table td {
+    padding: 0px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.non-editable {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.input-editable {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 4px;
+    width: 100%;
+}
+
+// button bawah 
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.btn-blue {
+    border: 2px dotted #1e90ff !important;
+    color: #1e90ff !important;
+    background: white !important;
+}
+
+.btn-blue:hover {
+    background: #e6f7ff !important;
+}
+
+.btn-orange {
+    border: 2px dotted #ffa500 !important;
+    color: #ffa500 !important;
+    background: white !important;
+}
+
+.btn-orange:hover {
+    background: #fff5e6 !important;
+}

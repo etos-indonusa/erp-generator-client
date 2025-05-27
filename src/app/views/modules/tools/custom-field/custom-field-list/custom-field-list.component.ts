@@ -59,9 +59,9 @@ export class CustomFieldListComponent {
         this.searchData();
     }
 
-    get validSortValue(): 'asc' | 'desc' | undefined {
-        if (this.sortValue === 'ascend') return 'asc';
-        if (this.sortValue === 'descend') return 'desc';
+     get validSortValue(): 'asc' | 'desc' | undefined {
+        if (this.sortValue === 'asc') return 'asc';
+        if (this.sortValue === 'desc') return 'desc';
         return undefined;
     }
 

@@ -20,7 +20,7 @@ export class AircraftShareWidgetComponent {
             }
         }
     }
- 
+
     ngOnInit(): void {
         this.getDataWidget()
     }
@@ -41,18 +41,18 @@ export class AircraftShareWidgetComponent {
                     select: [
                         {
                             type: "count",
-                            field:"status_aircraft" ,
-                            alias: "jumlah" 
+                            field: "status_ac",
+                            alias: "jumlah"
                         }
                     ],
-                    groupBy:  ['status_aircraft'],
-                    sortKey: "status_aircraft",
+                    groupBy: ['status_ac'],
+                    sortKey: "status_ac",
                     sortValue: "ASC"
                 }
             })
             .subscribe((data) => {
                 this.total = data.total ?? 0;
-                this.status_urutan = data.data ?? [] ; 
+                this.status_urutan = data.data ?? [];
                 this.status_urutan.forEach(x => {
                     this.total = this.total + x.jumlah * 1
                 })

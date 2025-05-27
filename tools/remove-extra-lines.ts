@@ -61,6 +61,14 @@ content = content.replace(
     /<div class="col-md-3">[\s\S]*?<div class="text-secondary small">\s*\{\{\s*'id[^']+'\s*\|\s*translate\s*\}\}\s*<\/div>[\s\S]*?<div class="fw-semibold text-dark">\s*\{\{\s*data\?\.\s*id\w+\s*\|\|\s*'-'\s*\}\}\s*<\/div>[\s\S]*?<\/div>/g,
     ''
 );
+content = content.replace(
+    /<div class="col-md-3"[^>]*>\s*<div class="text-secondary small">\s*\{\{\s*'id\w+'\s*\|\s*translate\s*\}\}\s*<\/div>\s*<div class="fw-semibold text-dark">\s*\{\{\s*data\?\.\w+\s*\|\|\s*'-'\s*\}\}\s*<\/div>\s*<\/div>/g,
+    ''
+);
+
+const matches = content.match(/<div class="col-md-3"[^>]*>[\s\S]*?<\/div>/g);
+console.log('Found col-md-3 blocks:', matches?.length);
+
 
 // 8. ✅ Replace semua {{ data.xxx }} ➔ {{ data?.xxx }}
 content = content.replace(/\bdata\.(\w+)/g, 'data?.$1');

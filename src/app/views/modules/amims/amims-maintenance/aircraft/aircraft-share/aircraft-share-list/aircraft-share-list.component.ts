@@ -14,7 +14,7 @@ import { AmimsAircraftDto } from 'de-sdk-core';
 import { AircraftShareAddComponent } from '../aircraft-share-add/aircraft-share-add.component';
 import { AircraftShareDetailComponent } from '../aircraft-share-detail/aircraft-share-detail.component';
 import { ActypeService } from 'de-sdk-core';
- 
+
 
 
 @Component({
@@ -28,9 +28,9 @@ export class AircraftShareListComponent {
     @Input('filter-extra') filter_extra = false;
     @Input('enable-crud') enable_crud = true;
     //untuak filter dari prent
-     
-    @Input('idActype') idActype: string | null  = null;
-    
+
+    @Input('idActype') idActype: string | null = null;
+
 
     constructor(
         private pesanService: PesanService,
@@ -42,8 +42,8 @@ export class AircraftShareListComponent {
         private aircraftService: AircraftService,
         private tokenService: TokenService,
 
-                        private actypeService: ActypeService,
-                        private translate: TranslateService
+        private actypeService: ActypeService,
+        private translate: TranslateService
     ) {
         translate.setDefaultLang('id');
         translate.use('id');
@@ -52,14 +52,13 @@ export class AircraftShareListComponent {
     ngOnChanges(changes: SimpleChanges): void {
         this.filter.status_aircraft = this.status == 'semua' ? null : this.status;
 
-            
-           
-            if (changes.idActype)
-            {
-                this.filterActype.idActype = this.idActype
-            }
-            
-        
+
+
+        if (changes.idActype) {
+            this.filterActype.idActype = this.idActype
+        }
+
+
 
         this.searchData();
     }
@@ -69,34 +68,34 @@ export class AircraftShareListComponent {
         this.resetParam();
         this.loadColumnSettings();
 
-                            this.getAllActype();
-                    }
+        this.getAllActype();
+    }
 
-    
-    listActype: any[] = []; 
-    
+
+    listActype: any[] = [];
+
     //untuak filter dari prent
-    
-    filterActype:any = {} 
-    
+
+    filterActype: any = {}
+
 
     // untuk fungsi get ALL relation
-            getAllActype() {
-    this.actypeService.actypeControllerFindAll().subscribe(
-      data => this.listActype = data.data ?? []
-    );
-  }
-        
+    getAllActype() {
+        this.actypeService.actypeControllerFindAll().subscribe(
+            data => this.listActype = data.data ?? []
+        );
+    }
+
     currentUser: any = {};
     filter: any = {
-    idActype: null,
-  isDeleted: null,
-  manufactureDateRange: null,
-  purchasedateRange: null,
-  tenduranceMin: null,
-  tenduranceMax: null
+        idActype: null,
+        isDeleted: null,
+        manufactureDateRange: null,
+        purchasedateRange: null,
+        tenduranceMin: null,
+        tenduranceMax: null
     };
- 
+
     expandSet = new Set<string>();
     onExpandChange(id: string, checked: boolean): void {
         if (checked) {
@@ -111,11 +110,11 @@ export class AircraftShareListComponent {
     total = 0;
     listOfData: any[] = [];
     loading = true;
-    sortValue: string | null = 'asc';
+    sortValue: string | null = 'desc';
     sortKey: string | null = 'created_at';
     search: string | null = null;
-    search_field: string[] = ["acFoto","descriptionAircraft","hasapu","keywordAircraft","manufactureAircraft","manufactureDate","manufactureEngine","manufacturedBy","oldActype","oldId","purchasedate","reasonRegschange","registrationNumber","serialNumber","yearMade"];
- 
+    search_field: string[] = ["acFoto", "descriptionAircraft", "hasapu", "keywordAircraft", "manufactureAircraft", "manufactureDate", "manufactureEngine", "manufacturedBy", "oldActype", "oldId", "purchasedate", "reasonRegschange", "registrationNumber", "serialNumber", "yearMade"];
+
     breadCrumbItems = [{ label: 'List', active: false }];
 
     resetParam() {
@@ -126,11 +125,11 @@ export class AircraftShareListComponent {
         this.search = null;
         this.filter = {
             idActype: null,
-  isDeleted: null,
-  manufactureDateRange: null,
-  purchasedateRange: null,
-  tenduranceMin: null,
-  tenduranceMax: null
+            isDeleted: null,
+            manufactureDateRange: null,
+            purchasedateRange: null,
+            tenduranceMin: null,
+            tenduranceMax: null
         };
         this.filter.status_aircraft = this.status == 'semua' ? null : this.status;
     }
@@ -141,8 +140,8 @@ export class AircraftShareListComponent {
     }
 
     get validSortValue(): 'asc' | 'desc' | undefined {
-        if (this.sortValue === 'ascend') return 'asc';
-        if (this.sortValue === 'descend') return 'desc';
+        if (this.sortValue === 'asc') return 'asc';
+        if (this.sortValue === 'desc') return 'desc';
         return undefined;
     }
 
@@ -157,18 +156,18 @@ export class AircraftShareListComponent {
             body: {
                 filter: finalFilter,
                 joinWhere: [
-                                        {
+                    {
                         "actype": this.filterActype, type: 'inner'
                     }
-                                        ],
+                ],
                 search_field: this.search_field,
                 search_keyword: this.search || undefined,
-                include:  [
-  {
-    "name": "actype",
-    "type": "single"
-  }
-],
+                include: [
+                    {
+                        "name": "actype",
+                        "type": "single"
+                    }
+                ],
                 sortKey: this.sortKey ?? undefined,
                 sortValue: this.validSortValue,
                 pageIndex: this.pageIndex,
@@ -189,7 +188,7 @@ export class AircraftShareListComponent {
         this.pageSize = params.pageSize;
         this.currentSort = params.sort.find(item => item.value !== null);
         this.sortKey = (this.currentSort && this.currentSort.key) || 'created_at';
-        this.sortValue = (this.currentSort && this.currentSort.value) || 'asc';
+        this.sortValue = (this.currentSort && this.currentSort.value) || 'desc';
         this.searchData();
     }
 
@@ -220,29 +219,29 @@ export class AircraftShareListComponent {
         return backendFilter;
     }
 
-     // TABLE DINAMIS 
-    columns = [ 
-         { key: 'acFoto',  show: true },
-              { key: 'createdAt',  show: true },
-              { key: 'descriptionAircraft',  show: true },
-              { key: 'hasapu',  show: true },
-              { key: 'isDeleted',  show: true },
-              { key: 'keywordAircraft',  show: true },
-              { key: 'manufactureAircraft',  show: true },
-              { key: 'manufactureDate',  show: true },
-              { key: 'manufactureEngine',  show: true },
-              { key: 'manufacturedBy',  show: true },
-              { key: 'oldActype',  show: true },
-              { key: 'oldId',  show: true },
-              { key: 'purchasedate',  show: true },
-              { key: 'reasonRegschange',  show: true },
-              { key: 'registrationNumber',  show: true },
-              { key: 'serialNumber',  show: true },
-              { key: 'statusAc',  show: true },
-              { key: 'tendurance',  show: true },
-              { key: 'updatedAt',  show: true },
-              { key: 'yearMade',  show: true },
-             
+    // TABLE DINAMIS 
+    columns = [
+        { key: 'acFoto', show: true },
+        { key: 'createdAt', show: true },
+        { key: 'descriptionAircraft', show: true },
+        { key: 'hasapu', show: true },
+        { key: 'isDeleted', show: true },
+        { key: 'keywordAircraft', show: true },
+        { key: 'manufactureAircraft', show: true },
+        { key: 'manufactureDate', show: true },
+        { key: 'manufactureEngine', show: true },
+        { key: 'manufacturedBy', show: true },
+        { key: 'oldActype', show: true },
+        { key: 'oldId', show: true },
+        { key: 'purchasedate', show: true },
+        { key: 'reasonRegschange', show: true },
+        { key: 'registrationNumber', show: true },
+        { key: 'serialNumber', show: true },
+        { key: 'statusAc', show: true },
+        { key: 'tendurance', show: true },
+        { key: 'updatedAt', show: true },
+        { key: 'yearMade', show: true },
+
     ];
 
     isColVisible(key: string): boolean {
@@ -260,47 +259,47 @@ export class AircraftShareListComponent {
         const saved = localStorage.getItem('aircraft_columns');
         if (saved) {
             try {
-            const parsed = JSON.parse(saved);
-            if (Array.isArray(parsed)) {
-                // Sinkronkan dengan default jika ada key yang hilang
-                this.columns.forEach((col, index) => {
-                const found = parsed.find((p: any) => p.key === col.key);
-                if (found) this.columns[index].show = found.show;
-                });
-            }
+                const parsed = JSON.parse(saved);
+                if (Array.isArray(parsed)) {
+                    // Sinkronkan dengan default jika ada key yang hilang
+                    this.columns.forEach((col, index) => {
+                        const found = parsed.find((p: any) => p.key === col.key);
+                        if (found) this.columns[index].show = found.show;
+                    });
+                }
             } catch (e) {
                 console.warn('Gagal parse aircraft dari localStorage', e);
             }
         }
-        }
+    }
     // TABLE DINAMIS 
 
 
     add() {
-    if (!this.acl.can('aircraft', 'can_add') || !this.enable_crud) return;
+        if (!this.acl.can('aircraft', 'can_add') || !this.enable_crud) return;
 
         const drawerRef = this.drawerService.create<AircraftShareAddComponent, {}, string>({
             nzTitle: 'Add',
             nzContent: AircraftShareAddComponent,
-        nzWidth: (500) + 'px',
+            nzWidth: (500) + 'px',
         });
- 
+
         drawerRef.afterClose.subscribe(() => {
             this.searchData();
         });
     }
 
-     
 
-    detail(data:AmimsAircraftDto) {
+
+    detail(data: AmimsAircraftDto) {
         if (!this.acl.can('contract-site', 'can_list')) return;
 
         const drawerRef = this.drawerService.create<AircraftShareDetailComponent, {}, string>({
             nzTitle: 'Detail',
             nzContent: AircraftShareDetailComponent,
             nzWidth: (window.innerWidth * 0.8) + 'px',
-            nzContentParams:{
-                idAircraft:data.idAircraft
+            nzContentParams: {
+                idAircraft: data.idAircraft
             }
         });
 
@@ -309,8 +308,8 @@ export class AircraftShareListComponent {
         });
     }
 
-    update(data: any) {}
-    delete(id: string) {} 
+    update(data: any) { }
+    delete(id: string) { }
 
     print() {
         let url = environment.srv_document + '/pdfAkutansi/vouchers?filter=' + JSON.stringify(this.filter) + '&token=' + this.tokenService.getToken();

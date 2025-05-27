@@ -14,6 +14,26 @@ export const MENU: MenuItem[] = [
         label: 'IN Apps',
         isTitle: true
     }
+    ,{
+        label: 'Inspection',
+        icon: 'message-square',
+        link: '/app/amims/inspection',
+    }
+    ,{
+        label: 'EngineerRti',
+        icon: 'message-square',
+        link: '/app/amims/engineer-rti',
+    }
+    ,{
+        label: 'DueList',
+        icon: 'message-square',
+        link: '/app/amims/due-list',
+    }
+    ,{
+        label: 'DueList',
+        icon: 'message-square',
+        link: '/app/amims/due-list',
+    }
     ,
 
     // Inventory
@@ -133,16 +153,7 @@ export const MENU: MenuItem[] = [
         icon: 'message-square',
         link: '/app/amims/amims-maintenance/aircraft',
     }
-    , {
-        label: 'aircraft-detail',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/aircraft-detail',
-    }
-    , {
-        label: 'condition-monitoring',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/condition-monitoring',
-    }
+  
     , {
         label: 'due-list',
         icon: 'message-square',
@@ -158,16 +169,7 @@ export const MENU: MenuItem[] = [
         icon: 'message-square',
         link: '/app/amims/amims-maintenance/engineer-rti',
     }
-    , {
-        label: 'engineer-rti-identify',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/engineer-rti-identify',
-    }
-    , {
-        label: 'engineer-rti-part',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/engineer-rti-part',
-    }
+     
     , {
         label: 'inspection',
         icon: 'message-square',

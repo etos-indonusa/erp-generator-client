@@ -41,12 +41,12 @@ export class EngineerRtiShareWidgetComponent {
                     select: [
                         {
                             type: "count",
-                            field:"status_engineer_rti" ,
+                            field:"status_rti" ,
                             alias: "jumlah" 
                         }
                     ],
-                    groupBy:  ['status_engineer_rti'],
-                    sortKey: "status_engineer_rti",
+                    groupBy: ['status_rti'],
+                    sortKey: "status_rti",
                     sortValue: "ASC"
                 }
             })

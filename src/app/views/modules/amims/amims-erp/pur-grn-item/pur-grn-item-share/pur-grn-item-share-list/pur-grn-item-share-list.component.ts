@@ -171,7 +171,7 @@ export class PurGrnItemShareListComponent {
     total = 0;
     listOfData: any[] = [];
     loading = true;
-    sortValue: string | null = 'asc';
+    sortValue: string | null = 'desc';
     sortKey: string | null = 'created_at';
     search: string | null = null;
     search_field: string[] = ["noteGrnItem","serialNumber"];
@@ -200,9 +200,9 @@ export class PurGrnItemShareListComponent {
         this.searchData();
     }
 
-    get validSortValue(): 'asc' | 'desc' | undefined {
-        if (this.sortValue === 'ascend') return 'asc';
-        if (this.sortValue === 'descend') return 'desc';
+     get validSortValue(): 'asc' | 'desc' | undefined {
+        if (this.sortValue === 'asc') return 'asc';
+        if (this.sortValue === 'desc') return 'desc';
         return undefined;
     }
 
@@ -270,7 +270,7 @@ export class PurGrnItemShareListComponent {
         this.pageSize = params.pageSize;
         this.currentSort = params.sort.find(item => item.value !== null);
         this.sortKey = (this.currentSort && this.currentSort.key) || 'created_at';
-        this.sortValue = (this.currentSort && this.currentSort.value) || 'asc';
+        this.sortValue = (this.currentSort && this.currentSort.value) || 'desc';
         this.searchData();
     }
 

@@ -1,0 +1,118 @@
+<nz-page-header class="site-page-header" nzBackIcon nzTitle="Aircraft Detail" nzSubtitle="This is a subtitle"></nz-page-header>
+
+<div class="card status-card mt-4">
+    <div class="card-body d-flex justify-content-between align-items-center">
+        <div class="status-section">
+            <p class="label">Status</p>
+            <p class="status-text">SERVICEABLE</p>
+        </div>
+        <div class="info-section">
+            <p class="label">Aircraft Type</p>
+            <p class="value"><strong>{{ aircrafts?.actype?.actype }}</strong></p>
+        </div>
+        <div class="info-section">
+            <p class="label">Aircraft S/N</p>
+            <p class="value"><strong>{{ aircrafts?.serialNumber }}</strong></p>
+        </div>
+        <div class="info-section">
+            <p class="label">Manufactured</p>
+            <p class="value text-muted"><strong>{{ aircrafts?.actype?.acManufacture }}</strong></p>
+        </div>
+        <div class="info-section">
+            <p class="label">Location</p>
+            <p class="value"><strong>Jakarta</strong> <a href="#" class="hide-link"> > Hide / Unhide</a></p>
+        </div>
+    </div>
+</div>
+<br>
+<div nz-row [nzGutter]="16">
+    <div nz-col [nzSpan]="18">
+        <nz-card>
+            <app-aircraft-share-header [data]="aircrafts"></app-aircraft-share-header> 
+        </nz-card>
+    </div>
+    <div nz-col [nzSpan]="6">
+        <document-widget-v1 [for-module]="'aircraft'" [for-module-id]="id_aicraft"></document-widget-v1>
+    </div>
+</div>
+<br>
+<div nz-row [nzGutter]="16">
+    <div nz-col [nzSpan]="18">
+        <div class="card production-card">
+            <div class="card-header">
+                <h5 class="fw-bold">Production Hours</h5>
+            </div>
+
+            <div class="card-body">
+                <div class="table-responsive table-bordered">
+                    <table class="table production-table">
+                        <thead>
+                            <tr>
+                                <th *ngFor="let month of paginatedMonths" class="text-center">{{ month.name }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td width="100px" *ngFor="let month of paginatedMonths" class="text-center">
+                                    <span *ngIf="!month.editable" class="non-editable">{{ month.value }}</span>
+                                    <input *ngIf="month.editable" type="text" class="form-control input-editable"
+                                        placeholder="input">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="  d-flex justify-content-center">
+                    <nz-pagination [(nzPageIndex)]="pageIndex" [nzTotal]="months.length" [nzPageSize]="pageSize"
+                        (nzPageIndexChange)="onPageChange($event)">
+                    </nz-pagination>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+    <div nz-col [nzSpan]="6">
+
+        <div class="button-container">
+            <button nz-button nzType="default" nzBlock class="btn-blue"
+                [routerLink]="['../../schedule-maintenance',1]">Schedule Maintenance</button>
+            <button nz-button nzType="default" nzBlock class="btn-blue">Production Hours</button>
+            <button nz-button nzType="default" nzBlock class="btn-blue">Parts Program / Warranty</button>
+            <button nz-button nzType="default" nzBlock class="btn-orange">Unschedule Maintenance</button>
+        </div>
+
+    </div>
+</div>
+
+<br>
+<div class="card production-card">
+
+    <nz-tabset>
+        <nz-tab nzTitle="{{ 'Information' | translate }}">
+             <app-aircraft-detail-share-detail [idAircraftDetail]="id_aicraft"></app-aircraft-detail-share-detail>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'Reports' | translate }}">
+            <ng-template nz-tab>
+                <!-- <app-client-contact-share-list [idClient]="penawaran?.idClient"></app-client-contact-share-list> -->
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'History' | translate }}">
+            <ng-template nz-tab>
+                <!-- <work-complete-share-list [idPart]="idPart"></work-complete-share-list> -->
+            </ng-template>
+        </nz-tab> 
+        <nz-tab nzTitle="{{ 'Log' | translate }}">
+            <ng-template nz-tab>
+    
+            </ng-template>
+        </nz-tab>
+         
+    </nz-tabset>
+
+     
+
+</div>

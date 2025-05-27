@@ -41,12 +41,12 @@ export class ActypeShareWidgetComponent {
                     select: [
                         {
                             type: "count",
-                            field:"status_actype" ,
+                            field:"status_type" ,
                             alias: "jumlah" 
                         }
                     ],
-                    groupBy:  ['status_actype'],
-                    sortKey: "status_actype",
+                    groupBy: ['status_type'],
+                    sortKey: "status_type",
                     sortValue: "ASC"
                 }
             })

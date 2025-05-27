@@ -224,7 +224,7 @@ export class MpartShareListComponent {
     total = 0;
     listOfData: any[] = [];
     loading = true;
-    sortValue: string | null = 'asc';
+    sortValue: string | null = 'desc';
     sortKey: string | null = 'created_at';
     search: string | null = null;
     search_field: string[] = ["calculatedCycle", "calculatedHours", "childname", "codeAtaMentah", "descriptionMpart", "isMandatory", "ismayor", "keyword", "lifeLimitVar", "manufactureMpart", "mat_82", "mfigureIndex", "mitemIndex", "mtboVar", "oldAtachapter", "oldId", "parent", "partNumber", "partname", "unit"];
@@ -272,9 +272,9 @@ export class MpartShareListComponent {
         this.searchData();
     }
 
-    get validSortValue(): 'asc' | 'desc' | undefined {
-        if (this.sortValue === 'ascend') return 'asc';
-        if (this.sortValue === 'descend') return 'desc';
+     get validSortValue(): 'asc' | 'desc' | undefined {
+        if (this.sortValue === 'asc') return 'asc';
+        if (this.sortValue === 'desc') return 'desc';
         return undefined;
     }
 
@@ -349,7 +349,7 @@ export class MpartShareListComponent {
         this.pageSize = params.pageSize;
         this.currentSort = params.sort.find(item => item.value !== null);
         this.sortKey = (this.currentSort && this.currentSort.key) || 'created_at';
-        this.sortValue = (this.currentSort && this.currentSort.value) || 'asc';
+        this.sortValue = (this.currentSort && this.currentSort.value) || 'desc';
         this.searchData();
     }
 

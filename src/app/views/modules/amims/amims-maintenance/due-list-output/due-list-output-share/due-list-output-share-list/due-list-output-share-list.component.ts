@@ -175,8 +175,8 @@ export class DueListOutputShareListComponent {
     total = 0;
     listOfData: any[] = [];
     loading = true;
-    sortValue: string | null = 'asc';
-    sortKey: string | null = 'created_at';
+    sortValue: string | null = 'desc';
+    sortKey: string | null = 'partNumber';
     search: string | null = null;
     search_field: string[] = ["atInstall", "ata", "code", "currentPart", "dueAt", "installPart", "keyword", "noteDue", "partNumber", "peruntukan", "sn", "typeDue", "typeOfwork", "variabel"];
 
@@ -186,7 +186,7 @@ export class DueListOutputShareListComponent {
         this.pageIndex = 1;
         this.pageSize = 30;
         this.sortValue = 'asc';
-        this.sortKey = 'created_at';
+        this.sortKey = 'partNumber';
         this.search = null;
         this.filter = {
             dueCMin: null,
@@ -213,8 +213,8 @@ export class DueListOutputShareListComponent {
     }
 
     get validSortValue(): 'asc' | 'desc' | undefined {
-        if (this.sortValue === 'ascend') return 'asc';
-        if (this.sortValue === 'descend') return 'desc';
+        if (this.sortValue === 'asc') return 'asc';
+        if (this.sortValue === 'desc') return 'desc';
         return undefined;
     }
 
@@ -231,15 +231,6 @@ export class DueListOutputShareListComponent {
                 joinWhere: [
                     {
                         "aircraft": this.filterAircraft, type: 'inner'
-                    },
-                    {
-                        "due_list": this.filterDueList, type: 'inner'
-                    },
-                    {
-                        "mpart": this.filterMpart, type: 'inner'
-                    },
-                    {
-                        "part": this.filterPart, type: 'inner'
                     }
                 ],
                 search_field: this.search_field,
@@ -247,10 +238,6 @@ export class DueListOutputShareListComponent {
                 include: [
                     {
                         "name": "aircraft",
-                        "type": "single"
-                    },
-                    {
-                        "name": "due_list",
                         "type": "single"
                     },
                     {
@@ -281,8 +268,8 @@ export class DueListOutputShareListComponent {
         this.pageIndex = params.pageIndex;
         this.pageSize = params.pageSize;
         this.currentSort = params.sort.find(item => item.value !== null);
-        this.sortKey = (this.currentSort && this.currentSort.key) || 'created_at';
-        this.sortValue = (this.currentSort && this.currentSort.value) || 'asc';
+        this.sortKey = (this.currentSort && this.currentSort.key) || 'partNumber';
+        this.sortValue = (this.currentSort && this.currentSort.value) || 'desc';
         this.searchData();
     }
 

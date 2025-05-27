@@ -17,7 +17,7 @@ import { AircraftService } from 'de-sdk-core';
 import { MaintenanceCodeService } from 'de-sdk-core';
 import { PartService } from 'de-sdk-core';
 import { UsersService } from 'de-sdk-core';
- 
+
 
 
 @Component({
@@ -31,15 +31,15 @@ export class InspectionShareListComponent {
     @Input('filter-extra') filter_extra = false;
     @Input('enable-crud') enable_crud = true;
     //untuak filter dari prent
-     
-    @Input('idAircraft') idAircraft: string | null  = null;
-     
-    @Input('idMaintenanceCode') idMaintenanceCode: string | null  = null;
-     
-    @Input('idPart') idPart: string | null  = null;
-     
-    @Input('idUser') idUser: string | null  = null;
-    
+
+    @Input('idAircraft') idAircraft: string | null = null;
+
+    @Input('idMaintenanceCode') idMaintenanceCode: string | null = null;
+
+    @Input('idPart') idPart: string | null = null;
+
+    @Input('idUser') idUser: string | null = null;
+
 
     constructor(
         private pesanService: PesanService,
@@ -51,11 +51,11 @@ export class InspectionShareListComponent {
         private inspectionService: InspectionService,
         private tokenService: TokenService,
 
-                        private aircraftService: AircraftService,
-                private maintenanceCodeService: MaintenanceCodeService,
-                private partService: PartService,
-                private usersService: UsersService,
-                        private translate: TranslateService
+        private aircraftService: AircraftService,
+        private maintenanceCodeService: MaintenanceCodeService,
+        private partService: PartService,
+        private usersService: UsersService,
+        private translate: TranslateService
     ) {
         translate.setDefaultLang('id');
         translate.use('id');
@@ -64,32 +64,28 @@ export class InspectionShareListComponent {
     ngOnChanges(changes: SimpleChanges): void {
         this.filter.status_inspection = this.status == 'semua' ? null : this.status;
 
-            
-           
-            if (changes.idAircraft)
-            {
-                this.filterAircraft.idAircraft = this.idAircraft
-            }
-            
-           
-            if (changes.idMaintenanceCode)
-            {
-                this.filterMaintenanceCode.idMaintenanceCode = this.idMaintenanceCode
-            }
-            
-           
-            if (changes.idPart)
-            {
-                this.filterPart.idPart = this.idPart
-            }
-            
-           
-            if (changes.idUser)
-            {
-                this.filterUser.idUser = this.idUser
-            }
-            
-        
+
+
+        if (changes.idAircraft) {
+            this.filterAircraft.idAircraft = this.idAircraft
+        }
+
+
+        if (changes.idMaintenanceCode) {
+            this.filterMaintenanceCode.idMaintenanceCode = this.idMaintenanceCode
+        }
+
+
+        if (changes.idPart) {
+            this.filterPart.idPart = this.idPart
+        }
+
+
+        if (changes.idUser) {
+            this.filterUser.idUser = this.idUser
+        }
+
+
 
         this.searchData();
     }
@@ -99,70 +95,70 @@ export class InspectionShareListComponent {
         this.resetParam();
         this.loadColumnSettings();
 
-                            this.getAllAircraft();
-                    this.getAllMaintenanceCode();
-                    this.getAllPart();
-                    this.getAllUser();
-                    }
+        this.getAllAircraft();
+        this.getAllMaintenanceCode();
+        this.getAllPart();
+        this.getAllUser();
+    }
 
-    
-    listAircraft: any[] = []; 
-    
-    listMaintenanceCode: any[] = []; 
-    
-    listPart: any[] = []; 
-    
-    listUser: any[] = []; 
-    
+
+    listAircraft: any[] = [];
+
+    listMaintenanceCode: any[] = [];
+
+    listPart: any[] = [];
+
+    listUser: any[] = [];
+
     //untuak filter dari prent
-    
-    filterAircraft:any = {} 
-    
-    filterMaintenanceCode:any = {} 
-    
-    filterPart:any = {} 
-    
-    filterUser:any = {} 
-    
+
+    filterAircraft: any = {}
+
+    filterMaintenanceCode: any = {}
+
+    filterPart: any = {}
+
+    filterUser: any = {}
+
 
     // untuk fungsi get ALL relation
-            getAllAircraft() {
-    this.aircraftService.aircraftControllerFindAll().subscribe(
-      data => this.listAircraft = data.data ?? []
-    );
-  }
-        getAllMaintenanceCode() {
-    this.maintenanceCodeService.maintenanceCodeControllerFindAll().subscribe(
-      data => this.listMaintenanceCode = data.data ?? []
-    );
-  }
-        getAllPart() {
-    this.partService.partControllerFindAll().subscribe(
-      data => this.listPart = data.data ?? []
-    );
-  }
-        getAllUser() {
-    this.usersService.usersControllerFindAll().subscribe(
-      data => this.listUser = data.data ?? []
-    );
-  }
-        
+    getAllAircraft() {
+        this.aircraftService.aircraftControllerFindAll().subscribe(
+            data => this.listAircraft = data.data ?? []
+        );
+    }
+    getAllMaintenanceCode() {
+        this.maintenanceCodeService.maintenanceCodeControllerFindAll().subscribe(
+            data => this.listMaintenanceCode = data.data ?? []
+        );
+    }
+    getAllPart() {
+        this.partService.partControllerFindAll().subscribe(
+            data => this.listPart = data.data ?? []
+        );
+    }
+    getAllUser() {
+        this.usersService.usersControllerFindAll().subscribe(
+            data => this.listUser = data.data ?? []
+        );
+    }
+
     currentUser: any = {};
     filter: any = {
-    cycleToMin: null,
-  cycleToMax: null,
-  flightHoursToMin: null,
-  flightHoursToMax: null,
-  idAircraft: null,
-  idMaintenanceCode: null,
-  idPart: null,
-  idUser: null,
-  repetitionsMin: null,
-  repetitionsMax: null,
-  timeRangeToMin: null,
-  timeRangeToMax: null
+        cycleToMin: null,
+        cycleToMax: null,
+        flightHoursToMin: null,
+        flightHoursToMax: null,
+        idAircraft: null,
+        idMaintenanceCode: null,
+        idPart: null,
+        idUser: null,
+        repetitionsMin: null,
+        repetitionsMax: null,
+        timeRangeToMin: null,
+        timeRangeToMax: null
     };
- 
+
     expandSet = new Set<string>();
     onExpandChange(id: string, checked: boolean): void {
         if (checked) {
@@ -177,11 +173,11 @@ export class InspectionShareListComponent {
     total = 0;
     listOfData: any[] = [];
     loading = true;
-    sortValue: string | null = 'asc';
+    sortValue: string | null = 'desc';
     sortKey: string | null = 'created_at';
     search: string | null = null;
-    search_field: string[] = ["atachapter","noteInspection","oldId","timeUnit"];
- 
+    search_field: string[] = ["atachapter", "noteInspection", "oldId", "timeUnit"];
+
     breadCrumbItems = [{ label: 'List', active: false }];
 
     resetParam() {
@@ -192,17 +188,17 @@ export class InspectionShareListComponent {
         this.search = null;
         this.filter = {
             cycleToMin: null,
-  cycleToMax: null,
-  flightHoursToMin: null,
-  flightHoursToMax: null,
-  idAircraft: null,
-  idMaintenanceCode: null,
-  idPart: null,
-  idUser: null,
-  repetitionsMin: null,
-  repetitionsMax: null,
-  timeRangeToMin: null,
-  timeRangeToMax: null
+            cycleToMax: null,
+            flightHoursToMin: null,
+            flightHoursToMax: null,
+            idAircraft: null,
+            idMaintenanceCode: null,
+            idPart: null,
+            idUser: null,
+            repetitionsMin: null,
+            repetitionsMax: null,
+            timeRangeToMin: null,
+            timeRangeToMax: null
         };
         this.filter.status_inspection = this.status == 'semua' ? null : this.status;
     }
@@ -213,8 +209,8 @@ export class InspectionShareListComponent {
     }
 
     get validSortValue(): 'asc' | 'desc' | undefined {
-        if (this.sortValue === 'ascend') return 'asc';
-        if (this.sortValue === 'descend') return 'desc';
+        if (this.sortValue === 'asc') return 'asc';
+        if (this.sortValue === 'desc') return 'desc';
         return undefined;
     }
 
@@ -229,39 +225,32 @@ export class InspectionShareListComponent {
             body: {
                 filter: finalFilter,
                 joinWhere: [
-                                        {
+                    {
                         "aircraft": this.filterAircraft, type: 'inner'
                     },
-                                        {
+                    {
                         "maintenance_code": this.filterMaintenanceCode, type: 'inner'
                     },
-                                        {
+                    {
                         "part": this.filterPart, type: 'inner'
-                    },
-                                        {
-                        "user": this.filterUser, type: 'inner'
                     }
-                                        ],
+                ],
                 search_field: this.search_field,
                 search_keyword: this.search || undefined,
-                include:  [
-  {
-    "name": "aircraft",
-    "type": "single"
-  },
-  {
-    "name": "maintenance_code",
-    "type": "single"
-  },
-  {
-    "name": "part",
-    "type": "single"
-  },
-  {
-    "name": "user",
-    "type": "single"
-  }
-],
+                include: [
+                    {
+                        "name": "aircraft",
+                        "type": "single"
+                    },
+                    {
+                        "name": "maintenance_code",
+                        "type": "single"
+                    },
+                    {
+                        "name": "part",
+                        "type": "single"
+                    } 
+                ],
                 sortKey: this.sortKey ?? undefined,
                 sortValue: this.validSortValue,
                 pageIndex: this.pageIndex,
@@ -282,7 +271,7 @@ export class InspectionShareListComponent {
         this.pageSize = params.pageSize;
         this.currentSort = params.sort.find(item => item.value !== null);
         this.sortKey = (this.currentSort && this.currentSort.key) || 'created_at';
-        this.sortValue = (this.currentSort && this.currentSort.value) || 'asc';
+        this.sortValue = (this.currentSort && this.currentSort.value) || 'desc';
         this.searchData();
     }
 
@@ -313,19 +302,19 @@ export class InspectionShareListComponent {
         return backendFilter;
     }
 
-     // TABLE DINAMIS 
-    columns = [ 
-         { key: 'atachapter',  show: true },
-              { key: 'createdAt',  show: true },
-              { key: 'cycleTo',  show: true },
-              { key: 'flightHoursTo',  show: true },
-              { key: 'noteInspection',  show: true },
-              { key: 'oldId',  show: true },
-              { key: 'repetitions',  show: true },
-              { key: 'timeRangeTo',  show: true },
-              { key: 'timeUnit',  show: true },
-              { key: 'updatedAt',  show: true },
-             
+    // TABLE DINAMIS 
+    columns = [
+        { key: 'atachapter', show: true },
+        { key: 'createdAt', show: true },
+        { key: 'cycleTo', show: true },
+        { key: 'flightHoursTo', show: true },
+        { key: 'noteInspection', show: true },
+        { key: 'oldId', show: true },
+        { key: 'repetitions', show: true },
+        { key: 'timeRangeTo', show: true },
+        { key: 'timeUnit', show: true },
+        { key: 'updatedAt', show: true },
+
     ];
 
     isColVisible(key: string): boolean {
@@ -343,47 +332,47 @@ export class InspectionShareListComponent {
         const saved = localStorage.getItem('inspection_columns');
         if (saved) {
             try {
-            const parsed = JSON.parse(saved);
-            if (Array.isArray(parsed)) {
-                // Sinkronkan dengan default jika ada key yang hilang
-                this.columns.forEach((col, index) => {
-                const found = parsed.find((p: any) => p.key === col.key);
-                if (found) this.columns[index].show = found.show;
-                });
-            }
+                const parsed = JSON.parse(saved);
+                if (Array.isArray(parsed)) {
+                    // Sinkronkan dengan default jika ada key yang hilang
+                    this.columns.forEach((col, index) => {
+                        const found = parsed.find((p: any) => p.key === col.key);
+                        if (found) this.columns[index].show = found.show;
+                    });
+                }
             } catch (e) {
                 console.warn('Gagal parse inspection dari localStorage', e);
             }
         }
-        }
+    }
     // TABLE DINAMIS 
 
 
     add() {
-    if (!this.acl.can('inspection', 'can_add') || !this.enable_crud) return;
+        if (!this.acl.can('inspection', 'can_add') || !this.enable_crud) return;
 
         const drawerRef = this.drawerService.create<InspectionShareAddComponent, {}, string>({
             nzTitle: 'Add',
             nzContent: InspectionShareAddComponent,
-        nzWidth: (500) + 'px',
+            nzWidth: (500) + 'px',
         });
- 
+
         drawerRef.afterClose.subscribe(() => {
             this.searchData();
         });
     }
 
-     
 
-    detail(data:AmimsInspectionDto) {
+
+    detail(data: AmimsInspectionDto) {
         if (!this.acl.can('contract-site', 'can_list')) return;
 
         const drawerRef = this.drawerService.create<InspectionShareDetailComponent, {}, string>({
             nzTitle: 'Detail',
             nzContent: InspectionShareDetailComponent,
             nzWidth: (window.innerWidth * 0.8) + 'px',
-            nzContentParams:{
-                idInspection:data.idInspection
+            nzContentParams: {
+                idInspection: data.idInspection
             }
         });
 
@@ -392,8 +381,8 @@ export class InspectionShareListComponent {
         });
     }
 
-    update(data: any) {}
-    delete(id: string) {} 
+    update(data: any) { }
+    delete(id: string) { }
 
     print() {
         let url = environment.srv_document + '/pdfAkutansi/vouchers?filter=' + JSON.stringify(this.filter) + '&token=' + this.tokenService.getToken();

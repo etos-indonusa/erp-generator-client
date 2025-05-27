@@ -174,7 +174,7 @@ export class PartInstallShareListComponent {
     total = 0;
     listOfData: any[] = [];
     loading = true;
-    sortValue: string | null = 'asc';
+    sortValue: string | null = 'desc';
     sortKey: string | null = 'created_at';
     search: string | null = null;
     search_field: string[] = ["bin","figureIndex","isfeatured","itemIndex","newParen","oldId","oldIdPart","oldParent","onPris","parent","topParent"];
@@ -226,9 +226,9 @@ export class PartInstallShareListComponent {
         this.searchData();
     }
 
-    get validSortValue(): 'asc' | 'desc' | undefined {
-        if (this.sortValue === 'ascend') return 'asc';
-        if (this.sortValue === 'descend') return 'desc';
+     get validSortValue(): 'asc' | 'desc' | undefined {
+        if (this.sortValue === 'asc') return 'asc';
+        if (this.sortValue === 'desc') return 'desc';
         return undefined;
     }
 
@@ -289,7 +289,7 @@ export class PartInstallShareListComponent {
         this.pageSize = params.pageSize;
         this.currentSort = params.sort.find(item => item.value !== null);
         this.sortKey = (this.currentSort && this.currentSort.key) || 'created_at';
-        this.sortValue = (this.currentSort && this.currentSort.value) || 'asc';
+        this.sortValue = (this.currentSort && this.currentSort.value) || 'desc';
         this.searchData();
     }
 

@@ -11,6 +11,7 @@ import { AircraftShareListComponent } from './aircraft-share-list/aircraft-share
 import { AircraftShareHeaderComponent } from './aircraft-share-header/aircraft-share-header.component';
 import { ApprovalModule } from 'src/app/views/lib/approval/approval.module';
 import { CustomFieldValueShareModule } from 'src/app/views/lib/custom-field-value/custom-field-value-share.module';
+import { NzImageModule } from 'ng-zorro-antd/image';
 
 const COM = [
     AircraftShareAddComponent,
@@ -34,6 +35,8 @@ const COM = [
         AntSimpleModule,
         TampilanModule,
         RouterModule,
+
+        NzImageModule, 
         // ApprovalModule,
         CustomFieldValueShareModule
     ]

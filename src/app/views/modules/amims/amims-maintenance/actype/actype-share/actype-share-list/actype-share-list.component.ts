@@ -13,7 +13,7 @@ import { ActypeReportService, ActypeService } from 'de-sdk-core';
 import { AmimsActypeDto } from 'de-sdk-core';
 import { ActypeShareAddComponent } from '../actype-share-add/actype-share-add.component';
 import { ActypeShareDetailComponent } from '../actype-share-detail/actype-share-detail.component';
- 
+
 
 
 @Component({
@@ -27,7 +27,7 @@ export class ActypeShareListComponent {
     @Input('filter-extra') filter_extra = false;
     @Input('enable-crud') enable_crud = true;
     //untuak filter dari prent
-    
+
 
     constructor(
         private pesanService: PesanService,
@@ -39,17 +39,17 @@ export class ActypeShareListComponent {
         private actypeService: ActypeService,
         private tokenService: TokenService,
 
-                private translate: TranslateService
+        private translate: TranslateService
     ) {
         translate.setDefaultLang('id');
         translate.use('id');
     }
 
     ngOnChanges(changes: SimpleChanges): void {
-        this.filter.status_actype = this.status == 'semua' ? null : this.status;
+        this.filter.statusType = this.status == 'semua' ? null : this.status;
 
-            
-        
+
+
 
         this.searchData();
     }
@@ -59,21 +59,21 @@ export class ActypeShareListComponent {
         this.resetParam();
         this.loadColumnSettings();
 
-            }
+    }
 
-    
+
     //untuak filter dari prent
-    
+
 
     // untuk fungsi get ALL relation
-    
+
     currentUser: any = {};
     filter: any = {
-    isDeleted: null,
-  numberEngineMin: null,
-  numberEngineMax: null
+        isDeleted: null,
+        numberEngineMin: null,
+        numberEngineMax: null
     };
- 
+
     expandSet = new Set<string>();
     onExpandChange(id: string, checked: boolean): void {
         if (checked) {
@@ -88,25 +88,25 @@ export class ActypeShareListComponent {
     total = 0;
     listOfData: any[] = [];
     loading = true;
-    sortValue: string | null = 'asc';
-    sortKey: string | null = 'created_at';
+    sortValue: string | null = 'desc';
+    sortKey: string | null = 'actype';
     search: string | null = null;
-    search_field: string[] = ["acCategory","acManufacture","actype","description","eFlight","eStarts","engineManufacture","engineType","hashN1","hashN2","oldId","wingtype"];
- 
+    search_field: string[] = ["acCategory", "acManufacture", "actype", "description", "eFlight", "eStarts", "engineManufacture", "engineType", "hashN1", "hashN2", "oldId", "wingtype"];
+
     breadCrumbItems = [{ label: 'List', active: false }];
 
     resetParam() {
         this.pageIndex = 1;
         this.pageSize = 30;
-        this.sortValue = 'asc';
-        this.sortKey = 'created_at';
+        this.sortValue = 'desc';
+        this.sortKey = 'actype';
         this.search = null;
         this.filter = {
             isDeleted: null,
-  numberEngineMin: null,
-  numberEngineMax: null
+            numberEngineMin: null,
+            numberEngineMax: null
         };
-        this.filter.status_actype = this.status == 'semua' ? null : this.status;
+        this.filter.statusType = this.status == 'semua' ? null : this.status;
     }
 
     resetData() {
@@ -115,8 +115,8 @@ export class ActypeShareListComponent {
     }
 
     get validSortValue(): 'asc' | 'desc' | undefined {
-        if (this.sortValue === 'ascend') return 'asc';
-        if (this.sortValue === 'descend') return 'desc';
+        if (this.sortValue === 'asc') return 'asc';
+        if (this.sortValue === 'desc') return 'desc';
         return undefined;
     }
 
@@ -131,10 +131,10 @@ export class ActypeShareListComponent {
             body: {
                 filter: finalFilter,
                 joinWhere: [
-                                        ],
+                ],
                 search_field: this.search_field,
                 search_keyword: this.search || undefined,
-                include:  [],
+                include: [],
                 sortKey: this.sortKey ?? undefined,
                 sortValue: this.validSortValue,
                 pageIndex: this.pageIndex,
@@ -154,8 +154,8 @@ export class ActypeShareListComponent {
         this.pageIndex = params.pageIndex;
         this.pageSize = params.pageSize;
         this.currentSort = params.sort.find(item => item.value !== null);
-        this.sortKey = (this.currentSort && this.currentSort.key) || 'created_at';
-        this.sortValue = (this.currentSort && this.currentSort.value) || 'asc';
+        this.sortKey = (this.currentSort && this.currentSort.key) || 'actype';
+        this.sortValue = (this.currentSort && this.currentSort.value) || 'desc';
         this.searchData();
     }
 
@@ -186,26 +186,26 @@ export class ActypeShareListComponent {
         return backendFilter;
     }
 
-     // TABLE DINAMIS 
-    columns = [ 
-         { key: 'acCategory',  show: true },
-              { key: 'acManufacture',  show: true },
-              { key: 'actype',  show: true },
-              { key: 'createdAt',  show: true },
-              { key: 'description',  show: true },
-              { key: 'eFlight',  show: true },
-              { key: 'eStarts',  show: true },
-              { key: 'engineManufacture',  show: true },
-              { key: 'engineType',  show: true },
-              { key: 'hashN1',  show: true },
-              { key: 'hashN2',  show: true },
-              { key: 'isDeleted',  show: true },
-              { key: 'numberEngine',  show: true },
-              { key: 'oldId',  show: true },
-              { key: 'statusType',  show: true },
-              { key: 'updatedAt',  show: true },
-              { key: 'wingtype',  show: true },
-             
+    // TABLE DINAMIS 
+    columns = [
+        { key: 'acCategory', show: true },
+        { key: 'acManufacture', show: true },
+        { key: 'actype', show: false },
+        { key: 'createdAt', show: false },
+        { key: 'description', show: true },
+        { key: 'eFlight', show: false },
+        { key: 'eStarts', show: false },
+        { key: 'engineManufacture', show: false },
+        { key: 'engineType', show: true },
+        { key: 'hashN1', show: true },
+        { key: 'hashN2', show: true },
+        { key: 'isDeleted', show: false },
+        { key: 'numberEngine', show: true },
+        { key: 'oldId', show: false },
+        { key: 'statusType', show: true },
+        { key: 'updatedAt', show: false },
+        { key: 'wingtype', show: false },
+
     ];
 
     isColVisible(key: string): boolean {
@@ -223,47 +223,47 @@ export class ActypeShareListComponent {
         const saved = localStorage.getItem('actype_columns');
         if (saved) {
             try {
-            const parsed = JSON.parse(saved);
-            if (Array.isArray(parsed)) {
-                // Sinkronkan dengan default jika ada key yang hilang
-                this.columns.forEach((col, index) => {
-                const found = parsed.find((p: any) => p.key === col.key);
-                if (found) this.columns[index].show = found.show;
-                });
-            }
+                const parsed = JSON.parse(saved);
+                if (Array.isArray(parsed)) {
+                    // Sinkronkan dengan default jika ada key yang hilang
+                    this.columns.forEach((col, index) => {
+                        const found = parsed.find((p: any) => p.key === col.key);
+                        if (found) this.columns[index].show = found.show;
+                    });
+                }
             } catch (e) {
                 console.warn('Gagal parse actype dari localStorage', e);
             }
         }
-        }
+    }
     // TABLE DINAMIS 
 
 
     add() {
-    if (!this.acl.can('actype', 'can_add') || !this.enable_crud) return;
+        if (!this.acl.can('actype', 'can_add') || !this.enable_crud) return;
 
         const drawerRef = this.drawerService.create<ActypeShareAddComponent, {}, string>({
             nzTitle: 'Add',
             nzContent: ActypeShareAddComponent,
-        nzWidth: (500) + 'px',
+            nzWidth: (500) + 'px',
         });
- 
+
         drawerRef.afterClose.subscribe(() => {
             this.searchData();
         });
     }
 
-     
 
-    detail(data:AmimsActypeDto) {
+
+    detail(data: AmimsActypeDto) {
         if (!this.acl.can('contract-site', 'can_list')) return;
 
         const drawerRef = this.drawerService.create<ActypeShareDetailComponent, {}, string>({
             nzTitle: 'Detail',
             nzContent: ActypeShareDetailComponent,
             nzWidth: (window.innerWidth * 0.8) + 'px',
-            nzContentParams:{
-                idActype:data.idActype
+            nzContentParams: {
+                idActype: data.idActype
             }
         });
 
@@ -272,8 +272,23 @@ export class ActypeShareListComponent {
         });
     }
 
-    update(data: any) {}
-    delete(id: string) {} 
+    update(data: any) { 
+        if (!this.acl.can('actype', 'can_add') || !this.enable_crud) return;
+
+        const drawerRef = this.drawerService.create<ActypeShareAddComponent, {}, string>({
+            nzTitle: 'Update',
+            nzContent: ActypeShareAddComponent,
+            nzWidth: (500) + 'px',
+            nzContentParams:{
+                actype: data
+            }
+        });
+
+        drawerRef.afterClose.subscribe(() => {
+            this.searchData();
+        });
+    }
+    delete(id: string) { }
 
     print() {
         let url = environment.srv_document + '/pdfAkutansi/vouchers?filter=' + JSON.stringify(this.filter) + '&token=' + this.tokenService.getToken();

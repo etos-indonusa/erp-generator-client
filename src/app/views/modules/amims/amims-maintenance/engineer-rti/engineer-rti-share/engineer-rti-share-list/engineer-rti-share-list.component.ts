@@ -18,7 +18,7 @@ import { MpcJoService } from 'de-sdk-core';
 import { PartService } from 'de-sdk-core';
 import { PartInstallService } from 'de-sdk-core';
 import { SiteService } from 'de-sdk-core';
- 
+
 
 
 @Component({
@@ -32,17 +32,17 @@ export class EngineerRtiShareListComponent {
     @Input('filter-extra') filter_extra = false;
     @Input('enable-crud') enable_crud = true;
     //untuak filter dari prent
-     
-    @Input('idAircraft') idAircraft: string | null  = null;
-     
-    @Input('idMpcJo') idMpcJo: string | null  = null;
-     
-    @Input('idPart') idPart: string | null  = null;
-     
-    @Input('idPartInstall') idPartInstall: string | null  = null;
-     
-    @Input('idSite') idSite: string | null  = null;
-    
+
+    @Input('idAircraft') idAircraft: string | null = null;
+
+    @Input('idMpcJo') idMpcJo: string | null = null;
+
+    @Input('idPart') idPart: string | null = null;
+
+    @Input('idPartInstall') idPartInstall: string | null = null;
+
+    @Input('idSite') idSite: string | null = null;
+
 
     constructor(
         private pesanService: PesanService,
@@ -54,12 +54,12 @@ export class EngineerRtiShareListComponent {
         private engineerRtiService: EngineerRtiService,
         private tokenService: TokenService,
 
-                        private aircraftService: AircraftService,
-                private mpcJoService: MpcJoService,
-                private partService: PartService,
-                private partInstallService: PartInstallService,
-                private siteService: SiteService,
-                        private translate: TranslateService
+        private aircraftService: AircraftService,
+        private mpcJoService: MpcJoService,
+        private partService: PartService,
+        private partInstallService: PartInstallService,
+        private siteService: SiteService,
+        private translate: TranslateService
     ) {
         translate.setDefaultLang('id');
         translate.use('id');
@@ -68,38 +68,33 @@ export class EngineerRtiShareListComponent {
     ngOnChanges(changes: SimpleChanges): void {
         this.filter.status_engineerRti = this.status == 'semua' ? null : this.status;
 
-            
-           
-            if (changes.idAircraft)
-            {
-                this.filterAircraft.idAircraft = this.idAircraft
-            }
-            
-           
-            if (changes.idMpcJo)
-            {
-                this.filterMpcJo.idMpcJo = this.idMpcJo
-            }
-            
-           
-            if (changes.idPart)
-            {
-                this.filterPart.idPart = this.idPart
-            }
-            
-           
-            if (changes.idPartInstall)
-            {
-                this.filterPartInstall.idPartInstall = this.idPartInstall
-            }
-            
-           
-            if (changes.idSite)
-            {
-                this.filterSite.idSite = this.idSite
-            }
-            
-        
+
+
+        if (changes.idAircraft) {
+            this.filterAircraft.idAircraft = this.idAircraft
+        }
+
+
+        if (changes.idMpcJo) {
+            this.filterMpcJo.idMpcJo = this.idMpcJo
+        }
+
+
+        if (changes.idPart) {
+            this.filterPart.idPart = this.idPart
+        }
+
+
+        if (changes.idPartInstall) {
+            this.filterPartInstall.idPartInstall = this.idPartInstall
+        }
+
+
+        if (changes.idSite) {
+            this.filterSite.idSite = this.idSite
+        }
+
+
 
         this.searchData();
     }
@@ -109,100 +104,100 @@ export class EngineerRtiShareListComponent {
         this.resetParam();
         this.loadColumnSettings();
 
-                            this.getAllAircraft();
-                    this.getAllMpcJo();
-                    this.getAllPart();
-                    this.getAllPartInstall();
-                    this.getAllSite();
-                    }
+        this.getAllAircraft();
+        this.getAllMpcJo();
+        this.getAllPart();
+        this.getAllPartInstall();
+        this.getAllSite();
+    }
 
-    
-    listAircraft: any[] = []; 
-    
-    listMpcJo: any[] = []; 
-    
-    listPart: any[] = []; 
-    
-    listPartInstall: any[] = []; 
-    
-    listSite: any[] = []; 
-    
+
+    listAircraft: any[] = [];
+
+    listMpcJo: any[] = [];
+
+    listPart: any[] = [];
+
+    listPartInstall: any[] = [];
+
+    listSite: any[] = [];
+
     //untuak filter dari prent
-    
-    filterAircraft:any = {} 
-    
-    filterMpcJo:any = {} 
-    
-    filterPart:any = {} 
-    
-    filterPartInstall:any = {} 
-    
-    filterSite:any = {} 
-    
+
+    filterAircraft: any = {}
+
+    filterMpcJo: any = {}
+
+    filterPart: any = {}
+
+    filterPartInstall: any = {}
+
+    filterSite: any = {}
+
 
     // untuk fungsi get ALL relation
-            getAllAircraft() {
-    this.aircraftService.aircraftControllerFindAll().subscribe(
-      data => this.listAircraft = data.data ?? []
-    );
-  }
-        getAllMpcJo() {
-    this.mpcJoService.mpcJoControllerFindAll().subscribe(
-      data => this.listMpcJo = data.data ?? []
-    );
-  }
-        getAllPart() {
-    this.partService.partControllerFindAll().subscribe(
-      data => this.listPart = data.data ?? []
-    );
-  }
-        getAllPartInstall() {
-    this.partInstallService.partInstallControllerFindAll().subscribe(
-      data => this.listPartInstall = data.data ?? []
-    );
-  }
-        getAllSite() {
-    this.siteService.siteControllerFindAll().subscribe(
-      data => this.listSite = data.data ?? []
-    );
-  }
-        
+    getAllAircraft() {
+        this.aircraftService.aircraftControllerFindAll().subscribe(
+            data => this.listAircraft = data.data ?? []
+        );
+    }
+    getAllMpcJo() {
+        this.mpcJoService.mpcJoControllerFindAll().subscribe(
+            data => this.listMpcJo = data.data ?? []
+        );
+    }
+    getAllPart() {
+        this.partService.partControllerFindAll().subscribe(
+            data => this.listPart = data.data ?? []
+        );
+    }
+    getAllPartInstall() {
+        this.partInstallService.partInstallControllerFindAll().subscribe(
+            data => this.listPartInstall = data.data ?? []
+        );
+    }
+    getAllSite() {
+        this.siteService.siteControllerFindAll().subscribe(
+            data => this.listSite = data.data ?? []
+        );
+    }
+
     currentUser: any = {};
     filter: any = {
-    dateRtiRange: null,
-  dispotitionMin: null,
-  dispotitionMax: null,
-  idAircraft: null,
-  idMpcJo: null,
-  idPart: null,
-  idPartInstall: null,
-  idSite: null,
-  inspectedByMin: null,
-  inspectedByMax: null,
-  receivedByMin: null,
-  receivedByMax: null,
-  remainingHoursMin: null,
-  remainingHoursMax: null,
-  returnByMin: null,
-  returnByMax: null,
-  tsnCycleMin: null,
-  tsnCycleMax: null,
-  tsnCycleParentMin: null,
-  tsnCycleParentMax: null,
-  tsnHoursMin: null,
-  tsnHoursMax: null,
-  tsnHoursParentMin: null,
-  tsnHoursParentMax: null,
-  tsnValMin: null,
-  tsnValMax: null,
-  tsoCycleMin: null,
-  tsoCycleMax: null,
-  tsoHoursMin: null,
-  tsoHoursMax: null,
-  tsoValMin: null,
-  tsoValMax: null
+        dateRtiRange: null,
+        dispotitionMin: null,
+        dispotitionMax: null,
+        idAircraft: null,
+        idMpcJo: null,
+        idPart: null,
+        idPartInstall: null,
+        idSite: null,
+        inspectedByMin: null,
+        inspectedByMax: null,
+        receivedByMin: null,
+        receivedByMax: null,
+        remainingHoursMin: null,
+        remainingHoursMax: null,
+        returnByMin: null,
+        returnByMax: null,
+        tsnCycleMin: null,
+        tsnCycleMax: null,
+        tsnCycleParentMin: null,
+        tsnCycleParentMax: null,
+        tsnHoursMin: null,
+        tsnHoursMax: null,
+        tsnHoursParentMin: null,
+        tsnHoursParentMax: null,
+        tsnValMin: null,
+        tsnValMax: null,
+        tsoCycleMin: null,
+        tsoCycleMax: null,
+        tsoHoursMin: null,
+        tsoHoursMax: null,
+        tsoValMin: null,
+        tsoValMax: null
     };
- 
+
     expandSet = new Set<string>();
     onExpandChange(id: string, checked: boolean): void {
         if (checked) {
@@ -217,11 +212,11 @@ export class EngineerRtiShareListComponent {
     total = 0;
     listOfData: any[] = [];
     loading = true;
-    sortValue: string | null = 'asc';
+    sortValue: string | null = 'desc';
     sortKey: string | null = 'created_at';
     search: string | null = null;
-    search_field: string[] = ["base","hasPris","hashProcess","hashRpd","hashTechLog","numberRti","reason","remarkDisposisi","tsnVar","tsoVar","typeRti"];
- 
+    search_field: string[] = ["base", "hasPris", "hashProcess", "hashRpd", "hashTechLog", "numberRti", "reason", "remarkDisposisi", "tsnVar", "tsoVar", "typeRti"];
+
     breadCrumbItems = [{ label: 'List', active: false }];
 
     resetParam() {
@@ -232,37 +227,37 @@ export class EngineerRtiShareListComponent {
         this.search = null;
         this.filter = {
             dateRtiRange: null,
-  dispotitionMin: null,
-  dispotitionMax: null,
-  idAircraft: null,
-  idMpcJo: null,
-  idPart: null,
-  idPartInstall: null,
-  idSite: null,
-  inspectedByMin: null,
-  inspectedByMax: null,
-  receivedByMin: null,
-  receivedByMax: null,
-  remainingHoursMin: null,
-  remainingHoursMax: null,
-  returnByMin: null,
-  returnByMax: null,
-  tsnCycleMin: null,
-  tsnCycleMax: null,
-  tsnCycleParentMin: null,
-  tsnCycleParentMax: null,
-  tsnHoursMin: null,
-  tsnHoursMax: null,
-  tsnHoursParentMin: null,
-  tsnHoursParentMax: null,
-  tsnValMin: null,
-  tsnValMax: null,
-  tsoCycleMin: null,
-  tsoCycleMax: null,
-  tsoHoursMin: null,
-  tsoHoursMax: null,
-  tsoValMin: null,
-  tsoValMax: null
+            dispotitionMin: null,
+            dispotitionMax: null,
+            idAircraft: null,
+            idMpcJo: null,
+            idPart: null,
+            idPartInstall: null,
+            idSite: null,
+            inspectedByMin: null,
+            inspectedByMax: null,
+            receivedByMin: null,
+            receivedByMax: null,
+            remainingHoursMin: null,
+            remainingHoursMax: null,
+            returnByMin: null,
+            returnByMax: null,
+            tsnCycleMin: null,
+            tsnCycleMax: null,
+            tsnCycleParentMin: null,
+            tsnCycleParentMax: null,
+            tsnHoursMin: null,
+            tsnHoursMax: null,
+            tsnHoursParentMin: null,
+            tsnHoursParentMax: null,
+            tsnValMin: null,
+            tsnValMax: null,
+            tsoCycleMin: null,
+            tsoCycleMax: null,
+            tsoHoursMin: null,
+            tsoHoursMax: null,
+            tsoValMin: null,
+            tsoValMax: null
         };
         this.filter.status_engineerRti = this.status == 'semua' ? null : this.status;
     }
@@ -273,8 +268,8 @@ export class EngineerRtiShareListComponent {
     }
 
     get validSortValue(): 'asc' | 'desc' | undefined {
-        if (this.sortValue === 'ascend') return 'asc';
-        if (this.sortValue === 'descend') return 'desc';
+        if (this.sortValue === 'asc') return 'asc';
+        if (this.sortValue === 'desc') return 'desc';
         return undefined;
     }
 
@@ -289,46 +284,41 @@ export class EngineerRtiShareListComponent {
             body: {
                 filter: finalFilter,
                 joinWhere: [
-                                        {
+                    {
                         "aircraft": this.filterAircraft, type: 'inner'
-                    },
-                                        {
-                        "mpc_jo": this.filterMpcJo, type: 'inner'
-                    },
-                                        {
+                    }, 
+                    {
                         "part": this.filterPart, type: 'inner'
-                    },
-                                        {
-                        "part_install": this.filterPartInstall, type: 'inner'
-                    },
-                                        {
+                    } ,
+                    {
                         "site": this.filterSite, type: 'inner'
                     }
-                                        ],
+                ],
                 search_field: this.search_field,
                 search_keyword: this.search || undefined,
-                include:  [
-  {
-    "name": "aircraft",
-    "type": "single"
-  },
-  {
-    "name": "mpc_jo",
-    "type": "single"
-  },
-  {
-    "name": "part",
-    "type": "single"
-  },
-  {
-    "name": "part_install",
-    "type": "single"
-  },
-  {
-    "name": "site",
-    "type": "single"
-  }
-],
+                include: [
+                    {
+                        "name": "aircraft",
+                        "type": "single"
+                    }, 
+                    {
+                        "name": "part",
+                        "type": "single"
+                    },
+                    {
+                        "name": "mpart",
+                        "to": "part",
+                        "type": "single"
+                    },
+                    // {
+                    //     "name": "part_install",
+                    //     "type": "single"
+                    // },
+                    {
+                        "name": "site",
+                        "type": "single"
+                    }
+                ],
                 sortKey: this.sortKey ?? undefined,
                 sortValue: this.validSortValue,
                 pageIndex: this.pageIndex,
@@ -349,7 +339,7 @@ export class EngineerRtiShareListComponent {
         this.pageSize = params.pageSize;
         this.currentSort = params.sort.find(item => item.value !== null);
         this.sortKey = (this.currentSort && this.currentSort.key) || 'created_at';
-        this.sortValue = (this.currentSort && this.currentSort.value) || 'asc';
+        this.sortValue = (this.currentSort && this.currentSort.value) || 'desc';
         this.searchData();
     }
 
@@ -379,40 +369,39 @@ export class EngineerRtiShareListComponent {
 
         return backendFilter;
     }
+ 
+    // TABLE DINAMIS 
+    columns = [
+        { key: 'partNumber', show: true },
+        { key: 'keyword', show: true },
+        { key: 'sn', show: true },
+        { key: 'serialNumber', show: true },
+        { key: 'registrationNumber', show: true },
+         
+        { key: 'dateRti', show: true },
+        { key: 'dispotition', show: false }, 
+        { key: 'numberRti', show: true },
+        { key: 'reason', show: false },
+        { key: 'receivedBy', show: false },
+        { key: 'remainingHours', show: false },
+        { key: 'remarkDisposisi', show: false },
+        { key: 'returnBy', show: false },
+        { key: 'statusRti', show: true },
+        { key: 'statusService', show: false },
+        { key: 'tsnCycle', show: false },
+        { key: 'tsnCycleParent', show: false },
+        { key: 'tsnHours', show: false },
+        { key: 'tsnHoursParent', show: false },
+        { key: 'tsnVal', show: false },
+        { key: 'tsnVar', show: false },
+        { key: 'tsoCycle', show: false },
+        { key: 'tsoHours', show: false },
+        { key: 'tsoVal', show: false },
+        { key: 'tsoVar', show: false },
+        { key: 'typeRti', show: false }, 
 
-     // TABLE DINAMIS 
-    columns = [ 
-         { key: 'base',  show: true },
-              { key: 'createdAt',  show: true },
-              { key: 'dateRti',  show: true },
-              { key: 'dispotition',  show: true },
-              { key: 'hasPris',  show: true },
-              { key: 'hashProcess',  show: true },
-              { key: 'hashRpd',  show: true },
-              { key: 'hashTechLog',  show: true },
-              { key: 'inspectedBy',  show: true },
-              { key: 'numberRti',  show: true },
-              { key: 'reason',  show: true },
-              { key: 'receivedBy',  show: true },
-              { key: 'remainingHours',  show: true },
-              { key: 'remarkDisposisi',  show: true },
-              { key: 'returnBy',  show: true },
-              { key: 'statusRti',  show: true },
-              { key: 'statusService',  show: true },
-              { key: 'tsnCycle',  show: true },
-              { key: 'tsnCycleParent',  show: true },
-              { key: 'tsnHours',  show: true },
-              { key: 'tsnHoursParent',  show: true },
-              { key: 'tsnVal',  show: true },
-              { key: 'tsnVar',  show: true },
-              { key: 'tsoCycle',  show: true },
-              { key: 'tsoHours',  show: true },
-              { key: 'tsoVal',  show: true },
-              { key: 'tsoVar',  show: true },
-              { key: 'typeRti',  show: true },
-              { key: 'updatedAt',  show: true },
-             
     ];
+    
 
     isColVisible(key: string): boolean {
         return this.columns.find(col => col.key === key)?.show ?? true;
@@ -429,47 +418,47 @@ export class EngineerRtiShareListComponent {
         const saved = localStorage.getItem('engineerRti_columns');
         if (saved) {
             try {
-            const parsed = JSON.parse(saved);
-            if (Array.isArray(parsed)) {
-                // Sinkronkan dengan default jika ada key yang hilang
-                this.columns.forEach((col, index) => {
-                const found = parsed.find((p: any) => p.key === col.key);
-                if (found) this.columns[index].show = found.show;
-                });
-            }
+                const parsed = JSON.parse(saved);
+                if (Array.isArray(parsed)) {
+                    // Sinkronkan dengan default jika ada key yang hilang
+                    this.columns.forEach((col, index) => {
+                        const found = parsed.find((p: any) => p.key === col.key);
+                        if (found) this.columns[index].show = found.show;
+                    });
+                }
             } catch (e) {
                 console.warn('Gagal parse engineerRti dari localStorage', e);
             }
         }
-        }
+    }
     // TABLE DINAMIS 
 
 
     add() {
-    if (!this.acl.can('engineer-rti', 'can_add') || !this.enable_crud) return;
+        if (!this.acl.can('engineer-rti', 'can_add') || !this.enable_crud) return;
 
         const drawerRef = this.drawerService.create<EngineerRtiShareAddComponent, {}, string>({
             nzTitle: 'Add',
             nzContent: EngineerRtiShareAddComponent,
-        nzWidth: (500) + 'px',
+            nzWidth: (500) + 'px',
         });
- 
+
         drawerRef.afterClose.subscribe(() => {
             this.searchData();
         });
     }
 
-     
 
-    detail(data:AmimsEngineerRtiDto) {
+
+    detail(data: AmimsEngineerRtiDto) {
         if (!this.acl.can('contract-site', 'can_list')) return;
 
         const drawerRef = this.drawerService.create<EngineerRtiShareDetailComponent, {}, string>({
             nzTitle: 'Detail',
             nzContent: EngineerRtiShareDetailComponent,
             nzWidth: (window.innerWidth * 0.8) + 'px',
-            nzContentParams:{
-                idEngineerRti:data.idEngineerRti
+            nzContentParams: {
+                idEngineerRti: data.idEngineerRti
             }
         });
 
@@ -478,8 +467,8 @@ export class EngineerRtiShareListComponent {
         });
     }
 
-    update(data: any) {}
-    delete(id: string) {} 
+    update(data: any) { }
+    delete(id: string) { }
 
     print() {
         let url = environment.srv_document + '/pdfAkutansi/vouchers?filter=' + JSON.stringify(this.filter) + '&token=' + this.tokenService.getToken();

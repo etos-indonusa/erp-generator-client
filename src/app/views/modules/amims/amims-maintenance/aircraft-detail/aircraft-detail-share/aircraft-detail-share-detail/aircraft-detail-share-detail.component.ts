@@ -3,15 +3,16 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   AmimsAircraftDetailReportDto } from 'de-sdk-core';
+import { AmimsAircraftDetailReportDto } from 'de-sdk-core';
 import { AircraftDetailReportService } from 'de-sdk-core';
+import { AircraftDetailShareAddComponent } from '../aircraft-detail-share-add/aircraft-detail-share-add.component';
 
 @Component({
     selector: 'app-aircraft-detail-share-detail',
     templateUrl: './aircraft-detail-share-detail.component.html',
     styleUrl: './aircraft-detail-share-detail.component.scss'
 })
-export class AircraftDetailShareDetailComponent { 
+export class AircraftDetailShareDetailComponent {
     @Input('idAircraftDetail') idAircraftDetail: string // replace dengan id+Nama
     constructor(
         private aircraftDetailReportService: AircraftDetailReportService,
@@ -46,8 +47,7 @@ export class AircraftDetailShareDetailComponent {
     }
 
     // artinya one to many 
-    getListData()
-    {
+    getListData() {
 
     }
 
@@ -61,8 +61,26 @@ export class AircraftDetailShareDetailComponent {
     // }
 
     print() {
-    let url = environment.srv_document + '/pdf/aircraftDetail/' + this.idAircraftDetail + '?token=' + this.tokenService.getToken();
+        let url = environment.srv_document + '/pdf/aircraftDetail/' + this.idAircraftDetail + '?token=' + this.tokenService.getToken();
         window.open(url, "_blank");
     }
+
+    add() {
+        if (!this.acl.can('aircraft-detail', 'can_add')) return;
+
+        const drawerRef = this.drawerService.create<AircraftDetailShareAddComponent, {}, string>({
+            nzTitle: 'Add',
+            nzContent: AircraftDetailShareAddComponent,
+            nzWidth: (500) + 'px',
+            nzContentParams: {
+                aircraftDetail: this.aircraftDetail || undefined
+            }
+        });
+
+        drawerRef.afterClose.subscribe(() => {
+            this.getData();
+        });
+    }
+
 
 }

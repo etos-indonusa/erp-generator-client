@@ -4,8 +4,8 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsAircraftDetailFormSchema } from 'de-sdk-core'; 
-import type  { AmimsAircraftDetailDto } from 'de-sdk-core';
+import { AmimsAircraftDetailFormSchema } from 'de-sdk-core';
+import type { AmimsAircraftDetailDto } from 'de-sdk-core';
 import { AircraftDetailService } from 'de-sdk-core';
 
 
@@ -16,13 +16,13 @@ import { AircraftDetailService } from 'de-sdk-core';
 })
 export class AircraftDetailShareAddComponent {
     @Input('aircraftDetail') aircraftDetail: AmimsAircraftDetailDto = {
-  idAircraftDetail: ''
-};
+        idAircraftDetail: ''
+    };
     form!: FormGroup;
 
     ngOnChanges(changes: SimpleChanges): void {
-        if(changes.aircraftDetail && this.aircraftDetail.idAircraftDetail) {
-        this.form?.patchValue(this.aircraftDetail);
+        if (changes.aircraftDetail && this.aircraftDetail.idAircraftDetail) {
+            this.form?.patchValue(this.aircraftDetail);
         }
     }
     constructor(
@@ -30,19 +30,17 @@ export class AircraftDetailShareAddComponent {
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
         private aircraftDetailService: AircraftDetailService,
-            ) { }
+    ) { }
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, AmimsAircraftDetailFormSchema, {
-            kodeAircraftDetail: [Validators.minLength(3), Validators.maxLength(3)],
-            catatan: [Validators.maxLength(200)],
-        },'AircraftDetail');
+        }, 'AircraftDetail');
+        this.form?.patchValue(this.aircraftDetail);
+    }
 
-            }
-    
 
     // untuk fungsi get ALL relation
-    
+
     submit(): void {
         const labelMap = extractLabels(AmimsAircraftDetailFormSchema);
 

@@ -30,72 +30,74 @@
                         </nz-form-control>
                     </nz-form-item>
                 </div>
-                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
                     <nz-form-item>
-                    <nz-form-label>{{ 'effectiveDate' | translate }}</nz-form-label>
-                    <nz-form-control>
-                                                <nz-range-picker
-                            [(ngModel)]="filter.effectiveDateRange"
-                            name="effectiveDateRange"
-                            nzFormat="YYYY-MM-DD"
-                            nzPlaceHolder="['Dari', 'Sampai']"
-                            style="width: 100%;">
-                        </nz-range-picker>
-                                            </nz-form-control>
+                        <nz-form-label>{{ 'effectiveDate' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-range-picker [(ngModel)]="filter.effectiveDateRange" name="effectiveDateRange"
+                                nzFormat="YYYY-MM-DD" nzPlaceHolder="['Dari', 'Sampai']" style="width: 100%;">
+                            </nz-range-picker>
+                        </nz-form-control>
                     </nz-form-item>
                 </div>
-                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
                     <nz-form-item>
-                    <nz-form-label>{{ 'idMcurrency' | translate }}</nz-form-label>
-                    <nz-form-control>
-                                                <nz-select [(ngModel)]="filter.idMcurrency" name="idMcurrency" nzAllowClear>
-                            <nz-option *ngFor="let item of listMcurrency" [nzValue]="item.idMcurrency" [nzLabel]="item.namaMcurrency"></nz-option>
-                        </nz-select>
-                                            </nz-form-control>
+                        <nz-form-label>{{ 'idMcurrency' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-select [(ngModel)]="filter.idMcurrency" name="idMcurrency" nzAllowClear>
+                                <nz-option *ngFor="let item of listMcurrency" [nzValue]="item.idMcurrency"
+                                    [nzLabel]="item.namaMcurrency"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
                     </nz-form-item>
                 </div>
-                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
                     <nz-form-item>
-                    <nz-form-label>{{ 'idUser' | translate }}</nz-form-label>
-                    <nz-form-control>
-                                                <nz-select [(ngModel)]="filter.idUser" name="idUser" nzAllowClear>
-                            <nz-option *ngFor="let item of listUser" [nzValue]="item.idUser" [nzLabel]="item.namaUser"></nz-option>
-                        </nz-select>
-                                            </nz-form-control>
+                        <nz-form-label>{{ 'idUser' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-select [(ngModel)]="filter.idUser" name="idUser" nzAllowClear>
+                                <nz-option *ngFor="let item of listUser" [nzValue]="item.idUser"
+                                    [nzLabel]="item.namaUser"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
                     </nz-form-item>
                 </div>
-                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
                     <nz-form-item>
-                    <nz-form-label>{{ 'newValue' | translate }}</nz-form-label>
-                    <nz-form-control>
-                                                <div nz-row [nzGutter]="8">
-                            <div nz-col nzSpan="12">
-                            <input nz-input type="number" [(ngModel)]="filter.newValueMin" name="newValueMin" placeholder="Min" />
+                        <nz-form-label>{{ 'newValue' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.newValueMin" name="newValueMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.newValueMax" name="newValueMax"
+                                        placeholder="Max" />
+                                </div>
                             </div>
-                            <div nz-col nzSpan="12">
-                            <input nz-input type="number" [(ngModel)]="filter.newValueMax" name="newValueMax" placeholder="Max" />
-                            </div>
-                        </div>
-                                            </nz-form-control>
+                        </nz-form-control>
                     </nz-form-item>
                 </div>
-                                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
                     <nz-form-item>
-                    <nz-form-label>{{ 'oldValue' | translate }}</nz-form-label>
-                    <nz-form-control>
-                                                <div nz-row [nzGutter]="8">
-                            <div nz-col nzSpan="12">
-                            <input nz-input type="number" [(ngModel)]="filter.oldValueMin" name="oldValueMin" placeholder="Min" />
+                        <nz-form-label>{{ 'oldValue' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.oldValueMin" name="oldValueMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.oldValueMax" name="oldValueMax"
+                                        placeholder="Max" />
+                                </div>
                             </div>
-                            <div nz-col nzSpan="12">
-                            <input nz-input type="number" [(ngModel)]="filter.oldValueMax" name="oldValueMax" placeholder="Max" />
-                            </div>
-                        </div>
-                                            </nz-form-control>
+                        </nz-form-control>
                     </nz-form-item>
                 </div>
-                
- 
+
+
                 <div nz-col nzSpan="24">
 
                     <nz-form-item>
@@ -120,91 +122,84 @@
             (nzQueryParams)="onQueryParamsChange($event)" nzSize="small">
             <thead>
                 <tr>
-                    <th   [nzAlign]="'right'">#ID</th>
-                    
+                    <th [nzAlign]="'right'">#ID</th>
+
                     <th [nzSortFn]="true" nzColumnKey="createdAt" *ngIf="isColVisible('createdAt')">
                         {{ 'createdAt' | translate }}
-                     </th>
-                    
+                    </th>
+
                     <th [nzSortFn]="true" nzColumnKey="effectiveDate" *ngIf="isColVisible('effectiveDate')">
                         {{ 'effectiveDate' | translate }}
-                     </th>
-                    
+                    </th>
+
                     <th [nzSortFn]="true" nzColumnKey="forcurrency" *ngIf="isColVisible('forcurrency')">
                         {{ 'forcurrency' | translate }}
-                     </th>
-                    
+                    </th>
+
                     <th [nzSortFn]="true" nzColumnKey="newValue" *ngIf="isColVisible('newValue')">
                         {{ 'newValue' | translate }}
-                     </th>
-                    
+                    </th>
+
                     <th [nzSortFn]="true" nzColumnKey="noteCurrency" *ngIf="isColVisible('noteCurrency')">
                         {{ 'noteCurrency' | translate }}
-                     </th>
-                    
+                    </th>
+
                     <th [nzSortFn]="true" nzColumnKey="oldValue" *ngIf="isColVisible('oldValue')">
                         {{ 'oldValue' | translate }}
-                     </th>
-                    
-                    <th [nzSortFn]="true" nzColumnKey="updatedAt" *ngIf="isColVisible('updatedAt')">
-                        {{ 'updatedAt' | translate }}
-                     </th>
-                    
+                    </th>
+ 
+
                     <th nzWidth="7%" [nzAlign]="'right'">Action</th>
-                </tr> 
+                </tr>
             </thead>
             <tbody>
                 <ng-container *ngFor="let data of listOfData" style="vertical-align: top;">
                     <tr>
                         <td [nzExpand]="expandSet.has(data.idCurrency)"
                             (nzExpandChange)="onExpandChange(data.idCurrency, $event)">
-                            <nz-badge *ngIf="data.idCurrency!=null" nzColor="{{ data.idCurrency?.toLowerCase() | status }}"
-                                nzText="{{data.idCurrency?.toLowerCase() }}"></nz-badge>  
+                            <nz-badge *ngIf="data.idCurrency!=null"
+                                nzColor="{{ data.idCurrency?.toLowerCase() | status }}"
+                                nzText="{{data.idCurrency?.toLowerCase() }}"></nz-badge>
                         </td>
-                        
-                        
-                            <td *ngIf="isColVisible('createdAt')">
-                                
-                                        {{ data.createdAt | date: 'short' }}
-                                            
-                            </td>
-                            
-                            <td *ngIf="isColVisible('effectiveDate')">
-                                
-                                                        {{ data.effectiveDate  }}
-                                                            
-                            </td>
-                            
-                            <td *ngIf="isColVisible('forcurrency')">
-                                
-                                                        {{ data.forcurrency  }}
-                                                            
-                            </td>
-                            
-                            <td *ngIf="isColVisible('newValue')">
-                                
-                                                        {{ data.newValue  }}
-                                                            
-                            </td>
-                            
-                            <td *ngIf="isColVisible('noteCurrency')">
-                                
-                                                        {{ data.noteCurrency  }}
-                                                            
-                            </td>
-                            
-                            <td *ngIf="isColVisible('oldValue')">
-                                
-                                                        {{ data.oldValue  }}
-                                                            
-                            </td>
-                            
-                            <td *ngIf="isColVisible('updatedAt')">
-                                
-                                        {{ data.updatedAt | date: 'short' }}
-                                            
-                            </td>
-                            
+
+
+                        <td *ngIf="isColVisible('createdAt')">
+
+                            {{ data.createdAt | date: 'short' }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('effectiveDate')">
+
+                            {{ data.effectiveDate }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('forcurrency')">
+
+                            {{ data?.mcurrency?.code }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('newValue')" class="text-right">
+
+                            {{ data.newValue | number}}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('noteCurrency')">
+
+                            {{ data.noteCurrency }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('oldValue')" class="text-right">
+
+                            {{ data.oldValue | number }}
+
+                        </td>
+ 
+
 
                         <td [nzAlign]="'right'">
                             <button nz-button nz-dropdown [nzDropdownMenu]="menu">
@@ -233,10 +228,10 @@
                         </td>
                     </tr>
                     <tr [nzExpand]="expandSet.has(data.idCurrency)">
-                        <app-currency-share-header [data]="data"></app-currency-share-header> 
+                        <app-currency-share-header [data]="data"></app-currency-share-header>
                     </tr>
                 </ng-container>
-                 
+
             </tbody>
         </nz-table>
     </div>
@@ -268,7 +263,8 @@
         (click)="filter_extra=!filter_extra">
         <span nz-icon nzType="filter" nzTheme="outline"></span> Filter
     </button>
-    <button nz-button nz-dropdown [nzDropdownMenu]="menu" nzTy [nzPlacement]="'topRight'"><i nz-icon nzType="appstore"></i></button>
+    <button nz-button nz-dropdown [nzDropdownMenu]="menu" nzTy [nzPlacement]="'topRight'"><i nz-icon
+            nzType="appstore"></i></button>
     <nz-dropdown-menu #menu="nzDropdownMenu">
         <ul nz-menu>
             <li nz-menu-item *ngFor="let col of columns">
@@ -277,8 +273,9 @@
                 </label>
             </li>
         </ul>
-    </nz-dropdown-menu> 
-    <button nz-button nzType="link" (click)="resetColumns()" nz-tooltip nzTooltipTitle="{{ 'Reset Kolom' | translate }}"><i nz-icon nzType="undo"></i></button>
+    </nz-dropdown-menu>
+    <button nz-button nzType="link" (click)="resetColumns()" nz-tooltip
+        nzTooltipTitle="{{ 'Reset Kolom' | translate }}"><i nz-icon nzType="undo"></i></button>
 
     <button nz-button style="margin-bottom: 8px;margin-left: 10px;" nzType="primary" (click)="add()">
         <span nz-icon nzType="plus" nzTheme="outline"></span> Add New

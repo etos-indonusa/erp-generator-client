@@ -4,8 +4,8 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsActypeFormSchema } from 'de-sdk-core'; 
-import type  { AmimsActypeDto } from 'de-sdk-core';
+import { AmimsActypeFormSchema } from 'de-sdk-core';
+import type { AmimsActypeDto } from 'de-sdk-core';
 import { ActypeService } from 'de-sdk-core';
 
 
@@ -16,13 +16,13 @@ import { ActypeService } from 'de-sdk-core';
 })
 export class ActypeShareAddComponent {
     @Input('actype') actype: AmimsActypeDto = {
-  idActype: ''
-};
+        idActype: ''
+    };
     form!: FormGroup;
 
     ngOnChanges(changes: SimpleChanges): void {
-        if(changes.actype && this.actype.idActype) {
-        this.form?.patchValue(this.actype);
+        if (changes.actype && this.actype.idActype) {
+            this.form?.patchValue(this.actype);
         }
     }
     constructor(
@@ -30,19 +30,18 @@ export class ActypeShareAddComponent {
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
         private actypeService: ActypeService,
-            ) { }
+    ) { }
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, AmimsActypeFormSchema, {
-            kodeActype: [Validators.minLength(3), Validators.maxLength(3)],
-            catatan: [Validators.maxLength(200)],
-        },'Actype');
+        }, 'Actype');
+        this.form.patchValue(this.actype);
 
-            }
-    
+    }
+
 
     // untuk fungsi get ALL relation
-    
+
     submit(): void {
         const labelMap = extractLabels(AmimsActypeFormSchema);
 

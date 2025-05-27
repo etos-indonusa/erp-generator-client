@@ -1,2 +1,106 @@
 <app-aircraft-share-widget [filter]="filter" [reload]="reload"></app-aircraft-share-widget>
-<app-aircraft-share-list (out_filter)="getFilter($event)" [status]="status" ></app-aircraft-share-list>
+<!-- <app-aircraft-share-list (out_filter)="getFilter($event)" [status]="status" ></app-aircraft-share-list> -->
+
+<div class="card aircraft-card mt-4" *ngFor="let aircraft of aircrafts"  >
+    <!-- Header -->
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <div>
+            <span class="aircraft-title">{{ aircraft.registrationNumber }}</span>
+            <span class="aircraft-type">{{ aircraft.actype?.actype }}</span>
+        </div>
+        <span class="badge bg-success">{{ aircraft.statusAc }}</span>
+    </div>
+
+    <!-- Body -->
+    <div class="card-body">
+        <div nz-row [nzGutter]="16">
+            <div nz-col nzFlex="250px">
+                <img nz-image width="250px" height="auto" nzSrc="error" [nzFallback]="fallback" alt="" />
+            </div>
+            <div nz-col nzFlex="auto">
+                <div class="container mt-4">
+                    <h5 class="fw-bold">INFORMATION</h5>
+                    <table class="table table-borderless info-table">
+                        <tbody>
+                            <tr>
+                                <td class="label">Manufacture <span class="text-danger">*</span></td>
+                                <td class="value">: <strong>{{ aircraft.manufacturedBy }}</strong></td>
+                                <td class="label">Type</td>
+                                <td class="value">: <strong>{{ aircraft.actype?.actype }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="label">Registration Number</td>
+                                <td class="value">: <strong>{{ aircraft.registrationNumber }}</strong></td>
+                                <td class="label">Year of Manufacture</td>
+                                <td class="value">: <strong>{{ aircraft.manufactureDate }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="label">Serial Number <span class="text-danger">*</span></td>
+                                <td class="value">: <strong>{{ aircraft.serialNumber }}</strong></td>
+                                <td class="label">Applicable / Tag</td>
+                                <td class="value">
+                                    <span *ngIf="aircraft.actype?.actype" class="badge bg-secondary">{{ aircraft.actype?.actype }}</span>
+                                    <span *ngIf="aircraft.actype?.description" class="badge bg-secondary">{{ aircraft.actype?.description
+                                        }}</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="container mt-4">
+                    <h5 class="fw-bold">CERTIFICATE</h5>
+                    <table class="table table-borderless info-table">
+                        <tbody>
+                            <tr>
+                                <td class="label">COR</td>
+                                <td class="value">: <strong>{{ aircraft.aircraftDetail[0]?.certificateOfRegistration }}</strong></td>
+                                <td class="label">Radio Permit</td>
+                                <td class="value">: <strong>{{ aircraft.aircraftDetail[0]?.radioPermit }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="label">COA</td>
+                                <td class="value">: <strong>{{ aircraft.aircraftDetail[0]?.airworthiness }}</strong></td>
+                                <td class="label">Compass Swing</td>
+                                <td class="value">: <strong>{{ aircraft.aircraftDetail[0]?.compassSwing }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="label">Weight and Balance</td>
+                                <td class="value">: <strong>{{ aircraft.aircraftDetail[0]?.weightAndBalance }}</strong></td>
+                                <td class="label">AASL</td>
+                                <td class="value">: <strong>-</strong></td> <!-- Belum ada datanya -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="card-footer d-flex flex-wrap gap-2">
+        <a nz-button nzType="default" nzSize="default" [routerLink]="[ '../detail', aircraft.idAircraft ]">
+            <i nz-icon nzType="file-text" nzTheme="outline"></i> Details
+        </a>
+        <button nz-button nzType="default" nzSize="default">
+            <i nz-icon nzType="tool" nzTheme="outline"></i> Part Installed
+        </button>
+        <button nz-button nzType="default" nzSize="default">
+            <i nz-icon nzType="dashboard" nzTheme="outline"></i> Component Status
+        </button>
+        <button nz-button nzType="default" nzSize="default">
+            <i nz-icon nzType="schedule" nzTheme="outline"></i> Maintenance Program
+        </button>
+        <button nz-button nzType="default" nzSize="default">
+            <i nz-icon nzType="file-protect" nzTheme="outline"></i> AML
+        </button>
+        <button nz-button nzType="default" nzSize="default">
+            <i nz-icon nzType="file-done" nzTheme="outline"></i> RTI
+        </button>
+        <button nz-button nzType="primary" nzSize="default">
+            <i nz-icon nzType="bar-chart" nzTheme="outline"></i> Reports
+        </button>
+    </div>
+</div>
