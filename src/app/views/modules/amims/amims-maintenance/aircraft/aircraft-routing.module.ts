@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'; 
 import { AircraftListComponent } from './aircraft-list/aircraft-list.component';
 import { AirctatDetailComponent } from './airctat-detail/airctat-detail.component';
+import { ScheduleMaintenanceComponent } from './schedule-maintenance/schedule-maintenance.component';
 
 const routes: Routes = [
     {
@@ -16,6 +17,10 @@ const routes: Routes = [
     {
         path: 'detail/:id_aicraft',
         component: AirctatDetailComponent
+    },
+    {
+        path: 'schedule-maintenance/:id_aicraft',
+        component: ScheduleMaintenanceComponent
     },
 ];
 

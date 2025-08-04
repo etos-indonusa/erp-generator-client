@@ -147,6 +147,9 @@ export const AmimsAircraftDetailFormSchema = {
     "default": "",
     "required": false
   },
+  "idAircraft": {
+    "required": false
+  },
   "idAircraftDetail": {
     "required": true
   },

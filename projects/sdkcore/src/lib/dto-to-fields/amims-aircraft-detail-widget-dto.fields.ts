@@ -36,6 +36,7 @@ export const AmimsAircraftDetailWidgetDtoFields: Record<string, 'string' | 'bool
   "hfCommunication": "string",
   "homer": "string",
   "hoverCeilingOge": "string",
+  "idAircraft": "string",
   "idAircraftDetail": "string",
   "intercommunicationSystem": "string",
   "internalHoist": "string",

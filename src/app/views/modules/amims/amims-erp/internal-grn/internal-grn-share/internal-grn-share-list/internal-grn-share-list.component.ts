@@ -14,8 +14,8 @@ import { AmimsInternalGrnDto } from 'de-sdk-core';
 import { InternalGrnShareAddComponent } from '../internal-grn-share-add/internal-grn-share-add.component';
 import { InternalGrnShareDetailComponent } from '../internal-grn-share-detail/internal-grn-share-detail.component';
 import { SiteService } from 'de-sdk-core';
-import { UsersService } from 'de-sdk-core'; 
- 
+import { UsersService } from 'de-sdk-core';
+
 
 
 @Component({
@@ -29,13 +29,13 @@ export class InternalGrnShareListComponent {
     @Input('filter-extra') filter_extra = false;
     @Input('enable-crud') enable_crud = true;
     //untuak filter dari prent
-     
-    @Input('idSite') idSite: string | null  = null;
-     
-    @Input('idUser') idUser: string | null  = null;
-     
-    @Input('idUserAcc') idUserAcc: string | null  = null;
-    
+
+    @Input('idSite') idSite: string | null = null;
+
+    @Input('idUser') idUser: string | null = null;
+
+    @Input('idUserAcc') idUserAcc: string | null = null;
+
 
     constructor(
         private pesanService: PesanService,
@@ -47,9 +47,9 @@ export class InternalGrnShareListComponent {
         private internalGrnService: InternalGrnService,
         private tokenService: TokenService,
 
-                        private siteService: SiteService,
-                private usersService: UsersService, 
-                        private translate: TranslateService
+        private siteService: SiteService,
+        private usersService: UsersService,
+        private translate: TranslateService
     ) {
         translate.setDefaultLang('id');
         translate.use('id');
@@ -58,26 +58,23 @@ export class InternalGrnShareListComponent {
     ngOnChanges(changes: SimpleChanges): void {
         this.filter.status_internalGrn = this.status == 'semua' ? null : this.status;
 
-            
-           
-            if (changes.idSite)
-            {
-                this.filterSite.idSite = this.idSite
-            }
-            
-           
-            if (changes.idUser)
-            {
-                this.filterUser.idUser = this.idUser
-            }
-            
-           
-            if (changes.idUserAcc)
-            {
-                this.filterUserAcc.idUserAcc = this.idUserAcc
-            }
-            
-        
+
+
+        if (changes.idSite) {
+            this.filterSite.idSite = this.idSite
+        }
+
+
+        if (changes.idUser) {
+            this.filterUser.idUser = this.idUser
+        }
+
+
+        if (changes.idUserAcc) {
+            this.filterUserAcc.idUserAcc = this.idUserAcc
+        }
+
+
 
         this.searchData();
     }
@@ -87,55 +84,55 @@ export class InternalGrnShareListComponent {
         this.resetParam();
         this.loadColumnSettings();
 
-                            this.getAllSite();
-                    this.getAllUser();
-                    this.getAllUserAcc();
-                    }
+        this.getAllSite();
+        this.getAllUser();
+        this.getAllUserAcc();
+    }
 
-    
-    listSite: any[] = []; 
-    
-    listUser: any[] = []; 
-    
-    listUserAcc: any[] = []; 
-    
+
+    listSite: any[] = [];
+
+    listUser: any[] = [];
+
+    listUserAcc: any[] = [];
+
     //untuak filter dari prent
-    
-    filterSite:any = {} 
-    
-    filterUser:any = {} 
-    
-    filterUserAcc:any = {} 
-    
+
+    filterSite: any = {}
+
+    filterUser: any = {}
+
+    filterUserAcc: any = {}
+
 
     // untuk fungsi get ALL relation
-            getAllSite() {
-    this.siteService.siteControllerFindAll().subscribe(
-      data => this.listSite = data.data ?? []
-    );
-  }
-        getAllUser() {
-    this.usersService.usersControllerFindAll().subscribe(
-      data => this.listUser = data.data ?? []
-    );
-  }
-        getAllUserAcc() {
-            this.usersService.usersControllerFindAll().subscribe(
-      data => this.listUserAcc = data.data ?? []
-    );
-  }
-        
+    getAllSite() {
+        this.siteService.siteControllerFindAll().subscribe(
+            data => this.listSite = data.data ?? []
+        );
+    }
+    getAllUser() {
+        this.usersService.usersControllerFindAll().subscribe(
+            data => this.listUser = data.data ?? []
+        );
+    }
+    getAllUserAcc() {
+        this.usersService.usersControllerFindAll().subscribe(
+            data => this.listUserAcc = data.data ?? []
+        );
+    }
+
     currentUser: any = {};
     filter: any = {
-    dateAccRange: null,
-  dateGrnRange: null,
-  idSite: null,
-  idUser: null,
-  idUserAcc: null,
-  validasiMin: null,
-  validasiMax: null
+        dateAccRange: null,
+        dateGrnRange: null,
+        idSite: null,
+        idUser: null,
+        idUserAcc: null,
+        validasiMin: null,
+        validasiMax: null
     };
- 
+
     expandSet = new Set<string>();
     onExpandChange(id: string, checked: boolean): void {
         if (checked) {
@@ -153,8 +150,8 @@ export class InternalGrnShareListComponent {
     sortValue: string | null = 'desc';
     sortKey: string | null = 'created_at';
     search: string | null = null;
-    search_field: string[] = ["numberGrn","remark"];
- 
+    search_field: string[] = ["numberGrn", "remark"];
+
     breadCrumbItems = [{ label: 'List', active: false }];
 
     resetParam() {
@@ -165,12 +162,12 @@ export class InternalGrnShareListComponent {
         this.search = null;
         this.filter = {
             dateAccRange: null,
-  dateGrnRange: null,
-  idSite: null,
-  idUser: null,
-  idUserAcc: null,
-  validasiMin: null,
-  validasiMax: null
+            dateGrnRange: null,
+            idSite: null,
+            idUser: null,
+            idUserAcc: null,
+            validasiMin: null,
+            validasiMax: null
         };
         this.filter.status_internalGrn = this.status == 'semua' ? null : this.status;
     }
@@ -180,7 +177,7 @@ export class InternalGrnShareListComponent {
         this.searchData();
     }
 
-     get validSortValue(): 'asc' | 'desc' | undefined {
+    get validSortValue(): 'asc' | 'desc' | undefined {
         if (this.sortValue === 'asc') return 'asc';
         if (this.sortValue === 'desc') return 'desc';
         return undefined;
@@ -197,32 +194,32 @@ export class InternalGrnShareListComponent {
             body: {
                 filter: finalFilter,
                 joinWhere: [
-                                        {
+                    {
                         "site": this.filterSite, type: 'inner'
                     },
-                                        {
-                        "user": this.filterUser, type: 'inner'
-                    },
-                                        {
-                        "user_acc": this.filterUserAcc, type: 'inner'
-                    }
-                                        ],
+                    // {
+                    //     "user": this.filterUser, type: 'inner'
+                    // },
+                    // {
+                    //     "user_acc": this.filterUserAcc, type: 'inner'
+                    // }
+                ],
                 search_field: this.search_field,
                 search_keyword: this.search || undefined,
-                include:  [
-  {
-    "name": "site",
-    "type": "single"
-  },
-  {
-    "name": "user",
-    "type": "single"
-  },
-  {
-    "name": "user_acc",
-    "type": "single"
-  }
-],
+                include: [
+                    {
+                        "name": "site",
+                        "type": "single"
+                    },
+                    // {
+                    //     "name": "user",
+                    //     "type": "single"
+                    // },
+                    // {
+                    //     "name": "user_acc",
+                    //     "type": "single"
+                    // }
+                ],
                 sortKey: this.sortKey ?? undefined,
                 sortValue: this.validSortValue,
                 pageIndex: this.pageIndex,
@@ -274,17 +271,17 @@ export class InternalGrnShareListComponent {
         return backendFilter;
     }
 
-     // TABLE DINAMIS 
-    columns = [ 
-         { key: 'createdAt',  show: true },
-              { key: 'dateAcc',  show: true },
-              { key: 'dateGrn',  show: true },
-              { key: 'numberGrn',  show: true },
-              { key: 'remark',  show: true },
-              { key: 'statusGrn',  show: true },
-              { key: 'updatedAt',  show: true },
-              { key: 'validasi',  show: true },
-             
+    // TABLE DINAMIS 
+    columns = [
+        { key: 'createdAt', show: true },
+        { key: 'dateAcc', show: true },
+        { key: 'dateGrn', show: true },
+        { key: 'numberGrn', show: true },
+        { key: 'remark', show: true },
+        { key: 'statusGrn', show: true },
+        { key: 'updatedAt', show: true },
+        { key: 'validasi', show: true },
+
     ];
 
     isColVisible(key: string): boolean {
@@ -302,47 +299,47 @@ export class InternalGrnShareListComponent {
         const saved = localStorage.getItem('internalGrn_columns');
         if (saved) {
             try {
-            const parsed = JSON.parse(saved);
-            if (Array.isArray(parsed)) {
-                // Sinkronkan dengan default jika ada key yang hilang
-                this.columns.forEach((col, index) => {
-                const found = parsed.find((p: any) => p.key === col.key);
-                if (found) this.columns[index].show = found.show;
-                });
-            }
+                const parsed = JSON.parse(saved);
+                if (Array.isArray(parsed)) {
+                    // Sinkronkan dengan default jika ada key yang hilang
+                    this.columns.forEach((col, index) => {
+                        const found = parsed.find((p: any) => p.key === col.key);
+                        if (found) this.columns[index].show = found.show;
+                    });
+                }
             } catch (e) {
                 console.warn('Gagal parse internalGrn dari localStorage', e);
             }
         }
-        }
+    }
     // TABLE DINAMIS 
 
 
     add() {
-    if (!this.acl.can('internal-grn', 'can_add') || !this.enable_crud) return;
+        if (!this.acl.can('internal-grn', 'can_add') || !this.enable_crud) return;
 
         const drawerRef = this.drawerService.create<InternalGrnShareAddComponent, {}, string>({
             nzTitle: 'Add',
             nzContent: InternalGrnShareAddComponent,
-        nzWidth: (500) + 'px',
+            nzWidth: (500) + 'px',
         });
- 
+
         drawerRef.afterClose.subscribe(() => {
             this.searchData();
         });
     }
 
-     
 
-    detail(data:AmimsInternalGrnDto) {
+
+    detail(data: AmimsInternalGrnDto) {
         if (!this.acl.can('contract-site', 'can_list')) return;
 
         const drawerRef = this.drawerService.create<InternalGrnShareDetailComponent, {}, string>({
             nzTitle: 'Detail',
             nzContent: InternalGrnShareDetailComponent,
             nzWidth: (window.innerWidth * 0.8) + 'px',
-            nzContentParams:{
-                idInternalGrn:data.idInternalGrn
+            nzContentParams: {
+                idInternalGrn: data.idInternalGrn
             }
         });
 
@@ -351,8 +348,8 @@ export class InternalGrnShareListComponent {
         });
     }
 
-    update(data: any) {}
-    delete(id: string) {} 
+    update(data: any) { }
+    delete(id: string) { }
 
     print() {
         let url = environment.srv_document + '/pdfAkutansi/vouchers?filter=' + JSON.stringify(this.filter) + '&token=' + this.tokenService.getToken();

@@ -1,0 +1,25 @@
+<div>
+    <nz-table #sortTable [nzData]="simulatedList" [nzFrontPagination]="false" [nzScroll]="{ x: '1000px' }">
+        <thead>
+            <tr>
+                <th *ngFor="let column of listOfColumn" [nzSortFn]="column.compare" [nzSortPriority]="column.priority"
+                    [style.width]="column.width">
+                    {{ column.title }}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of sortTable.data">
+                <td nzWidth="100px">{{ data.keyword }}</td>
+                <td>{{ data.part_number }}</td>
+                <td>{{ data.sn }}</td>
+                <!-- <td><b>{{ data.code }}</b> {{ data.note_due }}</td> -->
+                <td>{{ data.to_due }} {{ data.variabel }}</td>
+                <td>{{ data.current_part }} {{ data.variabel }}</td>
+                <td>{{ data.totalDue }}</td>
+                <td>{{ data.due_at }}</td>
+                <td>{{ data.ramaining }}</td>
+            </tr>
+        </tbody>
+    </nz-table>
+</div>

@@ -147,6 +147,9 @@ export declare const AmimsAircraftDetailFormSchema: {
         default: string;
         required: boolean;
     };
+    idAircraft: {
+        required: boolean;
+    };
     idAircraftDetail: {
         required: boolean;
     };

@@ -36193,6 +36193,10 @@ const AmimsActypeFormSchema = {
 };
 
 const AmimsAircraftDetailReportFormSchema = {
+    "aircraft": {
+        "default": "",
+        "required": true
+    },
     "airworthiness": {
         "default": "",
         "required": false
@@ -36339,6 +36343,9 @@ const AmimsAircraftDetailReportFormSchema = {
     },
     "hoverCeilingOge": {
         "default": "",
+        "required": false
+    },
+    "idAircraft": {
         "required": false
     },
     "idAircraftDetail": {
@@ -36657,6 +36664,9 @@ const AmimsAircraftDetailWidgetFormSchema = {
     },
     "hoverCeilingOge": {
         "default": "",
+        "required": false
+    },
+    "idAircraft": {
         "required": false
     },
     "idAircraftDetail": {
@@ -36979,6 +36989,9 @@ const AmimsAircraftDetailFormSchema = {
     },
     "hoverCeilingOge": {
         "default": "",
+        "required": false
+    },
+    "idAircraft": {
         "required": false
     },
     "idAircraftDetail": {
@@ -56972,6 +56985,7 @@ const AmimsAircraftDetailDtoFields = {
     "hfCommunication": "string",
     "homer": "string",
     "hoverCeilingOge": "string",
+    "idAircraft": "string",
     "idAircraftDetail": "string",
     "intercommunicationSystem": "string",
     "internalHoist": "string",
@@ -57017,6 +57031,7 @@ const AmimsAircraftDetailDtoFields = {
 };
 
 const AmimsAircraftDetailReportDtoFields = {
+    "aircraft": "string",
     "airworthiness": "string",
     "autoPilot": "string",
     "auxiliaryTank": "string",
@@ -57054,6 +57069,7 @@ const AmimsAircraftDetailReportDtoFields = {
     "hfCommunication": "string",
     "homer": "string",
     "hoverCeilingOge": "string",
+    "idAircraft": "string",
     "idAircraftDetail": "string",
     "intercommunicationSystem": "string",
     "internalHoist": "string",
@@ -57136,6 +57152,7 @@ const AmimsAircraftDetailWidgetDtoFields = {
     "hfCommunication": "string",
     "homer": "string",
     "hoverCeilingOge": "string",
+    "idAircraft": "string",
     "idAircraftDetail": "string",
     "intercommunicationSystem": "string",
     "internalHoist": "string",

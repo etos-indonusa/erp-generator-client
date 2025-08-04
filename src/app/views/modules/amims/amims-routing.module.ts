@@ -5,7 +5,7 @@ const routes: Routes = [
     { path: '', redirectTo: 'amims-master', pathMatch: 'full' },
 
     // amims-master
-    { path: 'amims-master', loadChildren: () => import('./amims-master/amims-master.module').then(m => m.AmimsMasterModule) },
+    // { path: 'amims-master', loadChildren: () => import('./amims-master/amims-master.module').then(m => m.AmimsMasterModule) },
 
     // amims-erp
     // { path: 'amims-erp', loadChildren: () => import('./amims-erp/amims-erp.module').then(m => m.AmimsErpModule) },
@@ -14,7 +14,7 @@ const routes: Routes = [
     { path: 'amims-maintenance', loadChildren: () => import('./amims-maintenance/amims-maintenance.module').then(m => m.AmimsMaintenanceModule) },
 
     // amims-maintenance
-    { path: 'amims-inventory', loadChildren: () => import('./amims-inventory/amims-inventory.module').then(m => m.AmimsInventoryModule) } 
+    // { path: 'amims-inventory', loadChildren: () => import('./amims-inventory/amims-inventory.module').then(m => m.AmimsInventoryModule) } 
 
 
 

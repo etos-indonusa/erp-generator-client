@@ -2,7 +2,7 @@
   "version": "v1",
   "packages": {
     "de-sdk-core": {
-      "signature": "3f03c5cde92bb68101efda42e1952f85",
+      "signature": "c52bb00b84bef77559ef902e691c6389",
       "file": true,
       "replaced": "link:.yalc/de-sdk-core"
     }

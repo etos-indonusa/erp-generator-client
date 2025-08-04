@@ -1,4 +1,8 @@
 export const AmimsAircraftDetailReportFormSchema = {
+  "aircraft": {
+    "default": "",
+    "required": true
+  },
   "airworthiness": {
     "default": "",
     "required": false
@@ -145,6 +149,9 @@ export const AmimsAircraftDetailReportFormSchema = {
   },
   "hoverCeilingOge": {
     "default": "",
+    "required": false
+  },
+  "idAircraft": {
     "required": false
   },
   "idAircraftDetail": {

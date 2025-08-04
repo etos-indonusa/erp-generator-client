@@ -1,0 +1,33 @@
+<div *ngFor="let item of monthLabels">
+    <h4>{{ item }}</h4>
+    <nz-table [nzData]="simulatedListGrouped[item]" [nzScroll]="{ x: '1000px' }" [nzFrontPagination]="false"
+        [nzSize]="'small'">
+        <thead>
+            <tr>
+                <th *ngFor="let column of listOfColumn" [nzSortFn]="column.compare" [nzSortPriority]="column.priority"
+                    [style.width]="column.width">
+                    {{ column.title }}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let row of simulatedListGrouped[item]">
+
+                <tr>
+                    <td>{{ row.keyword }}</td>
+                    <td>{{ row.part_number }}</td>
+                    <td>{{ row.sn }}</td>
+                    <td>{{ row.to_due }} {{ row.variabel }}</td>
+                    <td>{{ row.current_part }} {{ row.variabel }}</td>
+                    <td>{{ row.totalDue  }}</td>
+                    <td>{{ row.next_at_install }}</td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="4">{{ row.note_due }}</td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </nz-table>
+</div>

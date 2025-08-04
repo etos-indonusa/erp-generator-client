@@ -1,4 +1,8 @@
 export declare const AmimsAircraftDetailReportFormSchema: {
+    aircraft: {
+        default: string;
+        required: boolean;
+    };
     airworthiness: {
         default: string;
         required: boolean;
@@ -145,6 +149,9 @@ export declare const AmimsAircraftDetailReportFormSchema: {
     };
     hoverCeilingOge: {
         default: string;
+        required: boolean;
+    };
+    idAircraft: {
         required: boolean;
     };
     idAircraftDetail: {

@@ -1,4 +1,5 @@
 export const AmimsAircraftDetailReportDtoFields: Record<string, 'string' | 'boolean' | 'number'> = {
+  "aircraft": "string",
   "airworthiness": "string",
   "autoPilot": "string",
   "auxiliaryTank": "string",
@@ -36,6 +37,7 @@ export const AmimsAircraftDetailReportDtoFields: Record<string, 'string' | 'bool
   "hfCommunication": "string",
   "homer": "string",
   "hoverCeilingOge": "string",
+  "idAircraft": "string",
   "idAircraftDetail": "string",
   "intercommunicationSystem": "string",
   "internalHoist": "string",
