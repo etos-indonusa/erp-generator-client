@@ -14,26 +14,32 @@ export const MENU: MenuItem[] = [
         label: 'IN Apps',
         isTitle: true
     }
-    ,{
+
+
+
+    , {
+        label: 'VDueListOutput',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/v-due-list-output',
+    }
+
+
+    , {
         label: 'Inspection',
         icon: 'message-square',
         link: '/app/amims/inspection',
     }
-    ,{
+    , {
         label: 'EngineerRti',
         icon: 'message-square',
         link: '/app/amims/engineer-rti',
     }
-    ,{
+    , {
         label: 'DueList',
         icon: 'message-square',
         link: '/app/amims/due-list',
     }
-    ,{
-        label: 'DueList',
-        icon: 'message-square',
-        link: '/app/amims/due-list',
-    }
+
     ,
 
     // Inventory
@@ -153,7 +159,7 @@ export const MENU: MenuItem[] = [
         icon: 'message-square',
         link: '/app/amims/amims-maintenance/aircraft',
     }
-  
+
     , {
         label: 'due-list',
         icon: 'message-square',
@@ -169,7 +175,7 @@ export const MENU: MenuItem[] = [
         icon: 'message-square',
         link: '/app/amims/amims-maintenance/engineer-rti',
     }
-     
+
     , {
         label: 'inspection',
         icon: 'message-square',

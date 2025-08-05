@@ -4,11 +4,10 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsMpcJoFormSchema } from 'de-sdk-core'; 
-import type  { AmimsMpcJoDto } from 'de-sdk-core';
+import { AmimsMpcJoFormSchema } from 'de-sdk-core';
+import type { AmimsMpcJoDto } from 'de-sdk-core';
 import { MpcJoService } from 'de-sdk-core';
 
-import { DueListService } from 'de-sdk-core';
 import { MaintenanceService } from 'de-sdk-core';
 import { PartService } from 'de-sdk-core';
 import { TechLogService } from 'de-sdk-core';
@@ -22,13 +21,13 @@ import { UsersService } from 'de-sdk-core';
 })
 export class MpcJoShareAddComponent {
     @Input('mpcJo') mpcJo: AmimsMpcJoDto = {
-  idMpcJo: ''
-};
+        idMpcJo: ''
+    };
     form!: FormGroup;
 
     ngOnChanges(changes: SimpleChanges): void {
-        if(changes.mpcJo && this.mpcJo.idMpcJo) {
-        this.form?.patchValue(this.mpcJo);
+        if (changes.mpcJo && this.mpcJo.idMpcJo) {
+            this.form?.patchValue(this.mpcJo);
         }
     }
     constructor(
@@ -36,73 +35,67 @@ export class MpcJoShareAddComponent {
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
         private mpcJoService: MpcJoService,
-                        private dueListService: DueListService,
-                private maintenanceService: MaintenanceService,
-                private partService: PartService,
-                private techLogService: TechLogService,
-                private typeOfworkService: TypeOfworkService,
-                private usersService: UsersService,
-                    ) { }
+        private maintenanceService: MaintenanceService,
+        private partService: PartService,
+        private techLogService: TechLogService,
+        private typeOfworkService: TypeOfworkService,
+        private usersService: UsersService,
+    ) { }
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, AmimsMpcJoFormSchema, {
             kodeMpcJo: [Validators.minLength(3), Validators.maxLength(3)],
             catatan: [Validators.maxLength(200)],
-        },'MpcJo');
+        }, 'MpcJo');
+ 
+        this.getAllMaintenance();
+        this.getAllPart();
+        this.getAllTechLog();
+        this.getAllTypeOfwork();
+        this.getAllUser();
+    }
 
-                            this.getAllDueList();
-                    this.getAllMaintenance();
-                    this.getAllPart();
-                    this.getAllTechLog();
-                    this.getAllTypeOfwork();
-                    this.getAllUser();
-                    }
-    
     listDueList: any[] = [];
-    
+
     listMaintenance: any[] = [];
-    
+
     listPart: any[] = [];
-    
+
     listTechLog: any[] = [];
-    
+
     listTypeOfwork: any[] = [];
-    
+
     listUser: any[] = [];
-    
+
 
     // untuk fungsi get ALL relation
-            getAllDueList() {
-    this.dueListService.dueListControllerFindAll().subscribe(
-      data => this.listDueList = data.data ?? []
-    );
-  }
-        getAllMaintenance() {
-    this.maintenanceService.maintenanceControllerFindAll().subscribe(
-      data => this.listMaintenance = data.data ?? []
-    );
-  }
-        getAllPart() {
-    this.partService.partControllerFindAll().subscribe(
-      data => this.listPart = data.data ?? []
-    );
-  }
-        getAllTechLog() {
-    this.techLogService.techLogControllerFindAll().subscribe(
-      data => this.listTechLog = data.data ?? []
-    );
-  }
-        getAllTypeOfwork() {
-    this.typeOfworkService.typeOfworkControllerFindAll().subscribe(
-      data => this.listTypeOfwork = data.data ?? []
-    );
-  }
-        getAllUser() {
-    this.usersService.usersControllerFindAll().subscribe(
-      data => this.listUser = data.data ?? []
-    );
-  }
-        
+  
+    getAllMaintenance() {
+        this.maintenanceService.maintenanceControllerFindAll().subscribe(
+            data => this.listMaintenance = data.data ?? []
+        );
+    }
+    getAllPart() {
+        this.partService.partControllerFindAll().subscribe(
+            data => this.listPart = data.data ?? []
+        );
+    }
+    getAllTechLog() {
+        this.techLogService.techLogControllerFindAll().subscribe(
+            data => this.listTechLog = data.data ?? []
+        );
+    }
+    getAllTypeOfwork() {
+        this.typeOfworkService.typeOfworkControllerFindAll().subscribe(
+            data => this.listTypeOfwork = data.data ?? []
+        );
+    }
+    getAllUser() {
+        this.usersService.usersControllerFindAll().subscribe(
+            data => this.listUser = data.data ?? []
+        );
+    }
+
     submit(): void {
         const labelMap = extractLabels(AmimsMpcJoFormSchema);
 

@@ -8,7 +8,7 @@ export interface ToolsWorkflowStepDto {
     messageBefore?: string;
     ruleJson?: string;
     statusFrom: string;
-    statusRejectTo?: string;
+    statusRejectTo?: number;
     statusTo: string;
     triggerJson?: string;
     updatedAt?: string;

@@ -372,23 +372,23 @@
                         <th class="text-center">TSO</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody *ngFor="let item of data.partAirframe">
                     <tr>
                         <td><strong>Cycles</strong></td>
-                        <td class="text-center">{{ tableData.cycles.tsn }}</td>
-                        <td class="text-center">{{ tableData.cycles.tso }}</td>
+                        <td class="text-center">{{ item.tsnCycle }}</td>
+                        <td class="text-center">{{ item.tsoCycle }}</td>
                     </tr>
                     <tr>
                         <td><strong>Hours</strong></td>
-                        <td class="text-center">{{ tableData.hours.tsn }}</td>
-                        <td class="text-center">{{ tableData.hours.tso }}</td>
+                        <td class="text-center">{{ item.tsnHours }}</td>
+                        <td class="text-center">{{ item.tsoHours }}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-    <div nz-col class="gutter-row" [nzSpan]="8">
-        <h6 class="mt-1">ENGINE #1</h6>
+    <div nz-col class="gutter-row" [nzSpan]="8" *ngFor="let item of data.partEngine; let i = index">
+        <h6 class="mt-1">ENGINE #{{ i+1 }}</h6>
         <div class="table-responsive">
             <table class="table tsn-tso-table">
                 <thead>
@@ -401,42 +401,17 @@
                 <tbody>
                     <tr>
                         <td><strong>Cycles</strong></td>
-                        <td class="text-center">{{ tableData.cycles.tsn }}</td>
-                        <td class="text-center">{{ tableData.cycles.tso }}</td>
+                        <td class="text-center">{{ item?.part?.tsnCycle }}</td>
+                        <td class="text-center">{{ item?.part?.tsoCycle }}</td>
                     </tr>
                     <tr>
                         <td><strong>Hours</strong></td>
-                        <td class="text-center">{{ tableData.hours.tsn }}</td>
-                        <td class="text-center">{{ tableData.hours.tso }}</td>
+                        <td class="text-center">{{ item?.part?.tsnHours }}</td>
+                        <td class="text-center">{{ item?.part?.tsoHours }}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-    <div nz-col class="gutter-row" [nzSpan]="8">
-        <h6 class="mt-1">ENGINE #2</h6>
-        <div class="table-responsive">
-            <table class="table tsn-tso-table">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th class="text-center">TSN</th>
-                        <th class="text-center">TSO</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Cycles</strong></td>
-                        <td class="text-center">{{ tableData.cycles.tsn }}</td>
-                        <td class="text-center">{{ tableData.cycles.tso }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Hours</strong></td>
-                        <td class="text-center">{{ tableData.hours.tsn }}</td>
-                        <td class="text-center">{{ tableData.hours.tso }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+     
 </div>

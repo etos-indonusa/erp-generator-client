@@ -57,9 +57,6 @@ import { CurrencyService } from './services/currency.service';
 import { CurrencyReportService } from './services/currency-report.service';
 import { CurrencyWidgetService } from './services/currency-widget.service';
 import { DoctypeService } from './services/doctype.service';
-import { DueListService } from './services/due-list.service';
-import { DueListReportService } from './services/due-list-report.service';
-import { DueListWidgetService } from './services/due-list-widget.service';
 import { DueListOutputService } from './services/due-list-output.service';
 import { DueListOutputReportService } from './services/due-list-output-report.service';
 import { DueListOutputWidgetService } from './services/due-list-output-widget.service';
@@ -305,6 +302,9 @@ import { McurrencyService } from './services/mcurrency.service';
 import { StockService } from './services/stock.service';
 import { StockReportService } from './services/stock-report.service';
 import { StockWidgetService } from './services/stock-widget.service';
+import { VDueListOutputService } from './services/v-due-list-output.service';
+import { VDueListOutputReportService } from './services/v-due-list-output-report.service';
+import { VDueListOutputWidgetService } from './services/v-due-list-output-widget.service';
 
 /**
  * Module that provides all services and configuration.
@@ -365,9 +365,6 @@ import { StockWidgetService } from './services/stock-widget.service';
     CurrencyReportService,
     CurrencyWidgetService,
     DoctypeService,
-    DueListService,
-    DueListReportService,
-    DueListWidgetService,
     DueListOutputService,
     DueListOutputReportService,
     DueListOutputWidgetService,
@@ -613,6 +610,9 @@ import { StockWidgetService } from './services/stock-widget.service';
     StockService,
     StockReportService,
     StockWidgetService,
+    VDueListOutputService,
+    VDueListOutputReportService,
+    VDueListOutputWidgetService,
     ApiConfiguration
   ],
 })

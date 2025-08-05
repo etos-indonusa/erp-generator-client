@@ -16,7 +16,7 @@ import { PartInstallShareDetailComponent } from '../part-install-share-detail/pa
 import { AircraftService } from 'de-sdk-core';
 import { EngineerPrisItemService } from 'de-sdk-core';
 import { PartService } from 'de-sdk-core';
- 
+
 
 
 @Component({
@@ -30,13 +30,13 @@ export class PartInstallShareListComponent {
     @Input('filter-extra') filter_extra = false;
     @Input('enable-crud') enable_crud = true;
     //untuak filter dari prent
-     
-    @Input('idAircraft') idAircraft: string | null  = null;
-     
-    @Input('idEngineerPrisItem') idEngineerPrisItem: string | null  = null;
-     
-    @Input('idPart') idPart: string | null  = null;
-    
+
+    @Input('idAircraft') idAircraft: string | null = null;
+
+    @Input('idEngineerPrisItem') idEngineerPrisItem: string | null = null;
+
+    @Input('idPart') idPart: string | null = null;
+
 
     constructor(
         private pesanService: PesanService,
@@ -48,10 +48,10 @@ export class PartInstallShareListComponent {
         private partInstallService: PartInstallService,
         private tokenService: TokenService,
 
-                        private aircraftService: AircraftService,
-                private engineerPrisItemService: EngineerPrisItemService,
-                private partService: PartService,
-                        private translate: TranslateService
+        private aircraftService: AircraftService,
+        private engineerPrisItemService: EngineerPrisItemService,
+        private partService: PartService,
+        private translate: TranslateService
     ) {
         translate.setDefaultLang('id');
         translate.use('id');
@@ -60,28 +60,25 @@ export class PartInstallShareListComponent {
     ngOnChanges(changes: SimpleChanges): void {
         this.filter.status_partInstall = this.status == 'semua' ? null : this.status;
 
-            
-           
-            if (changes.idAircraft)
-            {
-                this.filterAircraft.idAircraft = this.idAircraft
-            }
-            
-           
-            if (changes.idEngineerPrisItem)
-            {
-                this.filterEngineerPrisItem.idEngineerPrisItem = this.idEngineerPrisItem
-            }
-            
-           
-            if (changes.idPart)
-            {
-                this.filterPart.idPart = this.idPart
-            }
-            
-        
 
-        this.searchData();
+
+        if (changes.idAircraft) {
+            this.filterAircraft.idAircraft = this.idAircraft
+        }
+
+
+        if (changes.idEngineerPrisItem) {
+            this.filterEngineerPrisItem.idEngineerPrisItem = this.idEngineerPrisItem
+        }
+
+
+        if (changes.idPart) {
+            this.filterPart.idPart = this.idPart
+        }
+
+
+
+        // this.searchData();
     }
 
     ngOnInit(): void {
@@ -89,77 +86,66 @@ export class PartInstallShareListComponent {
         this.resetParam();
         this.loadColumnSettings();
 
-                            this.getAllAircraft();
-                    this.getAllEngineerPrisItem();
-                    this.getAllPart();
-                    }
+        this.getAllAircraft(); 
+    }
 
-    
-    listAircraft: any[] = []; 
-    
-    listEngineerPrisItem: any[] = []; 
-    
-    listPart: any[] = []; 
-    
+
+    listAircraft: any[] = [];
+
+    listEngineerPrisItem: any[] = [];
+
+    listPart: any[] = [];
+
     //untuak filter dari prent
-    
-    filterAircraft:any = {} 
-    
-    filterEngineerPrisItem:any = {} 
-    
-    filterPart:any = {} 
-    
+
+    filterAircraft: any = {}
+
+    filterEngineerPrisItem: any = {}
+
+    filterPart: any = {}
+
 
     // untuk fungsi get ALL relation
-            getAllAircraft() {
-    this.aircraftService.aircraftControllerFindAll().subscribe(
-      data => this.listAircraft = data.data ?? []
-    );
-  }
-        getAllEngineerPrisItem() {
-    this.engineerPrisItemService.engineerPrisItemControllerFindAll().subscribe(
-      data => this.listEngineerPrisItem = data.data ?? []
-    );
-  }
-        getAllPart() {
-    this.partService.partControllerFindAll().subscribe(
-      data => this.listPart = data.data ?? []
-    );
-  }
-        
+    getAllAircraft() {
+        this.aircraftService.aircraftControllerFindAll().subscribe(
+            data => this.listAircraft = data.data ?? []
+        );
+    }
+    
+
     currentUser: any = {};
     filter: any = {
-    dateInstallRange: null,
-  dueOverhaulCMin: null,
-  dueOverhaulCMax: null,
-  dueOverhaulHMin: null,
-  dueOverhaulHMax: null,
-  dueOverhaulValueMin: null,
-  dueOverhaulValueMax: null,
-  idAircraft: null,
-  idEngineerPrisItem: null,
-  idPart: null,
-  installedOverhaulCMin: null,
-  installedOverhaulCMax: null,
-  installedOverhaulHMin: null,
-  installedOverhaulHMax: null,
-  installedOverhaulValueMin: null,
-  installedOverhaulValueMax: null,
-  installedParentCMin: null,
-  installedParentCMax: null,
-  installedParentHMin: null,
-  installedParentHMax: null,
-  installedParentValueMin: null,
-  installedParentValueMax: null,
-  installedTsnCMin: null,
-  installedTsnCMax: null,
-  installedTsnHMin: null,
-  installedTsnHMax: null,
-  isfeatured: null,
-  qtyInstallMin: null,
-  qtyInstallMax: null
+        dateInstallRange: null,
+        dueOverhaulCMin: null,
+        dueOverhaulCMax: null,
+        dueOverhaulHMin: null,
+        dueOverhaulHMax: null,
+        dueOverhaulValueMin: null,
+        dueOverhaulValueMax: null,
+        idAircraft: null,
+        idEngineerPrisItem: null,
+        idPart: null,
+        installedOverhaulCMin: null,
+        installedOverhaulCMax: null,
+        installedOverhaulHMin: null,
+        installedOverhaulHMax: null,
+        installedOverhaulValueMin: null,
+        installedOverhaulValueMax: null,
+        installedParentCMin: null,
+        installedParentCMax: null,
+        installedParentHMin: null,
+        installedParentHMax: null,
+        installedParentValueMin: null,
+        installedParentValueMax: null,
+        installedTsnCMin: null,
+        installedTsnCMax: null,
+        installedTsnHMin: null,
+        installedTsnHMax: null,
+        isfeatured: null,
+        qtyInstallMin: null,
+        qtyInstallMax: null
     };
- 
+
     expandSet = new Set<string>();
     onExpandChange(id: string, checked: boolean): void {
         if (checked) {
@@ -177,8 +163,8 @@ export class PartInstallShareListComponent {
     sortValue: string | null = 'desc';
     sortKey: string | null = 'created_at';
     search: string | null = null;
-    search_field: string[] = ["bin","figureIndex","isfeatured","itemIndex","newParen","oldId","oldIdPart","oldParent","onPris","parent","topParent"];
- 
+    search_field: string[] = ["bin", "figureIndex", "isfeatured", "itemIndex", "newParen", "oldId", "oldIdPart", "oldParent", "onPris", "parent", "topParent"];
+
     breadCrumbItems = [{ label: 'List', active: false }];
 
     resetParam() {
@@ -189,34 +175,34 @@ export class PartInstallShareListComponent {
         this.search = null;
         this.filter = {
             dateInstallRange: null,
-  dueOverhaulCMin: null,
-  dueOverhaulCMax: null,
-  dueOverhaulHMin: null,
-  dueOverhaulHMax: null,
-  dueOverhaulValueMin: null,
-  dueOverhaulValueMax: null,
-  idAircraft: null,
-  idEngineerPrisItem: null,
-  idPart: null,
-  installedOverhaulCMin: null,
-  installedOverhaulCMax: null,
-  installedOverhaulHMin: null,
-  installedOverhaulHMax: null,
-  installedOverhaulValueMin: null,
-  installedOverhaulValueMax: null,
-  installedParentCMin: null,
-  installedParentCMax: null,
-  installedParentHMin: null,
-  installedParentHMax: null,
-  installedParentValueMin: null,
-  installedParentValueMax: null,
-  installedTsnCMin: null,
-  installedTsnCMax: null,
-  installedTsnHMin: null,
-  installedTsnHMax: null,
-  isfeatured: null,
-  qtyInstallMin: null,
-  qtyInstallMax: null
+            dueOverhaulCMin: null,
+            dueOverhaulCMax: null,
+            dueOverhaulHMin: null,
+            dueOverhaulHMax: null,
+            dueOverhaulValueMin: null,
+            dueOverhaulValueMax: null,
+            idAircraft: this.idAircraft,
+            idEngineerPrisItem: null,
+            idPart: null,
+            installedOverhaulCMin: null,
+            installedOverhaulCMax: null,
+            installedOverhaulHMin: null,
+            installedOverhaulHMax: null,
+            installedOverhaulValueMin: null,
+            installedOverhaulValueMax: null,
+            installedParentCMin: null,
+            installedParentCMax: null,
+            installedParentHMin: null,
+            installedParentHMax: null,
+            installedParentValueMin: null,
+            installedParentValueMax: null,
+            installedTsnCMin: null,
+            installedTsnCMax: null,
+            installedTsnHMin: null,
+            installedTsnHMax: null,
+            isfeatured: null,
+            qtyInstallMin: null,
+            qtyInstallMax: null
         };
         this.filter.status_partInstall = this.status == 'semua' ? null : this.status;
     }
@@ -226,7 +212,7 @@ export class PartInstallShareListComponent {
         this.searchData();
     }
 
-     get validSortValue(): 'asc' | 'desc' | undefined {
+    get validSortValue(): 'asc' | 'desc' | undefined {
         if (this.sortValue === 'asc') return 'asc';
         if (this.sortValue === 'desc') return 'desc';
         return undefined;
@@ -243,32 +229,23 @@ export class PartInstallShareListComponent {
             body: {
                 filter: finalFilter,
                 joinWhere: [
-                                        {
-                        "aircraft": this.filterAircraft, type: 'inner'
-                    },
-                                        {
-                        "engineer_pris_item": this.filterEngineerPrisItem, type: 'inner'
-                    },
-                                        {
+                    {
                         "part": this.filterPart, type: 'inner'
                     }
-                                        ],
+                ],
                 search_field: this.search_field,
                 search_keyword: this.search || undefined,
-                include:  [
-  {
-    "name": "aircraft",
-    "type": "single"
-  },
-  {
-    "name": "engineer_pris_item",
-    "type": "single"
-  },
-  {
-    "name": "part",
-    "type": "single"
-  }
-],
+                include: [
+
+                    {
+                        "name": "part",
+                        "type": "single"
+                    }, {
+                        "name": "mpart",
+                        "to": "part",
+                        "type": "single"
+                    },
+                ],
                 sortKey: this.sortKey ?? undefined,
                 sortValue: this.validSortValue,
                 pageIndex: this.pageIndex,
@@ -320,37 +297,36 @@ export class PartInstallShareListComponent {
         return backendFilter;
     }
 
-     // TABLE DINAMIS 
-    columns = [ 
-         { key: 'bin',  show: true },
-              { key: 'createdAt',  show: true },
-              { key: 'dateInstall',  show: true },
-              { key: 'dueOverhaulC',  show: true },
-              { key: 'dueOverhaulH',  show: true },
-              { key: 'dueOverhaulValue',  show: true },
-              { key: 'figureIndex',  show: true },
-              { key: 'installedOverhaulC',  show: true },
-              { key: 'installedOverhaulH',  show: true },
-              { key: 'installedOverhaulValue',  show: true },
-              { key: 'installedParentC',  show: true },
-              { key: 'installedParentH',  show: true },
-              { key: 'installedParentValue',  show: true },
-              { key: 'installedTsnC',  show: true },
-              { key: 'installedTsnH',  show: true },
-              { key: 'isfeatured',  show: true },
-              { key: 'itemIndex',  show: true },
-              { key: 'newParen',  show: true },
-              { key: 'oldId',  show: true },
-              { key: 'oldIdPart',  show: true },
-              { key: 'oldParent',  show: true },
-              { key: 'onPris',  show: true },
-              { key: 'parent',  show: true },
-              { key: 'qtyInstall',  show: true },
-              { key: 'refTechLog',  show: true },
-              { key: 'statusInstall',  show: true },
-              { key: 'topParent',  show: true },
-              { key: 'updatedAt',  show: true },
-             
+    // TABLE DINAMIS 
+    columns = [
+        { key: 'bin', show: false },
+        { key: 'createdAt', show: false },
+        { key: 'dateInstall', show: true },
+        { key: 'dueOverhaulC', show: false },
+        { key: 'dueOverhaulH', show: false },
+        { key: 'dueOverhaulValue', show: false },
+        { key: 'figureIndex', show: false },
+        { key: 'installedOverhaulC', show: false },
+        { key: 'installedOverhaulH', show: false },
+        { key: 'installedOverhaulValue', show: false },
+        { key: 'installedParentC', show: false },
+        { key: 'installedParentH', show: false },
+        { key: 'installedParentValue', show: false },
+        { key: 'installedTsnC', show: false },
+        { key: 'installedTsnH', show: false },
+        { key: 'isfeatured', show: false },
+        { key: 'itemIndex', show: false },
+        { key: 'newParen', show: false },
+        { key: 'oldId', show: false },
+        { key: 'oldIdPart', show: false },
+        { key: 'oldParent', show: false },
+        { key: 'onPris', show: true },
+        { key: 'parent', show: false },
+        { key: 'qtyInstall', show: false },
+        { key: 'refTechLog', show: false },
+        { key: 'statusInstall', show: false },
+        { key: 'topParent', show: false },
+        { key: 'updatedAt', show: false },
     ];
 
     isColVisible(key: string): boolean {
@@ -368,47 +344,47 @@ export class PartInstallShareListComponent {
         const saved = localStorage.getItem('partInstall_columns');
         if (saved) {
             try {
-            const parsed = JSON.parse(saved);
-            if (Array.isArray(parsed)) {
-                // Sinkronkan dengan default jika ada key yang hilang
-                this.columns.forEach((col, index) => {
-                const found = parsed.find((p: any) => p.key === col.key);
-                if (found) this.columns[index].show = found.show;
-                });
-            }
+                const parsed = JSON.parse(saved);
+                if (Array.isArray(parsed)) {
+                    // Sinkronkan dengan default jika ada key yang hilang
+                    this.columns.forEach((col, index) => {
+                        const found = parsed.find((p: any) => p.key === col.key);
+                        if (found) this.columns[index].show = found.show;
+                    });
+                }
             } catch (e) {
                 console.warn('Gagal parse partInstall dari localStorage', e);
             }
         }
-        }
+    }
     // TABLE DINAMIS 
 
 
     add() {
-    if (!this.acl.can('part-install', 'can_add') || !this.enable_crud) return;
+        if (!this.acl.can('part-install', 'can_add') || !this.enable_crud) return;
 
         const drawerRef = this.drawerService.create<PartInstallShareAddComponent, {}, string>({
             nzTitle: 'Add',
             nzContent: PartInstallShareAddComponent,
-        nzWidth: (500) + 'px',
+            nzWidth: (500) + 'px',
         });
- 
+
         drawerRef.afterClose.subscribe(() => {
             this.searchData();
         });
     }
 
-     
 
-    detail(data:AmimsPartInstallDto) {
+
+    detail(data: AmimsPartInstallDto) {
         if (!this.acl.can('contract-site', 'can_list')) return;
 
         const drawerRef = this.drawerService.create<PartInstallShareDetailComponent, {}, string>({
             nzTitle: 'Detail',
             nzContent: PartInstallShareDetailComponent,
             nzWidth: (window.innerWidth * 0.8) + 'px',
-            nzContentParams:{
-                idPartInstall:data.idPartInstall
+            nzContentParams: {
+                idPartInstall: data.idPartInstall
             }
         });
 
@@ -417,8 +393,8 @@ export class PartInstallShareListComponent {
         });
     }
 
-    update(data: any) {}
-    delete(id: string) {} 
+    update(data: any) { }
+    delete(id: string) { }
 
     print() {
         let url = environment.srv_document + '/pdfAkutansi/vouchers?filter=' + JSON.stringify(this.filter) + '&token=' + this.tokenService.getToken();

@@ -13,13 +13,12 @@ import { MpcJoReportService, MpcJoService } from 'de-sdk-core';
 import { AmimsMpcJoDto } from 'de-sdk-core';
 import { MpcJoShareAddComponent } from '../mpc-jo-share-add/mpc-jo-share-add.component';
 import { MpcJoShareDetailComponent } from '../mpc-jo-share-detail/mpc-jo-share-detail.component';
-import { DueListService } from 'de-sdk-core';
 import { MaintenanceService } from 'de-sdk-core';
 import { PartService } from 'de-sdk-core';
 import { TechLogService } from 'de-sdk-core';
 import { TypeOfworkService } from 'de-sdk-core';
 import { UsersService } from 'de-sdk-core';
- 
+
 
 
 @Component({
@@ -33,19 +32,19 @@ export class MpcJoShareListComponent {
     @Input('filter-extra') filter_extra = false;
     @Input('enable-crud') enable_crud = true;
     //untuak filter dari prent
-     
-    @Input('idDueList') idDueList: string | null  = null;
-     
-    @Input('idMaintenance') idMaintenance: string | null  = null;
-     
-    @Input('idPart') idPart: string | null  = null;
-     
-    @Input('idTechLog') idTechLog: string | null  = null;
-     
-    @Input('idTypeOfwork') idTypeOfwork: string | null  = null;
-     
-    @Input('idUser') idUser: string | null  = null;
-    
+
+    @Input('idDueList') idDueList: string | null = null;
+
+    @Input('idMaintenance') idMaintenance: string | null = null;
+
+    @Input('idPart') idPart: string | null = null;
+
+    @Input('idTechLog') idTechLog: string | null = null;
+
+    @Input('idTypeOfwork') idTypeOfwork: string | null = null;
+
+    @Input('idUser') idUser: string | null = null;
+
 
     constructor(
         private pesanService: PesanService,
@@ -57,13 +56,12 @@ export class MpcJoShareListComponent {
         private mpcJoService: MpcJoService,
         private tokenService: TokenService,
 
-                        private dueListService: DueListService,
-                private maintenanceService: MaintenanceService,
-                private partService: PartService,
-                private techLogService: TechLogService,
-                private typeOfworkService: TypeOfworkService,
-                private usersService: UsersService,
-                        private translate: TranslateService
+        private maintenanceService: MaintenanceService,
+        private partService: PartService,
+        private techLogService: TechLogService,
+        private typeOfworkService: TypeOfworkService,
+        private usersService: UsersService,
+        private translate: TranslateService
     ) {
         translate.setDefaultLang('id');
         translate.use('id');
@@ -72,44 +70,38 @@ export class MpcJoShareListComponent {
     ngOnChanges(changes: SimpleChanges): void {
         this.filter.status_mpcJo = this.status == 'semua' ? null : this.status;
 
-            
-           
-            if (changes.idDueList)
-            {
-                this.filterDueList.idDueList = this.idDueList
-            }
-            
-           
-            if (changes.idMaintenance)
-            {
-                this.filterMaintenance.idMaintenance = this.idMaintenance
-            }
-            
-           
-            if (changes.idPart)
-            {
-                this.filterPart.idPart = this.idPart
-            }
-            
-           
-            if (changes.idTechLog)
-            {
-                this.filterTechLog.idTechLog = this.idTechLog
-            }
-            
-           
-            if (changes.idTypeOfwork)
-            {
-                this.filterTypeOfwork.idTypeOfwork = this.idTypeOfwork
-            }
-            
-           
-            if (changes.idUser)
-            {
-                this.filterUser.idUser = this.idUser
-            }
-            
-        
+
+
+        if (changes.idDueList) {
+            this.filterDueList.idDueList = this.idDueList
+        }
+
+
+        if (changes.idMaintenance) {
+            this.filterMaintenance.idMaintenance = this.idMaintenance
+        }
+
+
+        if (changes.idPart) {
+            this.filterPart.idPart = this.idPart
+        }
+
+
+        if (changes.idTechLog) {
+            this.filterTechLog.idTechLog = this.idTechLog
+        }
+
+
+        if (changes.idTypeOfwork) {
+            this.filterTypeOfwork.idTypeOfwork = this.idTypeOfwork
+        }
+
+
+        if (changes.idUser) {
+            this.filterUser.idUser = this.idUser
+        }
+
+
 
         this.searchData();
     }
@@ -118,111 +110,106 @@ export class MpcJoShareListComponent {
         this.currentUser = this.userInfoService.getUser;
         this.resetParam();
         this.loadColumnSettings();
+ 
+        this.getAllMaintenance();
+        this.getAllPart();
+        this.getAllTechLog();
+        this.getAllTypeOfwork();
+        this.getAllUser();
+    }
 
-                            this.getAllDueList();
-                    this.getAllMaintenance();
-                    this.getAllPart();
-                    this.getAllTechLog();
-                    this.getAllTypeOfwork();
-                    this.getAllUser();
-                    }
 
-    
-    listDueList: any[] = []; 
-    
-    listMaintenance: any[] = []; 
-    
-    listPart: any[] = []; 
-    
-    listTechLog: any[] = []; 
-    
-    listTypeOfwork: any[] = []; 
-    
-    listUser: any[] = []; 
-    
+    listDueList: any[] = [];
+
+    listMaintenance: any[] = [];
+
+    listPart: any[] = [];
+
+    listTechLog: any[] = [];
+
+    listTypeOfwork: any[] = [];
+
+    listUser: any[] = [];
+
     //untuak filter dari prent
-    
-    filterDueList:any = {} 
-    
-    filterMaintenance:any = {} 
-    
-    filterPart:any = {} 
-    
-    filterTechLog:any = {} 
-    
-    filterTypeOfwork:any = {} 
-    
-    filterUser:any = {} 
-    
+
+    filterDueList: any = {}
+
+    filterMaintenance: any = {}
+
+    filterPart: any = {}
+
+    filterTechLog: any = {}
+
+    filterTypeOfwork: any = {}
+
+    filterUser: any = {}
+
 
     // untuk fungsi get ALL relation
-            getAllDueList() {
-    this.dueListService.dueListControllerFindAll().subscribe(
-      data => this.listDueList = data.data ?? []
-    );
-  }
-        getAllMaintenance() {
-    this.maintenanceService.maintenanceControllerFindAll().subscribe(
-      data => this.listMaintenance = data.data ?? []
-    );
-  }
-        getAllPart() {
-    this.partService.partControllerFindAll().subscribe(
-      data => this.listPart = data.data ?? []
-    );
-  }
-        getAllTechLog() {
-    this.techLogService.techLogControllerFindAll().subscribe(
-      data => this.listTechLog = data.data ?? []
-    );
-  }
-        getAllTypeOfwork() {
-    this.typeOfworkService.typeOfworkControllerFindAll().subscribe(
-      data => this.listTypeOfwork = data.data ?? []
-    );
-  }
-        getAllUser() {
-    this.usersService.usersControllerFindAll().subscribe(
-      data => this.listUser = data.data ?? []
-    );
-  }
-        
+
+    getAllMaintenance() {
+        this.maintenanceService.maintenanceControllerFindAll().subscribe(
+            data => this.listMaintenance = data.data ?? []
+        );
+    }
+    getAllPart() {
+        this.partService.partControllerFindAll().subscribe(
+            data => this.listPart = data.data ?? []
+        );
+    }
+    getAllTechLog() {
+        this.techLogService.techLogControllerFindAll().subscribe(
+            data => this.listTechLog = data.data ?? []
+        );
+    }
+    getAllTypeOfwork() {
+        this.typeOfworkService.typeOfworkControllerFindAll().subscribe(
+            data => this.listTypeOfwork = data.data ?? []
+        );
+    }
+    getAllUser() {
+        this.usersService.usersControllerFindAll().subscribe(
+            data => this.listUser = data.data ?? []
+        );
+    }
+
     currentUser: any = {};
     filter: any = {
-    compliteCycleMin: null,
-  compliteCycleMax: null,
-  compliteDateRange: null,
-  compliteHoursMin: null,
-  compliteHoursMax: null,
-  cycleFromMin: null,
-  cycleFromMax: null,
-  cycleToMin: null,
-  cycleToMax: null,
-  dateJoRange: null,
-  hourseFromMin: null,
-  hourseFromMax: null,
-  hourseToMin: null,
-  hourseToMax: null,
-  idDueList: null,
-  idMaintenance: null,
-  idPart: null,
-  idTechLog: null,
-  idTypeOfwork: null,
-  idUser: null,
-  isPriority: null,
-  onSiteMin: null,
-  onSiteMax: null,
-  originalCycleMin: null,
-  originalCycleMax: null,
-  originalDateRange: null,
-  originalHoursMin: null,
-  originalHoursMax: null,
-  timeRangeFromMin: null,
-  timeRangeFromMax: null,
-  timeRangeToMin: null,
-  timeRangeToMax: null
+        compliteCycleMin: null,
+        compliteCycleMax: null,
+        compliteDateRange: null,
+        compliteHoursMin: null,
+        compliteHoursMax: null,
+        cycleFromMin: null,
+        cycleFromMax: null,
+        cycleToMin: null,
+        cycleToMax: null,
+        dateJoRange: null,
+        hourseFromMin: null,
+        hourseFromMax: null,
+        hourseToMin: null,
+        hourseToMax: null,
+        idDueList: null,
+        idMaintenance: null,
+        idPart: null,
+        idTechLog: null,
+        idTypeOfwork: null,
+        idUser: null,
+        isPriority: null,
+        onSiteMin: null,
+        onSiteMax: null,
+        originalCycleMin: null,
+        originalCycleMax: null,
+        originalDateRange: null,
+        originalHoursMin: null,
+        originalHoursMax: null,
+        timeRangeFromMin: null,
+        timeRangeFromMax: null,
+        timeRangeToMin: null,
+        timeRangeToMax: null
     };
- 
+
     expandSet = new Set<string>();
     onExpandChange(id: string, checked: boolean): void {
         if (checked) {
@@ -240,8 +227,8 @@ export class MpcJoShareListComponent {
     sortValue: string | null = 'desc';
     sortKey: string | null = 'created_at';
     search: string | null = null;
-    search_field: string[] = ["action","compliteDate","customIssued","customJob","customRef","isPriority","noteJo","numberJo","onAircraft","originalDate","parentAss","reference","roflag","workDue"];
- 
+    search_field: string[] = ["action", "compliteDate", "customIssued", "customJob", "customRef", "isPriority", "noteJo", "numberJo", "onAircraft", "originalDate", "parentAss", "reference", "roflag", "workDue"];
+
     breadCrumbItems = [{ label: 'List', active: false }];
 
     resetParam() {
@@ -252,37 +239,37 @@ export class MpcJoShareListComponent {
         this.search = null;
         this.filter = {
             compliteCycleMin: null,
-  compliteCycleMax: null,
-  compliteDateRange: null,
-  compliteHoursMin: null,
-  compliteHoursMax: null,
-  cycleFromMin: null,
-  cycleFromMax: null,
-  cycleToMin: null,
-  cycleToMax: null,
-  dateJoRange: null,
-  hourseFromMin: null,
-  hourseFromMax: null,
-  hourseToMin: null,
-  hourseToMax: null,
-  idDueList: null,
-  idMaintenance: null,
-  idPart: null,
-  idTechLog: null,
-  idTypeOfwork: null,
-  idUser: null,
-  isPriority: null,
-  onSiteMin: null,
-  onSiteMax: null,
-  originalCycleMin: null,
-  originalCycleMax: null,
-  originalDateRange: null,
-  originalHoursMin: null,
-  originalHoursMax: null,
-  timeRangeFromMin: null,
-  timeRangeFromMax: null,
-  timeRangeToMin: null,
-  timeRangeToMax: null
+            compliteCycleMax: null,
+            compliteDateRange: null,
+            compliteHoursMin: null,
+            compliteHoursMax: null,
+            cycleFromMin: null,
+            cycleFromMax: null,
+            cycleToMin: null,
+            cycleToMax: null,
+            dateJoRange: null,
+            hourseFromMin: null,
+            hourseFromMax: null,
+            hourseToMin: null,
+            hourseToMax: null,
+            idDueList: null,
+            idMaintenance: null,
+            idPart: null,
+            idTechLog: null,
+            idTypeOfwork: null,
+            idUser: null,
+            isPriority: null,
+            onSiteMin: null,
+            onSiteMax: null,
+            originalCycleMin: null,
+            originalCycleMax: null,
+            originalDateRange: null,
+            originalHoursMin: null,
+            originalHoursMax: null,
+            timeRangeFromMin: null,
+            timeRangeFromMax: null,
+            timeRangeToMin: null,
+            timeRangeToMax: null
         };
         this.filter.status_mpcJo = this.status == 'semua' ? null : this.status;
     }
@@ -292,7 +279,7 @@ export class MpcJoShareListComponent {
         this.searchData();
     }
 
-     get validSortValue(): 'asc' | 'desc' | undefined {
+    get validSortValue(): 'asc' | 'desc' | undefined {
         if (this.sortValue === 'asc') return 'asc';
         if (this.sortValue === 'desc') return 'desc';
         return undefined;
@@ -309,53 +296,53 @@ export class MpcJoShareListComponent {
             body: {
                 filter: finalFilter,
                 joinWhere: [
-                                        {
+                    {
                         "due_list": this.filterDueList, type: 'inner'
                     },
-                                        {
+                    {
                         "maintenance": this.filterMaintenance, type: 'inner'
                     },
-                                        {
+                    {
                         "part": this.filterPart, type: 'inner'
                     },
-                                        {
+                    {
                         "tech_log": this.filterTechLog, type: 'inner'
                     },
-                                        {
+                    {
                         "type_ofwork": this.filterTypeOfwork, type: 'inner'
                     },
-                                        {
+                    {
                         "user": this.filterUser, type: 'inner'
                     }
-                                        ],
+                ],
                 search_field: this.search_field,
                 search_keyword: this.search || undefined,
-                include:  [
-  {
-    "name": "due_list",
-    "type": "single"
-  },
-  {
-    "name": "maintenance",
-    "type": "single"
-  },
-  {
-    "name": "part",
-    "type": "single"
-  },
-  {
-    "name": "tech_log",
-    "type": "single"
-  },
-  {
-    "name": "type_ofwork",
-    "type": "single"
-  },
-  {
-    "name": "user",
-    "type": "single"
-  }
-],
+                include: [
+                    {
+                        "name": "due_list",
+                        "type": "single"
+                    },
+                    {
+                        "name": "maintenance",
+                        "type": "single"
+                    },
+                    {
+                        "name": "part",
+                        "type": "single"
+                    },
+                    {
+                        "name": "tech_log",
+                        "type": "single"
+                    },
+                    {
+                        "name": "type_ofwork",
+                        "type": "single"
+                    },
+                    {
+                        "name": "user",
+                        "type": "single"
+                    }
+                ],
                 sortKey: this.sortKey ?? undefined,
                 sortValue: this.validSortValue,
                 pageIndex: this.pageIndex,
@@ -407,38 +394,38 @@ export class MpcJoShareListComponent {
         return backendFilter;
     }
 
-     // TABLE DINAMIS 
-    columns = [ 
-         { key: 'action',  show: true },
-              { key: 'compliteCycle',  show: true },
-              { key: 'compliteDate',  show: true },
-              { key: 'compliteHours',  show: true },
-              { key: 'createdAt',  show: true },
-              { key: 'customIssued',  show: true },
-              { key: 'customJob',  show: true },
-              { key: 'customRef',  show: true },
-              { key: 'cycleFrom',  show: true },
-              { key: 'cycleTo',  show: true },
-              { key: 'dateJo',  show: true },
-              { key: 'hourseFrom',  show: true },
-              { key: 'hourseTo',  show: true },
-              { key: 'isPriority',  show: true },
-              { key: 'noteJo',  show: true },
-              { key: 'numberJo',  show: true },
-              { key: 'onAircraft',  show: true },
-              { key: 'onSite',  show: true },
-              { key: 'originalCycle',  show: true },
-              { key: 'originalDate',  show: true },
-              { key: 'originalHours',  show: true },
-              { key: 'parentAss',  show: true },
-              { key: 'reference',  show: true },
-              { key: 'roflag',  show: true },
-              { key: 'statusJo',  show: true },
-              { key: 'timeRangeFrom',  show: true },
-              { key: 'timeRangeTo',  show: true },
-              { key: 'updatedAt',  show: true },
-              { key: 'workDue',  show: true },
-             
+    // TABLE DINAMIS 
+    columns = [
+        { key: 'action', show: true },
+        { key: 'compliteCycle', show: true },
+        { key: 'compliteDate', show: true },
+        { key: 'compliteHours', show: true },
+        { key: 'createdAt', show: true },
+        { key: 'customIssued', show: true },
+        { key: 'customJob', show: true },
+        { key: 'customRef', show: true },
+        { key: 'cycleFrom', show: true },
+        { key: 'cycleTo', show: true },
+        { key: 'dateJo', show: true },
+        { key: 'hourseFrom', show: true },
+        { key: 'hourseTo', show: true },
+        { key: 'isPriority', show: true },
+        { key: 'noteJo', show: true },
+        { key: 'numberJo', show: true },
+        { key: 'onAircraft', show: true },
+        { key: 'onSite', show: true },
+        { key: 'originalCycle', show: true },
+        { key: 'originalDate', show: true },
+        { key: 'originalHours', show: true },
+        { key: 'parentAss', show: true },
+        { key: 'reference', show: true },
+        { key: 'roflag', show: true },
+        { key: 'statusJo', show: true },
+        { key: 'timeRangeFrom', show: true },
+        { key: 'timeRangeTo', show: true },
+        { key: 'updatedAt', show: true },
+        { key: 'workDue', show: true },
+
     ];
 
     isColVisible(key: string): boolean {
@@ -456,47 +443,47 @@ export class MpcJoShareListComponent {
         const saved = localStorage.getItem('mpcJo_columns');
         if (saved) {
             try {
-            const parsed = JSON.parse(saved);
-            if (Array.isArray(parsed)) {
-                // Sinkronkan dengan default jika ada key yang hilang
-                this.columns.forEach((col, index) => {
-                const found = parsed.find((p: any) => p.key === col.key);
-                if (found) this.columns[index].show = found.show;
-                });
-            }
+                const parsed = JSON.parse(saved);
+                if (Array.isArray(parsed)) {
+                    // Sinkronkan dengan default jika ada key yang hilang
+                    this.columns.forEach((col, index) => {
+                        const found = parsed.find((p: any) => p.key === col.key);
+                        if (found) this.columns[index].show = found.show;
+                    });
+                }
             } catch (e) {
                 console.warn('Gagal parse mpcJo dari localStorage', e);
             }
         }
-        }
+    }
     // TABLE DINAMIS 
 
 
     add() {
-    if (!this.acl.can('mpc-jo', 'can_add') || !this.enable_crud) return;
+        if (!this.acl.can('mpc-jo', 'can_add') || !this.enable_crud) return;
 
         const drawerRef = this.drawerService.create<MpcJoShareAddComponent, {}, string>({
             nzTitle: 'Add',
             nzContent: MpcJoShareAddComponent,
-        nzWidth: (500) + 'px',
+            nzWidth: (500) + 'px',
         });
- 
+
         drawerRef.afterClose.subscribe(() => {
             this.searchData();
         });
     }
 
-     
 
-    detail(data:AmimsMpcJoDto) {
+
+    detail(data: AmimsMpcJoDto) {
         if (!this.acl.can('contract-site', 'can_list')) return;
 
         const drawerRef = this.drawerService.create<MpcJoShareDetailComponent, {}, string>({
             nzTitle: 'Detail',
             nzContent: MpcJoShareDetailComponent,
             nzWidth: (window.innerWidth * 0.8) + 'px',
-            nzContentParams:{
-                idMpcJo:data.idMpcJo
+            nzContentParams: {
+                idMpcJo: data.idMpcJo
             }
         });
 
@@ -505,8 +492,8 @@ export class MpcJoShareListComponent {
         });
     }
 
-    update(data: any) {}
-    delete(id: string) {} 
+    update(data: any) { }
+    delete(id: string) { }
 
     print() {
         let url = environment.srv_document + '/pdfAkutansi/vouchers?filter=' + JSON.stringify(this.filter) + '&token=' + this.tokenService.getToken();

@@ -64,6 +64,14 @@ export const AmimsMpartWidgetFormSchema = {
     "default": "",
     "required": false
   },
+  "lastPrice": {
+    "default": 0,
+    "required": false
+  },
+  "lastPriceCurrency": {
+    "default": "",
+    "required": false
+  },
   "lifeLimitCycle": {
     "default": 0,
     "required": false

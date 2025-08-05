@@ -25,6 +25,10 @@ export const ToolsWorkflowFormSchema = {
     "default": "",
     "required": true
   },
+  "statusField": {
+    "default": "",
+    "required": false
+  },
   "statusWorkflow": {
     "default": "",
     "required": false

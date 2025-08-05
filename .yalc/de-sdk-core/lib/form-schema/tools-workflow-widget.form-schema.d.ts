@@ -25,6 +25,10 @@ export declare const ToolsWorkflowWidgetFormSchema: {
         default: string;
         required: boolean;
     };
+    statusField: {
+        default: string;
+        required: boolean;
+    };
     statusWorkflow: {
         default: string;
         required: boolean;

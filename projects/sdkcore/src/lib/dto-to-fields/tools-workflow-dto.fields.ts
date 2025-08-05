@@ -6,6 +6,7 @@ export const ToolsWorkflowDtoFields: Record<string, 'string' | 'boolean' | 'numb
   "isDefault": "boolean",
   "keterangan": "string",
   "namaWorkflow": "string",
+  "statusField": "string",
   "statusWorkflow": "string",
   "targetDb": "string",
   "targetTable": "string",

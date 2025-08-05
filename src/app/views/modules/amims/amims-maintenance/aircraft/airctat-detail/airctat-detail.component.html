@@ -24,19 +24,19 @@
         </div>
     </div>
 </div>
-<br>
-<div nz-row [nzGutter]="16">
+<br *ngIf="activeTabIndex < 1">
+<div nz-row [nzGutter]="16" *ngIf="activeTabIndex < 1">
     <div nz-col [nzSpan]="18">
         <nz-card>
-            <app-aircraft-share-header [data]="aircrafts"></app-aircraft-share-header> 
+            <app-aircraft-share-header [data]="aircrafts" *ngIf="aircrafts"></app-aircraft-share-header> 
         </nz-card>
-    </div>
+    </div> 
     <div nz-col [nzSpan]="6">
         <document-widget-v1 [for-module]="'aircraft'" [for-module-id]="id_aicraft"></document-widget-v1>
     </div>
 </div>
-<br>
-<div nz-row [nzGutter]="16">
+<br *ngIf="activeTabIndex < 1">
+<div nz-row [nzGutter]="16" *ngIf="activeTabIndex < 1">
     <div nz-col [nzSpan]="18">
         <div class="card production-card">
             <div class="card-header">
@@ -91,7 +91,7 @@
 <br>
 <div class="card production-card">
 
-    <nz-tabset>
+    <nz-tabset (nzSelectedIndexChange)="onTabChange($event)" [(nzSelectedIndex)]="activeTabIndex">
         <nz-tab nzTitle="{{ 'Information' | translate }}">
              <app-aircraft-detail-share-detail [idAircraftDetail]="id_aicraft"></app-aircraft-detail-share-detail>
         </nz-tab>
@@ -105,6 +105,31 @@
                 <!-- <work-complete-share-list [idPart]="idPart"></work-complete-share-list> -->
             </ng-template>
         </nz-tab> 
+        <nz-tab nzTitle="{{ 'Part Installed' | translate }}" nz-ac>
+            <ng-template nz-tab>
+                <app-part-install-share-list [idAircraft]="aircrafts.idAircraft" *ngIf="aircrafts.idAircraft"></app-part-install-share-list>
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'Component Status' | translate }}">
+            <ng-template nz-tab>
+                <app-v-due-list-output-share-list [idAircraft]="id_aicraft"></app-v-due-list-output-share-list>
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'Maintenance Program' | translate }}">
+            <ng-template nz-tab>
+    
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'AML' | translate }}">
+            <ng-template nz-tab>
+    
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'RTI' | translate }}">
+            <ng-template nz-tab>
+    
+            </ng-template>
+        </nz-tab>
         <nz-tab nzTitle="{{ 'Log' | translate }}">
             <ng-template nz-tab>
     

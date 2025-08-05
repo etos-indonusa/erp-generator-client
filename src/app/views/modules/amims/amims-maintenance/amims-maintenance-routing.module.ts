@@ -4,9 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
     { path: 'actype', loadChildren: () => import('./actype/actype.module').then(m => m.ActypeModule) },
     { path: 'aircraft', loadChildren: () => import('./aircraft/aircraft.module').then(m => m.AircraftModule) },
-    // { path: 'aircraft-detail', loadChildren: () => import('./aircraft-detail/aircraft-detail.module').then(m => m.AircraftDetailModule) }, 
-    { path: 'due-list', loadChildren: () => import('./due-list/due-list.module').then(m => m.DueListModule) },
-    { path: 'due-list-output', loadChildren: () => import('./due-list-output/due-list-output.module').then(m => m.DueListOutputModule) },
+    // { path: 'aircraft-detail', loadChildren: () => import('./aircraft-detail/aircraft-detail.module').then(m => m.AircraftDetailModule) },  
+    // { path: 'due-list-output', loadChildren: () => import('./due-list-output_old/due-list-output.module').then(m => m.DueListOutputModule) },
+
     { path: 'engineer-rti', loadChildren: () => import('./engineer-rti/engineer-rti.module').then(m => m.EngineerRtiModule) },
     // { path: 'engineer-rti-identify', loadChildren: () => import('./engineer-rti-identify/engineer-rti-identify.module').then(m => m.EngineerRtiIdentifyModule) },
     // { path: 'engineer-rti-part', loadChildren: () => import('./engineer-rti-part/engineer-rti-part.module').then(m => m.EngineerRtiPartModule) },
@@ -29,10 +29,14 @@ const routes: Routes = [
     { path: 'tech-log-engine-check', loadChildren: () => import('./tech-log-engine-check/tech-log-engine-check.module').then(m => m.TechLogEngineCheckModule) },
     { path: 'tech-log-item', loadChildren: () => import('./tech-log-item/tech-log-item.module').then(m => m.TechLogItemModule) },
     { path: 'tech-log-jo', loadChildren: () => import('./tech-log-jo/tech-log-jo.module').then(m => m.TechLogJoModule) },
+    {
+        path: 'v-due-list-output',
+        loadChildren: () => import('./v-due-list-output/v-due-list-output.module').then(m => m.VDueListOutputModule)
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
 })
 export class AmimsMaintenanceRoutingModule { }

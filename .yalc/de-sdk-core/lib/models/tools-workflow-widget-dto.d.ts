@@ -6,6 +6,7 @@ export interface ToolsWorkflowWidgetDto {
     isDefault?: boolean;
     keterangan?: string;
     namaWorkflow: string;
+    statusField?: string;
     statusWorkflow?: string;
     targetDb: string;
     targetTable: string;

@@ -53,14 +53,15 @@ export class AircraftListComponent {
                     },
                     {
                         "name": "aircraft_detail",
-                        "type": "array"
+                        "type": "array",
+                        "to": "aircraft",
                     }
                 ],
             }
         }).subscribe(
             data => {
                 this.aircrafts = data.data || [];
-                 
+
             }
         )
     }

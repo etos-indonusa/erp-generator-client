@@ -34,7 +34,7 @@ export const ToolsWorkflowStepReportFormSchema = {
     "required": true
   },
   "statusRejectTo": {
-    "default": "",
+    "default": 0,
     "required": false
   },
   "statusTo": {

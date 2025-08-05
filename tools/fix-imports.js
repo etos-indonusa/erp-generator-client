@@ -17,16 +17,16 @@ function fixImportInFile(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
 
     const patterns = [
-        /from\s+['"]de-sdk-jasa\/lib\/form-schema\/[^'"]+['"]/g,
-        /from\s+['"]de-sdk-jasa\/lib\/services\/[^'"]+['"]/g,
-        /from\s+['"]de-sdk-jasa\/lib\/models\/[^'"]+['"]/g,
-        /from\s+['"]de-sdk-jasa\/lib\/services['"]/g, 
-        /from\s+['"]de-sdk-jasa\/lib\/models['"]/g, 
+        /from\s+['"]de-sdk-core\/lib\/form-schema\/[^'"]+['"]/g,
+        /from\s+['"]de-sdk-core\/lib\/services\/[^'"]+['"]/g,
+        /from\s+['"]de-sdk-core\/lib\/models\/[^'"]+['"]/g,
+        /from\s+['"]de-sdk-core\/lib\/services['"]/g, 
+        /from\s+['"]de-sdk-core\/lib\/models['"]/g, 
     ];
 
     let newContent = content;
     patterns.forEach(pattern => {
-        newContent = newContent.replace(pattern, `from 'de-sdk-jasa'`);
+        newContent = newContent.replace(pattern, `from 'de-sdk-core'`);
     });
 
     if (content !== newContent) {

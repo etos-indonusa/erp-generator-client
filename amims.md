@@ -15,6 +15,7 @@ npm run generate:report -- currency --prefix=amims
 npm run generate:crud -- doctype --prefix=amims
 npm run generate:report -- due-list --prefix=amims
 npm run generate:report -- due-list-output --prefix=amims
+npm run generate:report -- v-due-list-output --prefix=amims
 npm run generate:report -- engineer-pmtr --prefix=amims
 npm run generate:report -- engineer-pmtr-item --prefix=amims
 npm run generate:report -- engineer-pris --prefix=amims

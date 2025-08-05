@@ -68,6 +68,14 @@ export declare const AmimsMpartReportFormSchema: {
         default: string;
         required: boolean;
     };
+    lastPrice: {
+        default: number;
+        required: boolean;
+    };
+    lastPriceCurrency: {
+        default: string;
+        required: boolean;
+    };
     lifeLimitCycle: {
         default: number;
         required: boolean;

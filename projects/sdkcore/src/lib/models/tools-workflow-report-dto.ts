@@ -10,6 +10,7 @@ export interface ToolsWorkflowReportDto {
   isDefault?: boolean;
   keterangan?: string;
   namaWorkflow: string;
+  statusField?: string;
   statusWorkflow?: string;
   targetDb: string;
   targetTable: string;

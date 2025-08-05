@@ -8,7 +8,7 @@ export const ToolsWorkflowStepWidgetDtoFields: Record<string, 'string' | 'boolea
   "messageBefore": "string",
   "ruleJson": "string",
   "statusFrom": "string",
-  "statusRejectTo": "string",
+  "statusRejectTo": "number",
   "statusTo": "string",
   "total": "number",
   "triggerJson": "string",

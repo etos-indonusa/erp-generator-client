@@ -78,66 +78,150 @@ export class ScheduleMaintenanceRtComponent {
     simulatedList: any[] = [];
 
     simulateTotalDue(masterData: any[]): (any & { totalDue: number })[] {
-        return masterData
-            .map(item => {
-                let current = Number(item.current_part) ?? 0;
-                let interval = Number(item.to_due) ?? 0;
+        const result: (any & { totalDue: number })[] = [];
 
-                const type_due = item.type_due?.toUpperCase() ?? '';
-                let simulation = 0;
+        for (const item of masterData) {
+            let current = Number(item.current_part) ?? 0;
+            let interval = Number(item.to_due) ?? 0;
+            const type_due = item.type_due?.toUpperCase() ?? '';
+            let simulation = 0;
 
-                if (type_due === 'HR') {
-                    simulation = this.HR; 
-                } else if (type_due === 'DY') {
-                    simulation = this.DY;
-                    current = new Date(item.at_install).getTime(); // Tanggal instalasi
-                    let daysInterval = 0;
+            if (type_due === 'HR') {
+                simulation = this.HR;
+            } else if (type_due === 'CY') {
+                simulation = this.CY;
+            } else if (type_due === 'DY') {
+                simulation = this.DY;
+            }
 
-                    if (item.variabel === 'YR') {
-                        daysInterval = interval * 365;
-                    } else if (item.variabel === 'MO') {
-                        daysInterval = interval * 30;
-                    } else {
-                        daysInterval = interval; // default dalam hari
-                    }
+            // === HR & CY (hour/cycle based) ===
+            if ((type_due === 'HR' || type_due === 'CY') && interval > 0 && current + simulation >= interval) {
+                const remainingToNextDue = interval - current;
+                const totalDue = 1 + Math.floor((simulation - Math.max(0, remainingToNextDue)) / interval);
 
-                    const dueDate = new Date(current);
-                    dueDate.setDate(dueDate.getDate() + daysInterval);
+                for (let i = 0; i < totalDue; i++) {
+                    const currentPartEach = current + interval * i;
+                    const duePoint = currentPartEach + interval;
+                    const remainingEach = Math.max(0, duePoint - current);
 
-                    const now = new Date();
-                    const future = new Date();
-                    future.setDate(future.getDate() + simulation); // simulasi ke depan
+                    result.push({
+                        ...item,
+                        totalDue: 1,
+                        remaining: remainingEach,
+                        next_at_install: duePoint,
+                        current_part: currentPartEach
+                    });
+                }
+            }
 
-                    if (future >= dueDate) {
-                        // Hitung berapa kali kena dalam periode simulasi
-                        const remaining = Math.max(0, (future.getTime() - dueDate.getTime()) / (1000 * 60 * 60 * 24));
-                        const totalDue = 1 + Math.floor(remaining / daysInterval);
+            // === DY (day-based inspection) ===
+            if (type_due === 'DY' && interval > 0) {
+                const currentDate = new Date(item.at_install);
+                let daysInterval = 0;
 
-                        return {
+                if (item.variabel === 'YR') {
+                    daysInterval = interval * 365;
+                } else if (item.variabel === 'MO') {
+                    daysInterval = interval * 30;
+                } else {
+                    daysInterval = interval;
+                }
+
+                const dueDate = new Date(currentDate);
+                dueDate.setDate(dueDate.getDate() + daysInterval);
+
+                const future = new Date(currentDate);
+                future.setDate(future.getDate() + simulation);
+
+                if (future >= dueDate) {
+                    const diffDays = Math.max(0, (future.getTime() - dueDate.getTime()) / (1000 * 60 * 60 * 24));
+                    const totalDue = 1 + Math.floor(diffDays / daysInterval);
+
+                    for (let i = 0; i < totalDue; i++) {
+                        const currentPartEach = new Date(currentDate);
+                        currentPartEach.setDate(currentPartEach.getDate() + daysInterval * i);
+
+                        const dueDateEach = new Date(currentDate);
+                        dueDateEach.setDate(dueDateEach.getDate() + daysInterval * (i + 1));
+
+                        result.push({
                             ...item,
-                            totalDue
-                        };
-                    } else {
-                        return null;
-                    }
-                } else if (type_due === 'CY') {
-                    simulation = this.CY;
-                }
-
-                // HR & CY processing
-                let totalDue = 0;
-                if (type_due !== 'DY' && interval > 0 && current + simulation >= interval) {
-                    console.log('Processing HR or CY:', item);
-                    const remainingToNextDue = interval - current;
-                    if (remainingToNextDue <= 0) {
-                        totalDue = 1 + Math.floor((simulation - Math.abs(remainingToNextDue)) / interval);
-                    } else {
-                        totalDue = 1 + Math.floor((simulation - remainingToNextDue) / interval);
+                            totalDue: 1,
+                            remaining: 'By date',
+                            current_part: currentPartEach.toISOString().slice(0, 10),
+                            next_at_install: dueDateEach.toISOString().slice(0, 10)
+                        });
                     }
                 }
+            }
+        }
 
-                return totalDue > 0 ? { ...item, totalDue } : null;
-            })
-            .filter(item => item !== null);
+        return result;
     }
+
+
+
+    // simulateTotalDue(masterData: any[]): (any & { totalDue: number })[] {
+    //     return masterData
+    //         .map(item => {
+    //             let current = Number(item.current_part) ?? 0;
+    //             let interval = Number(item.to_due) ?? 0;
+
+    //             const type_due = item.type_due?.toUpperCase() ?? '';
+    //             let simulation = 0;
+
+    //             if (type_due === 'HR') {
+    //                 simulation = this.HR; 
+    //             } else if (type_due === 'DY') {
+    //                 simulation = this.DY;
+    //                 current = new Date(item.at_install).getTime(); // Tanggal instalasi
+    //                 let daysInterval = 0;
+
+    //                 if (item.variabel === 'YR') {
+    //                     daysInterval = interval * 365;
+    //                 } else if (item.variabel === 'MO') {
+    //                     daysInterval = interval * 30;
+    //                 } else {
+    //                     daysInterval = interval; // default dalam hari
+    //                 }
+
+    //                 const dueDate = new Date(current);
+    //                 dueDate.setDate(dueDate.getDate() + daysInterval);
+
+    //                 const now = new Date();
+    //                 const future = new Date();
+    //                 future.setDate(future.getDate() + simulation); // simulasi ke depan
+
+    //                 if (future >= dueDate) {
+    //                     // Hitung berapa kali kena dalam periode simulasi
+    //                     const remaining = Math.max(0, (future.getTime() - dueDate.getTime()) / (1000 * 60 * 60 * 24));
+    //                     const totalDue = 1 + Math.floor(remaining / daysInterval);
+
+    //                     return {
+    //                         ...item,
+    //                         totalDue
+    //                     };
+    //                 } else {
+    //                     return null;
+    //                 }
+    //             } else if (type_due === 'CY') {
+    //                 simulation = this.CY;
+    //             }
+
+    //             // HR & CY processing
+    //             let totalDue = 0;
+    //             if (type_due !== 'DY' && interval > 0 && current + simulation >= interval) {
+    //                 console.log('Processing HR or CY:', item);
+    //                 const remainingToNextDue = interval - current;
+    //                 if (remainingToNextDue <= 0) {
+    //                     totalDue = 1 + Math.floor((simulation - Math.abs(remainingToNextDue)) / interval);
+    //                 } else {
+    //                     totalDue = 1 + Math.floor((simulation - remainingToNextDue) / interval);
+    //                 }
+    //             }
+
+    //             return totalDue > 0 ? { ...item, totalDue } : null;
+    //         })
+    //         .filter(item => item !== null);
+    // }
 }

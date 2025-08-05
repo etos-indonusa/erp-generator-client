@@ -14,6 +14,8 @@ import { ScheduleMaintenanceComponent } from './schedule-maintenance/schedule-ma
 import { ScheduleMaintenanceRtComponent } from './schedule-maintenance/schedule-maintenance-rt/schedule-maintenance-rt.component';
 import { ScheduleMaintenanceInComponent } from './schedule-maintenance/schedule-maintenance-in/schedule-maintenance-in.component';
 import { ScheduleMaintenanceOhComponent } from './schedule-maintenance/schedule-maintenance-oh/schedule-maintenance-oh.component';
+import { PartInstallShareModule } from "../../amims-inventory/part/part-install-share/part-install-share.module";
+import { VDueListOutputShareModule } from "../v-due-list-output/v-due-list-output-share/v-due-list-output-share.module";
 
 @NgModule({
     declarations: [
@@ -25,14 +27,16 @@ import { ScheduleMaintenanceOhComponent } from './schedule-maintenance/schedule-
         ScheduleMaintenanceOhComponent
     ],
     imports: [
-        CommonModule,
-        AircraftRoutingModule,
-        AircraftShareModule,
-        AntSimpleModule,
-        TampilanModule,
-        NzImageModule,
-        RouterModule,
-        AircraftDetailShareModule
-    ]
+    CommonModule,
+    AircraftRoutingModule,
+    AircraftShareModule,
+    AntSimpleModule,
+    TampilanModule,
+    NzImageModule,
+    RouterModule,
+    AircraftDetailShareModule,
+    PartInstallShareModule,
+    VDueListOutputShareModule
+]
 })
 export class AircraftModule { }

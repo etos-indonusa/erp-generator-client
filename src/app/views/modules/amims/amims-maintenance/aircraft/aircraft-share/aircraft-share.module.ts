@@ -12,6 +12,7 @@ import { AircraftShareHeaderComponent } from './aircraft-share-header/aircraft-s
 import { ApprovalModule } from 'src/app/views/lib/approval/approval.module';
 import { CustomFieldValueShareModule } from 'src/app/views/lib/custom-field-value/custom-field-value-share.module';
 import { NzImageModule } from 'ng-zorro-antd/image';
+import { PartInstallShareModule } from '../../../amims-inventory/part/part-install-share/part-install-share.module';
 
 const COM = [
     AircraftShareAddComponent,
@@ -38,7 +39,8 @@ const COM = [
 
         NzImageModule, 
         // ApprovalModule,
-        CustomFieldValueShareModule
+        CustomFieldValueShareModule,
+        PartInstallShareModule
     ]
 }) 
 export class AircraftShareModule { }

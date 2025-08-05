@@ -34,7 +34,7 @@ export declare const ToolsWorkflowStepFormSchema: {
         required: boolean;
     };
     statusRejectTo: {
-        default: string;
+        default: number;
         required: boolean;
     };
     statusTo: {

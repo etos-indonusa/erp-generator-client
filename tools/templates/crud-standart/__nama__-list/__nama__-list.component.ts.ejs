@@ -3,15 +3,15 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { NzTableQueryParams } from 'ng-zorro-antd/table';
 import { AclService } from 'src/app/services/acl.service';
-import { <%= Prefix %><%= Nama %>Dto } from 'de-sdk-jasa';
-import { <%= Nama %>Service } from 'de-sdk-jasa';
+import { <%= Prefix %><%= Nama %>Dto } from 'de-sdk-core';
+import { <%= Nama %>Service } from 'de-sdk-core';
 import { <%= Nama %>ShareAddComponent } from '../<%= nama %>-share/<%= nama %>-share-add/<%= nama %>-share-add.component';
 import { <%= Nama %>ShareDetailComponent } from '../<%= nama %>-share/<%= nama %>-share-detail/<%= nama %>-share-detail.component';
 import { TranslateService } from '@ngx-translate/core';
 @Component({
     selector: 'app-<%= nama %>-list',
     templateUrl: './<%= nama %>-list.component.html',
-    styleUrl: './<%= nama %>-list.component.scss'
+    styleUrls: ['./<%= nama %>-list.component.scss']
 })
 export class <%= Nama %>ListComponent {
     constructor(

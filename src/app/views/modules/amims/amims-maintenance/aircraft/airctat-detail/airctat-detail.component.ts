@@ -24,6 +24,12 @@ export class AirctatDetailComponent {
             }
         );
     }
+
+    activeTabIndex = 3;
+
+    onTabChange(index: number): void {
+        this.activeTabIndex = index;
+    }
     
 
     aircrafts: any = {};

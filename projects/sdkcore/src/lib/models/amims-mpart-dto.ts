@@ -21,6 +21,8 @@ export interface AmimsMpartDto {
   isMandatory?: string;
   ismayor?: string;
   keyword?: string;
+  lastPrice?: number;
+  lastPriceCurrency?: string;
   lifeLimitCycle?: number;
   lifeLimitHours?: number;
   lifeLimitVal?: number;

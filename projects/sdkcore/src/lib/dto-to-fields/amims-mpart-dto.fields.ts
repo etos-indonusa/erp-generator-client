@@ -17,6 +17,8 @@ export const AmimsMpartDtoFields: Record<string, 'string' | 'boolean' | 'number'
   "isMandatory": "string",
   "ismayor": "string",
   "keyword": "string",
+  "lastPrice": "number",
+  "lastPriceCurrency": "string",
   "lifeLimitCycle": "number",
   "lifeLimitHours": "number",
   "lifeLimitVal": "number",

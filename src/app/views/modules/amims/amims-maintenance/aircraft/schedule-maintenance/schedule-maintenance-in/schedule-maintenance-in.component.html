@@ -18,8 +18,8 @@
                     <td>{{ row.part_number }}</td>
                     <td>{{ row.sn }}</td>
                     <td>{{ row.to_due }} {{ row.variabel }}</td>
-                    <td>{{ row.current_part }} {{ row.variabel }}</td>
-                    <td>{{ row.totalDue  }}</td>
+                    <td>{{ row.current_part }} {{ row.type_due =='DY' ? '': row.variabel}}</td>
+                    <td>-</td>
                     <td>{{ row.next_at_install }}</td>
                     <td> </td>
                 </tr>
