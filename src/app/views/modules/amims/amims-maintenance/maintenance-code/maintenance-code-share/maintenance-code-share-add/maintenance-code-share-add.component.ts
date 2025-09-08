@@ -1,14 +1,14 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, SimpleChanges } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
 import { AmimsMaintenanceCodeFormSchema } from 'de-sdk-core'; 
-import type { AmimsMaintenanceCodeDto } from 'de-sdk-core';
+import type  { AmimsMaintenanceCodeDto } from 'de-sdk-core';
 import { MaintenanceCodeService } from 'de-sdk-core';
 
- 
+
 @Component({
     selector: 'app-maintenance-code-share-add',
     templateUrl: './maintenance-code-share-add.component.html',
@@ -26,6 +26,7 @@ export class MaintenanceCodeShareAddComponent {
         }
     }
     constructor(
+        private cd: ChangeDetectorRef,
         private fb: FormBuilder,
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
@@ -34,8 +35,8 @@ export class MaintenanceCodeShareAddComponent {
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, AmimsMaintenanceCodeFormSchema, {
-            // kodeMaintenanceCode: [Validators.minLength(3), Validators.maxLength(3)],
-            // catatan: [Validators.maxLength(200)],
+            kodeMaintenanceCode: [Validators.minLength(3), Validators.maxLength(3)],
+            catatan: [Validators.maxLength(200)],
         },'MaintenanceCode');
 
             }
@@ -61,8 +62,8 @@ export class MaintenanceCodeShareAddComponent {
                 this.notify.success('Berhasil', 'Data maintenanceCode berhasil disimpan.');
                 this.nzDrawerRef.close(data);
             },
-            error: () => {
-                this.notify.error('Gagal', 'Terjadi kesalahan saat menyimpan.');
+            error: (e) => {
+                this.notify.error('Gagal', 'Terjadi kesalahan saat menyimpan.' + e?.error?.error);
             },
             complete: () => (this.is_loading = false)
         });
@@ -74,9 +75,10 @@ export class MaintenanceCodeShareAddComponent {
             next: (data) => {
                 this.notify.success('Berhasil', 'Data maintenanceCode berhasil diperbarui.');
                 this.nzDrawerRef.close(data);
+                this.cd.detectChanges()
             },
-            error: () => {
-                this.notify.error('Gagal', 'Terjadi kesalahan saat memperbarui.');
+            error: (e) => {
+                this.notify.error('Gagal', 'Terjadi kesalahan saat menyimpan.' + e?.error?.error);
             },
             complete: () => (this.is_loading = false)
         });

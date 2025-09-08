@@ -41,12 +41,12 @@ export class MaintenanceShareWidgetComponent {
                     select: [
                         {
                             type: "count",
-                            field:"status_maintenance" ,
+                            field:"on_location" ,
                             alias: "jumlah" 
                         }
                     ],
-                    groupBy:  ['status_maintenance'],
-                    sortKey: "status_maintenance",
+                    groupBy: ['on_location'],
+                    sortKey: "on_location",
                     sortValue: "ASC"
                 }
             })

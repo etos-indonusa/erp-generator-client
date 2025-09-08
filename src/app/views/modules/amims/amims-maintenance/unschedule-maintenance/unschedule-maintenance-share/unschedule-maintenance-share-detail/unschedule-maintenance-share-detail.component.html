@@ -1,0 +1,104 @@
+<nz-spin nzTip="Loading..." [nzSpinning]="is_loading">
+
+    <div class="card border-0 mb-1 border-left-5 border-theme card   bg-white">
+        <div class="card-body p-2">
+            <div class="row">
+                <div class="col-lg-2">
+                    <p class="text-secondary  mb-1">Status</p>
+                    <!-- <h3 class="fw-bold text-capitalize" style.color="{{ unscheduleMaintenance?.statusUnscheduleMaintenance| status }}">   {{ unscheduleMaintenance?.statusUnscheduleMaintenance}}</h3> -->
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-secondary  mb-1">Nomor</p>
+                    <!-- <h3 class="fw-bold  ">{{unscheduleMaintenance?.nomorUnscheduleMaintenance}}</h3> -->
+                </div>
+                <div class="col" style="text-align: right;">
+                    <p class="text-secondary mb-1">&nbsp;</p>
+
+                    <button nz-button nzType="primary" style="margin-right: 5px;" nz-dropdown [nzDropdownMenu]="menu4">
+                        <span nz-icon nzType="printer"></span>
+                        Print
+                        <span nz-icon nzType="down"></span>
+                    </button>
+                    <nz-dropdown-menu #menu4="nzDropdownMenu">
+                        <ul nz-menu>
+                            <li nz-menu-item (click)="print()">Print unscheduleMaintenance</li>
+                        </ul>
+                    </nz-dropdown-menu>
+
+                    <!-- <button *ngIf="unscheduleMaintenance.status=='close' || unscheduleMaintenance.status=='cicil'" nz-button
+                        nzType="primary" (click)="up()" style="margin-right: 5px;">
+                        <span nz-icon nzType="calculator" nzTheme="outline"></span>
+                        Bayar
+                    </button> -->
+                     
+
+                </div>
+            </div>
+        </div>
+    </div>
+     <!--
+     <lib-approval-steps [for-module-name]="'unschedule-maintenance'" [for-module-id]="unschedule-maintenance?.idUnscheduleMaintenance" [current-status]="unschedule-maintenance?.statusUnscheduleMaintenance"></lib-approval-steps>
+         -->
+
+    <div class="card bg-white p-3" style="box-shadow: none;">
+        <div class="row">
+            <div class="col-md-8">
+                <app-unschedule-maintenance-share-header [data]="unscheduleMaintenance"></app-unschedule-maintenance-share-header>
+                <lib-custom-field [from-module]="'AmimsUnscheduleMaintenance'" [from-module-id]="unscheduleMaintenance?.idUnscheduleMaintenance"></lib-custom-field>
+            </div>
+            <div class="col-md-4">
+                <document-widget-v1 [for-module-id]="unscheduleMaintenance?.idUnscheduleMaintenance" [for-module]="'AmimsUnscheduleMaintenance'"  [enable-crud]="true"></document-widget-v1>
+                    
+                <!-- <approval-mode-widget *ngIf="unscheduleMaintenance.status??'-'.toLowerCase() !='close'"
+                    style="margin-right: 5px;" [module-id]="unscheduleMaintenance.id_contractSite" [module]="'AmimsUnscheduleMaintenance'"
+                    [flow-id]="unscheduleMaintenance.id_data_flow" [flow-detail]="unscheduleMaintenance.id_data_flow_detail"
+                    (reload)="approve($event)">
+                </approval-mode-widget> -->
+
+            </div>
+        </div>
+
+
+        <br>
+
+ 
+    </div>
+
+    <div class="site-page-header-ghost-wrapper">
+        <nz-page-header [nzGhost]="false">
+        <nz-page-header-title>Item</nz-page-header-title>
+    </nz-page-header>
+    </div >
+
+
+        <nz-tabset>
+        <nz-tab nzTitle="{{ 'Contact PIC' | translate }}">
+             <!-- <app-client-contact-share-list [idClient]="idClient"></app-client-contact-share-list>  -->
+        </nz-tab>
+         
+        <nz-tab nzTitle="{{ 'Contract' | translate }}">
+            <ng-template nz-tab>
+                <!-- <app-contract-share-list [idClient]="idClient"></app-contract-share-list> -->
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'Site' | translate }}">
+            <ng-template nz-tab>
+                    <!-- <app-client-site-share-list [idClient]="idClient"></app-client-site-share-list>  -->
+            </ng-template>
+        </nz-tab>
+    </nz-tabset>
+
+    <div class="card">
+        <div class="card-body p-2">
+                <!-- <app-unschedule-maintenance-share-list [filter-extra]="false" [idUnscheduleMaintenance]="idUnscheduleMaintenance"></app-unschedule-maintenance-share-list> -->
+    </div>
+    </div >
+
+<!-- 
+    <lib-approval-form-widget [from-module]="'AmimsUnscheduleMaintenance'" [from-module-id]="unschedule-maintenance?.idUnscheduleMaintenance"
+        (onSubmit)="handleApprovalSubmit($event)" (onAfterSubmit)="refreshApprovalSteps()"></lib-approval-form-widget> 
+            -->
+
+</nz-spin>
+<br>
+

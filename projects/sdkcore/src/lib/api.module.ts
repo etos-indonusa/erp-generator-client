@@ -100,8 +100,6 @@ import { InternalGrnItemWidgetService } from './services/internal-grn-item-widge
 import { LastMaintenanceService } from './services/last-maintenance.service';
 import { LastMaintenanceReportService } from './services/last-maintenance-report.service';
 import { LastMaintenanceWidgetService } from './services/last-maintenance-widget.service';
-import { LibFormIssuedService } from './services/lib-form-issued.service';
-import { LibReferenceService } from './services/lib-reference.service';
 import { LibUploadService } from './services/lib-upload.service';
 import { LifeTimeLimitService } from './services/life-time-limit.service';
 import { LifeTimeLimitReportService } from './services/life-time-limit-report.service';
@@ -126,8 +124,8 @@ import { MaintenanceService } from './services/maintenance.service';
 import { MaintenanceReportService } from './services/maintenance-report.service';
 import { MaintenanceWidgetService } from './services/maintenance-widget.service';
 import { MaintenanceCodeService } from './services/maintenance-code.service';
-import { MaintenanceCodeFormIssuedService } from './services/maintenance-code-form-issued.service';
-import { MaintenanceCodeReferenceService } from './services/maintenance-code-reference.service';
+import { MaintenanceCodeReportService } from './services/maintenance-code-report.service';
+import { MaintenanceCodeWidgetService } from './services/maintenance-code-widget.service';
 import { MelService } from './services/mel.service';
 import { MpcGseService } from './services/mpc-gse.service';
 import { MpcGseReportService } from './services/mpc-gse-report.service';
@@ -305,6 +303,11 @@ import { StockWidgetService } from './services/stock-widget.service';
 import { VDueListOutputService } from './services/v-due-list-output.service';
 import { VDueListOutputReportService } from './services/v-due-list-output-report.service';
 import { VDueListOutputWidgetService } from './services/v-due-list-output-widget.service';
+import { UnscheduleMaintenanceService } from './services/unschedule-maintenance.service';
+import { UnscheduleMaintenanceReportService } from './services/unschedule-maintenance-report.service';
+import { UnscheduleMaintenanceWidgetService } from './services/unschedule-maintenance-widget.service';
+import { MaintenanceDocumentService } from './services/maintenance-document.service';
+import { MaintenanceMaterialService } from './services/maintenance-material.service';
 
 /**
  * Module that provides all services and configuration.
@@ -408,8 +411,6 @@ import { VDueListOutputWidgetService } from './services/v-due-list-output-widget
     LastMaintenanceService,
     LastMaintenanceReportService,
     LastMaintenanceWidgetService,
-    LibFormIssuedService,
-    LibReferenceService,
     LibUploadService,
     LifeTimeLimitService,
     LifeTimeLimitReportService,
@@ -434,8 +435,8 @@ import { VDueListOutputWidgetService } from './services/v-due-list-output-widget
     MaintenanceReportService,
     MaintenanceWidgetService,
     MaintenanceCodeService,
-    MaintenanceCodeFormIssuedService,
-    MaintenanceCodeReferenceService,
+    MaintenanceCodeReportService,
+    MaintenanceCodeWidgetService,
     MelService,
     MpcGseService,
     MpcGseReportService,
@@ -613,6 +614,11 @@ import { VDueListOutputWidgetService } from './services/v-due-list-output-widget
     VDueListOutputService,
     VDueListOutputReportService,
     VDueListOutputWidgetService,
+    UnscheduleMaintenanceService,
+    UnscheduleMaintenanceReportService,
+    UnscheduleMaintenanceWidgetService,
+    MaintenanceDocumentService,
+    MaintenanceMaterialService,
     ApiConfiguration
   ],
 })

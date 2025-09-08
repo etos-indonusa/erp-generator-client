@@ -11,6 +11,8 @@ import { MaintenanceShareListComponent } from './maintenance-share-list/maintena
 import { MaintenanceShareHeaderComponent } from './maintenance-share-header/maintenance-share-header.component';
 import { ApprovalModule } from 'src/app/views/lib/approval/approval.module';
 import { CustomFieldValueShareModule } from 'src/app/views/lib/custom-field-value/custom-field-value-share.module';
+import { MaintenanceDocumentModule } from "../maintenance-document/maintenance-document.module";
+import { MaintenanceMaterialModule } from "../maintenance-material/maintenance-material.module";
 
 const COM = [
     MaintenanceShareAddComponent,
@@ -28,14 +30,16 @@ const COM = [
         ...COM
     ], 
     imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        AntSimpleModule,
-        TampilanModule,
-        RouterModule,
-        // ApprovalModule,
-        CustomFieldValueShareModule
-    ]
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AntSimpleModule,
+    TampilanModule,
+    RouterModule,
+    // ApprovalModule,
+    CustomFieldValueShareModule,
+    MaintenanceDocumentModule,
+    MaintenanceMaterialModule
+]
 }) 
 export class MaintenanceShareModule { }

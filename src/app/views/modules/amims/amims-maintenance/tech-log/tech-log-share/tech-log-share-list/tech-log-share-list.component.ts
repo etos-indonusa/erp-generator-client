@@ -13,7 +13,7 @@ import { TechLogReportService, TechLogService, UsersService } from 'de-sdk-core'
 import { AmimsTechLogDto } from 'de-sdk-core';
 import { TechLogShareAddComponent } from '../tech-log-share-add/tech-log-share-add.component';
 import { TechLogShareDetailComponent } from '../tech-log-share-detail/tech-log-share-detail.component';
-import { AircraftService } from 'de-sdk-core';  
+import { AircraftService } from 'de-sdk-core';
 
 
 
@@ -49,7 +49,7 @@ export class TechLogShareListComponent {
         private tokenService: TokenService,
 
         private aircraftService: AircraftService,
-        private usersService: UsersService, 
+        private usersService: UsersService,
         private translate: TranslateService
     ) {
         translate.setDefaultLang('id');
@@ -255,7 +255,7 @@ export class TechLogShareListComponent {
         this.searchData();
     }
 
-     get validSortValue(): 'asc' | 'desc' | undefined {
+    get validSortValue(): 'asc' | 'desc' | undefined {
         if (this.sortValue === 'asc') return 'asc';
         if (this.sortValue === 'desc') return 'desc';
         return undefined;
@@ -274,15 +274,6 @@ export class TechLogShareListComponent {
                 joinWhere: [
                     {
                         "aircraft": this.filterAircraft, type: 'inner'
-                    },
-                    {
-                        "user_acc": this.filterUserAcc, type: 'inner'
-                    },
-                    {
-                        "user_inspection": this.filterUserInspection, type: 'inner'
-                    },
-                    {
-                        "user_log": this.filterUserLog, type: 'inner'
                     }
                 ],
                 search_field: this.search_field,
@@ -293,15 +284,8 @@ export class TechLogShareListComponent {
                         "type": "single"
                     },
                     {
-                        "name": "user_acc",
-                        "type": "single"
-                    },
-                    {
-                        "name": "user_inspection",
-                        "type": "single"
-                    },
-                    {
-                        "name": "user_log",
+                        "name": "actype",
+                        "to": "aircraft",
                         "type": "single"
                     }
                 ],
@@ -358,31 +342,26 @@ export class TechLogShareListComponent {
 
     // TABLE DINAMIS 
     columns = [
-        { key: 'authoRized', show: true },
-        { key: 'createdAt', show: true },
+        { key: 'authoRized', show: false },
+        { key: 'createdAt', show: false },
         { key: 'cycleBf', show: true },
         { key: 'cycleCf', show: true },
         { key: 'cycleFlight', show: true },
-        { key: 'dateInspection', show: true },
         { key: 'hoursBf', show: true },
         { key: 'hoursCf', show: true },
         { key: 'hoursFlight', show: true },
-        { key: 'isDeleted', show: true },
-        { key: 'isEdit', show: true },
-        { key: 'lastUpdate', show: true },
-        { key: 'noteLog', show: true },
+        { key: 'lastUpdate', show: false },
+        { key: 'noteLog', show: false },
         { key: 'numberLog', show: true },
-        { key: 'numberNext', show: true },
-        { key: 'oldId', show: true },
-        { key: 'pesan', show: true },
-        { key: 'place', show: true },
-        { key: 'techLogDate', show: true },
-        { key: 'totalCycle', show: true },
+        { key: 'numberNext', show: false },
+        { key: 'pesan', show: false },
+        { key: 'place', show: false },
+        { key: 'techLogDate', show: false },
+        { key: 'totalCycle', show: false },
         { key: 'totalFlight', show: true },
-        { key: 'totalFuel', show: true },
-        { key: 'updatedAt', show: true },
-        { key: 'validasi', show: true },
-        { key: 'xycleInput', show: true },
+        { key: 'totalFuel', show: false },
+        { key: 'updatedAt', show: false },
+        { key: 'xycleInput', show: false },
 
     ];
 

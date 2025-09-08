@@ -8,6 +8,7 @@ export const AmimsVDueListOutputWidgetDtoFields: Record<string, 'string' | 'bool
   "dueAtCy": "string",
   "dueAtDy": "string",
   "dueAtHr": "string",
+  "idAircraft": "string",
   "idDueListOutput": "string",
   "idMpart": "string",
   "idPart": "string",
@@ -17,6 +18,7 @@ export const AmimsVDueListOutputWidgetDtoFields: Record<string, 'string' | 'bool
   "noteDue": "string",
   "partNumber": "string",
   "partPrice": "number",
+  "peruntukan": "string",
   "remainingCy": "number",
   "remainingDy": "number",
   "remainingHr": "number",
@@ -24,5 +26,8 @@ export const AmimsVDueListOutputWidgetDtoFields: Record<string, 'string' | 'bool
   "toDueCy": "number",
   "toDueDy": "number",
   "toDueHr": "number",
-  "total": "number"
+  "total": "number",
+  "typeDue": "string",
+  "typeOfwork": "string",
+  "variabel": "string"
 };

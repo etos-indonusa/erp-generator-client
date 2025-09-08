@@ -3,6 +3,10 @@ export const AmimsMaintenanceCodeFormSchema = {
     "default": "",
     "required": false
   },
+  "createdAt": {
+    "default": "",
+    "required": false
+  },
   "descriptionMaintenance": {
     "default": "",
     "required": false

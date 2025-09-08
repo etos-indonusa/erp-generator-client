@@ -5,11 +5,11 @@
             <div class="row">
                 <div class="col-lg-2">
                     <p class="text-secondary  mb-1">Status</p>
-                    <!-- <h3 class="fw-bold text-capitalize" style.color="{{ maintenance?.statusMaintenance| status }}">   {{ maintenance?.statusMaintenance}}</h3> -->
+                    <h4 class="fw-bold text-capitalize" [style.color]="'red'">    {{ maintenance?.mpart?.keyword }}</h4>
                 </div>
                 <div class="col-lg-6">
-                    <p class="text-secondary  mb-1">Nomor</p>
-                    <!-- <h3 class="fw-bold  ">{{maintenance?.nomorMaintenance}}</h3> -->
+                    <p class="text-secondary  mb-1">Desc</p>
+                    <h4 class="fw-bold  ">{{ maintenance?.maintenanceCode?.descriptionMaintenance}}</h4>
                 </div>
                 <div class="col" style="text-align: right;">
                     <p class="text-secondary mb-1">&nbsp;</p>
@@ -30,25 +30,27 @@
                         <span nz-icon nzType="calculator" nzTheme="outline"></span>
                         Bayar
                     </button> -->
-                     
+
 
                 </div>
             </div>
         </div>
     </div>
-     <!--
-     <lib-approval-steps [for-module-name]="'maintenance'" [for-module-id]="maintenance?.idMaintenance"></lib-approval-steps>
+    <!--
+     <lib-approval-steps [for-module-name]="'maintenance'" [for-module-id]="maintenance?.idMaintenance" [current-status]="maintenance?.statusMaintenance"></lib-approval-steps>
          -->
 
     <div class="card bg-white p-3" style="box-shadow: none;">
         <div class="row">
             <div class="col-md-8">
                 <app-maintenance-share-header [data]="maintenance"></app-maintenance-share-header>
-                <lib-custom-field [from-module]="'AmimsMaintenance'" [from-module-id]="maintenance?.idMaintenance"></lib-custom-field>
+                <lib-custom-field [from-module]="'AmimsMaintenance'"
+                    [from-module-id]="maintenance?.idMaintenance"></lib-custom-field>
             </div>
             <div class="col-md-4">
-                <document-widget-v1 [for-module-id]="maintenance?.idMaintenance" [for-module]="'AmimsMaintenance'"  [enable-crud]="true"></document-widget-v1>
-                    
+                <document-widget-v1 [for-module-id]="maintenance?.idMaintenance" [for-module]="'AmimsMaintenance'"
+                    [enable-crud]="true"></document-widget-v1>
+
                 <!-- <approval-mode-widget *ngIf="maintenance.status??'-'.toLowerCase() !='close'"
                     style="margin-right: 5px;" [module-id]="maintenance.id_contractSite" [module]="'AmimsMaintenance'"
                     [flow-id]="maintenance.id_data_flow" [flow-detail]="maintenance.id_data_flow_detail"
@@ -61,26 +63,47 @@
 
         <br>
 
- 
+
     </div>
 
-    <div class="site-page-header-ghost-wrapper">
-        <nz-page-header [nzGhost]="false">
-        <nz-page-header-title>Item</nz-page-header-title>
-    </nz-page-header>
-    </div >
+    <nz-tabset>
+        <nz-tab nzTitle="{{ 'Form No' | translate }}">
+            <app-maintenance-document-list *ngIf="maintenance?.idMaintenance"
+                [idMaintenance]="maintenance?.idMaintenance ?? ''"
+                [documentType]="'form'"></app-maintenance-document-list>
+        </nz-tab>
 
-    <div class="card">
-        <div class="card-body p-2">
-                <!-- <app-maintenance-share-list [filter-extra]="false" [idMaintenance]="idMaintenance"></app-maintenance-share-list> -->
-    </div>
-    </div >
+        <nz-tab nzTitle="{{ 'Reference' | translate }}">
+            <ng-template nz-tab>
+                <app-maintenance-document-list *ngIf="maintenance?.idMaintenance"
+                    [idMaintenance]="maintenance?.idMaintenance ?? ''"
+                    [documentType]="'reference'"></app-maintenance-document-list>
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'Special Tools' | translate }}">
+            <ng-template nz-tab>
+                <app-maintenance-material-list *ngIf="maintenance?.idMaintenance"
+                    [idMaintenance]="maintenance?.idMaintenance ?? ''"
+                    [itemType]="'tool'"></app-maintenance-material-list>
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'Consumsiable' | translate }}">
+            <ng-template nz-tab>
+                <app-maintenance-material-list *ngIf="maintenance?.idMaintenance"
+                    [idMaintenance]="maintenance?.idMaintenance ?? ''"
+                    [itemType]="'consumsiable'"></app-maintenance-material-list>
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'Routine Replacement' | translate }}">
+            <ng-template nz-tab>
+                <app-maintenance-material-list *ngIf="maintenance?.idMaintenance"
+                    [idMaintenance]="maintenance?.idMaintenance ?? ''"
+                    [itemType]="'expandable'"></app-maintenance-material-list>
+            </ng-template>
+        </nz-tab>
+    </nz-tabset>
 
-<!-- 
-    <lib-approval-form-widget [from-module]="'AmimsMaintenance'" [from-module-id]="maintenance?.idMaintenance"
-        (onSubmit)="handleApprovalSubmit($event)" (onAfterSubmit)="refreshApprovalSteps()"></lib-approval-form-widget> 
-            -->
+
 
 </nz-spin>
 <br>
-

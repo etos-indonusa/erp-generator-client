@@ -3,6 +3,10 @@ export declare const AmimsMaintenanceCodeFormSchema: {
         default: string;
         required: boolean;
     };
+    createdAt: {
+        default: string;
+        required: boolean;
+    };
     descriptionMaintenance: {
         default: string;
         required: boolean;

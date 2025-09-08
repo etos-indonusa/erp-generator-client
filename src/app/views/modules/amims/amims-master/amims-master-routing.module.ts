@@ -13,9 +13,7 @@ const routes: Routes = [
     
     { path: 'company', loadChildren: () => import('./company/company.module').then(m => m.CompanyModule) },
     { path: 'doctype', loadChildren: () => import('./doctype/doctype.module').then(m => m.DoctypeModule) },
-    // { path: 'figure-index', loadChildren: () => import('./figure-index/figure-index.module').then(m => m.FigureIndexModule) },
-    { path: 'lib-form-issued', loadChildren: () => import('./lib-form-issued/lib-form-issued.module').then(m => m.LibFormIssuedModule) },
-    { path: 'lib-reference', loadChildren: () => import('./lib-reference/lib-reference.module').then(m => m.LibReferenceModule) },
+    // { path: 'figure-index', loadChildren: () => import('./figure-index/figure-index.module').then(m => m.FigureIndexModule) }, 
     // { path: 'lib-upload', loadChildren: () => import('./lib-upload/lib-upload.module').then(m => m.LibUploadModule) },
     // { path: 'life-time-limit', loadChildren: () => import('./life-time-limit/life-time-limit.module').then(m => m.LifeTimeLimitModule) },
     { path: 'location-flight', loadChildren: () => import('./location-flight/location-flight.module').then(m => m.LocationFlightModule) },

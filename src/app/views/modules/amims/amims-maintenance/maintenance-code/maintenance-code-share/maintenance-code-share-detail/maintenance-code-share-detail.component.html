@@ -1,65 +1,50 @@
+<nz-spin nzTip="Loading..." [nzSpinning]="is_loading">
 
-  <div class="mb-3">
-    <div class="text-secondary small">Classification</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.classification || '-' }}
-      
+   
+    <!--
+     <lib-approval-steps [for-module-name]="'maintenance-code'" [for-module-id]="maintenance-code?.idMaintenanceCode" [current-status]="maintenance-code?.statusMaintenanceCode"></lib-approval-steps>
+         -->
+
+    <div class="card bg-white p-3" style="box-shadow: none;">
+        <div class="row">
+            <div class="col-md-8">
+                <app-maintenance-code-share-header [data]="maintenanceCode"></app-maintenance-code-share-header>
+                <lib-custom-field [from-module]="'AmimsMaintenanceCode'"
+                    [from-module-id]="maintenanceCode?.idMaintenanceCode"></lib-custom-field>
+            </div>
+            <div class="col-md-4">
+                <document-widget-v1 [for-module-id]="maintenanceCode?.idMaintenanceCode"
+                    [for-module]="'AmimsMaintenanceCode'" [enable-crud]="true"></document-widget-v1>
+
+                <!-- <approval-mode-widget *ngIf="maintenanceCode.status??'-'.toLowerCase() !='close'"
+                    style="margin-right: 5px;" [module-id]="maintenanceCode.id_contractSite" [module]="'AmimsMaintenanceCode'"
+                    [flow-id]="maintenanceCode.id_data_flow" [flow-detail]="maintenanceCode.id_data_flow_detail"
+                    (reload)="approve($event)">
+                </approval-mode-widget> -->
+
+            </div>
+        </div>
+
+
+        <br>
+
+
     </div>
-  </div>
 
-  <div class="mb-3">
-    <div class="text-secondary small">Description Maintenance</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.descriptionMaintenance || '-' }}
-      
+   
+
+    
+
+    <div class="card">
+        <div class="card-body p-2">
+            <!-- <app-maintenance-code-share-list [filter-extra]="false" [idMaintenanceCode]="idMaintenanceCode"></app-maintenance-code-share-list> -->
+        </div>
     </div>
-  </div>
 
-  <div class="mb-3">
-    <div class="text-secondary small">Is Deleted</div>
-    <div class="fw-semibold text-dark">
-      
-        <nz-tag *ngIf="data.isDeleted" nzColor="blue">Ya</nz-tag>
-        <span *ngIf="!data.isDeleted">-</span>
-      
-    </div>
-  </div>
+    <!-- 
+    <lib-approval-form-widget [from-module]="'AmimsMaintenanceCode'" [from-module-id]="maintenance-code?.idMaintenanceCode"
+        (onSubmit)="handleApprovalSubmit($event)" (onAfterSubmit)="refreshApprovalSteps()"></lib-approval-form-widget> 
+            -->
 
-  <div class="mb-3">
-    <div class="text-secondary small">Maintenance Code</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.maintenanceCode || '-' }}
-      
-    </div>
-  </div>
-
-  <div class="mb-3">
-    <div class="text-secondary small">Old Id</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.oldId || '-' }}
-      
-    </div>
-  </div>
-
-  <div class="mb-3">
-    <div class="text-secondary small">Reference</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.reference || '-' }}
-      
-    </div>
-  </div>
-
-  <div class="mb-3">
-    <div class="text-secondary small">Updated At</div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.updatedAt || '-' }}
-      
-    </div>
-  </div>
-
+</nz-spin>
+<br>

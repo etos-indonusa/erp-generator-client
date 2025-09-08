@@ -16,6 +16,8 @@ import { ScheduleMaintenanceInComponent } from './schedule-maintenance/schedule-
 import { ScheduleMaintenanceOhComponent } from './schedule-maintenance/schedule-maintenance-oh/schedule-maintenance-oh.component';
 import { PartInstallShareModule } from "../../amims-inventory/part/part-install-share/part-install-share.module";
 import { VDueListOutputShareModule } from "../v-due-list-output/v-due-list-output-share/v-due-list-output-share.module";
+import { TechLogShareModule } from "../tech-log/tech-log-share/tech-log-share.module";
+import { EngineerRtiShareModule } from "../engineer-rti/engineer-rti-share/engineer-rti-share.module";
 
 @NgModule({
     declarations: [
@@ -36,7 +38,9 @@ import { VDueListOutputShareModule } from "../v-due-list-output/v-due-list-outpu
     RouterModule,
     AircraftDetailShareModule,
     PartInstallShareModule,
-    VDueListOutputShareModule
+    VDueListOutputShareModule,
+    TechLogShareModule,
+    EngineerRtiShareModule
 ]
 })
 export class AircraftModule { }

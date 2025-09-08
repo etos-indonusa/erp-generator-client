@@ -35,6 +35,9 @@ export const AmimsVDueListOutputFormSchema = {
     "default": "",
     "required": false
   },
+  "idAircraft": {
+    "required": false
+  },
   "idDueListOutput": {
     "required": true
   },
@@ -68,6 +71,10 @@ export const AmimsVDueListOutputFormSchema = {
     "default": 0,
     "required": false
   },
+  "peruntukan": {
+    "default": "",
+    "required": false
+  },
   "remainingCy": {
     "default": 0,
     "required": false
@@ -94,6 +101,18 @@ export const AmimsVDueListOutputFormSchema = {
   },
   "toDueHr": {
     "default": 0,
+    "required": false
+  },
+  "typeDue": {
+    "default": "",
+    "required": false
+  },
+  "typeOfwork": {
+    "default": "",
+    "required": false
+  },
+  "variabel": {
+    "default": "",
     "required": false
   }
 };

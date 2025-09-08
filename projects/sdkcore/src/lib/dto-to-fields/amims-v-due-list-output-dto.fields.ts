@@ -8,6 +8,7 @@ export const AmimsVDueListOutputDtoFields: Record<string, 'string' | 'boolean' |
   "dueAtCy": "string",
   "dueAtDy": "string",
   "dueAtHr": "string",
+  "idAircraft": "string",
   "idDueListOutput": "string",
   "idMpart": "string",
   "idPart": "string",
@@ -17,11 +18,15 @@ export const AmimsVDueListOutputDtoFields: Record<string, 'string' | 'boolean' |
   "noteDue": "string",
   "partNumber": "string",
   "partPrice": "number",
+  "peruntukan": "string",
   "remainingCy": "number",
   "remainingDy": "number",
   "remainingHr": "number",
   "sn": "string",
   "toDueCy": "number",
   "toDueDy": "number",
-  "toDueHr": "number"
+  "toDueHr": "number",
+  "typeDue": "string",
+  "typeOfwork": "string",
+  "variabel": "string"
 };

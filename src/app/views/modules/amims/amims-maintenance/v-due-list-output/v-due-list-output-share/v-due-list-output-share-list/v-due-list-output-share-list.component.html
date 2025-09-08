@@ -221,61 +221,7 @@
                     <th [nzSortFn]="true" nzColumnKey="remainingCy" *ngIf="isColVisible('remainingCy')">
                         {{ 'remaining' | translate }}
                     </th>
-
-                    <!-- 
-                    <th [nzSortFn]="true" nzColumnKey="atInstallDy" *ngIf="isColVisible('atInstallDy')">
-                        {{ 'atInstallDy' | translate }}
-                    </th>
-                    <th [nzSortFn]="true" nzColumnKey="atInstallHr" *ngIf="isColVisible('atInstallHr')">
-                        {{ 'atInstallHr' | translate }}
-                    </th>
-
-                    <th [nzSortFn]="true" nzColumnKey="code" *ngIf="isColVisible('code')">
-                        {{ 'code' | translate }}
-                    </th>
-                    <th [nzSortFn]="true" nzColumnKey="createdAt" *ngIf="isColVisible('createdAt')">
-                        {{ 'createdAt' | translate }}
-                    </th>
-                    <th [nzSortFn]="true" nzColumnKey="dueAtCy" *ngIf="isColVisible('dueAtCy')">
-                        {{ 'dueAtCy' | translate }}
-                    </th>
-                    
-                    <th [nzSortFn]="true" nzColumnKey="dueAtHr" *ngIf="isColVisible('dueAtHr')">
-                        {{ 'dueAtHr' | translate }}
-                    </th>
-
-                    <th [nzSortFn]="true" nzColumnKey="lastPrice" *ngIf="isColVisible('lastPrice')">
-                        {{ 'lastPrice' | translate }}
-                    </th>
-                    <th [nzSortFn]="true" nzColumnKey="lastPriceCurrency" *ngIf="isColVisible('lastPriceCurrency')">
-                        {{ 'lastPriceCurrency' | translate }}
-                    </th>
-                    <th [nzSortFn]="true" nzColumnKey="noteDue" *ngIf="isColVisible('noteDue')">
-                        {{ 'noteDue' | translate }}
-                    </th>
-                    <th [nzSortFn]="true" nzColumnKey="partNumber" *ngIf="isColVisible('partNumber')">
-                        {{ 'partNumber' | translate }}
-                    </th>
-                    <th [nzSortFn]="true" nzColumnKey="partPrice" *ngIf="isColVisible('partPrice')">
-                        {{ 'partPrice' | translate }}
-                    </th>
-                    
-                    <th [nzSortFn]="true" nzColumnKey="remainingDy" *ngIf="isColVisible('remainingDy')">
-                        {{ 'remainingDy' | translate }}
-                    </th>
-                    <th [nzSortFn]="true" nzColumnKey="remainingHr" *ngIf="isColVisible('remainingHr')">
-                        {{ 'remainingHr' | translate }}
-                    </th>
-                    <th [nzSortFn]="true" nzColumnKey="sn" *ngIf="isColVisible('sn')">
-                        {{ 'sn' | translate }}
-                    </th>
-
-                    <th [nzSortFn]="true" nzColumnKey="toDueDy" *ngIf="isColVisible('toDueDy')">
-                        {{ 'toDueDy' | translate }}
-                    </th>
-                    <th [nzSortFn]="true" nzColumnKey="toDueHr" *ngIf="isColVisible('toDueHr')">
-                        {{ 'toDueHr' | translate }}
-                    </th> -->
+ 
 
                     <th nzWidth="7%" [nzAlign]="'right'">Action</th>
                 </tr>
@@ -357,44 +303,7 @@
                                 <p>C:{{ data.remainingCy | number}}</p>
                             </ng-container>
                         </td>
-
-
-
-                        <!-- <td *ngIf="isColVisible('lastPrice')">
-
-                            {{ data.lastPrice }}
-
-                        </td>
-
-                        <td *ngIf="isColVisible('lastPriceCurrency')">
-
-                            {{ data.lastPriceCurrency }}
-
-                        </td>
-
-
-                        <td *ngIf="isColVisible('partNumber')">
-
-                            {{ data.partNumber }}
-
-                        </td>
-
-                        <td *ngIf="isColVisible('partPrice')">
-
-                            {{ data.partPrice }}
-
-                        </td>
-
-
-
-                        <td *ngIf="isColVisible('sn')">
-
-                            {{ data.sn }}
-
-                        </td> -->
-
-
-
+   
 
                         <td [nzAlign]="'right'">
                             <button nz-button nz-dropdown [nzDropdownMenu]="menu">

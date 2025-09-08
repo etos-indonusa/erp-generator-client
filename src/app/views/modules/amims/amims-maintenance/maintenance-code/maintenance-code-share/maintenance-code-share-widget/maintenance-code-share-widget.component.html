@@ -1,0 +1,28 @@
+<div class="content-list-status">
+    <div class="page-title-box">
+        <div class="row align-items-center">
+            <div class="col-md-5">
+                <app-breadcrumbs title="maintenance-code" [breadcrumbItems]="breadCrumbItems"></app-breadcrumbs>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-status">
+        <nz-tabset nzLinkRouter nzType="card" [nzTabBarStyle]="{padding:'0px'}" [nzSize]="'default'" nzNoAnimation>
+            <nz-tab>
+                <a *nzTabLink nz-tab-link [routerLink]="['.']" [queryParams]="{ status: 'semua'}"
+                    queryParamsHandling="merge">
+                    {{'semua'|translate|titlecase}} ({{total}})
+                </a>
+            </nz-tab>
+            <ng-container *ngFor="let item of status_urutan">
+                <nz-tab>
+                    <a *nzTabLink nz-tab-link [routerLink]="['.']" [queryParams]="{ status: item.status}"
+                        queryParamsHandling="merge">
+                        {{ item.status |translate| titlecase }} ({{ item.jumlah }})
+                    </a>
+                </nz-tab>
+            </ng-container>
+        </nz-tabset>
+    </div>
+</div>

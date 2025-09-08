@@ -1,5 +1,5 @@
 <nz-card nzTitle="Total ({{total}})" [nzExtra]="extraTemplate" [nzBodyStyle]="{padding:0}">
-    <div class="filter" [hidden]="!filter_extra">
+    <div class="filter" [hidden]="!filter_extra" *ngIf="enableFull">
         <form nz-form [nzLayout]="'vertical'" role="form">
             <div nz-row [nzGutter]="8">
                 <div nz-col [nzXl]="{ span: 6}" [nzLg]="{ span: 8}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
@@ -95,34 +95,39 @@
     </div>
 </nz-card>
 <ng-template #extraTemplate>
-    <ng-container *ngIf="!filter_extra">
-        <nz-input-group nzSearch [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="suffixIconButton"
-            style="max-width: 230px;">
-            <input type="text" nz-input placeholder="{{'search'}}" [(ngModel)]="search" name="search"
-                (keyup.enter)="searchData()" />
-        </nz-input-group>
-        <ng-template #suffixIconButton>
-            <button nz-button nzType="default" nzSearch (click)="searchData()"><span nz-icon
-                    nzType="search"></span></button>
-        </ng-template>
-        <ng-template #addOnBeforeTemplate>
-            <span nz-icon nzTheme="twotone" nzType="question-circle" nz-popover nzPopoverTitle="Pencarian berdasarkan"
-                [nzPopoverContent]="tipsPencarian" nzPopoverPlacement="top"></span>
-            <ng-template #tipsPencarian>
-                <div>
-                    <ul>
-                        <li *ngFor="let item of search_field">{{ item }}</li>
-                    </ul>
-                </div>
+    <ng-container *ngIf="enableFull">
+        <ng-container *ngIf="!filter_extra">
+            <nz-input-group nzSearch [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="suffixIconButton"
+                style="max-width: 230px;">
+                <input type="text" nz-input placeholder="{{'search'}}" [(ngModel)]="search" name="search"
+                    (keyup.enter)="searchData()" />
+            </nz-input-group>
+            <ng-template #suffixIconButton>
+                <button nz-button nzType="default" nzSearch (click)="searchData()"><span nz-icon
+                        nzType="search"></span></button>
             </ng-template>
-        </ng-template>
+            <ng-template #addOnBeforeTemplate>
+                <span nz-icon nzTheme="twotone" nzType="question-circle" nz-popover
+                    nzPopoverTitle="Pencarian berdasarkan" [nzPopoverContent]="tipsPencarian"
+                    nzPopoverPlacement="top"></span>
+                <ng-template #tipsPencarian>
+                    <div>
+                        <ul>
+                            <li *ngFor="let item of search_field">{{ item }}</li>
+                        </ul>
+                    </div>
+                </ng-template>
+            </ng-template>
+        </ng-container>
+        <button nz-button [nzType]="filter_extra ? 'primary' :'default'" style="margin-bottom: 8px;margin-left: 10px;"
+            (click)="filter_extra=!filter_extra">
+            <span nz-icon nzType="filter" nzTheme="outline"></span> Filter
+        </button>
+
+
+
     </ng-container>
-    <button nz-button [nzType]="filter_extra ? 'primary' :'default'" style="margin-bottom: 8px;margin-left: 10px;"
-        (click)="filter_extra=!filter_extra">
-        <span nz-icon nzType="filter" nzTheme="outline"></span> Filter
-    </button>
-
-
     <button nz-button nzType="primary" (click)="add()" [nzLoading]="loading" style="margin-left: 10px;"><span nz-icon
             nzType="plus"></span>Add</button>
+
 </ng-template>

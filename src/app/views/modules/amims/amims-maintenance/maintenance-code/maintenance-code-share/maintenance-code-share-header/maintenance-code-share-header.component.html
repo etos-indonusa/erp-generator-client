@@ -1,0 +1,137 @@
+<!-- ✅ Start rendering -->
+<div class="row">
+
+
+
+
+    <div class="col-md-3" *ngIf="data?.classification !== undefined && data?.classification !== null">
+        <div class="text-secondary small">
+            {{ 'classification' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.classification || '-' }}
+
+        </div>
+    </div>
+
+
+    <br>
+
+
+
+
+    <div class="col-md-3" *ngIf="data?.descriptionMaintenance !== undefined && data?.descriptionMaintenance !== null">
+        <div class="text-secondary small">
+            {{ 'descriptionMaintenance' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.descriptionMaintenance || '-' }}
+
+        </div>
+    </div>
+
+
+    <br> 
+    <div class="col-md-3" *ngIf="data?.idMaintenanceCode !== undefined && data?.idMaintenanceCode !== null">
+        <div class="text-secondary small">
+            {{ 'idMaintenanceCode' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.idMaintenanceCode || '-' }}
+
+        </div>
+    </div>
+
+
+    <br>
+
+
+
+
+    <div class="col-md-3" *ngIf="data?.isDeleted !== undefined && data?.isDeleted !== null">
+        <div class="text-secondary small">
+            {{ 'isDeleted' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            <nz-tag *ngIf="data.isDeleted" nzColor="blue">Ya</nz-tag>
+            <span *ngIf="!data.isDeleted">-</span>
+
+        </div>
+    </div>
+
+
+    <br>
+
+
+
+
+    <div class="col-md-3" *ngIf="data?.maintenanceCode !== undefined && data?.maintenanceCode !== null">
+        <div class="text-secondary small">
+            {{ 'maintenanceCode' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.maintenanceCode || '-' }}
+
+        </div>
+    </div>
+
+
+    <br>
+
+
+
+
+    <div class="col-md-3" *ngIf="data?.oldId !== undefined && data?.oldId !== null">
+        <div class="text-secondary small">
+            {{ 'oldId' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.oldId || '-' }}
+
+        </div>
+    </div>
+
+
+    <br>
+
+
+
+
+    <div class="col-md-3" *ngIf="data?.reference !== undefined && data?.reference !== null">
+        <div class="text-secondary small">
+            {{ 'reference' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.reference || '-' }}
+
+        </div>
+    </div>
+
+
+    <br>
+
+
+
+
+    <div class="col-md-3" *ngIf="data?.updatedAt !== undefined && data?.updatedAt !== null">
+        <div class="text-secondary small">
+            {{ 'updatedAt' | translate }}
+        </div>
+        <div class="fw-semibold text-dark">
+
+            {{ data?.updatedAt | date:'short' }}
+
+        </div>
+    </div>
+
+
+    <br>
+
+</div>

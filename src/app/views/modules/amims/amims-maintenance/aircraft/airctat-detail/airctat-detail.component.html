@@ -122,12 +122,12 @@
         </nz-tab>
         <nz-tab nzTitle="{{ 'AML' | translate }}">
             <ng-template nz-tab>
-    
+                <app-tech-log-share-list [idAircraft]="id_aicraft"></app-tech-log-share-list>
             </ng-template>
         </nz-tab>
         <nz-tab nzTitle="{{ 'RTI' | translate }}">
             <ng-template nz-tab>
-    
+                <app-engineer-rti-share-list [idAircraft]="id_aicraft"></app-engineer-rti-share-list>
             </ng-template>
         </nz-tab>
         <nz-tab nzTitle="{{ 'Log' | translate }}">

@@ -14,14 +14,11 @@ export const MENU: MenuItem[] = [
         label: 'IN Apps',
         isTitle: true
     }
+     
+     
 
 
 
-    , {
-        label: 'VDueListOutput',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/v-due-list-output',
-    }
 
 
     , {
@@ -87,27 +84,7 @@ export const MENU: MenuItem[] = [
         label: 'Master',
         isTitle: true
     }
-    , {
-        label: 'ata',
-        icon: 'message-square',
-        link: '/app/amims/amims-master/ata',
-    }
 
-    , {
-        label: 'doctype',
-        icon: 'message-square',
-        link: '/app/amims/amims-master/doctype',
-    }
-    , {
-        label: 'lib-form-issued',
-        icon: 'message-square',
-        link: '/app/amims/amims-master/lib-form-issued',
-    }
-    , {
-        label: 'lib-reference',
-        icon: 'message-square',
-        link: '/app/amims/amims-master/lib-reference',
-    }
     // , {
     //     label: 'lib-upload',
     //     icon: 'message-square',
@@ -119,11 +96,7 @@ export const MENU: MenuItem[] = [
         icon: 'message-square',
         link: '/app/amims/amims-master/location-flight',
     }
-    , {
-        label: 'mel',
-        icon: 'message-square',
-        link: '/app/amims/amims-master/mel',
-    }
+
 
 
     , {
@@ -161,115 +134,78 @@ export const MENU: MenuItem[] = [
     }
 
     , {
-        label: 'due-list',
+        label: 'VDueListOutput',
         icon: 'message-square',
-        link: '/app/amims/amims-maintenance/due-list',
-    }
-    , {
-        label: 'due-list-output',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/due-list-output',
+        link: '/app/amims/amims-maintenance/v-due-list-output',
     }
     , {
         label: 'engineer-rti',
         icon: 'message-square',
         link: '/app/amims/amims-maintenance/engineer-rti',
     }
-
-    , {
-        label: 'inspection',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/inspection',
-    }
+ 
     , {
         label: 'last-maintenance',
         icon: 'message-square',
         link: '/app/amims/amims-maintenance/last-maintenance',
     }
-    , {
-        label: 'log-process',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/log-process',
-    }
-    , {
-        label: 'log-sp',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/log-sp',
-    }
-    , {
-        label: 'log-transfer',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/log-transfer',
-    }
-    , {
-        label: 'log-tsn-tso',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/log-tsn-tso',
-    }
-    , {
-        label: 'log-user',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/log-user',
-    }
+    
+     
     , {
         label: 'maintenance',
         icon: 'message-square',
         link: '/app/amims/amims-maintenance/maintenance',
     }
+
+    
     , {
-        label: 'maintenance-code',
+        label: 'UnscheduleMaintenance',
         icon: 'message-square',
-        link: '/app/amims/amims-maintenance/maintenance-code',
-    }
-    , {
-        label: 'maintenance-code-form-issued',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/maintenance-code-form-issued',
-    }
-    , {
-        label: 'maintenance-code-reference',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/maintenance-code-reference',
-    }
-    , {
-        label: 'rotary-factor',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/rotary-factor',
-    }
-    , {
-        label: 'tech-defect',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/tech-defect',
-    }
-    , {
-        label: 'tech-discrepancies',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/tech-discrepancies',
+        link: '/app/amims/amims-maintenance/unschedule-maintenance',
     }
     , {
         label: 'tech-log',
         icon: 'message-square',
         link: '/app/amims/amims-maintenance/tech-log',
-    }
-    , {
-        label: 'tech-log-engine',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/tech-log-engine',
-    }
-    , {
-        label: 'tech-log-engine-check',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/tech-log-engine-check',
-    }
-    , {
-        label: 'tech-log-item',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/tech-log-item',
-    }
-    , {
-        label: 'tech-log-jo',
-        icon: 'message-square',
-        link: '/app/amims/amims-maintenance/tech-log-jo',
+    },
+       
+
+    {
+        label: 'Config',
+        icon: 'mail',
+        subItems: [
+            {
+                label: 'maintenance-code',
+                icon: 'message-square',
+                link: '/app/amims/amims-maintenance/maintenance-code',
+            }
+            , {
+                label: 'ata',
+                icon: 'message-square',
+                link: '/app/amims/amims-master/ata',
+            }
+
+            , {
+                label: 'doctype',
+                icon: 'message-square',
+                link: '/app/amims/amims-master/doctype',
+            }
+            , {
+                label: 'lib-form-issued',
+                icon: 'message-square',
+                link: '/app/amims/amims-master/lib-form-issued',
+            }
+            , {
+                label: 'lib-reference',
+                icon: 'message-square',
+                link: '/app/amims/amims-master/lib-reference',
+            }
+            , {
+                label: 'mel',
+                icon: 'message-square',
+                link: '/app/amims/amims-master/mel',
+            }
+        ]
     },
 
     // DOCUMENT 

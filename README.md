@@ -9,6 +9,10 @@ npx ts-node --project tsconfig.tools.json tools/generate-openapi-sdk-with-fields
 ts-node --project tsconfig.tools.json tools/remove-extra-lines.ts [lokasi file ]
 npx ts-node --project tsconfig.tools.json tools/remove-extra-lines.ts src/app/views/modules/amims/amims-inventory/part/part-share/part-share-header/part-share-header.component.html
 
+
+firebase deploy --only hosting:amims-v3
+
+
 ng build sdkcore
 npm publish --access public
 

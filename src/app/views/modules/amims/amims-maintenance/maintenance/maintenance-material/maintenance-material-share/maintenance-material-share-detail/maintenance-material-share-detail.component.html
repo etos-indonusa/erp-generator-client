@@ -1,0 +1,92 @@
+
+  <div class="mb-3">
+    <div class="text-secondary small">Created At</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt ? (data.createdAt | date:'short') : '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Is Special Tool</div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.isSpecialTool" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.isSpecialTool">-</span>
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Item Name</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.itemName || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Item Type</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.itemType || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Part Number</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.partNumber || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Quantity</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.quantity || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Status</div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag  nzColor="green">status </nz-tag> 
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Tool Code</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.toolCode || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Unit</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.unit || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Updated At</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.updatedAt || '-' }}
+      
+    </div>
+  </div>
+

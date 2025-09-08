@@ -1,0 +1,89 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+
+        <nz-form-item>
+            <nz-form-label nzFor="idMaintenance">{{ 'idMaintenance' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idMaintenance" nzShowSearch nzAllowClear
+                    nzPlaceHolder="Pilih {{ 'idMaintenance' | translate }}">
+                    <nz-option *ngFor="let item of listMaintenance" nzLabel="{{ item.idMaintenance }}"
+                        nzValue="{{ item.idMaintenance }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+
+
+        <nz-form-item>
+            <nz-form-label nzFor="idMpart">{{ 'idMpart' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idMpart" nzShowSearch nzAllowClear
+                    nzPlaceHolder="Pilih {{ 'idMpart' | translate }}">
+                    <nz-option *ngFor="let item of listMpart" nzLabel="{{ item.partNumber + '- ' +item.keyword}}"
+                        nzValue="{{ item.idMpart }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+
+
+        <nz-form-item>
+            <nz-form-label nzFor="itemName">{{ 'itemName' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input id="itemName" formControlName="itemName"
+                    placeholder="Masukkan {{ 'itemName' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+
+
+        <nz-form-item>
+            <nz-form-label nzFor="partNumber">{{ 'partNumber' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input id="partNumber" formControlName="partNumber"
+                    placeholder="Masukkan {{ 'partNumber' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item *ngIf="itemType === 'tool'">
+            <nz-form-label nzFor="isSpecialTool">{{ 'isSpecialTool' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-radio-group formControlName="isSpecialTool">
+                    <label nz-radio [nzValue]="'yes'">{{ 'yes' | translate }}</label>
+                    <label nz-radio [nzValue]="'no'">{{ 'no' | translate }}</label>
+                </nz-radio-group>
+            </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+            <nz-form-label nzFor="quantity">{{ 'quantity' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="quantity" formControlName="quantity"
+                    placeholder="Masukkan {{ 'quantity' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+
+
+        <nz-form-item>
+            <nz-form-label nzFor="status">{{ 'status' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-radio-group formControlName="status">
+                    <label nz-radio [nzValue]="'active'">{{ 'active' | translate }}</label>
+                    <label nz-radio [nzValue]="'inactive'">{{ 'inactive' | translate }}</label>
+                </nz-radio-group>
+            </nz-form-control>
+        </nz-form-item>
+ 
+
+        <nz-form-item>
+            <nz-form-label nzFor="unit">{{ 'unit' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input id="unit" formControlName="unit" placeholder="Masukkan {{ 'unit' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+
+
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

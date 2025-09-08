@@ -40,8 +40,8 @@ npm run generate:report -- log-sp --prefix=amims
 npm run generate:crud -- log-transfer --prefix=amims
 npm run generate:report -- log-tsn-tso --prefix=amims
 npm run generate:crud -- log-user --prefix=amims
-npm run generate:report -- maintenance --prefix=amims
-npm run generate:crud -- maintenance-code --prefix=amims
+
+npm run generate:report -- maintenance-code --prefix=amims
 npm run generate:crud -- maintenance-code-form-issued --prefix=amims
 npm run generate:crud -- maintenance-code-reference --prefix=amims
 npm run generate:crud -- mel --prefix=amims
@@ -100,4 +100,9 @@ npm run generate:report -- tech-log-engine-check --prefix=amims
 npm run generate:report -- tech-log-item --prefix=amims
 npm run generate:report -- tech-log-jo --prefix=amims
 npm run generate:report -- type-ofwork --prefix=amims
+npm run generate:report -- unschedule-maintenance --prefix=amims
 npm run generate:crud -- warranty --prefix=amims
+
+npm run generate:report -- maintenance --prefix=amims
+npm run generate:crud -- maintenance-document --prefix=amims
+npm run generate:crud -- maintenance-material --prefix=amims

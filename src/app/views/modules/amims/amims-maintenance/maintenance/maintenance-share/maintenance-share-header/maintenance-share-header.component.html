@@ -14,7 +14,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.atachapter || '-' }}
+        {{ data?.atachapter || '-' }}
       
     </div>
   </div>
@@ -31,7 +31,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.createdAt | date:'short' }}
+        {{ data?.createdAt | date:'short' }}
       
     </div>
   </div>
@@ -48,7 +48,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.cycleFrom | number:'1.0-0' }}
+        {{ data?.cycleFrom | number:'1.0-0' }}
       
     </div>
   </div>
@@ -65,7 +65,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.cycleTo | number:'1.0-0' }}
+        {{ data?.cycleTo | number:'1.0-0' }}
       
     </div>
   </div>
@@ -82,7 +82,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.flightHoursFrom | number:'1.0-0' }}
+        {{ data?.flightHoursFrom | number:'1.0-0' }}
       
     </div>
   </div>
@@ -99,7 +99,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.flightHoursTo | number:'1.0-0' }}
+        {{ data?.flightHoursTo | number:'1.0-0' }}
       
     </div>
   </div>
@@ -116,7 +116,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.idMaintenance || '-' }}
+        {{ data?.idMaintenance || '-' }}
       
     </div>
   </div>
@@ -133,7 +133,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.idMaintenanceCode || '-' }}
+        {{ data?.idMaintenanceCode || '-' }}
       
     </div>
   </div>
@@ -150,7 +150,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.idMpart || '-' }}
+        {{ data?.idMpart || '-' }}
       
     </div>
   </div>
@@ -167,7 +167,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.idUser || '-' }}
+        {{ data?.idUser || '-' }}
       
     </div>
   </div>
@@ -184,7 +184,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.noteMaintenance || '-' }}
+        {{ data?.noteMaintenance || '-' }}
       
     </div>
   </div>
@@ -201,7 +201,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.oldId || '-' }}
+        {{ data?.oldId || '-' }}
       
     </div>
   </div>
@@ -218,7 +218,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.onLocation || '-' }}
+        {{ data?.onLocation || '-' }}
       
     </div>
   </div>
@@ -235,7 +235,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.repetitions | number:'1.0-0' }}
+        {{ data?.repetitions | number:'1.0-0' }}
       
     </div>
   </div>
@@ -252,7 +252,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.timeRangeForm | number:'1.0-0' }}
+        {{ data?.timeRangeForm | number:'1.0-0' }}
       
     </div>
   </div>
@@ -269,7 +269,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.timeRangeTo | number:'1.0-0' }}
+        {{ data?.timeRangeTo | number:'1.0-0' }}
       
     </div>
   </div>
@@ -286,7 +286,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.timeUnit || '-' }}
+        {{ data?.timeUnit || '-' }}
       
     </div>
   </div>
@@ -303,7 +303,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.typeMaintenance || '-' }}
+        {{ data?.typeMaintenance || '-' }}
       
     </div>
   </div>
@@ -320,7 +320,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.updatedAt | date:'short' }}
+        {{ data?.updatedAt | date:'short' }}
       
     </div>
   </div>
@@ -346,7 +346,24 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.maintenanceCode.classification || '-' }}
+        {{ data.maintenanceCode?.classification || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.maintenanceCode?.createdAt !== undefined && data.maintenanceCode?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.maintenanceCode?.createdAt | date:'short' }}
       
     </div>
   </div>
@@ -363,24 +380,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.maintenanceCode.descriptionMaintenance || '-' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.maintenanceCode?.idMaintenanceCode !== undefined && data.maintenanceCode?.idMaintenanceCode !== null">
-    <div class="text-secondary small">
-      {{ 'idMaintenanceCode' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.maintenanceCode.idMaintenanceCode || '-' }}
+        {{ data.maintenanceCode?.descriptionMaintenance || '-' }}
       
     </div>
   </div>
@@ -415,7 +415,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.maintenanceCode.maintenanceCode || '-' }}
+        {{ data.maintenanceCode?.maintenanceCode || '-' }}
       
     </div>
   </div>
@@ -432,7 +432,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.maintenanceCode.oldId || '-' }}
+        {{ data.maintenanceCode?.oldId || '-' }}
       
     </div>
   </div>
@@ -449,7 +449,7 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.maintenanceCode.reference || '-' }}
+        {{ data.maintenanceCode?.reference || '-' }}
       
     </div>
   </div>
@@ -466,7 +466,619 @@
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.maintenanceCode.updatedAt | date:'short' }}
+        {{ data.maintenanceCode?.updatedAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+  
+ <br> 
+  
+    
+  
+    <div class="col-12 mt-4" *ngIf="data?.mpart">
+      <div class="fw-bold border-bottom mb-2">
+        {{ 'mpart' | translate }}
+      </div>
+      <div class="row">
+        
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.calculatedCycle !== undefined && data.mpart?.calculatedCycle !== null">
+    <div class="text-secondary small">
+      {{ 'calculatedCycle' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.calculatedCycle || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.calculatedHours !== undefined && data.mpart?.calculatedHours !== null">
+    <div class="text-secondary small">
+      {{ 'calculatedHours' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.calculatedHours || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.childname !== undefined && data.mpart?.childname !== null">
+    <div class="text-secondary small">
+      {{ 'childname' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.childname || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.codeAtaMentah !== undefined && data.mpart?.codeAtaMentah !== null">
+    <div class="text-secondary small">
+      {{ 'codeAtaMentah' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.codeAtaMentah || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.createdAt !== undefined && data.mpart?.createdAt !== null">
+    <div class="text-secondary small">
+      {{ 'createdAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.createdAt | date:'short' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.descriptionMpart !== undefined && data.mpart?.descriptionMpart !== null">
+    <div class="text-secondary small">
+      {{ 'descriptionMpart' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.descriptionMpart || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.forAc !== undefined && data.mpart?.forAc !== null">
+    <div class="text-secondary small">
+      {{ 'forAc' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.forAc | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.isDeleted !== undefined && data.mpart?.isDeleted !== null">
+    <div class="text-secondary small">
+      {{ 'isDeleted' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.mpart.isDeleted" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.mpart.isDeleted">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.isMandatory !== undefined && data.mpart?.isMandatory !== null">
+    <div class="text-secondary small">
+      {{ 'isMandatory' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.mpart.isMandatory" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.mpart.isMandatory">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.ismayor !== undefined && data.mpart?.ismayor !== null">
+    <div class="text-secondary small">
+      {{ 'ismayor' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag *ngIf="data.mpart.ismayor" nzColor="blue">Ya</nz-tag>
+        <span *ngIf="!data.mpart.ismayor">-</span>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.keyword !== undefined && data.mpart?.keyword !== null">
+    <div class="text-secondary small">
+      {{ 'keyword' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.keyword || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.lastPrice !== undefined && data.mpart?.lastPrice !== null">
+    <div class="text-secondary small">
+      {{ 'lastPrice' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.lastPrice | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.lastPriceCurrency !== undefined && data.mpart?.lastPriceCurrency !== null">
+    <div class="text-secondary small">
+      {{ 'lastPriceCurrency' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.lastPriceCurrency || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.lifeLimitCycle !== undefined && data.mpart?.lifeLimitCycle !== null">
+    <div class="text-secondary small">
+      {{ 'lifeLimitCycle' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.lifeLimitCycle | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.lifeLimitHours !== undefined && data.mpart?.lifeLimitHours !== null">
+    <div class="text-secondary small">
+      {{ 'lifeLimitHours' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.lifeLimitHours | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.lifeLimitVal !== undefined && data.mpart?.lifeLimitVal !== null">
+    <div class="text-secondary small">
+      {{ 'lifeLimitVal' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.lifeLimitVal | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.lifeLimitVar !== undefined && data.mpart?.lifeLimitVar !== null">
+    <div class="text-secondary small">
+      {{ 'lifeLimitVar' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.lifeLimitVar || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.manufactureMpart !== undefined && data.mpart?.manufactureMpart !== null">
+    <div class="text-secondary small">
+      {{ 'manufactureMpart' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.manufactureMpart || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.mat_82 !== undefined && data.mpart?.mat_82 !== null">
+    <div class="text-secondary small">
+      {{ 'mat_82' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.mat_82 || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.mfigureIndex !== undefined && data.mpart?.mfigureIndex !== null">
+    <div class="text-secondary small">
+      {{ 'mfigureIndex' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.mfigureIndex || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.minQty !== undefined && data.mpart?.minQty !== null">
+    <div class="text-secondary small">
+      {{ 'minQty' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.minQty | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.mitemIndex !== undefined && data.mpart?.mitemIndex !== null">
+    <div class="text-secondary small">
+      {{ 'mitemIndex' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.mitemIndex || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.mtboCycle !== undefined && data.mpart?.mtboCycle !== null">
+    <div class="text-secondary small">
+      {{ 'mtboCycle' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.mtboCycle | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.mtboHours !== undefined && data.mpart?.mtboHours !== null">
+    <div class="text-secondary small">
+      {{ 'mtboHours' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.mtboHours | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.mtboVal !== undefined && data.mpart?.mtboVal !== null">
+    <div class="text-secondary small">
+      {{ 'mtboVal' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.mtboVal | number:'1.0-0' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.mtboVar !== undefined && data.mpart?.mtboVar !== null">
+    <div class="text-secondary small">
+      {{ 'mtboVar' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.mtboVar || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.oldAtachapter !== undefined && data.mpart?.oldAtachapter !== null">
+    <div class="text-secondary small">
+      {{ 'oldAtachapter' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.oldAtachapter || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.oldId !== undefined && data.mpart?.oldId !== null">
+    <div class="text-secondary small">
+      {{ 'oldId' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.oldId || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.parent !== undefined && data.mpart?.parent !== null">
+    <div class="text-secondary small">
+      {{ 'parent' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.parent || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.partNumber !== undefined && data.mpart?.partNumber !== null">
+    <div class="text-secondary small">
+      {{ 'partNumber' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.partNumber || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.partname !== undefined && data.mpart?.partname !== null">
+    <div class="text-secondary small">
+      {{ 'partname' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.partname || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.refMel !== undefined && data.mpart?.refMel !== null">
+    <div class="text-secondary small">
+      {{ 'refMel' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.refMel || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.statusMpart !== undefined && data.mpart?.statusMpart !== null">
+    <div class="text-secondary small">
+      {{ 'statusMpart' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        <nz-tag nzColor="green">{{ data.mpart.statusMpart }}</nz-tag>
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.unit !== undefined && data.mpart?.unit !== null">
+    <div class="text-secondary small">
+      {{ 'unit' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.unit || '-' }}
+      
+    </div>
+  </div>
+
+  
+
+        
+          
+  
+    
+  <div class="col-md-3" *ngIf="data.mpart?.updatedAt !== undefined && data.mpart?.updatedAt !== null">
+    <div class="text-secondary small">
+      {{ 'updatedAt' | translate }}
+    </div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.mpart?.updatedAt | date:'short' }}
       
     </div>
   </div>
@@ -491,13 +1103,13 @@
           
   
     
-  <div class="col-md-3" *ngIf="data.user?.createdAt !== undefined && data.user?.createdAt !== null">
+  <div class="col-md-3" *ngIf="data.user?.dateLog !== undefined && data.user?.dateLog !== null">
     <div class="text-secondary small">
-      {{ 'createdAt' | translate }}
+      {{ 'dateLog' | translate }}
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.user.createdAt | date:'short' }}
+        {{ data.user?.dateLog || '-' }}
       
     </div>
   </div>
@@ -508,13 +1120,13 @@
           
   
     
-  <div class="col-md-3" *ngIf="data.user?.deskripsi !== undefined && data.user?.deskripsi !== null">
+  <div class="col-md-3" *ngIf="data.user?.method !== undefined && data.user?.method !== null">
     <div class="text-secondary small">
-      {{ 'deskripsi' | translate }}
+      {{ 'method' | translate }}
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.user.deskripsi || '-' }}
+        {{ data.user?.method || '-' }}
       
     </div>
   </div>
@@ -525,13 +1137,13 @@
           
   
     
-  <div class="col-md-3" *ngIf="data.user?.idUserGroup !== undefined && data.user?.idUserGroup !== null">
+  <div class="col-md-3" *ngIf="data.user?.methodValue !== undefined && data.user?.methodValue !== null">
     <div class="text-secondary small">
-      {{ 'idUserGroup' | translate }}
+      {{ 'methodValue' | translate }}
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.user.idUserGroup || '-' }}
+        {{ data.user?.methodValue || '-' }}
       
     </div>
   </div>
@@ -542,13 +1154,13 @@
           
   
     
-  <div class="col-md-3" *ngIf="data.user?.namaUserGroup !== undefined && data.user?.namaUserGroup !== null">
+  <div class="col-md-3" *ngIf="data.user?.typeIdKey !== undefined && data.user?.typeIdKey !== null">
     <div class="text-secondary small">
-      {{ 'namaUserGroup' | translate }}
+      {{ 'typeIdKey' | translate }}
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.user.namaUserGroup || '-' }}
+        {{ data.user?.typeIdKey || '-' }}
       
     </div>
   </div>
@@ -559,39 +1171,13 @@
           
   
     
-  <div class="col-md-3" *ngIf="data.user?.status !== undefined && data.user?.status !== null">
+  <div class="col-md-3" *ngIf="data.user?.typeLog !== undefined && data.user?.typeLog !== null">
     <div class="text-secondary small">
-      {{ 'status' | translate }}
+      {{ 'typeLog' | translate }}
     </div>
     <div class="fw-semibold text-dark">
       
-        <nz-tag nzColor="green">{{ data.user.status }}</nz-tag>
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    <div class="col-12 mt-4" *ngIf="data.user?.userGroup">
-      <div class="fw-bold border-bottom mb-2">
-        {{ 'user.userGroup' | translate }}
-      </div>
-      <div class="row">
-        
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.user.userGroup?.createdAt !== undefined && data.user.userGroup?.createdAt !== null">
-    <div class="text-secondary small">
-      {{ 'createdAt' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.user.userGroup.createdAt | date:'short' }}
+        {{ data.user?.typeLog || '-' }}
       
     </div>
   </div>
@@ -602,13 +1188,13 @@
           
   
     
-  <div class="col-md-3" *ngIf="data.user.userGroup?.deskripsi !== undefined && data.user.userGroup?.deskripsi !== null">
+  <div class="col-md-3" *ngIf="data.user?.typeValue !== undefined && data.user?.typeValue !== null">
     <div class="text-secondary small">
-      {{ 'deskripsi' | translate }}
+      {{ 'typeValue' | translate }}
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.user.userGroup.deskripsi || '-' }}
+        {{ data.user?.typeValue || '-' }}
       
     </div>
   </div>
@@ -619,56 +1205,17 @@
           
   
     
-  <div class="col-md-3" *ngIf="data.user.userGroup?.idUserGroup !== undefined && data.user.userGroup?.idUserGroup !== null">
+  <div class="col-md-3" *ngIf="data.user?.typeWork !== undefined && data.user?.typeWork !== null">
     <div class="text-secondary small">
-      {{ 'idUserGroup' | translate }}
+      {{ 'typeWork' | translate }}
     </div>
     <div class="fw-semibold text-dark">
       
-        {{ data.user.userGroup.idUserGroup || '-' }}
+        {{ data.user?.typeWork || '-' }}
       
     </div>
   </div>
 
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.user.userGroup?.namaUserGroup !== undefined && data.user.userGroup?.namaUserGroup !== null">
-    <div class="text-secondary small">
-      {{ 'namaUserGroup' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        {{ data.user.userGroup.namaUserGroup || '-' }}
-      
-    </div>
-  </div>
-
-  
-
-        
-          
-  
-    
-  <div class="col-md-3" *ngIf="data.user.userGroup?.status !== undefined && data.user.userGroup?.status !== null">
-    <div class="text-secondary small">
-      {{ 'status' | translate }}
-    </div>
-    <div class="fw-semibold text-dark">
-      
-        <nz-tag nzColor="green">{{ data.user.userGroup.status }}</nz-tag>
-      
-    </div>
-  </div>
-
-  
-
-        
-      </div>
-    </div>
   
 
         

@@ -1,4 +1,8 @@
 export const AmimsVDueListOutputReportFormSchema = {
+  "aircraft": {
+    "default": "",
+    "required": true
+  },
   "atInstallCy": {
     "default": "",
     "required": false
@@ -33,6 +37,9 @@ export const AmimsVDueListOutputReportFormSchema = {
   },
   "dueAtHr": {
     "default": "",
+    "required": false
+  },
+  "idAircraft": {
     "required": false
   },
   "idDueListOutput": {
@@ -76,6 +83,10 @@ export const AmimsVDueListOutputReportFormSchema = {
     "default": 0,
     "required": false
   },
+  "peruntukan": {
+    "default": "",
+    "required": false
+  },
   "remainingCy": {
     "default": 0,
     "required": false
@@ -102,6 +113,18 @@ export const AmimsVDueListOutputReportFormSchema = {
   },
   "toDueHr": {
     "default": 0,
+    "required": false
+  },
+  "typeDue": {
+    "default": "",
+    "required": false
+  },
+  "typeOfwork": {
+    "default": "",
+    "required": false
+  },
+  "variabel": {
+    "default": "",
     "required": false
   }
 };

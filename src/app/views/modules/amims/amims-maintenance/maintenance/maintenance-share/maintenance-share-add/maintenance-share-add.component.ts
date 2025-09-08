@@ -1,16 +1,15 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, SimpleChanges } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsMaintenanceFormSchema } from 'de-sdk-core'; 
-import type  { AmimsMaintenanceDto } from 'de-sdk-core';
+import { AmimsMaintenanceFormSchema } from 'de-sdk-core';
+import type { AmimsMaintenanceDto } from 'de-sdk-core';
 import { MaintenanceService } from 'de-sdk-core';
 
 import { MaintenanceCodeService } from 'de-sdk-core';
 import { MpartService } from 'de-sdk-core';
-import { UsersService } from 'de-sdk-core';
 
 @Component({
     selector: 'app-maintenance-share-add',
@@ -18,61 +17,68 @@ import { UsersService } from 'de-sdk-core';
     styleUrl: './maintenance-share-add.component.scss'
 })
 export class MaintenanceShareAddComponent {
+    @Input('idMpart') idMpart: string = ''
+    @Input('ata') ata: string = ''
     @Input('maintenance') maintenance: AmimsMaintenanceDto = {
-  idMaintenance: ''
-};
+        idMaintenance: ''
+    };
     form!: FormGroup;
 
     ngOnChanges(changes: SimpleChanges): void {
-        if(changes.maintenance && this.maintenance.idMaintenance) {
-        this.form?.patchValue(this.maintenance);
+        if (changes.maintenance && this.maintenance.idMaintenance) {
+            this.form?.patchValue(this.maintenance);
         }
     }
     constructor(
+        private cd: ChangeDetectorRef,
         private fb: FormBuilder,
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
         private maintenanceService: MaintenanceService,
-                        private maintenanceCodeService: MaintenanceCodeService,
-                private mpartService: MpartService,
-                private usersService: UsersService,
-                    ) { }
+        private maintenanceCodeService: MaintenanceCodeService,
+        private mpartService: MpartService,
+    ) { }
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, AmimsMaintenanceFormSchema, {
             kodeMaintenance: [Validators.minLength(3), Validators.maxLength(3)],
             catatan: [Validators.maxLength(200)],
-        },'Maintenance');
+        }, 'Maintenance');
 
-                            this.getAllMaintenanceCode();
-                    this.getAllMpart();
-                    this.getAllUser();
-                    }
-    
+        this.getAllMaintenanceCode();
+        this.getAllMpart();
+        if (this.maintenance.idMaintenance) {
+            this.form.patchValue(this.maintenance);
+        }
+        else if (this.idMpart) {
+            this.form.patchValue({ idMpart: this.idMpart });
+            if (this.ata) {
+                this.form.patchValue({ atachapter: this.ata });
+            }
+        }
+
+    }
+
     listMaintenanceCode: any[] = [];
-    
+
     listMpart: any[] = [];
-    
+
     listUser: any[] = [];
-    
+
 
     // untuk fungsi get ALL relation
-            getAllMaintenanceCode() {
-    this.maintenanceCodeService.maintenanceCodeControllerFindAll().subscribe(
-      data => this.listMaintenanceCode = data.data ?? []
-    );
-  }
-        getAllMpart() {
-    this.mpartService.mpartControllerFindAll().subscribe(
-      data => this.listMpart = data.data ?? []
-    );
-  }
-        getAllUser() {
-    this.usersService.usersControllerFindAll().subscribe(
-      data => this.listUser = data.data ?? []
-    );
-  }
-        
+    getAllMaintenanceCode() {
+        this.maintenanceCodeService.maintenanceCodeControllerFindAll().subscribe(
+            data => this.listMaintenanceCode = data.data ?? []
+        );
+    }
+    getAllMpart() {
+        this.mpartService.mpartControllerFindAll().subscribe(
+            data => this.listMpart = data.data ?? []
+        );
+    }
+
+
     submit(): void {
         const labelMap = extractLabels(AmimsMaintenanceFormSchema);
 
@@ -91,8 +97,8 @@ export class MaintenanceShareAddComponent {
                 this.notify.success('Berhasil', 'Data maintenance berhasil disimpan.');
                 this.nzDrawerRef.close(data);
             },
-            error: () => {
-                this.notify.error('Gagal', 'Terjadi kesalahan saat menyimpan.');
+            error: (e) => {
+                this.notify.error('Gagal', 'Terjadi kesalahan saat menyimpan.' + e?.error?.error);
             },
             complete: () => (this.is_loading = false)
         });
@@ -104,9 +110,10 @@ export class MaintenanceShareAddComponent {
             next: (data) => {
                 this.notify.success('Berhasil', 'Data maintenance berhasil diperbarui.');
                 this.nzDrawerRef.close(data);
+                this.cd.detectChanges()
             },
-            error: () => {
-                this.notify.error('Gagal', 'Terjadi kesalahan saat memperbarui.');
+            error: (e) => {
+                this.notify.error('Gagal', 'Terjadi kesalahan saat menyimpan.' + e?.error?.error);
             },
             complete: () => (this.is_loading = false)
         });

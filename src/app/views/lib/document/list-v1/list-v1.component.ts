@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { NzTableQueryParams } from 'ng-zorro-antd/table';
@@ -17,6 +17,7 @@ export class ListV1Component {
     @Input('for-module') forModule!: string;
     @Input('for-module-id') forModuleId!: string;
     @Input('enable-crud') enableCrud: boolean = false;
+    @Input('enable-full') enableFull: boolean = true;
     @Output('reload') reload = new EventEmitter()
     @Output('total-data') totalData = new EventEmitter();
 
@@ -24,6 +25,7 @@ export class ListV1Component {
     constructor(
         private drawerService: NzDrawerService,
         private acl: AclService,
+        private cdr: ChangeDetectorRef,
 
         private notify: NzNotificationService,
         private documentService: DocumentService,
@@ -100,6 +102,7 @@ export class ListV1Component {
                 this.total = data.total
                 this.listOfData = data.data
                 this.totalData.next(this.total)
+                this.cdr.detectChanges()
             },
                 err => {
                     this.loading = false
@@ -136,6 +139,7 @@ export class ListV1Component {
         });
         drawerRef.afterClose.subscribe(data => {
             this.searchData()
+            this.cdr.detectChanges()
             this.reload.next(data)
         });
     }
@@ -147,6 +151,7 @@ export class ListV1Component {
         this.documentService.documentControllerRemove({ id: data.idDocument }).subscribe(
             data => {
                 this.searchData();
+                this.cdr.detectChanges()
                 this.notify.error('Berhasil', 'Dihapus.');
             }
         )
