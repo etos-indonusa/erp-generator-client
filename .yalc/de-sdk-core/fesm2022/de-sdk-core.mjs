@@ -57479,6 +57479,9 @@ const AmimsWpJoReportFormSchema = {
     "idTechLog": {
         "required": false
     },
+    "idUnscheduleMaintenance": {
+        "required": false
+    },
     "idUser": {
         "required": false
     },
@@ -57544,7 +57547,7 @@ const AmimsWpJoReportFormSchema = {
         "required": false
     },
     "timeRangeFrom": {
-        "default": 0,
+        "default": "",
         "required": false
     },
     "timeRangeTo": {
@@ -57665,6 +57668,9 @@ const AmimsWpJoWidgetFormSchema = {
     "idTechLog": {
         "required": false
     },
+    "idUnscheduleMaintenance": {
+        "required": false
+    },
     "idUser": {
         "required": false
     },
@@ -57714,7 +57720,7 @@ const AmimsWpJoWidgetFormSchema = {
         "required": false
     },
     "timeRangeFrom": {
-        "default": 0,
+        "default": "",
         "required": false
     },
     "timeRangeTo": {
@@ -57835,6 +57841,9 @@ const AmimsWpJoFormSchema = {
     "idTechLog": {
         "required": false
     },
+    "idUnscheduleMaintenance": {
+        "required": false
+    },
     "idUser": {
         "required": false
     },
@@ -57884,7 +57893,7 @@ const AmimsWpJoFormSchema = {
         "required": false
     },
     "timeRangeFrom": {
-        "default": 0,
+        "default": "",
         "required": false
     },
     "timeRangeTo": {
@@ -66695,6 +66704,7 @@ const AmimsWpJoDtoFields = {
     "idPart": "string",
     "idSite": "string",
     "idTechLog": "string",
+    "idUnscheduleMaintenance": "string",
     "idUser": "string",
     "idWorkCompleted": "string",
     "idWp": "string",
@@ -66708,7 +66718,7 @@ const AmimsWpJoDtoFields = {
     "priority": "string",
     "reference": "string",
     "statusWpJo": "string",
-    "timeRangeFrom": "number",
+    "timeRangeFrom": "string",
     "timeRangeTo": "number",
     "timeVariable": "string",
     "totalHoursWork": "number",
@@ -66743,6 +66753,7 @@ const AmimsWpJoReportDtoFields = {
     "idPart": "string",
     "idSite": "string",
     "idTechLog": "string",
+    "idUnscheduleMaintenance": "string",
     "idUser": "string",
     "idWorkCompleted": "string",
     "idWp": "string",
@@ -66760,7 +66771,7 @@ const AmimsWpJoReportDtoFields = {
     "reference": "string",
     "site": "string",
     "statusWpJo": "string",
-    "timeRangeFrom": "number",
+    "timeRangeFrom": "string",
     "timeRangeTo": "number",
     "timeVariable": "string",
     "totalHoursWork": "number",
@@ -66795,6 +66806,7 @@ const AmimsWpJoWidgetDtoFields = {
     "idPart": "string",
     "idSite": "string",
     "idTechLog": "string",
+    "idUnscheduleMaintenance": "string",
     "idUser": "string",
     "idWorkCompleted": "string",
     "idWp": "string",
@@ -66808,7 +66820,7 @@ const AmimsWpJoWidgetDtoFields = {
     "priority": "string",
     "reference": "string",
     "statusWpJo": "string",
-    "timeRangeFrom": "number",
+    "timeRangeFrom": "string",
     "timeRangeTo": "number",
     "timeVariable": "string",
     "total": "number",

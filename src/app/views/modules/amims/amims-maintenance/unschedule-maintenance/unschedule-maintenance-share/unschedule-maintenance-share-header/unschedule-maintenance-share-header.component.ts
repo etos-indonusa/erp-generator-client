@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectorRef, Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-unschedule-maintenance-share-header',
@@ -7,8 +7,12 @@ import { Component, Input } from '@angular/core';
 })
 export class UnscheduleMaintenanceShareHeaderComponent {
     @Input('data') data: any = {}
-    constructor() { }
+    constructor(
+        private changeDetector: ChangeDetectorRef
+    ) { }
 
     ngOnInit(): void {
+        console.log(this.data);
+        this.changeDetector.detectChanges();
     }
 }

@@ -1,1950 +1,272 @@
 <!-- ✅ Start rendering -->
-<div class="row">
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.abortStatus !== undefined && data?.abortStatus !== null">
-        <div class="text-secondary small">
-            {{ 'abortStatus' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            <nz-tag nzColor="green">{{ data.abortStatus }}</nz-tag>
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.actionCode !== undefined && data?.actionCode !== null">
-        <div class="text-secondary small">
-            {{ 'actionCode' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.actionCode || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.aircraftGrounded !== undefined && data?.aircraftGrounded !== null">
-        <div class="text-secondary small">
-            {{ 'aircraftGrounded' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.aircraftGrounded || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.airframeSn !== undefined && data?.airframeSn !== null">
-        <div class="text-secondary small">
-            {{ 'airframeSn' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.airframeSn || '-' }}
-
+<ng-container *ngIf="data as item">
+    <!-- Tindakan & Status -->
+    <div class="section-block" *ngIf="item.actionCode || item.abortStatus || item.aircraftGrounded || item.delayStatus || item.complianceLastPerformedBy || item.status || item.type || item.isOptional !== undefined || item.amlNumber">
+        <h6 class="section-title">Tindakan &amp; Status</h6>
+        <div class="row g-3">
+            <div class="col-md-3" *ngIf="item.actionCode !== undefined">
+                <div class="field-label">{{ 'actionCode' | translate }}</div>
+                <div class="field-value">{{ item.actionCode || '-' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.abortStatus !== undefined && item.abortStatus !== null">
+                <div class="field-label">{{ 'abortStatus' | translate }}</div>
+                <div class="field-value">
+                    <nz-tag nzColor="red">{{ item.abortStatus }}</nz-tag>
+                </div>
+            </div>
+            <div class="col-md-3" *ngIf="item.delayStatus !== undefined && item.delayStatus !== null">
+                <div class="field-label">{{ 'delayStatus' | translate }}</div>
+                <div class="field-value">
+                    <nz-tag nzColor="gold">{{ item.delayStatus }}</nz-tag>
+                </div>
+            </div>
+            <div class="col-md-3" *ngIf="item.aircraftGrounded !== undefined && item.aircraftGrounded !== null">
+                <div class="field-label">{{ 'aircraftGrounded' | translate }}</div>
+                <div class="field-value">
+                    <nz-tag [nzColor]="item.aircraftGrounded === '1' ? 'volcano' : 'default'">
+                        {{ item.aircraftGrounded === '1' ? 'Ya' : 'Tidak' }}
+                    </nz-tag>
+                </div>
+            </div>
+            <div class="col-md-3" *ngIf="item.complianceLastPerformedBy !== undefined">
+                <div class="field-label">{{ 'complianceLastPerformedBy' | translate }}</div>
+                <div class="field-value">{{ item.complianceLastPerformedBy || '-' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.status !== undefined && item.status !== null">
+                <div class="field-label">{{ 'status' | translate }}</div>
+                <div class="field-value">
+                    <nz-tag nzColor="green">{{ item.status }}</nz-tag>
+                </div>
+            </div>
+            <div class="col-md-3" *ngIf="item.type !== undefined">
+                <div class="field-label">{{ 'type' | translate }}</div>
+                <div class="field-value">{{ item.type || '-' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.isOptional !== undefined && item.isOptional !== null">
+                <div class="field-label">{{ 'isOptional' | translate }}</div>
+                <div class="field-value">
+                    <nz-tag nzColor="blue" *ngIf="item.isOptional === '1' || item.isOptional === true">Ya</nz-tag>
+                    <span *ngIf="item.isOptional !== '1' && item.isOptional !== true">-</span>
+                </div>
+            </div>
+            <div class="col-md-3" *ngIf="item.amlNumber !== undefined">
+                <div class="field-label">{{ 'amlNumber' | translate }}</div>
+                <div class="field-value">{{ item.amlNumber || '-' }}</div>
+            </div>
         </div>
     </div>
 
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.amlNumber !== undefined && data?.amlNumber !== null">
-        <div class="text-secondary small">
-            {{ 'amlNumber' | translate }}
+    <!-- Identifikasi Aircraft & Part -->
+    <div class="section-block" *ngIf="item.airframeSn || item.ataCode || item.aircraft || item.part">
+        <h6 class="section-title">Identifikasi Aircraft &amp; Part</h6>
+        <div class="row g-3">
+            <div class="col-md-3" *ngIf="item.airframeSn !== undefined">
+                <div class="field-label">{{ 'airframeSn' | translate }}</div>
+                <div class="field-value">{{ item.airframeSn || '-' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.ataCode !== undefined">
+                <div class="field-label">{{ 'ataCode' | translate }}</div>
+                <div class="field-value">{{ item.ataCode || '-' }}</div>
+            </div>
         </div>
-        <div class="fw-semibold text-dark">
 
-            {{ data?.amlNumber || '-' }}
-
+        <div class="row g-3 mt-2" *ngIf="item.aircraft">
+            <div class="col-12">
+                <div class="sub-title">Aircraft</div>
+            </div>
+            <div class="col-md-3">
+                <div class="field-label">Registration</div>
+                <div class="field-value">{{ item.aircraft?.registrationNumber || '-' }}</div>
+            </div>
+            <div class="col-md-3">
+                <div class="field-label">Serial</div>
+                <div class="field-value">{{ item.aircraft?.serialNumber || '-' }}</div>
+            </div>
+            <div class="col-md-3">
+                <div class="field-label">Type</div>
+                <div class="field-value">{{ item.aircraft?.descriptionAircraft || item.aircraft?.idActype || '-' }}</div>
+            </div>
+            <div class="col-md-3">
+                <div class="field-label">Status</div>
+                <div class="field-value">{{ item.aircraft?.statusAc || '-' }}</div>
+            </div>
         </div>
-    </div>
 
+        <div class="row g-3 mt-2" *ngIf="item.part">
+            <div class="col-12">
+                <div class="sub-title">Part</div>
+            </div>
+            <div class="col-md-3">
+                <div class="field-label">Part Number</div>
+                <div class="field-value">{{ item.part?.partNumber || item.part?.idPart || '-' }}</div>
+            </div>
+            <div class="col-md-3">
+                <div class="field-label">Serial</div>
+                <div class="field-value">{{ item.part?.sn || '-' }}</div>
+            </div>
+            <div class="col-md-3">
+                <div class="field-label">Status</div>
+                <div class="field-value">{{ item.part?.statusOnInventory || '-' }}</div>
+            </div>
+            <div class="col-md-3">
+                <div class="field-label">Position</div>
+                <div class="field-value">{{ item.part?.position || '-' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.part?.tboHours !== undefined && item.part?.tboHours !== null">
+                <div class="field-label">TBO Hours</div>
+                <div class="field-value">{{ item.part?.tboHours ?? '-' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.part?.tsnHours !== undefined && item.part?.tsnHours !== null">
+                <div class="field-label">TSN Hours</div>
+                <div class="field-value">{{ item.part?.tsnHours ?? '-' }}</div>
+            </div>
 
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.ataCode !== undefined && data?.ataCode !== null">
-        <div class="text-secondary small">
-            {{ 'ataCode' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.ataCode || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3"
-        *ngIf="data?.complianceLastPerformedBy !== undefined && data?.complianceLastPerformedBy !== null">
-        <div class="text-secondary small">
-            {{ 'complianceLastPerformedBy' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.complianceLastPerformedBy || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.createdAt !== undefined && data?.createdAt !== null">
-        <div class="text-secondary small">
-            {{ 'createdAt' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.createdAt | date:'short' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.delayStatus !== undefined && data?.delayStatus !== null">
-        <div class="text-secondary small">
-            {{ 'delayStatus' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            <nz-tag nzColor="green">{{ data.delayStatus }}</nz-tag>
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.description !== undefined && data?.description !== null">
-        <div class="text-secondary small">
-            {{ 'description' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.description || '-' }}
-
+            <div class="col-12" *ngIf="item.part?.mpart">
+                <div class="sub-title">MPART Info</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.part?.mpart?.partNumber">
+                <div class="field-label">MPART Code</div>
+                <div class="field-value">{{ item.part?.mpart?.partNumber }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.part?.mpart?.descriptionMpart">
+                <div class="field-label">MPART Desc</div>
+                <div class="field-value">{{ item.part?.mpart?.descriptionMpart }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.part?.mpart?.idGroup">
+                <div class="field-label">MPART Group</div>
+                <div class="field-value">{{ item.part?.mpart?.idGroup }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.part?.mpart?.mtboHours !== undefined && item.part?.mpart?.mtboHours !== null">
+                <div class="field-label">MTBO Hours</div>
+                <div class="field-value">{{ item.part?.mpart?.mtboHours ?? '-' }}</div>
+            </div>
         </div>
     </div>
 
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.discoveredBy !== undefined && data?.discoveredBy !== null">
-        <div class="text-secondary small">
-            {{ 'discoveredBy' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.discoveredBy || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.discoveryPoint !== undefined && data?.discoveryPoint !== null">
-        <div class="text-secondary small">
-            {{ 'discoveryPoint' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.discoveryPoint || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.hiddenDamageRequired !== undefined && data?.hiddenDamageRequired !== null">
-        <div class="text-secondary small">
-            {{ 'hiddenDamageRequired' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.hiddenDamageRequired || '-' }}
-
+    <!-- Detail Maintenance -->
+    <div class="section-block" *ngIf="item.description || item.notes || item.preliminaryNote || item.hiddenDamageRequired || item.inspectionRequired || item.inspectionDate || item.inspector">
+        <h6 class="section-title">Detail Maintenance</h6>
+        <div class="row g-3">
+            <div class="col-md-3" *ngIf="item.description !== undefined">
+                <div class="field-label">{{ 'description' | translate }}</div>
+                <div class="field-value">{{ item.description || '-' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.notes !== undefined">
+                <div class="field-label">{{ 'notes' | translate }}</div>
+                <div class="field-value">{{ item.notes || '-' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.preliminaryNote !== undefined">
+                <div class="field-label">{{ 'preliminaryNote' | translate }}</div>
+                <div class="field-value">{{ item.preliminaryNote || '-' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.hiddenDamageRequired !== undefined">
+                <div class="field-label">{{ 'hiddenDamageRequired' | translate }}</div>
+                <div class="field-value">{{ item.hiddenDamageRequired || '-' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.inspectionRequired !== undefined">
+                <div class="field-label">{{ 'inspectionRequired' | translate }}</div>
+                <div class="field-value">{{ item.inspectionRequired || '-' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.inspectionDate !== undefined && item.inspectionDate !== null">
+                <div class="field-label">{{ 'inspectionDate' | translate }}</div>
+                <div class="field-value">{{ item.inspectionDate | date: 'yyyy-MM-dd' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.inspector !== undefined">
+                <div class="field-label">{{ 'inspector' | translate }}</div>
+                <div class="field-value">{{ item.inspector || '-' }}</div>
+            </div>
         </div>
     </div>
 
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.idAircraft !== undefined && data?.idAircraft !== null">
-        <div class="text-secondary small">
-            {{ 'idAircraft' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.idAircraft || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.idPart !== undefined && data?.idPart !== null">
-        <div class="text-secondary small">
-            {{ 'idPart' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.idPart || '-' }}
-
+    <!-- Pelaporan & Penemuan -->
+    <div class="section-block" *ngIf="item.reportedDate || item.reportedHours !== undefined || item.reportedLandings !== undefined || item.discoveredBy || item.discoveryPoint">
+        <h6 class="section-title">Pelaporan &amp; Penemuan</h6>
+        <div class="row g-3">
+            <div class="col-md-3" *ngIf="item.reportedDate !== undefined && item.reportedDate !== null">
+                <div class="field-label">{{ 'reportedDate' | translate }}</div>
+                <div class="field-value">{{ item.reportedDate | date: 'yyyy-MM-dd' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.reportedHours !== undefined">
+                <div class="field-label">{{ 'reportedHours' | translate }}</div>
+                <div class="field-value">{{ item.reportedHours ?? '-' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.reportedLandings !== undefined && item.reportedLandings !== null">
+                <div class="field-label">{{ 'reportedLandings' | translate }}</div>
+                <div class="field-value">{{ item.reportedLandings | number: '1.0-0' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.discoveredBy !== undefined">
+                <div class="field-label">{{ 'discoveredBy' | translate }}</div>
+                <div class="field-value">{{ item.discoveredBy || '-' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.discoveryPoint !== undefined">
+                <div class="field-label">{{ 'discoveryPoint' | translate }}</div>
+                <div class="field-value">{{ item.discoveryPoint || '-' }}</div>
+            </div>
         </div>
     </div>
 
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.idTechLog !== undefined && data?.idTechLog !== null">
-        <div class="text-secondary small">
-            {{ 'idTechLog' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.idTechLog || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.idUnscheduleMaintenance !== undefined && data?.idUnscheduleMaintenance !== null">
-        <div class="text-secondary small">
-            {{ 'idUnscheduleMaintenance' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.idUnscheduleMaintenance || '-' }}
-
+    <!-- Jadwal & Due -->
+    <div class="section-block" *ngIf="item.nextDueDate || item.nextDueHours !== undefined || item.nextDueLandings !== undefined || item.nextDueParam">
+        <h6 class="section-title">Jadwal &amp; Due</h6>
+        <div class="row g-3">
+            <div class="col-md-3" *ngIf="item.nextDueDate !== undefined && item.nextDueDate !== null">
+                <div class="field-label">{{ 'nextDueDate' | translate }}</div>
+                <div class="field-value">{{ item.nextDueDate | date: 'yyyy-MM-dd' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.nextDueHours !== undefined">
+                <div class="field-label">{{ 'nextDueHours' | translate }}</div>
+                <div class="field-value">{{ item.nextDueHours ?? '-' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.nextDueLandings !== undefined && item.nextDueLandings !== null">
+                <div class="field-label">{{ 'nextDueLandings' | translate }}</div>
+                <div class="field-value">{{ item.nextDueLandings | number: '1.0-0' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.nextDueParam !== undefined">
+                <div class="field-label">{{ 'nextDueParam' | translate }}</div>
+                <div class="field-value">{{ item.nextDueParam || '-' }}</div>
+            </div>
         </div>
     </div>
 
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.idUser !== undefined && data?.idUser !== null">
-        <div class="text-secondary small">
-            {{ 'idUser' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.idUser || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.inspectionDate !== undefined && data?.inspectionDate !== null">
-        <div class="text-secondary small">
-            {{ 'inspectionDate' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.inspectionDate || '-' }}
-
+    <!-- Resolusi -->
+    <div class="section-block" *ngIf="item.resolvedDate || item.resolvedHours || item.resolvedLandings">
+        <h6 class="section-title">Resolusi</h6>
+        <div class="row g-3">
+            <div class="col-md-3" *ngIf="item.resolvedDate !== undefined && item.resolvedDate !== null">
+                <div class="field-label">{{ 'resolvedDate' | translate }}</div>
+                <div class="field-value">{{ item.resolvedDate | date: 'yyyy-MM-dd' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.resolvedHours !== undefined">
+                <div class="field-label">{{ 'resolvedHours' | translate }}</div>
+                <div class="field-value">{{ item.resolvedHours ?? '-' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.resolvedLandings !== undefined && item.resolvedLandings !== null">
+                <div class="field-label">{{ 'resolvedLandings' | translate }}</div>
+                <div class="field-value">{{ item.resolvedLandings ?? '-' }}</div>
+            </div>
         </div>
     </div>
 
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.inspectionRequired !== undefined && data?.inspectionRequired !== null">
-        <div class="text-secondary small">
-            {{ 'inspectionRequired' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.inspectionRequired || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.inspector !== undefined && data?.inspector !== null">
-        <div class="text-secondary small">
-            {{ 'inspector' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.inspector || '-' }}
-
+    <!-- Referensi & User -->
+    <div class="section-block" *ngIf="item.refNumber || item.reference || item.lastUpdatedBy || item.createdAt || item.updatedAt">
+        <h6 class="section-title">Referensi &amp; User</h6>
+        <div class="row g-3">
+            <div class="col-md-3" *ngIf="item.refNumber !== undefined">
+                <div class="field-label">{{ 'refNumber' | translate }}</div>
+                <div class="field-value">{{ item.refNumber || '-' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.reference !== undefined">
+                <div class="field-label">{{ 'reference' | translate }}</div>
+                <div class="field-value">{{ item.reference || '-' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.createdAt !== undefined && item.createdAt !== null">
+                <div class="field-label">{{ 'createdAt' | translate }}</div>
+                <div class="field-value">{{ item.createdAt | date: 'yyyy-MM-dd' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.updatedAt !== undefined && item.updatedAt !== null">
+                <div class="field-label">{{ 'updatedAt' | translate }}</div>
+                <div class="field-value">{{ item.updatedAt | date: 'yyyy-MM-dd' }}</div>
+            </div>
         </div>
     </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.isOptional !== undefined && data?.isOptional !== null">
-        <div class="text-secondary small">
-            {{ 'isOptional' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            <nz-tag *ngIf="data.isOptional" nzColor="blue">Ya</nz-tag>
-            <span *ngIf="!data.isOptional">-</span>
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.lastUpdatedBy !== undefined && data?.lastUpdatedBy !== null">
-        <div class="text-secondary small">
-            {{ 'lastUpdatedBy' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.lastUpdatedBy | date:'short' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.nextDueDate !== undefined && data?.nextDueDate !== null">
-        <div class="text-secondary small">
-            {{ 'nextDueDate' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.nextDueDate || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.nextDueHours !== undefined && data?.nextDueHours !== null">
-        <div class="text-secondary small">
-            {{ 'nextDueHours' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.nextDueHours || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.nextDueLandings !== undefined && data?.nextDueLandings !== null">
-        <div class="text-secondary small">
-            {{ 'nextDueLandings' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.nextDueLandings | number:'1.0-0' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.nextDueParam !== undefined && data?.nextDueParam !== null">
-        <div class="text-secondary small">
-            {{ 'nextDueParam' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.nextDueParam || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.notes !== undefined && data?.notes !== null">
-        <div class="text-secondary small">
-            {{ 'notes' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.notes || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.preliminaryNote !== undefined && data?.preliminaryNote !== null">
-        <div class="text-secondary small">
-            {{ 'preliminaryNote' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.preliminaryNote || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.refNumber !== undefined && data?.refNumber !== null">
-        <div class="text-secondary small">
-            {{ 'refNumber' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.refNumber || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.reference !== undefined && data?.reference !== null">
-        <div class="text-secondary small">
-            {{ 'reference' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.reference || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.reportedDate !== undefined && data?.reportedDate !== null">
-        <div class="text-secondary small">
-            {{ 'reportedDate' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.reportedDate || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.reportedHours !== undefined && data?.reportedHours !== null">
-        <div class="text-secondary small">
-            {{ 'reportedHours' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.reportedHours || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.reportedLandings !== undefined && data?.reportedLandings !== null">
-        <div class="text-secondary small">
-            {{ 'reportedLandings' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.reportedLandings | number:'1.0-0' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.resolvedDate !== undefined && data?.resolvedDate !== null">
-        <div class="text-secondary small">
-            {{ 'resolvedDate' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.resolvedDate || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.resolvedHours !== undefined && data?.resolvedHours !== null">
-        <div class="text-secondary small">
-            {{ 'resolvedHours' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.resolvedHours || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.resolvedLandings !== undefined && data?.resolvedLandings !== null">
-        <div class="text-secondary small">
-            {{ 'resolvedLandings' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.resolvedLandings || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.status !== undefined && data?.status !== null">
-        <div class="text-secondary small">
-            {{ 'status' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            <nz-tag nzColor="green">{{ data.status }}</nz-tag>
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.type !== undefined && data?.type !== null">
-        <div class="text-secondary small">
-            {{ 'type' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.type || '-' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-
-    <div class="col-md-3" *ngIf="data?.updatedAt !== undefined && data?.updatedAt !== null">
-        <div class="text-secondary small">
-            {{ 'updatedAt' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.updatedAt | date:'short' }}
-
-        </div>
-    </div>
-
-
-    <br>
-
-
-
-    <div class="col-12 mt-4" *ngIf="data?.aircraft">
-        <div class="fw-bold border-bottom mb-2">
-            {{ 'aircraft' | translate }}
-        </div>
-        <div class="row">
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.aircraft?.acFoto !== undefined && data.aircraft?.acFoto !== null">
-                <div class="text-secondary small">
-                    {{ 'acFoto' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.aircraft?.acFoto || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.aircraft?.createdAt !== undefined && data.aircraft?.createdAt !== null">
-                <div class="text-secondary small">
-                    {{ 'createdAt' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.aircraft?.createdAt | date:'short' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3"
-                *ngIf="data.aircraft?.descriptionAircraft !== undefined && data.aircraft?.descriptionAircraft !== null">
-                <div class="text-secondary small">
-                    {{ 'descriptionAircraft' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.aircraft?.descriptionAircraft || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.aircraft?.hasapu !== undefined && data.aircraft?.hasapu !== null">
-                <div class="text-secondary small">
-                    {{ 'hasapu' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.aircraft?.hasapu || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.aircraft?.isDeleted !== undefined && data.aircraft?.isDeleted !== null">
-                <div class="text-secondary small">
-                    {{ 'isDeleted' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    <nz-tag *ngIf="data.aircraft.isDeleted" nzColor="blue">Ya</nz-tag>
-                    <span *ngIf="!data.aircraft.isDeleted">-</span>
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3"
-                *ngIf="data.aircraft?.keywordAircraft !== undefined && data.aircraft?.keywordAircraft !== null">
-                <div class="text-secondary small">
-                    {{ 'keywordAircraft' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.aircraft?.keywordAircraft || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3"
-                *ngIf="data.aircraft?.manufactureAircraft !== undefined && data.aircraft?.manufactureAircraft !== null">
-                <div class="text-secondary small">
-                    {{ 'manufactureAircraft' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.aircraft?.manufactureAircraft || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3"
-                *ngIf="data.aircraft?.manufactureDate !== undefined && data.aircraft?.manufactureDate !== null">
-                <div class="text-secondary small">
-                    {{ 'manufactureDate' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.aircraft?.manufactureDate || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3"
-                *ngIf="data.aircraft?.manufactureEngine !== undefined && data.aircraft?.manufactureEngine !== null">
-                <div class="text-secondary small">
-                    {{ 'manufactureEngine' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.aircraft?.manufactureEngine || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3"
-                *ngIf="data.aircraft?.manufacturedBy !== undefined && data.aircraft?.manufacturedBy !== null">
-                <div class="text-secondary small">
-                    {{ 'manufacturedBy' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.aircraft?.manufacturedBy || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.aircraft?.oldActype !== undefined && data.aircraft?.oldActype !== null">
-                <div class="text-secondary small">
-                    {{ 'oldActype' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.aircraft?.oldActype || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.aircraft?.oldId !== undefined && data.aircraft?.oldId !== null">
-                <div class="text-secondary small">
-                    {{ 'oldId' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.aircraft?.oldId || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3"
-                *ngIf="data.aircraft?.purchasedate !== undefined && data.aircraft?.purchasedate !== null">
-                <div class="text-secondary small">
-                    {{ 'purchasedate' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.aircraft?.purchasedate || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3"
-                *ngIf="data.aircraft?.reasonRegschange !== undefined && data.aircraft?.reasonRegschange !== null">
-                <div class="text-secondary small">
-                    {{ 'reasonRegschange' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.aircraft?.reasonRegschange || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3"
-                *ngIf="data.aircraft?.registrationNumber !== undefined && data.aircraft?.registrationNumber !== null">
-                <div class="text-secondary small">
-                    {{ 'registrationNumber' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.aircraft?.registrationNumber || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3"
-                *ngIf="data.aircraft?.serialNumber !== undefined && data.aircraft?.serialNumber !== null">
-                <div class="text-secondary small">
-                    {{ 'serialNumber' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.aircraft?.serialNumber || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.aircraft?.statusAc !== undefined && data.aircraft?.statusAc !== null">
-                <div class="text-secondary small">
-                    {{ 'statusAc' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    <nz-tag nzColor="green">{{ data.aircraft.statusAc }}</nz-tag>
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.aircraft?.tendurance !== undefined && data.aircraft?.tendurance !== null">
-                <div class="text-secondary small">
-                    {{ 'tendurance' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.aircraft?.tendurance | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.aircraft?.updatedAt !== undefined && data.aircraft?.updatedAt !== null">
-                <div class="text-secondary small">
-                    {{ 'updatedAt' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.aircraft?.updatedAt | date:'short' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.aircraft?.yearMade !== undefined && data.aircraft?.yearMade !== null">
-                <div class="text-secondary small">
-                    {{ 'yearMade' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.aircraft?.yearMade || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-        </div>
-    </div>
-
-    <br>
-
-
-
-    <div class="col-12 mt-4" *ngIf="data?.part">
-        <div class="fw-bold border-bottom mb-2">
-            {{ 'part' | translate }}
-        </div>
-        <div class="row">
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.part?.dateInstall !== undefined && data.part?.dateInstall !== null">
-                <div class="text-secondary small">
-                    {{ 'dateInstall' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.part?.dateInstall || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.part?.parent !== undefined && data.part?.parent !== null">
-                <div class="text-secondary small">
-                    {{ 'parent' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.part?.parent || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.part?.tsiCycle !== undefined && data.part?.tsiCycle !== null">
-                <div class="text-secondary small">
-                    {{ 'tsiCycle' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.part?.tsiCycle | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.part?.tsiHours !== undefined && data.part?.tsiHours !== null">
-                <div class="text-secondary small">
-                    {{ 'tsiHours' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.part?.tsiHours | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.part?.tsiVal !== undefined && data.part?.tsiVal !== null">
-                <div class="text-secondary small">
-                    {{ 'tsiVal' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.part?.tsiVal | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.part?.tsiVar !== undefined && data.part?.tsiVar !== null">
-                <div class="text-secondary small">
-                    {{ 'tsiVar' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.part?.tsiVar || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.part?.tsnCycle !== undefined && data.part?.tsnCycle !== null">
-                <div class="text-secondary small">
-                    {{ 'tsnCycle' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.part?.tsnCycle | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.part?.tsnHours !== undefined && data.part?.tsnHours !== null">
-                <div class="text-secondary small">
-                    {{ 'tsnHours' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.part?.tsnHours | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.part?.tsnVal !== undefined && data.part?.tsnVal !== null">
-                <div class="text-secondary small">
-                    {{ 'tsnVal' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.part?.tsnVal | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.part?.tsnVar !== undefined && data.part?.tsnVar !== null">
-                <div class="text-secondary small">
-                    {{ 'tsnVar' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.part?.tsnVar || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.part?.tsoCycle !== undefined && data.part?.tsoCycle !== null">
-                <div class="text-secondary small">
-                    {{ 'tsoCycle' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.part?.tsoCycle | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.part?.tsoHours !== undefined && data.part?.tsoHours !== null">
-                <div class="text-secondary small">
-                    {{ 'tsoHours' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.part?.tsoHours | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.part?.tsoVal !== undefined && data.part?.tsoVal !== null">
-                <div class="text-secondary small">
-                    {{ 'tsoVal' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.part?.tsoVal | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.part?.tsoVar !== undefined && data.part?.tsoVar !== null">
-                <div class="text-secondary small">
-                    {{ 'tsoVar' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.part?.tsoVar || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3"
-                *ngIf="data.part?.warantyStartCycle !== undefined && data.part?.warantyStartCycle !== null">
-                <div class="text-secondary small">
-                    {{ 'warantyStartCycle' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.part?.warantyStartCycle | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3"
-                *ngIf="data.part?.warantyStartDate !== undefined && data.part?.warantyStartDate !== null">
-                <div class="text-secondary small">
-                    {{ 'warantyStartDate' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.part?.warantyStartDate || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3"
-                *ngIf="data.part?.warantyStartDays !== undefined && data.part?.warantyStartDays !== null">
-                <div class="text-secondary small">
-                    {{ 'warantyStartDays' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.part?.warantyStartDays | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3"
-                *ngIf="data.part?.warantyStartHours !== undefined && data.part?.warantyStartHours !== null">
-                <div class="text-secondary small">
-                    {{ 'warantyStartHours' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.part?.warantyStartHours | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-        </div>
-    </div>
-
-    <br>
-
-
-
-    <div class="col-12 mt-4" *ngIf="data?.techLog">
-        <div class="fw-bold border-bottom mb-2">
-            {{ 'techLog' | translate }}
-        </div>
-        <div class="row">
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.authoRized !== undefined && data.techLog?.authoRized !== null">
-                <div class="text-secondary small">
-                    {{ 'authoRized' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.authoRized | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.createdAt !== undefined && data.techLog?.createdAt !== null">
-                <div class="text-secondary small">
-                    {{ 'createdAt' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.createdAt | date:'short' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.cycleBf !== undefined && data.techLog?.cycleBf !== null">
-                <div class="text-secondary small">
-                    {{ 'cycleBf' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.cycleBf | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.cycleCf !== undefined && data.techLog?.cycleCf !== null">
-                <div class="text-secondary small">
-                    {{ 'cycleCf' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.cycleCf | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.cycleFlight !== undefined && data.techLog?.cycleFlight !== null">
-                <div class="text-secondary small">
-                    {{ 'cycleFlight' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.cycleFlight | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3"
-                *ngIf="data.techLog?.dateInspection !== undefined && data.techLog?.dateInspection !== null">
-                <div class="text-secondary small">
-                    {{ 'dateInspection' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.dateInspection || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.hoursBf !== undefined && data.techLog?.hoursBf !== null">
-                <div class="text-secondary small">
-                    {{ 'hoursBf' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.hoursBf | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.hoursCf !== undefined && data.techLog?.hoursCf !== null">
-                <div class="text-secondary small">
-                    {{ 'hoursCf' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.hoursCf | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.hoursFlight !== undefined && data.techLog?.hoursFlight !== null">
-                <div class="text-secondary small">
-                    {{ 'hoursFlight' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.hoursFlight | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.isDeleted !== undefined && data.techLog?.isDeleted !== null">
-                <div class="text-secondary small">
-                    {{ 'isDeleted' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    <nz-tag *ngIf="data.techLog.isDeleted" nzColor="blue">Ya</nz-tag>
-                    <span *ngIf="!data.techLog.isDeleted">-</span>
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.isEdit !== undefined && data.techLog?.isEdit !== null">
-                <div class="text-secondary small">
-                    {{ 'isEdit' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    <nz-tag *ngIf="data.techLog.isEdit" nzColor="blue">Ya</nz-tag>
-                    <span *ngIf="!data.techLog.isEdit">-</span>
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.lastUpdate !== undefined && data.techLog?.lastUpdate !== null">
-                <div class="text-secondary small">
-                    {{ 'lastUpdate' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.lastUpdate | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.noteLog !== undefined && data.techLog?.noteLog !== null">
-                <div class="text-secondary small">
-                    {{ 'noteLog' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.noteLog || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.numberLog !== undefined && data.techLog?.numberLog !== null">
-                <div class="text-secondary small">
-                    {{ 'numberLog' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.numberLog || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.numberNext !== undefined && data.techLog?.numberNext !== null">
-                <div class="text-secondary small">
-                    {{ 'numberNext' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.numberNext | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.oldId !== undefined && data.techLog?.oldId !== null">
-                <div class="text-secondary small">
-                    {{ 'oldId' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.oldId || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.pesan !== undefined && data.techLog?.pesan !== null">
-                <div class="text-secondary small">
-                    {{ 'pesan' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.pesan || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.place !== undefined && data.techLog?.place !== null">
-                <div class="text-secondary small">
-                    {{ 'place' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.place | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.techLogDate !== undefined && data.techLog?.techLogDate !== null">
-                <div class="text-secondary small">
-                    {{ 'techLogDate' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.techLogDate || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.totalCycle !== undefined && data.techLog?.totalCycle !== null">
-                <div class="text-secondary small">
-                    {{ 'totalCycle' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.totalCycle | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.totalFlight !== undefined && data.techLog?.totalFlight !== null">
-                <div class="text-secondary small">
-                    {{ 'totalFlight' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.totalFlight | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.totalFuel !== undefined && data.techLog?.totalFuel !== null">
-                <div class="text-secondary small">
-                    {{ 'totalFuel' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.totalFuel | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.updatedAt !== undefined && data.techLog?.updatedAt !== null">
-                <div class="text-secondary small">
-                    {{ 'updatedAt' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.updatedAt | date:'short' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.validasi !== undefined && data.techLog?.validasi !== null">
-                <div class="text-secondary small">
-                    {{ 'validasi' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.validasi | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.techLog?.xycleInput !== undefined && data.techLog?.xycleInput !== null">
-                <div class="text-secondary small">
-                    {{ 'xycleInput' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.techLog?.xycleInput | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-
-
-
-        </div>
-    </div>
-
-    <br>
-
-
-
-    <div class="col-12 mt-4" *ngIf="data?.user">
-        <div class="fw-bold border-bottom mb-2">
-            {{ 'user' | translate }}
-        </div>
-        <div class="row">
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.user?.dateLog !== undefined && data.user?.dateLog !== null">
-                <div class="text-secondary small">
-                    {{ 'dateLog' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.user?.dateLog || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.user?.method !== undefined && data.user?.method !== null">
-                <div class="text-secondary small">
-                    {{ 'method' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.user?.method || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.user?.methodValue !== undefined && data.user?.methodValue !== null">
-                <div class="text-secondary small">
-                    {{ 'methodValue' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.user?.methodValue || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.user?.typeIdKey !== undefined && data.user?.typeIdKey !== null">
-                <div class="text-secondary small">
-                    {{ 'typeIdKey' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.user?.typeIdKey || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.user?.typeLog !== undefined && data.user?.typeLog !== null">
-                <div class="text-secondary small">
-                    {{ 'typeLog' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.user?.typeLog || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.user?.typeValue !== undefined && data.user?.typeValue !== null">
-                <div class="text-secondary small">
-                    {{ 'typeValue' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.user?.typeValue || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="col-md-3" *ngIf="data.user?.typeWork !== undefined && data.user?.typeWork !== null">
-                <div class="text-secondary small">
-                    {{ 'typeWork' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data.user?.typeWork || '-' }}
-
-                </div>
-            </div>
-
-
-
-
-        </div>
-    </div>
-
-    <br>
-
-</div>
+</ng-container>

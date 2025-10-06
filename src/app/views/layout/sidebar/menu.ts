@@ -152,7 +152,7 @@ export const MENU: MenuItem[] = [
 
 
     , {
-        label: 'maintenance',
+        label: 'maintenance [Taskcard]',
         icon: 'message-square',
         link: '/app/amims/amims-maintenance/maintenance',
     }
@@ -178,7 +178,7 @@ export const MENU: MenuItem[] = [
         link: '/app/amims/amims-maintenance/wp',
     }
     , {
-        label: 'WpJo',
+        label: 'WpJo (Job Order)',
         icon: 'message-square',
         link: '/app/amims/amims-maintenance/wp-jo',
     }, {

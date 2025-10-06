@@ -20,7 +20,7 @@ const SCHEMA_DIR = path.join(OUTPUT_PATH, 'form-schema');
 
 // ===================== STEP 1: Generate SDK =====================
 console.log('🚀 Generating SDK from OpenAPI...');
-execSync(`npx ng-openapi-gen --input ${OPENAPI_INPUT} --output ${OUTPUT_PATH}`, {
+execSync(`ng-openapi-gen --input ${OPENAPI_INPUT} --output ${OUTPUT_PATH}`, {
     stdio: 'inherit'
 });
 

@@ -160,26 +160,29 @@
             (nzQueryParams)="onQueryParamsChange($event)" nzSize="small">
             <thead>
                 <tr>
-                <th [nzSortFn]="true">
-                    {{ 'ATA/Code Types' | translate }}
-                </th>
-                <th [nzSortFn]="true">
-                    {{ 'Description' | translate }}
-                </th>
-                <th [nzSortFn]="true">
-                    {{ 'Reported' | translate }}
-                </th>
-                <th [nzSortFn]="true">
-                    {{ 'Resolved.' | translate }}
-                </th>
-                <th [nzSortFn]="true">
-                    {{ 'Next Due' | translate }}
-                </th>
-                <th [nzSortFn]="true">
-                    {{ 'remaining' | translate }}
-                </th>
+                    <th [nzSortFn]="true" style="width: 100px">
+                        {{ 'Aircraft' | translate }}
+                    </th>
+                    <th [nzSortFn]="true">
+                        {{ 'ATA/Code Types' | translate }}
+                    </th>
+                    <th [nzSortFn]="true">
+                        {{ 'Description' | translate }}
+                    </th>
+                    <th [nzSortFn]="true">
+                        {{ 'Reported' | translate }}
+                    </th>
+                    <th [nzSortFn]="true">
+                        {{ 'Resolved.' | translate }}
+                    </th>
+                    <th [nzSortFn]="true">
+                        {{ 'Next Due' | translate }}
+                    </th>
+                    <th [nzSortFn]="true">
+                        {{ 'remaining' | translate }}
+                    </th>
 
-                <th nzWidth="7%" [nzAlign]="'right'">Action</th>
+                    <th nzWidth="7%" [nzAlign]="'right'">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -187,22 +190,28 @@
                     <tr>
 
                         <td [nzExpand]="expandSet.has(data.idDueListOutput)"
-                            (nzExpandChange)="onExpandChange(data.idDueListOutput, $event)">
+                            (nzExpandChange)="onExpandChange(data.idUnscheduleMaintenance, $event)">
 
+                            {{ data.aircraft?.registrationNumber }}
+                            {{ data.aircraft?.serialNumber==data.airframeSn ? 'Airframe' : 'Engine' }}
+
+                        </td>
+                        <td>
+
+                            {{ data.airframeSn }}<br>
                             {{ data.ataCode }}<br>
-                            {{ data.type | uppercase }}<br>
-                            {{ data.refNumber | uppercase }}
+                            schedule
 
                         </td>
 
                         <td>
 
-                            {{ data.part.mpart?.keyword }} <br>
-                            {{ data.description }} <br>
+                            {{ data.part?.mpart?.keyword }} <br>
+                            {{ data.description ? data.description : data.preliminaryNote }} <br>
                             <div class="row">
                                 <div class="col-6">
                                     <label class="text-secondary">Part Number:</label><br>
-                                    {{ data.part.mpart?.partNumber }}
+                                    {{ data.part?.mpart?.partNumber }}
                                 </div>
                                 <div class="col-6">
                                     <label class="text-secondary">Serial Number:</label><br>
@@ -214,7 +223,7 @@
 
                         <td>
                             <ng-container *ngIf="data.reportedDate != null">
-                                <p>{{ data.reportedDate }}</p>
+                                <p>{{ data.reportedDate | date:'YYYY-MM-dd'}}</p>
                             </ng-container>
                             <ng-container *ngIf="data.reportedHours != null">
                                 <p>H:{{ data.reportedHours | number }}</p>
@@ -225,7 +234,7 @@
                         </td>
                         <td>
                             <ng-container *ngIf="data.resolvedDate != null">
-                                <p>{{ data.resolvedDate }}</p>
+                                <p>{{ data.resolvedDate | date:'YYYY-MM-dd'}}</p>
                             </ng-container>
                             <ng-container *ngIf="data.resolvedHours != null">
                                 <p>H:{{ data.resolvedHours | number }}</p>
@@ -236,7 +245,7 @@
                         </td>
                         <td>
                             <ng-container *ngIf="data.nextDueDate != null">
-                                <p>{{ data.nextDueDate }} {{ data.nextDueDateParam }}</p>
+                                <p>{{ data.nextDueDate | date:'YYYY-MM-dd' }} {{ data.nextDueDateParam }}</p>
                             </ng-container>
                             <ng-container *ngIf="data.nextDueHours != null">
                                 <p>H:{{ data.nextDueHours | number }}</p>
@@ -246,11 +255,8 @@
                             </ng-container>
                         </td>
 
-                        <td [nzExpand]="expandSet.has(data.idUnscheduleMaintenance)"
-                            (nzExpandChange)="onExpandChange(data.idUnscheduleMaintenance, $event)">
-                            <nz-badge *ngIf="data.idUnscheduleMaintenance!=null"
-                                nzColor="{{ data.idUnscheduleMaintenance?.toLowerCase() | status }}"
-                                nzText="{{data.idUnscheduleMaintenance?.toLowerCase() }}"></nz-badge>
+                        <td>
+
                         </td>
 
 

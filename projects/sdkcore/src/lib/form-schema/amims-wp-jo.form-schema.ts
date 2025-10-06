@@ -86,6 +86,9 @@ export const AmimsWpJoFormSchema = {
   "idTechLog": {
     "required": false
   },
+  "idUnscheduleMaintenance": {
+    "required": false
+  },
   "idUser": {
     "required": false
   },
@@ -135,7 +138,7 @@ export const AmimsWpJoFormSchema = {
     "required": false
   },
   "timeRangeFrom": {
-    "default": 0,
+    "default": "",
     "required": false
   },
   "timeRangeTo": {

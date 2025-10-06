@@ -3,7 +3,7 @@ import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { AclService } from 'src/app/services/acl.service';
 import { TokenService } from 'src/app/services/token.service';
 import { environment } from 'src/environments/environment.prod';
-import {   AmimsUnscheduleMaintenanceReportDto } from 'de-sdk-core';
+import { AmimsUnscheduleMaintenanceReportDto } from 'de-sdk-core';
 import { UnscheduleMaintenanceReportService } from 'de-sdk-core';
 import { UnscheduleMaintenanceShareAddComponent } from '../unschedule-maintenance-share-add/unschedule-maintenance-share-add.component';
 
@@ -12,7 +12,7 @@ import { UnscheduleMaintenanceShareAddComponent } from '../unschedule-maintenanc
     templateUrl: './unschedule-maintenance-share-detail.component.html',
     styleUrl: './unschedule-maintenance-share-detail.component.scss'
 })
-export class UnscheduleMaintenanceShareDetailComponent { 
+export class UnscheduleMaintenanceShareDetailComponent {
     @Input('idUnscheduleMaintenance') idUnscheduleMaintenance: string // replace dengan id+Nama
     constructor(
         private unscheduleMaintenanceReportService: UnscheduleMaintenanceReportService,
@@ -31,7 +31,7 @@ export class UnscheduleMaintenanceShareDetailComponent {
     }
     reload = 0;
     is_loading: boolean = false;
-    unscheduleMaintenance: AmimsUnscheduleMaintenanceReportDto | null = null; //nanti dinamis dari reportDto
+    unscheduleMaintenance: any | null = null; //nanti dinamis dari reportDto
 
     getData() {
         this.is_loading = true;
@@ -49,24 +49,22 @@ export class UnscheduleMaintenanceShareDetailComponent {
     }
 
     // artinya one to many 
-    getListData()
-    {
+    getListData() {
 
     }
-    update()
-    {
-    const drawerRef = this.drawerService.create <UnscheduleMaintenanceShareAddComponent, {}, string > ({
-        nzTitle: 'Detail',
-        nzContent: UnscheduleMaintenanceShareAddComponent,
-        nzWidth: (500) + 'px',
+    update() {
+        const drawerRef = this.drawerService.create<UnscheduleMaintenanceShareAddComponent, {}, string>({
+            nzTitle: 'Detail',
+            nzContent: UnscheduleMaintenanceShareAddComponent,
+            nzWidth: (500) + 'px',
             nzContentParams: {
                 unscheduleMaintenance: this.unscheduleMaintenance || undefined
-    }
-});
+            }
+        });
 
-drawerRef.afterClose.subscribe(() => {
-    this.getData();
-});
+        drawerRef.afterClose.subscribe(() => {
+            this.getData();
+        });
     }
 
     // handleApprovalSubmit(event: { status: 'approve' | 'reject', note: string }) {
@@ -79,7 +77,7 @@ drawerRef.afterClose.subscribe(() => {
     // }
 
     print() {
-    let url = environment.srv_document + '/pdf/unscheduleMaintenance/' + this.idUnscheduleMaintenance + '?token=' + this.tokenService.getToken();
+        let url = environment.srv_document + '/pdf/unscheduleMaintenance/' + this.idUnscheduleMaintenance + '?token=' + this.tokenService.getToken();
         window.open(url, "_blank");
     }
 

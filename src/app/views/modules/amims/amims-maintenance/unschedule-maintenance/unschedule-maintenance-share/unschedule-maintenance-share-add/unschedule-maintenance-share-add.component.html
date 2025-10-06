@@ -357,7 +357,7 @@
             <nz-form-control>
                 <nz-select formControlName="idAircraft" nzShowSearch nzAllowClear
                     nzPlaceHolder="Pilih {{ 'idAircraft' | translate }}">
-                    <nz-option *ngFor="let item of listAircraft" nzLabel="{{ item.idAircraft }}"
+                    <nz-option *ngFor="let item of listAircraft" nzLabel="{{ item.registrationNumber }}"
                         nzValue="{{ item.idAircraft }}"></nz-option>
                 </nz-select>
             </nz-form-control>
@@ -374,7 +374,7 @@
             <nz-form-control>
                 <nz-select formControlName="idPart" nzShowSearch nzAllowClear
                     nzPlaceHolder="Pilih {{ 'idPart' | translate }}">
-                    <nz-option *ngFor="let item of listPart" nzLabel="{{ item.idPart }}"
+                    <nz-option *ngFor="let item of listPart" nzLabel="{{ item.part?.sn }}"
                         nzValue="{{ item.idPart }}"></nz-option>
                 </nz-select>
             </nz-form-control>
@@ -387,7 +387,7 @@
             </nz-form-control>
         </nz-form-item>
 
-        <nz-form-item>
+        <!-- <nz-form-item>
             <nz-form-label nzFor="idTechLog">{{ 'idTechLog' | translate }}</nz-form-label>
             <nz-form-control>
                 <nz-select formControlName="idTechLog" nzShowSearch nzAllowClear
@@ -396,16 +396,17 @@
                         nzValue="{{ item.idTechLog }}"></nz-option>
                 </nz-select>
             </nz-form-control>
-        </nz-form-item>
-        <nz-form-item>
+        </nz-form-item> -->
+        <!-- <nz-form-item>
             <nz-form-label nzFor="amlNumber">{{ 'amlNumber' | translate }}</nz-form-label>
             <nz-form-control>
                 <input nz-input id="amlNumber" formControlName="amlNumber"
                     placeholder="Masukkan {{ 'amlNumber' | translate }}" />
             </nz-form-control>
-        </nz-form-item>
+        </nz-form-item> -->
 
         <!-- Detail Maintenance -->
+        <h5>Detail Maintenance</h5>
         <nz-form-item>
             <nz-form-label nzFor="description">{{ 'description' | translate }}</nz-form-label>
             <nz-form-control>
@@ -456,6 +457,7 @@
         </nz-form-item>
 
         <!-- Pelaporan & Penemuan -->
+        <h5>Pelaporan & Penemuan</h5>
         <nz-form-item>
             <nz-form-label nzFor="reportedDate">{{ 'reportedDate' | translate }}</nz-form-label>
             <nz-form-control>
@@ -492,6 +494,7 @@
         </nz-form-item>
 
         <!-- Tindakan & Status -->
+        <h5>Tindakan & Status</h5>
         <nz-form-item>
             <nz-form-label nzFor="actionCode">{{ 'actionCode' | translate }}</nz-form-label>
             <nz-form-control>
@@ -532,6 +535,7 @@
         </nz-form-item>
 
         <!-- Jadwal & Due -->
+        <h5>Jadwal & Due</h5>
         <nz-form-item>
             <nz-form-label nzFor="nextDueDate">{{ 'nextDueDate' | translate }}</nz-form-label>
             <nz-form-control>
@@ -561,6 +565,7 @@
         </nz-form-item>
 
         <!-- Resolusi -->
+        <h5>Resolusi</h5>
         <nz-form-item>
             <nz-form-label nzFor="resolvedDate">{{ 'resolvedDate' | translate }}</nz-form-label>
             <nz-form-control>
@@ -583,6 +588,7 @@
         </nz-form-item>
 
         <!-- Referensi & User -->
+        <h5>Referensi & User</h5>
         <nz-form-item>
             <nz-form-label nzFor="refNumber">{{ 'refNumber' | translate }}</nz-form-label>
             <nz-form-control>
@@ -597,8 +603,8 @@
                     placeholder="Masukkan {{ 'reference' | translate }}" />
             </nz-form-control>
         </nz-form-item>
-        
-        <nz-form-item>
+
+        <!-- <nz-form-item>
             <nz-form-label nzFor="idUser">{{ 'idUser' | translate }}</nz-form-label>
             <nz-form-control>
                 <nz-select formControlName="idUser" nzShowSearch nzAllowClear
@@ -607,9 +613,10 @@
                         nzValue="{{ item.idUser }}"></nz-option>
                 </nz-select>
             </nz-form-control>
-        </nz-form-item>
+        </nz-form-item> -->
 
         <!-- Status & Optional -->
+        <h5>Status & Optional</h5>
         <nz-form-item>
             <nz-form-label nzFor="status">{{ 'status' | translate }}</nz-form-label>
             <nz-form-control>
@@ -624,7 +631,7 @@
             </nz-form-control>
         </nz-form-item>
         <nz-form-item>
-            <nz-form-label nzFor="isOptional">{{ 'isOptional' | translate }}</nz-form-label> 
+            <nz-form-label nzFor="isOptional">{{ 'isOptional' | translate }}</nz-form-label>
             <nz-form-control>
                 <nz-radio-group formControlName="isOptional">
                     <label nz-radio [nzValue]="true">Yes</label>

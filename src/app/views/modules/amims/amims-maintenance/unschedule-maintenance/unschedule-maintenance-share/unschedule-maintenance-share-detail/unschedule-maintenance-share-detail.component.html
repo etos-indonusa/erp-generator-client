@@ -1,4 +1,55 @@
-<nz-spin nzTip="Loading..." [nzSpinning]="is_loading">
+<nz-spin nzTip="Loading..." [nzSpinning]="is_loading && unscheduleMaintenance?.idUnscheduleMaintenance">
+
+    <div class="card detail-header">
+        <div class="header-main">
+            <div class="header-text">
+                <div class="eyebrow">Unschedule Maintenance</div>
+                <h3 class="title mb-1">{{ unscheduleMaintenance?.preliminaryNote || '-' }}</h3>
+                <div class="meta">
+                    <span>
+                        <span nz-icon nzType="calendar"></span>
+                        {{ unscheduleMaintenance?.reportedDate | date: 'dd MMM yyyy' : 'UTC' }}
+                    </span>
+                    <span *ngIf="unscheduleMaintenance?.aircraft?.registrationNumber">
+                        <span nz-icon nzType="tool"></span>
+                        {{ unscheduleMaintenance?.aircraft?.registrationNumber }} · SN {{
+                        unscheduleMaintenance?.airframeSn || unscheduleMaintenance?.aircraft?.serialNumber ||
+                        '-' }}
+                    </span>
+                    <span *ngIf="unscheduleMaintenance?.idPart">
+                        <span nz-icon nzType="barcode"></span>
+                        Part {{ unscheduleMaintenance?.part?.partNumber || unscheduleMaintenance?.idPart }}
+                    </span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="tag-stack">
+                    <nz-tag nzColor="orange" *ngIf="unscheduleMaintenance?.aircraftGrounded === '1'">Aircraft
+                        Grounded</nz-tag>
+                    <nz-tag nzColor="blue" *ngIf="unscheduleMaintenance?.isOptional === '1'">Optional Task</nz-tag>
+                    <nz-tag nzColor="green" *ngIf="unscheduleMaintenance?.status">{{ unscheduleMaintenance?.status
+                        }}</nz-tag>
+                </div>
+                <div class="actions">
+                    <button nz-button nzType="default" (click)="update()">
+                        <span nz-icon nzType="edit"></span>
+                        Edit Data
+                    </button>
+                    <button nz-button nzType="primary" nz-dropdown [nzDropdownMenu]="printMenu">
+                        <span nz-icon nzType="printer"></span>
+                        Print
+                        <span nz-icon nzType="down"></span>
+                    </button>
+                    <nz-dropdown-menu #printMenu="nzDropdownMenu">
+                        <ul nz-menu>
+                            <li nz-menu-item (click)="print()">Print Unschedule Maintenance</li>
+                        </ul>
+                    </nz-dropdown-menu>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <div class="card border-0 mb-1 border-left-5 border-theme card   bg-white">
         <div class="card-body p-2">
@@ -25,33 +76,36 @@
                         </ul>
                     </nz-dropdown-menu>
 
-                    <!-- <button *ngIf="unscheduleMaintenance.status=='close' || unscheduleMaintenance.status=='cicil'" nz-button
+                    <!-- <button *ngIf="unscheduleMaintenance?.status=='close' || unscheduleMaintenance?.status=='cicil'" nz-button
                         nzType="primary" (click)="up()" style="margin-right: 5px;">
                         <span nz-icon nzType="calculator" nzTheme="outline"></span>
                         Bayar
                     </button> -->
-                     
+
 
                 </div>
             </div>
         </div>
     </div>
-     <!--
+    <!--
      <lib-approval-steps [for-module-name]="'unschedule-maintenance'" [for-module-id]="unschedule-maintenance?.idUnscheduleMaintenance" [current-status]="unschedule-maintenance?.statusUnscheduleMaintenance"></lib-approval-steps>
          -->
 
     <div class="card bg-white p-3" style="box-shadow: none;">
         <div class="row">
             <div class="col-md-8">
-                <app-unschedule-maintenance-share-header [data]="unscheduleMaintenance"></app-unschedule-maintenance-share-header>
-                <lib-custom-field [from-module]="'AmimsUnscheduleMaintenance'" [from-module-id]="unscheduleMaintenance?.idUnscheduleMaintenance"></lib-custom-field>
+                <app-unschedule-maintenance-share-header
+                    [data]="unscheduleMaintenance"></app-unschedule-maintenance-share-header>
+                <lib-custom-field [from-module]="'AmimsUnscheduleMaintenance'"
+                    [from-module-id]="unscheduleMaintenance?.idUnscheduleMaintenance"></lib-custom-field>
             </div>
             <div class="col-md-4">
-                <document-widget-v1 [for-module-id]="unscheduleMaintenance?.idUnscheduleMaintenance" [for-module]="'AmimsUnscheduleMaintenance'"  [enable-crud]="true"></document-widget-v1>
-                    
-                <!-- <approval-mode-widget *ngIf="unscheduleMaintenance.status??'-'.toLowerCase() !='close'"
-                    style="margin-right: 5px;" [module-id]="unscheduleMaintenance.id_contractSite" [module]="'AmimsUnscheduleMaintenance'"
-                    [flow-id]="unscheduleMaintenance.id_data_flow" [flow-detail]="unscheduleMaintenance.id_data_flow_detail"
+                <document-widget-v1 [for-module-id]="unscheduleMaintenance?.idUnscheduleMaintenance"
+                    [for-module]="'AmimsUnscheduleMaintenance'" [enable-crud]="true"></document-widget-v1>
+
+                <!-- <approval-mode-widget *ngIf="unscheduleMaintenance?.status??'-'.toLowerCase() !='close'"
+                    style="margin-right: 5px;" [module-id]="unscheduleMaintenance?.id_contractSite" [module]="'AmimsUnscheduleMaintenance'"
+                    [flow-id]="unscheduleMaintenance?.id_data_flow" [flow-detail]="unscheduleMaintenance?.id_data_flow_detail"
                     (reload)="approve($event)">
                 </approval-mode-widget> -->
 
@@ -61,44 +115,42 @@
 
         <br>
 
- 
+
     </div>
 
-    <div class="site-page-header-ghost-wrapper">
-        <nz-page-header [nzGhost]="false">
-        <nz-page-header-title>Item</nz-page-header-title>
-    </nz-page-header>
-    </div >
+   
 
-
-        <nz-tabset>
-        <nz-tab nzTitle="{{ 'Contact PIC' | translate }}">
-             <!-- <app-client-contact-share-list [idClient]="idClient"></app-client-contact-share-list>  -->
+    <nz-tabset ng-if>
+        <nz-tab nzTitle="{{ 'Job Order' | translate }}">
+            <app-wp-jo-share-list [enable-crud]="true"
+             [idUnscheduleMaintenance]="unscheduleMaintenance?.idUnscheduleMaintenance"
+             [typeOfwork]="'unschedul'"
+             ></app-wp-jo-share-list>
         </nz-tab>
-         
-        <nz-tab nzTitle="{{ 'Contract' | translate }}">
+
+        <nz-tab nzTitle="{{ 'Result' | translate }}">
             <ng-template nz-tab>
                 <!-- <app-contract-share-list [idClient]="idClient"></app-contract-share-list> -->
             </ng-template>
         </nz-tab>
-        <nz-tab nzTitle="{{ 'Site' | translate }}">
+        <nz-tab nzTitle="{{ 'Attachment' | translate }}">
             <ng-template nz-tab>
-                    <!-- <app-client-site-share-list [idClient]="idClient"></app-client-site-share-list>  -->
+               <document-list-v1 [for-module-id]="unscheduleMaintenance?.idUnscheduleMaintenance"
+                    [for-module]="'AmimsUnscheduleMaintenance'"></document-list-v1>
             </ng-template>
         </nz-tab>
     </nz-tabset>
 
     <div class="card">
         <div class="card-body p-2">
-                <!-- <app-unschedule-maintenance-share-list [filter-extra]="false" [idUnscheduleMaintenance]="idUnscheduleMaintenance"></app-unschedule-maintenance-share-list> -->
+            <!-- <app-unschedule-maintenance-share-list [filter-extra]="false" [idUnscheduleMaintenance]="idUnscheduleMaintenance"></app-unschedule-maintenance-share-list> -->
+        </div>
     </div>
-    </div >
 
-<!-- 
+    <!-- 
     <lib-approval-form-widget [from-module]="'AmimsUnscheduleMaintenance'" [from-module-id]="unschedule-maintenance?.idUnscheduleMaintenance"
         (onSubmit)="handleApprovalSubmit($event)" (onAfterSubmit)="refreshApprovalSteps()"></lib-approval-form-widget> 
             -->
 
 </nz-spin>
 <br>
-

@@ -1,1181 +1,230 @@
-<!-- ✅ Start rendering -->
-<div class="row">
-
-    <div class="col-md-3" >
-        <div class="text-secondary small">
-            {{ 'createdAt' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.createdAt | date: 'yyyy-MM-dd' }}
-
-        </div>
-    </div>
-    <div class="col-md-3" >
-        <div class="text-secondary small">
-            {{ 'cycleTo' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.cycleTo | number:'1.0-0' }}
-
-        </div>
-    </div>
-    <div class="col-md-3" >
-        <div class="text-secondary small">
-            {{ 'hoursTo' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.hoursTo | number:'1.0-0' }}
-
+<ng-container *ngIf="data as item; else emptyState">
+    <!-- Program Overview -->
+    <div class="section-block" *ngIf="item.programCode || item.programTitle || item.referenceDoc || item.note">
+        <h6 class="section-title">Program Overview</h6>
+        <div class="row g-3">
+            <div class="col-md-3" *ngIf="item.programCode">
+                <div class="field-label">{{ 'programCode' | translate }}</div>
+                <div class="field-value">{{ item.programCode }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.programTitle">
+                <div class="field-label">{{ 'programTitle' | translate }}</div>
+                <div class="field-value">{{ item.programTitle }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.referenceDoc">
+                <div class="field-label">{{ 'referenceDoc' | translate }}</div>
+                <div class="field-value">{{ item.referenceDoc }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.note">
+                <div class="field-label">{{ 'note' | translate }}</div>
+                <div class="field-value">{{ item.note }}</div>
+            </div>
         </div>
     </div>
-    
-    
-    
-    
-    
-    
-    <div class="col-md-3" >
-        <div class="text-secondary small">
-            {{ 'isActive' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
 
-            <nz-tag *ngIf="data?.isActive" nzColor="blue">Ya</nz-tag>
-            <span *ngIf="!data?.isActive">-</span>
-
+    <!-- Status & Validation -->
+    <div class="section-block" *ngIf="item.isActive !== undefined || item.validasi !== undefined">
+        <h6 class="section-title">Status &amp; Validation</h6>
+        <div class="row g-3">
+            <div class="col-md-3" *ngIf="item.isActive !== undefined && item.isActive !== null">
+                <div class="field-label">{{ 'isActive' | translate }}</div>
+                <div class="field-value">{{ item.isActive }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.validasi !== undefined && item.validasi !== null">
+                <div class="field-label">{{ 'validasi' | translate }}</div>
+                <div class="field-value">{{ item.validasi }}</div>
+            </div>
         </div>
     </div>
-    <div class="col-md-3" >
-        <div class="text-secondary small">
-            {{ 'note' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
 
-            {{ data?.note || '-' }}
-
-        </div>
-    </div>
-    <div class="col-md-3" >
-        <div class="text-secondary small">
-            {{ 'programCode' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.programCode || '-' }}
-
-        </div>
-    </div>
-    <div class="col-md-3" >
-        <div class="text-secondary small">
-            {{ 'programTitle' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.programTitle || '-' }}
-
+    <!-- Thresholds -->
+    <div class="section-block" *ngIf="item.timeTo !== undefined || item.timeToUnit || item.hoursTo !== undefined || item.cycleTo !== undefined">
+        <h6 class="section-title">Thresholds</h6>
+        <div class="row g-3">
+            <div class="col-md-3" *ngIf="item.timeTo !== undefined && item.timeTo !== null">
+                <div class="field-label">{{ 'timeTo' | translate }}</div>
+                <div class="field-value">{{ item.timeTo | number: '1.0-0' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.timeToUnit">
+                <div class="field-label">{{ 'timeToUnit' | translate }}</div>
+                <div class="field-value">{{ item.timeToUnit }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.hoursTo !== undefined && item.hoursTo !== null">
+                <div class="field-label">{{ 'hoursTo' | translate }}</div>
+                <div class="field-value">{{ item.hoursTo | number: '1.0-0' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.cycleTo !== undefined && item.cycleTo !== null">
+                <div class="field-label">{{ 'cycleTo' | translate }}</div>
+                <div class="field-value">{{ item.cycleTo | number: '1.0-0' }}</div>
+            </div>
         </div>
     </div>
-    <div class="col-md-3" >
-        <div class="text-secondary small">
-            {{ 'referenceDoc' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
 
-            {{ data?.referenceDoc || '-' }}
+    <!-- Identifiers -->
 
-        </div>
-    </div>
-    <div class="col-md-3" >
-        <div class="text-secondary small">
-            {{ 'timeTo' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.timeTo | number:'1.0-0' }}
-
+    <!-- Metadata -->
+    <div class="section-block" *ngIf="item.createdAt || item.updatedAt">
+        <h6 class="section-title">Metadata</h6>
+        <div class="row g-3">
+            <div class="col-md-3" *ngIf="item.createdAt">
+                <div class="field-label">{{ 'createdAt' | translate }}</div>
+                <div class="field-value">{{ item.createdAt | date: 'yyyy-MM-dd' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.updatedAt">
+                <div class="field-label">{{ 'updatedAt' | translate }}</div>
+                <div class="field-value">{{ item.updatedAt | date: 'yyyy-MM-dd' }}</div>
+            </div>
         </div>
     </div>
-    <div class="col-md-3" >
-        <div class="text-secondary small">
-            {{ 'timeToUnit' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
 
-            {{ data?.timeToUnit || '-' }}
-
-        </div>
-    </div>
-    <div class="col-md-3" >
-        <div class="text-secondary small">
-            {{ 'updatedAt' | translate }}
-        </div>
-        <div class="fw-semibold text-dark">
-
-            {{ data?.updatedAt | date: 'yyyy-MM-dd' }}
-
-        </div>
-    </div>
-    <div class="col-12 {{ expand_actype.hidden ? 'mb-0' : 'mb-4' }} " *ngIf="data?.actype">
-    <div class="fw-bold border-bottom mb-2">
-      {{ 'actype' | translate }}
-      <button class="btn btn-link btn-sm" (click)="expand_actype.hidden = !expand_actype.hidden">
-        <span *ngIf="expand_actype.hidden">Expand</span>
-        <span *ngIf="!expand_actype.hidden">Collapse</span>
-        <span *ngIf="expand_actype.hidden" nz-icon nzType="down" nzTheme="outline"></span>
-        <span *ngIf="!expand_actype.hidden" nz-icon nzType="up" nzTheme="outline"></span>
-      </button>
-    </div>
-    <div class="row" #expand_actype hidden>
-
-            <div class="col-md-3" *ngIf="data?.actype?.acCategory !== undefined && data?.actype?.acCategory !== null">
-                <div class="text-secondary small">
-                    {{ 'acCategory' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.actype?.acCategory || '-' }}
-
-                </div>
+    <!-- Actype Snapshot -->
+    <div class="section-block" *ngIf="item.actype">
+        <h6 class="section-title">Actype</h6>
+        <div class="row g-3">
+            <div class="col-md-3" *ngIf="item.actype.actype">
+                <div class="field-label">{{ 'actype' | translate }}</div>
+                <div class="field-value">{{ item.actype.actype }}</div>
             </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.actype?.acManufacture !== undefined && data?.actype?.acManufacture !== null">
-                <div class="text-secondary small">
-                    {{ 'acManufacture' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.actype?.acManufacture || '-' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.actype.acCategory">
+                <div class="field-label">{{ 'acCategory' | translate }}</div>
+                <div class="field-value">{{ item.actype.acCategory }}</div>
             </div>
-
-            <div class="col-md-3" *ngIf="data?.actype?.actype !== undefined && data?.actype?.actype !== null">
-                <div class="text-secondary small">
-                    {{ 'actype' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.actype?.actype || '-' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.actype.acManufacture">
+                <div class="field-label">{{ 'acManufacture' | translate }}</div>
+                <div class="field-value">{{ item.actype.acManufacture }}</div>
             </div>
-
-            <div class="col-md-3" *ngIf="data?.actype?.createdAt !== undefined && data?.actype?.createdAt !== null">
-                <div class="text-secondary small">
-                    {{ 'createdAt' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.actype?.createdAt | date: 'yyyy-MM-dd' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.actype.description">
+                <div class="field-label">{{ 'description' | translate }}</div>
+                <div class="field-value">{{ item.actype.description }}</div>
             </div>
-
-            <div class="col-md-3" *ngIf="data?.actype?.description !== undefined && data?.actype?.description !== null">
-                <div class="text-secondary small">
-                    {{ 'description' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.actype?.description || '-' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.actype.engineType">
+                <div class="field-label">{{ 'engineType' | translate }}</div>
+                <div class="field-value">{{ item.actype.engineType }}</div>
             </div>
-
-            <div class="col-md-3" *ngIf="data?.actype?.eFlight !== undefined && data?.actype?.eFlight !== null">
-                <div class="text-secondary small">
-                    {{ 'eFlight' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.actype?.eFlight || '-' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.actype.numberEngine !== undefined && item.actype.numberEngine !== null">
+                <div class="field-label">{{ 'numberEngine' | translate }}</div>
+                <div class="field-value">{{ item.actype.numberEngine }}</div>
             </div>
-
-            <div class="col-md-3" *ngIf="data?.actype?.eStarts !== undefined && data?.actype?.eStarts !== null">
-                <div class="text-secondary small">
-                    {{ 'eStarts' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.actype?.eStarts || '-' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.actype.statusType">
+                <div class="field-label">{{ 'statusType' | translate }}</div>
+                <div class="field-value">{{ item.actype.statusType }}</div>
             </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.actype?.engineManufacture !== undefined && data?.actype?.engineManufacture !== null">
-                <div class="text-secondary small">
-                    {{ 'engineManufacture' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.actype?.engineManufacture || '-' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.actype.createdAt">
+                <div class="field-label">{{ 'createdAt' | translate }}</div>
+                <div class="field-value">{{ item.actype.createdAt | date: 'yyyy-MM-dd' }}</div>
             </div>
-
-            <div class="col-md-3" *ngIf="data?.actype?.engineType !== undefined && data?.actype?.engineType !== null">
-                <div class="text-secondary small">
-                    {{ 'engineType' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.actype?.engineType || '-' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.actype.updatedAt">
+                <div class="field-label">{{ 'updatedAt' | translate }}</div>
+                <div class="field-value">{{ item.actype.updatedAt | date: 'yyyy-MM-dd' }}</div>
             </div>
-
-            <div class="col-md-3" *ngIf="data?.actype?.hashN1 !== undefined && data?.actype?.hashN1 !== null">
-                <div class="text-secondary small">
-                    {{ 'hashN1' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.actype?.hashN1 || '-' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.actype.oldId">
+                <div class="field-label">{{ 'oldId' | translate }}</div>
+                <div class="field-value">{{ item.actype.oldId }}</div>
             </div>
-
-            <div class="col-md-3" *ngIf="data?.actype?.hashN2 !== undefined && data?.actype?.hashN2 !== null">
-                <div class="text-secondary small">
-                    {{ 'hashN2' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.actype?.hashN2 || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.actype?.isDeleted !== undefined && data?.actype?.isDeleted !== null">
-                <div class="text-secondary small">
-                    {{ 'isDeleted' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    <nz-tag *ngIf="data?.actype.isDeleted" nzColor="blue">Ya</nz-tag>
-                    <span *ngIf="!data?.actype.isDeleted">-</span>
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.actype?.numberEngine !== undefined && data?.actype?.numberEngine !== null">
-                <div class="text-secondary small">
-                    {{ 'numberEngine' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.actype?.numberEngine | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.actype?.oldId !== undefined && data?.actype?.oldId !== null">
-                <div class="text-secondary small">
-                    {{ 'oldId' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.actype?.oldId || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.actype?.statusType !== undefined && data?.actype?.statusType !== null">
-                <div class="text-secondary small">
-                    {{ 'statusType' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    <nz-tag nzColor="green">{{ data?.actype.statusType }}</nz-tag>
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.actype?.updatedAt !== undefined && data?.actype?.updatedAt !== null">
-                <div class="text-secondary small">
-                    {{ 'updatedAt' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.actype?.updatedAt | date: 'yyyy-MM-dd' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.actype?.wingtype !== undefined && data?.actype?.wingtype !== null">
-                <div class="text-secondary small">
-                    {{ 'wingtype' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.actype?.wingtype || '-' }}
-
-                </div>
-            </div>
-
         </div>
     </div>
-    <div class="col-12 {{ expand_aircraft.hidden ? 'mb-0' : 'mb-4' }} " *ngIf="data?.aircraft">
-    <div class="fw-bold border-bottom mb-2">
-      {{ 'aircraft' | translate }}
-      <button class="btn btn-link btn-sm" (click)="expand_aircraft.hidden = !expand_aircraft.hidden">
-        <span *ngIf="expand_aircraft.hidden">Expand</span>
-        <span *ngIf="!expand_aircraft.hidden">Collapse</span>
-        <span *ngIf="expand_aircraft.hidden" nz-icon nzType="down" nzTheme="outline"></span>
-        <span *ngIf="!expand_aircraft.hidden" nz-icon nzType="up" nzTheme="outline"></span>
-      </button>
-    </div>
-    <div class="row" #expand_aircraft hidden>
 
-            <div class="col-md-3" *ngIf="data?.aircraft?.acFoto !== undefined && data?.aircraft?.acFoto !== null">
-                <div class="text-secondary small">
-                    {{ 'acFoto' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.aircraft?.acFoto || '-' }}
-
-                </div>
+    <!-- Aircraft Snapshot -->
+    <div class="section-block" *ngIf="item.aircraft">
+        <h6 class="section-title">Aircraft</h6>
+        <div class="row g-3">
+            <div class="col-md-3" *ngIf="item.aircraft.registrationNumber">
+                <div class="field-label">{{ 'registrationNumber' | translate }}</div>
+                <div class="field-value">{{ item.aircraft.registrationNumber }}</div>
             </div>
-
-            <div class="col-md-3" *ngIf="data?.aircraft?.createdAt !== undefined && data?.aircraft?.createdAt !== null">
-                <div class="text-secondary small">
-                    {{ 'createdAt' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.aircraft?.createdAt | date: 'yyyy-MM-dd' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.aircraft.serialNumber">
+                <div class="field-label">{{ 'serialNumber' | translate }}</div>
+                <div class="field-value">{{ item.aircraft.serialNumber }}</div>
             </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.aircraft?.descriptionAircraft !== undefined && data?.aircraft?.descriptionAircraft !== null">
-                <div class="text-secondary small">
-                    {{ 'descriptionAircraft' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.aircraft?.descriptionAircraft || '-' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.aircraft.manufacturedBy">
+                <div class="field-label">{{ 'manufacturedBy' | translate }}</div>
+                <div class="field-value">{{ item.aircraft.manufacturedBy }}</div>
             </div>
-
-            <div class="col-md-3" *ngIf="data?.aircraft?.hasapu !== undefined && data?.aircraft?.hasapu !== null">
-                <div class="text-secondary small">
-                    {{ 'hasapu' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.aircraft?.hasapu || '-' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.aircraft.manufactureDate">
+                <div class="field-label">{{ 'manufactureDate' | translate }}</div>
+                <div class="field-value">{{ item.aircraft.manufactureDate }}</div>
             </div>
-
-            <div class="col-md-3" *ngIf="data?.aircraft?.isDeleted !== undefined && data?.aircraft?.isDeleted !== null">
-                <div class="text-secondary small">
-                    {{ 'isDeleted' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    <nz-tag *ngIf="data?.aircraft.isDeleted" nzColor="blue">Ya</nz-tag>
-                    <span *ngIf="!data?.aircraft.isDeleted">-</span>
-
-                </div>
+            <div class="col-md-3" *ngIf="item.aircraft.statusAc">
+                <div class="field-label">{{ 'statusAc' | translate }}</div>
+                <div class="field-value">{{ item.aircraft.statusAc }}</div>
             </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.aircraft?.keywordAircraft !== undefined && data?.aircraft?.keywordAircraft !== null">
-                <div class="text-secondary small">
-                    {{ 'keywordAircraft' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.aircraft?.keywordAircraft || '-' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.aircraft.tendurance !== undefined && item.aircraft.tendurance !== null">
+                <div class="field-label">{{ 'tendurance' | translate }}</div>
+                <div class="field-value">{{ item.aircraft.tendurance | number: '1.0-0' }}</div>
             </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.aircraft?.manufactureAircraft !== undefined && data?.aircraft?.manufactureAircraft !== null">
-                <div class="text-secondary small">
-                    {{ 'manufactureAircraft' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.aircraft?.manufactureAircraft || '-' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.aircraft.purchasedate">
+                <div class="field-label">{{ 'purchasedate' | translate }}</div>
+                <div class="field-value">{{ item.aircraft.purchasedate | date: 'yyyy-MM-dd' }}</div>
             </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.aircraft?.manufactureDate !== undefined && data?.aircraft?.manufactureDate !== null">
-                <div class="text-secondary small">
-                    {{ 'manufactureDate' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.aircraft?.manufactureDate || '-' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.aircraft.updatedAt">
+                <div class="field-label">{{ 'updatedAt' | translate }}</div>
+                <div class="field-value">{{ item.aircraft.updatedAt | date: 'yyyy-MM-dd' }}</div>
             </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.aircraft?.manufactureEngine !== undefined && data?.aircraft?.manufactureEngine !== null">
-                <div class="text-secondary small">
-                    {{ 'manufactureEngine' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.aircraft?.manufactureEngine || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.aircraft?.manufacturedBy !== undefined && data?.aircraft?.manufacturedBy !== null">
-                <div class="text-secondary small">
-                    {{ 'manufacturedBy' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.aircraft?.manufacturedBy || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.aircraft?.oldActype !== undefined && data?.aircraft?.oldActype !== null">
-                <div class="text-secondary small">
-                    {{ 'oldActype' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.aircraft?.oldActype || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.aircraft?.oldId !== undefined && data?.aircraft?.oldId !== null">
-                <div class="text-secondary small">
-                    {{ 'oldId' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.aircraft?.oldId || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.aircraft?.purchasedate !== undefined && data?.aircraft?.purchasedate !== null">
-                <div class="text-secondary small">
-                    {{ 'purchasedate' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.aircraft?.purchasedate || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.aircraft?.reasonRegschange !== undefined && data?.aircraft?.reasonRegschange !== null">
-                <div class="text-secondary small">
-                    {{ 'reasonRegschange' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.aircraft?.reasonRegschange || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.aircraft?.registrationNumber !== undefined && data?.aircraft?.registrationNumber !== null">
-                <div class="text-secondary small">
-                    {{ 'registrationNumber' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.aircraft?.registrationNumber || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.aircraft?.serialNumber !== undefined && data?.aircraft?.serialNumber !== null">
-                <div class="text-secondary small">
-                    {{ 'serialNumber' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.aircraft?.serialNumber || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.aircraft?.statusAc !== undefined && data?.aircraft?.statusAc !== null">
-                <div class="text-secondary small">
-                    {{ 'statusAc' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    <nz-tag nzColor="green">{{ data?.aircraft.statusAc }}</nz-tag>
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.aircraft?.tendurance !== undefined && data?.aircraft?.tendurance !== null">
-                <div class="text-secondary small">
-                    {{ 'tendurance' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.aircraft?.tendurance | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.aircraft?.updatedAt !== undefined && data?.aircraft?.updatedAt !== null">
-                <div class="text-secondary small">
-                    {{ 'updatedAt' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.aircraft?.updatedAt | date: 'yyyy-MM-dd' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.aircraft?.yearMade !== undefined && data?.aircraft?.yearMade !== null">
-                <div class="text-secondary small">
-                    {{ 'yearMade' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.aircraft?.yearMade || '-' }}
-
-                </div>
-            </div>
-
         </div>
     </div>
-    <div class="col-12 {{ expand_maintenance_code.hidden ? 'mb-0' : 'mb-4' }} " *ngIf="data?.maintenanceCode">
-    <div class="fw-bold border-bottom mb-2">
-      {{ 'maintenanceCode' | translate }}
-      <button class="btn btn-link btn-sm" (click)="expand_maintenance_code.hidden = !expand_maintenance_code.hidden">
-        <span *ngIf="expand_maintenance_code.hidden">Expand</span>
-        <span *ngIf="!expand_maintenance_code.hidden">Collapse</span>
-        <span *ngIf="expand_maintenance_code.hidden" nz-icon nzType="down" nzTheme="outline"></span>
-        <span *ngIf="!expand_maintenance_code.hidden" nz-icon nzType="up" nzTheme="outline"></span>
-      </button>
-    </div>
-    <div class="row" #expand_maintenance_code hidden>
 
-            <div class="col-md-3"
-                *ngIf="data?.maintenanceCode?.classification !== undefined && data?.maintenanceCode?.classification !== null">
-                <div class="text-secondary small">
-                    {{ 'classification' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.maintenanceCode?.classification || '-' }}
-
-                </div>
+    <!-- Maintenance Code -->
+    <div class="section-block" *ngIf="item.maintenanceCode">
+        <h6 class="section-title">Maintenance Code</h6>
+        <div class="row g-3">
+            <div class="col-md-3" *ngIf="item.maintenanceCode.maintenanceCode">
+                <div class="field-label">{{ 'maintenanceCode' | translate }}</div>
+                <div class="field-value">{{ item.maintenanceCode.maintenanceCode }}</div>
             </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.maintenanceCode?.createdAt !== undefined && data?.maintenanceCode?.createdAt !== null">
-                <div class="text-secondary small">
-                    {{ 'createdAt' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.maintenanceCode?.createdAt | date: 'yyyy-MM-dd' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.maintenanceCode.descriptionMaintenance">
+                <div class="field-label">{{ 'descriptionMaintenance' | translate }}</div>
+                <div class="field-value">{{ item.maintenanceCode.descriptionMaintenance }}</div>
             </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.maintenanceCode?.descriptionMaintenance !== undefined && data?.maintenanceCode?.descriptionMaintenance !== null">
-                <div class="text-secondary small">
-                    {{ 'descriptionMaintenance' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.maintenanceCode?.descriptionMaintenance || '-' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.maintenanceCode.classification">
+                <div class="field-label">{{ 'classification' | translate }}</div>
+                <div class="field-value">{{ item.maintenanceCode.classification }}</div>
             </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.maintenanceCode?.isDeleted !== undefined && data?.maintenanceCode?.isDeleted !== null">
-                <div class="text-secondary small">
-                    {{ 'isDeleted' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    <nz-tag *ngIf="data?.maintenanceCode.isDeleted" nzColor="blue">Ya</nz-tag>
-                    <span *ngIf="!data?.maintenanceCode.isDeleted">-</span>
-
-                </div>
+            <div class="col-md-3" *ngIf="item.maintenanceCode.updatedAt">
+                <div class="field-label">{{ 'updatedAt' | translate }}</div>
+                <div class="field-value">{{ item.maintenanceCode.updatedAt | date: 'yyyy-MM-dd' }}</div>
             </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.maintenanceCode?.maintenanceCode !== undefined && data?.maintenanceCode?.maintenanceCode !== null">
-                <div class="text-secondary small">
-                    {{ 'maintenanceCode' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.maintenanceCode?.maintenanceCode || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.maintenanceCode?.oldId !== undefined && data?.maintenanceCode?.oldId !== null">
-                <div class="text-secondary small">
-                    {{ 'oldId' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.maintenanceCode?.oldId || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.maintenanceCode?.reference !== undefined && data?.maintenanceCode?.reference !== null">
-                <div class="text-secondary small">
-                    {{ 'reference' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.maintenanceCode?.reference || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.maintenanceCode?.updatedAt !== undefined && data?.maintenanceCode?.updatedAt !== null">
-                <div class="text-secondary small">
-                    {{ 'updatedAt' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.maintenanceCode?.updatedAt | date: 'yyyy-MM-dd' }}
-
-                </div>
-            </div>
-
         </div>
     </div>
-    <div class="col-12 {{ expand_mpart.hidden ? 'mb-0' : 'mb-4' }} " *ngIf="data?.mpart">
-    <div class="fw-bold border-bottom mb-2">
-      {{ 'mpart' | translate }}
-      <button class="btn btn-link btn-sm" (click)="expand_mpart.hidden = !expand_mpart.hidden">
-        <span *ngIf="expand_mpart.hidden">Expand</span>
-        <span *ngIf="!expand_mpart.hidden">Collapse</span>
-        <span *ngIf="expand_mpart.hidden" nz-icon nzType="down" nzTheme="outline"></span>
-        <span *ngIf="!expand_mpart.hidden" nz-icon nzType="up" nzTheme="outline"></span>
-      </button>
-    </div>
-    <div class="row" #expand_mpart hidden>
 
-            <div class="col-md-3"
-                *ngIf="data?.mpart?.calculatedCycle !== undefined && data?.mpart?.calculatedCycle !== null">
-                <div class="text-secondary small">
-                    {{ 'calculatedCycle' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.calculatedCycle || '-' }}
-
-                </div>
+    <!-- MPART Snapshot -->
+    <div class="section-block" *ngIf="item.mpart">
+        <h6 class="section-title">MPART</h6>
+        <div class="row g-3">
+            <div class="col-md-3" *ngIf="item.mpart.partNumber">
+                <div class="field-label">{{ 'partNumber' | translate }}</div>
+                <div class="field-value">{{ item.mpart.partNumber }}</div>
             </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.mpart?.calculatedHours !== undefined && data?.mpart?.calculatedHours !== null">
-                <div class="text-secondary small">
-                    {{ 'calculatedHours' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.calculatedHours || '-' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.mpart.keyword">
+                <div class="field-label">{{ 'keyword' | translate }}</div>
+                <div class="field-value">{{ item.mpart.keyword }}</div>
             </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.childname !== undefined && data?.mpart?.childname !== null">
-                <div class="text-secondary small">
-                    {{ 'childname' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.childname || '-' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.mpart.idGroup">
+                <div class="field-label">{{ 'idGroup' | translate }}</div>
+                <div class="field-value">{{ item.mpart.idGroup }}</div>
             </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.codeAtaMentah !== undefined && data?.mpart?.codeAtaMentah !== null">
-                <div class="text-secondary small">
-                    {{ 'codeAtaMentah' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.codeAtaMentah || '-' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.mpart.idConditionMonitoring">
+                <div class="field-label">{{ 'idConditionMonitoring' | translate }}</div>
+                <div class="field-value">{{ item.mpart.idConditionMonitoring }}</div>
             </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.createdAt !== undefined && data?.mpart?.createdAt !== null">
-                <div class="text-secondary small">
-                    {{ 'createdAt' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.createdAt | date: 'yyyy-MM-dd' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.mpart.mtboHours !== undefined && item.mpart.mtboHours !== null">
+                <div class="field-label">{{ 'mtboHours' | translate }}</div>
+                <div class="field-value">{{ item.mpart.mtboHours | number: '1.0-0' }}</div>
             </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.mpart?.descriptionMpart !== undefined && data?.mpart?.descriptionMpart !== null">
-                <div class="text-secondary small">
-                    {{ 'descriptionMpart' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.descriptionMpart || '-' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.mpart.lifeLimitHours !== undefined && item.mpart.lifeLimitHours !== null">
+                <div class="field-label">{{ 'lifeLimitHours' | translate }}</div>
+                <div class="field-value">{{ item.mpart.lifeLimitHours | number: '1.0-0' }}</div>
             </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.forAc !== undefined && data?.mpart?.forAc !== null">
-                <div class="text-secondary small">
-                    {{ 'forAc' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.forAc | number:'1.0-0' }}
-
-                </div>
+            <div class="col-md-3" *ngIf="item.mpart.updatedAt">
+                <div class="field-label">{{ 'updatedAt' | translate }}</div>
+                <div class="field-value">{{ item.mpart.updatedAt | date: 'yyyy-MM-dd' }}</div>
             </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.isDeleted !== undefined && data?.mpart?.isDeleted !== null">
-                <div class="text-secondary small">
-                    {{ 'isDeleted' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    <nz-tag *ngIf="data?.mpart.isDeleted" nzColor="blue">Ya</nz-tag>
-                    <span *ngIf="!data?.mpart.isDeleted">-</span>
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.isMandatory !== undefined && data?.mpart?.isMandatory !== null">
-                <div class="text-secondary small">
-                    {{ 'isMandatory' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    <nz-tag *ngIf="data?.mpart.isMandatory" nzColor="blue">Ya</nz-tag>
-                    <span *ngIf="!data?.mpart.isMandatory">-</span>
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.ismayor !== undefined && data?.mpart?.ismayor !== null">
-                <div class="text-secondary small">
-                    {{ 'ismayor' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    <nz-tag *ngIf="data?.mpart.ismayor" nzColor="blue">Ya</nz-tag>
-                    <span *ngIf="!data?.mpart.ismayor">-</span>
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.keyword !== undefined && data?.mpart?.keyword !== null">
-                <div class="text-secondary small">
-                    {{ 'keyword' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.keyword || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.lastPrice !== undefined && data?.mpart?.lastPrice !== null">
-                <div class="text-secondary small">
-                    {{ 'lastPrice' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.lastPrice | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.mpart?.lastPriceCurrency !== undefined && data?.mpart?.lastPriceCurrency !== null">
-                <div class="text-secondary small">
-                    {{ 'lastPriceCurrency' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.lastPriceCurrency || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.mpart?.lifeLimitCycle !== undefined && data?.mpart?.lifeLimitCycle !== null">
-                <div class="text-secondary small">
-                    {{ 'lifeLimitCycle' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.lifeLimitCycle | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.mpart?.lifeLimitHours !== undefined && data?.mpart?.lifeLimitHours !== null">
-                <div class="text-secondary small">
-                    {{ 'lifeLimitHours' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.lifeLimitHours | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.lifeLimitVal !== undefined && data?.mpart?.lifeLimitVal !== null">
-                <div class="text-secondary small">
-                    {{ 'lifeLimitVal' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.lifeLimitVal | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.lifeLimitVar !== undefined && data?.mpart?.lifeLimitVar !== null">
-                <div class="text-secondary small">
-                    {{ 'lifeLimitVar' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.lifeLimitVar || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3"
-                *ngIf="data?.mpart?.manufactureMpart !== undefined && data?.mpart?.manufactureMpart !== null">
-                <div class="text-secondary small">
-                    {{ 'manufactureMpart' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.manufactureMpart || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.mat_82 !== undefined && data?.mpart?.mat_82 !== null">
-                <div class="text-secondary small">
-                    {{ 'mat_82' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.mat_82 || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.mfigureIndex !== undefined && data?.mpart?.mfigureIndex !== null">
-                <div class="text-secondary small">
-                    {{ 'mfigureIndex' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.mfigureIndex || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.minQty !== undefined && data?.mpart?.minQty !== null">
-                <div class="text-secondary small">
-                    {{ 'minQty' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.minQty | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.mitemIndex !== undefined && data?.mpart?.mitemIndex !== null">
-                <div class="text-secondary small">
-                    {{ 'mitemIndex' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.mitemIndex || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.mtboCycle !== undefined && data?.mpart?.mtboCycle !== null">
-                <div class="text-secondary small">
-                    {{ 'mtboCycle' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.mtboCycle | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.mtboHours !== undefined && data?.mpart?.mtboHours !== null">
-                <div class="text-secondary small">
-                    {{ 'mtboHours' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.mtboHours | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.mtboVal !== undefined && data?.mpart?.mtboVal !== null">
-                <div class="text-secondary small">
-                    {{ 'mtboVal' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.mtboVal | number:'1.0-0' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.mtboVar !== undefined && data?.mpart?.mtboVar !== null">
-                <div class="text-secondary small">
-                    {{ 'mtboVar' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.mtboVar || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.oldAtachapter !== undefined && data?.mpart?.oldAtachapter !== null">
-                <div class="text-secondary small">
-                    {{ 'oldAtachapter' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.oldAtachapter || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.oldId !== undefined && data?.mpart?.oldId !== null">
-                <div class="text-secondary small">
-                    {{ 'oldId' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.oldId || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.parent !== undefined && data?.mpart?.parent !== null">
-                <div class="text-secondary small">
-                    {{ 'parent' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.parent || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.partNumber !== undefined && data?.mpart?.partNumber !== null">
-                <div class="text-secondary small">
-                    {{ 'partNumber' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.partNumber || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.partname !== undefined && data?.mpart?.partname !== null">
-                <div class="text-secondary small">
-                    {{ 'partname' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.partname || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.refMel !== undefined && data?.mpart?.refMel !== null">
-                <div class="text-secondary small">
-                    {{ 'refMel' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.refMel || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.statusMpart !== undefined && data?.mpart?.statusMpart !== null">
-                <div class="text-secondary small">
-                    {{ 'statusMpart' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    <nz-tag nzColor="green">{{ data?.mpart.statusMpart }}</nz-tag>
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.unit !== undefined && data?.mpart?.unit !== null">
-                <div class="text-secondary small">
-                    {{ 'unit' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.unit || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.mpart?.updatedAt !== undefined && data?.mpart?.updatedAt !== null">
-                <div class="text-secondary small">
-                    {{ 'updatedAt' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.mpart?.updatedAt | date: 'yyyy-MM-dd' }}
-
-                </div>
-            </div>
-
         </div>
     </div>
-    <div class="col-12 {{ expand_user.hidden ? 'mb-0' : 'mb-4' }} " *ngIf="data?.user">
-    <div class="fw-bold border-bottom mb-2">
-      {{ 'user' | translate }}
-      <button class="btn btn-link btn-sm" (click)="expand_user.hidden = !expand_user.hidden">
-        <span *ngIf="expand_user.hidden">Expand</span>
-        <span *ngIf="!expand_user.hidden">Collapse</span>
-        <span *ngIf="expand_user.hidden" nz-icon nzType="down" nzTheme="outline"></span>
-        <span *ngIf="!expand_user.hidden" nz-icon nzType="up" nzTheme="outline"></span>
-      </button>
+</ng-container>
+
+<ng-template #emptyState>
+    <div class="empty-wrapper">
+        <nz-empty nzDescription="Data tidak ditemukan">
+        </nz-empty>
     </div>
-    <div class="row" #expand_user hidden>
-
-            <div class="col-md-3" *ngIf="data?.user?.dateLog !== undefined && data?.user?.dateLog !== null">
-                <div class="text-secondary small">
-                    {{ 'dateLog' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.user?.dateLog || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.user?.method !== undefined && data?.user?.method !== null">
-                <div class="text-secondary small">
-                    {{ 'method' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.user?.method || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.user?.methodValue !== undefined && data?.user?.methodValue !== null">
-                <div class="text-secondary small">
-                    {{ 'methodValue' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.user?.methodValue || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.user?.typeIdKey !== undefined && data?.user?.typeIdKey !== null">
-                <div class="text-secondary small">
-                    {{ 'typeIdKey' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.user?.typeIdKey || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.user?.typeLog !== undefined && data?.user?.typeLog !== null">
-                <div class="text-secondary small">
-                    {{ 'typeLog' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.user?.typeLog || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.user?.typeValue !== undefined && data?.user?.typeValue !== null">
-                <div class="text-secondary small">
-                    {{ 'typeValue' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.user?.typeValue || '-' }}
-
-                </div>
-            </div>
-
-            <div class="col-md-3" *ngIf="data?.user?.typeWork !== undefined && data?.user?.typeWork !== null">
-                <div class="text-secondary small">
-                    {{ 'typeWork' | translate }}
-                </div>
-                <div class="fw-semibold text-dark">
-
-                    {{ data?.user?.typeWork || '-' }}
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
+</ng-template>

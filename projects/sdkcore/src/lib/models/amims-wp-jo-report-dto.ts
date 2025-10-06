@@ -34,6 +34,7 @@ export interface AmimsWpJoReportDto {
   idPart?: string;
   idSite?: string;
   idTechLog?: string;
+  idUnscheduleMaintenance?: string;
   idUser?: string;
   idWorkCompleted?: string;
   idWp?: string;
@@ -51,7 +52,7 @@ export interface AmimsWpJoReportDto {
   reference?: string;
   site: AmimsSiteDto;
   statusWpJo?: string;
-  timeRangeFrom?: number;
+  timeRangeFrom?: string;
   timeRangeTo?: number;
   timeVariable?: string;
   totalHoursWork?: number;

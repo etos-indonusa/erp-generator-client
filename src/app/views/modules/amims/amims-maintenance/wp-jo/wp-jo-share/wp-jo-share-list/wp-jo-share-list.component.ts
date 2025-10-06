@@ -32,6 +32,7 @@ import { WpService } from 'de-sdk-core';
     styleUrl: './wp-jo-share-list.component.scss'
 })
 export class WpJoShareListComponent {
+    @Input('idUnscheduleMaintenance') idUnscheduleMaintenance: string | null = null;
     @Input('status') status: string | null = null;
     @Output('out_filter') out_filter = new EventEmitter<any>();
     @Input('filter-extra') filter_extra = false;
@@ -49,6 +50,7 @@ export class WpJoShareListComponent {
     @Input('idMaintenanceProgram') idMaintenanceProgram: string | null = null;
 
     @Input('idMpart') idMpart: string | null = null;
+    @Input('typeOfwork') typeOfwork: string | null = null;
 
     @Input('idPart') idPart: string | null = null;
 
@@ -92,6 +94,10 @@ export class WpJoShareListComponent {
         this.filter.status_wpJo = this.status == 'semua' ? null : this.status;
 
 
+
+        if (changes.idUnscheduleMaintenance) {
+            this.filterUnscheduleMaintenance.idUnscheduleMaintenance = this.idUnscheduleMaintenance
+        }
 
         if (changes.idAircraft) {
             this.filterAircraft.idAircraft = this.idAircraft
@@ -189,6 +195,7 @@ export class WpJoShareListComponent {
 
     //untuak filter dari prent
 
+    filterUnscheduleMaintenance: any = {}
     filterAircraft: any = {}
 
     filterDueListOutput: any = {}
@@ -376,10 +383,13 @@ export class WpJoShareListComponent {
                     {
                         "aircraft": this.filterAircraft, type: 'inner'
                     },
- 
+                    {
+                        "unschedule_maintenance": this.filterUnscheduleMaintenance, type: 'inner'
+                    },
+
                     {
                         "part": this.filterPart, type: 'inner'
-                    } 
+                    }
 
                 ],
                 search_field: this.search_field,
@@ -439,7 +449,7 @@ export class WpJoShareListComponent {
         });
     }
 
-    i=0;
+    i = 0;
     currentSort: any = {};
     onQueryParamsChange(params: NzTableQueryParams): void {
         this.pageIndex = params.pageIndex;
@@ -552,6 +562,10 @@ export class WpJoShareListComponent {
         const drawerRef = this.drawerService.create<WpJoShareAddComponent, {}, string>({
             nzTitle: 'Add',
             nzContent: WpJoShareAddComponent,
+            nzContentParams: {
+                idUnscheduleMaintenance: this.idUnscheduleMaintenance ,
+                typeOfwork: this.typeOfwork ,
+            },
             nzWidth: (500) + 'px',
         });
 

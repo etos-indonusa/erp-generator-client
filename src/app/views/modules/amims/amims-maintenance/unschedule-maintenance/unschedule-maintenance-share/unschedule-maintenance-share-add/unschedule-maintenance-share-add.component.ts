@@ -9,6 +9,7 @@ import type { AmimsUnscheduleMaintenanceDto } from 'de-sdk-core';
 import { UnscheduleMaintenanceService } from 'de-sdk-core';
 
 import { AircraftService } from 'de-sdk-core';
+import { AmimsAircraftDto } from 'sdkcore';
 
 @Component({
     selector: 'app-unschedule-maintenance-share-add',
@@ -50,14 +51,7 @@ export class UnscheduleMaintenanceShareAddComponent {
         this.form.get('idAircraft')?.valueChanges.subscribe(value => {
             this.getAllTechLog();
             this.getAllPart();
-
-            const selectedAircraft = this.listAircraft.find(item => item.idAircraft === value);
-            console.log('selectedAircraft', selectedAircraft);
-            if (selectedAircraft && selectedAircraft.serialNumber) {
-                this.form.get('airframeSn')?.setValue(selectedAircraft.serialNumber);
-            } else {
-                this.form.get('airframeSn')?.setValue(null);
-            }
+            this.syncAircraftFields(value);
         });
         this.form.get('idTechLog')?.valueChanges.subscribe(value => {
             const selectedTechLog = this.listTechLog.find(item => item.idTechLog === value);
@@ -73,6 +67,7 @@ export class UnscheduleMaintenanceShareAddComponent {
 
         if (this.unscheduleMaintenance) {
             this.form.patchValue(this.unscheduleMaintenance);
+            this.syncAircraftFields(this.form.get('idAircraft')?.value ?? null);
         }
         else {
             if (this.idAircraft) {
@@ -84,7 +79,7 @@ export class UnscheduleMaintenanceShareAddComponent {
         }
     }
 
-    listAircraft: any[] = [];
+    listAircraft: AmimsAircraftDto[] = [];
     listTechLog: any[] = [];
     listPart: any[] = [];
 
@@ -94,7 +89,10 @@ export class UnscheduleMaintenanceShareAddComponent {
     // untuk fungsi get ALL relation
     getAllAircraft() {
         this.aircraftService.aircraftControllerFindAll().subscribe(
-            data => this.listAircraft = data.data ?? []
+            data => {
+                this.listAircraft = data.data ?? [];
+                this.syncAircraftFields(this.form.get('idAircraft')?.value ?? null);
+            }
         );
     }
     getAllPart() {
@@ -116,6 +114,21 @@ export class UnscheduleMaintenanceShareAddComponent {
                 this.listPart = data.data ?? [];
             }
         );
+    }
+
+    private syncAircraftFields(idAircraft: string | null | undefined) {
+        if (!this.form) {
+            return;
+        }
+
+        const airframeField = this.form.get('airframeSn');
+        if (!idAircraft) {
+            airframeField?.setValue(null);
+            return;
+        }
+
+        const selectedAircraft = this.listAircraft.find(item => item.idAircraft === idAircraft);
+        airframeField?.setValue(selectedAircraft?.serialNumber ?? null);
     }
 
     getAllTechLog() {

@@ -27,6 +27,7 @@ export interface AmimsWpJoWidgetDto {
   idPart?: string;
   idSite?: string;
   idTechLog?: string;
+  idUnscheduleMaintenance?: string;
   idUser?: string;
   idWorkCompleted?: string;
   idWp?: string;
@@ -40,7 +41,7 @@ export interface AmimsWpJoWidgetDto {
   priority?: string;
   reference?: string;
   statusWpJo?: string;
-  timeRangeFrom?: number;
+  timeRangeFrom?: string;
   timeRangeTo?: number;
   timeVariable?: string;
   total?: number;

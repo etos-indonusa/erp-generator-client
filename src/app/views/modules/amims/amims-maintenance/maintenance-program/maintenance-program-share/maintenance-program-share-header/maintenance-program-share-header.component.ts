@@ -10,5 +10,6 @@ export class MaintenanceProgramShareHeaderComponent {
     constructor() { }
 
     ngOnInit(): void {
+        console.log(this.data);
     }
 }

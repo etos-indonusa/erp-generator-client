@@ -77,6 +77,8 @@ export class UnscheduleMaintenanceShareListComponent {
         this.loadColumnSettings();
 
         this.getAllAircraft();
+
+        // this.add(); // untuk testing
     }
 
 
@@ -189,6 +191,15 @@ export class UnscheduleMaintenanceShareListComponent {
                     {
                         "name": "aircraft",
                         "type": "single"
+                    },
+                    {
+                        "name": "part",
+                        "type": "single"
+                    },
+                    {
+                        "name": "mpart",
+                        "to": "part",
+                        "type": "single"
                     }
                 ],
                 sortKey: this.sortKey ?? undefined,
@@ -201,6 +212,8 @@ export class UnscheduleMaintenanceShareListComponent {
             this.total = data.total || 0;
             this.listOfData = data.data || [];
             this.cd.detectChanges()
+
+            // this.detail(this.listOfData[0])
         }, err => {
             this.loading = false;
         });
