@@ -1,0 +1,37 @@
+
+  <div class="mb-3">
+    <div class="text-secondary small">Created At</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.createdAt ? (data.createdAt | date:'short') : '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Keterangan</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.keterangan || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Revisi</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.revisi || '-' }}
+      
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="text-secondary small">Title</div>
+    <div class="fw-semibold text-dark">
+      
+        {{ data.title || '-' }}
+      
+    </div>
+  </div>
+

@@ -1,4 +1,12 @@
 export declare const AmimsMaintenanceWidgetFormSchema: {
+    alert: {
+        default: number;
+        required: boolean;
+    };
+    alertParam: {
+        default: string;
+        required: boolean;
+    };
     atachapter: {
         default: string;
         required: boolean;

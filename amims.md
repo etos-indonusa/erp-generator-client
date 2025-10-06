@@ -106,3 +106,14 @@ npm run generate:crud -- warranty --prefix=amims
 npm run generate:report -- maintenance --prefix=amims
 npm run generate:crud -- maintenance-document --prefix=amims
 npm run generate:crud -- maintenance-material --prefix=amims
+
+npm run generate:report -- maintenance-program --prefix=amims
+npm run generate:crud -- maintenance-program-document --prefix=amims
+npm run generate:crud -- maintenance-program-material --prefix=amims
+npm run generate:crud -- maintenance-program-task --prefix=amims
+
+npm run generate:report -- wp-jo --prefix=amims
+npm run generate:report -- wp --prefix=amims
+npm run generate:report -- work-completed --prefix=amims
+
+

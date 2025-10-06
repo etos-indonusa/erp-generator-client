@@ -99,3 +99,13 @@ h3>small {
 .text-right{
     text-align: right !important;
 }
+
+.ant-descriptions-bordered .ant-descriptions-item-label {
+    padding: 7px 11px !important;
+    border: 0;
+
+    &::after {
+        content: ":";
+    
+    }
+}

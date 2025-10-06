@@ -17,6 +17,7 @@ export interface AmimsVDueListOutputReportDto {
   dueAtDy?: string;
   dueAtHr?: string;
   idAircraft?: string;
+  idDueList?: string;
   idDueListOutput: string;
   idMpart?: string;
   idPart?: string;

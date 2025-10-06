@@ -10,6 +10,7 @@ export const AmimsDueListOutputDtoFields: Record<string, 'string' | 'boolean' | 
   "idAircraft": "string",
   "idDueList": "string",
   "idDueListOutput": "string",
+  "idMaintenance": "string",
   "idMpart": "string",
   "idPart": "string",
   "installPart": "string",

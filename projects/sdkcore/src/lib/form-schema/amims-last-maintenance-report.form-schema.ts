@@ -9,13 +9,13 @@ export const AmimsLastMaintenanceReportFormSchema = {
   "idMaintenance": {
     "required": false
   },
-  "idMpcJo": {
-    "required": false
-  },
   "idPart": {
     "required": false
   },
   "idUser": {
+    "required": false
+  },
+  "idWpJo": {
     "required": false
   },
   "lastCycle": {

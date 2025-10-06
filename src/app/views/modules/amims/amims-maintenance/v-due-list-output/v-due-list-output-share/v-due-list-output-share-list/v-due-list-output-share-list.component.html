@@ -30,7 +30,8 @@
                         </nz-form-control>
                     </nz-form-item>
                 </div>
-                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }" *ngIf="!idAircraft">
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }"
+                    *ngIf="!idAircraft">
                     <nz-form-item>
                         <nz-form-label>{{ 'idAircraft' | translate }}</nz-form-label>
                         <nz-form-control>
@@ -221,7 +222,7 @@
                     <th [nzSortFn]="true" nzColumnKey="remainingCy" *ngIf="isColVisible('remainingCy')">
                         {{ 'remaining' | translate }}
                     </th>
- 
+
 
                     <th nzWidth="7%" [nzAlign]="'right'">Action</th>
                 </tr>
@@ -303,7 +304,7 @@
                                 <p>C:{{ data.remainingCy | number}}</p>
                             </ng-container>
                         </td>
-   
+
 
                         <td [nzAlign]="'right'">
                             <button nz-button nz-dropdown [nzDropdownMenu]="menu">
@@ -316,8 +317,8 @@
                                         <span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Detail
                                     </li>
                                     <!--  -->
-                                    <li nz-menu-item (click)="update(data)" *ngIf="data.status=='draft'">
-                                        <span nz-icon nzType="edit" nzTheme="outline"></span>&nbsp;&nbsp;Update
+                                    <li nz-menu-item (click)="add(data)"  >
+                                        <span nz-icon nzType="edit" nzTheme="outline"></span>&nbsp;&nbsp;Add Task cark
                                     </li>
                                     <li nz-menu-divider *ngIf="data.status=='draft'"></li>
                                     <li nz-menu-item nz-menu-item nz-popconfirm class="text-danger"
@@ -381,7 +382,5 @@
     <button nz-button nzType="link" (click)="resetColumns()" nz-tooltip
         nzTooltipTitle="{{ 'Reset Kolom' | translate }}"><i nz-icon nzType="undo"></i></button>
 
-    <button nz-button style="margin-bottom: 8px;margin-left: 10px;" nzType="primary" (click)="add()">
-        <span nz-icon nzType="plus" nzTheme="outline"></span> Add New
-    </button>
+
 </ng-template>

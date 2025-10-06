@@ -4,12 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsLastMaintenanceFormSchema } from 'de-sdk-core'; 
-import type  { AmimsLastMaintenanceDto } from 'de-sdk-core';
+import { AmimsLastMaintenanceFormSchema } from 'de-sdk-core';
+import type { AmimsLastMaintenanceDto } from 'de-sdk-core';
 import { LastMaintenanceService } from 'de-sdk-core';
 
 import { MaintenanceService } from 'de-sdk-core';
-import { MpcJoService } from 'de-sdk-core';
 import { PartService } from 'de-sdk-core';
 import { UsersService } from 'de-sdk-core';
 
@@ -20,13 +19,13 @@ import { UsersService } from 'de-sdk-core';
 })
 export class LastMaintenanceShareAddComponent {
     @Input('lastMaintenance') lastMaintenance: AmimsLastMaintenanceDto = {
-  idLastMaintenance: ''
-};
+        idLastMaintenance: ''
+    };
     form!: FormGroup;
 
     ngOnChanges(changes: SimpleChanges): void {
-        if(changes.lastMaintenance && this.lastMaintenance.idLastMaintenance) {
-        this.form?.patchValue(this.lastMaintenance);
+        if (changes.lastMaintenance && this.lastMaintenance.idLastMaintenance) {
+            this.form?.patchValue(this.lastMaintenance);
         }
     }
     constructor(
@@ -34,55 +33,49 @@ export class LastMaintenanceShareAddComponent {
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
         private lastMaintenanceService: LastMaintenanceService,
-                        private maintenanceService: MaintenanceService,
-                private mpcJoService: MpcJoService,
-                private partService: PartService,
-                private usersService: UsersService,
-                    ) { }
+        private maintenanceService: MaintenanceService,
+        private partService: PartService,
+        private usersService: UsersService,
+    ) { }
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, AmimsLastMaintenanceFormSchema, {
             kodeLastMaintenance: [Validators.minLength(3), Validators.maxLength(3)],
             catatan: [Validators.maxLength(200)],
-        },'LastMaintenance');
+        }, 'LastMaintenance');
 
-                            this.getAllMaintenance();
-                    this.getAllMpcJo();
-                    this.getAllPart();
-                    this.getAllUser();
-                    }
-    
+        this.getAllMaintenance(); 
+        this.getAllPart();
+        this.getAllUser();
+    }
+ 
     listMaintenance: any[] = [];
-    
+
     listMpcJo: any[] = [];
-    
+
     listPart: any[] = [];
-    
+
     listUser: any[] = [];
-    
+
 
     // untuk fungsi get ALL relation
-            getAllMaintenance() {
-    this.maintenanceService.maintenanceControllerFindAll().subscribe(
-      data => this.listMaintenance = data.data ?? []
-    );
-  }
-        getAllMpcJo() {
-    this.mpcJoService.mpcJoControllerFindAll().subscribe(
-      data => this.listMpcJo = data.data ?? []
-    );
-  }
-        getAllPart() {
-    this.partService.partControllerFindAll().subscribe(
-      data => this.listPart = data.data ?? []
-    );
-  }
-        getAllUser() {
-    this.usersService.usersControllerFindAll().subscribe(
-      data => this.listUser = data.data ?? []
-    );
-  }
-        
+    getAllMaintenance() {
+        this.maintenanceService.maintenanceControllerFindAll().subscribe(
+            data => this.listMaintenance = data.data ?? []
+        );
+    }
+    
+    getAllPart() {
+        this.partService.partControllerFindAll().subscribe(
+            data => this.listPart = data.data ?? []
+        );
+    }
+    getAllUser() {
+        this.usersService.usersControllerFindAll().subscribe(
+            data => this.listUser = data.data ?? []
+        );
+    }
+
     submit(): void {
         const labelMap = extractLabels(AmimsLastMaintenanceFormSchema);
 

@@ -1,0 +1,122 @@
+<nz-spin nzTip="Loading..." [nzSpinning]="is_loading">
+
+    <div class="card border-0 mb-1 border-left-5 border-theme card   bg-white">
+        <div class="card-body p-2">
+            <div class="row">
+                <div class="col-lg-2">
+                    <p class="text-secondary  mb-1">Status</p>
+                    <h3 class="fw-bold text-capitalize">
+                        {{ maintenanceProgram?.isActive }}
+                    </h3>
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-secondary  mb-1">Nomor</p>
+                    <h3 class="fw-bold  ">{{maintenanceProgram?.programCode}}</h3>
+                </div>
+                <div class="col" style="text-align: right;">
+                    <p class="text-secondary mb-1">&nbsp;</p>
+
+                    <button nz-button nzType="primary" style="margin-right: 5px;" nz-dropdown [nzDropdownMenu]="menu4">
+                        <span nz-icon nzType="printer"></span>
+                        Print
+                        <span nz-icon nzType="down"></span>
+                    </button>
+                    <nz-dropdown-menu #menu4="nzDropdownMenu">
+                        <ul nz-menu>
+                            <li nz-menu-item (click)="print()">Print maintenanceProgram</li>
+                        </ul>
+                    </nz-dropdown-menu>
+
+                    <!-- <button *ngIf="maintenanceProgram.status=='close' || maintenanceProgram.status=='cicil'" nz-button
+                        nzType="primary" (click)="up()" style="margin-right: 5px;">
+                        <span nz-icon nzType="calculator" nzTheme="outline"></span>
+                        Bayar
+                    </button> -->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+     <lib-approval-steps [for-module-name]="'maintenance-program'" [for-module-id]="maintenance-program?.idMaintenanceProgram" [current-status]="maintenance-program?.statusMaintenanceProgram"></lib-approval-steps>
+         -->
+
+    <div class="card bg-white p-3" style="box-shadow: none;">
+        <div class="row">
+            <div class="col-md-8">
+                <app-maintenance-program-share-header
+                    [data]="maintenanceProgram"></app-maintenance-program-share-header>
+                <lib-custom-field [from-module]="'AmimsMaintenanceProgram'"
+                    [from-module-id]="maintenanceProgram?.idMaintenanceProgram"></lib-custom-field>
+            </div>
+            <div class="col-md-4">
+                <document-widget-v1 [for-module-id]="maintenanceProgram?.idMaintenanceProgram"
+                    [for-module]="'AmimsMaintenanceProgram'" [enable-crud]="true"></document-widget-v1>
+
+                <!-- <approval-mode-widget *ngIf="maintenanceProgram.status??'-'.toLowerCase() !='close'"
+                    style="margin-right: 5px;" [module-id]="maintenanceProgram.id_contractSite" [module]="'AmimsMaintenanceProgram'"
+                    [flow-id]="maintenanceProgram.id_data_flow" [flow-detail]="maintenanceProgram.id_data_flow_detail"
+                    (reload)="approve($event)">
+                </approval-mode-widget> -->
+
+            </div>
+        </div>
+
+        <br>
+
+
+    </div>
+
+
+
+
+    <nz-tabset>
+        <nz-tab nzTitle="{{ 'Worksheet' | translate }}">
+            <app-maintenance-program-document-list *ngIf="maintenanceProgram?.idMaintenanceProgram"
+                [idMaintenanceProgram]="maintenanceProgram?.idMaintenanceProgram || ''"></app-maintenance-program-document-list>
+        </nz-tab>
+
+        <nz-tab nzTitle="{{ 'Special Tools' | translate }}">
+            <ng-template nz-tab>
+                <app-maintenance-program-material-list *ngIf="maintenanceProgram?.idMaintenanceProgram"
+                    [itemType]="'tool'"
+                    [idMaintenanceProgram]="maintenanceProgram?.idMaintenanceProgram || ''"></app-maintenance-program-material-list>
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'Consumable' | translate }}">
+            <ng-template nz-tab>
+                <app-maintenance-program-material-list *ngIf="maintenanceProgram?.idMaintenanceProgram"
+                    [itemType]="'consumable'"
+                    [idMaintenanceProgram]="maintenanceProgram?.idMaintenanceProgram || ''"></app-maintenance-program-material-list>
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'Routine Replacement Part' | translate }}">
+            <ng-template nz-tab>
+                <app-maintenance-program-material-list *ngIf="maintenanceProgram?.idMaintenanceProgram"
+                    [itemType]="'expandable'"
+                    [idMaintenanceProgram]="maintenanceProgram?.idMaintenanceProgram || ''"></app-maintenance-program-material-list>
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'Task' | translate }}">
+            <ng-template nz-tab>
+                <app-maintenance-program-task-list *ngIf="maintenanceProgram?.idMaintenanceProgram" 
+                    [idMaintenanceProgram]="maintenanceProgram?.idMaintenanceProgram || ''"></app-maintenance-program-task-list>
+            </ng-template>
+        </nz-tab>
+
+    </nz-tabset>
+
+    <div class="card">
+        <div class="card-body p-2">
+            <!-- <app-maintenance-program-share-list [filter-extra]="false" [idMaintenanceProgram]="idMaintenanceProgram"></app-maintenance-program-share-list> -->
+        </div>
+    </div>
+
+    <!-- 
+    <lib-approval-form-widget [from-module]="'AmimsMaintenanceProgram'" [from-module-id]="maintenance-program?.idMaintenanceProgram"
+        (onSubmit)="handleApprovalSubmit($event)" (onAfterSubmit)="refreshApprovalSteps()"></lib-approval-form-widget> 
+            -->
+
+</nz-spin>
+<br>

@@ -1,0 +1,149 @@
+<nz-spin [nzSpinning]="is_loading">
+    <form [formGroup]="form" (ngSubmit)="submit()" nz-form [nzLayout]="'vertical'">
+
+        <!-- Aircraft Type -->
+        <nz-form-item>
+            <nz-form-label nzFor="idActype">{{ 'idActype' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idActype" nzShowSearch nzAllowClear 
+                    nzPlaceHolder="Pilih {{ 'idActype' | translate }}"
+                    (ngModelChange)="autoSave()">
+                    <nz-option *ngFor="let item of listActype" nzLabel="{{ item.actype }}"
+                        nzValue="{{ item.idActype }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- Aircraft -->
+        <nz-form-item>
+            <nz-form-label nzFor="idAircraft">{{ 'idAircraft' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idAircraft" nzShowSearch nzAllowClear
+                    nzPlaceHolder="Pilih {{ 'idAircraft' | translate }}" (ngModelChange)="autoSave()">
+                    <nz-option *ngFor="let item of listAircraft" nzLabel="{{ item.registrationNumber }}"
+                        nzValue="{{ item.idAircraft }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- Maintenance Code -->
+        <nz-form-item>
+            <nz-form-label nzFor="idMaintenanceCode">{{ 'idMaintenanceCode' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idMaintenanceCode" nzShowSearch nzAllowClear (ngModelChange)="autoSave()"
+                    nzPlaceHolder="Pilih {{ 'idMaintenanceCode' | translate }}">
+                    <nz-option *ngFor="let item of listMaintenanceCode"
+                        nzLabel="{{ item.maintenanceCode }} - {{ item.descriptionMaintenance }}"
+                        nzValue="{{ item.idMaintenanceCode }}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- Part -->
+        <nz-form-item>
+            <nz-form-label nzFor="idMpart">{{ 'idMpart' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-select formControlName="idMpart" nzShowSearch nzAllowClear (ngModelChange)="autoSave()"
+                    nzPlaceHolder="Pilih {{ 'idMpart' | translate }}" [nzServerSearch]="true"
+                    [nzLoading]="isLoadingMpart" (nzOnSearch)="onSearchMpart($event)" [nzOptions]="filteredMpart"
+                    nzOptionLabelProp="label" nzOptionValueProp="value">
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- Program Code -->
+        <nz-form-item>
+            <nz-form-label nzFor="programCode">{{ 'programCode' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input id="programCode" formControlName="programCode"
+                    placeholder="Masukkan {{ 'programCode' | translate }}" (blur)="autoSave()" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- Program Title -->
+        <nz-form-item>
+            <nz-form-label nzFor="programTitle">{{ 'programTitle' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input id="programTitle" formControlName="programTitle" (blur)="autoSave()"
+                    placeholder="Masukkan {{ 'programTitle' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- Reference Document -->
+        <nz-form-item>
+            <nz-form-label nzFor="referenceDoc">{{ 'referenceDoc' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input id="referenceDoc" formControlName="referenceDoc" (blur)="autoSave()"
+                    placeholder="Masukkan {{ 'referenceDoc' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- Cycle To -->
+        <nz-form-item>
+            <nz-form-label nzFor="cycleTo">{{ 'cycleTo' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="cycleTo" formControlName="cycleTo" (blur)="autoSave()"
+                    placeholder="Masukkan {{ 'cycleTo' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- Hours To -->
+        <nz-form-item>
+            <nz-form-label nzFor="hoursTo">{{ 'hoursTo' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="hoursTo" formControlName="hoursTo" (blur)="autoSave()"
+                    placeholder="Masukkan {{ 'hoursTo' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- Time To -->
+        <nz-form-item>
+            <nz-form-label nzFor="timeTo">{{ 'timeTo' | translate }}</nz-form-label>
+            <nz-form-control>
+                <input nz-input type="number" id="timeTo" formControlName="timeTo" (blur)="autoSave()"
+                    placeholder="Masukkan {{ 'timeTo' | translate }}" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- Time To Unit -->
+        <nz-form-item>
+            <nz-form-label nzFor="timeToUnit">{{ 'timeToUnit' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-radio-group formControlName="timeToUnit" (ngModelChange)="autoSave()"> 
+                    <label nz-radio [nzValue]="'D'">D</label>
+                    <label nz-radio [nzValue]="'M'">M</label>
+                    <label nz-radio [nzValue]="'Y'">Y</label>
+                </nz-radio-group>
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- Note -->
+        <nz-form-item>
+            <nz-form-label nzFor="note">{{ 'note' | translate }}</nz-form-label>
+            <nz-form-control>
+                <textarea nz-input id="note" formControlName="note" (blur)="autoSave()"
+                    placeholder="Masukkan {{ 'note' | translate }}"></textarea>
+            </nz-form-control>
+        </nz-form-item>
+
+       
+
+        <!-- Active Checkbox -->
+        <nz-form-item>
+            <nz-form-label nzFor="isActive">{{ 'isActive' | translate }}</nz-form-label>
+            <nz-form-control>
+                <nz-radio-group formControlName="isActive" (ngModelChange)="autoSave()">
+                    <label nz-radio [nzValue]="true">{{ 'Active' | translate }}</label>
+                    <label nz-radio [nzValue]="false">{{ 'Inactive' | translate }}</label>
+                </nz-radio-group>
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- Submit Button -->
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="form.invalid">Simpan</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-spin>

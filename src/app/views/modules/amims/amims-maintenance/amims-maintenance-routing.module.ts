@@ -25,7 +25,7 @@ const routes: Routes = [
     { path: 'tech-log-engine', loadChildren: () => import('./tech-log/tech-log-engine/tech-log-engine.module').then(m => m.TechLogEngineModule) },
     { path: 'tech-log-engine-check', loadChildren: () => import('./tech-log/tech-log-engine-check/tech-log-engine-check.module').then(m => m.TechLogEngineCheckModule) },
     { path: 'tech-log-item', loadChildren: () => import('./tech-log/tech-log-item/tech-log-item.module').then(m => m.TechLogItemModule) },
-    { path: 'tech-log-jo', loadChildren: () => import('./tech-log/tech-log-jo/tech-log-jo.module').then(m => m.TechLogJoModule) },
+    
     {
         path: 'v-due-list-output',
         loadChildren: () => import('./v-due-list-output/v-due-list-output.module').then(m => m.VDueListOutputModule)
@@ -38,6 +38,23 @@ const routes: Routes = [
         path: 'maintenance',
         loadChildren: () => import('./maintenance/maintenance.module').then(m => m.MaintenanceModule)
     },
+    {
+        path: 'maintenance-program',
+        loadChildren: () => import('./maintenance-program/maintenance-program.module').then(m => m.MaintenanceProgramModule)
+    },
+    {
+        path: 'wp-jo',
+        loadChildren: () => import('./wp-jo/wp-jo.module').then(m => m.WpJoModule)
+    },
+
+    {
+        path: 'wp',
+        loadChildren: () => import('./wp/wp.module').then(m => m.WpModule)
+    },
+    {
+        path: 'work-completed',
+        loadChildren: () => import('./work-completed/work-completed.module').then(m => m.WorkCompletedModule)
+    } 
 ];
 
 @NgModule({

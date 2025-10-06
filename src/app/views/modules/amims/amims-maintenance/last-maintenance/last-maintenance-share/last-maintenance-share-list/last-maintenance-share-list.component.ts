@@ -14,7 +14,7 @@ import { AmimsLastMaintenanceDto } from 'de-sdk-core';
 import { LastMaintenanceShareAddComponent } from '../last-maintenance-share-add/last-maintenance-share-add.component';
 import { LastMaintenanceShareDetailComponent } from '../last-maintenance-share-detail/last-maintenance-share-detail.component';
 import { MaintenanceService } from 'de-sdk-core';
-import { MpcJoService } from 'de-sdk-core';
+import { WpJoService } from 'de-sdk-core';
 import { PartService } from 'de-sdk-core';
 import { UsersService } from 'de-sdk-core';
 
@@ -40,7 +40,7 @@ export class LastMaintenanceShareListComponent {
     @Input('idMpart') idMpart: any | null = null;
 
     @Input('idUser') idUser: string | null = null;
- 
+
     constructor(
         private pesanService: PesanService,
         private drawerService: NzDrawerService,
@@ -49,10 +49,8 @@ export class LastMaintenanceShareListComponent {
         private userInfoService: UserInfoService,
         private lastMaintenanceReportService: LastMaintenanceReportService,
         private lastMaintenanceService: LastMaintenanceService,
-        private tokenService: TokenService,
-
+        private tokenService: TokenService, 
         private maintenanceService: MaintenanceService,
-        private mpcJoService: MpcJoService,
         private partService: PartService,
         private usersService: UsersService,
         private translate: TranslateService
@@ -99,7 +97,6 @@ export class LastMaintenanceShareListComponent {
         this.loadColumnSettings();
 
         this.getAllMaintenance();
-        this.getAllMpcJo();
         this.getAllPart();
         this.getAllUser();
     }
@@ -130,11 +127,7 @@ export class LastMaintenanceShareListComponent {
             data => this.listMaintenance = data.data ?? []
         );
     }
-    getAllMpcJo() {
-        this.mpcJoService.mpcJoControllerFindAll().subscribe(
-            data => this.listMpcJo = data.data ?? []
-        );
-    }
+
     getAllPart() {
         this.partService.partControllerFindAll().subscribe(
             data => this.listPart = data.data ?? []
@@ -217,7 +210,7 @@ export class LastMaintenanceShareListComponent {
         this.searchData();
     }
 
-     get validSortValue(): 'asc' | 'desc' | undefined {
+    get validSortValue(): 'asc' | 'desc' | undefined {
         if (this.sortValue === 'asc') return 'asc';
         if (this.sortValue === 'desc') return 'desc';
         return undefined;
@@ -239,7 +232,7 @@ export class LastMaintenanceShareListComponent {
                     // }, 
                     {
                         "part": this.filterPart, type: 'inner'
-                    } 
+                    }
                 ],
                 search_field: this.search_field,
                 search_keyword: this.search || undefined,
@@ -247,16 +240,16 @@ export class LastMaintenanceShareListComponent {
                     {
                         "name": "maintenance_code",
                         "type": "single"
-                    }, 
+                    },
                     {
                         "name": "part",
                         "type": "single"
-                    }, 
+                    },
                     {
                         "name": "mpart",
                         "to": "part",
                         "type": "single"
-                    }, 
+                    },
                 ],
                 sortKey: this.sortKey ?? undefined,
                 sortValue: this.validSortValue,

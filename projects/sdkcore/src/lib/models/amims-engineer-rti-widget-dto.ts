@@ -13,10 +13,10 @@ export interface AmimsEngineerRtiWidgetDto {
   hashTechLog?: string;
   idAircraft?: string;
   idEngineerRti: string;
-  idMpcJo?: string;
   idPart?: string;
   idPartInstall?: string;
   idSite?: string;
+  idWpJo?: string;
   inspectedBy?: number;
   numberRti?: string;
   reason?: string;

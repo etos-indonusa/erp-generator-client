@@ -6,9 +6,9 @@ export interface AmimsLastMaintenanceWidgetDto {
   createdAt?: string;
   idLastMaintenance: string;
   idMaintenance?: string;
-  idMpcJo?: string;
   idPart?: string;
   idUser?: string;
+  idWpJo?: string;
   lastCycle?: number;
   lastDate?: string;
   lastHours?: number;

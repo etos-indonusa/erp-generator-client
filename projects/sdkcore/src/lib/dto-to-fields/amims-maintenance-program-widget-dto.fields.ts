@@ -1,0 +1,21 @@
+export const AmimsMaintenanceProgramWidgetDtoFields: Record<string, 'string' | 'boolean' | 'number'> = {
+  "createdAt": "string",
+  "cycleTo": "number",
+  "hoursTo": "number",
+  "idActype": "string",
+  "idAircraft": "string",
+  "idMaintenanceCode": "string",
+  "idMaintenanceProgram": "string",
+  "idMpart": "string",
+  "idUser": "string",
+  "isActive": "string",
+  "note": "string",
+  "programCode": "string",
+  "programTitle": "string",
+  "referenceDoc": "string",
+  "timeTo": "number",
+  "timeToUnit": "string",
+  "total": "number",
+  "updatedAt": "string",
+  "validasi": "number"
+};

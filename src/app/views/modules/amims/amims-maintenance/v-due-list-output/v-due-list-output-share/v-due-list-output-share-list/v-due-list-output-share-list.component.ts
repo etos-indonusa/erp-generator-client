@@ -9,13 +9,14 @@ import { UserInfoService } from 'src/app/services/user-info.service';
 import { PesanService } from 'src/app/shared/services/pesan.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
-import { AircraftService, VDueListOutputReportService, VDueListOutputService } from 'de-sdk-core';
+import { AircraftService, AmimsDueListOutputDto, AmimsWpJoDto, AmimsWpJoReportDto, VDueListOutputReportService, VDueListOutputService } from 'de-sdk-core';
 import { AmimsVDueListOutputDto } from 'de-sdk-core';
 import { VDueListOutputShareAddComponent } from '../v-due-list-output-share-add/v-due-list-output-share-add.component';
 import { VDueListOutputShareDetailComponent } from '../v-due-list-output-share-detail/v-due-list-output-share-detail.component';
 import { DueListOutputService } from 'de-sdk-core';
 import { MpartService } from 'de-sdk-core';
 import { PartService } from 'de-sdk-core';
+import { WpJoShareAddComponent } from '../../../wp-jo/wp-jo-share/wp-jo-share-add/wp-jo-share-add.component';
 
 
 
@@ -49,7 +50,7 @@ export class VDueListOutputShareListComponent {
         private vDueListOutputReportService: VDueListOutputReportService,
         private vDueListOutputService: VDueListOutputService,
         private tokenService: TokenService,
-        private aircraftService: AircraftService, 
+        private aircraftService: AircraftService,
         private dueListOutputService: DueListOutputService,
         private mpartService: MpartService,
         private partService: PartService,
@@ -89,8 +90,8 @@ export class VDueListOutputShareListComponent {
         this.currentUser = this.userInfoService.getUser;
         this.resetParam();
         this.loadColumnSettings();
- 
-        this.getAllAircraft(); 
+
+        this.getAllAircraft();
     }
 
 
@@ -114,7 +115,7 @@ export class VDueListOutputShareListComponent {
             data => this.listAircraft = data.data ?? []
         );
     }
- 
+
 
     currentUser: any = {};
     filter: any = {
@@ -153,7 +154,7 @@ export class VDueListOutputShareListComponent {
     total = 0;
     listOfData: any[] = [];
     loading = true;
-    sortValue: string | null = 'asc';
+    sortValue: string | null = 'desc';
     sortKey: string | null = 'created_at';
     search: string | null = null;
     search_field: string[] = ["atInstallCy", "atInstallDy", "atInstallHr", "ata", "code", "dueAtCy", "dueAtDy", "dueAtHr", "keyword", "lastPriceCurrency", "noteDue", "partNumber", "sn"];
@@ -163,7 +164,7 @@ export class VDueListOutputShareListComponent {
     resetParam() {
         this.pageIndex = 1;
         this.pageSize = 30;
-        this.sortValue = 'asc';
+        this.sortValue = 'desc';
         this.sortKey = 'created_at';
         this.search = null;
         this.filter = {
@@ -234,6 +235,15 @@ export class VDueListOutputShareListComponent {
                         "type": "single"
                     },
                     {
+                        "name": "due_list",
+                        "type": "single"
+                    },
+                    {
+                        "name": "maintenance",
+                        "to": "due_list",
+                        "type": "single"
+                    },
+                    {
                         "name": "part",
                         "type": "single"
                     }
@@ -259,7 +269,7 @@ export class VDueListOutputShareListComponent {
         this.pageSize = params.pageSize;
         this.currentSort = params.sort.find(item => item.value !== null);
         this.sortKey = (this.currentSort && this.currentSort.key) || 'created_at';
-        this.sortValue = (this.currentSort && this.currentSort.value) || 'asc';
+        this.sortValue = (this.currentSort && this.currentSort.value) || 'desc';
         this.searchData();
     }
 
@@ -348,12 +358,32 @@ export class VDueListOutputShareListComponent {
     // TABLE DINAMIS 
 
 
-    add() {
+    // add(param: AmimsVDueListOutputDto) {
+    add(param: any) {
         if (!this.acl.can('v-due-list-output', 'can_add') || !this.enable_crud) return;
 
-        const drawerRef = this.drawerService.create<VDueListOutputShareAddComponent, {}, string>({
+        const drawerRef = this.drawerService.create<WpJoShareAddComponent, {}, string>({
             nzTitle: 'Add',
-            nzContent: VDueListOutputShareAddComponent,
+            nzContent: WpJoShareAddComponent,
+            nzContentParams: {
+                idAircraft: param.idAircraft,
+                idDueListOutput: param.idDueListOutput,
+                idMaintenance: param.dueList?.idMaintenance || param.typeOfwork,
+                idMaintenanceCode: param.dueList?.maintenance?.idMaintenanceCode || null,
+                // idMaintenanceProgram: param.idMaintenanceProgram,
+                idMpart: param.idMpart,
+                idPart: param.idPart,
+                idSite: null,
+                idTechLog: null,
+                idUser: this.currentUser?.idUser || null,
+                idWp: null,
+                workDue: param.noteDue,
+                typeOfwork: param.typeOfwork,
+                hourseTo: param.toDueHr,
+                cycleTo: param.toDueCy,
+                timeRangeTo: param.toDueDy,
+                timeVariable: param.variabel
+            },
             nzWidth: (500) + 'px',
         });
 

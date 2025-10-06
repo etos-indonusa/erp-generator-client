@@ -47,7 +47,7 @@ export class MaintenanceMaterialListComponent {
     search: string | null = null
     search_field: string[] = []
 
-    filter_extra = true
+    filter_extra = false
     breadCrumbItems = [
         { label: 'List', active: false }
     ]

@@ -130,12 +130,6 @@ import { MelService } from './services/mel.service';
 import { MpcGseService } from './services/mpc-gse.service';
 import { MpcGseReportService } from './services/mpc-gse-report.service';
 import { MpcGseWidgetService } from './services/mpc-gse-widget.service';
-import { MpcJoService } from './services/mpc-jo.service';
-import { MpcJoReportService } from './services/mpc-jo-report.service';
-import { MpcJoWidgetService } from './services/mpc-jo-widget.service';
-import { MpcJoOperatorService } from './services/mpc-jo-operator.service';
-import { MpcJoOperatorReportService } from './services/mpc-jo-operator-report.service';
-import { MpcJoOperatorWidgetService } from './services/mpc-jo-operator-widget.service';
 import { MpcPiroService } from './services/mpc-piro.service';
 import { MpcPiroReportService } from './services/mpc-piro-report.service';
 import { MpcPiroWidgetService } from './services/mpc-piro-widget.service';
@@ -145,9 +139,6 @@ import { MpcPiroItemWidgetService } from './services/mpc-piro-item-widget.servic
 import { MpcSelfMaintenanceService } from './services/mpc-self-maintenance.service';
 import { MpcSelfMaintenanceReportService } from './services/mpc-self-maintenance-report.service';
 import { MpcSelfMaintenanceWidgetService } from './services/mpc-self-maintenance-widget.service';
-import { MpcWpService } from './services/mpc-wp.service';
-import { MpcWpReportService } from './services/mpc-wp-report.service';
-import { MpcWpWidgetService } from './services/mpc-wp-widget.service';
 import { PartService } from './services/part.service';
 import { PartReportService } from './services/part-report.service';
 import { PartWidgetService } from './services/part-widget.service';
@@ -308,6 +299,21 @@ import { UnscheduleMaintenanceReportService } from './services/unschedule-mainte
 import { UnscheduleMaintenanceWidgetService } from './services/unschedule-maintenance-widget.service';
 import { MaintenanceDocumentService } from './services/maintenance-document.service';
 import { MaintenanceMaterialService } from './services/maintenance-material.service';
+import { MaintenanceProgramService } from './services/maintenance-program.service';
+import { MaintenanceProgramReportService } from './services/maintenance-program-report.service';
+import { MaintenanceProgramWidgetService } from './services/maintenance-program-widget.service';
+import { MaintenanceProgramDocumentService } from './services/maintenance-program-document.service';
+import { MaintenanceProgramMaterialService } from './services/maintenance-program-material.service';
+import { MaintenanceProgramTaskService } from './services/maintenance-program-task.service';
+import { WpJoService } from './services/wp-jo.service';
+import { WpJoReportService } from './services/wp-jo-report.service';
+import { WpJoWidgetService } from './services/wp-jo-widget.service';
+import { WpService } from './services/wp.service';
+import { WpReportService } from './services/wp-report.service';
+import { WpWidgetService } from './services/wp-widget.service';
+import { WorkCompletedService } from './services/work-completed.service';
+import { WorkCompletedReportService } from './services/work-completed-report.service';
+import { WorkCompletedWidgetService } from './services/work-completed-widget.service';
 
 /**
  * Module that provides all services and configuration.
@@ -441,12 +447,6 @@ import { MaintenanceMaterialService } from './services/maintenance-material.serv
     MpcGseService,
     MpcGseReportService,
     MpcGseWidgetService,
-    MpcJoService,
-    MpcJoReportService,
-    MpcJoWidgetService,
-    MpcJoOperatorService,
-    MpcJoOperatorReportService,
-    MpcJoOperatorWidgetService,
     MpcPiroService,
     MpcPiroReportService,
     MpcPiroWidgetService,
@@ -456,9 +456,6 @@ import { MaintenanceMaterialService } from './services/maintenance-material.serv
     MpcSelfMaintenanceService,
     MpcSelfMaintenanceReportService,
     MpcSelfMaintenanceWidgetService,
-    MpcWpService,
-    MpcWpReportService,
-    MpcWpWidgetService,
     PartService,
     PartReportService,
     PartWidgetService,
@@ -619,6 +616,21 @@ import { MaintenanceMaterialService } from './services/maintenance-material.serv
     UnscheduleMaintenanceWidgetService,
     MaintenanceDocumentService,
     MaintenanceMaterialService,
+    MaintenanceProgramService,
+    MaintenanceProgramReportService,
+    MaintenanceProgramWidgetService,
+    MaintenanceProgramDocumentService,
+    MaintenanceProgramMaterialService,
+    MaintenanceProgramTaskService,
+    WpJoService,
+    WpJoReportService,
+    WpJoWidgetService,
+    WpService,
+    WpReportService,
+    WpWidgetService,
+    WorkCompletedService,
+    WorkCompletedReportService,
+    WorkCompletedWidgetService,
     ApiConfiguration
   ],
 })

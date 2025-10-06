@@ -9,13 +9,13 @@ export declare const AmimsLastMaintenanceReportFormSchema: {
     idMaintenance: {
         required: boolean;
     };
-    idMpcJo: {
-        required: boolean;
-    };
     idPart: {
         required: boolean;
     };
     idUser: {
+        required: boolean;
+    };
+    idWpJo: {
         required: boolean;
     };
     lastCycle: {

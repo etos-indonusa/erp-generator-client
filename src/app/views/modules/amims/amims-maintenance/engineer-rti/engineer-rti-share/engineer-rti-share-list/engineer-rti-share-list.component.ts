@@ -13,8 +13,7 @@ import { EngineerRtiReportService, EngineerRtiService } from 'de-sdk-core';
 import { AmimsEngineerRtiDto } from 'de-sdk-core';
 import { EngineerRtiShareAddComponent } from '../engineer-rti-share-add/engineer-rti-share-add.component';
 import { EngineerRtiShareDetailComponent } from '../engineer-rti-share-detail/engineer-rti-share-detail.component';
-import { AircraftService } from 'de-sdk-core';
-import { MpcJoService } from 'de-sdk-core';
+import { AircraftService } from 'de-sdk-core'; 
 import { PartService } from 'de-sdk-core';
 import { PartInstallService } from 'de-sdk-core';
 import { SiteService } from 'de-sdk-core';
@@ -54,8 +53,7 @@ export class EngineerRtiShareListComponent {
         private engineerRtiService: EngineerRtiService,
         private tokenService: TokenService,
 
-        private aircraftService: AircraftService,
-        private mpcJoService: MpcJoService,
+        private aircraftService: AircraftService, 
         private partService: PartService,
         private partInstallService: PartInstallService,
         private siteService: SiteService,
@@ -104,10 +102,7 @@ export class EngineerRtiShareListComponent {
         this.resetParam();
         this.loadColumnSettings();
 
-        this.getAllAircraft();
-        this.getAllMpcJo();
-        this.getAllPart();
-        this.getAllPartInstall();
+        this.getAllAircraft();  
         this.getAllSite();
     }
 
@@ -141,21 +136,7 @@ export class EngineerRtiShareListComponent {
             data => this.listAircraft = data.data ?? []
         );
     }
-    getAllMpcJo() {
-        this.mpcJoService.mpcJoControllerFindAll().subscribe(
-            data => this.listMpcJo = data.data ?? []
-        );
-    }
-    getAllPart() {
-        this.partService.partControllerFindAll().subscribe(
-            data => this.listPart = data.data ?? []
-        );
-    }
-    getAllPartInstall() {
-        this.partInstallService.partInstallControllerFindAll().subscribe(
-            data => this.listPartInstall = data.data ?? []
-        );
-    }
+     
     getAllSite() {
         this.siteService.siteControllerFindAll().subscribe(
             data => this.listSite = data.data ?? []

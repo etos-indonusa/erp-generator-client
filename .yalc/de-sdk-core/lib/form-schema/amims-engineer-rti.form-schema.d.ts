@@ -37,9 +37,6 @@ export declare const AmimsEngineerRtiFormSchema: {
     idEngineerRti: {
         required: boolean;
     };
-    idMpcJo: {
-        required: boolean;
-    };
     idPart: {
         required: boolean;
     };
@@ -47,6 +44,9 @@ export declare const AmimsEngineerRtiFormSchema: {
         required: boolean;
     };
     idSite: {
+        required: boolean;
+    };
+    idWpJo: {
         required: boolean;
     };
     inspectedBy: {

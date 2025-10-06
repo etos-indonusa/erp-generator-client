@@ -1,4 +1,12 @@
 export const AmimsMaintenanceReportFormSchema = {
+  "alert": {
+    "default": 0,
+    "required": false
+  },
+  "alertParam": {
+    "default": "",
+    "required": false
+  },
   "atachapter": {
     "default": "",
     "required": false

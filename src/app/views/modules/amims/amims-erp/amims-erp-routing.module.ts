@@ -8,13 +8,11 @@ const routes: Routes = [
     { path: 'engineer-pris-item', loadChildren: () => import('./engineer-pris-item/engineer-pris-item.module').then(m => m.EngineerPrisItemModule) },
     { path: 'engineer-pris-return', loadChildren: () => import('./engineer-pris-return/engineer-pris-return.module').then(m => m.EngineerPrisReturnModule) },
     { path: 'engineer-pris-return-item', loadChildren: () => import('./engineer-pris-return-item/engineer-pris-return-item.module').then(m => m.EngineerPrisReturnItemModule) },
-    { path: 'mpc-gse', loadChildren: () => import('./mpc-gse/mpc-gse.module').then(m => m.MpcGseModule) },
-    { path: 'mpc-jo', loadChildren: () => import('./mpc-jo/mpc-jo.module').then(m => m.MpcJoModule) },
-    { path: 'mpc-jo-operator', loadChildren: () => import('./mpc-jo-operator/mpc-jo-operator.module').then(m => m.MpcJoOperatorModule) },
+    { path: 'mpc-gse', loadChildren: () => import('./mpc-gse/mpc-gse.module').then(m => m.MpcGseModule) }, 
     { path: 'mpc-piro', loadChildren: () => import('./mpc-piro/mpc-piro.module').then(m => m.MpcPiroModule) },
     { path: 'mpc-piro-item', loadChildren: () => import('./mpc-piro-item/mpc-piro-item.module').then(m => m.MpcPiroItemModule) },
     { path: 'mpc-self-maintenance', loadChildren: () => import('./mpc-self-maintenance/mpc-self-maintenance.module').then(m => m.MpcSelfMaintenanceModule) },
-    { path: 'mpc-wp', loadChildren: () => import('./mpc-wp/mpc-wp.module').then(m => m.MpcWpModule) },
+ 
     
     { path: 'pur-grn', loadChildren: () => import('./pur-grn/pur-grn.module').then(m => m.PurGrnModule) },
     { path: 'pur-grn-item', loadChildren: () => import('./pur-grn-item/pur-grn-item.module').then(m => m.PurGrnItemModule) },

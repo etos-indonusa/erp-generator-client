@@ -1,0 +1,77 @@
+<nz-spin nzTip="Loading..." [nzSpinning]="is_loading">
+
+    <!-- <div class="card border-0 mb-1 border-left-5 border-theme card   bg-white">
+        <div class="card-body p-2">
+            <div class="row">
+                <div class="col-lg-2">
+                    <p class="text-secondary  mb-1">Status</p>
+                    <h3 class="fw-bold text-capitalize" style.color="{{ wpJo?.statusWpJo| status }}"> {{
+                        wpJo?.statusWpJo}}</h3>
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-secondary  mb-1">Nomor</p>
+                    <h3 class="fw-bold  ">{{wpJo?.numberJo}}</h3>
+                </div>
+                <div class="col" style="text-align: right;">
+                    <p class="text-secondary mb-1">&nbsp;</p>
+
+                    <button nz-button nzType="primary" style="margin-right: 5px;" nz-dropdown [nzDropdownMenu]="menu4">
+                        <span nz-icon nzType="printer"></span>
+                        Print
+                        <span nz-icon nzType="down"></span>
+                    </button>
+                    <nz-dropdown-menu #menu4="nzDropdownMenu">
+                        <ul nz-menu>
+                            <li nz-menu-item (click)="print()">Print wpJo</li>
+                        </ul>
+                    </nz-dropdown-menu>
+ 
+
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!--
+     <lib-approval-steps [for-module-name]="'wp-jo'" [for-module-id]="wp-jo?.idWpJo" [current-status]="wp-jo?.statusWpJo"></lib-approval-steps>
+         -->
+
+    <app-wp-jo-share-header [data]="wpJo"></app-wp-jo-share-header>
+    <lib-custom-field [from-module]="'AmimsWpJo'" [from-module-id]="wpJo?.idWpJo"></lib-custom-field>
+
+
+
+
+    <nz-tabset>
+        <nz-tab nzTitle="{{ 'Inspection' | translate }}">
+             
+        </nz-tab>
+
+        <nz-tab nzTitle="{{ 'Removed & Install' | translate }}">
+            <!-- <app-client-contact-share-list [idClient]="idClient"></app-client-contact-share-list>  -->
+        </nz-tab>
+
+        <nz-tab nzTitle="{{ 'Resulting Work Completed' | translate }}">
+            <ng-template nz-tab>
+                <!-- <app-contract-share-list [idClient]="idClient"></app-contract-share-list> -->
+            </ng-template>
+        </nz-tab>
+        <nz-tab nzTitle="{{ 'Attachments' | translate }}">
+            <ng-template nz-tab>
+                <!-- <app-client-site-share-list [idClient]="idClient"></app-client-site-share-list>  -->
+            </ng-template>
+        </nz-tab>
+    </nz-tabset>
+
+    <div class="card">
+        <div class="card-body p-2">
+            <!-- <app-wp-jo-share-list [filter-extra]="false" [idWpJo]="idWpJo"></app-wp-jo-share-list> -->
+        </div>
+    </div>
+
+    <!-- 
+    <lib-approval-form-widget [from-module]="'AmimsWpJo'" [from-module-id]="wp-jo?.idWpJo"
+        (onSubmit)="handleApprovalSubmit($event)" (onAfterSubmit)="refreshApprovalSteps()"></lib-approval-form-widget> 
+            -->
+
+</nz-spin>
+<br>

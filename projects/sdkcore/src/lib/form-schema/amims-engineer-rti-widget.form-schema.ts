@@ -37,9 +37,6 @@ export const AmimsEngineerRtiWidgetFormSchema = {
   "idEngineerRti": {
     "required": true
   },
-  "idMpcJo": {
-    "required": false
-  },
   "idPart": {
     "required": false
   },
@@ -47,6 +44,9 @@ export const AmimsEngineerRtiWidgetFormSchema = {
     "required": false
   },
   "idSite": {
+    "required": false
+  },
+  "idWpJo": {
     "required": false
   },
   "inspectedBy": {

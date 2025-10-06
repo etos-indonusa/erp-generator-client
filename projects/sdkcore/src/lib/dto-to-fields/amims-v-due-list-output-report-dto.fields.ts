@@ -10,6 +10,7 @@ export const AmimsVDueListOutputReportDtoFields: Record<string, 'string' | 'bool
   "dueAtDy": "string",
   "dueAtHr": "string",
   "idAircraft": "string",
+  "idDueList": "string",
   "idDueListOutput": "string",
   "idMpart": "string",
   "idPart": "string",

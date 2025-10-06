@@ -1,0 +1,328 @@
+<div class="container py-3" *ngIf="data as d">
+    <!-- ===== JO HEADER ===== -->
+    <div class="card mb-3">
+        <div class="card-body d-flex align-items-start justify-content-between">
+            <div>
+                <div class="small text-muted">JOB ORDER / TASK CARD</div>
+                <h5 class="mb-1">
+                    {{ d.numberJo ?? '**' }}
+                    <span class="ms-2 badge" [ngClass]="{
+                  'bg-success': (d.statusWpJo||'').toLowerCase()==='complete',
+                  'bg-warning text-dark': (d.statusWpJo||'open').toLowerCase()==='open',
+                  'bg-secondary': (d.statusWpJo||'').toLowerCase()==='in_progress'
+                }">
+                        {{ (d.statusWpJo || 'OPEN') | uppercase }}
+                    </span>
+                </h5>
+                <div class="text-muted small">
+                    Created: {{ d.createdAt || d.created_at | date:'medium' }} · Updated: {{ d.updatedAt | date:'medium'
+                    }}
+                </div>
+            </div>
+            <div class="text-end">
+                <div class="small text-muted">Priority</div>
+                <div class="fw-semibold text-uppercase">{{ d.priority ?? 'N' }}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== PRIMARY INFORMATION (DETAIL JO) ===== -->
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="fw-bold mb-3">PRIMARY INFORMATION</div>
+            <div class="row gy-2">
+                <div class="col-md-4">
+                    <div class="d-flex">
+                        <div class="text-muted me-2" style="min-width:200px;">Registration Number</div>
+                        <div class="fw-semibold">{{ d.aircraft?.registrationNumber ?? '**' }}</div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="text-muted me-2" style="min-width:200px;">Equipment Type</div>
+                        <div class="fw-semibold">
+                            {{ d.parentEquipmentType ?? d.mpart?.keyword ?? '**' }}
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="text-muted me-2" style="min-width:200px;">Form No.</div>
+                        <div class="fw-semibold">{{ d.formNo ?? '**' }}</div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="d-flex">
+                        <div class="text-muted me-2" style="min-width:160px;">Item Type</div>
+                        <div class="fw-semibold">
+                            {{ d.typeOfwork === '3' ? 'INSPECTION' : (d.typeOfwork ?? '**') }}
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="text-muted me-2" style="min-width:160px;">ATA Code</div>
+                        <div class="fw-semibold">
+                            {{ d.maintenance?.atachapter || d.mpart?.oldAtachapter || d.mpart?.codeAtaMentah || '**' }}
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="text-muted me-2" style="min-width:160px;">Reference</div>
+                        <div class="fw-semibold">
+                            {{ d.reference || d.maintenanceCode?.maintenanceCode || d.idMaintenanceCode || '**' }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="d-flex">
+                        <div class="text-muted me-2" style="min-width:160px;">Ref. MEL</div>
+                        <div class="fw-semibold">{{ d.mpart?.refMel ?? '**' }}</div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="text-muted me-2" style="min-width:160px;">Tech Log</div>
+                        <div class="fw-semibold">{{ d.idTechLog ?? '**' }}</div>
+                    </div>
+                </div>
+
+                <div class="col-12 pt-1">
+                    <div class="d-flex">
+                        <div class="text-muted me-2" style="min-width:200px;">Item Name</div>
+                        <div class="fw-semibold text-uppercase">
+                            {{ d.workDue || d.maintenanceCode?.descriptionMaintenance || '**' }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== COMPLIANCE / NEXT DUE / INTERVAL (JO) ===== -->
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="row gy-3">
+                <!-- Compliance (actual) -->
+                <div class="col-lg-4">
+                    <div class="fw-bold mb-2">COMPLIANCE (ACTUAL)</div>
+                    <div class="d-flex small">
+                        <div class="text-muted me-2" style="min-width:100px;">Date</div>
+                        <div class="fw-semibold">
+                            {{ d.compliteDate || d.carriedOutDate || d.completedAt || d.dateJo ? (d.compliteDate ||
+                            d.carriedOutDate || d.completedAt || d.dateJo | date:'dd-MMM-y') : '**' }}
+                        </div>
+                    </div>
+                    <div class="d-flex small">
+                        <div class="text-muted me-2" style="min-width:100px;">Hours</div>
+                        <div class="fw-semibold">
+                            {{ d.compliteHours != null ? d.compliteHours : (d.hourseFrom != null ? d.hourseFrom :
+                            (d.part?.tsnHours != null ? d.part?.tsnHours : '**')) }}
+                        </div>
+                    </div>
+                    <div class="d-flex small">
+                        <div class="text-muted me-2" style="min-width:100px;">Cycles</div>
+                        <div class="fw-semibold">
+                            {{ d.compliteCycle != null ? d.compliteCycle : (d.cycleFrom != null ? d.cycleFrom : '**') }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next Due (from this JO) -->
+                <div class="col-lg-4">
+                    <div class="fw-bold mb-2">CURRENT NEXT DUE (FROM JO)</div>
+                    <div class="d-flex small">
+                        <div class="text-muted me-2" style="min-width:100px;">Date</div>
+                        <div class="fw-semibold">
+                            {{ d.timeRangeTo ? ('+' + d.timeRangeTo + ' ' + (d.maintenance?.timeUnit || 'mths')) : '**'
+                            }}
+                        </div>
+                    </div>
+                    <div class="d-flex small">
+                        <div class="text-muted me-2" style="min-width:100px;">Hours</div>
+                        <div class="fw-semibold">
+                            {{ d.hourseTo != null ? d.hourseTo : (d.maintenance?.flightHoursTo != null ?
+                            d.maintenance?.flightHoursTo : '**') }}
+                        </div>
+                    </div>
+                    <div class="d-flex small">
+                        <div class="text-muted me-2" style="min-width:100px;">Cycles</div>
+                        <div class="fw-semibold">
+                            {{ d.cycleTo != null ? d.cycleTo : (d.maintenance?.cycleTo != null ? d.maintenance?.cycleTo
+                            : '**') }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interval (from program/rule) -->
+                <div class="col-lg-4">
+                    <div class="fw-bold mb-2">INTERVAL (RULE)</div>
+                    <div class="d-flex small">
+                        <div class="text-muted me-2" style="min-width:100px;">Months</div>
+                        <div class="fw-semibold">
+                            {{ d.maintenance?.timeRangeTo != null ? d.maintenance?.timeRangeTo : (d.timeRangeTo != null
+                            ? d.timeRangeTo : '**') }}
+                        </div>
+                    </div>
+                    <div class="d-flex small">
+                        <div class="text-muted me-2" style="min-width:100px;">Hours</div>
+                        <div class="fw-semibold">
+                            {{ d.maintenance?.flightHoursTo != null ? d.maintenance?.flightHoursTo : (d.hourseTo != null
+                            ? d.hourseTo : '**') }}
+                        </div>
+                    </div>
+                    <div class="d-flex small">
+                        <div class="text-muted me-2" style="min-width:100px;">Cycles</div>
+                        <div class="fw-semibold">
+                            {{ d.maintenance?.cycleTo != null ? d.maintenance?.cycleTo : (d.cycleTo != null ? d.cycleTo
+                            : '**') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== WORK DESCRIPTION (JO) ===== -->
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="fw-bold mb-2">WORK DESCRIPTION</div>
+            <div class="row small">
+                <div class="col-md-8">
+                    <div class="text-muted">Description</div>
+                    <div class="fw-semibold">{{ d.noteJo ?? '—' }}</div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-muted">Actual Work Hours</div>
+                    <div class="fw-semibold">
+                        {{ d.totalHoursWork != null ? d.totalHoursWork : '**' }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== PART INFORMATION + TSI (JO) ===== -->
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="fw-bold mb-3">PART INFORMATION</div>
+            <div class="row small">
+                <!-- Removed (if any) -->
+                <div class="col-md-6">
+                    <div class="text-muted mb-1">Removed</div>
+                    <div class="d-flex">
+                        <div class="text-muted me-2" style="min-width:140px;">Part Number</div>
+                        <div class="fw-semibold">**</div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="text-muted me-2" style="min-width:140px;">Serial Number</div>
+                        <div class="fw-semibold">**</div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="text-muted me-2" style="min-width:140px;">Removal Reason</div>
+                        <div class="fw-semibold">{{ d.noteJo ?? '**' }}</div>
+                    </div>
+                </div>
+
+                <!-- Installed (from JO) -->
+                <div class="col-md-6">
+                    <div class="text-muted mb-1">Installed</div>
+                    <div class="d-flex">
+                        <div class="text-muted me-2" style="min-width:140px;">Part Number</div>
+                        <div class="fw-semibold">{{ d.idPart ?? '**' }}</div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="text-muted me-2" style="min-width:140px;">Serial Number</div>
+                        <div class="fw-semibold">{{ d.part?.sn ?? '**' }}</div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="text-muted me-2" style="min-width:140px;">Installed Status</div>
+                        <div class="fw-semibold">{{ d.part?.statusOnInventory ?? '**' }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="fw-bold mb-2">TSI</div>
+            <div class="row small">
+                <div class="col-md-4 d-flex">
+                    <div class="text-muted me-2" style="min-width:120px;">Months</div>
+                    <div class="fw-semibold">**</div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="text-muted me-2" style="min-width:120px;">Hours</div>
+                    <div class="fw-semibold">
+                        {{ d.part?.tsiHours != null ? d.part?.tsiHours : '**' }}
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="text-muted me-2" style="min-width:120px;">Landings</div>
+                    <div class="fw-semibold">**</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== RETURN TO SERVICE (JO-LEVEL SIGN) ===== -->
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="fw-bold mb-2">RETURN TO SERVICE (JO)</div>
+            <div class="row small gy-2">
+                <div class="col-md-4 d-flex">
+                    <div class="text-muted me-2" style="min-width:140px;">Engineer</div>
+                    <div class="fw-semibold">{{ d.enginerApprovedBy ?? '**' }}</div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="text-muted me-2" style="min-width:140px;">Engineer Date</div>
+                    <div class="fw-semibold">
+                        {{ d.enginerApprovedDate ? (d.enginerApprovedDate | date:'dd-MMM-y HH:mm') : '**' }}
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="text-muted me-2" style="min-width:140px;">Engineer Note</div>
+                    <div class="fw-semibold">{{ d.enginerApprovedNote ?? '**' }}</div>
+                </div>
+
+                <div class="col-12">
+                    <hr class="my-2">
+                </div>
+
+                <div class="col-md-4 d-flex">
+                    <div class="text-muted me-2" style="min-width:140px;">Inspector</div>
+                    <div class="fw-semibold">{{ d.inspectorApprovedBy ?? '**' }}</div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="text-muted me-2" style="min-width:140px;">Inspector Date</div>
+                    <div class="fw-semibold">
+                        {{ d.inspectorApprovedAt ? (d.inspectorApprovedAt | date:'dd-MMM-y HH:mm') : '**' }}
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="text-muted me-2" style="min-width:140px;">Inspector Note</div>
+                    <div class="fw-semibold">{{ d.inspectorApprovedNote ?? '**' }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== NOTES (JO) ===== -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="fw-bold mb-2">NOTES</div>
+            <div class="row small">
+                <div class="col-md-6">
+                    <div class="text-muted">Internal Notes</div>
+                    <div class="fw-semibold">{{ d.noteJo ?? '**' }}</div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-muted">Work Package / Links</div>
+                    <div class="fw-semibold">
+                        WP: {{ d.idWp || '**' }} · WP JO: {{ d.idWpJo || '**' }} · Work Completed: {{ d.idWorkCompleted
+                        || '**' }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== META (OPTIONAL) ===== -->
+    <div class="small text-muted">
+        Aircraft SN: <span class="fw-semibold">{{ d.aircraft?.serialNumber ?? '**' }}</span> ·
+        Actype: <span class="fw-semibold">{{ d.aircraft?.idActype ?? '**' }}</span> ·
+        MPart: <span class="fw-semibold">{{ d.idMpart || d.mpart?.idMpart || '**' }}</span>
+    </div>
+</div>

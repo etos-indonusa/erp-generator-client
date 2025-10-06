@@ -4,12 +4,11 @@ import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { generateFormFromSchema } from 'src/app/helpers/form-generator';
 import { extractLabels, showFormValidationWarnings } from 'src/app/helpers/form-validation-notifier';
-import { AmimsEngineerRtiFormSchema } from 'de-sdk-core'; 
-import type  { AmimsEngineerRtiDto } from 'de-sdk-core';
+import { AmimsEngineerRtiFormSchema } from 'de-sdk-core';
+import type { AmimsEngineerRtiDto } from 'de-sdk-core';
 import { EngineerRtiService } from 'de-sdk-core';
 
 import { AircraftService } from 'de-sdk-core';
-import { MpcJoService } from 'de-sdk-core';
 import { PartService } from 'de-sdk-core';
 import { PartInstallService } from 'de-sdk-core';
 import { SiteService } from 'de-sdk-core';
@@ -21,13 +20,13 @@ import { SiteService } from 'de-sdk-core';
 })
 export class EngineerRtiShareAddComponent {
     @Input('engineerRti') engineerRti: AmimsEngineerRtiDto = {
-  idEngineerRti: ''
-};
+        idEngineerRti: ''
+    };
     form!: FormGroup;
 
     ngOnChanges(changes: SimpleChanges): void {
-        if(changes.engineerRti && this.engineerRti.idEngineerRti) {
-        this.form?.patchValue(this.engineerRti);
+        if (changes.engineerRti && this.engineerRti.idEngineerRti) {
+            this.form?.patchValue(this.engineerRti);
         }
     }
     constructor(
@@ -35,64 +34,58 @@ export class EngineerRtiShareAddComponent {
         private notify: NzNotificationService,
         private nzDrawerRef: NzDrawerRef<string>,
         private engineerRtiService: EngineerRtiService,
-                        private aircraftService: AircraftService,
-                private mpcJoService: MpcJoService,
-                private partService: PartService,
-                private partInstallService: PartInstallService,
-                private siteService: SiteService,
-                    ) { }
+        private aircraftService: AircraftService,
+        private partService: PartService,
+        private partInstallService: PartInstallService,
+        private siteService: SiteService,
+    ) { }
 
     ngOnInit(): void {
         this.form = generateFormFromSchema(this.fb, AmimsEngineerRtiFormSchema, {
             kodeEngineerRti: [Validators.minLength(3), Validators.maxLength(3)],
             catatan: [Validators.maxLength(200)],
-        },'EngineerRti');
+        }, 'EngineerRti');
 
-                            this.getAllAircraft();
-                    this.getAllMpcJo();
-                    this.getAllPart();
-                    this.getAllPartInstall();
-                    this.getAllSite();
-                    }
-    
+        this.getAllAircraft(); 
+        this.getAllPart();
+        this.getAllPartInstall();
+        this.getAllSite();
+    }
+
     listAircraft: any[] = [];
-    
+
     listMpcJo: any[] = [];
-    
+
     listPart: any[] = [];
-    
+
     listPartInstall: any[] = [];
-    
+
     listSite: any[] = [];
-    
+
 
     // untuk fungsi get ALL relation
-            getAllAircraft() {
-    this.aircraftService.aircraftControllerFindAll().subscribe(
-      data => this.listAircraft = data.data ?? []
-    );
-  }
-        getAllMpcJo() {
-    this.mpcJoService.mpcJoControllerFindAll().subscribe(
-      data => this.listMpcJo = data.data ?? []
-    );
-  }
-        getAllPart() {
-    this.partService.partControllerFindAll().subscribe(
-      data => this.listPart = data.data ?? []
-    );
-  }
-        getAllPartInstall() {
-    this.partInstallService.partInstallControllerFindAll().subscribe(
-      data => this.listPartInstall = data.data ?? []
-    );
-  }
-        getAllSite() {
-    this.siteService.siteControllerFindAll().subscribe(
-      data => this.listSite = data.data ?? []
-    );
-  }
-        
+    getAllAircraft() {
+        this.aircraftService.aircraftControllerFindAll().subscribe(
+            data => this.listAircraft = data.data ?? []
+        );
+    }
+    
+    getAllPart() {
+        this.partService.partControllerFindAll().subscribe(
+            data => this.listPart = data.data ?? []
+        );
+    }
+    getAllPartInstall() {
+        this.partInstallService.partInstallControllerFindAll().subscribe(
+            data => this.listPartInstall = data.data ?? []
+        );
+    }
+    getAllSite() {
+        this.siteService.siteControllerFindAll().subscribe(
+            data => this.listSite = data.data ?? []
+        );
+    }
+
     submit(): void {
         const labelMap = extractLabels(AmimsEngineerRtiFormSchema);
 

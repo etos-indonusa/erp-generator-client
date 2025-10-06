@@ -1,0 +1,647 @@
+<nz-card nzTitle="{{filter.status|titlecase}} ({{ total }})" [nzExtra]="extraTemplate" [nzBodyStyle]="{padding:0}">
+    <div class="filter" [hidden]="!filter_extra">
+        <form nz-form [nzLayout]="'vertical'" role="form">
+            <div nz-row [nzGutter]="8">
+                <div nz-col [nzXl]="{ span: 6}" [nzLg]="{ span: 8}" [nzMd]="{ span: 12}" [nzXs]="{ span: 24}">
+                    <nz-form-item>
+                        <nz-form-label>&nbsp;</nz-form-label>
+                        <nz-form-control>
+                            <nz-input-group nzSearch [nzAddOnBefore]="addOnBeforeTemplate"
+                                [nzAddOnAfter]="suffixIconButton" style="width: 100%;">
+                                <input type="text" nz-input placeholder="{{'search'|translate|titlecase}}"
+                                    [(ngModel)]="search" name="search" (keyup.enter)="searchData()" />
+                            </nz-input-group>
+                            <ng-template #suffixIconButton>
+                                <button nz-button nzType="default" nzSearch (click)="searchData()"><span nz-icon
+                                        nzType="search"></span></button>
+                            </ng-template>
+                            <ng-template #addOnBeforeTemplate>
+                                <span nz-icon nzTheme="twotone" nzType="question-circle" nz-popover
+                                    nzPopoverTitle="Pencarian berdasarkan" [nzPopoverContent]="tipsPencarian"
+                                    nzPopoverPlacement="top"></span>
+                                <ng-template #tipsPencarian>
+                                    <div>
+                                        <ul>
+                                            <li *ngFor="let item of search_field">{{ item | translate }}</li>
+                                        </ul>
+                                    </div>
+                                </ng-template>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'carriedOutDate' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-range-picker [(ngModel)]="filter.carriedOutDateRange" name="carriedOutDateRange"
+                                nzFormat="YYYY-MM-DD" nzPlaceHolder="['Dari', 'Sampai']" style="width: 100%;">
+                            </nz-range-picker>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'compliteCycle' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.compliteCycleMin"
+                                        name="compliteCycleMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.compliteCycleMax"
+                                        name="compliteCycleMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'compliteDate' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-range-picker [(ngModel)]="filter.compliteDateRange" name="compliteDateRange"
+                                nzFormat="YYYY-MM-DD" nzPlaceHolder="['Dari', 'Sampai']" style="width: 100%;">
+                            </nz-range-picker>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'compliteHours' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.compliteHoursMin"
+                                        name="compliteHoursMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.compliteHoursMax"
+                                        name="compliteHoursMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'cycleFrom' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.cycleFromMin" name="cycleFromMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.cycleFromMax" name="cycleFromMax"
+                                        placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'cycleTo' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.cycleToMin" name="cycleToMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.cycleToMax" name="cycleToMax"
+                                        placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'dateJo' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-range-picker [(ngModel)]="filter.dateJoRange" name="dateJoRange" nzFormat="YYYY-MM-DD"
+                                nzPlaceHolder="['Dari', 'Sampai']" style="width: 100%;">
+                            </nz-range-picker>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'enginerApprovedDate' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-range-picker [(ngModel)]="filter.enginerApprovedDateRange"
+                                name="enginerApprovedDateRange" nzFormat="YYYY-MM-DD" nzPlaceHolder="['Dari', 'Sampai']"
+                                style="width: 100%;">
+                            </nz-range-picker>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'enginerApprovedNote' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.enginerApprovedNoteMin"
+                                        name="enginerApprovedNoteMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.enginerApprovedNoteMax"
+                                        name="enginerApprovedNoteMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'hourseFrom' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.hourseFromMin"
+                                        name="hourseFromMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.hourseFromMax"
+                                        name="hourseFromMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'hourseTo' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.hourseToMin" name="hourseToMin"
+                                        placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.hourseToMax" name="hourseToMax"
+                                        placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'idAircraft' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-select [(ngModel)]="filter.idAircraft" name="idAircraft" nzAllowClear>
+                                <nz-option *ngFor="let item of listAircraft" [nzValue]="item.idAircraft"
+                                    [nzLabel]="item.registrationNumber"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'idMaintenanceCode' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-select [(ngModel)]="filter.idMaintenanceCode" name="idMaintenanceCode" nzAllowClear>
+                                <nz-option *ngFor="let item of listMaintenanceCode" [nzValue]="item.idMaintenanceCode"
+                                    [nzLabel]="item.maintenanceCode"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'idSite' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <nz-select [(ngModel)]="filter.idSite" name="idSite" nzAllowClear>
+                                <nz-option *ngFor="let item of listSite" [nzValue]="item.idSite"
+                                    [nzLabel]="item.site"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'timeRangeFrom' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.timeRangeFromMin"
+                                        name="timeRangeFromMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.timeRangeFromMax"
+                                        name="timeRangeFromMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'timeRangeTo' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.timeRangeToMin"
+                                        name="timeRangeToMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.timeRangeToMax"
+                                        name="timeRangeToMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="{ span: 6 }" [nzLg]="{ span: 8 }" [nzMd]="{ span: 12 }" [nzXs]="{ span: 24 }">
+                    <nz-form-item>
+                        <nz-form-label>{{ 'totalHoursWork' | translate }}</nz-form-label>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.totalHoursWorkMin"
+                                        name="totalHoursWorkMin" placeholder="Min" />
+                                </div>
+                                <div nz-col nzSpan="12">
+                                    <input nz-input type="number" [(ngModel)]="filter.totalHoursWorkMax"
+                                        name="totalHoursWorkMax" placeholder="Max" />
+                                </div>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+
+                <div nz-col nzSpan="24">
+
+                    <nz-form-item>
+                        <nz-form-control>
+                            <button nz-button nzType="primary" (click)="print()" style="margin-right: 5px;">
+                                <span nz-icon nzType="printer"></span>
+                                Print
+                            </button>
+                            <button nz-button nzType="primary" (click)="searchData()" [nzLoading]="loading"
+                                style="margin-right: 10px;"><span nz-icon nzType="filter"></span>Filter</button>
+                            <button nz-button nzType="default" (click)="resetData()" [nzLoading]="loading"
+                                style="margin-right: 10px;"><span nz-icon nzType="reload"></span>Reset</button>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div style="overflow: auto; background-color: white;">
+        <nz-table nzShowSizeChanger [nzData]="listOfData" [nzFrontPagination]="false" [nzLoading]="loading"
+            [nzTotal]="total" [nzPageSize]="pageSize" [nzPageIndex]="pageIndex"
+            (nzQueryParams)="onQueryParamsChange($event)" nzSize="small">
+            <thead>
+                <tr>
+
+
+                    <th [nzAlign]="'right'">#ID</th>
+                    <th>Job Need to be Done</th>
+                    <th style="width: 150px;">Signatures</th>
+                    <th>Form No. & Reference</th>
+                    <th>To</th>
+                    <th>Complete</th>
+
+
+
+                    <th nzWidth="7%" [nzAlign]="'right'">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let data of listOfData" style="vertical-align: top;">
+                    <tr>
+                        <td [nzExpand]="expandSet.has(data.idWpJo)"
+                            (nzExpandChange)="onExpandChange(data.idWpJo, $event)">
+                            {{ data.numberJo }} <br>
+                            {{ data?.aircraft?.registrationNumber }} <br>
+                            {{ data?.typeOfwork }}<br>
+                            <nz-tag [nzColor]="data.statusWpJo?.toLowerCase() | status">{{ data.statusWpJo | titlecase
+                                }}</nz-tag>
+                        </td>
+
+
+
+                        <td>
+                            {{ data.mpart?.keyword }} <br>
+                            {{ data.workDue }} <br>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label class="text-secondary">Part Number:</label><br>
+                                    {{ data.mpart?.partNumber }}
+                                </div>
+                                <div class="col-4">
+                                    <label class="text-secondary">Serial Number:</label><br>
+                                    {{ data.part?.sn }}
+                                </div>
+                                <div class="col-4">
+                                    <label class="text-secondary">Actual Work:</label><br>
+                                    {{ data.totalHoursWork }} Hours
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width: 150px;">
+                            <ng-container *ngIf="data.enginerApprovedBy != null">
+                                <p>Eng:{{ data.enginerApprovedBy }}</p>
+                            </ng-container>
+                            <ng-container *ngIf="data.inspectorApprovedBy != null">
+                                <p>Insp:{{ data.inspectorApprovedBy }}</p>
+                            </ng-container><br>
+                            <br><label class="text-secondary">Work Orders:</label><br>
+
+                        </td>
+                        <td>
+                            {{ data.formNo }} <br>
+                            {{ data.reference }}
+                        </td>
+
+                        <td>
+                            <ng-container *ngIf="data.timeRangeTo!= null">
+                                <p>{{ data.timeRangeTo }} D</p>
+                            </ng-container>
+                            <ng-container *ngIf="data.hourseTo!= null">
+                                <p>H:{{ data.hourseTo | number}}</p>
+                            </ng-container>
+                            <ng-container *ngIf="data.cycleTo!= null">
+                                <p>C:{{ data.cycleTo | number}}</p>
+                            </ng-container>
+                        </td>
+                        <td>
+                            <ng-container *ngIf="data.compliteDate != null">
+                                <p>{{ data.compliteDate }}</p>
+                            </ng-container>
+                            <ng-container *ngIf="data.compliteHours != null">
+                                <p>H:{{ data.compliteHours | number}}</p>
+                            </ng-container>
+                            <ng-container *ngIf="data.compliteCycle != null">
+                                <p>C:{{ data.compliteCycle | number}}</p>
+                            </ng-container>
+                        </td>
+
+
+                        <!-- <td *ngIf="isColVisible('completedAt')">
+
+                            {{ data.completedAt }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('compliteCycle')">
+
+                            {{ data.compliteCycle }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('compliteDate')">
+
+                            {{ data.compliteDate }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('compliteHours')">
+
+                            {{ data.compliteHours }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('createdAt')">
+
+                            {{ data.createdAt | date }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('cycleFrom')">
+
+                            {{ data.cycleFrom }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('cycleTo')">
+
+                            {{ data.cycleTo }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('dateJo')">
+
+                            {{ data.dateJo }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('enginerApprovedBy')">
+
+                            {{ data.enginerApprovedBy }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('enginerApprovedDate')">
+
+                            {{ data.enginerApprovedDate }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('enginerApprovedNote')">
+
+                            {{ data.enginerApprovedNote }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('formNo')">
+
+                            {{ data.formNo }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('hourseFrom')">
+
+                            {{ data.hourseFrom }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('hourseTo')">
+
+                            {{ data.hourseTo }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('inspectorApprovedAt')">
+
+                            {{ data.inspectorApprovedAt }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('inspectorApprovedBy')">
+
+                            {{ data.inspectorApprovedBy }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('inspectorApprovedNote')">
+
+                            {{ data.inspectorApprovedNote }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('noteJo')">
+
+                            {{ data.noteJo }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('numberJo')">
+
+                            {{ data.numberJo }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('parentEquipmentType')">
+
+                            {{ data.parentEquipmentType }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('priority')">
+
+                            {{ data.priority }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('reference')">
+
+                            {{ data.reference }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('statusWpJo')">
+
+                            {{ data.statusWpJo }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('timeRangeFrom')">
+
+                            {{ data.timeRangeFrom }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('timeRangeTo')">
+
+                            {{ data.timeRangeTo }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('totalHoursWork')">
+
+                            {{ data.totalHoursWork }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('typeOfwork')">
+
+                            {{ data.typeOfwork }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('updatedAt')">
+
+                            {{ data.updatedAt | date }}
+
+                        </td>
+
+                        <td *ngIf="isColVisible('workDue')">
+
+                            {{ data.workDue }}
+
+                        </td> -->
+
+
+                        <td [nzAlign]="'right'">
+                            <button nz-button nz-dropdown [nzDropdownMenu]="menu">
+                                Actions
+                                <span nz-icon nzType="down"></span>
+                            </button>
+                            <nz-dropdown-menu #menu="nzDropdownMenu">
+                                <ul nz-menu>
+                                    <li nz-menu-item (click)="detail(data)">
+                                        <span nz-icon nzType="pic-center" nzTheme="outline"></span>&nbsp;&nbsp;Detail
+                                    </li>
+                                    <!--  -->
+                                    <li nz-menu-item (click)="update(data)" *ngIf="data.status=='draft'">
+                                        <span nz-icon nzType="edit" nzTheme="outline"></span>&nbsp;&nbsp;Update
+                                    </li>
+                                    <li nz-menu-divider *ngIf="data.status=='draft'"></li>
+                                    <li nz-menu-item nz-menu-item nz-popconfirm class="text-danger"
+                                        *ngIf="data.status=='draft'"
+                                        nzPopconfirmTitle="Apakah Anda yakin akan menghapus data ini?"
+                                        nzPopconfirmPlacement="bottom" (nzOnConfirm)="delete(data.idWpJo)"><span nz-icon
+                                            nzType="delete" nzTheme="outline"></span>
+                                        <a class="m-1 text-danger">&nbsp;&nbsp;Delete</a>
+                                    </li>
+                                </ul>
+                            </nz-dropdown-menu>
+                        </td>
+                    </tr>
+                    <tr [nzExpand]="expandSet.has(data.idWpJo)">
+                        <app-wp-jo-share-header [data]="data"></app-wp-jo-share-header>
+                    </tr>
+                </ng-container>
+
+            </tbody>
+        </nz-table>
+    </div>
+</nz-card>
+<ng-template #extraTemplate>
+    <ng-container *ngIf="!filter_extra">
+        <nz-input-group nzSearch [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="suffixIconButton"
+            style="max-width: 180px;">
+            <input type="text" nz-input placeholder="{{'search'|translate|titlecase}}" [(ngModel)]="search"
+                name="search" (keyup.enter)="searchData()" />
+        </nz-input-group>
+        <ng-template #suffixIconButton>
+            <button nz-button nzType="default" nzSearch (click)="searchData()"><span nz-icon
+                    nzType="search"></span></button>
+        </ng-template>
+        <ng-template #addOnBeforeTemplate>
+            <span nz-icon nzTheme="twotone" nzType="question-circle" nz-popover nzPopoverTitle="Pencarian berdasarkan"
+                [nzPopoverContent]="tipsPencarian" nzPopoverPlacement="top"></span>
+            <ng-template #tipsPencarian>
+                <div>
+                    <ul>
+                        <li *ngFor="let item of search_field">{{ item | translate }}</li>
+                    </ul>
+                </div>
+            </ng-template>
+        </ng-template>
+    </ng-container>
+    <button nz-button [nzType]="filter_extra ? 'primary' :'default'" style="margin-bottom: 8px;margin-left: 10px;"
+        (click)="filter_extra=!filter_extra">
+        <span nz-icon nzType="filter" nzTheme="outline"></span> Filter
+    </button>
+    <button nz-button nz-dropdown [nzDropdownMenu]="menu" nzTy [nzPlacement]="'topRight'"><i nz-icon
+            nzType="appstore"></i></button>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+            <li nz-menu-item *ngFor="let col of columns">
+                <label nz-checkbox [(ngModel)]="col.show" (ngModelChange)="onColumnToggle()">
+                    {{ col.key | translate }}
+                </label>
+            </li>
+        </ul>
+    </nz-dropdown-menu>
+    <button nz-button nzType="link" (click)="resetColumns()" nz-tooltip
+        nzTooltipTitle="{{ 'Reset Kolom' | translate }}"><i nz-icon nzType="undo"></i></button>
+
+    <button nz-button style="margin-bottom: 8px;margin-left: 10px;" nzType="primary" (click)="add()"
+        *ngIf="enable_crud">
+        <span nz-icon nzType="plus" nzTheme="outline"></span> Add New
+    </button>
+</ng-template>

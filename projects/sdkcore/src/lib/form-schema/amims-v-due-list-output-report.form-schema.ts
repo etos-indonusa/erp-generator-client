@@ -42,6 +42,9 @@ export const AmimsVDueListOutputReportFormSchema = {
   "idAircraft": {
     "required": false
   },
+  "idDueList": {
+    "required": false
+  },
   "idDueListOutput": {
     "required": true
   },

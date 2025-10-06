@@ -1,6 +1,11 @@
 :host {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at top right, rgba(0, 0, 0, 0.8), transparent 70%),
+        url('/assets/images/bg.jpg');
+    background-size: cover;
+
 }
+ 

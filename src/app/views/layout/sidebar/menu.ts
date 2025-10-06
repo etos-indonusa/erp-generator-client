@@ -14,8 +14,8 @@ export const MENU: MenuItem[] = [
         label: 'IN Apps',
         isTitle: true
     }
-     
-     
+  
+ 
 
 
 
@@ -143,21 +143,25 @@ export const MENU: MenuItem[] = [
         icon: 'message-square',
         link: '/app/amims/amims-maintenance/engineer-rti',
     }
- 
+
     , {
         label: 'last-maintenance',
         icon: 'message-square',
         link: '/app/amims/amims-maintenance/last-maintenance',
     }
-    
-     
+
+
     , {
         label: 'maintenance',
         icon: 'message-square',
         link: '/app/amims/amims-maintenance/maintenance',
     }
+    , {
+        label: 'MaintenanceProgram',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/maintenance-program',
+    }
 
-    
     , {
         label: 'UnscheduleMaintenance',
         icon: 'message-square',
@@ -168,7 +172,21 @@ export const MENU: MenuItem[] = [
         icon: 'message-square',
         link: '/app/amims/amims-maintenance/tech-log',
     },
-       
+    {
+        label: 'Wp',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/wp',
+    }
+    , {
+        label: 'WpJo',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/wp-jo',
+    }, {
+        label: 'WorkCompleted',
+        icon: 'message-square',
+        link: '/app/amims/amims-maintenance/work-completed',
+    },
+    
 
     {
         label: 'Config',

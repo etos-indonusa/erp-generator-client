@@ -44,6 +44,9 @@ export const AmimsDueListOutputReportFormSchema = {
   "idDueListOutput": {
     "required": true
   },
+  "idMaintenance": {
+    "required": false
+  },
   "idMpart": {
     "required": false
   },
@@ -57,6 +60,10 @@ export const AmimsDueListOutputReportFormSchema = {
   "keyword": {
     "default": "",
     "required": false
+  },
+  "maintenance": {
+    "default": "",
+    "required": true
   },
   "mpart": {
     "default": "",

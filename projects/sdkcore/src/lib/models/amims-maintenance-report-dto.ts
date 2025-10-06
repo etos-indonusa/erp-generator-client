@@ -4,6 +4,8 @@
 
 import { AmimsMpartDto } from '../models/amims-mpart-dto';
 export interface AmimsMaintenanceReportDto {
+  alert?: number;
+  alertParam?: string;
   atachapter?: string;
   createdAt?: string;
   cycleFrom?: number;

@@ -44,6 +44,9 @@ export declare const AmimsDueListOutputReportFormSchema: {
     idDueListOutput: {
         required: boolean;
     };
+    idMaintenance: {
+        required: boolean;
+    };
     idMpart: {
         required: boolean;
     };
@@ -55,6 +58,10 @@ export declare const AmimsDueListOutputReportFormSchema: {
         required: boolean;
     };
     keyword: {
+        default: string;
+        required: boolean;
+    };
+    maintenance: {
         default: string;
         required: boolean;
     };

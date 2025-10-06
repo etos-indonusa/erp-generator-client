@@ -1,4 +1,6 @@
 export const AmimsMaintenanceDtoFields: Record<string, 'string' | 'boolean' | 'number'> = {
+  "alert": "number",
+  "alertParam": "string",
   "atachapter": "string",
   "createdAt": "string",
   "cycleFrom": "number",

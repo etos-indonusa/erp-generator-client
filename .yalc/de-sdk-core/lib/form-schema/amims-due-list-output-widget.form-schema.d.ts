@@ -40,6 +40,9 @@ export declare const AmimsDueListOutputWidgetFormSchema: {
     idDueListOutput: {
         required: boolean;
     };
+    idMaintenance: {
+        required: boolean;
+    };
     idMpart: {
         required: boolean;
     };
