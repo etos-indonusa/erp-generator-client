@@ -11,6 +11,7 @@ import { WpShareListComponent } from './wp-share-list/wp-share-list.component';
 import { WpShareHeaderComponent } from './wp-share-header/wp-share-header.component';
 import { ApprovalModule } from 'src/app/views/lib/approval/approval.module';
 import { CustomFieldValueShareModule } from 'src/app/views/lib/custom-field-value/custom-field-value-share.module';
+import { WpJoShareModule } from "../../wp-jo/wp-jo-share/wp-jo-share.module";
 
 const COM = [
     WpShareAddComponent,
@@ -28,14 +29,15 @@ const COM = [
         ...COM
     ], 
     imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        AntSimpleModule,
-        TampilanModule,
-        RouterModule,
-        // ApprovalModule,
-        CustomFieldValueShareModule
-    ]
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AntSimpleModule,
+    TampilanModule,
+    RouterModule,
+    // ApprovalModule,
+    CustomFieldValueShareModule,
+    WpJoShareModule
+]
 }) 
 export class WpShareModule { }

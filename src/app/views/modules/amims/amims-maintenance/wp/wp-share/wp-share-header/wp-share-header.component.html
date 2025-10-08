@@ -1,62 +1,167 @@
-<!-- Work Package Info -->
-<h5 class="mb-2">Work Package</h5>
-<nz-descriptions nzBordered [nzColumn]="{ xxl: 2, xl: 2, lg: 2, md: 2, sm: 1, xs: 1 }">
-    <nz-descriptions-item [nzTitle]="'numberWp' | translate">{{ data?.numberWp || '-'
-        }}</nz-descriptions-item>
-    <nz-descriptions-item [nzTitle]="'startDateWp' | translate">{{ data?.startDateWp || '-'
-        }}</nz-descriptions-item>
-    <nz-descriptions-item [nzTitle]="'endDateWp' | translate">{{ data?.endDateWp || '-'
-        }}</nz-descriptions-item>
+<ng-container *ngIf="data as item; else emptyState">
+    <!-- Work Package Overview -->
+    <div class="section-block" *ngIf="item.numberWp || item.typeWork || item.statusWp || item.noteWp || item.place || item.preparedBy || item.reason">
+        <h6 class="section-title">Work Package Overview</h6>
+        <div class="row g-3">
+            <div class="col-md-3" *ngIf="item.numberWp">
+                <div class="field-label">{{ 'numberWp' | translate }}</div>
+                <div class="field-value">{{ item.numberWp }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.typeWork">
+                <div class="field-label">{{ 'typeWork' | translate }}</div>
+                <div class="field-value">{{ item.typeWork }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.statusWp">
+                <div class="field-label">{{ 'statusWp' | translate }}</div>
+                <div class="field-value"><nz-tag nzColor="green">{{ item.statusWp }}</nz-tag></div>
+            </div>
+            <div class="col-md-3" *ngIf="item.place">
+                <div class="field-label">{{ 'place' | translate }}</div>
+                <div class="field-value">{{ item.place }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.periodYear">
+                <div class="field-label">{{ 'periodYear' | translate }}</div>
+                <div class="field-value">{{ item.periodYear }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.period">
+                <div class="field-label">{{ 'period' | translate }}</div>
+                <div class="field-value">{{ item.period }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.preparedBy">
+                <div class="field-label">{{ 'preparedBy' | translate }}</div>
+                <div class="field-value">{{ item.preparedBy }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.reason">
+                <div class="field-label">{{ 'reason' | translate }}</div>
+                <div class="field-value">{{ item.reason }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.noteWp">
+                <div class="field-label">{{ 'noteWp' | translate }}</div>
+                <div class="field-value">{{ item.noteWp }}</div>
+            </div>
+        </div>
+    </div>
 
-    <nz-descriptions-item [nzTitle]="'period' | translate">{{ data?.period || '-'
-        }}</nz-descriptions-item>
-    <nz-descriptions-item [nzTitle]="'periodYear' | translate">{{ data?.periodYear || '-'
-        }}</nz-descriptions-item>
-    <nz-descriptions-item [nzTitle]="'place' | translate">{{ data?.place || '-' }}</nz-descriptions-item>
+    <!-- Timing & Engine Metrics -->
+    <div class="section-block" *ngIf="item.startDateWp || item.endDateWp || item.airframeStartHours !== undefined || item.airframeEndHours !== undefined || item.engineSatuStart !== undefined || item.engineSatuEnd !== undefined || item.engineDuaStart !== undefined || item.engineDuaEnd !== undefined">
+        <h6 class="section-title">Timing &amp; Metrics</h6>
+        <div class="row g-3">
+            <div class="col-md-3" *ngIf="item.startDateWp">
+                <div class="field-label">{{ 'startDateWp' | translate }}</div>
+                <div class="field-value">{{ item.startDateWp | date: 'yyyy-MM-dd' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.endDateWp">
+                <div class="field-label">{{ 'endDateWp' | translate }}</div>
+                <div class="field-value">{{ item.endDateWp | date: 'yyyy-MM-dd' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.airframeStartHours !== undefined && item.airframeStartHours !== null">
+                <div class="field-label">{{ 'airframeStartHours' | translate }}</div>
+                <div class="field-value">{{ item.airframeStartHours | number: '1.0-0' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.airframeEndHours !== undefined && item.airframeEndHours !== null">
+                <div class="field-label">{{ 'airframeEndHours' | translate }}</div>
+                <div class="field-value">{{ item.airframeEndHours | number: '1.0-0' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.engineSatuStart !== undefined && item.engineSatuStart !== null">
+                <div class="field-label">{{ 'engineSatuStart' | translate }}</div>
+                <div class="field-value">{{ item.engineSatuStart | number: '1.0-0' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.engineSatuEnd !== undefined && item.engineSatuEnd !== null">
+                <div class="field-label">{{ 'engineSatuEnd' | translate }}</div>
+                <div class="field-value">{{ item.engineSatuEnd | number: '1.0-0' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.engineDuaStart !== undefined && item.engineDuaStart !== null">
+                <div class="field-label">{{ 'engineDuaStart' | translate }}</div>
+                <div class="field-value">{{ item.engineDuaStart | number: '1.0-0' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.engineDuaEnd !== undefined && item.engineDuaEnd !== null">
+                <div class="field-label">{{ 'engineDuaEnd' | translate }}</div>
+                <div class="field-value">{{ item.engineDuaEnd | number: '1.0-0' }}</div>
+            </div>
+        </div>
+    </div>
 
-    <nz-descriptions-item [nzTitle]="'typeWork' | translate">{{ data?.typeWork || '-'
-        }}</nz-descriptions-item>
-    <nz-descriptions-item [nzTitle]="'reason' | translate">{{ data?.reason || '-'
-        }}</nz-descriptions-item>
-    <nz-descriptions-item [nzTitle]="'preparedBy' | translate">{{ data?.preparedBy || '-'
-        }}</nz-descriptions-item>
+    <!-- Validation & Audit -->
+    <div class="section-block" *ngIf="item.validasi !== undefined || item.createdAt || item.updatedAt">
+        <h6 class="section-title">Validation &amp; Audit</h6>
+        <div class="row g-3">
+            <div class="col-md-3" *ngIf="item.validasi !== undefined && item.validasi !== null">
+                <div class="field-label">{{ 'validasi' | translate }}</div>
+                <div class="field-value">{{ item.validasi }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.createdAt">
+                <div class="field-label">{{ 'createdAt' | translate }}</div>
+                <div class="field-value">{{ item.createdAt | date: 'yyyy-MM-dd' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.updatedAt">
+                <div class="field-label">{{ 'updatedAt' | translate }}</div>
+                <div class="field-value">{{ item.updatedAt | date: 'yyyy-MM-dd' }}</div>
+            </div>
+        </div>
+    </div>
 
-    <nz-descriptions-item [nzTitle]="'airframeStartHours' | translate">{{ data?.airframeStartHours || '-'
-        }}</nz-descriptions-item>
-    <nz-descriptions-item [nzTitle]="'airframeEndHours' | translate">{{ data?.airframeEndHours || '-'
-        }}</nz-descriptions-item>
-    <nz-descriptions-item [nzTitle]="'validasi' | translate">{{ data?.validasi || '-'
-        }}</nz-descriptions-item>
-</nz-descriptions>
+    <!-- Aircraft Snapshot -->
+    <div class="section-block" *ngIf="item.aircraft">
+        <h6 class="section-title">Aircraft</h6>
+        <div class="row g-3">
+            <div class="col-md-3" *ngIf="item.aircraft.registrationNumber">
+                <div class="field-label">{{ 'registrationNumber' | translate }}</div>
+                <div class="field-value">{{ item.aircraft.registrationNumber }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.aircraft.serialNumber">
+                <div class="field-label">{{ 'serialNumber' | translate }}</div>
+                <div class="field-value">{{ item.aircraft.serialNumber }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.aircraft.manufacturedBy">
+                <div class="field-label">{{ 'manufacturedBy' | translate }}</div>
+                <div class="field-value">{{ item.aircraft.manufacturedBy }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.aircraft.manufactureDate">
+                <div class="field-label">{{ 'manufactureDate' | translate }}</div>
+                <div class="field-value">{{ item.aircraft.manufactureDate }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.aircraft.statusAc">
+                <div class="field-label">{{ 'statusAc' | translate }}</div>
+                <div class="field-value">{{ item.aircraft.statusAc }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.aircraft.tendurance !== undefined && item.aircraft.tendurance !== null">
+                <div class="field-label">{{ 'tendurance' | translate }}</div>
+                <div class="field-value">{{ item.aircraft.tendurance | number: '1.0-0' }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.aircraft.purchasedate">
+                <div class="field-label">{{ 'purchasedate' | translate }}</div>
+                <div class="field-value">{{ item.aircraft.purchasedate | date: 'yyyy-MM-dd' }}</div>
+            </div>
+        </div>
+    </div>
 
-<!-- Airframe Data -->
-<h5 class="mt-4 mb-2">Airframe</h5>
-<nz-descriptions nzBordered [nzColumn]="{ xxl: 3, xl: 3, lg: 2, md: 2, sm: 1, xs: 1 }">
-    <nz-descriptions-item nzTitle="Registration">{{ data?.aircraft?.registrationNumber || '-'
-        }}</nz-descriptions-item>
-    <nz-descriptions-item nzTitle="Serial Number">{{ data?.aircraft?.serialNumber || '-'
-        }}</nz-descriptions-item>
-    <nz-descriptions-item nzTitle="Manufacturer">{{ data?.aircraft?.manufacturedBy || '-'
-        }}</nz-descriptions-item>
-</nz-descriptions>
+    <!-- Site Snapshot -->
+    <div class="section-block" *ngIf="item.site">
+        <h6 class="section-title">Site</h6>
+        <div class="row g-3">
+            <div class="col-md-3" *ngIf="item.site.site">
+                <div class="field-label">{{ 'site' | translate }}</div>
+                <div class="field-value">{{ item.site.site }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.site.codeSite">
+                <div class="field-label">{{ 'codeSite' | translate }}</div>
+                <div class="field-value">{{ item.site.codeSite }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.site.address">
+                <div class="field-label">{{ 'address' | translate }}</div>
+                <div class="field-value">{{ item.site.address }}</div>
+            </div>
+            <div class="col-md-3" *ngIf="item.site.contactname">
+                <div class="field-label">{{ 'contactname' | translate }}</div>
+                <div class="field-value">{{ item.site.contactname }}</div>
+            </div>
+        </div>
+    </div>
+</ng-container>
 
-<!-- Engine Data -->
-<h5 class="mt-4 mb-2">Engine</h5>
-<nz-descriptions nzBordered [nzColumn]="{ xxl: 3, xl: 3, lg: 3, md: 2, sm: 1, xs: 1 }">
-    <nz-descriptions-item nzTitle="Engine 1">{{ data?.engineSatu || '-' }}</nz-descriptions-item>
-    <nz-descriptions-item nzTitle="E1 Start">{{ data?.engineSatuStart || '-' }}</nz-descriptions-item>
-    <nz-descriptions-item nzTitle="E1 End">{{ data?.engineSatuEnd || '-' }}</nz-descriptions-item>
-    <nz-descriptions-item nzTitle="Engine 2">{{ data?.engineDua || '-' }}</nz-descriptions-item>
-    <nz-descriptions-item nzTitle="E2 Start">{{ data?.engineDuaStart || '-' }}</nz-descriptions-item>
-    <nz-descriptions-item nzTitle="E2 End">{{ data?.engineDuaEnd || '-' }}</nz-descriptions-item>
-</nz-descriptions>
-
-<!-- Site -->
-<h5 class="mt-4 mb-2">Site</h5>
-<nz-descriptions nzBordered [nzColumn]="{ xxl: 3, xl: 3, lg: 2, md: 2, sm: 1, xs: 1 }">
-    <nz-descriptions-item nzTitle="Site">{{ data?.site?.site || '-' }}</nz-descriptions-item>
-    <nz-descriptions-item nzTitle="Code">{{ data?.site?.codeSite || '-' }}</nz-descriptions-item>
-    <nz-descriptions-item nzTitle="Address">{{ data?.site?.address || '-' }}</nz-descriptions-item>
-</nz-descriptions>
-
-<!-- <lib-custom-field [from-module]="'AmimsWp'" [from-module-id]="data?.idWp"></lib-custom-field> -->
+<ng-template #emptyState>
+    <div class="empty-wrapper">
+        <nz-empty nzDescription="Data tidak ditemukan">
+        </nz-empty>
+    </div>
+</ng-template>
